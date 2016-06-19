@@ -1,0 +1,597 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:140
+#: en/content/reference/transducers.adoc:39
+msgid "For example:"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:1
+#: en/content/news/2015/06/30/clojure-17.adoc:10
+#, no-wrap
+msgid "Transducers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:17
+msgid ""
+"Transducers are composable algorithmic transformations. They are independent "
+"from the context of their input and output sources and specify only the "
+"essence of the transformation in terms of an individual element. Because "
+"transducers are decoupled from input or output sources, they can be used in "
+"many different processes - collections, streams, channels, observables, etc. "
+"Transducers compose directly, without awareness of input or creation of "
+"intermediate aggregates."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:19
+msgid ""
+"Also see the introductory http://blog.cognitect.com/blog/2014/8/6/"
+"transducers-are-coming[blog post] and this https://www.youtube.com/watch?"
+"v=6mTbuzafcII[video]."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:20
+#, no-wrap
+msgid "Terminology"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:23
+msgid ""
+"A _reducing function_ is the kind of function you'd pass to *reduce* - it is "
+"a function that takes an accumulated result and a new input and returns a "
+"new accumulated result:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:27
+#, no-wrap
+msgid ""
+";; reducing function signature\n"
+"whatever, input -> whatever\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:29
+msgid ""
+"A _transducer_ (sometimes referred to as xform or xf) is a transformation "
+"from one reducing function to another:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:33
+#, no-wrap
+msgid ""
+";; transducer signature\n"
+"(whatever, input -> whatever) -> (whatever, input -> whatever)\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:34
+#, no-wrap
+msgid "Defining Transformations With Transducers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:37
+msgid ""
+"Most sequence functions included in Clojure have an arity that produces a "
+"transducer. This arity omits the input collection; the inputs will be "
+"supplied by the process applying the transducer. _Note: this reduced arity "
+"is not currying or partial application._"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:44
+#, no-wrap
+msgid ""
+"(filter odd?) ;; returns a transducer that filters odd\n"
+"(map inc)     ;; returns a mapping transducer for incrementing\n"
+"(take 5)      ;; returns a transducer that will take the first 5 values\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:47
+msgid ""
+"Transducers compose with ordinary function composition. A transducer "
+"performs its operation before deciding whether and how many times to call "
+"the transducer it wraps. The recommended way to compose transducers is with "
+"the existing *comp* function:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:55
+#, no-wrap
+msgid ""
+"(def xf\n"
+"  (comp\n"
+"    (filter odd?)\n"
+"    (map inc)\n"
+"    (take 5)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:58
+msgid ""
+"The transducer xf is a transformation stack that will be applied by a "
+"process to a series of input elements. Each function in the stack is "
+"performed _before_ the operation it wraps. Composition of the transformer "
+"runs right-to-left but builds a transformation stack that runs left-to-right "
+"(filtering happens before mapping in this example)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:60
+msgid ""
+"As a mnemonic, remember that the ordering of transducer functions in *comp* "
+"is the same order as sequence transformations in *pass:[->>]*. The "
+"transformation above is equivalent to the sequence transformation:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:67
+#, no-wrap
+msgid ""
+"(->> coll\n"
+"     (filter odd?)\n"
+"     (map inc)\n"
+"     (take 5))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:71
+msgid ""
+"The following functions produce a transducer when the input collection is "
+"omitted: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"map[map] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"cat[cat] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"mapcat[mapcat] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/filter[filter] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/remove[remove] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/take[take] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/take-while[take-while] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth[take-"
+"nth] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"drop[drop] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/drop-while[drop-while] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/replace[replace] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/partition-by[partition-by] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/partition-all[partition-"
+"all] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"keep[keep] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/keep-indexed[keep-indexed] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/map-indexed[map-indexed] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/distinct[distinct] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/interpose[interpose] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"dedupe[dedupe] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/random-sample[random-sample]"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:72
+#, no-wrap
+msgid "Using Transducers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:75
+msgid ""
+"Transducers can be used in many contexts (see below for how to create new "
+"ones)."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:76
+#, no-wrap
+msgid "transduce"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:79
+msgid ""
+"One of the most common ways to apply transducers is with the http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/transduce[transduce] "
+"function, which is analogous to the standard reduce function:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:84
+#, no-wrap
+msgid ""
+"(transduce xform f coll)\n"
+"(transduce xform f init coll)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:87
+#, no-wrap
+msgid "*transduce* will immediately (not lazily) reduce over *coll* with the transducer *xform* applied to the reducing function *f*, using init as the initial value if supplied or (f) otherwise. f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:95
+#, no-wrap
+msgid ""
+"(def xf (comp (filter odd?) (map inc)))\n"
+"(transduce xf + (range 5))\n"
+";; => 6\n"
+"(transduce xf + 100 (range 5))\n"
+";; => 106\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:98
+msgid ""
+"The composed xf transducer will be invoked left-to-right with a final call "
+"to the reducing function f. In the last example, input values will be "
+"filtered, then incremented, and finally summed."
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/reference/transducers.adoc:99
+#: en/content/community/editing.adoc:150
+#, no-wrap
+msgid "/images/content/reference/transducers/xf.png"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:101
+#, no-wrap
+msgid "eduction"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:104
+msgid ""
+"To capture the process of applying a transducer to a coll, use the http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"eduction[eduction] function. It takes any number of xforms and a final coll "
+"and returns a reducible/iterable application of the transducer to the items "
+"in coll. These applications will be performed each time reduce/iterator is "
+"called."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:109
+#, no-wrap
+msgid ""
+"(def iter (eduction xf (range 5)))\n"
+"(reduce + 0 iter)\n"
+";; => 6\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:110
+#, no-wrap
+msgid "into"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:112
+msgid ""
+"To apply a transducer to an input collection and construct a new output "
+"collection, use http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/into[into] (which efficiently uses reduce and transients "
+"if possible):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:115
+#, no-wrap
+msgid "(into [] xf (range 1000))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:116
+#, no-wrap
+msgid "sequence"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:118
+msgid ""
+"To create a sequence from the application of a transducer to an input "
+"collection, use http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/sequence[sequence]:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:121
+#, no-wrap
+msgid "(sequence xf (range 1000))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:123
+msgid ""
+"The resulting sequence elements are incrementally computed. These sequences "
+"will consume input incrementally as needed and fully realize intermediate "
+"operations. This behavior differs from the equivalent operations on lazy "
+"sequences."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:124
+#, no-wrap
+msgid "Creating Transducers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:127
+msgid ""
+"Most functions that produce transducers have the following shape (custom "
+"code in \"...\"):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:133
+#, no-wrap
+msgid ""
+"(fn [xf]\n"
+"  (fn ([] ...)\n"
+"      ([result] ...)\n"
+"      ([result input] ...)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:135
+msgid ""
+"Many of the core sequence functions (like map, filter, etc) take operation-"
+"specific arguments (a predicate, function, count, etc) and return a "
+"transducer of this shape closing over those arguments. In some cases, like "
+"*cat*, the core function _is_ a transducer function and does not take an "
+"*xf*."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:137
+msgid ""
+"The inner function is defined with 3 arities used for different purposes:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:139
+#, no-wrap
+msgid "*Init* (arity 0) - should call the init arity on the nested transform *xf*, which will eventually call out to the transducing process.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:140
+#, no-wrap
+msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *xf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *xf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:141
+#, no-wrap
+msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *xf* completion arity exactly once.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:143
+msgid ""
+"An example use of *completion* is *partition-all*, which must flush any "
+"remaining elements at the end of the input. The http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/completing[completing] function "
+"can be used to convert a reducing function to a transducing function by "
+"adding a default completion arity."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:144
+#, no-wrap
+msgid "Early termination"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:147
+msgid "Clojure has a mechanism for specifying early termination of a reduce:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:149
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"reduced[reduced] - takes a value and returns a _reduced_ value indicating "
+"reduction should stop"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:150
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?"
+"[reduced?] - returns true if the value was created with _reduced_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:151
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"deref[deref] or @ can be used to retrieve the value inside a _reduced_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:153
+msgid ""
+"A process that uses transducers must check for and stop when the step "
+"function returns a reduced value (more on that in Creating Transducible "
+"Processes). Additionally, a transducer step function that uses a nested "
+"reduce must check for and convey reduced values when they are encountered. "
+"(See the implementation of cat for an example.)"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/transducers.adoc:154
+#, no-wrap
+msgid "Transducers with reduction state"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:157
+msgid ""
+"Some transducers (such as *take*, *partition*, etc) require state during the "
+"reduction process. This state is created each time the transducible process "
+"applies the transducer. For example, consider the dedupe transducer that "
+"collapses a series of duplicate values into a single value. This transducer "
+"must remember the previous value to determine whether the current value "
+"should be passed on:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/transducers.adoc:171
+#, no-wrap
+msgid ""
+"(defn dedupe []\n"
+"  (fn [xf]\n"
+"    (let [prev (volatile! ::none)]\n"
+"      (fn\n"
+"        ([] (xf))\n"
+"        ([result] (xf result))\n"
+"        ([result input]\n"
+"          (let [prior @prev]\n"
+"            (vreset! prev input)\n"
+"              (if (= prior input)\n"
+"                result\n"
+"                (xf result input))))))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:173
+msgid ""
+"In dedupe, *prev* is a stateful container that stores the previous value "
+"during the reduction. The prev value is a volatile for performance, but it "
+"could also be an atom. The prev value will not be initialized until the "
+"transducing process starts (in a call to *transduce* for example). The "
+"stateful interactions are therefore contained within the context of the "
+"transducible process."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:175
+msgid ""
+"In the completion step, a transducer with reduction state should flush state "
+"prior to calling the nested transformer's completion function, unless it has "
+"previously seen a reduced value from the nested step in which case pending "
+"state should be discarded."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:176
+#, no-wrap
+msgid "Creating Transducible Processes"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:179
+msgid ""
+"Transducers are designed to be used in many kinds of processes. A "
+"transducible process is defined as a succession of steps where each step "
+"ingests an input. The source of the inputs is specific to each process (from "
+"a collection, an iterator, a stream, etc). Similarly, the process must "
+"choose what to do with the outputs produced by each step."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:181
+msgid ""
+"If you have a new context for applying transducers, there are a few general "
+"rules to be aware of:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:184
+msgid ""
+"If a step function returns a _reduced_ value, the transducible process must "
+"not supply any more inputs to the step function. The reduced value must be "
+"unwrapped with deref before completion."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:185
+msgid ""
+"A completing process must call the completion operation on the final "
+"accumulated value exactly once."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/transducers.adoc:185
+msgid ""
+"A transducing process must encapsulate references to the function returned "
+"by invoking a transducer - these may be stateful and unsafe for use across "
+"threads."
+msgstr ""

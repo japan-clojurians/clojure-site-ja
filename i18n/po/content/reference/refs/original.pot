@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35
+#: en/content/reference/agents.adoc:39
+#, no-wrap
+msgid "Example"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/refs.adoc:1
+#, no-wrap
+msgid "Refs and Transactions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:17
+msgid ""
+"While <<vars#,Vars>> ensure safe use of mutable storage locations via thread "
+"_isolation_, transactional references (Refs) ensure safe _shared_ use of "
+"mutable storage locations via a http://en.wikipedia.org/wiki/"
+"Software_transactional_memory[software transactional memory] (STM) system. "
+"Refs are bound to a single storage location for their lifetime, and only "
+"allow mutation of that location to occur within a transaction."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:19
+msgid ""
+"Clojure transactions should be easy to understand if you've ever used "
+"database transactions - they ensure that all actions on Refs are atomic, "
+"consistent, and isolated. Atomic means that every change to Refs made within "
+"a transaction occurs or none do. Consistent means that each new value can be "
+"checked with a validator function before allowing the transaction to commit. "
+"Isolated means that no transaction sees the effects of any other transaction "
+"while it is running. Another feature common to STMs is that, should a "
+"transaction have a conflict while running, it is automatically retried."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:21
+msgid ""
+"There are many ways to do STMs (locking/pessimistic, lock-free/optimistic "
+"and hybrids) and it is still a research problem. The Clojure STM uses http://"
+"en.wikipedia.org/wiki/Multiversion_concurrency_control[multiversion "
+"concurrency control] with adaptive history queues for http://en.wikipedia."
+"org/wiki/Snapshot_isolation[snapshot isolation], and provides a distinct "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"commute[commute] operation."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:23
+msgid "In practice, this means:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:25
+msgid ""
+"All reads of Refs will see a consistent snapshot of the 'Ref world' as of "
+"the starting point of the transaction (its 'read point'). The transaction "
+"_will_ see any changes it has made. This is called the _in-transaction-"
+"value_."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:26
+msgid ""
+"All changes made to Refs during a transaction (via http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ref-set[ref-set], http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"commute[commute]) will appear to occur at a single point in the 'Ref world' "
+"timeline (its 'write point')."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:27
+msgid ""
+"No changes will have been made by any other transactions to any Refs that "
+"have been *ref-set**_ / _**altered**_ / _**ensured**_ by this transaction."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:28
+msgid ""
+"Changes _may have_ been made by other transactions to any Refs that have "
+"been commuted by this transaction. That should be okay since the function "
+"applied by _**commute**_ should be commutative."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:29
+msgid ""
+"Readers and commuters will never block writers, commuters, or other readers."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:30
+msgid "Writers will never block commuters, or readers."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:31
+msgid ""
+"I/O and other activities with side-effects should be avoided in "
+"transactions, since transactions _will_ be retried. The http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/io![io!] macro can be "
+"used to prevent the use of an impure function in a transaction."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:32
+msgid ""
+"If a constraint on the validity of a value of a Ref that is being changed "
+"depends upon the simultaneous value of a Ref that is _not being changed_, "
+"that second Ref can be protected from modification by calling http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure]. Refs "
+"'ensured' this way will be protected (item #3), but don't change the world "
+"(item #2)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:33
+msgid ""
+"The Clojure MVCC STM is designed to work with the persistent collections, "
+"and it is strongly recommended that you use the Clojure collections as the "
+"values of your Refs. Since all work done in an STM transaction is "
+"speculative, it is imperative that there be a low cost to making copies and "
+"modifications. Persistent collections have free copies (just use the "
+"original, it can't be changed), and 'modifications' share structure "
+"efficiently. In any case:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:34
+msgid ""
+"The values placed in Refs _must be, or be considered, immutable_!! "
+"Otherwise, Clojure can't help you."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:37
+msgid ""
+"In this example a vector of references to vectors is created, each "
+"containing (initially sequential) unique numbers. Then a set of threads are "
+"started that repeatedly select two random positions in two random vectors "
+"and swap them, in a transaction. No special effort is made to prevent the "
+"inevitable conflicts other than the use of transactions."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/refs.adoc:57
+#, no-wrap
+msgid ""
+"(defn run [nvecs nitems nthreads niters]\n"
+"  (let [vec-refs (vec (map (comp ref vec)\n"
+"                           (partition nitems (range (* nvecs nitems)))))\n"
+"        swap #(let [v1 (rand-int nvecs)\n"
+"                    v2 (rand-int nvecs)\n"
+"                    i1 (rand-int nitems)\n"
+"                    i2 (rand-int nitems)]\n"
+"                (dosync\n"
+"                 (let [temp (nth @(vec-refs v1) i1)]\n"
+"                   (alter (vec-refs v1) assoc i1 (nth @(vec-refs v2) i2))\n"
+"                   (alter (vec-refs v2) assoc i2 temp))))\n"
+"        report #(do\n"
+"                 (prn (map deref vec-refs))\n"
+"                 (println \"Distinct:\"\n"
+"                          (count (distinct (apply concat (map deref vec-refs))))))]\n"
+"    (report)\n"
+"    (dorun (apply pcalls (repeat nthreads #(dotimes [_ niters] (swap)))))\n"
+"    (report)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:60
+msgid "When run, we see no values get lost or duplicated in the shuffle:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/refs.adoc:63
+#, no-wrap
+msgid "(run 100 10 10 100000)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/refs.adoc:67
+#, no-wrap
+msgid ""
+"([0 1 2 3 4 5 6 7 8 9] [10 11 12 13 14 15 16 17 18 19] ...\n"
+" [990 991 992 993 994 995 996 997 998 999])\n"
+"Distinct: 1000\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/refs.adoc:71
+#, no-wrap
+msgid ""
+"([382 318 466 963 619 22 21 273 45 596] [808 639 804 471 394 904 952 75 289 778] ...\n"
+" [484 216 622 139 651 592 379 228 242 355])\n"
+"Distinct: 1000\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/refs.adoc:73
+#: en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65
+#: en/content/reference/data_structures.adoc:70
+#: en/content/reference/data_structures.adoc:90
+#: en/content/reference/data_structures.adoc:98
+#: en/content/reference/data_structures.adoc:107
+#: en/content/reference/data_structures.adoc:116
+#: en/content/reference/data_structures.adoc:162
+#: en/content/reference/data_structures.adoc:174
+#: en/content/reference/data_structures.adoc:188
+#: en/content/reference/data_structures.adoc:223
+#: en/content/reference/agents.adoc:64
+#: en/content/reference/repl_and_main.adoc:159
+#: en/content/reference/vars.adoc:85 en/content/reference/namespaces.adoc:24
+#: en/content/reference/libs.adoc:64
+#, no-wrap
+msgid "Related functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:76
+msgid ""
+"Create a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/ref[ref]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:78
+msgid ""
+"Examine a Ref: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/deref[deref] _(see also the +@+ <<reader#,reader>> macro)_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:80
+msgid ""
+"Transaction macros: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/dosync[dosync] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/io![io!]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:82
+msgid ""
+"Allowed only in a transaction: http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/ensure[ensure] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/ref-set[ref-set] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/alter[alter] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/commute[commute]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
+msgid ""
+"Ref validators: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/set-validator![set-validator!] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+msgstr ""

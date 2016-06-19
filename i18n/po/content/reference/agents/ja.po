@@ -1,0 +1,347 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35
+#: en/content/reference/agents.adoc:39
+#, no-wrap
+msgid "Example"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/refs.adoc:73
+#: en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65
+#: en/content/reference/data_structures.adoc:70
+#: en/content/reference/data_structures.adoc:90
+#: en/content/reference/data_structures.adoc:98
+#: en/content/reference/data_structures.adoc:107
+#: en/content/reference/data_structures.adoc:116
+#: en/content/reference/data_structures.adoc:162
+#: en/content/reference/data_structures.adoc:174
+#: en/content/reference/data_structures.adoc:188
+#: en/content/reference/data_structures.adoc:223
+#: en/content/reference/agents.adoc:64
+#: en/content/reference/repl_and_main.adoc:159
+#: en/content/reference/vars.adoc:85 en/content/reference/namespaces.adoc:24
+#: en/content/reference/libs.adoc:64
+#, no-wrap
+msgid "Related functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
+msgid ""
+"Ref validators: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/set-validator![set-validator!] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/agents.adoc:1
+#, no-wrap
+msgid "Agents and Asynchronous Actions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:18
+msgid ""
+"Like Refs, Agents provide shared access to mutable state. Where <<refs#,"
+"Refs>> support _coordinated_, _synchronous_ change of _multiple_ locations, "
+"Agents provide _independent_, _asynchronous_ change of _individual_ "
+"locations. Agents are bound to a single storage location for their lifetime, "
+"and only allow mutation of that location (to a new state) to occur as a "
+"result of an action. Actions are functions (with, optionally, additional "
+"arguments) that are asynchronously applied to an Agent's state and whose "
+"return value becomes the Agent's new state. Because actions are functions "
+"they can also be multimethods and therefore actions are potentially "
+"polymorphic. Also, because the set of functions is open, the set of actions "
+"supported by an Agent is also open, a sharp contrast to pattern matching "
+"message handling loops provided by some other languages."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:20
+msgid ""
+"Clojure's Agents are _reactive_, not autonomous - there is no imperative "
+"message loop and no blocking receive. The state of an Agent should be itself "
+"immutable (preferably an instance of one of Clojure's persistent "
+"collections), and the state of an Agent is always immediately available for "
+"reading by any thread (using the http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/deref[deref] function or <<reader#,reader>> macro "
+"+@+) without any messages, i.e. observation does not require cooperation or "
+"coordination."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:22
+msgid ""
+"Agent action dispatches take the form +(send agent fn args*)+. http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] (and "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-"
+"off[send-off]) always returns immediately. At some point later, in another "
+"thread, the following will happen:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:24
+msgid ""
+"The given +fn+ will be applied to the _state_ of the Agent and the args, if "
+"any were supplied."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:25
+msgid ""
+"The return value of +fn+ will be passed to the validator function, if one "
+"has been set on the Agent. See http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/set-validator![set-validator!] for details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:26
+msgid ""
+"If the validator succeeds or if no validator was given, the return value of "
+"the given +fn+ will become the new state of the Agent."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:27
+msgid ""
+"If any watchers were added to the Agent, they will be called. See http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-"
+"watch] for details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:28
+msgid ""
+"If during the function execution any other dispatches are made (directly or "
+"indirectly), they will be held until _after_ the state of the Agent has been "
+"changed."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:30
+msgid ""
+"If any exceptions are thrown by an action function, no nested dispatches "
+"will occur, and the exception will be cached in the Agent itself. When an "
+"Agent has errors cached, any subsequent interactions will immediately throw "
+"an exception, until the agent's errors are cleared. Agent errors can be "
+"examined with http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/agent-error[agent-error] and the agent restarted with http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-"
+"agent]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:32
+msgid ""
+"The actions of all Agents get interleaved amongst threads in a thread pool. "
+"At any point in time, at most one action for each Agent is being executed. "
+"Actions dispatched to an agent from another single agent or thread will "
+"occur in the order they were sent, potentially interleaved with actions "
+"dispatched to the same agent from other sources. http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/send[send] should be used for "
+"actions that are CPU limited, while http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/send-off[send-off] is appropriate for actions "
+"that may block on IO."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:34
+msgid ""
+"Agents are integrated with the STM - any dispatches made in a transaction "
+"are held until it commits, and are discarded if it is retried or aborted."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:36
+msgid ""
+"As with all of Clojure's concurrency support, no user-code locking is "
+"involved."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:38
+msgid ""
+"Note that use of Agents starts a pool of non-daemon background threads that "
+"will prevent shutdown of the JVM. Use http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/shutdown-agents[shutdown-agents] to "
+"terminate these threads and allow shutdown."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:42
+msgid ""
+"This example is an implementation of the send-a-message-around-a-ring test. "
+"A chain of n agents is created, then a sequence of m actions are dispatched "
+"to the head of the chain and relayed through it."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/agents.adoc:50
+#, no-wrap
+msgid ""
+"(defn relay [x i]\n"
+"  (when (:next x)\n"
+"    (send (:next x) relay i))\n"
+"  (when (and (zero? i) (:report-queue x))\n"
+"    (.put (:report-queue x) i))\n"
+"  x)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/agents.adoc:58
+#, no-wrap
+msgid ""
+"(defn run [m n]\n"
+"  (let [q (new java.util.concurrent.SynchronousQueue)\n"
+"        hd (reduce (fn [next _] (agent {:next next}))\n"
+"                   (agent {:report-queue q}) (range (dec m)))]\n"
+"    (doseq [i (reverse (range n))]\n"
+"      (send hd relay i))\n"
+"    (.take q)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/agents.adoc:62
+#, no-wrap
+msgid ""
+"; 1 million message sends:\n"
+"(time (run 1000 1000))\n"
+"->\"Elapsed time: 2959.254 msecs\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:67
+msgid ""
+"Create an Agent: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/agent[agent]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:69
+msgid ""
+"Examine an Agent: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/deref[deref] _(see also the +@+ <<reader#,reader>> macro)_ "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-"
+"error[agent-error] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/error-handler[error-handler] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:71
+msgid ""
+"Change Agent state: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/send[send] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/send-off[send-off] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/restart-agent[restart-agent]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:73
+msgid ""
+"Block waiting for an Agent: http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/await[await] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/await-for[await-for]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:77
+msgid ""
+"Watchers: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/add-watch[add-watch] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/remove-watch[remove-watch]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:79
+msgid ""
+"Agent thread management: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/shutdown-agents[shutdown-agents]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/agents.adoc:80
+msgid ""
+"Agent error management: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/agent-error[agent-error] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/restart-agent[restart-agent] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-"
+"handler![set-error-handler!] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/error-handler[error-handler] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/set-error-mode![set-error-mode!] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-"
+"mode[error-mode]"
+msgstr ""

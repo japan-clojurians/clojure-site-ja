@@ -1,0 +1,44 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_berlin.adoc:1
+#, no-wrap
+msgid "ClojureBridge Berlin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin.adoc:4
+msgid "ClojureBridge 2016-01-22"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin.adoc:12
+msgid ""
+"This 2-day-workshop will be held in Berlin, Germany, on January 22 & 23, "
+"2015. We will use Clojure, a modern programming language, to introduce you "
+"to fundamental programming concepts and build a sample app using Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin.adoc:13
+msgid ""
+"Total programming novices, system administrators, developers in other "
+"languages, and folks who attended our previous workshops are all welcome. "
+"We'll have different classes separated by experience level."
+msgstr ""

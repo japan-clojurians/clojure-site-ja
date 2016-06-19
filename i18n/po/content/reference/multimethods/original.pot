@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/multimethods.adoc:1
+#, no-wrap
+msgid "Multimethods and Hierarchies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:17
+msgid ""
+"Clojure eschews the traditional object-oriented approach of creating a new "
+"data type for each new situation, instead preferring to build a large "
+"library of functions on a small set of types. However, Clojure fully "
+"recognizes the value of runtime polymorphism in enabling flexible and "
+"extensible system architecture. Clojure supports sophisticated runtime "
+"polymorphism through a multimethod system that supports dispatching on "
+"types, values, attributes and metadata of, and relationships between, one or "
+"more arguments."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:19
+msgid ""
+"A Clojure multimethod is a combination of a _dispatching_ _function_, and "
+"one or more _methods_. When a multimethod is defined, using _**defmulti**_, "
+"a dispatching function must be supplied. This function will be applied to "
+"the arguments to the multimethod in order to produce a _dispatching value_. "
+"The multimethod will then try to find the method associated with the "
+"dispatching value or a value from which the dispatching value is derived. If "
+"one has been defined (via http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/defmethod[defmethod]), it will then be called with the "
+"arguments and that will be the value of the multimethod call. If no method "
+"is associated with the dispatching value, the multimethod will look for a "
+"method associated with the default dispatching value (which defaults to _**:"
+"default**_), and will use that if present. Otherwise the call is an error."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:21
+msgid ""
+"The multimethod system exposes this API: http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/defmulti[defmulti] creates new "
+"multimethods, http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/defmethod[defmethod] creates and installs a new method of multimethod "
+"associated with a dispatch-value, http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/remove-method[remove-method] removes the method "
+"associated with a dispatch-value and http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/prefer-method[prefer-method] creates an "
+"ordering between methods when they would otherwise be ambiguous."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:23
+msgid ""
+"Derivation is determined by a combination of either Java inheritance (for "
+"class values), or using Clojure's ad hoc hierarchy system. The hierarchy "
+"system supports derivation relationships between names (either symbols or "
+"keywords), and relationships between classes and names. The http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] function "
+"create these relationships, and the http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/isa?[isa?] function tests for their existence. "
+"Note that http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/isa?[isa?] is not http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/instance?[instance?]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:25
+msgid ""
+"You can define hierarchical relationships with +(derive child parent)+. "
+"Child and parent can be either symbols or keywords, and must be namespace-"
+"qualified:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:27
+msgid "_Note the pass:[::] reader syntax, ::keywords resolve namespaces._"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:32
+#, no-wrap
+msgid ""
+"::rect\n"
+"-> :user/rect\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:34
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"derive[derive] is the fundamental relationship-maker"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:38
+#, no-wrap
+msgid ""
+"(derive ::rect ::shape)\n"
+"(derive ::square ::rect)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:40
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"parents[parents] / http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/ancestors[ancestors] / http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/descendants[descendants] and http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] "
+"let you query the hierarchy"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:45
+#, no-wrap
+msgid ""
+"(parents ::rect)\n"
+"-> #{:user/shape}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:48
+#, no-wrap
+msgid ""
+"(ancestors ::square)\n"
+"-> #{:user/rect :user/shape}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:51
+#, no-wrap
+msgid ""
+"(descendants ::shape)\n"
+"-> #{:user/rect :user/square}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:54
+msgid "`(= x y)` implies `(isa? x y)`"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:59
+#, no-wrap
+msgid ""
+"(isa? 42 42)\n"
+"-> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:62
+msgid "`isa?` uses the hierarchy system"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:67
+#, no-wrap
+msgid ""
+"(isa? ::square ::shape)\n"
+"-> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:70
+msgid ""
+"You can also use a class as the child (but not the parent, the only way to "
+"make something the child of a class is via Java inheritance)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:72
+msgid ""
+"This allows you to superimpose new taxonomies on the existing Java class "
+"hierarchy:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:77
+#, no-wrap
+msgid ""
+"(derive java.util.Map ::collection)\n"
+"(derive java.util.Collection ::collection)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:80
+#, no-wrap
+msgid ""
+"(isa? java.util.HashMap ::collection)\n"
+"-> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:83
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
+"%3F[isa?] also tests for class relationships:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:88
+#, no-wrap
+msgid ""
+"(isa? String Object)\n"
+"-> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:91
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
+"%3F[isa?] works with vectors by calling http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/isa%3F[isa?] on their corresponding "
+"elements:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:96
+#, no-wrap
+msgid ""
+"(isa? [::square ::rect] [::shape ::shape])\n"
+"-> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:99
+msgid ""
+"as do http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"parents[parents] / http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/ancestors[ancestors] (but not http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/descendants[descendants], since "
+"class descendants are an open set)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:107
+#, no-wrap
+msgid ""
+"(ancestors java.util.ArrayList)\n"
+"-> #{java.lang.Cloneable java.lang.Object java.util.List\n"
+"    java.util.Collection java.io.Serializable\n"
+"    java.util.AbstractCollection\n"
+"    java.util.RandomAccess java.util.AbstractList}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/multimethods.adoc:109
+#, no-wrap
+msgid "isa? based dispatch"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:112
+msgid ""
+"Multimethods use http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/isa%3F[isa?] rather than = when testing for dispatch value "
+"matches. Note that the first test of http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/isa%3F[isa?] is =, so exact matches work."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:118
+#, no-wrap
+msgid ""
+"(defmulti foo class)\n"
+"(defmethod foo ::collection [c] :a-collection)\n"
+"(defmethod foo String [s] :a-string)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:121
+#, no-wrap
+msgid ""
+"(foo [])\n"
+":a-collection\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:124
+#, no-wrap
+msgid ""
+"(foo (java.util.HashMap.))\n"
+":a-collection\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:127
+#, no-wrap
+msgid ""
+"(foo \"bar\")\n"
+":a-string\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:130
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-"
+"method[prefer-method] is used for disambiguating in case of multiple matches "
+"where neither dominates the other. You can just declare, per multimethod, "
+"that one dispatch value is preferred over another:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:134
+#, no-wrap
+msgid "(derive ::rect ::shape)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:138
+#, no-wrap
+msgid ""
+"(defmulti bar (fn [x y] [x y]))\n"
+"(defmethod bar [::rect ::shape] [x y] :rect-shape)\n"
+"(defmethod bar [::shape ::rect] [x y] :shape-rect)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:145
+#, no-wrap
+msgid ""
+"(bar ::rect ::rect)\n"
+"-> java.lang.IllegalArgumentException:\n"
+"   Multiple methods match dispatch value:\n"
+"   [:user/rect :user/rect] -> [:user/rect :user/shape]\n"
+"   and [:user/shape :user/rect],\n"
+"   and neither is preferred\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:149
+#, no-wrap
+msgid ""
+"(prefer-method bar [::rect ::shape] [::shape ::rect])\n"
+"(bar ::rect ::rect)\n"
+"-> :rect-shape\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:152
+msgid ""
+"All of the examples above use the global hierarchy used by the multimethod "
+"system, but entire independent hierarchies can also be created with http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-"
+"hierarchy[make-hierarchy], and all of the above functions can take an "
+"optional hierarchy as a first argument."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:154
+msgid ""
+"This simple system is extremely powerful. One way to understand the "
+"relationship between Clojure multimethods and traditional Java-style single "
+"dispatch is that single dispatch is like a Clojure multimethod whose "
+"dispatch function calls getClass on the first argument, and whose methods "
+"are associated with those classes. Clojure multimethods are not hard-wired "
+"to class/type, they can be based on any attribute of the arguments, on "
+"multiple arguments, can do validation of arguments and route to error-"
+"handling methods etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/multimethods.adoc:157
+msgid ""
+"_Note: In this example, the keyword :Shape is being used as the dispatch "
+"function, as keywords are functions of maps, as described in the "
+"<<data_structures#,Data Structures>> section._"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/multimethods.adoc:176
+#, no-wrap
+msgid ""
+"(defmulti area :Shape)\n"
+"(defn rect [wd ht] {:Shape :Rect :wd wd :ht ht})\n"
+"(defn circle [radius] {:Shape :Circle :radius radius})\n"
+"(defmethod area :Rect [r]\n"
+"    (* (:wd r) (:ht r)))\n"
+"(defmethod area :Circle [c]\n"
+"    (* (. Math PI) (* (:radius c) (:radius c))))\n"
+"(defmethod area :default [x] :oops)\n"
+"(def r (rect 4 13))\n"
+"(def c (circle 12))\n"
+"(area r)\n"
+"-> 52\n"
+"(area c)\n"
+"-> 452.3893421169302\n"
+"(area {})\n"
+"-> :oops\n"
+msgstr ""

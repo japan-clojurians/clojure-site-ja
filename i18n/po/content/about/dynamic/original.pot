@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/datatypes.adoc:21
+#: en/content/reference/protocols.adoc:36 en/content/about/dynamic.adoc:42
+#, no-wrap
+msgid "Basics"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/repl_and_main.adoc:66 en/content/about/dynamic.adoc:25
+#, no-wrap
+msgid "java -cp clojure.jar clojure.main\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/about/dynamic.adoc:1
+#, no-wrap
+msgid "Dynamic Development"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:18
+msgid ""
+"First and foremost, Clojure is dynamic. That means that a Clojure program is "
+"not just something you compile and run, but something with which you can "
+"interact. Clojure is not a language abstraction, but an environment, where "
+"almost all of the language constructs are reified, and thus can be examined "
+"and changed. This leads to a substantially different experience from running "
+"a program, examining its results (or failures) and trying again. In "
+"particular, you can grow your program, with data loaded, adding features, "
+"fixing bugs, testing, in an unbroken stream."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/dynamic.adoc:19
+#, no-wrap
+msgid "The REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:22
+msgid ""
+"While Clojure can be embedded in a Java application, or used as a scripting "
+"language, the primary programming interface is the Read-Eval-Print-Loop "
+"(REPL). This is a simple console interface that allows you to enter and "
+"execute commands, and examine their results. You can start the Clojure REPL "
+"like this, and then follow along trying the samples in this feature tour:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:27
+msgid "This will give you a prompt like this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/dynamic.adoc:30
+#, no-wrap
+msgid "user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:32
+msgid "Most Clojure commands take the form (command arguments*). Try it:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/dynamic.adoc:40
+#, no-wrap
+msgid ""
+"(def x 6)\n"
+"-> #'user/x\n"
+"(def y 36)\n"
+"-> #'user/y\n"
+"(+ x y)\n"
+"-> 42\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:45
+msgid ""
+"Clojure has arbitrary precision integers, strings, ratios, doubles, "
+"characters, symbols, keywords."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/dynamic.adoc:62
+#, no-wrap
+msgid ""
+"(* 12345678 12345678)\n"
+"-> 152415765279684\n"
+"\"string\"\n"
+"-> \"string\"\n"
+"22/7\n"
+"-> 22/7\n"
+"3.14159\n"
+"-> 3.14159\n"
+"\\a\n"
+"-> \\a\n"
+"'symbol\n"
+"-> symbol\n"
+":keyword\n"
+"-> :keyword\n"
+";a comment\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/dynamic.adoc:64
+#, no-wrap
+msgid "Dynamic Compilation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/dynamic.adoc:66
+msgid ""
+"Clojure is a compiled language, so one might wonder when you have to run the "
+"compiler. You don't. Anything you enter into the REPL or load using load-"
+"file is automatically compiled to JVM bytecode on the fly. Compiling ahead-"
+"of-time is also possible, but not required."
+msgstr ""

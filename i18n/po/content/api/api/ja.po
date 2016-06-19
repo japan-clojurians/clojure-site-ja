@@ -1,0 +1,357 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title ==
+#: en/content/api/api.adoc:1 en/content/reference/documentation.adoc:38
+#, no-wrap
+msgid "API Documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:4 en/content/community/events.adoc:4
+msgid "Rich Hickey 2016-01-15"
+msgstr ""
+
+#. type: Title ==
+#: en/content/api/api.adoc:10
+#, no-wrap
+msgid "Clojure API"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:13
+msgid "http://clojure.github.io/clojure/[Clojure API]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:14
+msgid ""
+"http://clojure.github.io/clojure/javadoc/[Clojure Java API] - for calling "
+"from Java into Clojure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:15
+msgid "<<cheatsheet#,Clojure Cheatsheet>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/api/api.adoc:16
+#, no-wrap
+msgid "ClojureScript API"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:19
+msgid "http://cljs.info/cheatsheet/[ClojureScript Cheatsheet]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/api/api.adoc:20
+#, no-wrap
+msgid "Clojure Contrib Libraries"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:23
+msgid ""
+"http://clojure.github.io/algo.generic/[algo.generic] Generic versions of "
+"common functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:24
+msgid ""
+"http://clojure.github.io/algo.graph/[algo.graph] Graph theory algorithms"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:25
+msgid ""
+"http://clojure.github.io/algo.monads/[algo.monads] Monad macros and "
+"Definitions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:26
+msgid ""
+"http://clojure.github.io/core.async/[core.async] Facilities for asynchronous "
+"programming and communication"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:27
+msgid ""
+"http://clojure.github.io/core.cache/[core.cache] A caching library "
+"implementing various cache strategies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:28
+msgid ""
+"http://clojure.github.io/core.contracts/[core.contracts] Contracts "
+"programming in Clojure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:29
+msgid ""
+"http://clojure.github.io/core.incubator/[core.incubator] Functions proposed "
+"for core inclusion"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:30
+msgid ""
+"http://clojure.github.io/core.logic/[core.logic] A logic programming library "
+"based on miniKanren"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:31
+msgid ""
+"http://clojure.github.io/core.match/[core.match] Pattern match and predicate "
+"dispatch"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:32
+msgid ""
+"http://clojure.github.io/core.memoize/[core.memoize] A manipulable, "
+"pluggable, memoization framework"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:33
+msgid ""
+"http://clojure.github.io/core.rrb-vector/[core.rrb-vector] RRB-Tree-based "
+"vectors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:34
+msgid "http://clojure.github.io/core.typed/[core.typed] Gradual typing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:35
+msgid "http://clojure.github.io/core.unify/[core.unify] Unification library"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:36
+msgid "http://clojure.github.io/data.avl/[data.avl] AVL trees"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:37
+msgid ""
+"http://clojure.github.io/data.codec/[data.codec] Native codec implementations"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:38
+msgid ""
+"http://clojure.github.io/data.csv/[data.csv] Reading and writing CSV files"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:39
+msgid ""
+"http://clojure.github.io/data.finger-tree/[data.finger-tree] Finger trees"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:40
+msgid ""
+"http://clojure.github.io/data.fressian/[data.fressian] Extensible binary "
+"Data Notation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:41
+msgid ""
+"http://clojure.github.io/data.generators/[data.generators] Random data "
+"generators"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:42
+msgid "http://clojure.github.io/data.json/[data.json] JSON encoding / decoding"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:43
+msgid ""
+"http://clojure.github.io/data.priority-map/[data.priority-map] Priority maps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:44
+msgid "http://clojure.github.io/data.xml/[data.xml] Lazy XML parsing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:45
+msgid "http://clojure.github.io/data.zip/[data.zip] Manipulating zippers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:46
+msgid ""
+"http://clojure.github.io/java.classpath/[java.classpath] Classpath utilities"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:47
+msgid "http://clojure.github.io/java.data/[java.data] Work with Java Beans"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:48
+msgid "http://clojure.github.io/java.jdbc/[java.jdbc] JDBC-based SQL interface"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:49
+msgid "http://clojure.github.io/java.jmx/[java.jmx] JMX interface"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:50
+msgid ""
+"http://clojure.github.io/math.combinatorics/[math.combinatorics] Lazy "
+"sequences for common combinatorial functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:51
+msgid ""
+"http://clojure.github.io/math.numeric-tower/[math.numeric-tower] Math "
+"functions and numeric tower"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:52
+msgid ""
+"http://clojure.github.io/test.generative/[test.generative] Test data "
+"generation and execution harness"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:53
+msgid ""
+"http://clojure.github.io/tools.analyzer/[tools.analyzer] Analyzer framework "
+"for Clojure code"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:54
+msgid ""
+"http://clojure.github.io/tools.analyzer.js/[tools.analyzer.js] JavaScript-"
+"specific passes for tools.analyzer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:55
+msgid ""
+"http://clojure.github.io/tools.analyzer.jvm/[tools.analyzer.jvm] JVM-"
+"specific passes for tools.analyzer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:56
+msgid ""
+"http://clojure.github.io/tools.cli/[tools.cli] Command-line argument "
+"processor"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:57
+msgid ""
+"http://clojure.github.io/tools.emitter.jvm/[tools.emitter.jvm] JVM bytecode "
+"generator"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:58
+msgid "http://clojure.github.io/tools.logging/[tools.logging] Logging tools"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:59
+msgid ""
+"http://clojure.github.io/tools.macro/[tools.macro] Tools for macro writers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:60
+msgid ""
+"http://clojure.github.io/tools.namespace/[tools.namespace] Tools for working "
+"with namespace declarations"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:61
+msgid "http://clojure.github.io/tools.nrepl/[tools.nrepl] Network REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:62
+msgid "http://clojure.github.io/tools.reader/[tools.reader] Clojure reader"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:63
+msgid "http://clojure.github.io/tools.trace/[tools.trace] Execution tracing"
+msgstr ""
+
+#. type: Title ==
+#: en/content/api/api.adoc:64
+#, no-wrap
+msgid "Other resources"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:67 en/content/community/resources.adoc:39
+msgid ""
+"http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + "
+"examples"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:68 en/content/community/resources.adoc:40
+msgid ""
+"http://clojuredocs.org[ClojureDocs] - community provided example repository"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:69 en/content/community/resources.adoc:41
+msgid "http://crossclj.info/[CrossClj] - library cross-reference"
+msgstr ""
+
+#. type: Title ==
+#: en/content/api/api.adoc:70
+#, no-wrap
+msgid "Deprecated (pre Clojure 1.3)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:72
+msgid "http://clojure.github.io/clojure-contrib/[Clojure Contrib API]"
+msgstr ""

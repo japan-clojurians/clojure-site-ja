@@ -1,0 +1,305 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/refs.adoc:73
+#: en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65
+#: en/content/reference/data_structures.adoc:70
+#: en/content/reference/data_structures.adoc:90
+#: en/content/reference/data_structures.adoc:98
+#: en/content/reference/data_structures.adoc:107
+#: en/content/reference/data_structures.adoc:116
+#: en/content/reference/data_structures.adoc:162
+#: en/content/reference/data_structures.adoc:174
+#: en/content/reference/data_structures.adoc:188
+#: en/content/reference/data_structures.adoc:223
+#: en/content/reference/agents.adoc:64
+#: en/content/reference/repl_and_main.adoc:159
+#: en/content/reference/vars.adoc:85 en/content/reference/namespaces.adoc:24
+#: en/content/reference/libs.adoc:64
+#, no-wrap
+msgid "Related functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/java_interop.adoc:144 en/content/reference/vars.adoc:65
+msgid "Assignment special form."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/java_interop.adoc:150 en/content/reference/vars.adoc:69
+msgid ""
+"Note - _you cannot assign to function params or local bindings. Only Java "
+"fields, Vars, Refs and Agents are mutable in Clojure_."
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/vars.adoc:1
+#, no-wrap
+msgid "Vars and the Global Environment"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:4 en/content/guides/getting_started.adoc:4
+msgid "Rich Hickey 2016-01-14"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:18
+msgid ""
+"Clojure is a practical language that recognizes the occasional need to "
+"maintain a persistent reference to a changing value and provides 4 distinct "
+"mechanisms for doing so in a controlled manner - Vars, <<refs#,Refs>>, "
+"<<agents#,Agents>> and <<atoms#,Atoms>>. Vars provide a mechanism to refer "
+"to a mutable storage location that can be dynamically rebound (to a new "
+"storage location) on a per-thread basis. Every Var can (but needn't) have a "
+"root binding, which is a binding that is shared by all threads that do not "
+"have a per-thread binding. Thus, the value of a Var is the value of its per-"
+"thread binding, or, if it is not bound in the thread requesting the value, "
+"the value of the root binding, if any."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:20
+msgid ""
+"The special form _**def**_ creates (and <<vars#Interning,interns>>) a Var. "
+"If the Var did not already exist and no initial value is supplied, the var "
+"is unbound:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:27
+#, no-wrap
+msgid ""
+"user=> (def x)\n"
+".'user/x\n"
+"user=> x\n"
+"java.lang.IllegalStateException: Var user/x is unbound.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:30
+msgid ""
+"Supplying an initial value binds the root (even if it was already bound)."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:35
+#, no-wrap
+msgid ""
+"user=> (def x 1)\n"
+".'user/x\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:38
+#, no-wrap
+msgid ""
+"user=> x\n"
+"1\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:41
+msgid ""
+"By default Vars are static, but Vars can be marked as dynamic to allow per-"
+"thread bindings via the macro http://clojure.github.com/clojure/clojure.core-"
+"api.html#clojure.core/binding[binding]. Within each thread they obey a stack "
+"discipline:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:48
+#, no-wrap
+msgid ""
+"user=> (def ^:dynamic x 1)\n"
+"user=> (def ^:dynamic y 1)\n"
+"user=> (+ x y)\n"
+"2\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:52
+#, no-wrap
+msgid ""
+"user=> (binding [x 2 y 3]\n"
+"         (+ x y))\n"
+"5\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:55
+#, no-wrap
+msgid ""
+"user=> (+ x y)\n"
+"2\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:58
+msgid ""
+"Bindings created with _**binding**_ cannot be seen by any other thread. "
+"Likewise, bindings created with _**binding**_ can be assigned to, which "
+"provides a means for a nested context to communicate with code before it on "
+"the call stack. This capability is opt-in only by setting a metadata tag: "
+"_**dynamic**_ to true as in the code block above. There are scenarios that "
+"one might wish to redefine static Vars within a context and Clojure (since "
+"version 1.3) provides the functions http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/with-redefs[with-redefs] and http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn[with-"
+"redefs-fn] for such purposes."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:60
+msgid ""
+"Functions defined with http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/defn[defn] are stored in Vars, allowing for the re-"
+"definition of functions in a running program. This also enables many of the "
+"possibilities of aspect- or context-oriented programming. For instance, you "
+"could wrap a function with logging behavior only in certain call contexts or "
+"threads."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/vars.adoc:62
+#, no-wrap
+msgid "(*set!* var-symbol expr)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:67
+msgid ""
+"When the first operand is a symbol, it must resolve to a global var. The "
+"value of the var's current thread binding is set to the value of expr. "
+"Currently, it is an error to attempt to set the root binding of a var using "
+"set!, i.e. var assignments are thread-local. In all cases the value of expr "
+"is returned."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:71
+msgid ""
+"Using <<java_interop#set,set>> for Java fields is documented in "
+"<<java_interop#set,Java Interop>>."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/vars.adoc:73
+#, no-wrap
+msgid "Interning"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:76
+msgid ""
+"The Namespace system maintains global maps of symbols to Var objects _(see "
+"<<namespaces#,Namespaces>>)_. If a _**def**_ expression does not find an "
+"interned entry in the current namespace for the symbol being def-ed, it "
+"creates one, otherwise it uses the existing Var. This find-or-create process "
+"is called interning. This means that, unless they have been unmap-ed, Var "
+"objects are stable references and need not be looked up every time. It also "
+"means that namespaces constitute a global environment in which, as described "
+"in <<evaluation#,Evaluation>>, the compiler attempts to resolve all free "
+"symbols as Vars."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:78
+msgid ""
+"The <<special_forms#var,var>> special form or the `pass:[#']` reader macro "
+"_(see <<reader#,Reader>>)_ can be used to get an interned Var object instead "
+"of its current value."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/vars.adoc:80
+#, no-wrap
+msgid "Non-interned Vars"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:83
+msgid ""
+"It is possible to create vars that are not interned by using http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars[with-"
+"local-vars]. These vars will not be found during free symbol resolution, and "
+"their values have to be accessed manually. But they can serve as useful "
+"thread-local mutable cells."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:92
+msgid ""
+"Variants of _**def**_: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/defn[defn] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/defn-[defn-] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/definline[definline] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/defmacro[defmacro] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmulti[defmulti] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/defonce[defonce] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/defstruct[defstruct] Working with interned Vars: "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"declare[declare] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/intern[intern] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/binding[binding] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/find-var[find-var] <<special_forms#var#,"
+"var>> Working with Var objects: http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/with-local-vars[with-local-vars] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/var-get[var-get] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-set[var-"
+"set] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"alter-var-root[alter-var-root] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/var?[var?] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/with-redefs[with-redefs] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/with-redefs-fn[with-redefs-fn] "
+"Var validators: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/set-validator[set-validator] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/get-validator[get-validator] "
+"Common Var metadata: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/doc[doc] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/find-doc[find-doc] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/test[test]"
+msgstr ""

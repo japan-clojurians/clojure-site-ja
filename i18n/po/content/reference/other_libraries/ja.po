@@ -1,0 +1,398 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/other_libraries.adoc:1
+#, no-wrap
+msgid "Other Included Libraries"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:17
+#, no-wrap
+msgid "Other included Libraries"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:19
+#, no-wrap
+msgid "Java Utilities (clojure.java.*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:23
+#, no-wrap
+msgid ""
+"**http://clojure.github.io/clojure/clojure.java.io-api.html[clojure.java.io]**\n"
+"Contains polymorphic I/O utility functions for Clojure backed by Java classes.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:25
+#, no-wrap
+msgid "**http://clojure.github.io/clojure/clojure.java.javadoc-api.html[clojure.java.javadocs]**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:27
+msgid ""
+"Provides the function http://clojure.github.io/clojure/clojure.java.javadoc-"
+"api.html#clojure.java.javadoc/javadoc[javadoc] that attempts to display the "
+"appropriate Javadocs for a class or instance class."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:29
+#, no-wrap
+msgid "**http://clojure.github.io/clojure/clojure.java.shell-api.html[clojure.java.shell]**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:31
+msgid ""
+"Provides a http://clojure.github.io/clojure/clojure.java.shell-api."
+"html#clojure.java.shell/sh[sh] function that facilitates launching and "
+"managing subprocesses. See the function documentation for details on its "
+"expected arguments."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:32
+#, no-wrap
+msgid "Parallel Processing (DEPRECATED)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:35
+msgid ""
+"The parallel library (namespace _**parallel**_, in parallel.clj) wraps the "
+"http://gee.cs.oswego.edu/dl/concurrency-interest/index.html[ForkJoin "
+"library]. This lib is now deprecated."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:37
+msgid ""
+"You'll need `jsr166y.jar` in your classpath in order to use this library. "
+"The basic idea is that Clojure collections, and most efficiently vectors, "
+"can be turned into parallel arrays for use by this library with the function "
+"par, although most of the functions take collections and will call _**par**_ "
+"if needed, so normally you will only need to call par explicitly in order to "
+"attach bound/filter/map ops."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:39
+msgid ""
+"Parallel arrays support the attachment of bounds, filters and mapping "
+"functions prior to realization/calculation, which happens as the result of "
+"any of several operations on the array (pvec/psort/pfilter-nils/pfilter-"
+"dupes). Rather than perform composite operations in steps, as would normally "
+"be done with sequences, maps and filters are instead attached and thus "
+"composed by providing ops to _**par**_. Note that there is an order "
+"sensitivity to the attachments - bounds precede filters precede mappings. "
+"All operations then happen in parallel, using multiple threads and a "
+"sophisticated work-stealing system supported by fork-join, either when the "
+"array is realized, or to perform aggregate operations like preduce/pmin/pmax "
+"etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:41
+msgid "A parallel array can be realized into a Clojure vector using pvec"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:46
+#, no-wrap
+msgid ""
+"(load-file \"src/parallel.clj\")\n"
+"(refer 'parallel)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:48
+#, no-wrap
+msgid "(def f (vec (take 20 (repeatedly #(rand-int 20)))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:51
+#, no-wrap
+msgid ""
+"f\n"
+"-> [11 7 10 9 4 1 4 18 15 13 10 7 0 9 16 6 19 11 14 7]\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:53
+#, no-wrap
+msgid ";return value/index pairs of all entries < their index, in parallel\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:56
+#, no-wrap
+msgid ""
+"(pvec (par f :filter-index < :map-index vector))\n"
+"-> [[1 5] [4 6] [7 11] [0 12] [9 13] [6 15] [11 17] [14 18] [7 19]]\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:58
+#, no-wrap
+msgid "Reflection Utilities (http://clojure.github.io/clojure/clojure.reflect-api.html[clojure.reflect])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:61
+msgid ""
+"Provides functions and protocols useful for gathering and building host type "
+"reflection information as Clojure data."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:62
+#, no-wrap
+msgid "REPL Utilities (http://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:65
+msgid "Utilities meant to be used interactively at the REPL."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:66
+#, no-wrap
+msgid "Sets and Relational Algebra (http://clojure.github.io/clojure/clojure.set-api.html[clojure.set])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:69
+msgid ""
+"Functions useful for manipulating, building, and querying mathematical sets "
+"using relational algebra."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:70
+#, no-wrap
+msgid "String Handling (http://clojure.github.io/clojure/clojure.string-api.html[clojure.string])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:73
+msgid "Functions for manipulating strings."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:74
+#, no-wrap
+msgid "Unit Testing (http://clojure.github.io/clojure/clojure.test-api.html[clojure.test])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:77
+msgid "A Clojure unit testing framework."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:78
+#, no-wrap
+msgid "Walking Data Structures (http://clojure.github.io/clojure/clojure.walk-api.html[clojure.walk])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:81
+msgid "Utilities for traversing and manipulating nested data structures."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:82
+#, no-wrap
+msgid "XML (http://clojure.github.io/clojure/clojure.xml-api.html[clojure.xml])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:85
+msgid "Utilities for reading and writing XML data."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/other_libraries.adoc:86
+#, no-wrap
+msgid "Zippers - Functional Tree Editing (http://clojure.github.io/clojure/clojure.zip-api.html[clojure.zip])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:89
+msgid ""
+"Clojure includes purely functional, generic tree walking and editing, using "
+"a technique called a zipper (in namespace _**zip**_) . For background, see "
+"the http://www.google.com/search?q=huet%20functional%20zipper[paper by "
+"Huet]. A zipper is a data structure representing a location in a "
+"hierarchical data structure, and the path it took to get there. It provides "
+"down/up/left/right navigation, and localized functional 'editing', insertion "
+"and removal of nodes. With zippers you can write code that looks like an "
+"imperative, destructive walk through a tree, call http://clojure.github.io/"
+"clojure/clojure.zip-api.html#clojure.zip/root[root] when you are done and "
+"get a new tree reflecting all the changes, when in fact nothing at all is "
+"mutated - it's all thread safe and shareable. The http://clojure.github.io/"
+"clojure/clojure.zip-api.html#clojure.zip/next[next] function does a depth-"
+"first walk, making for easy to understand loops:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:94
+#, no-wrap
+msgid ""
+"(def data '[[a * b] + [c * d]])\n"
+"(def dz (zip/vector-zip data))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:98
+#, no-wrap
+msgid ""
+";find the second *\n"
+"(-> dz zip/down zip/right zip/right zip/down zip/right zip/node)\n"
+"-> *\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:102
+#, no-wrap
+msgid ""
+";'remove' the first 2 terms\n"
+"(-> dz zip/next zip/remove zip/next zip/remove zip/root)\n"
+"-> <<c * d#,c * d>>\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:113
+#, no-wrap
+msgid ""
+";'replace' * with /\n"
+"(loop [loc dz]\n"
+"  (if (zip/end? loc)\n"
+"    (zip/root loc)\n"
+"    (recur\n"
+"     (zip/next\n"
+"      (if (= (zip/node loc) '*)\n"
+"        (zip/replace loc '/)\n"
+"        loc)))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:115
+#, no-wrap
+msgid "-> [[a / b] + [c / d]]\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:126
+#, no-wrap
+msgid ""
+";'remove' *\n"
+"(loop [loc dz]\n"
+"  (if (zip/end? loc)\n"
+"    (zip/root loc)\n"
+"    (recur\n"
+"     (zip/next\n"
+"      (if (= (zip/node loc) '*)\n"
+"        (zip/remove loc)\n"
+"        loc)))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:128
+#, no-wrap
+msgid "-> [[a b] + [c d]]\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/other_libraries.adoc:133
+#, no-wrap
+msgid ""
+";original is intact\n"
+"(zip/root dz)\n"
+"-> [[a * b] + [c * d]]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/other_libraries.adoc:135
+msgid ""
+"Zipper constructors are provided for nested seqs, nested vectors, and the "
+"xml elements generated by _**xml/parse**_. All it takes is a 4-5 line "
+"function to support other data structures."
+msgstr ""

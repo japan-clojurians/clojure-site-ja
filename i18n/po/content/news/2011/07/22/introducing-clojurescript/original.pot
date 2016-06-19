@@ -1,0 +1,384 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:39
+#, no-wrap
+msgid "Atoms"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:36
+#, no-wrap
+msgid "Metadata"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/namespaces.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
+#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
+#, no-wrap
+msgid "Namespaces"
+msgstr ""
+
+#. type: Title =
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:1
+#, no-wrap
+msgid "Introducing ClojureScript "
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:4
+msgid "Stuart Sierra 2011-07-22"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:9
+msgid ""
+"The Clojure team is proud to introduce an important addition to the Clojure "
+"language ecosystem. https://github.com/clojure/clojurescript[ClojureScript] "
+"is a new compiler for Clojure that targets JavaScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:11
+msgid ""
+"A https://www.youtube.com/watch?v=tVooR-dF_Ag[video recording of the "
+"ClojureScript announcement] is available, along with http://cloud.github.com/"
+"downloads/clojure/clojurescript/clojurescript%20slides.pdf[slides (PDF) from "
+"the presentation]."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:12
+#, no-wrap
+msgid "Why JavaScript"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:15
+msgid ""
+"The Clojure language was first <<xref/../../../../../about/"
+"rationale#Rationale-Languages%20and%20Platforms,built on the Java Virtual "
+"Machine>> because of its reach and power on server platforms. For non-server "
+"platforms, nothing has greater reach than JavaScript. It's been called the "
+"http://www.hanselman.com/blog/"
+"JavaScriptisAssemblyLanguagefortheWebPart2MadnessorjustInsanity."
+"aspx[assembly language of the Web]. But beyond Web browsers, JavaScript can "
+"be found in http://arstechnica.com/apple/news/2011/06/ios-5-brings-nitro-"
+"speed-to-home-screen-web-apps.ars[mobile devices], http://developer.boxee.tv/"
+"JavaScript_API#Preface[set-top boxes], and http://wiki.services.openoffice."
+"org/wiki/Documentation/DevGuide/Scripting/Scripting_Framework[desktop "
+"applications]. JavaScript has even made inroads on the server in http://"
+"couchdb.apache.org/[databases] and http://nodejs.org/[Web servers]. As a "
+"result of this reach, a lot of work has gone into making JavaScript engines "
+"performant, including JIT-compilation into native code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:17
+msgid ""
+"But JavaScript's weakness remains the language itself. Although it has some "
+"powerful features such as first-class functions, JavaScript is noted more "
+"for its flaws than for its strengths. It was never designed to be a language "
+"for large applications."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:19
+msgid ""
+"What if we had a modern, robust, powerful language that could reach to all "
+"the places that JavaScript does? This is the goal of ClojureScript."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:20
+#, no-wrap
+msgid "Where We Are"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:23
+msgid ""
+"Try it out! Follow the Quick Start instructions on the https://github.com/"
+"clojure/clojurescript/wiki[ClojureScript wiki]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:25
+msgid "Here's a partial list of what has been implemented so far:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:27
+msgid "Protocols and `deftype`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:29
+msgid "Functions: `fn`, `defn`, multiple-arities, variadics"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30
+#: en/content/about/spec.adoc:99
+msgid "Destructuring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:31
+msgid "Higher-order functions: `map`, `reduce`, `filter`, ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:32
+msgid "Data structures: lists, maps, vectors, sets"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:33
+msgid "Data manipulation functions: `conj`, `assoc`, `update-in`,..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:34
+msgid "Sequences and sequence functions: `first`, `rest`, ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:35
+msgid "Macros: `assert`, `cond`, `doto`, `loop`, `+->+` and `+->>+`, ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:37
+msgid "Reader in ClojureScript (think JSON but better)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:38
+msgid "Regular expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:40
+msgid "Core libraries: `clojure.string`, `clojure.set`, `clojure.zip`, ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:41
+msgid "REPL using JDK-embedded JavaScript (Rhino)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:43
+msgid ""
+"ClojureScript is currently in Alpha status. The compiler and core libraries "
+"are usable for developing applications, but expect to find bugs and missing "
+"pieces of functionality. ClojureScript aims to be a complete implementation "
+"of the Clojure language, but some parts aren't finished yet."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:45
+msgid ""
+"Some parts of the Clojure language have no direct analog in ClojureScript, "
+"in particular the concurrency primitives, since JavaScript is single-"
+"threaded. There may also be edge cases where the requirements of the "
+"JavaScript environment force ClojureScript to have slightly different "
+"semantics from Clojure. We will document these differences as we find them."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:47
+msgid ""
+"Obviously, any code making interop calls to Java, as most existing Clojure "
+"libraries do, will not work in ClojureScript. Code written in pure Clojure "
+"will **probably** work in ClojureScript with minor adjustments. For example, "
+"https://github.com/clojure/clojure/blob/master/src/clj/clojure/zip."
+"clj[clojure.zip in Clojure] and https://github.com/clojure/clojurescript/"
+"blob/master/src/cljs/clojure/zip.cljs[clojure.zip in ClojureScript] are "
+"nearly identical. With a little effort, purely algorithmic code can be made "
+"portable between implementations. However, trying to abstract over all the "
+"differences among host platforms has never been a goal of Clojure, nor will "
+"it be a goal of ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:49
+msgid ""
+"We have a http://dev.clojure.org/jira/browse/CLJS[ClojureScript JIRA "
+"instance] set up to track bugs. As with Clojure itself, submitting patches "
+"requires signing the <<xref/../../../../../community/contributing#,Clojure "
+"Contributor Agreement>>. We can only accept patches through JIRA, not GitHub "
+"pull requests."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:50
+#, no-wrap
+msgid "The Relationship to Google Closure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:53
+msgid ""
+"Google has led the way in developing rich client-side applications in "
+"JavaScript. Because Google needs the Web to succeed as an application-"
+"delivery platform, they have released some of their JavaScript tools as open "
+"source under the name **Closure**. The homophonic name clash is unfortunate, "
+"but not something we can do anything about."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:55
+msgid ""
+"http://code.google.com/closure/[Google Closure] is a suite of tools for "
+"delivering complex JavaScript applications to memory-constrained devices "
+"over slow connections. It consists of three parts: a large library of "
+"JavaScript classes and functions, a client-side templating system, and an "
+"optimizing JavaScript compiler. These parts are designed to work in "
+"symbiosis."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:57
+msgid ""
+"The Google Closure compiler is a sophisticated JavaScript-to-JavaScript "
+"compiler that performs whole-program analysis to inline and rearrange code "
+"for optimal performance on modern JavaScript runtimes. Most importantly, it "
+"eliminates unused or unreachable code. The Google Closure compiler makes it "
+"possible to have a large library of JavaScript functions written in a "
+"straightforward manner without concern for code size, and to deliver "
+"minified versions of only the code your application needs. However, taking "
+"full advantage of the Google Closure compiler requires adherence to strict "
+"conventions for JavaScript source code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:59
+msgid ""
+"The ClojureScript compiler emits JavaScript which follows Google Closure's "
+"code conventions, and then invokes the Google Closure compiler to generate "
+"compact, optimized JavaScript for delivery to clients. ClojureScript also "
+"makes use of the Google Closure library for capabilities such as event "
+"handling, DOM manipulation, and user interface widgets."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:61
+msgid ""
+"It is possible to use ClojureScript with JavaScript libraries other than "
+"Google Closure, but those libraries typically do not follow the conventions "
+"of the Google Closure compiler and therefore will not be able to take full "
+"advantage of its optimizations."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:62
+#, no-wrap
+msgid "What ClojureScript is Not"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:65
+#, no-wrap
+msgid "**ClojureScript is not Clojure implemented in JavaScript.**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:67
+msgid ""
+"The Clojure community has tried various ways of generating JavaScript from "
+"Clojure in the past. One https://github.com/clojure/clojure-contrib/tree/"
+"master/clojurescript[early attempt by Chris Houser], also called "
+"ClojureScript, used JavaScript as a implementation language for the core "
+"data structures and compiler, the way the current version of Clojure uses "
+"Java."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:69
+msgid ""
+"The new ClojureScript does not take this approach. Instead, ClojureScript is "
+"written entirely in **Clojure**, as a compiler which emits JavaScript and a "
+"large library of functions. Therefore, ClojureScript does not aim to provide "
+"a complete development environment in JavaScript. There is no `eval` and no "
+"runtime access to the ClojureScript compiler from within ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:71
+#, no-wrap
+msgid "**ClojureScript is not JavaScript with Clojure syntax.**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:73
+msgid ""
+"Another approach sometimes used to overcome JavaScript's syntactic "
+"shortcomings is to layer another syntax on top of it while keeping all of "
+"the JavaScript language semantics. http://common-lisp.net/project/"
+"parenscript/[Parenscript] and http://jashkenas.github.com/coffee-script/"
+"[CoffeeScript] are examples of this approach."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:75
+msgid ""
+"ClojureScript has the same language semantics as Clojure, not JavaScript. "
+"The ClojureScript compiler emits JavaScript, similar to the way the Clojure "
+"compiler emits Java bytecode."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:76
+#, no-wrap
+msgid "How We Got Here"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:79
+msgid ""
+"ClojureScript was initially developed by Rich Hickey, creator of Clojure. "
+"Members of the Clojure/core team, along with others invited from the Clojure "
+"community, have participated in the development of the compiler."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:80
+#, no-wrap
+msgid "Where to Learn More"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:83
+msgid "https://github.com/clojure/clojurescript/wiki[ClojureScript Wiki]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:84
+msgid "http://groups.google.com/group/clojure[Clojure Mailing List]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:84
+msgid "\\#clojure IRC on http://freenode.net/[Freenode]"
+msgstr ""

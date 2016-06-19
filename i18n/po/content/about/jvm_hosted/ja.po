@@ -1,0 +1,108 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Title =
+#: en/content/about/jvm_hosted.adoc:1
+#, no-wrap
+msgid "Hosted on the JVM"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/jvm_hosted.adoc:17
+msgid ""
+"Clojure is designed to be a hosted language, sharing the JVM type system, "
+"GC, threads etc. It compiles all functions to JVM bytecode. Clojure is a "
+"great Java library consumer, offering the dot-target-member notation for "
+"calls to Java. Class names can be referenced in full, or as non-qualified "
+"names after being imported. Clojure supports the dynamic implementation of "
+"Java interfaces and classes using http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/reify[reify] and http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/proxy[proxy]:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/jvm_hosted.adoc:19
+msgid "Here's a small Swing app:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:47
+#, no-wrap
+msgid ""
+"(import '(javax.swing JFrame JLabel JTextField JButton)\n"
+"        '(java.awt.event ActionListener)\n"
+"        '(java.awt GridLayout))\n"
+"(defn celsius []\n"
+"  (let [frame (JFrame. \"Celsius Converter\")\n"
+"        temp-text (JTextField.)\n"
+"        celsius-label (JLabel. \"Celsius\")\n"
+"        convert-button (JButton. \"Convert\")\n"
+"        fahrenheit-label (JLabel. \"Fahrenheit\")]\n"
+"    (.addActionListener\n"
+"     convert-button\n"
+"     (reify ActionListener\n"
+"            (actionPerformed\n"
+"             [_ evt]\n"
+"             (let [c (Double/parseDouble (.getText temp-text))]\n"
+"               (.setText fahrenheit-label\n"
+"                         (str (+ 32 (* 1.8 c)) \" Fahrenheit\"))))))\n"
+"    (doto frame\n"
+"      (.setLayout (GridLayout. 2 2 3 3))\n"
+"      (.add temp-text)\n"
+"      (.add celsius-label)\n"
+"      (.add convert-button)\n"
+"      (.add fahrenheit-label)\n"
+"      (.setSize 300 80)\n"
+"      (.setVisible true))))\n"
+"(celsius)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/jvm_hosted.adoc:48
+msgid "<<image:celsius.jpeg#,image:celsius.jpeg>>"
+msgstr ""

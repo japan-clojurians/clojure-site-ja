@@ -1,0 +1,673 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/compilation.adoc:1
+#, no-wrap
+msgid "Ahead-of-time Compilation and Class Generation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:18
+msgid ""
+"Clojure compiles all code you load on-the-fly into JVM bytecode, but "
+"sometimes it is advantageous to compile ahead-of-time (AOT). Some reasons to "
+"use AOT compilation are:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:20
+msgid "To deliver your application without source"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:21
+msgid "To speed up application startup"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:22
+msgid "To generate named classes for use by Java"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:23
+msgid ""
+"To create an application that does not need runtime bytecode generation and "
+"custom classloaders"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:25
+msgid ""
+"The Clojure compilation model preserves as much as possible the dynamic "
+"nature of Clojure, in spite of the code-reloading limitations of Java."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:27
+msgid "Source and classfile pathing follows Java classpath conventions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:28
+msgid "The target of compile is a namespace"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:29
+msgid "Each file, fn and gen-class will produce a .class file"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:30
+msgid ""
+"Each file generates a loader class of the same name with \"__init\" appended."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:32
+msgid ""
+"The static initializer for a loader class produces the same effects as does "
+"loading its source file ** You generally shouldn't need to use these classes "
+"directly, as use, require and load will choose between them and more recent "
+"source"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:33
+msgid ""
+"The loader class is generated for each file referenced when a namespace is "
+"compiled, when its loader .class file is older than its source."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:34
+msgid ""
+"A stand-alone http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/gen-class[gen-class] facility is provided to create named classes for "
+"direct use as Java classes, with facilities for:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:35
+msgid "Naming the generated class"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:36
+msgid "Selecting the superclass"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:37
+msgid "Specifying any implemented interfaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:38
+msgid "Specifying constructor signatures"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:39
+msgid "Specifying state"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:40
+msgid "Declaring additional methods"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:41
+msgid "Generating static factory methods"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:42
+msgid "Generating main"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:43
+msgid "Controlling the mapping to an implementing namespace"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:45
+msgid ""
+"Exposing inherited protected members ** Generating more than one named class "
+"from a single file, with implementations in one or more namespaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:46
+msgid ""
+"An optional http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/gen-class[:gen-class] directive can be used in the http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/ns[ns] declaration to "
+"generate a named class corresponding to a namespace. (:gen-class ...), when "
+"supplied, defaults to :name corresponding to the ns name, :main true, :impl-"
+"ns same as ns, and :init-impl-ns true. All options of gen-class are "
+"supported."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:47
+msgid "gen-class and the :gen-class directive are ignored when not compiling."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:48
+msgid ""
+"A stand-alone http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/gen-interface[gen-interface] facility is provided for generating named "
+"interface classes for direct use as Java interfaces, with facilities for:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:49
+msgid "Naming the generated interface"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:51
+msgid ""
+"Specifying any superintefaces ** Declaring the signatures of interface "
+"methods"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/compilation.adoc:52
+#, no-wrap
+msgid "Compiling"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:54
+msgid ""
+"To compile a lib, use the http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/compile[compile] function, and supply the namespace name "
+"as a symbol. For some namespace my.domain.lib, defined in my/domain/lib.clj, "
+"in the classpath, the following should occur:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:56
+msgid ""
+"A loader classfile will produced in ``my/domain/lib__init.class``, under "
+"*compile-path*, which must be in the classpath"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:57
+msgid ""
+"A set of classfiles will be produced, one per fn in the namespace, with "
+"names such as ``my/domain/lib$fnname__1234.class``"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:59
+msgid ""
+"For each gen-class: ** A stub classfile will be produced with the specified "
+"name"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/compilation.adoc:60
+#, no-wrap
+msgid "Compiler options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:63
+msgid ""
+"The Clojure compiler can be controlled via the use of several compiler "
+"flags. At runtime these are stored in the dynamic var `pass:[clojure.core/"
+"*compiler-options*]`, which is a map with the following optional keyword "
+"keys:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:65
+msgid "`:disable-locals-clearing` (boolean)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:66
+msgid "`:elide-meta` (vector of keywords)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:67
+msgid "`:direct-linking` (boolean)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:69
+msgid ""
+"These compiler options can be changed in a dynamic binding around a call to "
+"the `compile` function to change the compiler behavior."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:71
+msgid ""
+"Alternately, compiler options can also be set via the Java system properties "
+"at startup:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:73
+msgid "`-Dclojure.compiler.disable-locals-clearing=true`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:74
+msgid "`-Dclojure.compiler.elide-meta=\"[:doc :file :line :added]\"`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:75
+msgid "`-Dclojure.compiler.direct-linking=true`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:77
+msgid "See below for more info on each of these options."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/compilation.adoc:78
+#, no-wrap
+msgid "Locals clearing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:81
+msgid ""
+"By default, the Clojure compiler produces code that eagerly clears GC "
+"references to local bindings. However, when using a debugger locals will "
+"appear as nulls, which makes debugging difficult. Setting `disable-locals-"
+"clearing=true` will prevent locals clearing. It is not recommended to "
+"disable locals clearing for production compilation."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/compilation.adoc:82
+#, no-wrap
+msgid "Elide meta"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:85
+msgid ""
+"Var meta (docstrings, file and line info, etc) will be compiled into strings "
+"in the constant pool of the compiled classes. To descrease class size and "
+"make classloading faster, meta can be elided. This option takes a vector of "
+"meta keywords that should be removed - some common ones include `:doc`, `:"
+"file`, `:line`, and `:added`. Note that eliding meta may make certain "
+"features inoperable (for example, `doc` cannot return docstrings if they "
+"have been elided)."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/compilation.adoc:87
+#, no-wrap
+msgid "Direct linking"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:90
+msgid ""
+"Normally, invoking a function will cause a var to be dereferenced to find "
+"the function instance implementing it, then invoking that function. This "
+"indirection via the var is one of the ways that Clojure provides a dynamic "
+"runtime environment. However, it has long been observed that the majority of "
+"function invocations in a production environment are never redefined in this "
+"way, incurring unnecessary redirection."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:92
+msgid ""
+"_Direct linking_ can be used to replace this indirection with a direct "
+"static invocation of the function instead. This will result in faster var "
+"invocation. Additionally, the compiler can remove unused vars from class "
+"initialization and direct linking will make many more vars unused. Typically "
+"this results in smaller class sizes and faster startup times."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:94
+msgid ""
+"One consequence of direct linking is that var redefinitions will not be seen "
+"by code that has been compiled with direct linking (because direct linking "
+"avoids dereferencing the var). Vars marked as `^:dynamic` will never be "
+"direct linked. If you wish to mark a var as supporting redefinition (but not "
+"dynamic), mark it with `^:redef` to avoid direct linking."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:96
+msgid ""
+"As of Clojure 1.8, the Clojure core library itself is compiled with direct "
+"linking."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/compilation.adoc:97
+#, no-wrap
+msgid "Runtime"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:99
+msgid ""
+"Classes generated by Clojure are highly dynamic. In particular, note that no "
+"method bodies or other implementation details are specified in gen-class - "
+"it specifies only a signature, and the class that it generates is only a "
+"stub. This stub class defers all implementation to functions defined in the "
+"implementing namespace. At runtime, a call to some method foo of the "
+"generated class will find the current value of the var implementing."
+"namespace/prefixfoo and call it. If the var is not bound or nil, it will "
+"call the superclass method, or if an interface method, generate an "
+"UnsupportedOperationException."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/compilation.adoc:100
+#, no-wrap
+msgid "gen-class Examples"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:102
+msgid ""
+"In the simplest case, an empty :gen-class is supplied, and the compiled "
+"class has only main, which is implemented by defining -main in the namespace:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:106
+#, no-wrap
+msgid ""
+"(ns clojure.examples.hello\n"
+"    (:gen-class))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:110
+#, no-wrap
+msgid ""
+"(defn -main\n"
+"  [greetee]\n"
+"  (println (str \"Hello \" greetee \"!\")))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:113
+msgid "This gets compiled as follows:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:116
+#, no-wrap
+msgid "(compile 'clojure.examples.hello)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:118
+msgid "And can be run like an ordinary Java app like so:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:122
+#, no-wrap
+msgid ""
+"java -cp ./classes:clojure.jar clojure.examples.hello Fred\n"
+"Hello Fred!\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:125
+msgid ""
+"Here's an example using both a more involved :gen-class, and stand-alone "
+"calls to gen-class and gen-interface. In this case we are creating classes "
+"we intend to create instances of. The clojure.examples.instance class will "
+"implement java.util.Iterator, a particularly nasty interface, in that it "
+"requires the implementation to be stateful. This class is going to take a "
+"String in its constructor and implement the Iterator interface in terms of "
+"delivering the characters from the string. The :init clause names the "
+"constructor function. The :constructors clause is a map of constructor "
+"signature to superclass constructor signature. In this case, the superclass "
+"defaults to Object, whose constructor takes no arguments. This object will "
+"have state, called state, and a main so we can test it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:127
+msgid ""
+":init functions (-init in this case) are unusual, in that they always return "
+"a vector, the first element of which is a vector of arguments for the "
+"superclass constructor - since our superclass takes no args, this vector is "
+"empty. The second element of the vector is the state for the instance. Since "
+"we are going to have to mutate the state (and the state is always final) "
+"we'll use a ref to a map containing the string and the current index."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:129
+msgid ""
+"hasNext and next are implementations of methods in the Iterator interface. "
+"While the methods take no args, the implementation functions for instance "
+"methods will always take an additional first arg corresponding to the object "
+"the method is called upon, called by convention 'this' here. Note how the "
+"state can be obtained using an ordinary Java field access."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:131
+msgid ""
+"The gen-interface call will create an interface called clojure.examples."
+"IBar, with a single method bar."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:133
+msgid ""
+"The stand-alone gen-class call will generate another named class, clojure."
+"examples.impl, whose implementing namespace will default to the current "
+"namespace. It implements clojure.examples.IBar. The :prefix option causes "
+"the implementation of methods to bind to functions beginning with \"impl-\" "
+"rather than the default \"-\". The :methods option defines a new method foo "
+"not present in any superclass/interfaces."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:135
+msgid ""
+"Note in main how an instances of the classes can be created, and methods "
+"called, using ordinary Java interop. Using it would be similarly ordinary "
+"from Java."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:144
+#, no-wrap
+msgid ""
+"(ns clojure.examples.instance\n"
+"    (:gen-class\n"
+"     :implements [java.util.Iterator]\n"
+"     :init init\n"
+"     :constructors {[String] []}\n"
+"     :state state))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:147
+#, no-wrap
+msgid ""
+"(defn -init [s]\n"
+"  [[] (ref {:s s :index 0})])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:151
+#, no-wrap
+msgid ""
+"(defn -hasNext [this]\n"
+"  (let [{:keys [s index]} @(.state this)]\n"
+"    (< index (count s))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:157
+#, no-wrap
+msgid ""
+"(defn -next [this]\n"
+"  (let [{:keys [s index]} @(.state this)\n"
+"        ch (.charAt s index)]\n"
+"    (dosync (alter (.state this) assoc :index (inc index)))\n"
+"    ch))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:161
+#, no-wrap
+msgid ""
+"(gen-interface\n"
+" :name clojure.examples.IBar\n"
+" :methods [[bar [] String]])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:167
+#, no-wrap
+msgid ""
+"(gen-class\n"
+" :name clojure.examples.impl\n"
+" :implements [clojure.examples.IBar]\n"
+" :prefix \"impl-\"\n"
+" :methods [[foo [] String]])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:170
+#, no-wrap
+msgid ""
+"(defn impl-foo [this]\n"
+"  (str (class this)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:176
+#, no-wrap
+msgid ""
+"(defn impl-bar [this]\n"
+"  (str \"I \" (if (instance? clojure.examples.IBar this)\n"
+"              \"am\"\n"
+"              \"am not\")\n"
+"       \" an IBar\"))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:184
+#, no-wrap
+msgid ""
+"(defn -main [s]\n"
+"  (let [x (new clojure.examples.instance s)\n"
+"        y (new clojure.examples.impl)]\n"
+"    (while (.hasNext x)\n"
+"      (println (.next x)))\n"
+"    (println (.foo y))\n"
+"    (println (.bar y))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:187
+msgid "Compile as above, and run like an ordinary Java app:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:196
+#, no-wrap
+msgid ""
+"java -cp ./classes:clojure.jar clojure.examples.instance asdf\n"
+"a\n"
+"s\n"
+"d\n"
+"f\n"
+"class clojure.examples.impl\n"
+"I am an IBar\n"
+msgstr ""

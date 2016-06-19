@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/api/api.adoc:67 en/content/community/resources.adoc:39
+msgid ""
+"http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + "
+"examples"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:68 en/content/community/resources.adoc:40
+msgid ""
+"http://clojuredocs.org[ClojureDocs] - community provided example repository"
+msgstr ""
+
+#. type: Plain text
+#: en/content/api/api.adoc:69 en/content/community/resources.adoc:41
+msgid "http://crossclj.info/[CrossClj] - library cross-reference"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:4 en/content/community/books.adoc:4
+#: en/content/community/resources.adoc:4
+msgid "Rich Hickey 2016-02-15"
+msgstr ""
+
+#. type: Title =
+#: en/content/community/resources.adoc:1
+#, no-wrap
+msgid "Community Resources"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/resources.adoc:10
+#, no-wrap
+msgid "Clojure Discussion"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:13
+msgid "http://groups.google.com/group/clojure[Clojure Google Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:14
+msgid "#clojure IRC channel on https://freenode.net[freenode.net]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:15
+msgid "http://clojurians.net[Clojurians Slack Chat]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:16
+msgid ""
+"http://dev.clojure.org/display/community/Clojure+User+Groups[Clojure User "
+"Groups]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:17
+msgid "http://planet.clojure.in/[Planet Clojure] blog aggregator"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:18
+msgid "http://dev.clojure.org/display/community/Home[Community Wiki]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:19
+msgid "http://dev.clojure.org/display/doc/Home[Documentation Wiki]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:20
+msgid "http://dev.clojure.org/display/design/Home[Design Wiki]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/resources.adoc:21
+#, no-wrap
+msgid "Tutorials and Learning Materials"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:24
+msgid "Official:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:26
+msgid "http://clojure.github.io/clojure/[Clojure API Docs]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:27
+msgid "http://clojure.github.io/[Clojure Contrib Library API Docs]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:28
+msgid ""
+"<<xref/../../reference/documentation#,Clojure Reference Docs>> - official "
+"reference information"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:29
+msgid ""
+"<<xref/../../api/cheatsheet#,Clojure Cheatsheet>> - helpful categorization "
+"of most core functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:30
+msgid ""
+"Source - https://github.com/clojure/clojure[Clojure], https://github.com/"
+"clojure/clojurescript[ClojureScript], https://github.com/clojure/clojure-"
+"clr[ClojureCLR]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:31
+msgid ""
+"Issues - http://dev.clojure.org/jira/browse/CLJ[Clojure], http://dev.clojure."
+"org/jira/browse/CLJS[ClojureScript], http://dev.clojure.org/jira/browse/"
+"CLJCLR[ClojureCLR]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:33
+msgid "Community:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:35
+msgid "<<xref/../../community/books#,Books>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:36
+msgid ""
+"http://www.braveclojure.com/[Clojure for the Brave and True] - a beginner "
+"book by Daniel Higginbotham"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:37
+msgid ""
+"http://aphyr.com/posts/301-clojure-from-the-ground-up-welcome[Clojure from "
+"the ground up] - a series of intro articles by Kyle Kingsbury"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:38
+msgid "https://github.com/ClojureBridge/curriculum[ClojureBridge Curriculum]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:42
+msgid ""
+"http://clojure-doc.org/[Clojure Documentation] - community-driven "
+"documentation site"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:43
+msgid ""
+"http://clojurekoans.com/[Clojure Koans] (http://clojurescriptkoans.com/"
+"[online])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:44
+msgid "http://www.4clojure.com/[4clojure] - Clojure practice problems"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:45
+msgid ""
+"http://exercism.io/[exercism.io] - crowd-source code reviews (supports "
+"Clojure)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:46
+msgid "https://github.com/bbatsov/clojure-style-guide[Clojure Style Guide]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:47
+msgid "http://planet.clojure.in/[Planet Clojure] - Clojure blog aggregator"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:48
+msgid ""
+"Newsletters - http://defnewsletter.com/[(def newsletter)] http://www."
+"clojuregazette.com/[Clojure Gazette] http://reborg.tumblr.com/[Clojure "
+"Weekly]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:49
+msgid ""
+"http://www.clojure-toolbox.com/[Clojure Toolbox] - a categorized index of "
+"Clojure libraries"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:50
+msgid ""
+"http://www.clojureatlas.com/[Clojure Atlas] - visualization of Clojure and "
+"the core library"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:52
+msgid "Videos and presentations:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:54
+msgid ""
+"https://www.youtube.com/user/ClojureTV/videos[ClojureTV] - talks by Rich "
+"Hickey and presentations from Clojure/conj and Clojure/west"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:55
+msgid ""
+"http://www.infoq.com/Clojure/presentations/[InfoQ Clojure Presentations] - "
+"from a variety of conferences"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:56
+msgid ""
+"https://github.com/matthiasn/talk-transcripts[Talk transcripts] - Rich "
+"Hickey, David Nolen, Stuart Sierra, and others"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:57
+msgid ""
+"http://www.parens-of-the-dead.com/[Parens of the Dead] - a screencast series "
+"writing a game from scratch with Clojure and ClojureScript"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:59
+msgid "Video training (commercial):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:61
+msgid ""
+"http://www.purelyfunctional.tv/intro-to-clojure[Introduction to Clojure] - "
+"Eric Normand (LispCast)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:62
+msgid ""
+"http://www.purelyfunctional.tv/web-dev-in-clojure[Web Development in "
+"Clojure] - Eric Normand (LispCast)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:63
+msgid ""
+"http://shop.oreilly.com/product/0636920030409.do[Clojure Inside Out] - "
+"Stuart Halloway, Neal Ford (O'Reilly)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:64
+msgid ""
+"http://shop.oreilly.com/product/0636920041474.do[Communicating Sequential "
+"Processes with core.async] - Timothy Baldridge (O'Reilly)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:65
+msgid ""
+"http://www.infiniteskills.com/training/building-microservices-with-clojure."
+"html[Building Microservices with Clojure] - Scott Rehorn (O'Reilly)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:66
+msgid ""
+"http://www.infiniteskills.com/training/learning-clojure.html[Learning "
+"Clojure] - Adam Bard"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:67
+msgid ""
+"http://www.infiniteskills.com/training/learning-clojurescript.html[Learning "
+"ClojureScript] - David Eisenberg"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:68
+msgid ""
+"http://www.lynda.com/Clojure-tutorials/Up-Running-Clojure/413127-2.html[Up "
+"and Running with Clojure] - Arthur Ulfeldt"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:69
+msgid ""
+"https://www.pluralsight.com/courses/clojure-fundamentals-part-one[Clojure "
+"Fundamentals] - Alan Dipert (PluralSight)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:70
+msgid ""
+"https://www.pluralsight.com/courses/clojure-concurrency-tutorial[Clojure "
+"Concurrency] - Craig Andera (PluralSight)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:71
+msgid ""
+"https://www.packtpub.com/web-development/building-web-applications-clojure-"
+"video[Building Web Applications with Clojure] - Tomek Lipski (Packt)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/resources.adoc:72
+#, no-wrap
+msgid "Clojure Tools"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:75
+msgid ""
+"Community volunteers maintain http://dev.clojure.org/display/doc/getting"
+"+started[Getting Started] documentation for a number of different tools and "
+"approaches. Some of the most commonly used tools include:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:77
+msgid ""
+"http://leiningen.org/[Leiningen] - an extensible build tool that provides "
+"dependency management, REPL support, testing, packaging, deployment, and "
+"many other capabilities."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:78
+msgid ""
+"http://boot-clj.com/[Boot] - build tooling for Clojure: instead of a special-"
+"purpose DSL, Boot supplies abstractions and libraries you can use to "
+"automate nearly any build scenario with the full power of the Clojure "
+"language"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:79
+msgid ""
+"http://www.gnu.org/software/emacs/[Emacs] with https://github.com/clojure-"
+"emacs/cider[CIDER]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:80
+msgid ""
+"http://www.vim.org/[Vim] with https://github.com/tpope/vim-"
+"fireplace[Fireplace]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:81
+msgid "https://code.google.com/p/counterclockwise/[Eclipse Counterclockwise]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:82
+msgid "IntelliJ https://cursiveclojure.com/[Cursive]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:83
+msgid "https://sekao.net/nightcode/[Nightcode]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:84
+msgid "http://www.lighttable.com/[Light Table]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:85
+msgid ""
+"http://www.sublimetext.com/[Sublime Text] with https://github.com/wuub/"
+"SublimeREPL[SublimeREPL]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:86
+msgid "https://atom.io[Atom] with https://atom.io/packages/nrepl[nrepl]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/resources.adoc:87
+#, no-wrap
+msgid "Conferences"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:90
+msgid "http://clojure-conj.org/[Clojure/conj] (usually in November)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:91
+msgid "http://www.clojurewest.org/[Clojure/west] (usually in March)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:92
+msgid "http://euroclojure.com[EuroClojure] (usually mid-year)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:93
+msgid ""
+"http://www.clojurebridge.org/[ClojureBridge] - beginner workshops for women"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/resources.adoc:93
+msgid ""
+"http://lanyrd.com/search/?context=future&q=clojure&type=conference[Clojure "
+"events]"
+msgstr ""

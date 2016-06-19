@@ -1,0 +1,432 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-20 08:54+0900\n"
+"PO-Revision-Date: 2016-06-20 08:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74
+#: en/content/guides/comparators.adoc:12
+#, no-wrap
+msgid "Summary"
+msgstr ""
+
+#. type: Title =
+#: en/content/about/state.adoc:1
+#, no-wrap
+msgid "Values and Change: Clojure's approach to Identity and State"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:18
+msgid ""
+"Many people come to Clojure from an imperative language and find themselves "
+"out of their element when faced with Clojure's approach to doing things, "
+"while others are coming from a more functional background and assume that "
+"once they leave Clojure's functional subset, they will be faced with the "
+"same story re: state as is found in Java. This essay intends to illuminate "
+"Clojure's approach to the problems faced by imperative and functional "
+"programs in modeling the world."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:19
+#, no-wrap
+msgid "Imperative programming"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:22
+msgid ""
+"An imperative program manipulates its world (e.g. memory) directly. It is "
+"founded on a now-unsustainable single-threaded premise - that the world is "
+"stopped while you look at or change it. You say \"do this\" and it happens, "
+"\"change that\" and it changes. Imperative programming languages are "
+"oriented around saying do this/do that, and changing memory locations."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:24
+msgid ""
+"This was never a great idea, even before multithreading. Add concurrency and "
+"you have a real problem, because \"the world is stopped\" premise is simply "
+"no longer true, and restoring that illusion is extremely difficult and error-"
+"prone. Multiple participants, each of which acts as though they were "
+"omnipotent, must somehow avoid destroying the presumptions and effects of "
+"the others. This requires mutexes and locks, to cordon off areas for each "
+"participant to manipulate, and a lot of overhead to propagate changes to "
+"shared memory so they are seen by other cores. It doesn't work very well."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:25
+#, no-wrap
+msgid "Functional programming"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:28
+msgid ""
+"Functional programming takes a more mathematical view of the world, and sees "
+"programs as functions that take certain values and produce others. "
+"Functional programs eschew the external 'effects' of imperative programs, "
+"and thus become easier to understand, reason about, and test, since the "
+"activity of functions is completely local. To the extent a portion of a "
+"program is purely functional, concurrency is a non-issue, as there is simply "
+"no change to coordinate."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:29
+#, no-wrap
+msgid "Working Models and Identity"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:32
+msgid ""
+"While some programs are merely large functions, e.g. compilers or theorem "
+"provers, many others are not - they are more like working models, and as "
+"such need to support what I'll refer to in this discussion as *_identity_.* "
+"By identity I mean *_a stable logical entity associated with a series of "
+"different values over time_*. Models need identity for the same reasons "
+"humans need identity - to represent the world. How could it work if "
+"identities like 'today' or 'America' had to represent a single constant "
+"value for all time? Note that by identities I don't mean names (I call my "
+"mother Mom, but you wouldn't)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:34
+msgid ""
+"So, for this discussion, an identity is an entity that has a state, which is "
+"its value at a point in time. And *_a value is something that doesn't "
+"change_*. 42 doesn't change. June 29th 2008 doesn't change. Points don't "
+"move, dates don't change, no matter what some bad class libraries may cause "
+"you to believe. Even aggregates are values. The set of my favorite foods "
+"doesn't change, i.e. if I prefer different foods in the future, that will be "
+"a different set."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:36
+msgid ""
+"Identities are mental tools we use to superimpose continuity on a world "
+"which is constantly, functionally, creating new values of itself."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:37
+#, no-wrap
+msgid "Object Oriented programming (OO)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:40
+msgid ""
+"OO is, among other things, an attempt to provide tools for modeling identity "
+"and state in programs (as well as associating behavior with state, and "
+"hierarchical classification, both ignored here). OO typically unifies "
+"identity and state, i.e. an object (identity) is a pointer to the memory "
+"that contains the value of its state. There is no way to obtain the state "
+"independent of the identity other than copying it. There is no way to "
+"observe a stable state (even to copy it) without blocking others from "
+"changing it. There is no way to associate the identity's state with a "
+"different value other than in-place memory mutation. In other words, "
+"*_typical OO has imperative programming baked into it!_* OO doesn't have to "
+"be this way, but, usually, it is (Java/C++/Python/Ruby etc)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:42
+msgid ""
+"People accustomed to OO conceive of their programs as mutating the values of "
+"objects. They understand the true notion of a value, say, 42, as something "
+"that would never change, but usually don't extend that notion of value to "
+"their object's state. That is a failure of their programming language. These "
+"languages use the same constructs for modeling values as they do for "
+"identities, objects, and default to mutability, causing all but the most "
+"disciplined programmers to create many more identities than they should, "
+"creating identities out of things that should be values etc."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:43
+#, no-wrap
+msgid "Clojure programming"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:46
+msgid ""
+"There is another way, and that is to separate identity and state (once "
+"again, indirection saves the day in programming). We need to move away from "
+"a notion of state as \"the content of this memory block\" to one of \"the "
+"*_value_* currently associated with this identity\". Thus an identity can be "
+"in different states at different times, but _the state itself doesn't "
+"change_. That is, an identity is not a state, an identity *_has_* a state. "
+"Exactly one state at any point in time. And that state is a true value, i.e. "
+"it never changes. If an identity appears to change, it is because it becomes "
+"associated with different state values over time. This is the Clojure model."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:48
+msgid ""
+"In Clojure's model, value calculation is purely functional. Values never "
+"change. New values are functions of old, not mutations. But logical identity "
+"is well supported, via atomic references to values (<<xref/../../reference/"
+"refs#,Refs>> and <<xref/../../reference/agents#,Agents>>). Changes to "
+"references are controlled/coordinated by the system - i.e. cooperation is "
+"not optional and not manual. The world moves forward due to the cooperative "
+"efforts of its participants and the programming language/system, Clojure, is "
+"in charge of world consistency management. The value of a reference (state "
+"of an identity) is always observable without coordination, and freely "
+"shareable between threads."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:50
+msgid ""
+"It is worth constructing programs this way even when there is only one "
+"participant (thread). Programs are easier to understand/test when functional "
+"value calculation is independent of identity/value association. And it's "
+"easy to add other participants when they are (inevitably) needed."
+msgstr ""
+
+#. type: Title ===
+#: en/content/about/state.adoc:51
+#, no-wrap
+msgid "Concurrency"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:54
+msgid ""
+"Dealing with concurrency means giving up the illusion of omnipotence. A "
+"program must recognize there will be other participants, and the world will "
+"keep changing. So a program must understand that if it observes the values "
+"of the states of some identities, the best it can get is a snapshot, as they "
+"can subsequently acquire new states. But often that is good enough for "
+"decision making or reporting purposes. We humans do quite well with the "
+"snapshots provided by our sensory systems. The nice thing is any such state "
+"value won't change in hand during the processing, as it is immutable."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:56
+msgid ""
+"On the other hand, changing state to a new value requires access to the "
+"'current' value and the identity. Clojure's Refs and Agents handle this "
+"automatically. In the case of Refs, any interaction you do must occur within "
+"a transaction (else Clojure will throw an exception), all such interaction "
+"will see a consistent view of the world as of a point in time, and no "
+"changes will proceed unless the states to be changed haven't been changed by "
+"other participants in the meantime. Transactions support synchronous change "
+"to multiple Refs. Agents, OTOH, offer asynchronous change to a single "
+"reference. You pass a function and values, and, at some point in the future, "
+"that function will be passed the current state of the Agent and the return "
+"value of the function will become the Agent's new state."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:58
+msgid ""
+"In all cases the program will see stable views of the values in the world, "
+"as those values can't change, and sharing them among cores is fine. The "
+"trick is, \"values never change\" means that making new values from old ones "
+"must be efficient, and it is in Clojure, due to its persistent data "
+"structures. They allow you to finally follow the oft-proffered advice to "
+"favor immutability. So you set the state of an identity to a new state by "
+"reading its current value, calling a pure function on that value to create a "
+"new value, and setting that value as the new state. These composite "
+"operations are made easy and atomic by the http://clojure.github.com/clojure/"
+"clojure.core-api.html#clojure.core/alter[alter], http://clojure.github.com/"
+"clojure/clojure.core-api.html#clojure.core/commute[commute] and http://"
+"clojure.github.com/clojure/clojure.core-api.html#clojure.core/send[send] "
+"functions."
+msgstr ""
+
+#. type: Title ==
+#: en/content/about/state.adoc:60
+#, no-wrap
+msgid "Message Passing and Actors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:63
+msgid ""
+"There are other ways to model identity and state, one of the more popular of "
+"which is the message-passing http://en.wikipedia.org/wiki/Actor_model[actor "
+"model], best exemplified by the quite impressive http://en.wikipedia.org/"
+"wiki/Erlang_%28programming_language%29[Erlang]. In an actor model, state is "
+"encapsulated in an actor (identity) and can only be affected/seen via the "
+"passing of messages (values). In an asynchronous system like Erlang's, "
+"reading some aspect of an actor's state requires sending a request message, "
+"waiting for a response, and the actor sending a response. It is important to "
+"understand that _the actor model was designed to address the problems of "
+"*distributed* programs_. And the problems of distributed programs are much "
+"harder - there are multiple worlds (address spaces), direct observation is "
+"not possible, interaction occurs over possibly unreliable channels, etc. The "
+"actor model supports transparent distribution. If you write all of your code "
+"this way, you are not bound to the actual location of the other actors, "
+"allowing a system to be spread over multiple processes/machines without "
+"changing the code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:65
+msgid ""
+"I chose not to use the Erlang-style actor model for same-process state "
+"management in Clojure for several reasons:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:68
+msgid ""
+"It is a much more complex programming model, requiring 2-message "
+"conversations for the simplest data reads, and forcing the use of blocking "
+"message receives, which introduce the potential for deadlock. Programming "
+"for the failure modes of distribution means utilizing timeouts etc. It "
+"causes a bifurcation of the program protocols, some of which are represented "
+"by functions and others by the values of messages."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:69
+msgid ""
+"It doesn't let you fully leverage the efficiencies of being in the same "
+"process. It is quite possible to efficiently directly share a large "
+"immutable data structure between threads, but the actor model forces "
+"intervening conversations and, potentially, copying. Reads and writes get "
+"serialized and block each other, etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:70
+msgid ""
+"It reduces your flexibility in modeling - this is a world in which everyone "
+"sits in a windowless room and communicates only by mail. Programs are "
+"decomposed as piles of blocking switch statements. You can only handle "
+"messages you anticipated receiving. Coordinating activities involving "
+"multiple actors is very difficult. You can't observe anything without its "
+"cooperation/coordination - making ad-hoc reporting or analysis impossible, "
+"instead forcing every actor to participate in each protocol."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:71
+msgid ""
+"It is often the case that taking something that works well locally and "
+"transparently distributing it doesn't work out - the conversation "
+"granularity is too chatty or the message payloads are too large or the "
+"failure modes change the optimal work partitioning, i.e. transparent "
+"distribution isn't transparent and the code has to change anyway."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:73
+msgid ""
+"Clojure may eventually support the actor model for distributed programming, "
+"paying the price only when distribution is required, but I think it is quite "
+"cumbersome for same-process programming. YMMV of course."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:77
+msgid ""
+"Clojure is a functional language that explicitly supports programs as models "
+"and provides robust and easy-to-use facilities for managing identity and "
+"state in a single process in the face of concurrency."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:79
+msgid ""
+"In coming to Clojure from an OO language, you can use one of its "
+"<<xref/../../reference/data_structures#,persistent collections>>, e.g. maps, "
+"instead of objects. Use values as much as possible. And for those cases "
+"where your objects are truly modeling identities (far fewer cases than you "
+"might realize until you start thinking about it this way), you can use a Ref "
+"or Agent with e.g. a map as its state in order to model an identity with "
+"changing state. If you want to encapsulate or abstract away the details of "
+"your values, a good idea if they are non-trivial, write a set of functions "
+"for viewing and manipulating them. If you want polymorphism, use Clojure's "
+"multimethods."
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/state.adoc:80
+msgid ""
+"In the local case, since Clojure does not have mutable local variables, "
+"instead of building up values in a mutating loop, you can instead do it "
+"functionally with <<xref/../../reference/special_forms#recur#,recur>> or "
+"http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/"
+"reduce[reduce]."
+msgstr ""
