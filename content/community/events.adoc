@@ -1,0 +1,9 @@
+= Upcoming Clojure Events
+Rich Hickey 2016-01-15
+:jbake-type: events
+:toc: macro
+:icons: font
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+

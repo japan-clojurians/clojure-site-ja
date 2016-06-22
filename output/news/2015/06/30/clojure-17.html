@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure 1.7 is now available</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">JBake</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../index">Home</a></li>
+            <li><a href="../../../../about.html">About</a></li>
+            <li><a href="../../../../feed.xml">Subscribe</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	<div class="page-header">
+		<h1>Clojure 1.7 is now available</h1>
+	</div>
+
+	<p><em></em></p>
+
+	<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>We are pleased to announce the release of Clojure 1.7. The two headline
+features for 1.7 are transducers and reader conditionals. Also see the
+<a href="https://github.com/clojure/clojure/blob/master/changes.md">complete list</a> of
+all changes since Clojure 1.6 for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_transducers">Transducers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="xref/../../../../../../reference/transducers">Transducers</a> are composable
+algorithmic transformations. They are independent from the context of their
+input and output sources and specify only the essence of the transformation
+in terms of an individual element. Because transducers are decoupled from
+input or output sources, they can be used in many different processes -
+collections, streams, channels, observables, etc. Transducers compose
+directly, without awareness of input or creation of intermediate aggregates.</p>
+</div>
+<div class="paragraph">
+<p>Many existing sequence functions now have a new arity (one fewer argument
+than before). This arity will return a transducer that represents the same
+logic but is independent of lazy sequence processing. Functions included
+are: map, mapcat, filter, remove, take, take-while, drop, drop-while,
+take-nth, replace, partition-by, partition-all, keep, keep-indexed,
+map-indexed, distinct, and interpose. Additionally some new transducer
+functions have been added: cat, dedupe, and random-sample.</p>
+</div>
+<div class="paragraph">
+<p>Transducers can be used in several new or existing contexts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>into - to collect the results of applying a transducer</p>
+</li>
+<li>
+<p>sequence - to incrementally compute the result of a transducer</p>
+</li>
+<li>
+<p>transduce - to immediately compute the result of a transducer</p>
+</li>
+<li>
+<p>eduction - to delay computation and recompute each time</p>
+</li>
+<li>
+<p>core.async - to apply a transducer while values traverse a channel</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_portable_clojure_and_reader_conditionals">Portable Clojure and Reader Conditionals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is now common to see a library or application targeting multiple Clojure
+platforms with a single codebase. Clojure 1.7 introduces a new extension
+(.cljc) for files that can be loaded by Clojure and ClojureScript (and other
+Clojure platforms).</p>
+</div>
+<div class="paragraph">
+<p>There will often be some parts of the code that vary between platforms. The
+primary mechanism for dealing with platform-specific code is to isolate that
+code into a minimal set of namespaces and then provide platform-specific
+versions (.clj/.class or .cljs) of those namespaces.</p>
+</div>
+<div class="paragraph">
+<p>To support cases where is not feasible to isolate the varying parts of the
+code, or where the code is mostly portable with only small platform-specific
+parts, 1.7 provides
+<a href="xref/../../../../../../reference/reader#_reader_conditionals">Reader
+Conditionals</a>.</p>
+</div>
+<div class="paragraph">
+<p>Reader conditionals are a new reader form that is only allowed in portable
+cljc files. A reader conditional expression is similar to a cond in that it
+specifies alternating platform identifiers and expressions. Each platform is
+checked in turn until a match is found and the expression is read. All
+expressions not selected are read but skipped. A final :default fallthrough
+can be provided. If no expressions are matched, the reader conditional will
+read nothing. The reader conditional splicing form takes a sequential
+expression and splices the result into the surrounding code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors">Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to all of those who contributed patches to Clojure 1.7:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Timothy Baldridge</p>
+</li>
+<li>
+<p>Bozhidar Batsov</p>
+</li>
+<li>
+<p>Brandon Bloom</p>
+</li>
+<li>
+<p>Michael Blume</p>
+</li>
+<li>
+<p>Ambrose Bonnaire-Sergeant</p>
+</li>
+<li>
+<p>Aaron Cohen</p>
+</li>
+<li>
+<p>Pepijn de Vos</p>
+</li>
+<li>
+<p>Andy Fingerhut</p>
+</li>
+<li>
+<p>Gary Fredricks</p>
+</li>
+<li>
+<p>Daniel Solano Gómez</p>
+</li>
+<li>
+<p>Stuart Halloway</p>
+</li>
+<li>
+<p>Rich Hickey</p>
+</li>
+<li>
+<p>Immo Heikkinen</p>
+</li>
+<li>
+<p>Andrei Kleschinsky</p>
+</li>
+<li>
+<p>Howard Lewis Ship</p>
+</li>
+<li>
+<p>Alex Miller</p>
+</li>
+<li>
+<p>Steve Miner</p>
+</li>
+<li>
+<p>Nicola Mometto</p>
+</li>
+<li>
+<p>Tomasz Nurkiewicz</p>
+</li>
+<li>
+<p>Ghadi Shayban</p>
+</li>
+<li>
+<p>Paul Stadig</p>
+</li>
+<li>
+<p>Zach Tellman</p>
+</li>
+<li>
+<p>Luke VanderHart</p>
+</li>
+<li>
+<p>Jozef Wagner</p>
+</li>
+<li>
+<p>Devin Walters</p>
+</li>
+<li>
+<p>Jason Wolfe</p>
+</li>
+<li>
+<p>Steven Yi</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Also, continued thanks to the total list of contributors from all releases.</p>
+</div>
+</div>
+</div></p>
+
+	<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.5.0-SNAPSHOT</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+    
+  </body>
+</html>

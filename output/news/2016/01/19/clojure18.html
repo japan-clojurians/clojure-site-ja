@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure 1.8 is now available</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">JBake</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../index">Home</a></li>
+            <li><a href="../../../../about.html">About</a></li>
+            <li><a href="../../../../feed.xml">Subscribe</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	<div class="page-header">
+		<h1>Clojure 1.8 is now available</h1>
+	</div>
+
+	<p><em></em></p>
+
+	<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some of the new features for 1.8 are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>More string functions in
+<a href="http://clojure.github.io/clojure/branch-master/clojure.string-api.html">clojure.string</a>
+(portable to ClojureScript): index-of, last-index-of, starts-with?,
+ends-with?, includes?</p>
+</li>
+<li>
+<p>Compiler <a href="xref/../../../../../reference/compilation#directlinking">direct
+linking</a> - improves performance and startup time</p>
+</li>
+<li>
+<p><a href="xref/../../../../../reference/repl_and_main#_launching_a_socket_server">Socket
+server</a> and socket server REPL - adds the ability to allow remote Clojure
+REPL connections</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see the
+<a href="https://github.com/clojure/clojure/blob/master/changes.md">complete list</a> of
+all changes since Clojure 1.7 for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors">Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to all of those who contributed to Clojure 1.8 (first time
+contributors in bold):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alexander Yakushev</strong></p>
+</li>
+<li>
+<p>Alex Miller</p>
+</li>
+<li>
+<p>Alex Redington</p>
+</li>
+<li>
+<p>Alf Kristian Stoyle</p>
+</li>
+<li>
+<p>Ambrose Bonnaire-Sergeant</p>
+</li>
+<li>
+<p><strong>Andrew Rosa</strong></p>
+</li>
+<li>
+<p>Andy Fingerhut</p>
+</li>
+<li>
+<p><strong>Andy Sheldon</strong></p>
+</li>
+<li>
+<p><strong>Aspasia Beneti</strong></p>
+</li>
+<li>
+<p><strong>Blake West</strong></p>
+</li>
+<li>
+<p>Bozhidar Batsov</p>
+</li>
+<li>
+<p><strong>Daniel Compton</strong></p>
+</li>
+<li>
+<p><strong>Erik Assum</strong></p>
+</li>
+<li>
+<p>Gary Fredericks</p>
+</li>
+<li>
+<p>Ghadi Shayban</p>
+</li>
+<li>
+<p><strong>Gordon Syme</strong></p>
+</li>
+<li>
+<p>Howard Lewis Ship</p>
+</li>
+<li>
+<p><strong>Jean Niklas L&#8217;orange</strong></p>
+</li>
+<li>
+<p><strong>Jeremy Heiler</strong></p>
+</li>
+<li>
+<p><strong>Jonas Enlund</strong></p>
+</li>
+<li>
+<p>Jozef Wagner</p>
+</li>
+<li>
+<p>Karsten Schmidt</p>
+</li>
+<li>
+<p>Kevin Downey</p>
+</li>
+<li>
+<p><strong>Mark Simpson</strong></p>
+</li>
+<li>
+<p>Michael Blume</p>
+</li>
+<li>
+<p><strong>Nahuel Greco</strong></p>
+</li>
+<li>
+<p>Nicola Mometto</p>
+</li>
+<li>
+<p><strong>Nikita Prokopov</strong></p>
+</li>
+<li>
+<p><strong>Nola Stowe</strong></p>
+</li>
+<li>
+<p><strong>Ragnar Dahlén</strong></p>
+</li>
+<li>
+<p><strong>Ralf Schmitt</strong></p>
+</li>
+<li>
+<p>Rich Hickey</p>
+</li>
+<li>
+<p><strong>Russ Olsen</strong></p>
+</li>
+<li>
+<p><strong>Shogo Ohta</strong></p>
+</li>
+<li>
+<p>Steve Miner</p>
+</li>
+<li>
+<p>Stuart Halloway</p>
+</li>
+<li>
+<p>Timothy Baldridge</p>
+</li>
+<li>
+<p><strong>Tsutomu Yano</strong></p>
+</li>
+<li>
+<p><strong>Yanxiang Lou</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div></p>
+
+	<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.5.0-SNAPSHOT</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+    
+  </body>
+</html>

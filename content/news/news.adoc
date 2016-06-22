@@ -1,0 +1,8 @@
+= News 
+Rich Hickey 2016-05-23
+:jbake-type: news
+:toc: macro
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+

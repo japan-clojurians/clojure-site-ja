@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure Downloads</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">JBake</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../feed.xml">Subscribe</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	<div class="page-header">
+		<h1>Clojure Downloads</h1>
+	</div>
+
+	<p><em></em></p>
+
+	<p><div class="sect1">
+<h2 id="_stable_release_1_8_0_january_19_2016">Stable Release: 1.8.0 (January 19, 2016)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8.0.zip">Clojure
+1.8.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/clojure/clojure/blob/master/changes.md">Changelog</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_development_release_1_9_0_alpha7">Development Release: 1.9.0-alpha7</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://repo1.maven.org/maven2/org/clojure/clojure/1.9.0-alpha7/clojure-1.9.0-alpha7.zip">Clojure
+1.9.0-alpha7</a></p>
+</li>
+<li>
+<p><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22clojure%22%20AND%20v%3A1.9.0*">Clojure
+1.9 pre-release builds</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_source">Clojure Source</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure source code is hosted at
+<a href="http://github.com/clojure/clojure">github.com/clojure/clojure</a>. Builds of the
+very latest version of Clojure&#8217;s master branch are available at
+<a href="https://oss.sonatype.org/content/repositories/snapshots/org/clojure/clojure/1.9.0-master-SNAPSHOT/">build.clojure.org</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_clojure_via_leiningen">Get Clojure via Leiningen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modify the dependencies and repositories sections of your
+<a href="http://leiningen.org/">Leiningen</a> project.clj file, specifying the version of
+Clojure that you want:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">; under dependencies, select the release of clojure that you want
+:dependencies [[org.clojure/clojure "1.8.0"]]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_did_clojure_contrib_go">Where did Clojure Contrib go?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are migrating from a pre-1.3 version of Clojure, please see
+<a href="http://dev.clojure.org/display/community/Where+Did+Clojure.Contrib+Go">this
+page</a> for migration help regarding old contrib libraries.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__a_href_downloads_older_older_releases_a"><a href="downloads_older">Older Releases</a></h2>
+<div class="sectionbody">
+
+</div>
+</div></p>
+
+	<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.5.0-SNAPSHOT</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+    
+  </body>
+</html>
