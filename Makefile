@@ -45,3 +45,7 @@ build: clean translate
 	cd $(BUILD_DIR) && $(JBAKE_CMD) -b
 	@echo
 	@echo "Build finished."
+
+publish:
+	ghp-import -n -m "update site" -b gh-pages build/output
+	git push origin gh-pages
