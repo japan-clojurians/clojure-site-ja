@@ -5,6 +5,8 @@ PACKAGE_NAME     = clojure-site-ja
 PACKAGE_VERSION  = 0.0.1
 PO4A_CONF        = po4a.cfg
 
+MSGMERGE_POT     = "--width=120"
+
 RE_CREATE_CFG_CMD = ./bin/re_create_cfg.clj
 JBAKE_CMD = jbake
 
@@ -26,7 +28,7 @@ test:
 updatepot: clean
 	git clone $(ORIGINAL_GIT_PATH) $(FROM_DIR)
 	$(RE_CREATE_CFG_CMD)
-	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION) --no-translations
+	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION) --no-translations --msgmerge-opt $(MSGMERGE_POT)
 	@echo
 	@echo "Update finished. POT/PO files are updated."
 
@@ -34,7 +36,7 @@ updatepot: clean
 
 translate:
 	[ -d $(FROM_DIR) ] || git clone $(ORIGINAL_GIT_PATH) $(FROM_DIR)
-	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION)
+	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION) --msgmerge-opt $(MSGMERGE_POT)
 	@echo
 	@echo "Translate finished."
 
