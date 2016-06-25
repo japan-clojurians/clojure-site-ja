@@ -49,7 +49,8 @@ build: clean translate
 	@echo "Build finished."
 
 publish: build
-	ghp-import -n -m "update site" -b gh-pages build/output
+	git config --global user.name circle-ci
+	ghp-import -n -m "[ci skip] update site :books:" -b gh-pages build/output
 	git push origin gh-pages
 	@echo
 	@echo "Published."
