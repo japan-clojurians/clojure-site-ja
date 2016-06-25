@@ -17,76 +17,49 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/refs.adoc:73
-#: en/content/reference/other_functions.adoc:41
-#: en/content/reference/other_functions.adoc:65
-#: en/content/reference/data_structures.adoc:70
-#: en/content/reference/data_structures.adoc:90
-#: en/content/reference/data_structures.adoc:98
-#: en/content/reference/data_structures.adoc:107
-#: en/content/reference/data_structures.adoc:116
-#: en/content/reference/data_structures.adoc:162
-#: en/content/reference/data_structures.adoc:174
-#: en/content/reference/data_structures.adoc:188
-#: en/content/reference/data_structures.adoc:223
-#: en/content/reference/agents.adoc:64
-#: en/content/reference/repl_and_main.adoc:159
-#: en/content/reference/vars.adoc:85 en/content/reference/namespaces.adoc:24
-#: en/content/reference/libs.adoc:64
+#: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65 en/content/reference/data_structures.adoc:70
+#: en/content/reference/data_structures.adoc:90 en/content/reference/data_structures.adoc:98
+#: en/content/reference/data_structures.adoc:107 en/content/reference/data_structures.adoc:116
+#: en/content/reference/data_structures.adoc:162 en/content/reference/data_structures.adoc:174
+#: en/content/reference/data_structures.adoc:188 en/content/reference/data_structures.adoc:223
+#: en/content/reference/agents.adoc:64 en/content/reference/repl_and_main.adoc:159 en/content/reference/vars.adoc:85
+#: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
 msgstr ""
@@ -106,9 +79,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:20
 msgid ""
-"The `clojure.main` namespace provides functions that allow Clojure programs "
-"and interactive sessions to be launched via Java's application launcher tool "
-"`java`."
+"The `clojure.main` namespace provides functions that allow Clojure programs and interactive sessions to be launched "
+"via Java's application launcher tool `java`."
 msgstr ""
 
 #. type: Title ==
@@ -119,9 +91,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:24
-msgid ""
-"The `clojure.main/main` entry point accepts a variety of arguments and flags "
-"as described in its usage message:"
+msgid "The `clojure.main/main` entry point accepts a variety of arguments and flags as described in its usage message:"
 msgstr ""
 
 #. type: delimited block -
@@ -201,8 +171,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:62
 msgid ""
-"The simplest way to launch a Clojure _repl_ is to use the following command "
-"line from within Clojure's home directory:"
+"The simplest way to launch a Clojure _repl_ is to use the following command line from within Clojure's home directory:"
 msgstr ""
 
 #. type: delimited block -
@@ -213,9 +182,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:69
-msgid ""
-"The REPL prompt shows the name of the current namespace (pass:[*ns*]), which "
-"defaults to _user_."
+msgid "The REPL prompt shows the name of the current namespace (pass:[*ns*]), which defaults to _user_."
 msgstr ""
 
 #. type: Plain text
@@ -238,45 +205,42 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:76
 msgid ""
-"The http://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] "
-"namespace has a number of useful functions for inspecting the source and "
-"documentation of available functions:"
+"The http://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] namespace has a number of useful functions "
+"for inspecting the source and documentation of available functions:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:78
 msgid ""
-"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] "
-"- prints the docstring for a var given its name"
+"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var given "
+"its name"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:79
 msgid ""
-"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-"
-"doc[find-doc] - prints the docstring for any var whose doc or name matches "
-"the pattern"
+"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc[find-doc] - prints the docstring for any "
+"var whose doc or name matches the pattern"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:80
 msgid ""
-"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/"
-"apropos[apropos] - returns a seq of definitions matching a regex"
+"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos[apropos] - returns a seq of definitions "
+"matching a regex"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:81
 msgid ""
-"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/"
-"source[source] - prints the source for a symbol"
+"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source[source] - prints the source for a symbol"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:82
 msgid ""
-"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[pst] "
-"- **p**rint **s**tack **t**race for a given exception or *e by default"
+"http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[pst] - **p**rint **s**tack **t**race for a "
+"given exception or *e by default"
 msgstr ""
 
 #. type: Title ==
@@ -287,9 +251,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:86
-msgid ""
-"To run a file full of Clojure code as a script, pass the path to the script "
-"to `clojure.main` as an argument:"
+msgid "To run a file full of Clojure code as a script, pass the path to the script to `clojure.main` as an argument:"
 msgstr ""
 
 #. type: delimited block -
@@ -306,9 +268,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:95
-msgid ""
-"To pass in arguments to a script, pass them in as further arguments when "
-"launching `clojure.main`:"
+msgid "To pass in arguments to a script, pass them in as further arguments when launching `clojure.main`:"
 msgstr ""
 
 #. type: delimited block -
@@ -320,8 +280,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:102
 msgid ""
-"The arguments will be provided to your program as a seq of strings bound to "
-"the var `pass:[*command-line-args*]`:"
+"The arguments will be provided to your program as a seq of strings bound to the var `pass:[*command-line-args*]`:"
 msgstr ""
 
 #. type: delimited block -
@@ -344,26 +303,21 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:114
 msgid ""
-"The Clojure runtime now has the ability to start a socket server at "
-"initialization based on system properties. One expected use for this is "
-"serving a socket-based REPL, but it also has many other potential uses for "
-"dynamically adding server capability to existing programs without code "
-"changes."
+"The Clojure runtime now has the ability to start a socket server at initialization based on system properties. One "
+"expected use for this is serving a socket-based REPL, but it also has many other potential uses for dynamically "
+"adding server capability to existing programs without code changes."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:116
 msgid ""
-"A socket server will be started for each JVM system property like \"clojure."
-"server.<server-name>\". The value for this property is an edn map "
-"representing the configuration of the socket server with the following "
-"properties:"
+"A socket server will be started for each JVM system property like \"clojure.server.<server-name>\". The value for "
+"this property is an edn map representing the configuration of the socket server with the following properties:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:118
-msgid ""
-"`server-daemon` - defaults to true, socket server thread doesn't block exit"
+msgid "`server-daemon` - defaults to true, socket server thread doesn't block exit"
 msgstr ""
 
 #. type: Plain text
@@ -378,8 +332,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:121
-msgid ""
-"`accept` - namespaced symbol of function to invoke on socket accept, required"
+msgid "`accept` - namespaced symbol of function to invoke on socket accept, required"
 msgstr ""
 
 #. type: Plain text
@@ -389,30 +342,26 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:123
-msgid ""
-"`bind-err` - defaults to true, binds `pass:[*err*]` to socket out stream"
+msgid "`bind-err` - defaults to true, binds `pass:[*err*]` to socket out stream"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:124
-msgid ""
-"`client-daemon` - defaults to true, socket client thread doesn't block exit"
+msgid "`client-daemon` - defaults to true, socket client thread doesn't block exit"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:126
 msgid ""
-"Additionally, there is a repl function provided that is slightly customized "
-"for use with the socket server in http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core.server/repl[clojure.core.server/repl]."
+"Additionally, there is a repl function provided that is slightly customized for use with the socket server in http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/repl]."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:128
 msgid ""
-"Following is an example of starting a socket server with a repl listener. "
-"This can be added to any existing Clojure program to allow it to accept "
-"external REPL clients via a local connection to port 5555."
+"Following is an example of starting a socket server with a repl listener. This can be added to any existing Clojure "
+"program to allow it to accept external REPL clients via a local connection to port 5555."
 msgstr ""
 
 #. type: delimited block -
@@ -440,9 +389,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:147
-msgid ""
-"You can instruct the server to close the client socket repl session by using "
-"the special command `:repl/quit`:"
+msgid "You can instruct the server to close the client socket repl session by using the special command `:repl/quit`:"
 msgstr ""
 
 #. type: delimited block -
@@ -465,46 +412,38 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:158
-msgid ""
-"http://dev.clojure.org/display/design/Socket+Server+REPL[Socket REPL design "
-"page]"
+msgid "http://dev.clojure.org/display/design/Socket+Server+REPL[Socket REPL design page]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:162
-msgid ""
-"Main entry point: `http://clojure.github.io/clojure/clojure.main-api."
-"html#clojure.main/main[clojure.main/main]`"
+msgid "Main entry point: `http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main[clojure.main/main]`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:164
-msgid ""
-"Reusable REPL: `http://clojure.github.io/clojure/clojure.main-api."
-"html#clojure.main/repl[clojure.main/repl]`"
+msgid "Reusable REPL: `http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl[clojure.main/repl]`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:166
 msgid ""
-"Allowing set! for the customary REPL vars: `http://clojure.github.io/clojure/"
-"clojure.main-api.html#clojure.main/with-bindings[clojure.main/with-bindings]`"
+"Allowing set! for the customary REPL vars: `http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-"
+"bindings[clojure.main/with-bindings]`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:168
 msgid ""
-"Socket server control: `http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core.server/start-server[clojure.core.server/start-server]` "
-"`http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/"
-"stop-server[clojure.core.server/stop-server]` `http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core.server/stop-servers[clojure.core."
-"server/stop-servers]`"
+"Socket server control: `http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-"
+"server[clojure.core.server/start-server]` `http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/"
+"stop-server[clojure.core.server/stop-server]` `http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"server/stop-servers[clojure.core.server/stop-servers]`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:169
 msgid ""
-"Socket repl: `http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core.server/repl[clojure.core.server/repl]`"
+"Socket repl: `http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/"
+"repl]`"
 msgstr ""

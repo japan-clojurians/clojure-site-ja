@@ -30,38 +30,34 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:9
 msgid ""
-"Transducers are a powerful and composable way to build algorithmic "
-"transformations that you can reuse in many contexts, and they're coming to "
-"Clojure core and core.async."
+"Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many "
+"contexts, and they're coming to Clojure core and core.async."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:11
 msgid ""
-"Two years ago, in a http://clojure.com/blog/2012/05/15/anatomy-of-reducer."
-"html[blog post describing how reducers work], I described the reducing "
-"function transformers on which they were based, and provided explicit "
-"examples like `mapping`, `filtering` and `mapcatting`. Because the reducers "
-"library intends to deliver an API with the same 'shape' as existing sequence "
-"function APIs, these transformers were never exposed a la carte, instead "
-"being encapsulated by the macrology of reducers."
+"Two years ago, in a http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[blog post describing how reducers "
+"work], I described the reducing function transformers on which they were based, and provided explicit examples like "
+"`mapping`, `filtering` and `mapcatting`. Because the reducers library intends to deliver an API with the same 'shape' "
+"as existing sequence function APIs, these transformers were never exposed a la carte, instead being encapsulated by "
+"the macrology of reducers."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:13
 msgid ""
-"In working recently on providing algorithmic combinators for core.async, I "
-"became more and more convinced of the superiority of reducing function "
-"transformers over channel->channel functions for algorithmic transformation. "
-"In fact, I think they are a better way to do many things for which we "
-"normally create bespoke replicas of map, filter etc."
+"In working recently on providing algorithmic combinators for core.async, I became more and more convinced of the "
+"superiority of reducing function transformers over channel->channel functions for algorithmic transformation. In "
+"fact, I think they are a better way to do many things for which we normally create bespoke replicas of map, filter "
+"etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:15
 msgid ""
-"So, reducing function transformers are getting a name - *transducers*, and "
-"first-class support in Clojure core and core.async."
+"So, reducing function transformers are getting a name - *transducers*, and first-class support in Clojure core and "
+"core.async."
 msgstr ""
 
 #. type: Title ==
@@ -78,9 +74,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:21
 msgid ""
-"A reducing function is just the kind of function you'd pass to `reduce` - it "
-"takes a result so far and a new input and returns the next result-so-far. In "
-"the context of transducers it's best to think about this most generally:"
+"A reducing function is just the kind of function you'd pass to `reduce` - it takes a result so far and a new input "
+"and returns the next result-so-far. In the context of transducers it's best to think about this most generally:"
 msgstr ""
 
 #. type: delimited block -
@@ -93,9 +88,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:29
-msgid ""
-"and a transducer is a function that takes one reducing function and returns "
-"another:"
+msgid "and a transducer is a function that takes one reducing function and returns another:"
 msgstr ""
 
 #. type: delimited block -
@@ -108,9 +101,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:37
-msgid ""
-"The primary power of transducers comes from their fundamental decoupling - "
-"they don't care (or know about):"
+msgid "The primary power of transducers comes from their fundamental decoupling - they don't care (or know about):"
 msgstr ""
 
 #. type: Plain text
@@ -130,17 +121,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:43
-msgid ""
-"The other source of power comes from the fact that transducers compose using "
-"ordinary function composition."
+msgid "The other source of power comes from the fact that transducers compose using ordinary function composition."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:45
 msgid ""
-"The reducers library leverages transducers' decoupling from the job, the "
-"representation, and the source of inputs to accomplish parallel reduction. "
-"But transducers can also be used for:"
+"The reducers library leverages transducers' decoupling from the job, the representation, and the source of inputs to "
+"accomplish parallel reduction. But transducers can also be used for:"
 msgstr ""
 
 #. type: Plain text
@@ -177,10 +165,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:56
 msgid ""
-"Concretely, most of the core sequence functions are gaining a new arity, one "
-"shorter than their current shortest, which elides the final collection "
-"source argument. This arity will return a transducer that represents the "
-"same logic, independent of lazy sequence processing."
+"Concretely, most of the core sequence functions are gaining a new arity, one shorter than their current shortest, "
+"which elides the final collection source argument. This arity will return a transducer that represents the same "
+"logic, independent of lazy sequence processing."
 msgstr ""
 
 #. type: Plain text
@@ -203,9 +190,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:68
-msgid ""
-"You can build a 'stack' of transducers using ordinary function composition "
-"(comp):"
+msgid "You can build a 'stack' of transducers using ordinary function composition (comp):"
 msgstr ""
 
 #. type: delimited block -
@@ -216,8 +201,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:75
-msgid ""
-"You might notice the similarity between the above comp and a call to ->>:"
+msgid "You might notice the similarity between the above comp and a call to ->>:"
 msgstr ""
 
 #. type: delimited block -
@@ -229,8 +213,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:82
 msgid ""
-"One way to think of transducers is like ->> but independent of the job (lazy "
-"sequence creation) and the source of inputs (aseq)."
+"One way to think of transducers is like ->> but independent of the job (lazy sequence creation) and the source of "
+"inputs (aseq)."
 msgstr ""
 
 #. type: Title ==
@@ -241,22 +225,17 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:86
-msgid ""
-"Once you've got a transducer, what can you do with it? _**An open set of "
-"things.**_"
+msgid "Once you've got a transducer, what can you do with it? _**An open set of things.**_"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:88
-msgid ""
-"For instance, given the above transducer and some data in a vector, you can:"
+msgid "For instance, given the above transducer and some data in a vector, you can:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:90
-msgid ""
-"lazily transform the data (one lazy sequence, not three as with composed "
-"sequence functions) +"
+msgid "lazily transform the data (one lazy sequence, not three as with composed sequence functions) +"
 msgstr ""
 
 #. type: delimited block -
@@ -278,8 +257,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:100
-msgid ""
-"build one collection from a transformation of another, again no laziness +"
+msgid "build one collection from a transformation of another, again no laziness +"
 msgstr ""
 
 #. type: delimited block -
@@ -290,9 +268,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:105
-msgid ""
-"create a recipe for a transformation, which can be subsequently sequenced, "
-"iterated or reduced +"
+msgid "create a recipe for a transformation, which can be subsequently sequenced, iterated or reduced +"
 msgstr ""
 
 #. type: delimited block -
@@ -303,9 +279,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:110
-msgid ""
-"or use the same transducer to transform everything that goes through a "
-"channel +"
+msgid "or use the same transducer to transform everything that goes through a channel +"
 msgstr ""
 
 #. type: delimited block -
@@ -316,24 +290,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:116
-msgid ""
-"The latter demonstrates the corresponding new capability of core.async "
-"channels - they can take transducers."
+msgid "The latter demonstrates the corresponding new capability of core.async channels - they can take transducers."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:118
 msgid ""
-"This post is just to serve as a heads up on what the ongoing work is about. "
-"There will be more explanations, tutorials and derivations to follow, here "
-"and elsewhere."
+"This post is just to serve as a heads up on what the ongoing work is about. There will be more explanations, "
+"tutorials and derivations to follow, here and elsewhere."
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:120
-msgid ""
-"I'm excited about transducers and the power they bring, and I hope you are "
-"too!"
+msgid "I'm excited about transducers and the power they bring, and I hope you are too!"
 msgstr ""
 
 #. type: Plain text

@@ -17,8 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
-#: en/content/events/2016/clojureexchange.adoc:1
-#: en/content/events/2015/clojurex.adoc:1
+#: en/content/events/2016/clojureexchange.adoc:1 en/content/events/2015/clojurex.adoc:1
 #, no-wrap
 msgid "Clojure eXchange"
 msgstr ""
@@ -31,16 +30,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2015/clojurex.adoc:12
 msgid ""
-"Do you want to explore the latest innovations in Clojure and meet with your "
-"peers attempting to solve complex software problems using this Functional "
-"language?"
+"Do you want to explore the latest innovations in Clojure and meet with your peers attempting to solve complex "
+"software problems using this Functional language?"
 msgstr ""
 
 #. type: Plain text
 #: en/content/events/2015/clojurex.adoc:13
 msgid ""
-"Clojure's rise to prominence and it's increasing popularity as 'weapon of "
-"choice' for tackling complex software problems got us thinking; wouldn't it "
-"be great to get the world's greatest Clojure experts in London with hundreds "
-"of fellow Clojurians? Well, we thought so too."
+"Clojure's rise to prominence and it's increasing popularity as 'weapon of choice' for tackling complex software "
+"problems got us thinking; wouldn't it be great to get the world's greatest Clojure experts in London with hundreds of "
+"fellow Clojurians? Well, we thought so too."
 msgstr ""

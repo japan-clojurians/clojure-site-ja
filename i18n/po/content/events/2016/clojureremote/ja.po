@@ -30,14 +30,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2016/clojureremote.adoc:12
 msgid ""
-"This February, Homegrown Labs presents Clojure Remote—Clojure’s first "
-"exclusively Remote conference. Join us anywhere; from your home, your "
-"office, or the coffee shop."
+"This February, Homegrown Labs presents Clojure Remote—Clojure’s first exclusively Remote conference. Join us "
+"anywhere; from your home, your office, or the coffee shop."
 msgstr ""
 
 #. type: Plain text
 #: en/content/events/2016/clojureremote.adoc:13
 msgid ""
-"Over two days, you’ll join hundreds of other Clojurists online via crowdcast."
-"io to enjoy up to two tracks of beginner to intermediate Clojure talks."
+"Over two days, you’ll join hundreds of other Clojurists online via crowdcast.io to enjoy up to two tracks of beginner "
+"to intermediate Clojure talks."
 msgstr ""

@@ -30,10 +30,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/companies.adoc:9
 msgid ""
-"Below is a partial list of some companies using Clojure or ClojureScript. "
-"Most of this information comes from direct contacts, presentations, or other "
-"online resources. If you would like to be added or removed from this list, "
-"please contact __alex.miller@cognitect.com__."
+"Below is a partial list of some companies using Clojure or ClojureScript. Most of this information comes from direct "
+"contacts, presentations, or other online resources. If you would like to be added or removed from this list, please "
+"contact __alex.miller@cognitect.com__."
 msgstr ""
 
 #. type: Plain text
@@ -138,8 +137,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:31
-msgid ""
-"https://www.braintreepayments.com/[Braintree Payments] (acquired by PayPal)"
+msgid "https://www.braintreepayments.com/[Braintree Payments] (acquired by PayPal)"
 msgstr ""
 
 #. type: Plain text
@@ -224,9 +222,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:48
-msgid ""
-"http://www.climate.com/[Climate Corp] (acquired by http://www.monsanto."
-"com[Monsanto])"
+msgid "http://www.climate.com/[Climate Corp] (acquired by http://www.monsanto.com[Monsanto])"
 msgstr ""
 
 #. type: Plain text
@@ -281,8 +277,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:59
-msgid ""
-"http://www.consumerfinance.gov/[CFPB (Credit Financial Protection Bureau)]"
+msgid "http://www.consumerfinance.gov/[CFPB (Credit Financial Protection Bureau)]"
 msgstr ""
 
 #. type: Plain text
@@ -612,9 +607,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:125
-msgid ""
-"http://lonocloud.com/[LonoCloud] (acquired by https://www.viasat.com/"
-"[ViaSat])"
+msgid "http://lonocloud.com/[LonoCloud] (acquired by https://www.viasat.com/[ViaSat])"
 msgstr ""
 
 #. type: Plain text
@@ -874,9 +867,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:177
-msgid ""
-"http://www.roomkey.com/[RoomKey] - see http://cognitect.com/consulting/case-"
-"studies/roomkey[case study]"
+msgid "http://www.roomkey.com/[RoomKey] - see http://cognitect.com/consulting/case-studies/roomkey[case study]"
 msgstr ""
 
 #. type: Plain text
@@ -1001,9 +992,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:202
-msgid ""
-"http://www.teradata.com[Teradata] - http://www.teradata.com/Teradata-"
-"Loom[Loom]"
+msgid "http://www.teradata.com[Teradata] - http://www.teradata.com/Teradata-Loom[Loom]"
 msgstr ""
 
 #. type: Plain text
@@ -1018,16 +1007,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:205
-msgid ""
-"http://www.thoughtworks.com/[ThoughtWorks] - http://www.thoughtworks.com/"
-"clients/ioof[IOOF] (and others)"
+msgid "http://www.thoughtworks.com/[ThoughtWorks] - http://www.thoughtworks.com/clients/ioof[IOOF] (and others)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:206
-msgid ""
-"http://www.threatgrid.com/[ThreatGRID] (acquired by http://www.cisco.com/"
-"[Cisco])"
+msgid "http://www.threatgrid.com/[ThreatGRID] (acquired by http://www.cisco.com/[Cisco])"
 msgstr ""
 
 #. type: Plain text
@@ -1102,9 +1087,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:221
-msgid ""
-"http://wikidocs.com/[Wikidocs] (acquired by https://www.atlassian."
-"com[Atlassian])"
+msgid "http://wikidocs.com/[Wikidocs] (acquired by https://www.atlassian.com[Atlassian])"
 msgstr ""
 
 #. type: Plain text
@@ -1129,9 +1112,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:226
-msgid ""
-"https://xcoo.jp/[Xcoo, Inc.] - https://chrov.is[Chrovis], http://newshack.io/"
-"[Hacker News Hack]"
+msgid "https://xcoo.jp/[Xcoo, Inc.] - https://chrov.is[Chrovis], http://newshack.io/[Hacker News Hack]"
 msgstr ""
 
 #. type: Plain text

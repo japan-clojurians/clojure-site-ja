@@ -30,9 +30,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2016/clojurewest.adoc:14
 msgid ""
-"Clojure/west is the biggest Clojure conference in the western United "
-"States.  Founded in 2012, the conference is a great place to meet Clojure "
-"developers and learn about what is happening in the language, in the "
-"community, and in companies using Clojure. Clojure/west features two tracks "
-"of sessions."
+"Clojure/west is the biggest Clojure conference in the western United States.  Founded in 2012, the conference is a "
+"great place to meet Clojure developers and learn about what is happening in the language, in the community, and in "
+"companies using Clojure. Clojure/west features two tracks of sessions."
 msgstr ""

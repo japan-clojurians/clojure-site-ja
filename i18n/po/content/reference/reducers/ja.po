@@ -17,56 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
@@ -79,41 +60,34 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:17
 msgid ""
-"Reducers provide an alternative approach to using <<sequences#,sequences>> "
-"to manipulate standard Clojure collections. Sequence functions are typically "
-"applied lazily, in order, create intermediate results, and in a single "
-"thread. However, many sequence functions (like map and filter) could "
-"conceptually be applied in parallel, yielding code that will get faster "
-"automatically as machines get more cores. For more details on the rationale "
-"for reducers, see the original http://clojure.com/blog/2012/05/08/reducers-a-"
-"library-and-model-for-collection-processing.html[blog] http://clojure.com/"
-"blog/2012/05/15/anatomy-of-reducer.html[posts]."
+"Reducers provide an alternative approach to using <<sequences#,sequences>> to manipulate standard Clojure "
+"collections. Sequence functions are typically applied lazily, in order, create intermediate results, and in a single "
+"thread. However, many sequence functions (like map and filter) could conceptually be applied in parallel, yielding "
+"code that will get faster automatically as machines get more cores. For more details on the rationale for reducers, "
+"see the original http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html[blog] "
+"http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[posts]."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:19
 msgid ""
-"A _reducer_ is the combination of a _reducible collection_ (a collection "
-"that knows how to reduce itself) with a _reducing function_ (the \"recipe\" "
-"for what needs to be done during the reduction). The standard sequence "
-"operations are replaced with new versions that do not perform the operation "
-"but merely transform the reducing function. Execution of the operations is "
-"deferred until the final reduction is performed. This removes the "
-"intermediate results and lazy evaluation seen with sequences."
+"A _reducer_ is the combination of a _reducible collection_ (a collection that knows how to reduce itself) with a "
+"_reducing function_ (the \"recipe\" for what needs to be done during the reduction). The standard sequence operations "
+"are replaced with new versions that do not perform the operation but merely transform the reducing function. "
+"Execution of the operations is deferred until the final reduction is performed. This removes the intermediate results "
+"and lazy evaluation seen with sequences."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:21
 msgid ""
-"Additionally, some collections (persistent vectors and maps) are _foldable_. "
-"The _fold_ operation on a reducer executes the reduction in parallel by:"
+"Additionally, some collections (persistent vectors and maps) are _foldable_. The _fold_ operation on a reducer "
+"executes the reduction in parallel by:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:23
-msgid ""
-"Partitioning the reducible collection at a specified granularity (default = "
-"512 elements)"
+msgid "Partitioning the reducible collection at a specified granularity (default = 512 elements)"
 msgstr ""
 
 #. type: Plain text
@@ -124,15 +98,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:25
 msgid ""
-"Recursively combining each partition using Java's http://gee.cs.oswego.edu/"
-"dl/papers/fj.pdf[fork/join] framework."
+"Recursively combining each partition using Java's http://gee.cs.oswego.edu/dl/papers/fj.pdf[fork/join] framework."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:27
-msgid ""
-"If a collection does not support folding, it will fall back to non-parallel "
-"reduce instead."
+msgid "If a collection does not support folding, it will fall back to non-parallel reduce instead."
 msgstr ""
 
 #. type: Title ==
@@ -144,9 +115,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:31
 msgid ""
-"The *clojure.core.reducers* namespace (aliased here as *r*) provides an "
-"alternate http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core.reducers/reduce[r/reduce] function."
+"The *clojure.core.reducers* namespace (aliased here as *r*) provides an alternate http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] function."
 msgstr ""
 
 #. type: Plain text
@@ -170,19 +140,16 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:41
 msgid ""
-"When init is not provided, f is invoked with no arguments to produce an "
-"identity value ** _Note: f may be invoked multiple times to provide the "
-"identity value_"
+"When init is not provided, f is invoked with no arguments to produce an identity value ** _Note: f may be invoked "
+"multiple times to provide the identity value_"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:43
 msgid ""
-"In general most users will not call r/reduce directly and instead should "
-"prefer http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
-"reducers/fold[r/fold], which implements parallel reduce and combine. "
-"However, it may be useful to execute an eager reduce with fewer intermediate "
-"results."
+"In general most users will not call r/reduce directly and instead should prefer http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.reducers/fold[r/fold], which implements parallel reduce and combine. However, it "
+"may be useful to execute an eager reduce with fewer intermediate results."
 msgstr ""
 
 #. type: Plain text
@@ -197,38 +164,28 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:50
 msgid ""
-"r/fold takes a reducible collection and partitions it into groups of "
-"approximately n (default 512) elements. Each group is reduced using the "
-"reducef function. The reducef function will be called with no arguments to "
-"produce an identity value _in each partition_. The results of those "
-"reductions are then reduced with the combinef (defaults to reducef) "
-"function. When called with no arguments, (combinef) must produce its "
-"identity element - this will be called multiple times. Operations may be "
-"performed in parallel. Results will preserve order."
+"r/fold takes a reducible collection and partitions it into groups of approximately n (default 512) elements. Each "
+"group is reduced using the reducef function. The reducef function will be called with no arguments to produce an "
+"identity value _in each partition_. The results of those reductions are then reduced with the combinef (defaults to "
+"reducef) function. When called with no arguments, (combinef) must produce its identity element - this will be called "
+"multiple times. Operations may be performed in parallel. Results will preserve order."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:52
 msgid ""
-"The following functions (analagous to the sequence versions) create reducers "
-"from a reducible or foldable collection: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/map[r/map] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/"
-"filter[r/filter] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core.reducers/remove[r/remove] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/flatten[r/flatten] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-"
-"while[r/take-while] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core.reducers/take[r/take] and http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/drop[r/drop]. None of these "
-"functions actually transforms the source collection. To produce an "
-"accumulated result, you must use r/reduce or r/fold. To produce an output "
-"collection, use http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/into[clojure.core/into] to choose the collection type or "
-"the provided http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core.reducers/foldcat[r/foldcat] to produce a collection that is reducible, "
-"foldable, seqable, and counted."
+"The following functions (analagous to the sequence versions) create reducers from a reducible or foldable collection: "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core.reducers/filter[r/filter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"reducers/remove[r/remove] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/"
+"flatten] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take[r/take] and http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core.reducers/drop[r/drop]. None of these functions actually transforms the "
+"source collection. To produce an accumulated result, you must use r/reduce or r/fold. To produce an output "
+"collection, use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[clojure.core/into] to choose "
+"the collection type or the provided http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/"
+"foldcat[r/foldcat] to produce a collection that is reducible, foldable, seqable, and counted."
 msgstr ""
 
 #. type: Title ==
@@ -254,8 +211,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:63
 msgid ""
-"Use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"into[into] to produce a final collection:"
+"Use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
 msgstr ""
 
 #. type: delimited block -
@@ -266,9 +222,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:68
-msgid ""
-"Or http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
-"reducers/foldcat[r/foldcat]:"
+msgid "Or http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
 msgstr ""
 
 #. type: delimited block -

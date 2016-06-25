@@ -17,49 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
-#: en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73
-#: en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96
-#: en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131
-#: en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152
-#: en/content/reference/java_interop.adoc:193 en/content/reference/libs.adoc:63
-#: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
-#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121
-#: en/content/community/editing.adoc:131
+#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/evaluation.adoc:62
+#: en/content/reference/evaluation.adoc:73 en/content/reference/java_interop.adoc:76
+#: en/content/reference/java_interop.adoc:96 en/content/reference/java_interop.adoc:109
+#: en/content/reference/java_interop.adoc:131 en/content/reference/java_interop.adoc:138
+#: en/content/reference/java_interop.adoc:152 en/content/reference/java_interop.adoc:193
+#: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
+#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr ""
 
@@ -81,9 +64,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:18
-msgid ""
-"On a sequence of forms read from a stream, via `load` / `load-file` / `load-"
-"reader` / `load-string`"
+msgid "On a sequence of forms read from a stream, via `load` / `load-file` / `load-reader` / `load-string`"
 msgstr ""
 
 #. type: Plain text
@@ -94,22 +75,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:22
 msgid ""
-"Clojure programs are composed of expressions. Every form not handled "
-"specially by a special form or macro is considered by the compiler to be an "
-"expression, which is evaluated to yield a value. There are no declarations "
-"or statements, although sometimes expressions may be evaluated for their "
-"side-effects and their values ignored.  In all cases, evaluation is the same "
-"- a single object is considered by the compiler, evaluated, and its result "
-"returned. If an expression needs to be compiled, it will be. There is no "
-"separate compilation step, nor any need to worry that a function you have "
-"defined is being interpreted. _Clojure has no interpreter_."
+"Clojure programs are composed of expressions. Every form not handled specially by a special form or macro is "
+"considered by the compiler to be an expression, which is evaluated to yield a value. There are no declarations or "
+"statements, although sometimes expressions may be evaluated for their side-effects and their values ignored.  In all "
+"cases, evaluation is the same - a single object is considered by the compiler, evaluated, and its result returned. If "
+"an expression needs to be compiled, it will be. There is no separate compilation step, nor any need to worry that a "
+"function you have defined is being interpreted. _Clojure has no interpreter_."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:24
-msgid ""
-"Strings, numbers, characters, `true`, `false`, `nil` and keywords evaluate "
-"to themselves."
+msgid "Strings, numbers, characters, `true`, `false`, `nil` and keywords evaluate to themselves."
 msgstr ""
 
 #. type: Plain text
@@ -120,17 +96,16 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:28
 msgid ""
-"If it is namespace-qualified, the value is the value of the binding of the "
-"global var named by the symbol. It is an error if there is no global var "
-"named by the symbol, or if the reference is to a non-public var in a "
-"different namespace."
+"If it is namespace-qualified, the value is the value of the binding of the global var named by the symbol. It is an "
+"error if there is no global var named by the symbol, or if the reference is to a non-public var in a different "
+"namespace."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:29
 msgid ""
-"If it is package-qualified, the value is the Java class named by the symbol. "
-"It is an error if there is no Class named by the symbol."
+"If it is package-qualified, the value is the Java class named by the symbol. It is an error if there is no Class "
+"named by the symbol."
 msgstr ""
 
 #. type: Plain text
@@ -140,34 +115,29 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:31
-msgid ""
-"If it names a special form it is considered a special form, and must be "
-"utilized accordingly."
+msgid "If it names a special form it is considered a special form, and must be utilized accordingly."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:32
 msgid ""
-"A lookup is done in the current namespace to see if there is a mapping from "
-"the symbol to a class. If so, the symbol is considered to name a Java class "
-"object. Note that class names normally denote class objects, but are treated "
+"A lookup is done in the current namespace to see if there is a mapping from the symbol to a class. If so, the symbol "
+"is considered to name a Java class object. Note that class names normally denote class objects, but are treated "
 "specially in certain special forms, e.g. `.` and `new`."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:33
 msgid ""
-"If in a local scope (i.e. in a function definition), a lookup is done to see "
-"if it names a local binding (e.g. a function argument or let-bound name). If "
-"so, the value is the value of the local binding."
+"If in a local scope (i.e. in a function definition), a lookup is done to see if it names a local binding (e.g. a "
+"function argument or let-bound name). If so, the value is the value of the local binding."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:34
 msgid ""
-"A lookup is done in the current namespace to see if there is a mapping from "
-"the symbol to a var. If so, the value is the value of the binding of the var "
-"referred-to by the symbol."
+"A lookup is done in the current namespace to see if there is a mapping from the symbol to a var. If so, the value is "
+"the value of the binding of the var referred-to by the symbol."
 msgstr ""
 
 #. type: Plain text
@@ -177,19 +147,16 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:37
-msgid ""
-"If a Symbol has metadata, it may be used by the compiler, but will not be "
-"part of the resulting value."
+msgid "If a Symbol has metadata, it may be used by the compiler, but will not be part of the resulting value."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:39
 msgid ""
-"Vectors, Sets and Maps yield vectors and (hash) sets and maps whose contents "
-"are the _evaluated values_ of the objects they contain. Vector elements are "
-"evaluated left to right, Sets and Maps are evaluated in an undefined order. "
-"The same is true of metadata maps. If the vector or map has metadata, the "
-"_evaluated_ metadata map will become the metadata of the resulting value."
+"Vectors, Sets and Maps yield vectors and (hash) sets and maps whose contents are the _evaluated values_ of the "
+"objects they contain. Vector elements are evaluated left to right, Sets and Maps are evaluated in an undefined order. "
+"The same is true of metadata maps. If the vector or map has metadata, the _evaluated_ metadata map will become the "
+"metadata of the resulting value."
 msgstr ""
 
 #. type: delimited block -
@@ -210,42 +177,35 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:51
 msgid ""
-"Non-empty Lists are considered _calls_ to either special forms, macros, or "
-"functions. A call has the form +(operator operands*)+."
+"Non-empty Lists are considered _calls_ to either special forms, macros, or functions. A call has the form +(operator "
+"operands*)+."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:53
 msgid ""
-"Special forms are primitives built-in to Clojure that perform core "
-"operations. If the operator of a call is a symbol that resolves to the name "
-"of a special form, the call is to that special form. Each form discussed "
-"individually under <<special_forms#,Special Forms>>."
+"Special forms are primitives built-in to Clojure that perform core operations. If the operator of a call is a symbol "
+"that resolves to the name of a special form, the call is to that special form. Each form discussed individually under "
+"<<special_forms#,Special Forms>>."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:55
 msgid ""
-"<<macros#,Macros>> are functions that manipulate forms, allowing for "
-"syntactic abstraction. If the operator of a call is a symbol that names a "
-"global var that is a macro function, that macro function is called and is "
-"passed the _unevaluated_ operand forms. The return value of the macro is "
-"then evaluated in its place."
+"<<macros#,Macros>> are functions that manipulate forms, allowing for syntactic abstraction. If the operator of a call "
+"is a symbol that names a global var that is a macro function, that macro function is called and is passed the "
+"_unevaluated_ operand forms. The return value of the macro is then evaluated in its place."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:58
 msgid ""
-"If the operator is not a special form or macro, the call is considered a "
-"function call. Both the operator and the operands (if any) are evaluated, "
-"from left to right. The result of the evaluation of the operator is then "
-"cast to IFn (the interface representing Clojure functions), and invoke() is "
-"called on it, passing the evaluated arguments. The return value of invoke() "
-"is the value of the call expression. If the function call form has metadata, "
-"it may be used by the compiler, but will not be part of the resulting "
-"value.  Note that special forms and macros might have other-than-normal "
-"evaluation of their arguments, as described in their entries under "
-"<<special_forms#,Special Forms>>."
+"If the operator is not a special form or macro, the call is considered a function call. Both the operator and the "
+"operands (if any) are evaluated, from left to right. The result of the evaluation of the operator is then cast to IFn "
+"(the interface representing Clojure functions), and invoke() is called on it, passing the evaluated arguments. The "
+"return value of invoke() is the value of the call expression. If the function call form has metadata, it may be used "
+"by the compiler, but will not be part of the resulting value.  Note that special forms and macros might have other-"
+"than-normal evaluation of their arguments, as described in their entries under <<special_forms#,Special Forms>>."
 msgstr ""
 
 #. type: Plain text
@@ -266,19 +226,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:69
 msgid ""
-"The above describes the evaluation of a single form. The various load forms "
-"will sequentially read and evaluate the set of forms contained in the "
-"source. Such sets of forms usually have side effects, often on the global "
-"environment, defining functions etc."
+"The above describes the evaluation of a single form. The various load forms will sequentially read and evaluate the "
+"set of forms contained in the source. Such sets of forms usually have side effects, often on the global environment, "
+"defining functions etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:71
 msgid ""
-"The loading functions occur in a temporary context, in which +*ns*+ has a "
-"fresh binding. That means that, should any form have an effect on that var "
-"(e.g. +in-namespace+), the effect will unwind at the completion of the load. "
-"load et al return the value produced by the last expression."
+"The loading functions occur in a temporary context, in which +*ns*+ has a fresh binding. That means that, should any "
+"form have an effect on that var (e.g. +in-namespace+), the effect will unwind at the completion of the load. load et "
+"al return the value produced by the last expression."
 msgstr ""
 
 #. type: Plain text

@@ -17,56 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
@@ -77,8 +58,7 @@ msgid "Transient Data Structures"
 msgstr ""
 
 #. type: Title =
-#: en/content/reference/transients.adoc:17
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
+#: en/content/reference/transients.adoc:17 en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
 #: en/content/about/rationale.adoc:1
 #, no-wrap
 msgid "Rationale"
@@ -87,41 +67,32 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transients.adoc:21
 msgid ""
-"_If a tree falls in the woods, does it make a sound?_ + _If a pure function "
-"mutates some local data in order to produce an immutable return value, is "
-"that ok?_"
+"_If a tree falls in the woods, does it make a sound?_ + _If a pure function mutates some local data in order to "
+"produce an immutable return value, is that ok?_"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:23
 msgid ""
-"It's an interesting question. Clojure data structures use mutation every "
-"time you call, e.g. *assoc*, creating one or more arrays and mutating them, "
-"before returning them for immutable use thereafter. The reason is "
-"performance - you simply can't get as fast using only pure functions and "
-"immutable data. Once constructed and shared however, being immutable and "
-"persistent is essential to robust programs. The things Clojure mutates "
-"internally are small, newly allocated arrays that constitute the internal "
-"nodes of its data structures. No one ever sees the arrays."
+"It's an interesting question. Clojure data structures use mutation every time you call, e.g. *assoc*, creating one or "
+"more arrays and mutating them, before returning them for immutable use thereafter. The reason is performance - you "
+"simply can't get as fast using only pure functions and immutable data. Once constructed and shared however, being "
+"immutable and persistent is essential to robust programs. The things Clojure mutates internally are small, newly "
+"allocated arrays that constitute the internal nodes of its data structures. No one ever sees the arrays."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:25
 msgid ""
-"You run into a similar scenario, at a higher level, when you want to "
-"initialize or transform a large persistent data structure using multiple "
-"steps, none of which will be seen by any code other than the constructing/"
-"transforming code. The challenge here is that the source of a transformation "
-"will be an existing persistent data structure, and the result of the "
-"function _will_ be shared. Copying into a traditional mutable data structure "
-"and back involves O(n) copying, and the internal code is an imperative mess "
-"quite unlike the rest of your Clojure code. Furthermore, there are no guards "
-"against accidentally sharing or aliasing the mutable data structure, "
-"especially if you need to call helper functions to do the work. In short, it "
-"would be a shame if you had to leave Clojure's model in order to speed up a "
-"piece of code like this. Transient data structures are a solution to this "
-"optimization problem that integrates with the Clojure model and provides the "
-"same thread safety guarantees you expect of Clojure."
+"You run into a similar scenario, at a higher level, when you want to initialize or transform a large persistent data "
+"structure using multiple steps, none of which will be seen by any code other than the constructing/transforming code. "
+"The challenge here is that the source of a transformation will be an existing persistent data structure, and the "
+"result of the function _will_ be shared. Copying into a traditional mutable data structure and back involves O(n) "
+"copying, and the internal code is an imperative mess quite unlike the rest of your Clojure code. Furthermore, there "
+"are no guards against accidentally sharing or aliasing the mutable data structure, especially if you need to call "
+"helper functions to do the work. In short, it would be a shame if you had to leave Clojure's model in order to speed "
+"up a piece of code like this. Transient data structures are a solution to this optimization problem that integrates "
+"with the Clojure model and provides the same thread safety guarantees you expect of Clojure."
 msgstr ""
 
 #. type: Title ==
@@ -133,75 +104,63 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transients.adoc:29
 msgid ""
-"Transient data structures are always created from an existing persistent "
-"Clojure data structure. As of Clojure 1.1.0, vectors, hash-maps, and hash-"
-"sets are supported. Note that not all Clojure data structures can support "
-"this feature, but most will. Lists will not, as there is no benefit to be "
-"had."
+"Transient data structures are always created from an existing persistent Clojure data structure. As of Clojure 1.1.0, "
+"vectors, hash-maps, and hash-sets are supported. Note that not all Clojure data structures can support this feature, "
+"but most will. Lists will not, as there is no benefit to be had."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:31
 msgid ""
-"You obtain a transient 'copy' of a data structure by calling *transient*. "
-"This creates a new transient data structure that is a copy of the source, "
-"and has the same performance characteristics. In fact, it mostly _is_ the "
-"source data structure, and highlights the first feature of transients - "
-"creating one is O(1). It shares structure with its source, just as "
-"persistent copies share structure."
+"You obtain a transient 'copy' of a data structure by calling *transient*. This creates a new transient data structure "
+"that is a copy of the source, and has the same performance characteristics. In fact, it mostly _is_ the source data "
+"structure, and highlights the first feature of transients - creating one is O(1). It shares structure with its "
+"source, just as persistent copies share structure."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:33
 msgid ""
-"The second feature of transients is that creating one does not modify the "
-"source, and the source cannot be modified via use of the transient. Your "
-"source data is immutable and persistent as always."
+"The second feature of transients is that creating one does not modify the source, and the source cannot be modified "
+"via use of the transient. Your source data is immutable and persistent as always."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:35
 msgid ""
-"Transients support the read-only interface of the source, i.e. you can call "
-"*nth*, *get*, *count* and fn-call a transient vector, just like a persistent "
-"vector."
+"Transients support the read-only interface of the source, i.e. you can call *nth*, *get*, *count* and fn-call a "
+"transient vector, just like a persistent vector."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:37
 msgid ""
-"Transients _**do not**_ support the persistent interface of the source data "
-"structure. *assoc*, *conj* etc will all throw exceptions, because transients "
-"are not persistent. Thus you cannot accidentally leak a transient into a "
-"context requiring a persistent."
+"Transients _**do not**_ support the persistent interface of the source data structure. *assoc*, *conj* etc will all "
+"throw exceptions, because transients are not persistent. Thus you cannot accidentally leak a transient into a context "
+"requiring a persistent."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:39
 msgid ""
-"Transients support a parallel set of 'changing' operations, with similar "
-"names followed by *!* - *assoc!*, *conj!* etc. These do the same things as "
-"their persistent counterparts except the return values are themselves "
-"transient. Note in particular that transients are not designed to be bashed "
-"in-place. You must capture and use the return value in the next call. In "
-"this way, they support the same code structure as the functional persistent "
-"code they replace. As the example will show, this will allow you to easily "
-"enhance the performance of a piece of code without structural change."
+"Transients support a parallel set of 'changing' operations, with similar names followed by *!* - *assoc!*, *conj!* "
+"etc. These do the same things as their persistent counterparts except the return values are themselves transient. "
+"Note in particular that transients are not designed to be bashed in-place. You must capture and use the return value "
+"in the next call. In this way, they support the same code structure as the functional persistent code they replace. "
+"As the example will show, this will allow you to easily enhance the performance of a piece of code without structural "
+"change."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:41
 msgid ""
-"When you are finished building up your results, you can create a persistent "
-"data structure by calling *persistent!* on the transient. This operation is "
-"also O(1). Subsequent to calling *persistent!*, the transient should not be "
-"used, and all operations will throw exceptions. This will be true also for "
-"any aliases you might have created."
+"When you are finished building up your results, you can create a persistent data structure by calling *persistent!* "
+"on the transient. This operation is also O(1). Subsequent to calling *persistent!*, the transient should not be used, "
+"and all operations will throw exceptions. This will be true also for any aliases you might have created."
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35
-#: en/content/reference/agents.adoc:39
+#: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35 en/content/reference/agents.adoc:39
 #, no-wrap
 msgid "Example"
 msgstr ""
@@ -209,9 +168,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transients.adoc:45
 msgid ""
-"Here's a very typical example, some code that builds up a vector for return, "
-"all 'changes' being local to the function. Note how the transient-using "
-"version has exactly the same structure, just:"
+"Here's a very typical example, some code that builds up a vector for return, all 'changes' being local to the "
+"function. Note how the transient-using version has exactly the same structure, just:"
 msgstr ""
 
 #. type: Plain text
@@ -274,27 +232,22 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transients.adoc:72
 msgid ""
-"That's all there is to using transients, but they have another important "
-"constraint: *Transients require thread isolation.* Because each result of a "
-"transient operation shares (mutable) structure with the previous, it is an "
-"error if more than one thread manipulates a transient at once. Use of a "
-"particular transient instance should be controlled either by using it in an "
-"single-threaded scope, or in a framework that enforces this."
+"That's all there is to using transients, but they have another important constraint: *Transients require thread "
+"isolation.* Because each result of a transient operation shares (mutable) structure with the previous, it is an error "
+"if more than one thread manipulates a transient at once. Use of a particular transient instance should be controlled "
+"either by using it in an single-threaded scope, or in a framework that enforces this."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:74
 msgid ""
-"In Clojure 1.6 and earlier, transients would detect any (read or write) use "
-"from a thread other than the one that created them and throw an exception. "
-"That check was removed in 1.7 to allow for more flexible use in frameworks "
-"like core.async go blocks that enforce the single-threaded constraint via "
-"other means."
+"In Clojure 1.6 and earlier, transients would detect any (read or write) use from a thread other than the one that "
+"created them and throw an exception. That check was removed in 1.7 to allow for more flexible use in frameworks like "
+"core.async go blocks that enforce the single-threaded constraint via other means."
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74
-#: en/content/guides/comparators.adoc:12
+#: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74 en/content/guides/comparators.adoc:12
 #, no-wrap
 msgid "Summary"
 msgstr ""
@@ -302,9 +255,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transients.adoc:78
 msgid ""
-"Transients provide a high-performance optimization of functional data-"
-"structure-building code that works with Clojure's data structures and "
-"provides critical safety guarantees."
+"Transients provide a high-performance optimization of functional data-structure-building code that works with "
+"Clojure's data structures and provides critical safety guarantees."
 msgstr ""
 
 #. type: Plain text
@@ -329,16 +281,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:85
-msgid ""
-"O(1) creation of persistent data structure when editing session finished"
+msgid "O(1) creation of persistent data structure when editing session finished"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:89
 msgid ""
-"Same code structure as functional version ** Capture return value, use for "
-"next call ** Don't bash in place ** Not persistent, so you can't hang onto "
-"interim values or alias"
+"Same code structure as functional version ** Capture return value, use for next call ** Don't bash in place ** Not "
+"persistent, so you can't hang onto interim values or alias"
 msgstr ""
 
 #. type: Plain text
@@ -353,7 +303,5 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:92
-msgid ""
-"Transient persistent vectors, hash-maps, and hash-sets were added in Clojure "
-"1.1."
+msgid "Transient persistent vectors, hash-maps, and hash-sets were added in Clojure 1.1."
 msgstr ""

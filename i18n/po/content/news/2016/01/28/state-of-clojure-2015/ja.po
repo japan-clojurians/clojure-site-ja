@@ -34,13 +34,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/28/state-of-clojure-2015.adoc:11
-msgid ""
-"http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results"
+msgid "http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/28/state-of-clojure-2015.adoc:12
-msgid ""
-"Thanks for responding - it's great to see the community growing and doing "
-"great things!"
+msgid "Thanks for responding - it's great to see the community growing and doing great things!"
 msgstr ""

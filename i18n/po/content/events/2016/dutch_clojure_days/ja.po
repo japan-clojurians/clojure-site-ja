@@ -29,7 +29,5 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/events/2016/dutch_clojure_days.adoc:11
-msgid ""
-"The Annual Gathering of Clojure Enthusiasts and Practitioners in the "
-"Netherlands!"
+msgid "The Annual Gathering of Clojure Enthusiasts and Practitioners in the Netherlands!"
 msgstr ""

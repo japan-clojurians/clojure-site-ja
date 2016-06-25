@@ -17,43 +17,29 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
-#: en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73
-#: en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96
-#: en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131
-#: en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152
-#: en/content/reference/java_interop.adoc:193 en/content/reference/libs.adoc:63
-#: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
-#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121
-#: en/content/community/editing.adoc:131
+#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/evaluation.adoc:62
+#: en/content/reference/evaluation.adoc:73 en/content/reference/java_interop.adoc:76
+#: en/content/reference/java_interop.adoc:96 en/content/reference/java_interop.adoc:109
+#: en/content/reference/java_interop.adoc:131 en/content/reference/java_interop.adoc:138
+#: en/content/reference/java_interop.adoc:152 en/content/reference/java_interop.adoc:193
+#: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
+#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr ""
 
@@ -104,12 +90,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:41
 msgid ""
-"The preferred idiomatic forms for accessing field or method members are "
-"given above. The instance member form works for both fields and methods. The "
-"instanceField form is preferred for fields and required if both a field and "
-"a 0-argument method of the same name exist. They all expand into calls to "
-"the dot operator (described below) at macroexpansion time. The expansions "
-"are as follows:"
+"The preferred idiomatic forms for accessing field or method members are given above. The instance member form works "
+"for both fields and methods. The instanceField form is preferred for fields and required if both a field and a 0-"
+"argument method of the same name exist. They all expand into calls to the dot operator (described below) at "
+"macroexpansion time. The expansions are as follows:"
 msgstr ""
 
 #. type: delimited block -
@@ -142,66 +126,56 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:62
-#: en/content/reference/java_interop.adoc:115
+#: en/content/reference/java_interop.adoc:62 en/content/reference/java_interop.adoc:115
 msgid "Special form."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:64
 msgid ""
-"The '.' special form is the basis for access to Java. It can be considered a "
-"member-access operator, and/or read as 'in the scope of'."
+"The '.' special form is the basis for access to Java. It can be considered a member-access operator, and/or read as "
+"'in the scope of'."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:66
 msgid ""
-"If the first operand is a symbol that resolves to a class name, the access "
-"is considered to be to a static member of the named class. Note that nested "
-"classes are named EnclosingClass$NestedClass, per the JVM spec. Otherwise it "
-"is presumed to be an instance member and the first argument is evaluated to "
-"produce the target object."
+"If the first operand is a symbol that resolves to a class name, the access is considered to be to a static member of "
+"the named class. Note that nested classes are named EnclosingClass$NestedClass, per the JVM spec. Otherwise it is "
+"presumed to be an instance member and the first argument is evaluated to produce the target object."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:68
 msgid ""
-"If the second operand is a symbol and no args are supplied it is taken to be "
-"a field access - the name of the field is the name of the symbol, and the "
-"value of the expression is the value of the field, _unless_ there is a no "
-"argument public method of the same name, in which case it resolves to a call "
-"to the method. If the second operand is a symbol starting with _-_, the "
-"member-symbol will resolve only as field access (never as a 0-arity method) "
-"and should be preferred when that is the intent."
+"If the second operand is a symbol and no args are supplied it is taken to be a field access - the name of the field "
+"is the name of the symbol, and the value of the expression is the value of the field, _unless_ there is a no argument "
+"public method of the same name, in which case it resolves to a call to the method. If the second operand is a symbol "
+"starting with _-_, the member-symbol will resolve only as field access (never as a 0-arity method) and should be "
+"preferred when that is the intent."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:70
 msgid ""
-"If the second operand is a list, or args are supplied, it is taken to be a "
-"method call. The first element of the list must be a simple symbol, and the "
-"name of the method is the name of the symbol. The args, if any, are "
-"evaluated from left to right, and passed to the matching method, which is "
-"called, and its value returned. If the method has a void return type, the "
-"value of the expression will be _**nil**_. Note that placing the method name "
-"in a list with any args is optional in the canonic form, but can be useful "
-"to gather args in macros built upon the form."
+"If the second operand is a list, or args are supplied, it is taken to be a method call. The first element of the list "
+"must be a simple symbol, and the name of the method is the name of the symbol. The args, if any, are evaluated from "
+"left to right, and passed to the matching method, which is called, and its value returned. If the method has a void "
+"return type, the value of the expression will be _**nil**_. Note that placing the method name in a list with any args "
+"is optional in the canonic form, but can be useful to gather args in macros built upon the form."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:72
 msgid ""
-"Note that boolean return values will be turned into Booleans, chars will "
-"become Characters, and numeric primitives will become Numbers unless they "
-"are immediately consumed by a method taking a primitive."
+"Note that boolean return values will be turned into Booleans, chars will become Characters, and numeric primitives "
+"will become Numbers unless they are immediately consumed by a method taking a primitive."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:74
 msgid ""
-"The member access forms given at the top of this section are preferred for "
-"use in all cases other than in macros."
+"The member access forms given at the top of this section are preferred for use in all cases other than in macros."
 msgstr ""
 
 #. type: Plain text
@@ -220,8 +194,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:84
 msgid ""
-"Macro. Expands into a member access (.) of the first member on the first "
-"argument, followed by the next member on the result, etc. For instance:"
+"Macro. Expands into a member access (.) of the first member on the first argument, followed by the next member on the "
+"result, etc. For instance:"
 msgstr ""
 
 #. type: Plain text
@@ -242,9 +216,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:92
 msgid ""
-"but is easier to write, read, and understand. See also the http://clojure."
-"github.com/clojure/clojure.core-api.html#clojure.core/%2d%3e[pass:[->]] "
-"macro which can be used similarly:"
+"but is easier to write, read, and understand. See also the http://clojure.github.com/clojure/clojure.core-api."
+"html#clojure.core/%2d%3e[pass:[->]] macro which can be used similarly:"
 msgstr ""
 
 #. type: Plain text
@@ -261,8 +234,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:100
 msgid ""
-"Macro. Evaluates instance-expr then calls all of the methods/functions with "
-"the supplied arguments in succession on the resulting object, returning it."
+"Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on "
+"the resulting object, returning it."
 msgstr ""
 
 #. type: delimited block -
@@ -284,9 +257,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:117
 msgid ""
-"The args, if any, are evaluated from left to right, and passed to the "
-"constructor of the class named by Classname. The constructed object is "
-"returned."
+"The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. "
+"The constructed object is returned."
 msgstr ""
 
 #. type: Title ===
@@ -298,8 +270,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:121
 msgid ""
-"As shown, in addition to the canonic special form new, Clojure supports "
-"special macroexpansion of symbols containing '.':"
+"As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing "
+"'.':"
 msgstr ""
 
 #. type: Plain text
@@ -330,9 +302,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:135
-msgid ""
-"Evaluates expr and tests if it is an instance of the class. Returns true or "
-"false"
+msgid "Evaluates expr and tests if it is an instance of the class. Returns true or false"
 msgstr ""
 
 #. type: Plain text
@@ -351,9 +321,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:146
 msgid ""
-"When the first operand is a field member access form, the assignment is to "
-"the corresponding field. If it is an instance field, the instance expr will "
-"be evaluated, then the expr."
+"When the first operand is a field member access form, the assignment is to the corresponding field. If it is an "
+"instance field, the instance expr will be evaluated, then the expr."
 msgstr ""
 
 #. type: Plain text
@@ -364,8 +333,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:150 en/content/reference/vars.adoc:69
 msgid ""
-"Note - _you cannot assign to function params or local bindings. Only Java "
-"fields, Vars, Refs and Agents are mutable in Clojure_."
+"Note - _you cannot assign to function params or local bindings. Only Java fields, Vars, Refs and Agents are mutable "
+"in Clojure_."
 msgstr ""
 
 #. type: Plain text
@@ -377,10 +346,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:156
 msgid ""
-"Macro. Expands into code that creates a fn that expects to be passed an "
-"object and any args and calls the named instance method on the object "
-"passing the args. Use when you want to treat a Java method as a first-class "
-"fn."
+"Macro. Expands into code that creates a fn that expects to be passed an object and any args and calls the named "
+"instance method on the object passing the args. Use when you want to treat a Java method as a first-class fn."
 msgstr ""
 
 #. type: delimited block -
@@ -393,8 +360,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:164
-msgid ""
-"Note it almost always preferable to do this directly now, with syntax like:"
+msgid "Note it almost always preferable to do this directly now, with syntax like:"
 msgstr ""
 
 #. type: delimited block -
@@ -413,8 +379,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:175
 msgid ""
-"Takes a Java object and returns a read-only implementation of the map "
-"abstraction based upon its JavaBean properties."
+"Takes a Java object and returns a read-only implementation of the map abstraction based upon its JavaBean properties."
 msgstr ""
 
 #. type: delimited block -
@@ -436,13 +401,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:187
 msgid ""
-"Many of the Clojure library functions have defined semantics for objects of "
-"Java types. contains? and get work on Java Maps, arrays, Strings, the latter "
-"two with integer keys. count works on Java Strings, Collections and arrays. "
-"nth works on Java Strings, Lists and arrays. seq works on Java reference "
-"arrays, Iterables and Strings. Since much of the rest of the library is "
-"built upon these functions, there is great support for using Java objects in "
-"Clojure algorithms."
+"Many of the Clojure library functions have defined semantics for objects of Java types. contains? and get work on "
+"Java Maps, arrays, Strings, the latter two with integer keys. count works on Java Strings, Collections and arrays. "
+"nth works on Java Strings, Lists and arrays. seq works on Java reference arrays, Iterables and Strings. Since much of "
+"the rest of the library is built upon these functions, there is great support for using Java objects in Clojure "
+"algorithms."
 msgstr ""
 
 #. type: Title ==
@@ -454,14 +417,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:191
 msgid ""
-"Clojure supports the dynamic creation of objects that implement one or more "
-"interfaces and/or extend a class with the http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/proxy[proxy] macro. The resulting objects "
-"are of an anonymous class. You can also generate statically-named classes "
-"and .class files with http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/gen-class[gen-class]. As of Clojure 1.2, http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/reify[reify] is also "
-"available for implementing interfaces."
+"Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy[proxy] macro. The resulting objects are of "
+"an anonymous class. You can also generate statically-named classes and .class files with http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/gen-class[gen-class]. As of Clojure 1.2, http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/reify[reify] is also available for implementing interfaces."
 msgstr ""
 
 #. type: Plain text
@@ -473,9 +433,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:199
 msgid ""
-"class-and-interfaces - a vector of class names + args - a (possibly empty) "
-"vector of arguments to the superclass constructor. + f => (name [params*] "
-"body) or (name ([params*] body) ([params+] body) ...)"
+"class-and-interfaces - a vector of class names + args - a (possibly empty) vector of arguments to the superclass "
+"constructor. + f => (name [params*] body) or (name ([params*] body) ([params+] body) ...)"
 msgstr ""
 
 #. type: Plain text
@@ -486,18 +445,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:203
 msgid ""
-"Expands to code which creates a instance of a proxy class that implements "
-"the named class/interface(s) by calling the supplied fns. A single class, if "
-"provided, must be first. If not provided it defaults to Object. The "
-"interfaces names must be valid interface types. If a method fn is not "
-"provided for a class method, the superclass method will be called. If a "
-"method fn is not provided for an interface method, an "
-"UnsupportedOperationException will be thrown should it be called. Method fns "
-"are closures and can capture the environment in which proxy is called. Each "
-"method fn takes an additional implicit first arg, which is bound to this. "
-"Note that while method fns can be provided to override protected methods, "
-"they have no other access to protected members, nor to super, as these "
-"capabilities cannot be proxied."
+"Expands to code which creates a instance of a proxy class that implements the named class/interface(s) by calling the "
+"supplied fns. A single class, if provided, must be first. If not provided it defaults to Object. The interfaces names "
+"must be valid interface types. If a method fn is not provided for a class method, the superclass method will be "
+"called. If a method fn is not provided for an interface method, an UnsupportedOperationException will be thrown "
+"should it be called. Method fns are closures and can capture the environment in which proxy is called. Each method fn "
+"takes an additional implicit first arg, which is bound to this. Note that while method fns can be provided to "
+"override protected methods, they have no other access to protected members, nor to super, as these capabilities "
+"cannot be proxied."
 msgstr ""
 
 #. type: Title ==
@@ -509,62 +464,45 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:207
 msgid ""
-"Clojure supports the creation, reading and modification of Java arrays. It "
-"is recommended that you limit use of arrays to interop with Java libraries "
-"that require them as arguments or use them as return values."
+"Clojure supports the creation, reading and modification of Java arrays. It is recommended that you limit use of "
+"arrays to interop with Java libraries that require them as arguments or use them as return values."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:209
 msgid ""
-"Note that many other Clojure functions work with arrays such as via the "
-"<<sequences#,seq library>>. The functions listed here exist for initial "
-"creation of arrays, or to support mutation or higher performance operations "
-"on arrays."
+"Note that many other Clojure functions work with arrays such as via the <<sequences#,seq library>>. The functions "
+"listed here exist for initial creation of arrays, or to support mutation or higher performance operations on arrays."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:217
 msgid ""
-"Create array from existing collection: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/aclone[aclone] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/amap[amap] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/to-array[to-array] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d[to-"
-"array-2d] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/into-array[into-array] Multi-dimensional array support: http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-"
-"array-2d[to-array-2d] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/make-array[make-array] Type-specific array constructors: "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean-"
-"array[boolean-array] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/byte-array[byte-array] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/char-array[char-array] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/double-array[double-"
-"array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"float-array[float-array] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/int-array[int-array] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/long-array[long-array] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/object-array[object-"
-"array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"short-array[short-array] Primitive array casts: http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/booleans[booleans] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/bytes[bytes] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/chars[chars] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"doubles[doubles] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/floats[floats] http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/ints[ints] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/longs[longs] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/shorts[shorts] Mutate an array: "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"aset[aset] Process an existing array: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/aget[aget] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/alength[alength] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce[areduce]"
+"Create array from existing collection: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"aclone[aclone] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/to-array[to-array] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/to-array-2d[to-array-2d] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-"
+"array[into-array] Multi-dimensional array support: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/aget[aget] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/to-array-2d[to-array-2d] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/make-array[make-array] Type-specific array constructors: http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/boolean-array[boolean-array] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/byte-array[byte-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-"
+"array[char-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double-array[double-array] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array[float-array] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/int-array[int-array] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/long-array[long-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/object-"
+"array[object-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array[short-array] "
+"Primitive array casts: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/booleans[booleans] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes[bytes] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/chars[chars] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"doubles[doubles] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/floats[floats] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/longs[longs] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts[shorts] "
+"Mutate an array: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] Process an existing "
+"array: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/alength[alength] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/amap[amap] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce[areduce]"
 msgstr ""
 
 #. type: Title ==
@@ -576,12 +514,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:222
 msgid ""
-"Clojure supports the use of type hints to assist the compiler in avoiding "
-"reflection in performance-critical areas of code. Normally, one should avoid "
-"the use of type hints until there is a known performance bottleneck. Type "
-"hints are metadata tags placed on symbols or expressions that are consumed "
-"by the compiler. They can be placed on function parameters, let-bound names, "
-"var names (when defined), and expressions:"
+"Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of "
+"code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are "
+"metadata tags placed on symbols or expressions that are consumed by the compiler. They can be placed on function "
+"parameters, let-bound names, var names (when defined), and expressions:"
 msgstr ""
 
 #. type: delimited block -
@@ -615,20 +551,18 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:240
 msgid ""
-"Once a type hint has been placed on an identifier or expression, the "
-"compiler will try to resolve any calls to methods thereupon at compile time. "
-"In addition, the compiler will track the use of any return values and infer "
-"types for their use and so on, so very few hints are needed to get a fully "
-"compile-time resolved series of calls. Note that type hints are not needed "
-"for static members (or their return values!) as the compiler always has the "
-"type for statics."
+"Once a type hint has been placed on an identifier or expression, the compiler will try to resolve any calls to "
+"methods thereupon at compile time. In addition, the compiler will track the use of any return values and infer types "
+"for their use and so on, so very few hints are needed to get a fully compile-time resolved series of calls. Note that "
+"type hints are not needed for static members (or their return values!) as the compiler always has the type for "
+"statics."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:242
 msgid ""
-"There is a pass:[*warn-on-reflection*] flag (defaults to false) which will "
-"cause the compiler to warn you when it can't resolve to a direct call:"
+"There is a pass:[*warn-on-reflection*] flag (defaults to false) which will cause the compiler to warn you when it "
+"can't resolve to a direct call:"
 msgstr ""
 
 #. type: delimited block -
@@ -658,9 +592,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:257
-msgid ""
-"For function return values, the type hint can be placed before the arguments "
-"vector:"
+msgid "For function return values, the type hint can be placed before the arguments vector:"
 msgstr ""
 
 #. type: delimited block -
@@ -688,9 +620,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:272
 msgid ""
-"Clojure provides aliases for primitive Java types and arrays which do not "
-"have typical representations as Java class names. For example, long arrays "
-"(long-array []) have a type of \"[J\"."
+"Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class "
+"names. For example, long arrays (long-array []) have a type of \"[J\"."
 msgstr ""
 
 #. type: Plain text
@@ -787,55 +718,47 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:295
 msgid ""
-"Clojure has support for high-performance manipulation of, and arithmetic "
-"involving, Java primitive types in local contexts. All Java primitive types "
-"are supported: int, float, long, double, boolean, char, short, and byte."
+"Clojure has support for high-performance manipulation of, and arithmetic involving, Java primitive types in local "
+"contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:297
 msgid ""
-"_**let**_/_**loop**_-bound locals can be of primitive types, having the "
-"inferred, possibly primitive type of their init-form."
+"_**let**_/_**loop**_-bound locals can be of primitive types, having the inferred, possibly primitive type of their "
+"init-form."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:298
 msgid ""
-"_**recur**_ forms that rebind primitive locals do so without boxing, and do "
-"type-checking for same primitive type."
+"_**recur**_ forms that rebind primitive locals do so without boxing, and do type-checking for same primitive type."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:299
-msgid ""
-"Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for primitive types "
-"where semantics are same."
+msgid "Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for primitive types where semantics are same."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:300
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"aget[aget] / http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/aset[aset] are overloaded for arrays of primitives"
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] / http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/aset[aset] are overloaded for arrays of primitives"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:301
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"aclone[aclone], http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/alength[alength] functions for arrays of primitives"
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone[aclone], http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/alength[alength] functions for arrays of primitives"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:302
 msgid ""
-"constructor functions for primitive arrays: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/float-array[float-array], http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/int-array[int-array], "
-"etc."
+"constructor functions for primitive arrays: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-"
+"array[float-array], http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array[int-array], etc."
 msgstr ""
 
 #. type: Plain text
@@ -846,62 +769,51 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:304
 msgid ""
-"Coercion ops http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/int[int], http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/float[float], etc. produce primitives when consumer can "
-"take primitive"
+"Coercion ops http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int[int], http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/float[float], etc. produce primitives when consumer can take primitive"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:305
 msgid ""
-"The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"num[num] coercion function boxes primitives to force generic arithmetic"
+"The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] coercion function boxes primitives "
+"to force generic arithmetic"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:306
 msgid ""
-"Array cast functions http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/ints[ints] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/longs[longs], etc. which produce +int[]+, +long[]+, "
-"etc."
+"Array cast functions http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/longs[longs], etc. which produce +int[]+, +long[]+, etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:307
 msgid ""
-"A set of \"unchecked\" operations for utmost performing, but potentially "
-"unsafe, integer (int/long) ops: http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/unchecked-multiply[unchecked-multiply] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
-"dec[unchecked-dec] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/unchecked-inc[unchecked-inc] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/unchecked-negate[unchecked-"
-"negate] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"unchecked-add[unchecked-add] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/unchecked-subtract[unchecked-subtract] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
-"remainder[unchecked-remainder] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/unchecked-divide[unchecked-divide]"
+"A set of \"unchecked\" operations for utmost performing, but potentially unsafe, integer (int/long) ops: http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-multiply[unchecked-multiply] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/unchecked-dec[unchecked-dec] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/unchecked-inc[unchecked-inc] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/unchecked-negate[unchecked-negate] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/unchecked-add[unchecked-add] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"subtract[unchecked-subtract] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"remainder[unchecked-remainder] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"divide[unchecked-divide]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:308
 msgid ""
-"A dynamic var to automatically swap safe operations with unchecked "
-"operations: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/%2Aunchecked-math%2A[pass:[*unchecked-math*]]"
+"A dynamic var to automatically swap safe operations with unchecked operations: http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/%2Aunchecked-math%2A[pass:[*unchecked-math*]]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:309
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"amap[amap] and http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/areduce[areduce] macros for functionally (i.e. non-"
-"destructively) processing one or more arrays in order to produce a new array "
-"or aggregate value respectively."
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] and http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/areduce[areduce] macros for functionally (i.e. non-destructively) processing one "
+"or more arrays in order to produce a new array or aggregate value respectively."
 msgstr ""
 
 #. type: Plain text
@@ -937,17 +849,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:331
-msgid ""
-"and the resulting code is exactly the same speed (when run with java -"
-"server)."
+msgid "and the resulting code is exactly the same speed (when run with java -server)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:333
 msgid ""
-"The best aspect of this is that you need not do anything special in your "
-"initial coding. Quite often these optimizations are unneeded. Should a bit "
-"of code be a bottleneck, you can speed it up with minor adornment:"
+"The best aspect of this is that you need not do anything special in your initial coding. Quite often these "
+"optimizations are unneeded. Should a bit of code be a bottleneck, you can speed it up with minor adornment:"
 msgstr ""
 
 #. type: delimited block -
@@ -1000,21 +909,16 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:361
 msgid ""
-"At times it is necessary to have a value of a particular primitive type. "
-"These coercion functions yield a value of the indicated type as long as such "
-"a coercion is possible: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/bigdec[bigdec] http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/bigint[bigint] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/boolean[boolean] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/byte[byte] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/char[char] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/double[double] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/float[float] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int[int] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"long[long] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/num[num] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/short[short]"
+"At times it is necessary to have a value of a particular primitive type. These coercion functions yield a value of "
+"the indicated type as long as such a coercion is possible: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/bigdec[bigdec] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint[bigint] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean[boolean] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/byte[byte] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"char[char] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double[double] http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/float[float] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/int[int] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long[long] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/short[short]"
 msgstr ""
 
 #. type: Title ==
@@ -1026,65 +930,54 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:366
 msgid ""
-"All arguments are passed to Clojure fns as objects, so there's no point to "
-"putting non-array primitive type hints on fn args. Instead, use the let "
-"technique shown to place args in primitive locals if they need to "
-"participate in primitive arithmetic in the body."
+"All arguments are passed to Clojure fns as objects, so there's no point to putting non-array primitive type hints on "
+"fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in "
+"primitive arithmetic in the body."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:367
-msgid ""
-"(let [foo (int bar)] ...) is the correct way to get a primitive local. Do "
-"not use ^Integer etc."
+msgid "(let [foo (int bar)] ...) is the correct way to get a primitive local. Do not use ^Integer etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:368
 msgid ""
-"Don't rush to unchecked math unless you want truncating operations. HotSpot "
-"does a good job at optimizing the overflow check, which will yield an "
-"exception instead of silent truncation. On a typical example, that has about "
-"a 5% difference in speed - well worth it. Also, people reading your code "
-"don't know if you are using unchecked for truncation or performance - best "
-"to reserve it for the former and comment if the latter."
+"Don't rush to unchecked math unless you want truncating operations. HotSpot does a good job at optimizing the "
+"overflow check, which will yield an exception instead of silent truncation. On a typical example, that has about a 5% "
+"difference in speed - well worth it. Also, people reading your code don't know if you are using unchecked for "
+"truncation or performance - best to reserve it for the former and comment if the latter."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:369
 msgid ""
-"There's usually no point in trying to optimize an outer loop, in fact it can "
-"hurt you as you'll be representing things as primitives which just have to "
-"be re-boxed in order to become args to the inner call. The only exception is "
-"reflection warnings - you must get rid of them in any code that gets called "
-"frequently."
+"There's usually no point in trying to optimize an outer loop, in fact it can hurt you as you'll be representing "
+"things as primitives which just have to be re-boxed in order to become args to the inner call. The only exception is "
+"reflection warnings - you must get rid of them in any code that gets called frequently."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:370
 msgid ""
-"Almost every time someone presents something they are trying to optimize "
-"with hints, the faster version has far fewer hints than the original. If a "
-"hint doesn't improve things in the end - take it out."
+"Almost every time someone presents something they are trying to optimize with hints, the faster version has far fewer "
+"hints than the original. If a hint doesn't improve things in the end - take it out."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:371
 msgid ""
-"Many people seem to presume only the unchecked- ops do primitive arithmetic "
-"- not so. When the args are primitive locals, regular + and * etc do "
-"primitive math with an overflow check - fast _and_ safe."
+"Many people seem to presume only the unchecked- ops do primitive arithmetic - not so. When the args are primitive "
+"locals, regular + and * etc do primitive math with an overflow check - fast _and_ safe."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:372
 msgid ""
-"So, the simplest route to fast math is to leave the operators alone and just "
-"make sure the source literals and locals are primitive. Arithmetic on "
-"primitives yields primitives. If you've got a loop (which you probably do if "
-"you need to optimize) make sure the loop locals are primitives first - then "
-"if you accidentally are producing a boxed intermediate result you'll get an "
-"error on recur. Don't solve that error by coercing your intermediate result, "
+"So, the simplest route to fast math is to leave the operators alone and just make sure the source literals and locals "
+"are primitive. Arithmetic on primitives yields primitives. If you've got a loop (which you probably do if you need to "
+"optimize) make sure the loop locals are primitives first - then if you accidentally are producing a boxed "
+"intermediate result you'll get an error on recur. Don't solve that error by coercing your intermediate result, "
 "instead, figure out what argument or local is not primitive."
 msgstr ""
 
@@ -1097,8 +990,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:375
 msgid ""
-"Included with the distribution is simple XML support, found in the src/xml."
-"clj file. All names from this file are in the xml namespace."
+"Included with the distribution is simple XML support, found in the src/xml.clj file. All names from this file are in "
+"the xml namespace."
 msgstr ""
 
 #. type: Plain text
@@ -1109,9 +1002,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:380
 msgid ""
-"Parses and loads the source, which can be a File, InputStream or String "
-"naming a URI. Returns a tree of the xml/element struct-map, which has the "
-"keys :tag, :attrs, and :content. and accessor fns tag, attrs, and content."
+"Parses and loads the source, which can be a File, InputStream or String naming a URI. Returns a tree of the xml/"
+"element struct-map, which has the keys :tag, :attrs, and :content. and accessor fns tag, attrs, and content."
 msgstr ""
 
 #. type: delimited block -
@@ -1131,16 +1023,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:390
 msgid ""
-"The http://clojure.github.io/clojure/javadoc[clojure.java.api] package "
-"provides a minimal interface to bootstrap Clojure access from other JVM "
-"languages. It does this by providing:"
+"The http://clojure.github.io/clojure/javadoc[clojure.java.api] package provides a minimal interface to bootstrap "
+"Clojure access from other JVM languages. It does this by providing:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:392
 msgid ""
-"The ability to use Clojure's namespaces to locate an arbitrary var, "
-"returning the var's clojure.lang.IFn interface."
+"The ability to use Clojure's namespaces to locate an arbitrary var, returning the var's clojure.lang.IFn interface."
 msgstr ""
 
 #. type: Plain text
@@ -1151,37 +1041,29 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:395
 msgid ""
-"IFns provide complete access to Clojure's APIs. You can also access any "
-"other library written in Clojure, after adding either its source or compiled "
-"form to the classpath."
+"IFns provide complete access to Clojure's APIs. You can also access any other library written in Clojure, after "
+"adding either its source or compiled form to the classpath."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:397
-msgid ""
-"The public Java API for Clojure consists of the following classes and "
-"interfaces:"
+msgid "The public Java API for Clojure consists of the following classes and interfaces:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:399
-msgid ""
-"http://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure."
-"html[clojure.java.api.Clojure]"
+msgid "http://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure.html[clojure.java.api.Clojure]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:400
-msgid ""
-"http://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html[clojure.lang."
-"IFn]"
+msgid "http://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html[clojure.lang.IFn]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:402
 msgid ""
-"All other Java classes should be treated as implementation details, and "
-"applications should avoid relying on them."
+"All other Java classes should be treated as implementation details, and applications should avoid relying on them."
 msgstr ""
 
 #. type: Plain text
@@ -1199,9 +1081,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:410
-msgid ""
-"Functions in clojure.core are automatically loaded. Other namespaces can be "
-"loaded via require:"
+msgid "Functions in clojure.core are automatically loaded. Other namespaces can be loaded via require:"
 msgstr ""
 
 #. type: delimited block -
@@ -1214,9 +1094,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:416
-msgid ""
-"IFns can be passed to higher order functions, e.g. the example below passes "
-"plus to read:"
+msgid "IFns can be passed to higher order functions, e.g. the example below passes plus to read:"
 msgstr ""
 
 #. type: delimited block -
@@ -1231,8 +1109,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:423
 msgid ""
-"Most IFns in Clojure refer to functions. A few, however, refer to non-"
-"function data values. To access these, use deref instead of fn:"
+"Most IFns in Clojure refer to functions. A few, however, refer to non-function data values. To access these, use "
+"deref instead of fn:"
 msgstr ""
 
 #. type: delimited block -

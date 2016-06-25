@@ -30,8 +30,8 @@ msgstr ""
 #. type: Plain text
 #: en/README.adoc:8
 msgid ""
-"This web site is an open-source repository of content about the Clojure "
-"programming language and its greater ecosystem, hosted at http://clojure.org."
+"This web site is an open-source repository of content about the Clojure programming language and its greater "
+"ecosystem, hosted at http://clojure.org."
 msgstr ""
 
 #. type: Title ==
@@ -43,18 +43,15 @@ msgstr ""
 #. type: Plain text
 #: en/README.adoc:12
 msgid ""
-"If you wish to point out an issue in the site or propose a new page, you can "
-"do so by filing a GitHub issue at https://github.com/clojure/clojure-site/"
-"issues."
+"If you wish to point out an issue in the site or propose a new page, you can do so by filing a GitHub issue at "
+"https://github.com/clojure/clojure-site/issues."
 msgstr ""
 
 #. type: Plain text
 #: en/README.adoc:14
 msgid ""
-"If you wish to make a contribution (typo, modification, or new content), you "
-"must become a contributor and follow the https://github.com/clojure/clojure-"
-"site/blob/master/content/community/contributing_site.adoc[contribution "
-"process]."
+"If you wish to make a contribution (typo, modification, or new content), you must become a contributor and follow the "
+"https://github.com/clojure/clojure-site/blob/master/content/community/contributing_site.adoc[contribution process]."
 msgstr ""
 
 #. type: Title ==
@@ -70,15 +67,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/README.adoc:20
-msgid ""
-"To http://jbake.org/docs/2.4.0/#installation[install] JBake 2.5.0-SNAPSHOT:"
+msgid "To http://jbake.org/docs/2.4.0/#installation[install] JBake 2.5.0-SNAPSHOT:"
 msgstr ""
 
 #. type: Plain text
 #: en/README.adoc:22
 msgid ""
-"`curl -O http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip` "
-"(or download this file with your browser)"
+"`curl -O http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip` (or download this file with your browser)"
 msgstr ""
 
 #. type: Plain text
@@ -103,8 +98,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/README.adoc:30
-msgid ""
-"`git clone https://github.com/clojure/clojure-site.git` (or your own fork)"
+msgid "`git clone https://github.com/clojure/clojure-site.git` (or your own fork)"
 msgstr ""
 
 #. type: Plain text
@@ -115,15 +109,14 @@ msgstr ""
 #. type: Plain text
 #: en/README.adoc:33
 msgid ""
-"Retrieve and install the current theme assets (these don't change very often "
-"so you don't need to do this every time):"
+"Retrieve and install the current theme assets (these don't change very often so you don't need to do this every time):"
 msgstr ""
 
 #. type: Plain text
 #: en/README.adoc:35
 msgid ""
-"`curl -O http://cdn.cognitect.com/clojure.org/clojuretheme.zip` (or download "
-"this file with your browser to the clojure-site directory)"
+"`curl -O http://cdn.cognitect.com/clojure.org/clojuretheme.zip` (or download this file with your browser to the "
+"clojure-site directory)"
 msgstr ""
 
 #. type: Plain text
@@ -159,9 +152,7 @@ msgstr ""
 #. type: Plain text
 #: en/README.adoc:46
 msgid ""
-"All documentation contained in this repository is licensed by Rich Hickey "
-"under the http://www.eclipse.org/legal/epl-v10.html[Eclipse Public License "
-"v1.0] unless otherwise noted. To submit a pull request or other "
-"contribution, you must sign the http://clojure.org/community/"
-"contributing[Clojure Contributor Agreement]."
+"All documentation contained in this repository is licensed by Rich Hickey under the http://www.eclipse.org/legal/epl-"
+"v10.html[Eclipse Public License v1.0] unless otherwise noted. To submit a pull request or other contribution, you "
+"must sign the http://clojure.org/community/contributing[Clojure Contributor Agreement]."
 msgstr ""

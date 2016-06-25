@@ -30,8 +30,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2016/clojutre.adoc:12
 msgid ""
-"clojuTRE is a free Clojure conference organized by http://www.metosin.fi/"
-"[Metosin]. The event has single track, late start, short talks (20 minutes "
-"and 5 minutes Q&A) and a funky after party for networking, discussions and "
-"draft beer. We welcome both newbies and seasoned Clojurists."
+"clojuTRE is a free Clojure conference organized by http://www.metosin.fi/[Metosin]. The event has single track, late "
+"start, short talks (20 minutes and 5 minutes Q&A) and a funky after party for networking, discussions and draft beer. "
+"We welcome both newbies and seasoned Clojurists."
 msgstr ""

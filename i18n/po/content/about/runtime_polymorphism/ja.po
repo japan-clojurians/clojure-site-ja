@@ -17,32 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
@@ -55,65 +44,55 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:16
 msgid ""
-"Systems that utilize runtime polymorphism are easier to change and extend. "
-"Clojure supports polymorphism in several ways:"
+"Systems that utilize runtime polymorphism are easier to change and extend. Clojure supports polymorphism in several "
+"ways:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:18
-msgid ""
-"Most core infrastructure data structures in the Clojure runtime are defined "
-"by Java interfaces."
+msgid "Most core infrastructure data structures in the Clojure runtime are defined by Java interfaces."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:19
 msgid ""
-"Clojure supports the generation of implementations of Java interfaces in "
-"Clojure using http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/proxy[proxy] (<<jvm_hosted#,see JVM Hosted>>)."
+"Clojure supports the generation of implementations of Java interfaces in Clojure using http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/proxy[proxy] (<<jvm_hosted#,see JVM Hosted>>)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:20
 msgid ""
-"The Clojure language supports polymorphism along both class and custom "
-"hierarchies with <<xref/../../reference/multimethods#,multimethod>>s."
+"The Clojure language supports polymorphism along both class and custom hierarchies with <<xref/../../reference/"
+"multimethods#,multimethod>>s."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:21
 msgid ""
-"The Clojure language also supports a faster form of polymorphism with "
-"<<xref/../../reference/protocols#,protocols>> (but limited only to class "
-"polymorphism to take advantage of the JVMs existing capabilities for "
-"invocation)."
+"The Clojure language also supports a faster form of polymorphism with <<xref/../../reference/protocols#,protocols>> "
+"(but limited only to class polymorphism to take advantage of the JVMs existing capabilities for invocation)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:23
 msgid ""
-"Clojure multimethods are a simple yet powerful mechanism for runtime "
-"polymorphism that is free of the trappings of OO, types and inheritance. The "
-"basic idea behind runtime polymorphism is that a single function designator "
-"dispatches to multiple independently-defined function definitions based upon "
-"some value of the call. For traditional single-dispatch OO languages that "
-"value is the type of the 'receiver' or 'this'. CLOS generic functions extend "
-"dispatch value to a composite of the type or value of multiple arguments, "
-"and are thus multimethods. Clojure multimethods go further still to allow "
-"the dispatch value to be the result of an arbitrary function of the "
-"arguments. Clojure does not support implementation inheritance."
+"Clojure multimethods are a simple yet powerful mechanism for runtime polymorphism that is free of the trappings of "
+"OO, types and inheritance. The basic idea behind runtime polymorphism is that a single function designator dispatches "
+"to multiple independently-defined function definitions based upon some value of the call. For traditional single-"
+"dispatch OO languages that value is the type of the 'receiver' or 'this'. CLOS generic functions extend dispatch "
+"value to a composite of the type or value of multiple arguments, and are thus multimethods. Clojure multimethods go "
+"further still to allow the dispatch value to be the result of an arbitrary function of the arguments. Clojure does "
+"not support implementation inheritance."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:25
 msgid ""
-"Multimethods are defined using http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/defmulti[defmulti], which takes the name of the "
-"multimethod and the dispatch function. Methods are independently defined "
-"using http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"defmethod[defmethod], passing the multimethod name, the dispatch _value_ and "
-"the function body."
+"Multimethods are defined using http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmulti[defmulti], which takes the name of the multimethod and the dispatch function. Methods are independently "
+"defined using http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod], passing the "
+"multimethod name, the dispatch _value_ and the function body."
 msgstr ""
 
 #. type: delimited block -
@@ -142,17 +121,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:48
 msgid ""
-"Multimethods are in every respect fns, e.g. can be passed to http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/map[map] etc."
+"Multimethods are in every respect fns, e.g. can be passed to http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/map[map] etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:49
 msgid ""
-"Similar to interfaces, Clojure protocols define only function specifications "
-"(no implementation) and allow types to implement multiple protocols. "
-"Additionally, protocols are open to later dynamic extension for new types. "
-"Protocols are limited just to dispatch on class type to take advantage of "
-"the native Java performance of polymorphic method calls. For more details, "
-"see the <<xref/../../reference/protocols#,protocols>> page."
+"Similar to interfaces, Clojure protocols define only function specifications (no implementation) and allow types to "
+"implement multiple protocols. Additionally, protocols are open to later dynamic extension for new types. Protocols "
+"are limited just to dispatch on class type to take advantage of the native Java performance of polymorphic method "
+"calls. For more details, see the <<xref/../../reference/protocols#,protocols>> page."
 msgstr ""

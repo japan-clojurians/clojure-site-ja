@@ -35,31 +35,29 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:11
 msgid ""
-"More string functions in http://clojure.github.io/clojure/branch-master/"
-"clojure.string-api.html[clojure.string] (portable to ClojureScript): index-"
-"of, last-index-of, starts-with?, ends-with?, includes?"
+"More string functions in http://clojure.github.io/clojure/branch-master/clojure.string-api.html[clojure.string] "
+"(portable to ClojureScript): index-of, last-index-of, starts-with?, ends-with?, includes?"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:12
 msgid ""
-"Compiler <<xref/../../../../../reference/compilation#directlinking,direct "
-"linking>> - improves performance and startup time"
+"Compiler <<xref/../../../../../reference/compilation#directlinking,direct linking>> - improves performance and "
+"startup time"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:13
 msgid ""
-"<<xref/../../../../../reference/repl_and_main#_launching_a_socket_server,"
-"Socket server>> and socket server REPL - adds the ability to allow remote "
-"Clojure REPL connections"
+"<<xref/../../../../../reference/repl_and_main#_launching_a_socket_server,Socket server>> and socket server REPL - "
+"adds the ability to allow remote Clojure REPL connections"
 msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:15
 msgid ""
-"For more information, see the https://github.com/clojure/clojure/blob/master/"
-"changes.md[complete list] of all changes since Clojure 1.7 for more details."
+"For more information, see the https://github.com/clojure/clojure/blob/master/changes.md[complete list] of all changes "
+"since Clojure 1.7 for more details."
 msgstr ""
 
 #. type: Plain text
@@ -69,9 +67,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:19
-msgid ""
-"Thanks to all of those who contributed to Clojure 1.8 (first time "
-"contributors in bold):"
+msgid "Thanks to all of those who contributed to Clojure 1.8 (first time contributors in bold):"
 msgstr ""
 
 #. type: Plain text
