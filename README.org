@@ -1,1 +1,19 @@
 * clojure-site 日本語訳プロジェクト [[https://circleci.com/gh/japan-clojurians/clojure-site-ja.svg?style=svg]]
+
+  clojure-site ([[http://clojure.org/][clojure.org]]) の翻訳プロジェクトです。
+
+  翻訳文書は以下から読むことができます。
+
+  - [[https://japan-clojurians.github.io/clojure-site-ja/][clojure-site 日本語版]]
+
+** 問題報告
+
+   [[https://github.com/japan-clojurians/clojure-site-ja/issues][Issues]] への登録をお願いします。
+
+** 翻訳に参加したい方は
+
+   TBD
+
+** 著作権/ライセンスについて
+
+   clojure-site 日本語訳プロジェクトの成果物(訳文、スクリプト等)は、Clojure と同じ [[http://www.eclipse.org/legal/epl-v10.html][Eclipse Public License - v 1.0]] の下に公開するものとします。
