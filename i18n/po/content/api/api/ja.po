@@ -40,9 +40,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:14
-msgid ""
-"http://clojure.github.io/clojure/javadoc/[Clojure Java API] - for calling "
-"from Java into Clojure"
+msgid "http://clojure.github.io/clojure/javadoc/[Clojure Java API] - for calling from Java into Clojure"
 msgstr ""
 
 #. type: Plain text
@@ -69,78 +67,57 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:23
-msgid ""
-"http://clojure.github.io/algo.generic/[algo.generic] Generic versions of "
-"common functions"
+msgid "http://clojure.github.io/algo.generic/[algo.generic] Generic versions of common functions"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:24
-msgid ""
-"http://clojure.github.io/algo.graph/[algo.graph] Graph theory algorithms"
+msgid "http://clojure.github.io/algo.graph/[algo.graph] Graph theory algorithms"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:25
-msgid ""
-"http://clojure.github.io/algo.monads/[algo.monads] Monad macros and "
-"Definitions"
+msgid "http://clojure.github.io/algo.monads/[algo.monads] Monad macros and Definitions"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:26
-msgid ""
-"http://clojure.github.io/core.async/[core.async] Facilities for asynchronous "
-"programming and communication"
+msgid "http://clojure.github.io/core.async/[core.async] Facilities for asynchronous programming and communication"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:27
-msgid ""
-"http://clojure.github.io/core.cache/[core.cache] A caching library "
-"implementing various cache strategies"
+msgid "http://clojure.github.io/core.cache/[core.cache] A caching library implementing various cache strategies"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:28
-msgid ""
-"http://clojure.github.io/core.contracts/[core.contracts] Contracts "
-"programming in Clojure"
+msgid "http://clojure.github.io/core.contracts/[core.contracts] Contracts programming in Clojure"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:29
-msgid ""
-"http://clojure.github.io/core.incubator/[core.incubator] Functions proposed "
-"for core inclusion"
+msgid "http://clojure.github.io/core.incubator/[core.incubator] Functions proposed for core inclusion"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:30
-msgid ""
-"http://clojure.github.io/core.logic/[core.logic] A logic programming library "
-"based on miniKanren"
+msgid "http://clojure.github.io/core.logic/[core.logic] A logic programming library based on miniKanren"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:31
-msgid ""
-"http://clojure.github.io/core.match/[core.match] Pattern match and predicate "
-"dispatch"
+msgid "http://clojure.github.io/core.match/[core.match] Pattern match and predicate dispatch"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:32
-msgid ""
-"http://clojure.github.io/core.memoize/[core.memoize] A manipulable, "
-"pluggable, memoization framework"
+msgid "http://clojure.github.io/core.memoize/[core.memoize] A manipulable, pluggable, memoization framework"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:33
-msgid ""
-"http://clojure.github.io/core.rrb-vector/[core.rrb-vector] RRB-Tree-based "
-"vectors"
+msgid "http://clojure.github.io/core.rrb-vector/[core.rrb-vector] RRB-Tree-based vectors"
 msgstr ""
 
 #. type: Plain text
@@ -160,34 +137,27 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:37
-msgid ""
-"http://clojure.github.io/data.codec/[data.codec] Native codec implementations"
+msgid "http://clojure.github.io/data.codec/[data.codec] Native codec implementations"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:38
-msgid ""
-"http://clojure.github.io/data.csv/[data.csv] Reading and writing CSV files"
+msgid "http://clojure.github.io/data.csv/[data.csv] Reading and writing CSV files"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:39
-msgid ""
-"http://clojure.github.io/data.finger-tree/[data.finger-tree] Finger trees"
+msgid "http://clojure.github.io/data.finger-tree/[data.finger-tree] Finger trees"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:40
-msgid ""
-"http://clojure.github.io/data.fressian/[data.fressian] Extensible binary "
-"Data Notation"
+msgid "http://clojure.github.io/data.fressian/[data.fressian] Extensible binary Data Notation"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:41
-msgid ""
-"http://clojure.github.io/data.generators/[data.generators] Random data "
-"generators"
+msgid "http://clojure.github.io/data.generators/[data.generators] Random data generators"
 msgstr ""
 
 #. type: Plain text
@@ -197,8 +167,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:43
-msgid ""
-"http://clojure.github.io/data.priority-map/[data.priority-map] Priority maps"
+msgid "http://clojure.github.io/data.priority-map/[data.priority-map] Priority maps"
 msgstr ""
 
 #. type: Plain text
@@ -213,8 +182,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:46
-msgid ""
-"http://clojure.github.io/java.classpath/[java.classpath] Classpath utilities"
+msgid "http://clojure.github.io/java.classpath/[java.classpath] Classpath utilities"
 msgstr ""
 
 #. type: Plain text
@@ -235,57 +203,42 @@ msgstr ""
 #. type: Plain text
 #: en/content/api/api.adoc:50
 msgid ""
-"http://clojure.github.io/math.combinatorics/[math.combinatorics] Lazy "
-"sequences for common combinatorial functions"
+"http://clojure.github.io/math.combinatorics/[math.combinatorics] Lazy sequences for common combinatorial functions"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:51
-msgid ""
-"http://clojure.github.io/math.numeric-tower/[math.numeric-tower] Math "
-"functions and numeric tower"
+msgid "http://clojure.github.io/math.numeric-tower/[math.numeric-tower] Math functions and numeric tower"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:52
-msgid ""
-"http://clojure.github.io/test.generative/[test.generative] Test data "
-"generation and execution harness"
+msgid "http://clojure.github.io/test.generative/[test.generative] Test data generation and execution harness"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:53
-msgid ""
-"http://clojure.github.io/tools.analyzer/[tools.analyzer] Analyzer framework "
-"for Clojure code"
+msgid "http://clojure.github.io/tools.analyzer/[tools.analyzer] Analyzer framework for Clojure code"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:54
-msgid ""
-"http://clojure.github.io/tools.analyzer.js/[tools.analyzer.js] JavaScript-"
-"specific passes for tools.analyzer"
+msgid "http://clojure.github.io/tools.analyzer.js/[tools.analyzer.js] JavaScript-specific passes for tools.analyzer"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:55
-msgid ""
-"http://clojure.github.io/tools.analyzer.jvm/[tools.analyzer.jvm] JVM-"
-"specific passes for tools.analyzer"
+msgid "http://clojure.github.io/tools.analyzer.jvm/[tools.analyzer.jvm] JVM-specific passes for tools.analyzer"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:56
-msgid ""
-"http://clojure.github.io/tools.cli/[tools.cli] Command-line argument "
-"processor"
+msgid "http://clojure.github.io/tools.cli/[tools.cli] Command-line argument processor"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:57
-msgid ""
-"http://clojure.github.io/tools.emitter.jvm/[tools.emitter.jvm] JVM bytecode "
-"generator"
+msgid "http://clojure.github.io/tools.emitter.jvm/[tools.emitter.jvm] JVM bytecode generator"
 msgstr ""
 
 #. type: Plain text
@@ -295,15 +248,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:59
-msgid ""
-"http://clojure.github.io/tools.macro/[tools.macro] Tools for macro writers"
+msgid "http://clojure.github.io/tools.macro/[tools.macro] Tools for macro writers"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:60
-msgid ""
-"http://clojure.github.io/tools.namespace/[tools.namespace] Tools for working "
-"with namespace declarations"
+msgid "http://clojure.github.io/tools.namespace/[tools.namespace] Tools for working with namespace declarations"
 msgstr ""
 
 #. type: Plain text
@@ -329,15 +279,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:67 en/content/community/resources.adoc:39
-msgid ""
-"http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + "
-"examples"
+msgid "http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + examples"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:68 en/content/community/resources.adoc:40
-msgid ""
-"http://clojuredocs.org[ClojureDocs] - community provided example repository"
+msgid "http://clojuredocs.org[ClojureDocs] - community provided example repository"
 msgstr ""
 
 #. type: Plain text

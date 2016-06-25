@@ -30,12 +30,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2016/euroclojure.adoc:13
 msgid ""
-"EuroClojure is the largest Clojure conference in Europe and draws developers "
-"from all over the continent to gather and learn what is happening with the "
-"language, in the community, and within organizations using Clojure.  This "
-"year's event will be held in Bratislava, Slovakia from October 25-26. "
-"EuroClojure offers a great mix of experienced Clojurists and new adopters "
-"and everyone can find something to suit their needs."
+"EuroClojure is the largest Clojure conference in Europe and draws developers from all over the continent to gather "
+"and learn what is happening with the language, in the community, and within organizations using Clojure.  This year's "
+"event will be held in Bratislava, Slovakia from October 25-26. EuroClojure offers a great mix of experienced "
+"Clojurists and new adopters and everyone can find something to suit their needs."
 msgstr ""
 
 #. type: Plain text

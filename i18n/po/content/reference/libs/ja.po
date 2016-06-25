@@ -17,93 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
-#: en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73
-#: en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96
-#: en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131
-#: en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152
-#: en/content/reference/java_interop.adoc:193 en/content/reference/libs.adoc:63
-#: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
-#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121
-#: en/content/community/editing.adoc:131
+#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/evaluation.adoc:62
+#: en/content/reference/evaluation.adoc:73 en/content/reference/java_interop.adoc:76
+#: en/content/reference/java_interop.adoc:96 en/content/reference/java_interop.adoc:109
+#: en/content/reference/java_interop.adoc:131 en/content/reference/java_interop.adoc:138
+#: en/content/reference/java_interop.adoc:152 en/content/reference/java_interop.adoc:193
+#: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
+#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/refs.adoc:73
-#: en/content/reference/other_functions.adoc:41
-#: en/content/reference/other_functions.adoc:65
-#: en/content/reference/data_structures.adoc:70
-#: en/content/reference/data_structures.adoc:90
-#: en/content/reference/data_structures.adoc:98
-#: en/content/reference/data_structures.adoc:107
-#: en/content/reference/data_structures.adoc:116
-#: en/content/reference/data_structures.adoc:162
-#: en/content/reference/data_structures.adoc:174
-#: en/content/reference/data_structures.adoc:188
-#: en/content/reference/data_structures.adoc:223
-#: en/content/reference/agents.adoc:64
-#: en/content/reference/repl_and_main.adoc:159
-#: en/content/reference/vars.adoc:85 en/content/reference/namespaces.adoc:24
-#: en/content/reference/libs.adoc:64
+#: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65 en/content/reference/data_structures.adoc:70
+#: en/content/reference/data_structures.adoc:90 en/content/reference/data_structures.adoc:98
+#: en/content/reference/data_structures.adoc:107 en/content/reference/data_structures.adoc:116
+#: en/content/reference/data_structures.adoc:162 en/content/reference/data_structures.adoc:174
+#: en/content/reference/data_structures.adoc:188 en/content/reference/data_structures.adoc:223
+#: en/content/reference/agents.adoc:64 en/content/reference/repl_and_main.adoc:159 en/content/reference/vars.adoc:85
+#: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
 msgstr ""
@@ -117,9 +84,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/libs.adoc:18
 msgid ""
-"Clojure provides for code loading and dependency tracking via its \"lib\" "
-"facility. A lib is a named unit of Clojure source code contained in a Java "
-"resource within classpath. A lib will typically provide the complete set of "
+"Clojure provides for code loading and dependency tracking via its \"lib\" facility. A lib is a named unit of Clojure "
+"source code contained in a Java resource within classpath. A lib will typically provide the complete set of "
 "definitions that make up one Clojure namespace."
 msgstr ""
 
@@ -136,35 +102,30 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:24
-msgid ""
-"A lib name is a symbol that will typically contain two or more parts "
-"separated by periods."
+msgid "A lib name is a symbol that will typically contain two or more parts separated by periods."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:29
 msgid ""
-"A lib's container is a Java resource whose classpath-relative path is "
-"derived from the lib name: ** The path is a string ** Periods in the lib "
-"name are replaced by slashes in the path ** Hyphens in the lib name are "
-"replaced by underscores in the path ** The path may end with \".class\", \"."
-"clj\", or \".cljc\" (see <<libs#order,Lib load order>> below)"
+"A lib's container is a Java resource whose classpath-relative path is derived from the lib name: ** The path is a "
+"string ** Periods in the lib name are replaced by slashes in the path ** Hyphens in the lib name are replaced by "
+"underscores in the path ** The path may end with \".class\", \".clj\", or \".cljc\" (see <<libs#order,Lib load "
+"order>> below)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:32
 msgid ""
-"A lib begins with an \"ns\" form that ** creates the Clojure namespace that "
-"shares its name, and ** declares its dependencies on Java classes, Clojure's "
-"core facilities, and/or other libs,"
+"A lib begins with an \"ns\" form that ** creates the Clojure namespace that shares its name, and ** declares its "
+"dependencies on Java classes, Clojure's core facilities, and/or other libs,"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:34
 msgid ""
-"Clojure ensures that if the call to \"ns\" completes without throwing an "
-"exception, the declared dependencies have been satisfied and the "
-"capabilities they provide are available."
+"Clojure ensures that if the call to \"ns\" completes without throwing an exception, the declared dependencies have "
+"been satisfied and the capabilities they provide are available."
 msgstr ""
 
 #. type: Title ==
@@ -191,32 +152,30 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/libs.adoc:48
 msgid ""
-"The `ns` form names the lib's namespace and declares its dependencies. Based "
-"on its name, this lib is typically defined in a source file at the classpath-"
-"relative path: com/my_company/clojure/examples/my_utils.clj (note the "
+"The `ns` form names the lib's namespace and declares its dependencies. Based on its name, this lib is typically "
+"defined in a source file at the classpath-relative path: com/my_company/clojure/examples/my_utils.clj (note the "
 "translations from period to slash and hyphen to underscore)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:49
 msgid ""
-"The `:import` clause declares this lib's use of `java.util.Date` and makes "
-"it available to code in this lib using its unqualified name."
+"The `:import` clause declares this lib's use of `java.util.Date` and makes it available to code in this lib using its "
+"unqualified name."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:50
 msgid ""
-"The `:use` clause declares a dependency on the `clojure.string` lib for its "
-"`join` function only. +join+ may be used in this lib's code using its "
-"unqualified name."
+"The `:use` clause declares a dependency on the `clojure.string` lib for its `join` function only. +join+ may be used "
+"in this lib's code using its unqualified name."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:51
 msgid ""
-"The `:require` clause declares a dependency on the `clojure.java.io` lib and "
-"enables using its members using the shorter namespace alias `jio`."
+"The `:require` clause declares a dependency on the `clojure.java.io` lib and enables using its members using the "
+"shorter namespace alias `jio`."
 msgstr ""
 
 #. type: Title ==
@@ -228,11 +187,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/libs.adoc:55
 msgid ""
-"It's common for a lib to depend on several other libs whose full names share "
-"a common prefix. In calls to `require` and `use` (and in `:require` and `:"
-"use` clauses within an +ns+ form), the common prefix can be extracted and "
-"provided once using a prefix list. For example, these two forms are "
-"equivalent:"
+"It's common for a lib to depend on several other libs whose full names share a common prefix. In calls to `require` "
+"and `use` (and in `:require` and `:use` clauses within an +ns+ form), the common prefix can be extracted and provided "
+"once using a prefix list. For example, these two forms are equivalent:"
 msgstr ""
 
 #. type: delimited block -
@@ -245,24 +202,20 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:67
-msgid ""
-"Creating a namespace: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/ns[ns]"
+msgid "Creating a namespace: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:69
 msgid ""
-"Ensuring a lib is loaded: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/require[require] http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/use[use]"
+"Ensuring a lib is loaded: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:71
 msgid ""
-"Listing loaded libs: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/loaded-libs[loaded-libs]"
+"Listing loaded libs: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
 msgstr ""
 
 #. type: Title ==
@@ -274,30 +227,25 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/libs.adoc:76
 msgid ""
-"Libs may exist in either compiled (`.class`) or source (`.clj` or `.cljc`) "
-"form. In some cases, one or even all of these might exist on the classpath. "
-"The lib is loaded from one of them based on the following rules:"
+"Libs may exist in either compiled (`.class`) or source (`.clj` or `.cljc`) form. In some cases, one or even all of "
+"these might exist on the classpath. The lib is loaded from one of them based on the following rules:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:78
 msgid ""
-"A `.class` file is always preferred over a source file, unless the source "
-"file's timestamp is newer than the `.class` file, in which case the source "
-"file is preferred."
+"A `.class` file is always preferred over a source file, unless the source file's timestamp is newer than the `.class` "
+"file, in which case the source file is preferred."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:79
-msgid ""
-"A `.clj` (platform-specific file) is always preferred over a `.cljc` (common "
-"across platforms)."
+msgid "A `.clj` (platform-specific file) is always preferred over a `.cljc` (common across platforms)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:80
 msgid ""
-"The second rule allows a library author to ship both a portable common "
-"definition of a lib while also shipping platform-specific libs that override "
-"the portable version to do something that leverages the host platform."
+"The second rule allows a library author to ship both a portable common definition of a lib while also shipping "
+"platform-specific libs that override the portable version to do something that leverages the host platform."
 msgstr ""

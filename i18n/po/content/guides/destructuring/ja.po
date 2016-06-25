@@ -17,32 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
+#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
+#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:647
-#: en/content/guides/destructuring.adoc:488
+#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:647 en/content/guides/destructuring.adoc:488
 #, no-wrap
 msgid "Macros"
 msgstr ""
@@ -67,19 +58,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:15
 msgid ""
-"Destructuring is a way to concisely bind names to the values inside a data "
-"structure. Destructuring allows us to write more concise and readable code."
+"Destructuring is a way to concisely bind names to the values inside a data structure. Destructuring allows us to "
+"write more concise and readable code."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:17
-msgid ""
-"Consider the following example of extracting and naming values in a vector."
+msgid "Consider the following example of extracting and naming values in a vector."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:21
-#: en/content/guides/destructuring.adoc:192
+#: en/content/guides/destructuring.adoc:21 en/content/guides/destructuring.adoc:192
 #, no-wrap
 msgid "(def my-line [[5 10] [10 20]])\n"
 msgstr ""
@@ -101,10 +90,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:33
 msgid ""
-"This is perfectly valid, but the code extracting and naming the values in "
-"the vector obscures our intent. Destructuring allows us to more concisely "
-"extract and name important parts of complex data structures to make our code "
-"cleaner."
+"This is perfectly valid, but the code extracting and naming the values in the vector obscures our intent. "
+"Destructuring allows us to more concisely extract and name important parts of complex data structures to make our "
+"code cleaner."
 msgstr ""
 
 #. type: delimited block -
@@ -122,25 +110,20 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:45
 msgid ""
-"Rather than explictly binding each variable, we describe the bindings based "
-"on their sequential order. That's a pretty weird statement, \"describe the "
-"bindings,\" so let's look at it again."
+"Rather than explictly binding each variable, we describe the bindings based on their sequential order. That's a "
+"pretty weird statement, \"describe the bindings,\" so let's look at it again."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:47
 msgid ""
-"We have a data structure `my-line` that looks like this, `[[5 10] [10 20]]`. "
-"In our destructuring form we will create a vector containing two elements, "
-"`p1` and `p2`, each of which are vectors themselves. This will bind the "
-"vector `[5 10]` to the symbol `p1` and the vector `[10 20]` to the symbol "
-"`p2`. Since we want to work with the elements of `p1` and `p2` rather than "
-"the structures themselves, we destructure `p1` and `p2` within the same let "
-"statement. The vector `p1` looks like this, `[5 10]`, so to destructure it, "
-"we create a vector containing two elements, `x1` and `y1`. This binds `5` to "
-"the symbol `x1` and `10` to the symbol `y1`. The same is repeated for `p2` "
-"binding `10` to `x2` and `20` to `y2`. At this point, we now have everything "
-"we need to work with our data."
+"We have a data structure `my-line` that looks like this, `[[5 10] [10 20]]`. In our destructuring form we will create "
+"a vector containing two elements, `p1` and `p2`, each of which are vectors themselves. This will bind the vector `[5 "
+"10]` to the symbol `p1` and the vector `[10 20]` to the symbol `p2`. Since we want to work with the elements of `p1` "
+"and `p2` rather than the structures themselves, we destructure `p1` and `p2` within the same let statement. The "
+"vector `p1` looks like this, `[5 10]`, so to destructure it, we create a vector containing two elements, `x1` and "
+"`y1`. This binds `5` to the symbol `x1` and `10` to the symbol `y1`. The same is repeated for `p2` binding `10` to "
+"`x2` and `20` to `y2`. At this point, we now have everything we need to work with our data."
 msgstr ""
 
 #. type: Title ==
@@ -152,18 +135,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:51
 msgid ""
-"Clojure destructuring is broken up into two categories, sequential "
-"destructuring and associative destructuring. Sequential destructuring "
-"represents a sequential data structure as a Clojure vector within a let "
-"binding."
+"Clojure destructuring is broken up into two categories, sequential destructuring and associative destructuring. "
+"Sequential destructuring represents a sequential data structure as a Clojure vector within a let binding."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:53
 msgid ""
-"This type of destructuring can be used on any kind of data structure that "
-"can be traversed in linear time, including lists, vectors, and anything that "
-"can produce a sequence."
+"This type of destructuring can be used on any kind of data structure that can be traversed in linear time, including "
+"lists, vectors, and anything that can produce a sequence."
 msgstr ""
 
 #. type: delimited block -
@@ -210,17 +190,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:79
 msgid ""
-"The key to sequential destructuring is that you bind the values one-by-one "
-"to the symbols in the vector. For instance the vector `[x y z]` will match "
-"each element one-by-one with the list `'(1 2 3)`."
+"The key to sequential destructuring is that you bind the values one-by-one to the symbols in the vector. For instance "
+"the vector `[x y z]` will match each element one-by-one with the list `'(1 2 3)`."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:81
 msgid ""
-"In some cases, the collection you are destructuring isn't the exact same "
-"size as the destructuring bindings. If the vector is too small, the extra "
-"symbols will be bound to nil."
+"In some cases, the collection you are destructuring isn't the exact same size as the destructuring bindings. If the "
+"vector is too small, the extra symbols will be bound to nil."
 msgstr ""
 
 #. type: delimited block -
@@ -235,9 +213,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:91
-msgid ""
-"On the other hand, if the collection is too large, the extra values are "
-"simply ignored."
+msgid "On the other hand, if the collection is too large, the extra values are simply ignored."
 msgstr ""
 
 #. type: delimited block -
@@ -252,16 +228,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:101
-msgid ""
-"Destructuring gives you total control over the elements that you choose to "
-"bind (or not) and how you bind them."
+msgid "Destructuring gives you total control over the elements that you choose to bind (or not) and how you bind them."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:103
-msgid ""
-"Many times, you don't need access to _every_ element in a collection, only "
-"certain ones."
+msgid "Many times, you don't need access to _every_ element in a collection, only certain ones."
 msgstr ""
 
 #. type: delimited block -
@@ -272,9 +244,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:110
-msgid ""
-"Say you want to print the first element on one line and the remainder on "
-"another line."
+msgid "Say you want to print the first element on one line and the remainder on another line."
 msgstr ""
 
 #. type: delimited block -
@@ -291,8 +261,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:121
 msgid ""
-"This binding works but even using destructuring it's pretty clunky. Instead "
-"we can use `&` to combine the tail elements into a sequence."
+"This binding works but even using destructuring it's pretty clunky. Instead we can use `&` to combine the tail "
+"elements into a sequence."
 msgstr ""
 
 #. type: delimited block -
@@ -308,9 +278,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:132
-msgid ""
-"You can ignore bindings that you don't intend on using by binding them to "
-"any symbol of your choosing."
+msgid "You can ignore bindings that you don't intend on using by binding them to any symbol of your choosing."
 msgstr ""
 
 #. type: delimited block -
@@ -343,9 +311,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:152
-msgid ""
-"Let's stop for a bit and look a little further into the types of `:as` and "
-"`&`."
+msgid "Let's stop for a bit and look a little further into the types of `:as` and `&`."
 msgstr ""
 
 #. type: delimited block -
@@ -361,9 +327,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:162
 msgid ""
-"Here `remaining` is bound to a sequence containing the remaining elements of "
-"the `numbers` vector while `all` has been bound to the original `vector`. "
-"What happens when we destructure a string instead?"
+"Here `remaining` is bound to a sequence containing the remaining elements of the `numbers` vector while `all` has "
+"been bound to the original `vector`. What happens when we destructure a string instead?"
 msgstr ""
 
 #. type: delimited block -
@@ -379,16 +344,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:172
 msgid ""
-"Here `all` is bound to the original structure (String, vector, list, "
-"whatever it may be) and `x` is bound to the character `\\C`, and `remaining` "
-"is the remaining list of characters."
+"Here `all` is bound to the original structure (String, vector, list, whatever it may be) and `x` is bound to the "
+"character `\\C`, and `remaining` is the remaining list of characters."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:174
-msgid ""
-"You can combine any or all of these techniques at the same time at your "
-"discretion."
+msgid "You can combine any or all of these techniques at the same time at your discretion."
 msgstr ""
 
 #. type: delimited block -
@@ -408,9 +370,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:188
 msgid ""
-"Destructuring can also be nested to get access to arbitrary levels of "
-"sequential structure.. Let's go back to our vector from the very beginning, "
-"`my-line`."
+"Destructuring can also be nested to get access to arbitrary levels of sequential structure.. Let's go back to our "
+"vector from the very beginning, `my-line`."
 msgstr ""
 
 #. type: Plain text
@@ -429,8 +390,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:204
-msgid ""
-"When you have nested vectors, you can use `:as` or `&` at any level as well."
+msgid "When you have nested vectors, you can use `:as` or `&` at any level as well."
 msgstr ""
 
 #. type: delimited block -
@@ -453,17 +413,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:217
 msgid ""
-"Associative destructuring is similar to sequential destructuring, but "
-"applied instead to associative (key-value) structures (including maps, "
-"records, vectors, etc). The associative bindings are concerned with "
-"concisely extracting values of the map by key."
+"Associative destructuring is similar to sequential destructuring, but applied instead to associative (key-value) "
+"structures (including maps, records, vectors, etc). The associative bindings are concerned with concisely extracting "
+"values of the map by key."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:219
-msgid ""
-"Let's first consider an example that extracts values from a map without "
-"destructuring:"
+msgid "Let's first consider an example that extracts values from a map without destructuring:"
 msgstr ""
 
 #. type: delimited block -
@@ -489,16 +446,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:234
 msgid ""
-"Note that each line of the let binding is essentially the same - it extracts "
-"a value from the map by the name of the key, then binds it to a local with "
-"the same name."
+"Note that each line of the let binding is essentially the same - it extracts a value from the map by the name of the "
+"key, then binds it to a local with the same name."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:236
-msgid ""
-"Below is a first example of doing the same thing with associative "
-"destructuring:"
+msgid "Below is a first example of doing the same thing with associative destructuring:"
 msgstr ""
 
 #. type: delimited block -
@@ -515,19 +469,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:247
 msgid ""
-"The destructuring form is now a map rather than a vector, and instead of a "
-"symbol on the left side of the let, we have a map. The keys of the map are "
-"the symbols we want to bind in the let. The values of the destructuring map "
-"are the keys we will look up in the associative value. Here they are "
-"keywords (the most common case), but they could be any key value - numbers, "
-"strings, symbols, etc."
+"The destructuring form is now a map rather than a vector, and instead of a symbol on the left side of the let, we "
+"have a map. The keys of the map are the symbols we want to bind in the let. The values of the destructuring map are "
+"the keys we will look up in the associative value. Here they are keywords (the most common case), but they could be "
+"any key value - numbers, strings, symbols, etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:249
 msgid ""
-"Similar to sequential destructuring, if you try to bind a key that is not "
-"present in the map, the binding value will be nil."
+"Similar to sequential destructuring, if you try to bind a key that is not present in the map, the binding value will "
+"be nil."
 msgstr ""
 
 #. type: delimited block -
@@ -542,8 +494,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:258
 msgid ""
-"Associative destructuring, however, also allows you to supply a default "
-"value if the key is not present in the associative value with the `:or` key."
+"Associative destructuring, however, also allows you to supply a default value if the key is not present in the "
+"associative value with the `:or` key."
 msgstr ""
 
 #. type: delimited block -
@@ -558,26 +510,23 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:267
 msgid ""
-"The value for `:or` is a map where the bound symbol (here `category`) is "
-"bound to the expression `\"Category not found\"`. When category is not found "
-"in `client`, it is instead found in the `:or` map and bound to that value "
-"instead."
+"The value for `:or` is a map where the bound symbol (here `category`) is bound to the expression `\"Category not found"
+"\"`. When category is not found in `client`, it is instead found in the `:or` map and bound to that value instead."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:269
 msgid ""
-"In sequential destructuring, you generally bind unneeded values with an `_`. "
-"Since associative destructuring doesn't require traversing the entire "
-"structure, you can simply omit any keys you don't plan on using from the "
-"destructuring form."
+"In sequential destructuring, you generally bind unneeded values with an `_`. Since associative destructuring doesn't "
+"require traversing the entire structure, you can simply omit any keys you don't plan on using from the destructuring "
+"form."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:271
 msgid ""
-"If you need access to the entire map, you can use the `:as` key to bind the "
-"entire incoming value, just as in sequential destructuring."
+"If you need access to the entire map, you can use the `:as` key to bind the entire incoming value, just as in "
+"sequential destructuring."
 msgstr ""
 
 #. type: delimited block -
@@ -609,10 +558,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:292
 msgid ""
-"You might have noticed that our original example still contains redundant "
-"information (the local binding name and the key name) in the associative "
-"destructuring form. The `:keys` key can be used to further remove the "
-"duplication:"
+"You might have noticed that our original example still contains redundant information (the local binding name and the "
+"key name) in the associative destructuring form. The `:keys` key can be used to further remove the duplication:"
 msgstr ""
 
 #. type: delimited block -
@@ -627,17 +574,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:301
 msgid ""
-"This example is exactly the same as the prior version - it binds `name` to "
-"`(:name client)`, `location` to `(:location client)`, and `description` to "
-"`(:description client)`."
+"This example is exactly the same as the prior version - it binds `name` to `(:name client)`, `location` to `(:"
+"location client)`, and `description` to `(:description client)`."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:303
 msgid ""
-"The `:keys` key is for associative values with keyword keys, but there are "
-"also `:strs` and `:syms` for string and symbol keys respectively. In all of "
-"these cases the vector contains symbols which are the local binding names."
+"The `:keys` key is for associative values with keyword keys, but there are also `:strs` and `:syms` for string and "
+"symbol keys respectively. In all of these cases the vector contains symbols which are the local binding names."
 msgstr ""
 
 #. type: delimited block -
@@ -672,9 +617,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:320
-msgid ""
-"Associative destructuring can be nested and combined with sequential "
-"destructuring as needed."
+msgid "Associative destructuring can be nested and combined with sequential destructuring as needed."
 msgstr ""
 
 #. type: delimited block -
@@ -704,9 +647,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:340
-msgid ""
-"Associative destructuring also works with lists of key-value pairs for "
-"keyword-arg parsing."
+msgid "Associative destructuring also works with lists of key-value pairs for keyword-arg parsing."
 msgstr ""
 
 #. type: delimited block -
@@ -722,10 +663,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:350
 msgid ""
-"If the keys in your map are namespaced keywords, you can also use "
-"destructuring with it, even though local binding symbols are not allowed to "
-"have namespaces. Destructuring a namespaced key will bind a value to the "
-"local name part of the key and drop the namespace."
+"If the keys in your map are namespaced keywords, you can also use destructuring with it, even though local binding "
+"symbols are not allowed to have namespaces. Destructuring a namespaced key will bind a value to the local name part "
+"of the key and drop the namespace."
 msgstr ""
 
 #. type: delimited block -
@@ -743,8 +683,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:362
 msgid ""
-"You can even destructure using auto-resolved keywords, which will again be "
-"bound to only the name part of the key:"
+"You can even destructure using auto-resolved keywords, which will again be bound to only the name part of the key:"
 msgstr ""
 
 #. type: delimited block -
@@ -771,27 +710,24 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:375
 msgid ""
-"Creating and destructuring maps with auto-resolved keywords allow us to "
-"write code using a namespace alias (here `p`) that is defined by a `require` "
-"in the current namespace, giving us a means of namespace indirection that "
-"can be changed at a single place in the code."
+"Creating and destructuring maps with auto-resolved keywords allow us to write code using a namespace alias (here `p`) "
+"that is defined by a `require` in the current namespace, giving us a means of namespace indirection that can be "
+"changed at a single place in the code."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:377
 msgid ""
-"All symbols bound in the context of destructuring can be further "
-"destructured - this allows destructuring to be used in a nested fashion for "
-"both sequential and associative destructuring. It is less obvious, but this "
-"also extends to the symbol defined after `&`."
+"All symbols bound in the context of destructuring can be further destructured - this allows destructuring to be used "
+"in a nested fashion for both sequential and associative destructuring. It is less obvious, but this also extends to "
+"the symbol defined after `&`."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:379
 msgid ""
-"This example destructures the `&` seq in place to decode the rest of the "
-"arguments as options (note that we are thus destructuring the two arguments "
-"sequentially and the rest associatively):"
+"This example destructures the `&` seq in place to decode the rest of the arguments as options (note that we are thus "
+"destructuring the two arguments sequentially and the rest associatively):"
 msgstr ""
 
 #. type: delimited block -
@@ -819,23 +755,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:393
-msgid ""
-"You can utilize destructuring anywhere that there is an explicit or implicit "
-"let binding."
+msgid "You can utilize destructuring anywhere that there is an explicit or implicit let binding."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:395
-msgid ""
-"One of the most common places to see destructuring is in pulling apart the "
-"arguments passed to a function."
+msgid "One of the most common places to see destructuring is in pulling apart the arguments passed to a function."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:397
 msgid ""
-"Here we have the standard let x equal this, let y equal that, etc... Again, "
-"this is perfectly valid code, it's just verbose."
+"Here we have the standard let x equal this, let y equal that, etc... Again, this is perfectly valid code, it's just "
+"verbose."
 msgstr ""
 
 #. type: delimited block -
@@ -852,9 +784,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:408
 msgid ""
-"Any time we see code that is using `first`, `second`, `nth`, or `get` to "
-"pull apart a data structure, it's likely that destructuring can clean that "
-"up - we can start by rewriting the `let`:"
+"Any time we see code that is using `first`, `second`, `nth`, or `get` to pull apart a data structure, it's likely "
+"that destructuring can clean that up - we can start by rewriting the `let`:"
 msgstr ""
 
 #. type: delimited block -
@@ -869,8 +800,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:417
 msgid ""
-"When defining a function in clojure, destructuring can be applied on the "
-"incoming parameters, just like in a let:"
+"When defining a function in clojure, destructuring can be applied on the incoming parameters, just like in a let:"
 msgstr ""
 
 #. type: delimited block -
@@ -884,16 +814,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:425
 msgid ""
-"We have replaced several lines of code that pulled apart the incoming point "
-"data with a concise statement about the structure of that data that also "
-"binds the data to local values."
+"We have replaced several lines of code that pulled apart the incoming point data with a concise statement about the "
+"structure of that data that also binds the data to local values."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:427
 msgid ""
-"For a more realistic example, let's create a map containing some basic "
-"contact information for the infamous John Smith."
+"For a more realistic example, let's create a map containing some basic contact information for the infamous John "
+"Smith."
 msgstr ""
 
 #. type: delimited block -
@@ -909,9 +838,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:438
-msgid ""
-"Now that we have John's personal information we need to access the values "
-"within this map."
+msgid "Now that we have John's personal information we need to access the values within this map."
 msgstr ""
 
 #. type: delimited block -
@@ -935,8 +862,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:451
 msgid ""
-"This function will associatively destructure the the input using the `:keys` "
-"shortcut and then print out the contact information that we provided."
+"This function will associatively destructure the the input using the `:keys` shortcut and then print out the contact "
+"information that we provided."
 msgstr ""
 
 #. type: Plain text
@@ -963,8 +890,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:469
 msgid ""
-"We have an address in there now, but we needed to nest a map into our "
-"original structure in order to accomplish this."
+"We have an address in there now, but we needed to nest a map into our original structure in order to accomplish this."
 msgstr ""
 
 #. type: delimited block -
@@ -995,21 +921,18 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:491
 msgid ""
-"Macro writers may find the need to write a macro that incorporates "
-"destructuring. The most common way to do so is to produce a call to "
-"something that already does destructuring (like `let`, `loop`, `fn`, etc). "
-"Some examples of this in `clojure.core` include `if-let`, `when-let`, `when-"
-"some`, etc."
+"Macro writers may find the need to write a macro that incorporates destructuring. The most common way to do so is to "
+"produce a call to something that already does destructuring (like `let`, `loop`, `fn`, etc). Some examples of this in "
+"`clojure.core` include `if-let`, `when-let`, `when-some`, etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:493
 msgid ""
-"However, in rare cases you might want to instead resolve the destructuring "
-"yourself in a macro. In this case, use the (undocumented) `clojure.core/"
-"destructure` function, which implements the destructuring logic and is what "
-"`let` and `loop` actually invoke. The `destructure` function is designed to "
-"be invoked in a macro and expects to take a form and return a form:"
+"However, in rare cases you might want to instead resolve the destructuring yourself in a macro. In this case, use the "
+"(undocumented) `clojure.core/destructure` function, which implements the destructuring logic and is what `let` and "
+"`loop` actually invoke. The `destructure` function is designed to be invoked in a macro and expects to take a form "
+"and return a form:"
 msgstr ""
 
 #. type: delimited block -
@@ -1026,7 +949,6 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:503
 msgid ""
-"The result was formatted here to give it a little more clarity. This example "
-"should also give you some insight into how destructuring works under the "
-"hood."
+"The result was formatted here to give it a little more clarity. This example should also give you some insight into "
+"how destructuring works under the hood."
 msgstr ""

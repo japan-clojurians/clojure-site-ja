@@ -17,32 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
+#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
@@ -54,9 +43,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:14
-msgid ""
-"This information is provided for programmers familiar with Common Lisp or "
-"Scheme."
+msgid "This information is provided for programmers familiar with Common Lisp or Scheme."
 msgstr ""
 
 #. type: Plain text
@@ -141,9 +128,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:32
-msgid ""
-"_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not "
-"concrete cons cells"
+msgid "_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not concrete cons cells"
 msgstr ""
 
 #. type: Plain text
@@ -164,86 +149,72 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/lisps.adoc:36
 msgid ""
-"Global Vars can be dynamically rebound (if declared dynamic) without "
-"interfering with lexical local bindings. No special declarations are "
-"necessary to distinguish between dynamic and lexical bindings. Since Clojure "
-"is a Lisp-1, (global) functions can be dynamically rebound (if they are "
-"marked as dynamic)."
+"Global Vars can be dynamically rebound (if declared dynamic) without interfering with lexical local bindings. No "
+"special declarations are necessary to distinguish between dynamic and lexical bindings. Since Clojure is a Lisp-1, "
+"(global) functions can be dynamically rebound (if they are marked as dynamic)."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:37
 msgid ""
-"No letrec, labels or flet - use (fn name [args]...) for self-reference, "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"letfn[letfn] for mutual reference."
+"No letrec, labels or flet - use (fn name [args]...) for self-reference, http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/letfn[letfn] for mutual reference."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:38
 msgid ""
-"In Clojure _**nil**_ means 'nothing'. It signifies the absence of a value, "
-"of any type, and is not specific to lists or sequences."
+"In Clojure _**nil**_ means 'nothing'. It signifies the absence of a value, of any type, and is not specific to lists "
+"or sequences."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:39
-msgid ""
-"Empty collections are distinct from _**nil**_. Clojure does not equate "
-"_**nil**_ and '()."
+msgid "Empty collections are distinct from _**nil**_. Clojure does not equate _**nil**_ and '()."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:40
-msgid ""
-"_**false**_ means one of the two possible boolean values, the other being "
-"_**true**_"
+msgid "_**false**_ means one of the two possible boolean values, the other being _**true**_"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:41
 msgid ""
-"There is more to collections than lists. You can have instances of empty "
-"collections, some of which have literal support ([], {}, and ()). Thus there "
-"can be no sentinel empty collection value."
+"There is more to collections than lists. You can have instances of empty collections, some of which have literal "
+"support ([], {}, and ()). Thus there can be no sentinel empty collection value."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:42
-msgid ""
-"Coming from Scheme, _**nil**_ may map most closely to your notion of #f."
+msgid "Coming from Scheme, _**nil**_ may map most closely to your notion of #f."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:43
 msgid ""
-"A big difference in Clojure, is sequences. Sequences are not specific "
-"collections, esp. they are not necessarily concrete lists. When you ask an "
-"empty collection for a sequence of its elements (by calling *seq*) it "
-"returns _**nil**_, saying \"I can't produce one\". When you ask a sequence "
-"on its last element for the _**rest**_ it returns _**another logical "
-"sequence.**_ You can only tell if that sequence is empty by calling *seq* on "
-"it in turn. This enables sequences and the sequence protocol to be _lazy_."
+"A big difference in Clojure, is sequences. Sequences are not specific collections, esp. they are not necessarily "
+"concrete lists. When you ask an empty collection for a sequence of its elements (by calling *seq*) it returns "
+"_**nil**_, saying \"I can't produce one\". When you ask a sequence on its last element for the _**rest**_ it returns "
+"_**another logical sequence.**_ You can only tell if that sequence is empty by calling *seq* on it in turn. This "
+"enables sequences and the sequence protocol to be _lazy_."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:44
 msgid ""
-"Some of the sequence functions correspond to functions from Scheme and CL "
-"that there manipulated only pairs/conses ('lists') and returned sentinel "
-"values ('() and nil) that represented 'empty' lists. The Clojure return "
-"values differ in not returning specific empty collections, but rather "
-"another logical sequence. Some of the sequence functions have no counterpart "
-"in Scheme/CL, and map to Haskell/ML-like functions. Some of those functions "
-"return infinite or calculated sequences, where the analogy to concrete data-"
-"structures like Scheme/CL lists is tenuous at best."
+"Some of the sequence functions correspond to functions from Scheme and CL that there manipulated only pairs/conses "
+"('lists') and returned sentinel values ('() and nil) that represented 'empty' lists. The Clojure return values differ "
+"in not returning specific empty collections, but rather another logical sequence. Some of the sequence functions have "
+"no counterpart in Scheme/CL, and map to Haskell/ML-like functions. Some of those functions return infinite or "
+"calculated sequences, where the analogy to concrete data-structures like Scheme/CL lists is tenuous at best."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:45
 msgid ""
-"It helps to distinguish collections/data-structures and seqs/iteration. In "
-"both CL and Scheme they are conflated, in Clojure they are separate."
+"It helps to distinguish collections/data-structures and seqs/iteration. In both CL and Scheme they are conflated, in "
+"Clojure they are separate."
 msgstr ""
 
 #. type: Plain text

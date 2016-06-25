@@ -36,15 +36,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:13
 msgid ""
-"Clojure requires only http://java.sun.com/javase/downloads/index.jsp[Java] "
-"1.6 or greater, plus the Clojure JAR file itself."
+"Clojure requires only http://java.sun.com/javase/downloads/index.jsp[Java] 1.6 or greater, plus the Clojure JAR file "
+"itself."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:15
 msgid ""
-"<<xref/../../community/downloads#,Download>> and unzip Clojure. In the "
-"directory in which you expanded clojure.zip, run:"
+"<<xref/../../community/downloads#,Download>> and unzip Clojure. In the directory in which you expanded clojure.zip, "
+"run:"
 msgstr ""
 
 #. type: delimited block -
@@ -80,9 +80,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:31
-msgid ""
-"http://himera.herokuapp.com/index.html[Himera] provides a browser-based "
-"ClojureScript REPL"
+msgid "http://himera.herokuapp.com/index.html[Himera] provides a browser-based ClojureScript REPL"
 msgstr ""
 
 #. type: Title ==
@@ -94,9 +92,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:35
 msgid ""
-"http://leiningen.org/[Leiningen] is a build and project management tool "
-"written in Clojure and used pervasively throughout the Clojure community. "
-"Follow the instructions there to install Leiningen."
+"http://leiningen.org/[Leiningen] is a build and project management tool written in Clojure and used pervasively "
+"throughout the Clojure community. Follow the instructions there to install Leiningen."
 msgstr ""
 
 #. type: Plain text
@@ -112,7 +109,5 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:43
-msgid ""
-"Check out the <<xref/../../community/resources#,Resources>> page for "
-"tutorials and other great resources!"
+msgid "Check out the <<xref/../../community/resources#,Resources>> page for tutorials and other great resources!"
 msgstr ""

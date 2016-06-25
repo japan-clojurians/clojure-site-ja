@@ -17,19 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
-#: en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73
-#: en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96
-#: en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131
-#: en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152
-#: en/content/reference/java_interop.adoc:193 en/content/reference/libs.adoc:63
-#: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
-#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121
-#: en/content/community/editing.adoc:131
+#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/evaluation.adoc:62
+#: en/content/reference/evaluation.adoc:73 en/content/reference/java_interop.adoc:76
+#: en/content/reference/java_interop.adoc:96 en/content/reference/java_interop.adoc:109
+#: en/content/reference/java_interop.adoc:131 en/content/reference/java_interop.adoc:138
+#: en/content/reference/java_interop.adoc:152 en/content/reference/java_interop.adoc:193
+#: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
+#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr ""
 
@@ -40,8 +34,7 @@ msgid "Lists"
 msgstr ""
 
 #. type: Target for macro image
-#: en/content/reference/transducers.adoc:99
-#: en/content/community/editing.adoc:150
+#: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
 #, no-wrap
 msgid "/images/content/reference/transducers/xf.png"
 msgstr ""
@@ -60,9 +53,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:11
 msgid ""
-"This page covers helpful Asciidoc editing tips for writing content on this "
-"site. It does not cover every feature of Asciidoc, just the ones that have "
-"come up most commonly while writing content on this site."
+"This page covers helpful Asciidoc editing tips for writing content on this site. It does not cover every feature of "
+"Asciidoc, just the ones that have come up most commonly while writing content on this site."
 msgstr ""
 
 #. type: Title ==
@@ -90,8 +82,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:25
 msgid ""
-"The first lines indicate the title, author, and creation date. The last two "
-"lines are necessary boilerplate metadata attributes."
+"The first lines indicate the title, author, and creation date. The last two lines are necessary boilerplate metadata "
+"attributes."
 msgstr ""
 
 #. type: Title ==
@@ -127,17 +119,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:59
 msgid ""
-"|=== | markup | effect | pass:[_italic_] | _italic_ | pass:[*bold*] | *bold* "
-"| pass:[_**italic and bold**_] | _**italic and bold**_ | pass:[`inline "
-"code`] | `inline code` | pass:[(C) (R) (TM)] | (C) (R) (TM)  | pass:[-- ...] "
-"| -- ...  | pass:[-> <- => <=] | -> <- => <= |==="
+"|=== | markup | effect | pass:[_italic_] | _italic_ | pass:[*bold*] | *bold* | pass:[_**italic and bold**_] | "
+"_**italic and bold**_ | pass:[`inline code`] | `inline code` | pass:[(C) (R) (TM)] | (C) (R) (TM)  | pass:[-- ...] | "
+"-- ...  | pass:[-> <- => <=] | -> <- => <= |==="
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:61
-msgid ""
-"To get a line break without a paragraph change, append + to the end of the "
-"line:"
+msgid "To get a line break without a paragraph change, append + to the end of the line:"
 msgstr ""
 
 #. type: delimited block -
@@ -155,9 +144,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:73
-msgid ""
-"If you have many lines in a row that will need breaks you can prefix them "
-"with pass:[[%hardbreaks]]:"
+msgid "If you have many lines in a row that will need breaks you can prefix them with pass:[[%hardbreaks]]:"
 msgstr ""
 
 #. type: delimited block -
@@ -177,8 +164,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:87
 msgid ""
-"There are a number of ways to handle escaping in Asciidoc but one of the "
-"most helpful is to omit all formatting by using:"
+"There are a number of ways to handle escaping in Asciidoc but one of the most helpful is to omit all formatting by "
+"using:"
 msgstr ""
 
 #. type: delimited block -
@@ -211,9 +198,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:105
-msgid ""
-"Link to another internal page (note the trailing # after the page - this is "
-"required in our generator!):"
+msgid "Link to another internal page (note the trailing # after the page - this is required in our generator!):"
 msgstr ""
 
 #. type: delimited block -
@@ -230,9 +215,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:113
 msgid ""
-"There is a bug in the parser used in the current version of JBake for links "
-"to a page in a parent directory. For example, to link to a page at ../"
-"reference/java_interop.adoc, you can use a link like this:"
+"There is a bug in the parser used in the current version of JBake for links to a page in a parent directory. For "
+"example, to link to a page at ../reference/java_interop.adoc, you can use a link like this:"
 msgstr ""
 
 #. type: delimited block -
@@ -244,11 +228,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:119
 msgid ""
-"This goes to a (fictitious) subdirectory xref, then back a directory, and "
-"then finally the path you wish to follow. While the choice of \"xref\" here "
-"is arbitrary, please use only this string so that we can more easily find "
-"and update these upward cross references later when there is a version that "
-"fixes this issue."
+"This goes to a (fictitious) subdirectory xref, then back a directory, and then finally the path you wish to follow. "
+"While the choice of \"xref\" here is arbitrary, please use only this string so that we can more easily find and "
+"update these upward cross references later when there is a version that fixes this issue."
 msgstr ""
 
 #. type: Plain text
@@ -280,9 +262,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:139
-msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"defn[defn]"
+msgid "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn[defn]"
 msgstr ""
 
 #. type: Title ==
@@ -294,8 +274,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:143
 msgid ""
-"Images should be placed in the assets/images/content directory in a "
-"subdirectory corresponding to the page location."
+"Images should be placed in the assets/images/content directory in a subdirectory corresponding to the page location."
 msgstr ""
 
 #. type: Plain text
@@ -343,9 +322,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:175
-msgid ""
-"There are a lot of options for creating lists. Only the most common ones are "
-"shown here:"
+msgid "There are a lot of options for creating lists. Only the most common ones are shown here:"
 msgstr ""
 
 #. type: Plain text
@@ -442,9 +419,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/editing.adoc:223
-msgid ""
-"Use the line break advice from the text formatting section to create lists "
-"with multi-line items."
+msgid "Use the line break advice from the text formatting section to create lists with multi-line items."
 msgstr ""
 
 #. type: Title ==
@@ -456,8 +431,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:227
 msgid ""
-"Tables are another large Asciidoc topic with extensive formatting options. "
-"This is a basic table example however:"
+"Tables are another large Asciidoc topic with extensive formatting options. This is a basic table example however:"
 msgstr ""
 
 #. type: delimited block -
@@ -497,8 +471,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:253
 msgid ""
-"Insert table of contents, which should generally be done at the top of your "
-"file (the page template will position this appropriately):"
+"Insert table of contents, which should generally be done at the top of your file (the page template will position "
+"this appropriately):"
 msgstr ""
 
 #. type: delimited block -
@@ -516,9 +490,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/editing.adoc:262
 msgid ""
-"Asciidoc is an extensive language and there is likely some way to do "
-"anything you want to do. Below are some more Asciidoc resources to answer "
-"more advanced questions."
+"Asciidoc is an extensive language and there is likely some way to do anything you want to do. Below are some more "
+"Asciidoc resources to answer more advanced questions."
 msgstr ""
 
 #. type: Plain text

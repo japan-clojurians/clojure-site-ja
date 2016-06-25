@@ -17,8 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
-#: en/content/events/2016/clojureexchange.adoc:1
-#: en/content/events/2015/clojurex.adoc:1
+#: en/content/events/2016/clojureexchange.adoc:1 en/content/events/2015/clojurex.adoc:1
 #, no-wrap
 msgid "Clojure eXchange"
 msgstr ""
@@ -31,9 +30,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/events/2016/clojureexchange.adoc:11
 msgid ""
-"If you're looking for the best place to learn about Clojure, Functional "
-"Programming and network with like-minded people, then the Clojure eXchange "
-"2016 is the conference you simply can't miss! Meet with the world's leading "
-"experts, learn how to use Clojure in your team and discuss war stories with "
-"your peers."
+"If you're looking for the best place to learn about Clojure, Functional Programming and network with like-minded "
+"people, then the Clojure eXchange 2016 is the conference you simply can't miss! Meet with the world's leading "
+"experts, learn how to use Clojure in your team and discuss war stories with your peers."
 msgstr ""
