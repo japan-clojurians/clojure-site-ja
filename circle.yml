@@ -1,0 +1,24 @@
+machine:
+  timezone: Asia/Tokyo
+
+dependencies:
+  cache_directories:
+    - ~/.pyenv/versions/3.5.1
+    - ~/jbake
+  pre:
+    - sudo apt-get update; sudo apt-get install po4a
+    - if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
+    - if [[ ! -e ~/.pyenv/versions/3.5.1 ]]; then yes | pyenv install 3.5.1; fi
+    - pyenv local 3.5.1
+  post:
+    - pip install -r python-packages.txt
+
+test:
+  override:
+    - make translate
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - make publish -e JBAKE_CMD=~/jbake/bin/jbake
