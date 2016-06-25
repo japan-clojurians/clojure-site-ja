@@ -1,1 +1,1 @@
-* clojure-site 日本語訳プロジェクト
+* clojure-site 日本語訳プロジェクト [[https://circleci.com/gh/japan-clojurians/clojure-site-ja.svg?style=svg]]
