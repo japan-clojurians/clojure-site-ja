@@ -48,6 +48,8 @@ build: clean translate
 	@echo
 	@echo "Build finished."
 
-publish:
+publish: build
 	ghp-import -n -m "update site" -b gh-pages build/output
 	git push origin gh-pages
+	@echo
+	@echo "Published."
