@@ -12,9 +12,9 @@
 (def ^:const cfg-template
   "
   [po4a_langs]{{#langs}} {{.}}{{/langs}}
-  [po4a_paths] i18n/po/$master/original.pot $lang:i18n/po/$master/$lang.po
+  [po4a_paths] i18n/pot/$master/original.pot $lang:i18n/po/$master/$lang.po
 
-  [po4a_alias:myadoc] asciidoc opt:\"-k 0 -M utf-8 -L utf-8\"
+  [po4a_alias:myadoc] asciidoc opt:\"-k 20 -M utf-8 -L utf-8\"
 
   {{#paths}}
   [type: {{ext}}] {{original}} $lang:{{target}} master:file={{master}}
@@ -57,4 +57,5 @@
                                                :paths paths}))
     (doseq [{:keys [master]} paths]
       (fs/mkdirs (str "i18n/po/" master))
-      (fs/touch (str "i18n/po/" master "/original.pot")))))
+      (fs/mkdirs (str "i18n/pot/" master))
+      (fs/touch (str "i18n/pot/" master "/original.pot")))))

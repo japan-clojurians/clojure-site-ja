@@ -1,0 +1,877 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/reference/special_forms.adoc:1
+#, no-wrap
+msgid "Special Forms"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:4
+msgid "Rich Hickey 2016-02-09"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
+#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
+#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
+#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/multimethods.adoc:15
+#: en/content/about/functional_programming.adoc:15
+#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:17
+#, no-wrap
+msgid "(_def_ symbol init?)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:20
+msgid ""
+"Creates and interns or locates a global var with the name of symbol and a "
+"namespace of the value of the current namespace (_**pass:[*ns*]**_). If init "
+"is supplied, it is evaluated, and the root binding of the var is set to the "
+"resulting value. If init is not supplied, the root binding of the var is "
+"unaffected. _**def**_ always applies to the root binding, even if the var is "
+"thread-bound at the point where _**def**_ is called. _**def**_ yields the "
+"var itself _(not its value)_. Throws an exception if symbol is already in "
+"the namespace and not mapped to an interned var. Since 1.3, _**def**_ has "
+"allowed an optional doc-string: (_def_ symbol doc-string? init?)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:22
+msgid ""
+"Any metadata on the symbol will be evaluated, and become metadata on the var "
+"itself. There are several metadata keys that have special interpretation:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:24
+msgid "_**:private**_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:26
+msgid ""
+"a boolean indicating the access control for the var. If this key is not "
+"present, the default access is public (e.g. as if :private false)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:27
+msgid "_**:doc**_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:29
+msgid "a string containing short (1-3 line) documentation for the var contents"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:30
+msgid "_**:test**_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:32
+msgid ""
+"a fn of no args that uses assert to check various operations. The var itself "
+"will be accessible during evaluation of a literal fn in the metadata map."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:33
+msgid "_**:tag**_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:35
+msgid ""
+"a symbol naming a class or a Class object that indicates the Java type of "
+"the object in the var, or its return value if the object is a fn."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:37
+msgid ""
+"In addition the compiler will place the following metadata keys on the var:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:39
+msgid "_**:file**_ string"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:40
+msgid "_**:line**_ int"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:41
+msgid "_**:name**_ simple symbol"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:42
+msgid "_**:ns**_ namespace in which var is interned"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:43
+msgid "_**:macro**_ true if var names a macro"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:44
+msgid ""
+"_**:arglists**_ a list of vector(s) of argument forms, as were supplied to "
+"defn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:46
+msgid ""
+"The var metadata can be used for application-specific purposes as well. "
+"Consider using namespace-qualified keys (e.g. :myns/foo) to avoid clashes."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:59
+#, no-wrap
+msgid ""
+"(defn\n"
+" ^{:doc \"mymax [xs+] gets the maximum value in xs using > \"\n"
+"   :test (fn []\n"
+"             (assert (= 42  (mymax 2 42 5 4))))\n"
+"   :user/comment \"this is the best fn ever!\"}\n"
+"  mymax\n"
+"  ([x] x)\n"
+"  ([x y] (if (> x y) x y))\n"
+"  ([x y & more]\n"
+"   (reduce mymax (mymax x y) more)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:69
+#, no-wrap
+msgid ""
+"user=> (meta #'mymax)\n"
+"  {:name mymax,\n"
+"   :user/comment \"this is the best fn ever!\",\n"
+"   :doc \"mymax [xs+] gets the maximum value in xs using > \",\n"
+"   :arglists ([x] [x y] [x y & more])\n"
+"   :file \"repl-1\",\n"
+"   :line 126,\n"
+"   :ns #<Namespace user >,\n"
+"   :test #<user$fn__289 user$fn__289@20f443 >}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:72
+msgid ""
+"Many macros expand into _**def**_ (e.g. _**defn**_, _**defmacro**_), and "
+"thus also convey metadata for the resulting var from the symbol used as the "
+"name."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:74
+msgid ""
+"Using def to modify the root value of a var at other than the top level is "
+"usually an indication that you are using the var as a mutable global, and is "
+"considered bad style. Consider either using binding to provide a thread-"
+"local value for the var, or putting a ref or agent in the var and using "
+"transactions or actions for mutation."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:76
+#, no-wrap
+msgid "(_if_ test then else?)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:79
+msgid ""
+"Evaluates test. If not the singular values *nil* or *false*, evaluates and "
+"yields then, otherwise, evaluates and yields else. If else is not supplied "
+"it defaults to *nil*. All of the other conditionals in Clojure are based "
+"upon the same logic, that is, *nil* and *false* constitute logical falsity, "
+"and everything else constitutes logical truth, and those meanings apply "
+"throughout. _**if**_ performs conditional tests of boolean Java method "
+"return values without conversion to Boolean. Note that _**if**_ does not "
+"test for arbitrary values of java.lang.Boolean, only the singular value "
+"*false* (Java's Boolean.FALSE), so if you are creating your own boxed "
+"Booleans make sure to use Boolean/valueOf and not the Boolean constructors."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:81
+#, no-wrap
+msgid "(_do_ exprs*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:84
+msgid ""
+"Evaluates the expressions in order and returns the value of the last. If no "
+"expressions are supplied, returns nil."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:86
+#, no-wrap
+msgid "(_let_ [bindings* ] exprs*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:89
+msgid "binding => binding-form init-expr"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:91
+msgid ""
+"Evaluates the exprs in a lexical context in which the symbols in the binding-"
+"forms are bound to their respective init-exprs or parts therein. The "
+"bindings are sequential, so each binding can see the prior bindings. The "
+"exprs are contained in an implicit do. If a binding symbol is annotated with "
+"a metadata tag, the compiler will try to resolve the tag to a class name and "
+"presume that type in subsequent references to the binding. The simplest "
+"binding-form is a symbol, which is bound to the entire init-expr:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:98
+#, no-wrap
+msgid ""
+"(let [x 1\n"
+"      y x]\n"
+"  y)\n"
+"-> 1\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:101
+#: en/content/reference/special_forms.adoc:185
+msgid ""
+"See <<special_forms#binding-forms#,Binding Forms>> for more information "
+"about binding forms."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:103
+#, no-wrap
+msgid "*Locals created with let are not variables. Once created their values never change!*\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:105
+#, no-wrap
+msgid "(_quote_ form)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:108
+msgid "Yields the unevaluated form."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:113
+#, no-wrap
+msgid ""
+"user=> '(a b c)\n"
+"(a b c)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:116
+msgid ""
+"Note there is no attempt made to call the function a. The return value is a "
+"list of 3 symbols."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:118
+#, no-wrap
+msgid "(_var_ symbol)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:121
+msgid ""
+"The symbol must resolve to a var, and the Var object itself _(not its "
+"value)_ is returned. The reader macro #'x expands to (var x)."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:123
+#, no-wrap
+msgid "(_fn_ name? [params* ] exprs*)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:124
+#, no-wrap
+msgid "(_fn_ name? ([params* ] exprs*)+)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:130
+msgid ""
+"params => positional-params* , or positional-params* & rest-param + "
+"positional-param => binding-form + rest-param => binding-form + name => "
+"symbol"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:132
+msgid ""
+"Defines a function (fn). Fns are first-class objects that implement the IFn "
+"interface. The IFn interface defines an invoke() function that is overloaded "
+"with arity ranging from 0-20. A single fn object can implement one or more "
+"invoke methods, and thus be overloaded on arity. One and only one overload "
+"can itself be variadic, by specifying the ampersand followed by a single "
+"rest-param. Such a variadic entry point, when called with arguments that "
+"exceed the positional params, will find them in a seq contained in the rest "
+"param. If the supplied args do not exceed the positional params, the rest "
+"param will be nil."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:134
+msgid ""
+"The first form defines a fn with a single invoke method. The second defines "
+"a fn with one or more overloaded invoke methods. The arities of the "
+"overloads must be distinct. In either case, the result of the expression is "
+"a single fn object."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:136
+msgid ""
+"The exprs are compiled in an environment in which the params are bound to "
+"the actual arguments. The exprs are enclosed in an implicit do. If a name "
+"symbol is provided, it is bound within the function definition to the "
+"function object itself, allowing for self-calling, even in anonymous "
+"functions. If a param symbol is annotated with a metadata tag, the compiler "
+"will try to resolve the tag to a class name and presume that type in "
+"subsequent references to the binding."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:145
+#, no-wrap
+msgid ""
+"(def mult\n"
+"  (fn this\n"
+"      ([] 1)\n"
+"      ([x] x)\n"
+"      ([x y] (* x y))\n"
+"      ([x y & more]\n"
+"          (apply this (this x y) more))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:147
+msgid ""
+"Note that named fns such as mult are normally defined with defn, which "
+"expands into something such as the above."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:149
+msgid ""
+"A fn (overload) defines a recursion point at the top of the function, with "
+"arity equal to the number of params _including the rest param, if present_. "
+"See recur."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:151
+msgid "fns implement the Java Callable, Runnable and Comparator interfaces."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:153
+#, no-wrap
+msgid "*__Since 1.1__*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:155
+msgid "Functions support specifying runtime pre- and postconditions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:157
+msgid "The syntax for function definitions becomes the following:"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:158
+#, no-wrap
+msgid "(_fn_ name? [params* ] condition-map? exprs*)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:159
+#, no-wrap
+msgid "(_fn_ name? ([params* ] condition-map? exprs*)+)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:162
+msgid ""
+"The syntax extension also applies to defn and other macros which expand to "
+"fn forms."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:164
+msgid ""
+"Note: If the sole form following the parameter vector is a map, it is "
+"treated as the function body, and not the condition map."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:166
+msgid ""
+"The condition-map parameter may be used to specify pre- and postconditions "
+"for a function. It is of the following form:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:170
+msgid "{:pre [pre-expr*] :post [post-expr*]}"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:172
+msgid ""
+"where either key is optional. The condition map may also be provided as "
+"metadata of the arglist."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:174
+#, no-wrap
+msgid "**pre-expr** and **post-expr** are boolean expressions that may refer to the parameters of the function. In addition, **%** may be used in a post-expr to refer to the function's return value. If any of the conditions evaluate to false and **pass:[*assert*]** is true, an assertion failure exception is thrown.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:176
+#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:170
+msgid "Example:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:182
+#, no-wrap
+msgid ""
+"(defn constrained-sqr [x]\n"
+"    {:pre  [(pos? x)]\n"
+"     :post [(> % 16), (< % 225)]}\n"
+"    (* x x))\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:187
+#, no-wrap
+msgid "(_loop_ [bindings* ] exprs*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:190
+msgid ""
+"loop is exactly like let, except that it establishes a recursion point at "
+"the top of the loop, with arity equal to the number of bindings. See recur."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:192
+#, no-wrap
+msgid "(_recur_ exprs*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:195
+msgid ""
+"Evaluates the exprs in order, then, in parallel, rebinds the bindings of the "
+"recursion point to the values of the exprs. If the recursion point was a fn "
+"method, then it rebinds the params. If the recursion point was a loop, then "
+"it rebinds the loop bindings. Execution then jumps back to the recursion "
+"point. The recur expression must match the arity of the recursion point "
+"exactly. In particular, if the recursion point was the top of a variadic fn "
+"method, there is no gathering of rest args - a single seq (or null) should "
+"be passed. recur in other than a tail position is an error."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:197
+msgid ""
+"Note that recur is the only non-stack-consuming looping construct in "
+"Clojure. There is no tail-call optimization and the use of self-calls for "
+"looping of unknown bounds is discouraged. recur is functional and its use in "
+"tail-position is verified by the compiler."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:206
+#, no-wrap
+msgid ""
+"(def factorial\n"
+"  (fn [n]\n"
+"    (loop [cnt n acc 1]\n"
+"       (if (zero? cnt)\n"
+"            acc\n"
+"          (recur (dec cnt) (* acc cnt))))))\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:209
+#, no-wrap
+msgid "(_throw_ expr)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:212
+msgid ""
+"The expr is evaluated and thrown, therefore it should yield an instance of "
+"some derivee of Throwable."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:214
+#, no-wrap
+msgid "(_try_ expr* catch-clause* finally-clause?)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:218
+msgid ""
+"catch-clause -> (_catch_ classname name expr*) + finally-clause -> "
+"(_finally_ expr*)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:220
+msgid ""
+"The exprs are evaluated and, if no exceptions occur, the value of the last "
+"is returned. If an exception occurs and catch clauses are provided, each is "
+"examined in turn and the first for which the thrown exception is an instance "
+"of the named class is considered a matching catch clause. If there is a "
+"matching catch clause, its exprs are evaluated in a context in which name is "
+"bound to the thrown exception, and the value of the last is the return value "
+"of the function. If there is no matching catch clause, the exception "
+"propagates out of the function. Before returning, normally or abnormally, "
+"any finally exprs will be evaluated for their side effects."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:222
+#, no-wrap
+msgid "(_monitor-enter_ x)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:225
+#, no-wrap
+msgid "(_monitor-exit_ x)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:228
+msgid ""
+"These are synchronization primitives that should be avoided in user code. "
+"Use the _**locking**_ macro."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:229
+#, no-wrap
+msgid "Other Special Forms"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:234
+msgid ""
+"anchor:.[] anchor:new[] The special forms <<java_interop#dot,dot ('.')>>, "
+"<<java_interop#new,new>>, and <<java_interop#set,set!>> of fields are "
+"described in the <<java_interop#,Java Interop>> section of the reference."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:237
+msgid ""
+"anchor:set![] <<vars#set%21,set!>> of vars is described in the <<vars#,"
+"Vars>> section of the reference."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/special_forms.adoc:239
+#, no-wrap
+msgid "Binding Forms (Destructuring)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:242
+msgid ""
+"Clojure supports abstract structural binding, often called destructuring, in "
+"let binding lists, fn parameter lists, and any macro that expands into a let "
+"or fn. The basic idea is that a binding-form can be a data structure literal "
+"containing symbols that get bound to the respective parts of the init-expr. "
+"The binding is abstract in that a vector literal can bind to anything that "
+"is sequential, while a map literal can bind to anything that is associative."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/special_forms.adoc:243
+#, no-wrap
+msgid "Vector binding destructuring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:246
+msgid ""
+"Vector binding-exprs allow you to bind names to parts of _sequential_ things "
+"(not just vectors), like vectors, lists, seqs, strings, arrays, and anything "
+"that supports nth. The basic sequential form is a vector of binding-forms, "
+"which will be bound to successive elements from the init-expr, looked up via "
+"nth. In addition, and optionally, & followed by a binding-forms will cause "
+"that binding-form to be bound to the remainder of the sequence, i.e. that "
+"part not yet bound, looked up via http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/nthnext[nthnext] ."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:248
+msgid ""
+"Finally, also optional, :as followed by a symbol will cause that symbol to "
+"be bound to the entire init-expr:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:253
+#, no-wrap
+msgid ""
+"(let [[a b c & d :as e] [1 2 3 4 5 6 7]]\n"
+"  [a b c d e])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:255
+#, no-wrap
+msgid "->[1 2 3 (4 5 6 7) [1 2 3 4 5 6 7]]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:258
+msgid "These forms can be nested:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:263
+#, no-wrap
+msgid ""
+"(let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]\n"
+"  [x1 y1 x2 y2])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:265
+#, no-wrap
+msgid "->[1 2 3 4]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:268
+msgid "Strings work too:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:273
+#, no-wrap
+msgid ""
+"(let [[a b & c :as str] \"asdjhhfdas\"]\n"
+"  [a b c str])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:275
+#, no-wrap
+msgid "->[\\a \\s (\\d \\j \\h \\h \\f \\d \\a \\s) \"asdjhhfdas\"]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/special_forms.adoc:277
+#, no-wrap
+msgid "Map binding destructuring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:280
+msgid ""
+"Map binding-forms allow you to bind names to parts of _associative_ things "
+"(not just maps), like maps, vectors, string and arrays (the latter three "
+"have integer keys). It consists of a map of binding-form-key pairs, each "
+"symbol being bound to the value in the init-expr at the key. In addition, "
+"and optionally, an _**:as**_ key in the binding form followed by a symbol "
+"will cause that symbol to be bound to the entire init-expr. Also optionally, "
+"an _**:or**_ key in the binding form followed by another map may be used to "
+"supply default values for some or all of the keys if they are not found in "
+"the init-expr:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:285
+#, no-wrap
+msgid ""
+"(let [{a :a, b :b, c :c, :as m :or {a 2 b 3}}  {:a 5 :c 6}]\n"
+"  [a b c m])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:287
+#, no-wrap
+msgid "->[5 3 6 {:c 6, :a 5}]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:290
+msgid ""
+"It is often the case that you will want to bind same-named symbols to the "
+"map keys. The _**:keys**_ directive allows you to avoid the redundancy:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:294
+#, no-wrap
+msgid "(let [{fred :fred ethel :ethel lucy :lucy} m] ...\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:297
+msgid "can be written:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:301
+#, no-wrap
+msgid "(let [{:keys [fred ethel lucy]} m] ...\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:304
+msgid ""
+"As of Clojure 1.6, you can also use prefixed map keys in the map "
+"destructuring form:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:310
+#, no-wrap
+msgid ""
+"(let [m {:x/a 1, :y/b 2}\n"
+"      {:keys [x/a y/b]} m]\n"
+"  (+ a b))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:312
+#, no-wrap
+msgid "-> 3\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:315
+msgid ""
+"As shown above, in the case of using prefixed keys, the bound symbol name "
+"will be the same as the right-hand side of the prefixed key. You can also "
+"use auto-resolved keyword forms in the _**:keys**_ directive:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:321
+#, no-wrap
+msgid ""
+"(let [m {::x 42}\n"
+"      {:keys [::x]} m]\n"
+"  x)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:323
+#, no-wrap
+msgid "-> 42\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:326
+msgid ""
+"There are similar _**:strs**_ and _**:syms**_ directives for matching string "
+"and symbol keys, the latter also allowing prefixed symbol keys since Clojure "
+"1.6."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/special_forms.adoc:327
+#, no-wrap
+msgid "Nested destructuring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:330
+msgid ""
+"Since binding forms can be nested within one another arbitrarily, you can "
+"pull apart just about anything:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:336
+#, no-wrap
+msgid ""
+"(let [{j :j, k :k, i :i, [r s & t :as v] :ivec, :or {i 12 j 13}}\n"
+"      {:j 15 :k 16 :ivec [22 23 24 25]}]\n"
+"  [i j k r s t v])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:338
+#, no-wrap
+msgid "-> [12 15 16 22 23 (24 25) [22 23 24 25]]\n"
+msgstr ""

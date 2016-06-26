@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/transducers.adoc:4
+#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
+#: en/content/about/clojureclr.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/libraries.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr ""
+
+#. type: Title =
+#: en/content/community/swag.adoc:1
+#, no-wrap
+msgid "Swag"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/swag.adoc:10
+#, no-wrap
+msgid "Official Clojure Gear"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:13
+msgid ""
+"The http://www.zazzle.com/clojureappreciation[Clojure Appreciation store] is "
+"the only place to get authorized gear. Proceeds go to Rich Hickey, the "
+"creator of Clojure."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/swag.adoc:15
+#, no-wrap
+msgid "Stickers "
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:18
+msgid ""
+"image:http://rlv.zcache.com/clojure_stickers_3_sheet_of_6-"
+"p217097870517528844en8u1_125.jpg[Clojure Stickers 3&quot; - Sheet of 6,link="
+"\"http://www.zazzle.com/clojure_stickers_3_sheet_of_6-217097870517528844?"
+"rf=238716329365496646\"] Clojure Stickers 3\" - Sheet of 6"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:20
+msgid ""
+"image:http://rlv.zcache.com/clojure_stickers_1_5_sheet_of_20-"
+"p217379761338416613en8u1_125.jpg[Clojure Stickers 1.5&quot; - Sheet of 20,"
+"link=\"http://www.zazzle.com/"
+"clojure_stickers_1_5_sheet_of_20-217379761338416613?rf=238716329365496646\"] "
+"Clojure Stickers 1.5\" - Sheet of 20"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:22
+msgid ""
+"Browse other http://www.zazzle.com/clojure+stickers?"
+"rf=238716329365496646[Clojure Stickers] by http://www.zazzle.com/"
+"clojureappreciation*[ClojureAppreciation]."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/swag.adoc:23
+#, no-wrap
+msgid "T Shirts"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:26
+msgid ""
+"+Note: You can customize the color and shirt style, get hoodies, jerseys "
+"etc. If ordering a light shirt you'll need to set the font color to "
+"something dark.+"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:28
+msgid ""
+"image:http://rlv.zcache.com/clojure_t_large_logo-"
+"raf7c54b4b4ec4537afd1e5cb1824168d_vj82h_250.jpg?bg=0xffffff[Clojure T, Large "
+"Logo,link=\"http://www.zazzle.com/clojure_t_large_logo-235776431459512494?"
+"rf=238716329365496646\"] Clojure T, Large Logo"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/swag.adoc:30
+msgid ""
+"image:http://rlv.zcache.com/clojure_t_small_logo-"
+"rda2f449605144baf8631399aa19d8c63_vj82h_250.jpg?bg=0xffffff[Clojure T, Small "
+"Logo,link=\"http://www.zazzle.com/clojure_t_small_logo-235264388339470561?"
+"rf=238716329365496646\"] Clojure T, Small Logo"
+msgstr ""
