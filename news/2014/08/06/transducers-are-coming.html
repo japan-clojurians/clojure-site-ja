@@ -73,30 +73,16 @@
 	<p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Transducers are a powerful and composable way to build algorithmic
-transformations that you can reuse in many contexts, and they&#8217;re coming to
-Clojure core and core.async.</p>
+<p>Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many contexts, and they&#8217;re coming to Clojure core and core.async.</p>
 </div>
 <div class="paragraph">
-<p>Two years ago, in a
-<a href="http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html">blog post
-describing how reducers work</a>, I described the reducing function
-transformers on which they were based, and provided explicit examples like
-<code>mapping</code>, <code>filtering</code> and <code>mapcatting</code>. Because the reducers library
-intends to deliver an API with the same 'shape' as existing sequence
-function APIs, these transformers were never exposed a la carte, instead
-being encapsulated by the macrology of reducers.</p>
+<p>Two years ago, in a <a href="http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html">blog post describing how reducers work</a>, I described the reducing function transformers on which they were based, and provided explicit examples like <code>mapping</code>, <code>filtering</code> and <code>mapcatting</code>. Because the reducers library intends to deliver an API with the same 'shape' as existing sequence function APIs, these transformers were never exposed a la carte, instead being encapsulated by the macrology of reducers.</p>
 </div>
 <div class="paragraph">
-<p>In working recently on providing algorithmic combinators for core.async, I
-became more and more convinced of the superiority of reducing function
-transformers over channel&#8594;channel functions for algorithmic
-transformation. In fact, I think they are a better way to do many things for
-which we normally create bespoke replicas of map, filter etc.</p>
+<p>In working recently on providing algorithmic combinators for core.async, I became more and more convinced of the superiority of reducing function transformers over channel&#8594;channel functions for algorithmic transformation. In fact, I think they are a better way to do many things for which we normally create bespoke replicas of map, filter etc.</p>
 </div>
 <div class="paragraph">
-<p>So, reducing function transformers are getting a name - <strong>transducers</strong>, and
-first-class support in Clojure core and core.async.</p>
+<p>So, reducing function transformers are getting a name - <strong>transducers</strong>, and first-class support in Clojure core and core.async.</p>
 </div>
 </div>
 </div>
@@ -107,9 +93,7 @@ first-class support in Clojure core and core.async.</p>
 <p>To recap that earlier post:</p>
 </div>
 <div class="paragraph">
-<p>A reducing function is just the kind of function you&#8217;d pass to <code>reduce</code> - it
-takes a result so far and a new input and returns the next result-so-far. In
-the context of transducers it&#8217;s best to think about this most generally:</p>
+<p>A reducing function is just the kind of function you&#8217;d pass to <code>reduce</code> - it takes a result so far and a new input and returns the next result-so-far. In the context of transducers it&#8217;s best to think about this most generally:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -118,8 +102,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>and a transducer is a function that takes one reducing function and returns
-another:</p>
+<p>and a transducer is a function that takes one reducing function and returns another:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -128,8 +111,7 @@ another:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The primary power of transducers comes from their fundamental decoupling -
-they don&#8217;t care (or know about):</p>
+<p>The primary power of transducers comes from their fundamental decoupling - they don&#8217;t care (or know about):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -145,13 +127,10 @@ they don&#8217;t care (or know about):</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The other source of power comes from the fact that transducers compose using
-ordinary function composition.</p>
+<p>The other source of power comes from the fact that transducers compose using ordinary function composition.</p>
 </div>
 <div class="paragraph">
-<p>The reducers library leverages transducers' decoupling from the job, the
-representation, and the source of inputs to accomplish parallel
-reduction. But transducers can also be used for:</p>
+<p>The reducers library leverages transducers' decoupling from the job, the representation, and the source of inputs to accomplish parallel reduction. But transducers can also be used for:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -178,10 +157,7 @@ reduction. But transducers can also be used for:</p>
 <h2 id="_new_stuff">New stuff</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Concretely, most of the core sequence functions are gaining a new arity, one
-shorter than their current shortest, which elides the final collection
-source argument. This arity will return a transducer that represents the
-same logic, independent of lazy sequence processing.</p>
+<p>Concretely, most of the core sequence functions are gaining a new arity, one shorter than their current shortest, which elides the final collection source argument. This arity will return a transducer that represents the same logic, independent of lazy sequence processing.</p>
 </div>
 <div class="paragraph">
 <p>Thus:</p>
@@ -196,8 +172,7 @@ same logic, independent of lazy sequence processing.</p>
 <p>returns a 'mapping' transducer. filter et al get similar support.</p>
 </div>
 <div class="paragraph">
-<p>You can build a 'stack' of transducers using ordinary function composition
-(comp):</p>
+<p>You can build a 'stack' of transducers using ordinary function composition (comp):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -213,8 +188,7 @@ same logic, independent of lazy sequence processing.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>One way to think of transducers is like &#8594;&gt; but independent of the job (lazy
-sequence creation) and the source of inputs (aseq).</p>
+<p>One way to think of transducers is like &#8594;&gt; but independent of the job (lazy sequence creation) and the source of inputs (aseq).</p>
 </div>
 </div>
 </div>
@@ -222,8 +196,7 @@ sequence creation) and the source of inputs (aseq).</p>
 <h2 id="_transducers_in_action">Transducers in action</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you&#8217;ve got a transducer, what can you do with it? <em><strong>An open set of
-things.</strong></em></p>
+<p>Once you&#8217;ve got a transducer, what can you do with it? <em><strong>An open set of things.</strong></em></p>
 </div>
 <div class="paragraph">
 <p>For instance, given the above transducer and some data in a vector, you can:</p>
@@ -231,8 +204,7 @@ things.</strong></em></p>
 <div class="ulist">
 <ul>
 <li>
-<p>lazily transform the data (one lazy sequence, not three as with composed
-sequence functions)<br></p>
+<p>lazily transform the data (one lazy sequence, not three as with composed sequence functions)<br></p>
 </li>
 </ul>
 </div>
@@ -268,8 +240,7 @@ sequence functions)<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>create a recipe for a transformation, which can be subsequently sequenced,
-iterated or reduced<br></p>
+<p>create a recipe for a transformation, which can be subsequently sequenced, iterated or reduced<br></p>
 </li>
 </ul>
 </div>
@@ -281,8 +252,7 @@ iterated or reduced<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>or use the same transducer to transform everything that goes through a
-channel<br></p>
+<p>or use the same transducer to transform everything that goes through a channel<br></p>
 </li>
 </ul>
 </div>
@@ -292,17 +262,13 @@ channel<br></p>
 </div>
 </div>
 <div class="paragraph">
-<p>The latter demonstrates the corresponding new capability of core.async
-channels - they can take transducers.</p>
+<p>The latter demonstrates the corresponding new capability of core.async channels - they can take transducers.</p>
 </div>
 <div class="paragraph">
-<p>This post is just to serve as a heads up on what the ongoing work is
-about. There will be more explanations, tutorials and derivations to follow,
-here and elsewhere.</p>
+<p>This post is just to serve as a heads up on what the ongoing work is about. There will be more explanations, tutorials and derivations to follow, here and elsewhere.</p>
 </div>
 <div class="paragraph">
-<p>I&#8217;m excited about transducers and the power they bring, and I hope you are
-too!</p>
+<p>I&#8217;m excited about transducers and the power they bring, and I hope you are too!</p>
 </div>
 <div class="paragraph">
 <p>Rich</p>

@@ -9,6 +9,10 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/community/editing.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/community/downloads.html</loc>
         <lastmod></lastmod>
     </url>
@@ -17,39 +21,11 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/community/editing.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/privacy.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/news/2011/07/22/introducing-clojurescript.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2012/02/17/clojure-governance.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2013/06/28/clojure-clore-async-channels.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2014/08/06/transducers-are-coming.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2015/06/30/clojure-17.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2016/01/14/clojure-org-live.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/news/2016/01/19/clojure18.html</loc>
+        <loc>http://clojure-site-ja.github.io/news/2016/05/23/introducing-clojure-spec.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -57,7 +33,31 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/news/2016/05/23/introducing-clojure-spec.html</loc>
+        <loc>http://clojure-site-ja.github.io/news/2016/01/19/clojure18.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2016/01/14/clojure-org-live.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2015/06/30/clojure-17.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2014/08/06/transducers-are-coming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2013/06/28/clojure-clore-async-channels.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2012/02/17/clojure-governance.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2011/07/22/introducing-clojurescript.html</loc>
         <lastmod></lastmod>
     </url>
 </urlset>

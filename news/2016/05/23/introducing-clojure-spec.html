@@ -73,63 +73,35 @@
 	<p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>I&#8217;m happy to introduce today <strong>clojure.spec</strong>, a new core library and
-support for data and function specifications in Clojure.</p>
+<p>I&#8217;m happy to introduce today <strong>clojure.spec</strong>, a new core library and support for data and function specifications in Clojure.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_better_communication">Better Communication</h3>
 <div class="paragraph">
-<p>Clojure is a dynamic language, and thus far we have relied on documentation
-or external libraries to explain the use and behavior of functions and
-libraries. But documentation is difficult to produce, is frequently not
-maintained, cannot be automatically checked and varies greatly in
-quality. Specs are expressive and precise. Including <strong>spec</strong> in Clojure
-creates a lingua franca with which we can state how our programs work and
-how to use them.</p>
+<p>Clojure is a dynamic language, and thus far we have relied on documentation or external libraries to explain the use and behavior of functions and libraries. But documentation is difficult to produce, is frequently not maintained, cannot be automatically checked and varies greatly in quality. Specs are expressive and precise. Including <strong>spec</strong> in Clojure creates a lingua franca with which we can state how our programs work and how to use them.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_more_leverage_and_power">More Leverage and Power</h3>
 <div class="paragraph">
-<p>A key advantage of specifications over documentation is the leverage they
-provide. In particular, specs can be utilized by programs in ways that docs
-cannot. Defining specs takes effort, and <strong>spec</strong> aims to maximize the
-return you get from making that effort. <strong>spec</strong> gives you tools for
-leveraging specs in documentation, validation, error reporting,
-destructuring, instrumentation, test-data generation and generative testing.</p>
+<p>A key advantage of specifications over documentation is the leverage they provide. In particular, specs can be utilized by programs in ways that docs cannot. Defining specs takes effort, and <strong>spec</strong> aims to maximize the return you get from making that effort. <strong>spec</strong> gives you tools for leveraging specs in documentation, validation, error reporting, destructuring, instrumentation, test-data generation and generative testing.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_improved_developer_experience">Improved Developer Experience</h3>
 <div class="paragraph">
-<p>Error messages from macros are a perennial challenge for new (and
-experienced) users of Clojure. Specs can be used to conform data in macros
-instead of using a custom parser. And Clojure&#8217;s macro expansion will
-automatically use specs, when present, to explain errors to users. This
-should result in a greatly improved experience for users when errors occur.</p>
+<p>Error messages from macros are a perennial challenge for new (and experienced) users of Clojure. Specs can be used to conform data in macros instead of using a custom parser. And Clojure&#8217;s macro expansion will automatically use specs, when present, to explain errors to users. This should result in a greatly improved experience for users when errors occur.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_more_robust_software">More Robust Software</h3>
 <div class="paragraph">
-<p>Clojure has always been about simplifying the development of robust
-software. In all languages, dynamic or not, tests are essential to quality -
-too many critical properties are not captured by common type
-systems. <strong>spec</strong> has been designed from the ground up to directly support
-generative testing via
-<a href="https://github.com/clojure/test.check">test.check</a>. When you use <strong>spec</strong> you
-get generative tests for free.</p>
+<p>Clojure has always been about simplifying the development of robust software. In all languages, dynamic or not, tests are essential to quality - too many critical properties are not captured by common type systems. <strong>spec</strong> has been designed from the ground up to directly support generative testing via <a href="https://github.com/clojure/test.check">test.check</a>. When you use <strong>spec</strong> you get generative tests for free.</p>
 </div>
 <div class="paragraph">
-<p>Taken together, I think the features of <strong>spec</strong> demonstrate the ongoing
-advantages of a powerful dynamic language like Clojure for building robust
-software - superior expressivity, instrumentation-enhanced REPL-driven
-development, sophisticated testing and more flexible systems. I encourage
-you to read the <strong>spec</strong> <a href="http://clojure.org/about/spec">rationale and
-overview</a>. Look for spec&#8217;s inclusion in the next alpha release of Clojure,
-within a day or so.</p>
+<p>Taken together, I think the features of <strong>spec</strong> demonstrate the ongoing advantages of a powerful dynamic language like Clojure for building robust software - superior expressivity, instrumentation-enhanced REPL-driven development, sophisticated testing and more flexible systems. I encourage you to read the <strong>spec</strong> <a href="http://clojure.org/about/spec">rationale and overview</a>. Look for spec&#8217;s inclusion in the next alpha release of Clojure, within a day or so.</p>
 </div>
 <div class="paragraph">
 <p>I hope you find <strong>spec</strong> useful and powerful.</p>

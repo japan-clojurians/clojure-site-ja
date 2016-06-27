@@ -73,9 +73,7 @@
 	<p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This page covers helpful Asciidoc editing tips for writing content on this
-site. It does not cover every feature of Asciidoc, just the ones that have
-come up most commonly while writing content on this site.</p>
+<p>This page covers helpful Asciidoc editing tips for writing content on this site. It does not cover every feature of Asciidoc, just the ones that have come up most commonly while writing content on this site.</p>
 </div>
 </div>
 </div>
@@ -88,12 +86,14 @@ come up most commonly while writing content on this site.</p>
 <div class="listingblock">
 <div class="content">
 <pre>= Mechanical Computing
-Ada Lovelace 2015-12-31 :jbake-type: page :toc: macro</pre>
+Ada Lovelace
+2015-12-31
+:jbake-type: page
+:toc: macro</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The first lines indicate the title, author, and creation date. The last two
-lines are necessary boilerplate metadata attributes.</p>
+<p>The first lines indicate the title, author, and creation date. The last two lines are necessary boilerplate metadata attributes.</p>
 </div>
 </div>
 </div>
@@ -132,15 +132,50 @@ lines are necessary boilerplate metadata attributes.</p>
 <div class="sect1">
 <h2 id="_text_markup">Text markup</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: %;">
+<col style="width: %;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">markup</th>
+<th class="tableblock halign-left valign-top">effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_italic_</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>italic</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*bold*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bold</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_**italic and bold**_</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em><strong>italic and bold</strong></em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`inline code`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inline code</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(C) (R) (TM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#169; &#174; &#8482;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-- ...</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-> <- => <=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8594; &#8592; &#8658; &#8656;</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>|=== | markup | effect | _italic_ | <em>italic</em> | *bold* | <strong>bold</strong>
-| _**italic and bold**_ | <em><strong>italic and bold</strong></em> | `inline
-code` | <code>inline code</code> | (C) (R) (TM) | &#169; &#174; &#8482;  | -- ...
-|&#8201;&#8212;&#8201;&#8230;&#8203;  | -> <- => <= | &#8594; &#8592; &#8658; &#8656; |===</p>
-</div>
-<div class="paragraph">
-<p>To get a line break without a paragraph change, append + to the end of the
-line:</p>
+<p>To get a line break without a paragraph change, append + to the end of the line:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -149,12 +184,12 @@ line break</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>force + line break</p>
+<p>force<br>
+line break</p>
 </div>
 <hr>
 <div class="paragraph">
-<p>If you have many lines in a row that will need breaks you can prefix them
-with [%hardbreaks]:</p>
+<p>If you have many lines in a row that will need breaks you can prefix them with [%hardbreaks]:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -164,12 +199,12 @@ second line</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>first line second line</p>
+<p>first line<br>
+second line</p>
 </div>
 <hr>
 <div class="paragraph">
-<p>There are a number of ways to handle escaping in Asciidoc but one of the
-most helpful is to omit all formatting by using:</p>
+<p>There are a number of ways to handle escaping in Asciidoc but one of the most helpful is to omit all formatting by using:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -194,8 +229,7 @@ most helpful is to omit all formatting by using:</p>
 </div>
 <hr>
 <div class="paragraph">
-<p>Link to another internal page (note the trailing # after the page - this is
-required in our generator!):</p>
+<p>Link to another internal page (note the trailing # after the page - this is required in our generator!):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -206,9 +240,7 @@ required in our generator!):</p>
 <p><a href="resources">Resources</a></p>
 </div>
 <div class="paragraph">
-<p>There is a bug in the parser used in the current version of JBake for links
-to a page in a parent directory. For example, to link to a page at
-../reference/java_interop.adoc, you can use a link like this:</p>
+<p>There is a bug in the parser used in the current version of JBake for links to a page in a parent directory. For example, to link to a page at ../reference/java_interop.adoc, you can use a link like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -216,11 +248,7 @@ to a page in a parent directory. For example, to link to a page at
 </div>
 </div>
 <div class="paragraph">
-<p>This goes to a (fictitious) subdirectory xref, then back a directory, and
-then finally the path you wish to follow. While the choice of "xref" here is
-arbitrary, please use only this string so that we can more easily find and
-update these upward cross references later when there is a version that
-fixes this issue.</p>
+<p>This goes to a (fictitious) subdirectory xref, then back a directory, and then finally the path you wish to follow. While the choice of "xref" here is arbitrary, please use only this string so that we can more easily find and update these upward cross references later when there is a version that fixes this issue.</p>
 </div>
 <hr>
 <div class="paragraph">
@@ -252,8 +280,7 @@ fixes this issue.</p>
 <h2 id="_images">Images</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Images should be placed in the assets/images/content directory in a
-subdirectory corresponding to the page location.</p>
+<p>Images should be placed in the assets/images/content directory in a subdirectory corresponding to the page location.</p>
 </div>
 <div class="paragraph">
 <p>Reference the image in a page as follows:</p>
@@ -299,8 +326,7 @@ subdirectory corresponding to the page location.</p>
 <h2 id="_lists">Lists</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are a lot of options for creating lists. Only the most common ones are
-shown here:</p>
+<p>There are a lot of options for creating lists. Only the most common ones are shown here:</p>
 </div>
 <div class="paragraph">
 <p>Bulleted lists:</p>
@@ -316,8 +342,24 @@ shown here:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>first
-second <strong> nested </strong>* more nested</p>
+<p>first</p>
+</li>
+<li>
+<p>second</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nested</p>
+<div class="ulist">
+<ul>
+<li>
+<p>more nested</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -338,8 +380,21 @@ second <strong> nested </strong>* more nested</p>
 <p>a</p>
 </li>
 <li>
-<p>b
-b.1 &#8230;&#8203; b.1.a</p>
+<p>b</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>b.1</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>b.1.a</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -387,8 +442,7 @@ b.1 &#8230;&#8203; b.1.a</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Use the line break advice from the text formatting section to create lists
-with multi-line items.</p>
+<p>Use the line break advice from the text formatting section to create lists with multi-line items.</p>
 </div>
 </div>
 </div>
@@ -396,8 +450,7 @@ with multi-line items.</p>
 <h2 id="_tables">Tables</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Tables are another large Asciidoc topic with extensive formatting
-options. This is a basic table example however:</p>
+<p>Tables are another large Asciidoc topic with extensive formatting options. This is a basic table example however:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -409,9 +462,28 @@ options. This is a basic table example however:</p>
 |===</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>|=== | col1 | col2 | a | b | b | c |===</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">col1</th>
+<th class="tableblock halign-left valign-top">col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -426,8 +498,7 @@ options. This is a basic table example however:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Insert table of contents, which should generally be done at the top of your
-file (the page template will position this appropriately):</p>
+<p>Insert table of contents, which should generally be done at the top of your file (the page template will position this appropriately):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -440,9 +511,7 @@ file (the page template will position this appropriately):</p>
 <h2 id="_more_resources">More resources</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Asciidoc is an extensive language and there is likely some way to do
-anything you want to do. Below are some more Asciidoc resources to answer
-more advanced questions.</p>
+<p>Asciidoc is an extensive language and there is likely some way to do anything you want to do. Below are some more Asciidoc resources to answer more advanced questions.</p>
 </div>
 <div class="ulist">
 <ul>
