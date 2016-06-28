@@ -8,7 +8,10 @@ PO4A_CONF        = po4a.cfg
 MSGMERGE_POT     = "--width=120"
 
 RE_CREATE_CFG_CMD = ./bin/re_create_cfg.clj
-JBAKE_CMD = jbake
+JBAKE_CMD         = jbake
+
+REDPEN_CMD        = redpen
+REDPEN_CONF       = redpen-ja.xml
 
 FROM_DIR  = en
 TO_DIR    = ja
@@ -25,6 +28,8 @@ clean:
 test:
 	exit 0
 
+ # find ./ja -type f | xargs redpen -c redpen-ja.xml -f asciidoc
+
 updatepot: clean
 	git clone $(ORIGINAL_GIT_PATH) $(FROM_DIR)
 	$(RE_CREATE_CFG_CMD)
@@ -40,6 +45,8 @@ translate:
 	@echo
 	@echo "Translate finished."
 
+check: translate
+	find $(TO_DIR) -type f | xargs $(REDPEN_CMD) -c $(REDPEN_CONF) -f asciidoc
 
 build: clean translate
 	[ -d $(BUILD_DIR) ] || mkdir $(BUILD_DIR)

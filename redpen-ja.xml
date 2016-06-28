@@ -1,0 +1,29 @@
+<redpen-conf lang="ja">
+  <validators>
+    <validator name="SentenceLength">
+      <property name="max_len" value="140"/>
+    </validator>
+    <validator name="CommaNumber">
+      <property name="max_num" value="8" />
+    </validator>
+    <validator name="SuccessiveWord" />
+
+    <!-- <validator name="KatakanaEndHyphen" /> -->
+    <validator name="KatakanaSpellCheck" />
+    <validator name="InvalidExpression"/>
+    <validator name="JapaneseStyle"/>
+    <validator name="DoubleNegative" />
+    <validator name="FrequentSentenceStart" />
+    <validator name="JapaneseAmbiguousNounConjunction" />
+    <validator name="JapaneseNumberExpression" />
+    <validator name="LongKanjiChain" />
+
+    <!-- <validator name="InvalidSymbol" /> -->
+  </validators>
+  <!-- <symbols> -->
+  <!--   <symbol name="EXCLAMATION_MARK" value="!" before-space="false" after-space="false" invalid-chars="！" /> -->
+  <!--   <symbol name="QUESTION_MARK" value="?" before-space="false" after-space="false" invalid-chars="？" /> -->
+  <!--   <symbol name="LEFT_PARENTHESIS" value="(" before-space="true" after-space="false" invalid-chars="（" /> -->
+  <!--   <symbol name="RIGHT_PARENTHESIS" value=")" before-space="false" after-space="true" invalid-chars="）" /> -->
+  <!-- </symbols> -->
+</redpen-conf>

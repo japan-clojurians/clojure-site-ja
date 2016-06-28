@@ -7,6 +7,7 @@ dependencies:
     - ~/jbake
   pre:
     - sudo apt-get update; sudo apt-get install po4a
+    - if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.6.2/redpen-1.6.2.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.6.2 ~/redpen; fi
     - if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
     - if [[ ! -e ~/.pyenv/versions/3.5.1 ]]; then yes | pyenv install 3.5.1; fi
     - pyenv local 3.5.1
