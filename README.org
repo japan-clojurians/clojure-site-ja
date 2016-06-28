@@ -16,4 +16,6 @@
 
 ** 著作権/ライセンスについて
 
-   clojure-site 日本語訳プロジェクトの成果物(訳文、スクリプト等)は、Clojure と同じ [[http://www.eclipse.org/legal/epl-v10.html][Eclipse Public License - v 1.0]] の下に公開するものとします。
+   clojure-site 日本語訳プロジェクトの成果物(訳文、スクリプト等)は、原本の著作権およびライセンスによる制限のない限り、翻訳著作権はこれを Japan Clojurians (責任者: ayato-p) に帰属し、 Clojure と同じ [[http://www.eclipse.org/legal/epl-v10.html][Eclipse Public License - v 1.0]] の下に公開するものとします。
+
+   翻訳者の方々には翻訳著作権を Japan Clojurians に寄贈していただく事になりますが、これは翻訳元ドキュメントのライセンス変更に対応したり、あるいは第三者によるライセンス侵犯に対処するための必要な処置です。翻訳したドキュメントの自由で円滑な更新・配布を可能とするため、ご理解とご協力をお願いいたします。
