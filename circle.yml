@@ -17,6 +17,7 @@ dependencies:
 test:
   override:
     - make translate
+  post:
     - mv ./ja "${CIRCLE_ARTIFACTS}"
 
 deployment:
