@@ -19,6 +19,7 @@ test:
   override:
     - make translate
   post:
+    - mkdir $CIRCLE_ARTIFACTS/translation-result
     - mv ./ja $CIRCLE_ARTIFACTS/translation-result
 
 deployment:
