@@ -5,6 +5,7 @@ dependencies:
   cache_directories:
     - ~/.pyenv/versions/3.5.1
     - ~/jbake
+    - ~/redpen
   pre:
     - sudo apt-get update; sudo apt-get install po4a
     - if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.6.2/redpen-1.6.2.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.6.2 ~/redpen; fi
