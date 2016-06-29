@@ -19,7 +19,7 @@ test:
   override:
     - make translate
   post:
-    - mv ./ja "${CIRCLE_ARTIFACTS}"
+    - mv ./ja $CIRCLE_ARTIFACTS/translation-result
 
 deployment:
   production:
