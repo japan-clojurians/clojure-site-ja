@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-07-01 15:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -49,10 +49,10 @@ msgstr ""
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
-msgstr ""
+msgstr "toc::[]"
 
 #. type: Title ==
-#: en/content/reference/sequences.adoc:1 en/content/about/spec.adoc:234 en/content/guides/spec.adoc:172
+#: en/content/reference/sequences.adoc:1 en/content/about/spec.adoc:234 en/content/guides/spec.adoc:450
 #, no-wrap
 msgid "Sequences"
 msgstr ""
@@ -61,7 +61,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:56 en/content/about/spec.adoc:198
 #, no-wrap
 msgid "Maps"
-msgstr ""
+msgstr "Maps (マップ)"
 
 #. type: Title ====
 #: en/content/reference/documentation.adoc:1 en/content/about/spec.adoc:310
@@ -276,8 +276,9 @@ msgstr ""
 msgid "Error reporting"
 msgstr ""
 
-#. type: Plain text
-#: en/content/about/spec.adoc:100
+#. type: Title ===
+#: en/content/about/spec.adoc:100 en/content/guides/spec.adoc:1104
+#, no-wrap
 msgid "Instrumentation"
 msgstr ""
 
