@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-07-01 15:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -820,9 +820,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/special_forms.adoc:315
 msgid ""
-"As shown above, in the case of using prefixed keys, the bound symbol name "
-"will be the same as the right-hand side of the prefixed key. You can also "
-"use auto-resolved keyword forms in the _**:keys**_ directive:"
+"In the case of using prefixed keys, the bound symbol name will be the same "
+"as the right-hand side of the prefixed key. You can also use auto-resolved "
+"keyword forms in the _**:keys**_ directive:"
 msgstr ""
 
 #. type: delimited block -
@@ -848,21 +848,59 @@ msgid ""
 "1.6."
 msgstr ""
 
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:328
+msgid ""
+"Clojure 1.9 adds support for directly destructuring many keys (or symbols) "
+"that share the same namespace using the following destructuring key forms:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:332
+msgid ""
+"`:__ns__/keys` - _ns_ specifies the default namespace for the key to look up "
+"in the input ** keys elements should not specify a namespace ** keys "
+"elements also define new local symbols, as with :keys"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:335
+msgid ""
+"`:__ns__/syms` - _ns_ specifies the default namespace for the symbol to look "
+"up in the input ** syms elements should not specify a namespace ** syms "
+"elements also define new local symbols, as with :syms"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:341
+#, no-wrap
+msgid ""
+"(let [m #:domain{:a 1, :b 2}\n"
+"      {:domain/keys [a b]} m]\n"
+"  [a b])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/special_forms.adoc:343
+#, no-wrap
+msgid "-> [1 2]\n"
+msgstr ""
+
 #. type: Title ===
-#: en/content/reference/special_forms.adoc:327
+#: en/content/reference/special_forms.adoc:346
 #, no-wrap
 msgid "Nested destructuring"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:330
+#: en/content/reference/special_forms.adoc:349
 msgid ""
 "Since binding forms can be nested within one another arbitrarily, you can "
 "pull apart just about anything:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:336
+#: en/content/reference/special_forms.adoc:355
 #, no-wrap
 msgid ""
 "(let [{j :j, k :k, i :i, [r s & t :as v] :ivec, :or {i 12 j 13}}\n"
@@ -871,7 +909,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:338
+#: en/content/reference/special_forms.adoc:357
 #, no-wrap
 msgid "-> [12 15 16 22 23 (24 25) [22 23 24 25]]\n"
 msgstr ""

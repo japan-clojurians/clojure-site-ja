@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-07-01 15:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -49,7 +49,7 @@ msgstr ""
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
-msgstr ""
+msgstr "toc::[]"
 
 #. type: Title =
 #: en/content/reference/multimethods.adoc:1
@@ -93,15 +93,27 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:23
+#, fuzzy
+#| msgid ""
+#| "The following functions can also be used as predicates or constructors for these types: + http://clojure.github.io/"
+#| "clojure/clojure.core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] http://clojure.github.io/"
+#| "clojure/clojure.core-api.html#clojure.core/reader-conditional[reader-conditional] http://clojure.github.io/clojure/"
+#| "clojure.core-api.html#clojure.core/tagged-literal%3F[tagged-literal?] http://clojure.github.io/clojure/clojure."
+#| "core-api.html#clojure.core/tagged-literal[tagged-literal]"
 msgid ""
 "Derivation is determined by a combination of either Java inheritance (for class values), or using Clojure's ad hoc "
 "hierarchy system. The hierarchy system supports derivation relationships between names (either symbols or keywords), "
 "and relationships between classes and names. The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"derive[derive] function create these relationships, and the http://clojure.github.io/clojure/clojure.core-api."
+"derive[derive] function creates these relationships, and the http://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/isa?[isa?] function tests for their existence. Note that http://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/isa?[isa?] is not http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "instance?[instance?]."
 msgstr ""
+"これらの型の述語やコンストラクタとして以下の関数を使用することが出来る: + http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/reader-conditional[reader-conditional] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/tagged-literal%3F[tagged-literal?] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/tagged-literal[tagged-literal]"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:25

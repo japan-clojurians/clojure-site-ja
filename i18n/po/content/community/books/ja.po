@@ -19,7 +19,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reader.adoc:4 en/content/community/books.adoc:4 en/content/community/resources.adoc:4
 msgid "Rich Hickey 2016-02-15"
-msgstr ""
+msgstr "Rich Hickey 2016-02-15"
 
 #. type: Title =
 #: en/content/community/books.adoc:1

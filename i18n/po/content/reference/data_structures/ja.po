@@ -49,19 +49,19 @@ msgstr ""
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
-msgstr ""
+msgstr "toc::[]"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:24 en/content/reference/data_structures.adoc:111
 #, no-wrap
 msgid "Symbols"
-msgstr ""
+msgstr "Symbols (シンボル)"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:62 en/content/reference/data_structures.adoc:235
 #, no-wrap
 msgid "Sets"
-msgstr ""
+msgstr "Sets (セット)"
 
 #. type: Title ==
 #: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41

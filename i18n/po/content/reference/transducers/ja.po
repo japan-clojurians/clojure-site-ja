@@ -49,12 +49,12 @@ msgstr ""
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 msgid "toc::[]"
-msgstr ""
+msgstr "toc::[]"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:140 en/content/reference/transducers.adoc:39
 msgid "For example:"
-msgstr ""
+msgstr "例:"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10

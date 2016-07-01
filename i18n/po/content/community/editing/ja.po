@@ -31,7 +31,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:48 en/content/community/editing.adoc:172
 #, no-wrap
 msgid "Lists"
-msgstr ""
+msgstr "Lists (リスト)"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150

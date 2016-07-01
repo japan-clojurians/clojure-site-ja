@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-07-01 15:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,14 +73,14 @@ msgstr ""
 #. type: Title ==
 #: en/content/community/downloads.adoc:15
 #, no-wrap
-msgid "Development Release: 1.9.0-alpha7"
+msgid "Development Release: 1.9.0-alpha8"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/downloads.adoc:18
 msgid ""
-"http://repo1.maven.org/maven2/org/clojure/clojure/1.9.0-alpha7/clojure-1.9.0-"
-"alpha7.zip[Clojure 1.9.0-alpha7]"
+"http://repo1.maven.org/maven2/org/clojure/clojure/1.9.0-alpha8/clojure-1.9.0-"
+"alpha8.zip[Clojure 1.9.0-alpha8]"
 msgstr ""
 
 #. type: Plain text
