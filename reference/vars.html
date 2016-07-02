@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Vars and the Global Environment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Vars and the Global Environment</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#set">(<strong>set!</strong> var-symbol expr)</a></li>
+<li><a href="#Interning">Interning</a></li>
+<li><a href="#local-vars">Non-interned Vars</a></li>
+<li><a href="#related">Related functions</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure is a practical language that recognizes the occasional need to maintain a persistent reference to a changing value and provides 4 distinct mechanisms for doing so in a controlled manner - Vars, <a href="refs">Refs</a>, <a href="agents">Agents</a> and <a href="atoms">Atoms</a>. Vars provide a mechanism to refer to a mutable storage location that can be dynamically rebound (to a new storage location) on a per-thread basis. Every Var can (but needn&#8217;t) have a root binding, which is a binding that is shared by all threads that do not have a per-thread binding. Thus, the value of a Var is the value of its per-thread binding, or, if it is not bound in the thread requesting the value, the value of the root binding, if any.</p>
+</div>
+<div class="paragraph">
+<p>The special form <em><strong>def</strong></em> creates (and <a href="vars#Interning">interns</a>) a Var. If the Var did not already exist and no initial value is supplied, the var is unbound:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (def x)
+.'user/x
+user=&gt; x
+java.lang.IllegalStateException: Var user/x is unbound.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Supplying an initial value binds the root (even if it was already bound).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (def x 1)
+.'user/x
+
+user=&gt; x
+1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default Vars are static, but Vars can be marked as dynamic to allow per-thread bindings via the macro <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/binding">binding</a>. Within each thread they obey a stack discipline:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (def ^:dynamic x 1)
+user=&gt; (def ^:dynamic y 1)
+user=&gt; (+ x y)
+2
+
+user=&gt; (binding [x 2 y 3]
+         (+ x y))
+5
+
+user=&gt; (+ x y)
+2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bindings created with <em><strong>binding</strong></em> cannot be seen by any other thread. Likewise, bindings created with <em><strong>binding</strong></em> can be assigned to, which provides a means for a nested context to communicate with code before it on the call stack. This capability is opt-in only by setting a metadata tag: <em><strong>dynamic</strong></em> to true as in the code block above. There are scenarios that one might wish to redefine static Vars within a context and Clojure (since version 1.3) provides the functions <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs">with-redefs</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn">with-redefs-fn</a> for such purposes.</p>
+</div>
+<div class="paragraph">
+<p>Functions defined with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> are stored in Vars, allowing for the re-definition of functions in a running program. This also enables many of the possibilities of aspect- or context-oriented programming. For instance, you could wrap a function with logging behavior only in certain call contexts or threads.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set">(<strong>set!</strong> var-symbol expr)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assignment special form.</p>
+</div>
+<div class="paragraph">
+<p>When the first operand is a symbol, it must resolve to a global var. The value of the var&#8217;s current thread binding is set to the value of expr. Currently, it is an error to attempt to set the root binding of a var using set!, i.e. var assignments are thread-local. In all cases the value of expr is returned.</p>
+</div>
+<div class="paragraph">
+<p>Note - <em>you cannot assign to function params or local bindings. Only Java fields, Vars, Refs and Agents are mutable in Clojure</em>.</p>
+</div>
+<div class="paragraph">
+<p>Using <a href="java_interop#set">set</a> for Java fields is documented in <a href="java_interop#set">Java Interop</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Interning">Interning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Namespace system maintains global maps of symbols to Var objects <em>(see <a href="namespaces">Namespaces</a>)</em>. If a <em><strong>def</strong></em> expression does not find an interned entry in the current namespace for the symbol being def-ed, it creates one, otherwise it uses the existing Var. This find-or-create process is called interning. This means that, unless they have been unmap-ed, Var objects are stable references and need not be looked up every time. It also means that namespaces constitute a global environment in which, as described in <a href="evaluation">Evaluation</a>, the compiler attempts to resolve all free symbols as Vars.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="special_forms#var">var</a> special form or the <code>#'</code> reader macro <em>(see <a href="reader">Reader</a>)</em> can be used to get an interned Var object instead of its current value.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="local-vars">Non-interned Vars</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to create vars that are not interned by using <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars">with-local-vars</a>. These vars will not be found during free symbol resolution, and their values have to be accessed manually. But they can serve as useful thread-local mutable cells.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related">Related functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Variants of <em><strong>def</strong></em>: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-">defn-</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce">defonce</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct">defstruct</a><br>
+Working with interned Vars: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare">declare</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern">intern</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-var">find-var</a> <a href="special_forms#var">var</a><br>
+Working with Var objects: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars">with-local-vars</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-get">var-get</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-set">var-set</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter-var-root">alter-var-root</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var?">var?</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs">with-redefs</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn">with-redefs-fn</a><br>
+Var validators: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator">set-validator</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a><br>
+Common Var metadata: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc">doc</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-doc">find-doc</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/test">test</a></p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

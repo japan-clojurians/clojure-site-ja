@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Differences with other Lisps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Differences with other Lisps</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div class="paragraph">
+<p>This information is provided for programmers familiar with Common Lisp or Scheme.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojure is case sensitive</p>
+</li>
+<li>
+<p>Clojure is a Lisp-1</p>
+</li>
+<li>
+<p>() is not the same as nil</p>
+</li>
+<li>
+<p>The reader is side-effect free</p>
+</li>
+<li>
+<p>Keywords are not Symbols</p>
+</li>
+<li>
+<p>Symbols are not storage locations (see Var)</p>
+</li>
+<li>
+<p><em><strong>nil</strong></em> is not a Symbol</p>
+</li>
+<li>
+<p>t is not syntax, use <em><strong>true</strong></em></p>
+</li>
+<li>
+<p>The read table is currently not accessible to user programs</p>
+</li>
+<li>
+<p><em><strong>let</strong></em> binds sequentially</p>
+</li>
+<li>
+<p><em><strong>do</strong></em> is not a looping construct</p>
+</li>
+<li>
+<p>There is no tail-call optimization, use <em><strong>recur</strong></em>.</p>
+</li>
+<li>
+<p>syntax-quote does symbol resolution, so `x is not the same as 'x.</p>
+</li>
+<li>
+<p>` has auto-gensyms.</p>
+</li>
+<li>
+<p>~ is unquote ',' is whitespace</p>
+</li>
+<li>
+<p>There is reader syntax for maps, vectors, and sets</p>
+</li>
+<li>
+<p><em><strong>cons</strong></em>, <em><strong>first</strong></em> and <em><strong>rest</strong></em> manipulate sequence abstractions, not concrete cons cells</p>
+</li>
+<li>
+<p>Most data structures are immutable</p>
+</li>
+<li>
+<p>lambda is <em><strong>fn</strong></em>, and supports overloading by arity</p>
+</li>
+<li>
+<p><em><strong>=</strong></em> is the equality predicate</p>
+</li>
+<li>
+<p>Global Vars can be dynamically rebound (if declared dynamic) without interfering with lexical local bindings. No special declarations are necessary to distinguish between dynamic and lexical bindings. Since Clojure is a Lisp-1, (global) functions can be dynamically rebound (if they are marked as dynamic).</p>
+</li>
+<li>
+<p>No letrec, labels or flet - use (fn name [args]&#8230;&#8203;) for self-reference, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn">letfn</a> for mutual reference.</p>
+</li>
+<li>
+<p>In Clojure <em><strong>nil</strong></em> means 'nothing'. It signifies the absence of a value, of any type, and is not specific to lists or sequences.</p>
+</li>
+<li>
+<p>Empty collections are distinct from <em><strong>nil</strong></em>. Clojure does not equate <em><strong>nil</strong></em> and '().</p>
+</li>
+<li>
+<p><em><strong>false</strong></em> means one of the two possible boolean values, the other being <em><strong>true</strong></em></p>
+</li>
+<li>
+<p>There is more to collections than lists. You can have instances of empty collections, some of which have literal support ([], {}, and ()). Thus there can be no sentinel empty collection value.</p>
+</li>
+<li>
+<p>Coming from Scheme, <em><strong>nil</strong></em> may map most closely to your notion of #f.</p>
+</li>
+<li>
+<p>A big difference in Clojure, is sequences. Sequences are not specific collections, esp. they are not necessarily concrete lists. When you ask an empty collection for a sequence of its elements (by calling <strong>seq</strong>) it returns <em><strong>nil</strong></em>, saying "I can&#8217;t produce one". When you ask a sequence on its last element for the <em><strong>rest</strong></em> it returns <em><strong>another logical sequence.</strong></em> You can only tell if that sequence is empty by calling <strong>seq</strong> on it in turn. This enables sequences and the sequence protocol to be <em>lazy</em>.</p>
+</li>
+<li>
+<p>Some of the sequence functions correspond to functions from Scheme and CL that there manipulated only pairs/conses ('lists') and returned sentinel values ('() and nil) that represented 'empty' lists. The Clojure return values differ in not returning specific empty collections, but rather another logical sequence. Some of the sequence functions have no counterpart in Scheme/CL, and map to Haskell/ML-like functions. Some of those functions return infinite or calculated sequences, where the analogy to concrete data-structures like Scheme/CL lists is tenuous at best.</p>
+</li>
+<li>
+<p>It helps to distinguish collections/data-structures and seqs/iteration. In both CL and Scheme they are conflated, in Clojure they are separate.</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread table">
+<colgroup>
+<col style="width: %;">
+<col style="width: %;">
+<col style="width: %;">
+<col style="width: %;">
+<col style="width: %;">
+<col style="width: %;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Clojure</th>
+<th class="tableblock halign-left valign-top">Common Lisp</th>
+<th class="tableblock halign-left valign-top">Scheme</th>
+<th class="tableblock halign-left valign-top">Java</th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has nil?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means 'nothing'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means false or empty list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has true?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (primitive)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has false?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (primitive)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditionals distinguish:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil or false/ everything else</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil/non-nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#f/non-#f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false/true</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List/sequence library manipulates distinguished concrete type(s)?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - seq abstraction with many collection implementations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - cons and vector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - pair</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - Iterator abstraction with many collection implementations</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Singleton empty-list value?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - can have distinct empty values of concrete collection types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End-of-sequence returns:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a logical sequence for which <strong>seq</strong> returns nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host null:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host true:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (boxed)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host false:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (boxed)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Agents and Asynchronous Actions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Agents and Asynchronous Actions</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_example">Example</a></li>
+<li><a href="#_related_functions">Related functions</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Like Refs, Agents provide shared access to mutable state. Where <a href="refs">Refs</a> support <em>coordinated</em>, <em>synchronous</em> change of <em>multiple</em> locations, Agents provide <em>independent</em>, <em>asynchronous</em> change of <em>individual</em> locations. Agents are bound to a single storage location for their lifetime, and only allow mutation of that location (to a new state) to occur as a result of an action. Actions are functions (with, optionally, additional arguments) that are asynchronously applied to an Agent&#8217;s state and whose return value becomes the Agent&#8217;s new state. Because actions are functions they can also be multimethods and therefore actions are potentially polymorphic. Also, because the set of functions is open, the set of actions supported by an Agent is also open, a sharp contrast to pattern matching message handling loops provided by some other languages.</p>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s Agents are <em>reactive</em>, not autonomous - there is no imperative message loop and no blocking receive. The state of an Agent should be itself immutable (preferably an instance of one of Clojure&#8217;s persistent collections), and the state of an Agent is always immediately available for reading by any thread (using the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a> function or <a href="reader">reader</a> macro @) without any messages, i.e. observation does not require cooperation or coordination.</p>
+</div>
+<div class="paragraph">
+<p>Agent action dispatches take the form (send agent fn args*). <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a> (and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>) always returns immediately. At some point later, in another thread, the following will happen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The given fn will be applied to the <em>state</em> of the Agent and the args, if any were supplied.</p>
+</li>
+<li>
+<p>The return value of fn will be passed to the validator function, if one has been set on the Agent. See <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a> for details.</p>
+</li>
+<li>
+<p>If the validator succeeds or if no validator was given, the return value of the given fn will become the new state of the Agent.</p>
+</li>
+<li>
+<p>If any watchers were added to the Agent, they will be called. See <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a> for details.</p>
+</li>
+<li>
+<p>If during the function execution any other dispatches are made (directly or indirectly), they will be held until <em>after</em> the state of the Agent has been changed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If any exceptions are thrown by an action function, no nested dispatches will occur, and the exception will be cached in the Agent itself. When an Agent has errors cached, any subsequent interactions will immediately throw an exception, until the agent&#8217;s errors are cleared. Agent errors can be examined with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a> and the agent restarted with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>.</p>
+</div>
+<div class="paragraph">
+<p>The actions of all Agents get interleaved amongst threads in a thread pool. At any point in time, at most one action for each Agent is being executed. Actions dispatched to an agent from another single agent or thread will occur in the order they were sent, potentially interleaved with actions dispatched to the same agent from other sources. <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a> should be used for actions that are CPU limited, while <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a> is appropriate for actions that may block on IO.</p>
+</div>
+<div class="paragraph">
+<p>Agents are integrated with the STM - any dispatches made in a transaction are held until it commits, and are discarded if it is retried or aborted.</p>
+</div>
+<div class="paragraph">
+<p>As with all of Clojure&#8217;s concurrency support, no user-code locking is involved.</p>
+</div>
+<div class="paragraph">
+<p>Note that use of Agents starts a pool of non-daemon background threads that will prevent shutdown of the JVM. Use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a> to terminate these threads and allow shutdown.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This example is an implementation of the send-a-message-around-a-ring test. A chain of n agents is created, then a sequence of m actions are dispatched to the head of the chain and relayed through it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn relay [x i]
+  (when (:next x)
+    (send (:next x) relay i))
+  (when (and (zero? i) (:report-queue x))
+    (.put (:report-queue x) i))
+  x)
+
+(defn run [m n]
+  (let [q (new java.util.concurrent.SynchronousQueue)
+        hd (reduce (fn [next _] (agent {:next next}))
+                   (agent {:report-queue q}) (range (dec m)))]
+    (doseq [i (reverse (range n))]
+      (send hd relay i))
+    (.take q)))
+
+; 1 million message sends:
+(time (run 1000 1000))
+-&gt;"Elapsed time: 2959.254 msecs"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_functions">Related functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create an Agent: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent">agent</a></p>
+</div>
+<div class="paragraph">
+<p>Examine an Agent: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a> <em>(see also the @ <a href="reader">reader</a> macro)</em> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
+</div>
+<div class="paragraph">
+<p>Change Agent state: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a></p>
+</div>
+<div class="paragraph">
+<p>Block waiting for an Agent: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await">await</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for">await-for</a></p>
+</div>
+<div class="paragraph">
+<p>Ref validators: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
+</div>
+<div class="paragraph">
+<p>Watchers: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch">remove-watch</a></p>
+</div>
+<div class="paragraph">
+<p>Agent thread management: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a></p>
+</div>
+<div class="paragraph">
+<p>Agent error management: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler!">set-error-handler!</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode!">set-error-mode!</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Refs and Transactions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Refs and Transactions</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_example">Example</a></li>
+<li><a href="#_related_functions">Related functions</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>While <a href="vars">Vars</a> ensure safe use of mutable storage locations via thread <em>isolation</em>, transactional references (Refs) ensure safe <em>shared</em> use of mutable storage locations via a <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">software transactional memory</a> (STM) system. Refs are bound to a single storage location for their lifetime, and only allow mutation of that location to occur within a transaction.</p>
+</div>
+<div class="paragraph">
+<p>Clojure transactions should be easy to understand if you&#8217;ve ever used database transactions - they ensure that all actions on Refs are atomic, consistent, and isolated. Atomic means that every change to Refs made within a transaction occurs or none do. Consistent means that each new value can be checked with a validator function before allowing the transaction to commit. Isolated means that no transaction sees the effects of any other transaction while it is running. Another feature common to STMs is that, should a transaction have a conflict while running, it is automatically retried.</p>
+</div>
+<div class="paragraph">
+<p>There are many ways to do STMs (locking/pessimistic, lock-free/optimistic and hybrids) and it is still a research problem. The Clojure STM uses <a href="http://en.wikipedia.org/wiki/Multiversion_concurrency_control">multiversion concurrency control</a> with adaptive history queues for <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>, and provides a distinct <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a> operation.</p>
+</div>
+<div class="paragraph">
+<p>In practice, this means:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction (its 'read point'). The transaction <em>will</em> see any changes it has made. This is called the <em>in-transaction-value</em>.</p>
+</li>
+<li>
+<p>All changes made to Refs during a transaction (via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a> or <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>) will appear to occur at a single point in the 'Ref world' timeline (its 'write point').</p>
+</li>
+<li>
+<p>No changes will have been made by any other transactions to any Refs that have been <strong>ref-set<strong>_ / <em></strong>altered<strong></em> / <em></strong>ensured</strong>*</em> by this transaction.</p>
+</li>
+<li>
+<p>Changes <em>may have</em> been made by other transactions to any Refs that have been commuted by this transaction. That should be okay since the function applied by <em><strong>commute</strong></em> should be commutative.</p>
+</li>
+<li>
+<p>Readers and commuters will never block writers, commuters, or other readers.</p>
+</li>
+<li>
+<p>Writers will never block commuters, or readers.</p>
+</li>
+<li>
+<p>I/O and other activities with side-effects should be avoided in transactions, since transactions <em>will</em> be retried. The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a> macro can be used to prevent the use of an impure function in a transaction.</p>
+</li>
+<li>
+<p>If a constraint on the validity of a value of a Ref that is being changed depends upon the simultaneous value of a Ref that is <em>not being changed</em>, that second Ref can be protected from modification by calling <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>. Refs 'ensured' this way will be protected (item #3), but don&#8217;t change the world (item #2).</p>
+</li>
+<li>
+<p>The Clojure MVCC STM is designed to work with the persistent collections, and it is strongly recommended that you use the Clojure collections as the values of your Refs. Since all work done in an STM transaction is speculative, it is imperative that there be a low cost to making copies and modifications. Persistent collections have free copies (just use the original, it can&#8217;t be changed), and 'modifications' share structure efficiently. In any case:</p>
+</li>
+<li>
+<p>The values placed in Refs <em>must be, or be considered, immutable</em>!! Otherwise, Clojure can&#8217;t help you.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this example a vector of references to vectors is created, each containing (initially sequential) unique numbers. Then a set of threads are started that repeatedly select two random positions in two random vectors and swap them, in a transaction. No special effort is made to prevent the inevitable conflicts other than the use of transactions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn run [nvecs nitems nthreads niters]
+  (let [vec-refs (vec (map (comp ref vec)
+                           (partition nitems (range (* nvecs nitems)))))
+        swap #(let [v1 (rand-int nvecs)
+                    v2 (rand-int nvecs)
+                    i1 (rand-int nitems)
+                    i2 (rand-int nitems)]
+                (dosync
+                 (let [temp (nth @(vec-refs v1) i1)]
+                   (alter (vec-refs v1) assoc i1 (nth @(vec-refs v2) i2))
+                   (alter (vec-refs v2) assoc i2 temp))))
+        report #(do
+                 (prn (map deref vec-refs))
+                 (println "Distinct:"
+                          (count (distinct (apply concat (map deref vec-refs))))))]
+    (report)
+    (dorun (apply pcalls (repeat nthreads #(dotimes [_ niters] (swap)))))
+    (report)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When run, we see no values get lost or duplicated in the shuffle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(run 100 10 10 100000)
+
+([0 1 2 3 4 5 6 7 8 9] [10 11 12 13 14 15 16 17 18 19] ...
+ [990 991 992 993 994 995 996 997 998 999])
+Distinct: 1000
+
+([382 318 466 963 619 22 21 273 45 596] [808 639 804 471 394 904 952 75 289 778] ...
+ [484 216 622 139 651 592 379 228 242 355])
+Distinct: 1000</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_functions">Related functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a Ref: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a></p>
+</div>
+<div class="paragraph">
+<p>Examine a Ref: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a> <em>(see also the @ <a href="reader">reader</a> macro)</em></p>
+</div>
+<div class="paragraph">
+<p>Transaction macros: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
+</div>
+<div class="paragraph">
+<p>Allowed only in a transaction: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a></p>
+</div>
+<div class="paragraph">
+<p>Ref validators: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

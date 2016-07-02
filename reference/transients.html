@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Transient Data Structures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Transient Data Structures</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_rationale">Rationale</a></li>
+<li><a href="#_how_they_work">How they work</a></li>
+<li><a href="#_example">Example</a></li>
+<li><a href="#_concurrent_use">Concurrent use</a></li>
+<li><a href="#_summary">Summary</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rationale">Rationale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>If a tree falls in the woods, does it make a sound?</em><br>
+<em>If a pure function mutates some local data in order to produce an immutable return value, is that ok?</em></p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s an interesting question. Clojure data structures use mutation every time you call, e.g. <strong>assoc</strong>, creating one or more arrays and mutating them, before returning them for immutable use thereafter. The reason is performance - you simply can&#8217;t get as fast using only pure functions and immutable data. Once constructed and shared however, being immutable and persistent is essential to robust programs. The things Clojure mutates internally are small, newly allocated arrays that constitute the internal nodes of its data structures. No one ever sees the arrays.</p>
+</div>
+<div class="paragraph">
+<p>You run into a similar scenario, at a higher level, when you want to initialize or transform a large persistent data structure using multiple steps, none of which will be seen by any code other than the constructing/transforming code. The challenge here is that the source of a transformation will be an existing persistent data structure, and the result of the function <em>will</em> be shared. Copying into a traditional mutable data structure and back involves O(n) copying, and the internal code is an imperative mess quite unlike the rest of your Clojure code. Furthermore, there are no guards against accidentally sharing or aliasing the mutable data structure, especially if you need to call helper functions to do the work. In short, it would be a shame if you had to leave Clojure&#8217;s model in order to speed up a piece of code like this. Transient data structures are a solution to this optimization problem that integrates with the Clojure model and provides the same thread safety guarantees you expect of Clojure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_they_work">How they work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Transient data structures are always created from an existing persistent Clojure data structure. As of Clojure 1.1.0, vectors, hash-maps, and hash-sets are supported. Note that not all Clojure data structures can support this feature, but most will. Lists will not, as there is no benefit to be had.</p>
+</div>
+<div class="paragraph">
+<p>You obtain a transient 'copy' of a data structure by calling <strong>transient</strong>. This creates a new transient data structure that is a copy of the source, and has the same performance characteristics. In fact, it mostly <em>is</em> the source data structure, and highlights the first feature of transients - creating one is O(1). It shares structure with its source, just as persistent copies share structure.</p>
+</div>
+<div class="paragraph">
+<p>The second feature of transients is that creating one does not modify the source, and the source cannot be modified via use of the transient. Your source data is immutable and persistent as always.</p>
+</div>
+<div class="paragraph">
+<p>Transients support the read-only interface of the source, i.e. you can call <strong>nth</strong>, <strong>get</strong>, <strong>count</strong> and fn-call a transient vector, just like a persistent vector.</p>
+</div>
+<div class="paragraph">
+<p>Transients <em><strong>do not</strong></em> support the persistent interface of the source data structure. <strong>assoc</strong>, <strong>conj</strong> etc will all throw exceptions, because transients are not persistent. Thus you cannot accidentally leak a transient into a context requiring a persistent.</p>
+</div>
+<div class="paragraph">
+<p>Transients support a parallel set of 'changing' operations, with similar names followed by <strong>!</strong> - <strong>assoc!</strong>, <strong>conj!</strong> etc. These do the same things as their persistent counterparts except the return values are themselves transient. Note in particular that transients are not designed to be bashed in-place. You must capture and use the return value in the next call. In this way, they support the same code structure as the functional persistent code they replace. As the example will show, this will allow you to easily enhance the performance of a piece of code without structural change.</p>
+</div>
+<div class="paragraph">
+<p>When you are finished building up your results, you can create a persistent data structure by calling <strong>persistent!</strong> on the transient. This operation is also O(1). Subsequent to calling <strong>persistent!</strong>, the transient should not be used, and all operations will throw exceptions. This will be true also for any aliases you might have created.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here&#8217;s a very typical example, some code that builds up a vector for return, all 'changes' being local to the function. Note how the transient-using version has exactly the same structure, just:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Calling <strong>transient</strong> on the source vector</p>
+</li>
+<li>
+<p>Using <strong>conj!</strong> instead of <strong>conj</strong></p>
+</li>
+<li>
+<p>Calling <strong>persistent!</strong> on return</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(defn vrange [n]
+  (loop [i 0 v []]
+    (if (&lt; i n)
+      (recur (inc i) (conj v i))
+      v)))
+
+(defn vrange2 [n]
+  (loop [i 0 v (transient [])]
+    (if (&lt; i n)
+      (recur (inc i) (conj! v i))
+      (persistent! v))))
+
+;; benchmarked (Java 1.8, Clojure 1.7)
+(def v (vrange 1000000))    ;; 73.7 ms
+(def v2 (vrange2 1000000))  ;; 19.7 ms</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Oh, yeah, <em><strong>transients are fast!</strong></em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concurrent_use">Concurrent use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That&#8217;s all there is to using transients, but they have another important constraint: <strong>Transients require thread isolation.</strong> Because each result of a transient operation shares (mutable) structure with the previous, it is an error if more than one thread manipulates a transient at once. Use of a particular transient instance should be controlled either by using it in an single-threaded scope, or in a framework that enforces this.</p>
+</div>
+<div class="paragraph">
+<p>In Clojure 1.6 and earlier, transients would detect any (read or write) use from a thread other than the one that created them and throw an exception. That check was removed in 1.7 to allow for more flexible use in frameworks like core.async go blocks that enforce the single-threaded constraint via other means.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Transients provide a high-performance optimization of functional data-structure-building code that works with Clojure&#8217;s data structures and provides critical safety guarantees.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Single-path use</p>
+</li>
+<li>
+<p>Thread isolation - enforced</p>
+</li>
+<li>
+<p>O(1) creation from persistent data structures</p>
+</li>
+<li>
+<p>Shares structure with persistent source</p>
+</li>
+<li>
+<p>O(1) creation of persistent data structure when editing session finished</p>
+</li>
+<li>
+<p>Same code structure as functional version</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Capture return value, use for next call</p>
+</li>
+<li>
+<p>Don&#8217;t bash in place</p>
+</li>
+<li>
+<p>Not persistent, so you can&#8217;t hang onto interim values or alias</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Can&#8217;t use after returning a persistent version</p>
+</li>
+<li>
+<p>Fast</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Transient persistent vectors, hash-maps, and hash-sets were added in Clojure 1.1.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

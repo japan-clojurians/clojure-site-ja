@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Evaluation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Evaluation</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div class="paragraph">
+<p>Evaluation can occur in many contexts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interactively, in the REPL</p>
+</li>
+<li>
+<p>On a sequence of forms read from a stream, via <code>load</code> / <code>load-file</code> / <code>load-reader</code> / <code>load-string</code></p>
+</li>
+<li>
+<p>Programmatically, via <code>eval</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure programs are composed of expressions. Every form not handled specially by a special form or macro is considered by the compiler to be an expression, which is evaluated to yield a value. There are no declarations or statements, although sometimes expressions may be evaluated for their side-effects and their values ignored.
+In all cases, evaluation is the same - a single object is considered by the compiler, evaluated, and its result returned. If an expression needs to be compiled, it will be. There is no separate compilation step, nor any need to worry that a function you have defined is being interpreted. <em>Clojure has no interpreter</em>.</p>
+</div>
+<div class="paragraph">
+<p>Strings, numbers, characters, <code>true</code>, <code>false</code>, <code>nil</code> and keywords evaluate to themselves.</p>
+</div>
+<div class="paragraph">
+<p>A Symbol is <em>resolved</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If it is namespace-qualified, the value is the value of the binding of the global var named by the symbol. It is an error if there is no global var named by the symbol, or if the reference is to a non-public var in a different namespace.</p>
+</li>
+<li>
+<p>If it is package-qualified, the value is the Java class named by the symbol. It is an error if there is no Class named by the symbol.</p>
+</li>
+<li>
+<p>Else, it is not qualified and the first of the following applies:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If it names a special form it is considered a special form, and must be utilized accordingly.</p>
+</li>
+<li>
+<p>A lookup is done in the current namespace to see if there is a mapping from the symbol to a class. If so, the symbol is considered to name a Java class object. Note that class names normally denote class objects, but are treated specially in certain special forms, e.g. <code>.</code> and <code>new</code>.</p>
+</li>
+<li>
+<p>If in a local scope (i.e. in a function definition), a lookup is done to see if it names a local binding (e.g. a function argument or let-bound name). If so, the value is the value of the local binding.</p>
+</li>
+<li>
+<p>A lookup is done in the current namespace to see if there is a mapping from the symbol to a var. If so, the value is the value of the binding of the var referred-to by the symbol.</p>
+</li>
+<li>
+<p>It is an error.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If a Symbol has metadata, it may be used by the compiler, but will not be part of the resulting value.</p>
+</div>
+<div class="paragraph">
+<p>Vectors, Sets and Maps yield vectors and (hash) sets and maps whose contents are the <em>evaluated values</em> of the objects they contain. Vector elements are evaluated left to right, Sets and Maps are evaluated in an undefined order. The same is true of metadata maps. If the vector or map has metadata, the <em>evaluated</em> metadata map will become the metadata of the resulting value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (def x 1)
+user=&gt; (def y 2)
+user=&gt; ^{:x x} [x y 3]
+^{:x 1} [1 2 3]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An empty list <code>()</code> evaluates to an empty list.</p>
+</div>
+<div class="paragraph">
+<p>Non-empty Lists are considered <em>calls</em> to either special forms, macros, or functions. A call has the form (operator operands*).</p>
+</div>
+<div class="paragraph">
+<p>Special forms are primitives built-in to Clojure that perform core operations. If the operator of a call is a symbol that resolves to the name of a special form, the call is to that special form. Each form discussed individually under <a href="special_forms">Special Forms</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="macros">Macros</a> are functions that manipulate forms, allowing for syntactic abstraction. If the operator of a call is a symbol that names a global var that is a macro function, that macro function is called and is passed the <em>unevaluated</em> operand forms. The return value of the macro is then evaluated in its place.</p>
+</div>
+<div class="paragraph">
+<p>If the operator is not a special form or macro, the call is considered a function call. Both the operator and the operands (if any) are evaluated, from left to right. The result of the evaluation of the operator is then cast to IFn (the interface representing Clojure functions), and invoke() is called on it, passing the evaluated arguments. The return value of invoke() is the value of the call expression. If the function call form has metadata, it may be used by the compiler, but will not be part of the resulting value.
+Note that special forms and macros might have other-than-normal evaluation of their arguments, as described in their entries under <a href="special_forms">Special Forms</a>.</p>
+</div>
+<div class="paragraph">
+<p>Any object other than those discussed above will evaluate to itself.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>load</em> classpath-resource &#8230;&#8203;)</strong><br>
+<strong>(<em>load-file</em> filename)</strong><br>
+<strong>(<em>load-reader</em> reader)</strong><br>
+<strong>(<em>load-string</em> string)</strong></p>
+</div>
+<div class="paragraph">
+<p>The above describes the evaluation of a single form. The various load forms will sequentially read and evaluate the set of forms contained in the source. Such sets of forms usually have side effects, often on the global environment, defining functions etc.</p>
+</div>
+<div class="paragraph">
+<p>The loading functions occur in a temporary context, in which *ns* has a fresh binding. That means that, should any form have an effect on that var (e.g. in-namespace), the effect will unwind at the completion of the load. load et al return the value produced by the last expression.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>eval</em> form)</strong></p>
+</div>
+<div class="paragraph">
+<p>Evaluates the form <em>data structure</em> (not text!) and returns the result.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(eval (list + 1 2 3))
+-&gt; 6</code></pre>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

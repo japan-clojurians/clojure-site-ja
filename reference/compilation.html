@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Ahead-of-time Compilation and Class Generation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Ahead-of-time Compilation and Class Generation</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_compiling">Compiling</a></li>
+<li><a href="#_compiler_options">Compiler options</a>
+<ul class="sectlevel2">
+<li><a href="#_locals_clearing">Locals clearing</a></li>
+<li><a href="#_elide_meta">Elide meta</a></li>
+<li><a href="#directlinking">Direct linking</a></li>
+</ul>
+</li>
+<li><a href="#_runtime">Runtime</a></li>
+<li><a href="#_gen_class_examples">gen-class Examples</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure compiles all code you load on-the-fly into JVM bytecode, but sometimes it is advantageous to compile ahead-of-time (AOT). Some reasons to use AOT compilation are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To deliver your application without source</p>
+</li>
+<li>
+<p>To speed up application startup</p>
+</li>
+<li>
+<p>To generate named classes for use by Java</p>
+</li>
+<li>
+<p>To create an application that does not need runtime bytecode generation and custom classloaders</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Clojure compilation model preserves as much as possible the dynamic nature of Clojure, in spite of the code-reloading limitations of Java.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Source and classfile pathing follows Java classpath conventions.</p>
+</li>
+<li>
+<p>The target of compile is a namespace</p>
+</li>
+<li>
+<p>Each file, fn and gen-class will produce a .class file</p>
+</li>
+<li>
+<p>Each file generates a loader class of the same name with "__init" appended.</p>
+</li>
+<li>
+<p>The static initializer for a loader class produces the same effects as does loading its source file</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You generally shouldn&#8217;t need to use these classes directly, as use, require and load will choose between them and more recent source</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The loader class is generated for each file referenced when a namespace is compiled, when its loader .class file is older than its source.</p>
+</li>
+<li>
+<p>A stand-alone <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a> facility is provided to create named classes for direct use as Java classes, with facilities for:</p>
+</li>
+<li>
+<p>Naming the generated class</p>
+</li>
+<li>
+<p>Selecting the superclass</p>
+</li>
+<li>
+<p>Specifying any implemented interfaces</p>
+</li>
+<li>
+<p>Specifying constructor signatures</p>
+</li>
+<li>
+<p>Specifying state</p>
+</li>
+<li>
+<p>Declaring additional methods</p>
+</li>
+<li>
+<p>Generating static factory methods</p>
+</li>
+<li>
+<p>Generating main</p>
+</li>
+<li>
+<p>Controlling the mapping to an implementing namespace</p>
+</li>
+<li>
+<p>Exposing inherited protected members</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Generating more than one named class from a single file, with implementations in one or more namespaces</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An optional <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">:gen-class</a> directive can be used in the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a> declaration to generate a named class corresponding to a namespace. (:gen-class &#8230;&#8203;), when supplied, defaults to :name corresponding to the ns name, :main true, :impl-ns same as ns, and :init-impl-ns true. All options of gen-class are supported.</p>
+</li>
+<li>
+<p>gen-class and the :gen-class directive are ignored when not compiling.</p>
+</li>
+<li>
+<p>A stand-alone <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface">gen-interface</a> facility is provided for generating named interface classes for direct use as Java interfaces, with facilities for:</p>
+</li>
+<li>
+<p>Naming the generated interface</p>
+</li>
+<li>
+<p>Specifying any superintefaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Declaring the signatures of interface methods</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compiling">Compiling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To compile a lib, use the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile">compile</a> function, and supply the namespace name as a symbol. For some namespace my.domain.lib, defined in my/domain/lib.clj, in the classpath, the following should occur:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A loader classfile will produced in <code>my/domain/lib__init.class</code>, under <strong>compile-path</strong>, which must be in the classpath</p>
+</li>
+<li>
+<p>A set of classfiles will be produced, one per fn in the namespace, with names such as <code>my/domain/lib$fnname__1234.class</code></p>
+</li>
+<li>
+<p>For each gen-class:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A stub classfile will be produced with the specified name</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compiler_options">Compiler options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Clojure compiler can be controlled via the use of several compiler flags. At runtime these are stored in the dynamic var <code>clojure.core/*compiler-options*</code>, which is a map with the following optional keyword keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:disable-locals-clearing</code> (boolean)</p>
+</li>
+<li>
+<p><code>:elide-meta</code> (vector of keywords)</p>
+</li>
+<li>
+<p><code>:direct-linking</code> (boolean)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These compiler options can be changed in a dynamic binding around a call to the <code>compile</code> function to change the compiler behavior.</p>
+</div>
+<div class="paragraph">
+<p>Alternately, compiler options can also be set via the Java system properties at startup:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-Dclojure.compiler.disable-locals-clearing=true</code></p>
+</li>
+<li>
+<p><code>-Dclojure.compiler.elide-meta="[:doc :file :line :added]"</code></p>
+</li>
+<li>
+<p><code>-Dclojure.compiler.direct-linking=true</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See below for more info on each of these options.</p>
+</div>
+<div class="sect2">
+<h3 id="_locals_clearing">Locals clearing</h3>
+<div class="paragraph">
+<p>By default, the Clojure compiler produces code that eagerly clears GC references to local bindings. However, when using a debugger locals will appear as nulls, which makes debugging difficult. Setting <code>disable-locals-clearing=true</code> will prevent locals clearing. It is not recommended to disable locals clearing for production compilation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_elide_meta">Elide meta</h3>
+<div class="paragraph">
+<p>Var meta (docstrings, file and line info, etc) will be compiled into strings in the constant pool of the compiled classes. To descrease class size and make classloading faster, meta can be elided. This option takes a vector of meta keywords that should be removed - some common ones include <code>:doc</code>, <code>:file</code>, <code>:line</code>, and <code>:added</code>. Note that eliding meta may make certain features inoperable (for example, <code>doc</code> cannot return docstrings if they have been elided).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="directlinking">Direct linking</h3>
+<div class="paragraph">
+<p>Normally, invoking a function will cause a var to be dereferenced to find the function instance implementing it, then invoking that function. This indirection via the var is one of the ways that Clojure provides a dynamic runtime environment. However, it has long been observed that the majority of function invocations in a production environment are never redefined in this way, incurring unnecessary redirection.</p>
+</div>
+<div class="paragraph">
+<p><em>Direct linking</em> can be used to replace this indirection with a direct static invocation of the function instead. This will result in faster var invocation. Additionally, the compiler can remove unused vars from class initialization and direct linking will make many more vars unused. Typically this results in smaller class sizes and faster startup times.</p>
+</div>
+<div class="paragraph">
+<p>One consequence of direct linking is that var redefinitions will not be seen by code that has been compiled with direct linking (because direct linking avoids dereferencing the var). Vars marked as <code>^:dynamic</code> will never be direct linked. If you wish to mark a var as supporting redefinition (but not dynamic), mark it with <code>^:redef</code> to avoid direct linking.</p>
+</div>
+<div class="paragraph">
+<p>As of Clojure 1.8, the Clojure core library itself is compiled with direct linking.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_runtime">Runtime</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Classes generated by Clojure are highly dynamic. In particular, note that no method bodies or other implementation details are specified in gen-class - it specifies only a signature, and the class that it generates is only a stub. This stub class defers all implementation to functions defined in the implementing namespace. At runtime, a call to some method foo of the generated class will find the current value of the var implementing.namespace/prefixfoo and call it. If the var is not bound or nil, it will call the superclass method, or if an interface method, generate an UnsupportedOperationException.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gen_class_examples">gen-class Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the simplest case, an empty :gen-class is supplied, and the compiled class has only main, which is implemented by defining -main in the namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns clojure.examples.hello
+    (:gen-class))
+
+(defn -main
+  [greetee]
+  (println (str "Hello " greetee "!")))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This gets compiled as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(compile 'clojure.examples.hello)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And can be run like an ordinary Java app like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp ./classes:clojure.jar clojure.examples.hello Fred
+Hello Fred!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example using both a more involved :gen-class, and stand-alone calls to gen-class and gen-interface. In this case we are creating classes we intend to create instances of. The clojure.examples.instance class will implement java.util.Iterator, a particularly nasty interface, in that it requires the implementation to be stateful. This class is going to take a String in its constructor and implement the Iterator interface in terms of delivering the characters from the string. The :init clause names the constructor function. The :constructors clause is a map of constructor signature to superclass constructor signature. In this case, the superclass defaults to Object, whose constructor takes no arguments. This object will have state, called state, and a main so we can test it.</p>
+</div>
+<div class="paragraph">
+<p>:init functions (-init in this case) are unusual, in that they always return a vector, the first element of which is a vector of arguments for the superclass constructor - since our superclass takes no args, this vector is empty. The second element of the vector is the state for the instance. Since we are going to have to mutate the state (and the state is always final) we&#8217;ll use a ref to a map containing the string and the current index.</p>
+</div>
+<div class="paragraph">
+<p>hasNext and next are implementations of methods in the Iterator interface. While the methods take no args, the implementation functions for instance methods will always take an additional first arg corresponding to the object the method is called upon, called by convention 'this' here. Note how the state can be obtained using an ordinary Java field access.</p>
+</div>
+<div class="paragraph">
+<p>The gen-interface call will create an interface called clojure.examples.IBar, with a single method bar.</p>
+</div>
+<div class="paragraph">
+<p>The stand-alone gen-class call will generate another named class, clojure.examples.impl, whose implementing namespace will default to the current namespace. It implements clojure.examples.IBar. The :prefix option causes the implementation of methods to bind to functions beginning with "impl-" rather than the default "-". The :methods option defines a new method foo not present in any superclass/interfaces.</p>
+</div>
+<div class="paragraph">
+<p>Note in main how an instances of the classes can be created, and methods called, using ordinary Java interop. Using it would be similarly ordinary from Java.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns clojure.examples.instance
+    (:gen-class
+     :implements [java.util.Iterator]
+     :init init
+     :constructors {[String] []}
+     :state state))
+
+(defn -init [s]
+  [[] (ref {:s s :index 0})])
+
+(defn -hasNext [this]
+  (let [{:keys [s index]} @(.state this)]
+    (&lt; index (count s))))
+
+(defn -next [this]
+  (let [{:keys [s index]} @(.state this)
+        ch (.charAt s index)]
+    (dosync (alter (.state this) assoc :index (inc index)))
+    ch))
+
+(gen-interface
+ :name clojure.examples.IBar
+ :methods [[bar [] String]])
+
+(gen-class
+ :name clojure.examples.impl
+ :implements [clojure.examples.IBar]
+ :prefix "impl-"
+ :methods [[foo [] String]])
+
+(defn impl-foo [this]
+  (str (class this)))
+
+(defn impl-bar [this]
+  (str "I " (if (instance? clojure.examples.IBar this)
+              "am"
+              "am not")
+       " an IBar"))
+
+(defn -main [s]
+  (let [x (new clojure.examples.instance s)
+        y (new clojure.examples.impl)]
+    (while (.hasNext x)
+      (println (.next x)))
+    (println (.foo y))
+    (println (.bar y))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Compile as above, and run like an ordinary Java app:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp ./classes:clojure.jar clojure.examples.instance asdf
+a
+s
+d
+f
+class clojure.examples.impl
+I am an IBar</code></pre>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

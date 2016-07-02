@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Multimethods and Hierarchies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Multimethods and Hierarchies</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_isa_based_dispatch">isa? based dispatch</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure eschews the traditional object-oriented approach of creating a new data type for each new situation, instead preferring to build a large library of functions on a small set of types. However, Clojure fully recognizes the value of runtime polymorphism in enabling flexible and extensible system architecture. Clojure supports sophisticated runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata of, and relationships between, one or more arguments.</p>
+</div>
+<div class="paragraph">
+<p>A Clojure multimethod is a combination of a <em>dispatching</em> <em>function</em>, and one or more <em>methods</em>. When a multimethod is defined, using <em><strong>defmulti</strong></em>, a dispatching function must be supplied. This function will be applied to the arguments to the multimethod in order to produce a <em>dispatching value</em>. The multimethod will then try to find the method associated with the dispatching value or a value from which the dispatching value is derived. If one has been defined (via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>), it will then be called with the arguments and that will be the value of the multimethod call. If no method is associated with the dispatching value, the multimethod will look for a method associated with the default dispatching value (which defaults to <em><strong>:default</strong></em>), and will use that if present. Otherwise the call is an error.</p>
+</div>
+<div class="paragraph">
+<p>The multimethod system exposes this API: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a> creates new multimethods, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a> creates and installs a new method of multimethod associated with a dispatch-value, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method">remove-method</a> removes the method associated with a dispatch-value and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a> creates an ordering between methods when they would otherwise be ambiguous.</p>
+</div>
+<div class="paragraph">
+<p>Derivation is determined by a combination of either Java inheritance (for class values), or using Clojure&#8217;s ad hoc hierarchy system. The hierarchy system supports derivation relationships between names (either symbols or keywords), and relationships between classes and names. The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a> function creates these relationships, and the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a> function tests for their existence. Note that <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a> is not <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?">instance?</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can define hierarchical relationships with (derive child parent). Child and parent can be either symbols or keywords, and must be namespace-qualified:</p>
+</div>
+<div class="paragraph">
+<p><em>Note the :: reader syntax, ::keywords resolve namespaces.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">::rect
+-&gt; :user/rect</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a> is the fundamental relationship-maker</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(derive ::rect ::shape)
+(derive ::square ::rect)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> let you query the hierarchy</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(parents ::rect)
+-&gt; #{:user/shape}
+
+(ancestors ::square)
+-&gt; #{:user/rect :user/shape}
+
+(descendants ::shape)
+-&gt; #{:user/rect :user/square}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>(= x y)</code> implies <code>(isa? x y)</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? 42 42)
+-&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>isa?</code> uses the hierarchy system</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? ::square ::shape)
+-&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also use a class as the child (but not the parent, the only way to make something the child of a class is via Java inheritance).</p>
+</div>
+<div class="paragraph">
+<p>This allows you to superimpose new taxonomies on the existing Java class hierarchy:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(derive java.util.Map ::collection)
+(derive java.util.Collection ::collection)
+
+(isa? java.util.HashMap ::collection)
+-&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> also tests for class relationships:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? String Object)
+-&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> works with vectors by calling <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> on their corresponding elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? [::square ::rect] [::shape ::shape])
+-&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>as do <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a> (but not <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>, since class descendants are an open set)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ancestors java.util.ArrayList)
+-&gt; #{java.lang.Cloneable java.lang.Object java.util.List
+    java.util.Collection java.io.Serializable
+    java.util.AbstractCollection
+    java.util.RandomAccess java.util.AbstractList}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_isa_based_dispatch">isa? based dispatch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Multimethods use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> rather than = when testing for dispatch value matches. Note that the first test of <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> is =, so exact matches work.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defmulti foo class)
+(defmethod foo ::collection [c] :a-collection)
+(defmethod foo String [s] :a-string)
+
+(foo [])
+:a-collection
+
+(foo (java.util.HashMap.))
+:a-collection
+
+(foo "bar")
+:a-string</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a> is used for disambiguating in case of multiple matches where neither dominates the other. You can just declare, per multimethod, that one dispatch value is preferred over another:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(derive ::rect ::shape)
+
+(defmulti bar (fn [x y] [x y]))
+(defmethod bar [::rect ::shape] [x y] :rect-shape)
+(defmethod bar [::shape ::rect] [x y] :shape-rect)
+
+(bar ::rect ::rect)
+-&gt; java.lang.IllegalArgumentException:
+   Multiple methods match dispatch value:
+   [:user/rect :user/rect] -&gt; [:user/rect :user/shape]
+   and [:user/shape :user/rect],
+   and neither is preferred
+
+(prefer-method bar [::rect ::shape] [::shape ::rect])
+(bar ::rect ::rect)
+-&gt; :rect-shape</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All of the examples above use the global hierarchy used by the multimethod system, but entire independent hierarchies can also be created with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>, and all of the above functions can take an optional hierarchy as a first argument.</p>
+</div>
+<div class="paragraph">
+<p>This simple system is extremely powerful. One way to understand the relationship between Clojure multimethods and traditional Java-style single dispatch is that single dispatch is like a Clojure multimethod whose dispatch function calls getClass on the first argument, and whose methods are associated with those classes. Clojure multimethods are not hard-wired to class/type, they can be based on any attribute of the arguments, on multiple arguments, can do validation of arguments and route to error-handling methods etc.</p>
+</div>
+<div class="paragraph">
+<p><em>Note: In this example, the keyword :Shape is being used as the dispatch function, as keywords are functions of maps, as described in the <a href="data_structures">Data Structures</a> section.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defmulti area :Shape)
+(defn rect [wd ht] {:Shape :Rect :wd wd :ht ht})
+(defn circle [radius] {:Shape :Circle :radius radius})
+(defmethod area :Rect [r]
+    (* (:wd r) (:ht r)))
+(defmethod area :Circle [c]
+    (* (. Math PI) (* (:radius c) (:radius c))))
+(defmethod area :default [x] :oops)
+(def r (rect 4 13))
+(def c (circle 12))
+(area r)
+-&gt; 52
+(area c)
+-&gt; 452.3893421169302
+(area {})
+-&gt; :oops</code></pre>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

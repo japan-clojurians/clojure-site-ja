@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - The REPL and main entry points</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>The REPL and main entry points</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_the_clojure_main_namespace">The clojure.main namespace</a></li>
+<li><a href="#_clojure_main_help">clojure.main --help</a></li>
+<li><a href="#_launching_a_repl">Launching a REPL</a></li>
+<li><a href="#_launching_a_script">Launching a Script</a></li>
+<li><a href="#_passing_arguments_to_a_script">Passing arguments to a Script</a></li>
+<li><a href="#_launching_a_socket_server">Launching a Socket Server</a></li>
+<li><a href="#_related_functions">Related functions</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_clojure_main_namespace">The clojure.main namespace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>clojure.main</code> namespace provides functions that allow Clojure programs and interactive sessions to be launched via Java&#8217;s application launcher tool <code>java</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_main_help">clojure.main --help</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>clojure.main/main</code> entry point accepts a variety of arguments and flags as described in its usage message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]
+
+With no options or args, runs an interactive Read-Eval-Print Loop
+
+init options:
+-i, --init path Load a file or resource
+-e, --eval string Evaluate expressions in string; print non-nil values
+
+main options:
+-r, --repl Run a repl
+path Run a script from a file or resource
+- Run a script from standard input
+-m, --main A namespace to find a -main function for execution
+-h, -?, --help Print this help message and exit
+
+operation:
+
+- Establishes thread-local bindings for commonly set!-able vars
+- Enters the user namespace
+- Binds *command-line-args* to a seq of strings containing command line
+args that appear after any main option
+- Runs all init options in order
+- Runs a repl or script if requested
+
+The init options may be repeated and mixed freely, but must appear before
+any main option. The appearance of any eval option before running a repl
+suppresses the usual repl greeting message: "Clojure ~(clojure-version)".
+
+Paths may be absolute or relative in the filesystem or relative to
+classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launching_a_repl">Launching a REPL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The simplest way to launch a Clojure <em>repl</em> is to use the following command line from within Clojure&#8217;s home directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The REPL prompt shows the name of the current namespace (*ns*), which defaults to <em>user</em>.</p>
+</div>
+<div class="paragraph">
+<p>Several special vars are available when using the REPL:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>*1, *2, *3 - hold the result of the last three expressions that were evaluated</p>
+</li>
+<li>
+<p>*e - holds the result of the last exception.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <a href="http://clojure.github.io/clojure/clojure.repl-api.html">clojure.repl</a> namespace has a number of useful functions for inspecting the source and documentation of available functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc">doc</a> - prints the docstring for a var given its name</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc">find-doc</a> - prints the docstring for any var whose doc or name matches the pattern</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos">apropos</a> - returns a seq of definitions matching a regex</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source">source</a> - prints the source for a symbol</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst">pst</a> - <strong>p</strong>rint <strong>s</strong>tack <strong>t</strong>race for a given exception or *e by default</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launching_a_script">Launching a Script</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run a file full of Clojure code as a script, pass the path to the script to <code>clojure.main</code> as an argument:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main /path/to/myscript.clj</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_passing_arguments_to_a_script">Passing arguments to a Script</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To pass in arguments to a script, pass them in as further arguments when launching <code>clojure.main</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The arguments will be provided to your program as a seq of strings bound to the var <code>*command-line-args*</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">*command-line-args* =&gt; ("arg1" "arg2" "arg3")</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launching_a_socket_server">Launching a Socket Server</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This feature was added in 1.8.0.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Clojure runtime now has the ability to start a socket server at initialization based on system properties. One expected use for this is serving a socket-based REPL, but it also has many other potential uses for dynamically adding server capability to existing programs without code changes.</p>
+</div>
+<div class="paragraph">
+<p>A socket server will be started for each JVM system property like "clojure.server.&lt;server-name&gt;". The value for this property is an edn map representing the configuration of the socket server with the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>server-daemon</code> - defaults to true, socket server thread doesn&#8217;t block exit</p>
+</li>
+<li>
+<p><code>address</code> - host or address, defaults to loopback</p>
+</li>
+<li>
+<p><code>port</code> - positive integer, required</p>
+</li>
+<li>
+<p><code>accept</code> - namespaced symbol of function to invoke on socket accept, required</p>
+</li>
+<li>
+<p><code>args</code> - sequential collection of args to pass to accept</p>
+</li>
+<li>
+<p><code>bind-err</code> - defaults to true, binds <code>*err*</code> to socket out stream</p>
+</li>
+<li>
+<p><code>client-daemon</code> - defaults to true, socket client thread doesn&#8217;t block exit</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, there is a repl function provided that is slightly customized for use with the socket server in <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl">clojure.core.server/repl</a>.</p>
+</div>
+<div class="paragraph">
+<p>Following is an example of starting a socket server with a repl listener. This can be added to any existing Clojure program to allow it to accept external REPL clients via a local connection to port 5555.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">-Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example client you can use to connect to this socket repl is telnet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">$ telnet 127.0.0.1 5555
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+user=&gt; (println "hello")
+hello</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can instruct the server to close the client socket repl session by using the special command <code>:repl/quit</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; :repl/quit
+Connection closed by foreign host.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://dev.clojure.org/jira/browse/CLJ-1671">CLJ-1671</a></p>
+</li>
+<li>
+<p><a href="http://dev.clojure.org/display/design/Socket+Server+REPL">Socket REPL design page</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_functions">Related functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Main entry point: <code><a href="http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main">clojure.main/main</a></code></p>
+</div>
+<div class="paragraph">
+<p>Reusable REPL: <code><a href="http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl">clojure.main/repl</a></code></p>
+</div>
+<div class="paragraph">
+<p>Allowing set! for the customary REPL vars: <code><a href="http://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-bindings">clojure.main/with-bindings</a></code></p>
+</div>
+<div class="paragraph">
+<p>Socket server control: <code><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-server">clojure.core.server/start-server</a></code> <code><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/stop-server">clojure.core.server/stop-server</a></code> <code><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/stop-servers">clojure.core.server/stop-servers</a></code></p>
+</div>
+<div class="paragraph">
+<p>Socket repl: <code><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl">clojure.core.server/repl</a></code></p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

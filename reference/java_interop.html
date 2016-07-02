@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Java Interop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Java Interop</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#dot">Member access</a></li>
+<li><a href="#_the_dot_special_form">The Dot special form</a>
+<ul class="sectlevel2">
+<li><a href="#_alternative_macro_syntax">Alternative Macro Syntax</a></li>
+</ul>
+</li>
+<li><a href="#_support_for_java_in_clojure_library_functions">Support for Java in Clojure Library Functions</a></li>
+<li><a href="#_implementing_interfaces_and_extending_classes">Implementing Interfaces and Extending Classes</a></li>
+<li><a href="#_arrays">Arrays</a></li>
+<li><a href="#typehints">Type Hints</a></li>
+<li><a href="#TypeAliases">Aliases</a></li>
+<li><a href="#primitives">Support for Java Primitives</a></li>
+<li><a href="#_coercions">Coercions</a></li>
+<li><a href="#optimization">Some optimization tips</a></li>
+<li><a href="#_simple_xml_support">Simple XML Support</a></li>
+<li><a href="#_calling_clojure_from_java">Calling Clojure From Java</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dot">Member access</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>(.instanceMember instance args*)</strong><br>
+<strong>(.instanceMember Classname args*)</strong><br>
+<strong>(.-instanceField instance)</strong><br>
+<strong>(Classname/staticMethod args*)</strong><br>
+<strong>Classname/staticField</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(.toUpperCase "fred")
+-&gt; "FRED"
+(.getName String)
+-&gt; "java.lang.String"
+(.-x (java.awt.Point. 1 2))
+-&gt; 1
+(System/getProperty "java.vm.version")
+-&gt; "1.6.0_07-b06-57"
+Math/PI
+-&gt; 3.141592653589793</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The preferred idiomatic forms for accessing field or method members are given above. The instance member form works for both fields and methods. The instanceField form is preferred for fields and required if both a field and a 0-argument method of the same name exist. They all expand into calls to the dot operator (described below) at macroexpansion time. The expansions are as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(.instanceMember instance args*) ==&gt; (. instance instanceMember args*)
+(.instanceMember Classname args*) ==&gt;
+    (. (identity Classname) instanceMember args*)
+(.-instanceField instance) ==&gt; (. instance -instanceField)
+(Classname/staticMethod args*) ==&gt; (. Classname staticMethod args*)
+Classname/staticField ==&gt; (. Classname staticField)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_dot_special_form">The Dot special form</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>(<em>.</em> instance-expr member-symbol)</strong><br>
+<strong>(<em>.</em> Classname-symbol member-symbol)</strong><br>
+<strong>(<em>.</em> instance-expr -field-symbol)</strong><br>
+<strong>(<em>.</em> instance-expr (method-symbol args</strong>))* or <strong>(<em>.</em> instance-expr method-symbol args</strong>)*<br>
+<strong>(<em>.</em> Classname-symbol (method-symbol args</strong>))* or <strong>(<em>.</em> Classname-symbol method-symbol args</strong>)*</p>
+</div>
+<div class="paragraph">
+<p>Special form.</p>
+</div>
+<div class="paragraph">
+<p>The '.' special form is the basis for access to Java. It can be considered a member-access operator, and/or read as 'in the scope of'.</p>
+</div>
+<div class="paragraph">
+<p>If the first operand is a symbol that resolves to a class name, the access is considered to be to a static member of the named class. Note that nested classes are named EnclosingClass$NestedClass, per the JVM spec. Otherwise it is presumed to be an instance member and the first argument is evaluated to produce the target object.</p>
+</div>
+<div class="paragraph">
+<p>If the second operand is a symbol and no args are supplied it is taken to be a field access - the name of the field is the name of the symbol, and the value of the expression is the value of the field, <em>unless</em> there is a no argument public method of the same name, in which case it resolves to a call to the method. If the second operand is a symbol starting with <em>-</em>, the member-symbol will resolve only as field access (never as a 0-arity method) and should be preferred when that is the intent.</p>
+</div>
+<div class="paragraph">
+<p>If the second operand is a list, or args are supplied, it is taken to be a method call. The first element of the list must be a simple symbol, and the name of the method is the name of the symbol. The args, if any, are evaluated from left to right, and passed to the matching method, which is called, and its value returned. If the method has a void return type, the value of the expression will be <em><strong>nil</strong></em>. Note that placing the method name in a list with any args is optional in the canonic form, but can be useful to gather args in macros built upon the form.</p>
+</div>
+<div class="paragraph">
+<p>Note that boolean return values will be turned into Booleans, chars will become Characters, and numeric primitives will become Numbers unless they are immediately consumed by a method taking a primitive.</p>
+</div>
+<div class="paragraph">
+<p>The member access forms given at the top of this section are preferred for use in all cases other than in macros.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>..</em> instance-expr member+)</strong><br>
+<strong>(<em>..</em> Classname-symbol member+)</strong></p>
+</div>
+<div class="paragraph">
+<p>member &#8658; fieldName-symbol or (instanceMethodName-symbol args*)</p>
+</div>
+<div class="paragraph">
+<p>Macro. Expands into a member access (.) of the first member on the first argument, followed by the next member on the result, etc. For instance:</p>
+</div>
+<div class="paragraph">
+<p><code>(.. System (getProperties) (get "os.name"))</code></p>
+</div>
+<div class="paragraph">
+<p>expands to:</p>
+</div>
+<div class="paragraph">
+<p><code>(. (. System (getProperties)) (get "os.name"))</code></p>
+</div>
+<div class="paragraph">
+<p>but is easier to write, read, and understand. See also the <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/%2d%3e">-></a> macro which can be used similarly:</p>
+</div>
+<div class="paragraph">
+<p><code>(&#8594; (System/getProperties) (.get "os.name"))</code></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>doto</em> instance-expr (instanceMethodName-symbol args</strong>)<strong>)</strong></p>
+</div>
+<div class="paragraph">
+<p>Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))
+-&gt; {a=1, b=2}</code></pre>
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(Classname. args</strong>)*<br>
+<strong>(<em>new</em> Classname args</strong>)*</p>
+</div>
+<div class="paragraph">
+<p>Special form.</p>
+</div>
+<div class="paragraph">
+<p>The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.</p>
+</div>
+<div class="sect2">
+<h3 id="_alternative_macro_syntax">Alternative Macro Syntax</h3>
+<div class="paragraph">
+<p>As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing '.':</p>
+</div>
+<div class="paragraph">
+<p><code>(new Classname args*)</code></p>
+</div>
+<div class="paragraph">
+<p>can be written</p>
+</div>
+<div class="paragraph">
+<p><code>(Classname. args*) ;note trailing dot</code></p>
+</div>
+<div class="paragraph">
+<p>the latter expanding into the former at macro expansion time.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>instance?</em> Class expr)</strong></p>
+</div>
+<div class="paragraph">
+<p>Evaluates expr and tests if it is an instance of the class. Returns true or false</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>set!</em> (. instance-expr instanceFieldName-symbol) expr)</strong><br>
+<strong>(<em>set!</em> (. Classname-symbol staticFieldName-symbol) expr)</strong></p>
+</div>
+<div class="paragraph">
+<p>Assignment special form.</p>
+</div>
+<div class="paragraph">
+<p>When the first operand is a field member access form, the assignment is to the corresponding field. If it is an instance field, the instance expr will be evaluated, then the expr.</p>
+</div>
+<div class="paragraph">
+<p>In all cases the value of expr is returned.</p>
+</div>
+<div class="paragraph">
+<p>Note - <em>you cannot assign to function params or local bindings. Only Java fields, Vars, Refs and Agents are mutable in Clojure</em>.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>memfn</em> method-name arg-names</strong>)*</p>
+</div>
+<div class="paragraph">
+<p>Macro. Expands into code that creates a fn that expects to be passed an object and any args and calls the named instance method on the object passing the args. Use when you want to treat a Java method as a first-class fn.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(map (memfn charAt i) ["fred" "ethel" "lucy"] [1 2 3])
+-&gt; (\r \h \y)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note it almost always preferable to do this directly now, with syntax like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(map #(.charAt %1 %2) ["fred" "ethel" "lucy"] [1 2 3])
+-&gt; (\r \h \y)</code></pre>
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>bean</em> obj)</strong></p>
+</div>
+<div class="paragraph">
+<p>Takes a Java object and returns a read-only implementation of the map abstraction based upon its JavaBean properties.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(bean java.awt.Color/black)
+-&gt; {:RGB -16777216, :alpha 255, :blue 0, :class java.awt.Color,
+    :colorSpace #object[java.awt.color.ICC_ColorSpace 0x5cb42b "java.awt.color.ICC_ColorSpace@5cb42b"],
+    :green 0, :red 0, :transparency 1}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_support_for_java_in_clojure_library_functions">Support for Java in Clojure Library Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many of the Clojure library functions have defined semantics for objects of Java types. contains? and get work on Java Maps, arrays, Strings, the latter two with integer keys. count works on Java Strings, Collections and arrays. nth works on Java Strings, Lists and arrays. seq works on Java reference arrays, Iterables and Strings. Since much of the rest of the library is built upon these functions, there is great support for using Java objects in Clojure algorithms.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementing_interfaces_and_extending_classes">Implementing Interfaces and Extending Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> macro. The resulting objects are of an anonymous class. You can also generate statically-named classes and .class files with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a>. As of Clojure 1.2, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> is also available for implementing interfaces.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>( <em>proxy</em> [class-and-interfaces] [args] fs+)</strong></p>
+</div>
+<div class="paragraph">
+<p>class-and-interfaces - a vector of class names<br>
+args - a (possibly empty) vector of arguments to the superclass constructor.<br>
+f &#8658; (name [params*] body) or (name ([params*] body) ([params+] body) &#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>Macro</p>
+</div>
+<div class="paragraph">
+<p>Expands to code which creates a instance of a proxy class that implements the named class/interface(s) by calling the supplied fns. A single class, if provided, must be first. If not provided it defaults to Object. The interfaces names must be valid interface types. If a method fn is not provided for a class method, the superclass method will be called. If a method fn is not provided for an interface method, an UnsupportedOperationException will be thrown should it be called. Method fns are closures and can capture the environment in which proxy is called. Each method fn takes an additional implicit first arg, which is bound to this. Note that while method fns can be provided to override protected methods, they have no other access to protected members, nor to super, as these capabilities cannot be proxied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arrays">Arrays</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure supports the creation, reading and modification of Java arrays. It is recommended that you limit use of arrays to interop with Java libraries that require them as arguments or use them as return values.</p>
+</div>
+<div class="paragraph">
+<p>Note that many other Clojure functions work with arrays such as via the <a href="sequences">seq library</a>. The functions listed here exist for initial creation of arrays, or to support mutation or higher performance operations on arrays.</p>
+</div>
+<div class="paragraph">
+<p>Create array from existing collection: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone">aclone</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array">to-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d">to-array-2d</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array">into-array</a><br>
+Multi-dimensional array support: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget">aget</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset">aset</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d">to-array-2d</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-array">make-array</a><br>
+Type-specific array constructors: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean-array">boolean-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte-array">byte-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-array">char-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double-array">double-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array">float-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array">int-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long-array">long-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/object-array">object-array</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array">short-array</a><br>
+Primitive array casts: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/booleans">booleans</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes">bytes</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/chars">chars</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doubles">doubles</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/floats">floats</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints">ints</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/longs">longs</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts">shorts</a><br>
+Mutate an array: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset">aset</a><br>
+Process an existing array: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget">aget</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength">alength</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce">areduce</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="typehints">Type Hints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are metadata tags placed on symbols or expressions that are consumed by the compiler. They can be placed on function parameters, let-bound names, var names (when defined), and expressions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn len [x]
+  (.length x))
+
+(defn len2 [^String x]
+  (.length x))
+
+user=&gt; (time (reduce + (map len (repeat 1000000 "asdf"))))
+"Elapsed time: 3007.198 msecs"
+4000000
+user=&gt; (time (reduce + (map len2 (repeat 1000000 "asdf"))))
+"Elapsed time: 308.045 msecs"
+4000000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once a type hint has been placed on an identifier or expression, the compiler will try to resolve any calls to methods thereupon at compile time. In addition, the compiler will track the use of any return values and infer types for their use and so on, so very few hints are needed to get a fully compile-time resolved series of calls. Note that type hints are not needed for static members (or their return values!) as the compiler always has the type for statics.</p>
+</div>
+<div class="paragraph">
+<p>There is a *warn-on-reflection* flag (defaults to false) which will cause the compiler to warn you when it can&#8217;t resolve to a direct call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(set! *warn-on-reflection* true)
+-&gt; true
+
+(defn foo [s] (.charAt s 1))
+-&gt; Reflection warning, line: 2 - call to charAt can't be resolved.
+-&gt; #user/foo
+
+(defn foo [^String s] (.charAt s 1))
+-&gt; #user/foo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For function return values, the type hint can be placed before the arguments vector:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn hinted
+  (^String [])
+  (^Integer [a])
+  (^java.util.List [a &amp; args]))
+
+-&gt; #user/hinted</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="TypeAliases">Aliases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class names. For example, long arrays (long-array []) have a type of "[J".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>int - A primitive int</p>
+</li>
+<li>
+<p>ints - An int array</p>
+</li>
+<li>
+<p>long - A primitive long</p>
+</li>
+<li>
+<p>longs - A long array</p>
+</li>
+<li>
+<p>float - A primitive float</p>
+</li>
+<li>
+<p>floats - A float array</p>
+</li>
+<li>
+<p>double - A primitive double</p>
+</li>
+<li>
+<p>doubles - A double array</p>
+</li>
+<li>
+<p>void - A void return</p>
+</li>
+<li>
+<p>short - A primitive short</p>
+</li>
+<li>
+<p>shorts - A short array</p>
+</li>
+<li>
+<p>boolean - A primitive boolean</p>
+</li>
+<li>
+<p>booleans - A boolean array</p>
+</li>
+<li>
+<p>byte - A primitive byte</p>
+</li>
+<li>
+<p>bytes - A byte array</p>
+</li>
+<li>
+<p>char - A primitive character</p>
+</li>
+<li>
+<p>chars - A character array</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="primitives">Support for Java Primitives</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure has support for high-performance manipulation of, and arithmetic involving, Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em><strong>let</strong></em>/<em><strong>loop</strong></em>-bound locals can be of primitive types, having the inferred, possibly primitive type of their init-form.</p>
+</li>
+<li>
+<p><em><strong>recur</strong></em> forms that rebind primitive locals do so without boxing, and do type-checking for same primitive type.</p>
+</li>
+<li>
+<p>Arithmetic (+,-,*,/,inc,dec,&lt;,&#8656;,&gt;,&gt;= etc) is overloaded for primitive types where semantics are same.</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget">aget</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset">aset</a> are overloaded for arrays of primitives</p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone">aclone</a>, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength">alength</a> functions for arrays of primitives</p>
+</li>
+<li>
+<p>constructor functions for primitive arrays: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array">float-array</a>, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array">int-array</a>, etc.</p>
+</li>
+<li>
+<p>Type hints for primitive arrays - ^ints, ^floats, etc.</p>
+</li>
+<li>
+<p>Coercion ops <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int">int</a>, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float">float</a>, etc. produce primitives when consumer can take primitive</p>
+</li>
+<li>
+<p>The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num">num</a> coercion function boxes primitives to force generic arithmetic</p>
+</li>
+<li>
+<p>Array cast functions <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints">ints</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/longs">longs</a>, etc. which produce int[], long[], etc.</p>
+</li>
+<li>
+<p>A set of "unchecked" operations for utmost performing, but potentially unsafe, integer (int/long) ops: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-multiply">unchecked-multiply</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-dec">unchecked-dec</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-inc">unchecked-inc</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-negate">unchecked-negate</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-add">unchecked-add</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-subtract">unchecked-subtract</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-remainder">unchecked-remainder</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-divide">unchecked-divide</a></p>
+</li>
+<li>
+<p>A dynamic var to automatically swap safe operations with unchecked operations: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Aunchecked-math%2A">*unchecked-math*</a></p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce">areduce</a> macros for functionally (i.e. non-destructively) processing one or more arrays in order to produce a new array or aggregate value respectively.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Rather than write this Java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">static public float asum(float[] xs){
+  float ret = 0;
+  for(int i = 0; i &lt; xs.length; i++)
+    ret += xs[i];
+  return ret;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you can write this Clojure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn asum [^floats xs]
+  (areduce xs i ret (float 0)
+    (+ ret (aget xs i))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the resulting code is exactly the same speed (when run with java -server).</p>
+</div>
+<div class="paragraph">
+<p>The best aspect of this is that you need not do anything special in your initial coding. Quite often these optimizations are unneeded. Should a bit of code be a bottleneck, you can speed it up with minor adornment:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn foo [n]
+  (loop [i 0]
+    (if (&lt; i n)
+      (recur (inc i))
+      i)))
+
+(time (foo 100000))
+"Elapsed time: 0.391 msecs"
+100000
+
+(defn foo2 [n]
+  (let [n (int n)]
+    (loop [i (int 0)]
+      (if (&lt; i n)
+        (recur (inc i))
+        i))))
+
+(time (foo2 100000))
+"Elapsed time: 0.084 msecs"
+100000</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coercions">Coercions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At times it is necessary to have a value of a particular primitive type. These coercion functions yield a value of the indicated type as long as such a coercion is possible: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigdec">bigdec</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint">bigint</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean">boolean</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte">byte</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char">char</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double">double</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float">float</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int">int</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long">long</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num">num</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short">short</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="optimization">Some optimization tips</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>All arguments are passed to Clojure fns as objects, so there&#8217;s no point to putting non-array primitive type hints on fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.</p>
+</li>
+<li>
+<p>(let [foo (int bar)] &#8230;&#8203;) is the correct way to get a primitive local. Do not use ^Integer etc.</p>
+</li>
+<li>
+<p>Don&#8217;t rush to unchecked math unless you want truncating operations. HotSpot does a good job at optimizing the overflow check, which will yield an exception instead of silent truncation. On a typical example, that has about a 5% difference in speed - well worth it. Also, people reading your code don&#8217;t know if you are using unchecked for truncation or performance - best to reserve it for the former and comment if the latter.</p>
+</li>
+<li>
+<p>There&#8217;s usually no point in trying to optimize an outer loop, in fact it can hurt you as you&#8217;ll be representing things as primitives which just have to be re-boxed in order to become args to the inner call. The only exception is reflection warnings - you must get rid of them in any code that gets called frequently.</p>
+</li>
+<li>
+<p>Almost every time someone presents something they are trying to optimize with hints, the faster version has far fewer hints than the original. If a hint doesn&#8217;t improve things in the end - take it out.</p>
+</li>
+<li>
+<p>Many people seem to presume only the unchecked- ops do primitive arithmetic - not so. When the args are primitive locals, regular + and * etc do primitive math with an overflow check - fast <em>and</em> safe.</p>
+</li>
+<li>
+<p>So, the simplest route to fast math is to leave the operators alone and just make sure the source literals and locals are primitive. Arithmetic on primitives yields primitives. If you&#8217;ve got a loop (which you probably do if you need to optimize) make sure the loop locals are primitives first - then if you accidentally are producing a boxed intermediate result you&#8217;ll get an error on recur. Don&#8217;t solve that error by coercing your intermediate result, instead, figure out what argument or local is not primitive.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simple_xml_support">Simple XML Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Included with the distribution is simple XML support, found in the src/xml.clj file. All names from this file are in the xml namespace.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>(<em>parse</em> source)</strong></p>
+</div>
+<div class="paragraph">
+<p>Parses and loads the source, which can be a File, InputStream or String naming a URI. Returns a tree of the xml/element struct-map, which has the keys :tag, :attrs, and :content. and accessor fns tag, attrs, and content.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(xml/parse "/Users/rich/dev/clojure/build.xml")
+-&gt; {:tag :project, :attrs {:name "clojure", :default "jar"}, :content [{:tag :description, ...</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_calling_clojure_from_java">Calling Clojure From Java</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="http://clojure.github.io/clojure/javadoc">clojure.java.api</a> package provides a minimal interface to bootstrap Clojure access from other JVM languages. It does this by providing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The ability to use Clojure&#8217;s namespaces to locate an arbitrary var, returning the var&#8217;s clojure.lang.IFn interface.</p>
+</li>
+<li>
+<p>A convenience method read for reading data using Clojure&#8217;s edn reader</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>IFns provide complete access to Clojure&#8217;s APIs. You can also access any other library written in Clojure, after adding either its source or compiled form to the classpath.</p>
+</div>
+<div class="paragraph">
+<p>The public Java API for Clojure consists of the following classes and interfaces:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure.html">clojure.java.api.Clojure</a></p>
+</li>
+<li>
+<p><a href="http://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html">clojure.lang.IFn</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All other Java classes should be treated as implementation details, and applications should avoid relying on them.</p>
+</div>
+<div class="paragraph">
+<p>To lookup and call a Clojure function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">IFn plus = Clojure.var("clojure.core", "+");
+plus.invoke(1, 2);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Functions in clojure.core are automatically loaded. Other namespaces can be loaded via require:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">IFn require = Clojure.var("clojure.core", "require");
+require.invoke(Clojure.read("clojure.set"));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>IFns can be passed to higher order functions, e.g. the example below passes plus to read:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">IFn map = Clojure.var("clojure.core", "map");
+IFn inc = Clojure.var("clojure.core", "inc");
+map.invoke(inc, Clojure.read("[1 2 3]"));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Most IFns in Clojure refer to functions. A few, however, refer to non-function data values. To access these, use deref instead of fn:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">IFn printLength = Clojure.var("clojure.core", "*print-length*");
+IFn deref = Clojure.var("clojure.core", "deref");
+deref.invoke(printLength);</code></pre>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

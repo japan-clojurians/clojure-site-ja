@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Other Included Libraries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Other Included Libraries</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_other_included_libraries">Other included Libraries</a></li>
+<li><a href="#_java_utilities_clojure_java">Java Utilities (clojure.java.*)</a></li>
+<li><a href="#_parallel_processing_deprecated">Parallel Processing (DEPRECATED)</a></li>
+<li><a href="#_reflection_utilities_a_href_http_clojure_github_io_clojure_clojure_reflect_api_html_clojure_reflect_a">Reflection Utilities (<a href="http://clojure.github.io/clojure/clojure.reflect-api.html">clojure.reflect</a>)</a></li>
+<li><a href="#_repl_utilities_a_href_http_clojure_github_io_clojure_clojure_repl_api_html_clojure_repl_a">REPL Utilities (<a href="http://clojure.github.io/clojure/clojure.repl-api.html">clojure.repl</a>)</a></li>
+<li><a href="#_sets_and_relational_algebra_a_href_http_clojure_github_io_clojure_clojure_set_api_html_clojure_set_a">Sets and Relational Algebra (<a href="http://clojure.github.io/clojure/clojure.set-api.html">clojure.set</a>)</a></li>
+<li><a href="#_string_handling_a_href_http_clojure_github_io_clojure_clojure_string_api_html_clojure_string_a">String Handling (<a href="http://clojure.github.io/clojure/clojure.string-api.html">clojure.string</a>)</a></li>
+<li><a href="#_unit_testing_a_href_http_clojure_github_io_clojure_clojure_test_api_html_clojure_test_a">Unit Testing (<a href="http://clojure.github.io/clojure/clojure.test-api.html">clojure.test</a>)</a></li>
+<li><a href="#_walking_data_structures_a_href_http_clojure_github_io_clojure_clojure_walk_api_html_clojure_walk_a">Walking Data Structures (<a href="http://clojure.github.io/clojure/clojure.walk-api.html">clojure.walk</a>)</a></li>
+<li><a href="#_xml_a_href_http_clojure_github_io_clojure_clojure_xml_api_html_clojure_xml_a">XML (<a href="http://clojure.github.io/clojure/clojure.xml-api.html">clojure.xml</a>)</a></li>
+<li><a href="#_zippers_functional_tree_editing_a_href_http_clojure_github_io_clojure_clojure_zip_api_html_clojure_zip_a">Zippers - Functional Tree Editing (<a href="http://clojure.github.io/clojure/clojure.zip-api.html">clojure.zip</a>)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_included_libraries">Other included Libraries</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_java_utilities_clojure_java">Java Utilities (clojure.java.*)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><a href="http://clojure.github.io/clojure/clojure.java.io-api.html">clojure.java.io</a></strong>
+Contains polymorphic I/O utility functions for Clojure backed by Java classes.</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="http://clojure.github.io/clojure/clojure.java.javadoc-api.html">clojure.java.javadocs</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Provides the function <a href="http://clojure.github.io/clojure/clojure.java.javadoc-api.html#clojure.java.javadoc/javadoc">javadoc</a> that attempts to display the appropriate Javadocs for a class or instance class.</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="http://clojure.github.io/clojure/clojure.java.shell-api.html">clojure.java.shell</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Provides a <a href="http://clojure.github.io/clojure/clojure.java.shell-api.html#clojure.java.shell/sh">sh</a> function that facilitates launching and managing subprocesses. See the function documentation for details on its expected arguments.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parallel_processing_deprecated">Parallel Processing (DEPRECATED)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The parallel library (namespace <em><strong>parallel</strong></em>, in parallel.clj) wraps the <a href="http://gee.cs.oswego.edu/dl/concurrency-interest/index.html">ForkJoin library</a>. This lib is now deprecated.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll need <code>jsr166y.jar</code> in your classpath in order to use this library. The basic idea is that Clojure collections, and most efficiently vectors, can be turned into parallel arrays for use by this library with the function par, although most of the functions take collections and will call <em><strong>par</strong></em> if needed, so normally you will only need to call par explicitly in order to attach bound/filter/map ops.</p>
+</div>
+<div class="paragraph">
+<p>Parallel arrays support the attachment of bounds, filters and mapping functions prior to realization/calculation, which happens as the result of any of several operations on the array (pvec/psort/pfilter-nils/pfilter-dupes). Rather than perform composite operations in steps, as would normally be done with sequences, maps and filters are instead attached and thus composed by providing ops to <em><strong>par</strong></em>. Note that there is an order sensitivity to the attachments - bounds precede filters precede mappings. All operations then happen in parallel, using multiple threads and a sophisticated work-stealing system supported by fork-join, either when the array is realized, or to perform aggregate operations like preduce/pmin/pmax etc.</p>
+</div>
+<div class="paragraph">
+<p>A parallel array can be realized into a Clojure vector using pvec</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(load-file "src/parallel.clj")
+(refer 'parallel)
+
+(def f (vec (take 20 (repeatedly #(rand-int 20)))))
+
+f
+-&gt; [11 7 10 9 4 1 4 18 15 13 10 7 0 9 16 6 19 11 14 7]
+
+;return value/index pairs of all entries &lt; their index, in parallel
+
+(pvec (par f :filter-index &lt; :map-index vector))
+-&gt; [[1 5] [4 6] [7 11] [0 12] [9 13] [6 15] [11 17] [14 18] [7 19]]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reflection_utilities_a_href_http_clojure_github_io_clojure_clojure_reflect_api_html_clojure_reflect_a">Reflection Utilities (<a href="http://clojure.github.io/clojure/clojure.reflect-api.html">clojure.reflect</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Provides functions and protocols useful for gathering and building host type reflection information as Clojure data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repl_utilities_a_href_http_clojure_github_io_clojure_clojure_repl_api_html_clojure_repl_a">REPL Utilities (<a href="http://clojure.github.io/clojure/clojure.repl-api.html">clojure.repl</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilities meant to be used interactively at the REPL.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sets_and_relational_algebra_a_href_http_clojure_github_io_clojure_clojure_set_api_html_clojure_set_a">Sets and Relational Algebra (<a href="http://clojure.github.io/clojure/clojure.set-api.html">clojure.set</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functions useful for manipulating, building, and querying mathematical sets using relational algebra.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_string_handling_a_href_http_clojure_github_io_clojure_clojure_string_api_html_clojure_string_a">String Handling (<a href="http://clojure.github.io/clojure/clojure.string-api.html">clojure.string</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functions for manipulating strings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unit_testing_a_href_http_clojure_github_io_clojure_clojure_test_api_html_clojure_test_a">Unit Testing (<a href="http://clojure.github.io/clojure/clojure.test-api.html">clojure.test</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Clojure unit testing framework.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_walking_data_structures_a_href_http_clojure_github_io_clojure_clojure_walk_api_html_clojure_walk_a">Walking Data Structures (<a href="http://clojure.github.io/clojure/clojure.walk-api.html">clojure.walk</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilities for traversing and manipulating nested data structures.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_xml_a_href_http_clojure_github_io_clojure_clojure_xml_api_html_clojure_xml_a">XML (<a href="http://clojure.github.io/clojure/clojure.xml-api.html">clojure.xml</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilities for reading and writing XML data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zippers_functional_tree_editing_a_href_http_clojure_github_io_clojure_clojure_zip_api_html_clojure_zip_a">Zippers - Functional Tree Editing (<a href="http://clojure.github.io/clojure/clojure.zip-api.html">clojure.zip</a>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure includes purely functional, generic tree walking and editing, using a technique called a zipper (in namespace <em><strong>zip</strong></em>) . For background, see the <a href="http://www.google.com/search?q=huet%20functional%20zipper">paper by Huet</a>. A zipper is a data structure representing a location in a hierarchical data structure, and the path it took to get there. It provides down/up/left/right navigation, and localized functional 'editing', insertion and removal of nodes. With zippers you can write code that looks like an imperative, destructive walk through a tree, call <a href="http://clojure.github.io/clojure/clojure.zip-api.html#clojure.zip/root">root</a> when you are done and get a new tree reflecting all the changes, when in fact nothing at all is mutated - it&#8217;s all thread safe and shareable. The <a href="http://clojure.github.io/clojure/clojure.zip-api.html#clojure.zip/next">next</a> function does a depth-first walk, making for easy to understand loops:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def data '[[a * b] + [c * d]])
+(def dz (zip/vector-zip data))
+
+;find the second *
+(-&gt; dz zip/down zip/right zip/right zip/down zip/right zip/node)
+-&gt; *
+
+;'remove' the first 2 terms
+(-&gt; dz zip/next zip/remove zip/next zip/remove zip/root)
+-&gt; &lt;&lt;c * d#,c * d&gt;&gt;
+
+
+;'replace' * with /
+(loop [loc dz]
+  (if (zip/end? loc)
+    (zip/root loc)
+    (recur
+     (zip/next
+      (if (= (zip/node loc) '*)
+        (zip/replace loc '/)
+        loc)))))
+
+-&gt; [[a / b] + [c / d]]
+
+
+;'remove' *
+(loop [loc dz]
+  (if (zip/end? loc)
+    (zip/root loc)
+    (recur
+     (zip/next
+      (if (= (zip/node loc) '*)
+        (zip/remove loc)
+        loc)))))
+
+-&gt; [[a b] + [c d]]
+
+
+;original is intact
+(zip/root dz)
+-&gt; [[a * b] + [c * d]]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Zipper constructors are provided for nested seqs, nested vectors, and the xml elements generated by <em><strong>xml/parse</strong></em>. All it takes is a 4-5 line function to support other data structures.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

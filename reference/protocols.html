@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Protocols</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Protocols</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_motivation">Motivation</a></li>
+<li><a href="#_basics">Basics</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_motivation">Motivation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure is written in terms of abstractions. There are abstractions for sequences, collections, callability, etc. In addition, Clojure supplies many implementations of these abstractions. The abstractions are specified by host interfaces, and the implementations by host classes. While this was sufficient for bootstrapping the language, it left Clojure without similar abstraction and low-level implementation facilities. The <a href="protocols">protocols</a> and <a href="datatypes">datatypes</a> features add powerful and flexible mechanisms for abstraction and data structure definition with no compromises vs the facilities of the host platform.</p>
+</div>
+<div class="paragraph">
+<p>There are several motivations for protocols:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide a high-performance, dynamic polymorphism construct as an alternative to interfaces</p>
+</li>
+<li>
+<p>Support the best parts of interfaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>specification only, no implementation</p>
+</li>
+<li>
+<p>a single type can implement multiple protocols</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>While avoiding some of the drawbacks</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Which interfaces are implemented is a design-time choice of the type author, cannot be extended later (although interface injection might eventually address this)</p>
+</li>
+<li>
+<p>implementing an interface creates an isa/instanceof type relationship and hierarchy</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Avoid the 'expression problem' by allowing independent extension of the set of types, protocols, and implementations of protocols on types, by different parties</p>
+<div class="ulist">
+<ul>
+<li>
+<p>do so without wrappers/adapters</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Support the 90% case of multimethods (single dispatch on type) while providing higher-level abstraction/organization</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Protocols were introduced in Clojure 1.2.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basics">Basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A protocol is a named set of named methods and their signatures, defined using <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defprotocol AProtocol
+  "A doc string for AProtocol abstraction"
+  (bar [a b] "bar docs")
+  (baz [a] [a b] [a b c] "baz docs"))</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>No implementations are provided</p>
+</li>
+<li>
+<p>Docs can be specified for the protocol and the functions</p>
+</li>
+<li>
+<p>The above yields a set of polymorphic functions and a protocol object</p>
+<div class="ulist">
+<ul>
+<li>
+<p>all are namespace-qualified by the namespace enclosing the definition</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The resulting functions dispatch on the type of their first argument, and thus must have at least one argument</p>
+</li>
+<li>
+<p>defprotocol is dynamic, and does not require AOT compilation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a> will automatically generate a corresponding interface, with the same name as the protocol, i.e. given a protocol my.ns/Protocol, an interface my.ns.Protocol. The interface will have methods corresponding to the protocol functions, and the protocol will automatically work with instances of the interface.</p>
+</div>
+<div class="paragraph">
+<p>Note that you do not need to use this interface with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> , or <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>, as they support protocols directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defprotocol P
+  (foo [x])
+  (bar-me [x] [x y]))
+
+(deftype Foo [a b c]
+  P
+  (foo [x] a)
+  (bar-me [x] b)
+  (bar-me [x y] (+ c y)))
+
+(bar-me (Foo. 1 2 3) 42)
+= &gt; 45
+
+(foo
+ (let [x 42]
+   (reify P
+     (foo [this] 17)
+     (bar-me [this] x)
+     (bar-me [this y] x))))
+
+&gt; 17</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A Java client looking to participate in the protocol can do so most efficiently by implementing the protocol-generated interface.</p>
+</div>
+<div class="paragraph">
+<p>External implementations of the protocol (which are needed when you want a class or type not in your control to participate in the protocol) can be provided using the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend">extend</a> construct:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(extend AType
+  AProtocol
+   {:foo an-existing-fn
+    :bar (fn [a b] ...)
+    :baz (fn ([a]...) ([a b] ...)...)}
+  BProtocol
+    {...}
+...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>extend takes a type/class (or interface, see below), a one or more protocol + function map (evaluated) pairs.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Will extend the polymorphism of the protocol&#8217;s methods to call the supplied functions when an AType is provided as the first argument</p>
+</li>
+<li>
+<p>Function maps are maps of the keywordized method names to ordinary fns</p>
+<div class="ulist">
+<ul>
+<li>
+<p>this facilitates easy reuse of existing fns and maps, for code reuse/mixins without derivation or composition</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You can implement a protocol on an interface</p>
+<div class="ulist">
+<ul>
+<li>
+<p>this is primarily to facilitate interop with the host (e.g. Java)</p>
+</li>
+<li>
+<p>but opens the door to incidental multiple inheritance of implementation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>since a class can inherit from more than one interface, both of which implement the protocol</p>
+</li>
+<li>
+<p>if one interface is derived from the other, the more derived is used, else which one is used is unspecified.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The implementing fn can presume first argument is instanceof AType</p>
+</li>
+<li>
+<p>You can implement a protocol on <em><strong>nil</strong></em></p>
+</li>
+<li>
+<p>To define a default implementation of protocol (for other than nil) just use Object</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Protocols are fully reified and support reflective capabilities via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extends%3F">extends?</a> , <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extenders">extenders</a> , and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F">satisfies?</a> .</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Note the convenience macros <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type">extend-type</a> , and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol">extend-protocol</a></p>
+</li>
+<li>
+<p>If you are providing external definitions inline, these will be more convenient than using <strong>extend</strong> directly</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(extend-type MyType
+  Countable
+    (cnt [c] ...)
+  Foo
+    (bar [x y] ...)
+    (baz ([x] ...) ([x y zs] ...)))
+
+  ;expands into:
+
+(extend MyType
+  Countable
+   {:cnt (fn [c] ...)}
+  Foo
+   {:baz (fn ([x] ...) ([x y zs] ...))
+    :bar (fn [x y] ...)})</code></pre>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

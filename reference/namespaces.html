@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Namespaces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Namespaces</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_related_functions">Related functions</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Namespaces are mappings from simple (unqualified) symbols to Vars and/or
+Classes. Vars can be interned in a namespace, using <em><strong>def</strong></em> or any of its
+variants, in which case they have a simple symbol for a name and a reference
+to their containing namespace, and the namespace maps that symbol to the
+same var. A namespace can also contain mappings from symbols to vars
+interned in other namespaces by using
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a>
+or
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use">use</a>,
+or from symbols to Class objects by using
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a>.
+Note that namespaces are first-class, they can be enumerated etc. Namespaces
+are also dynamic, they can be created, removed and modified at runtime, at
+the Repl etc.</p>
+</div>
+<div class="paragraph">
+<p>The best way to set up a new namespace at the top of a Clojure source file
+is to use the
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
+macro</a>. By default this will create a new namespace contains mappings for
+the classnames in java.lang plus <code>clojure.lang.Compiler</code>, and the
+functions in <code>clojure.core</code>.</p>
+</div>
+<div class="paragraph">
+<p>At the Repl it&#8217;s best to use
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>,
+in which case the new namespace will contain mappings only for the
+classnames in java.lang. In order to access the names from the
+<code>clojure.core</code> namespace you must execute (clojure.core/refer
+'clojure.core). The <code>user</code> namespace at the Repl has already done this.</p>
+</div>
+<div class="paragraph">
+<p>The current namespace, <em>*ns*</em> can and should be set only with a call
+to
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
+or the
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
+macro</a>, both of which create the namespace if it doesn&#8217;t exist.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_functions">Related functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creating and switching to a namespace:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns">create-ns</a><br>
+Adding to a namespace:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias">alias</a><br>
+<a href="special_forms#def">def</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern">intern</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a><br>
+Finding what namespaces exist:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns">all-ns</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns">find-ns</a><br>
+Examining a namespace:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-name">ns-name</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-aliases">ns-aliases</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-imports">ns-imports</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns">ns-interns</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map">ns-map</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-publics">ns-publics</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers">ns-refers</a><br>
+Getting a namespace from a symbol:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resolve">resolve</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve">ns-resolve</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace">namespace</a><br>
+Removing things:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias">ns-unalias</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unmap">ns-unmap</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-ns">remove-ns</a></p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

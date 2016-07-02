@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Reducers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <!-- <li><a href="../about/rationale.html">概要</a></li> -->
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Reducers</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_reduce_and_fold">reduce and fold</a></li>
+<li><a href="#_using_reducers">Using Reducers</a></li>
+<li><a href="#_when_to_use">When to use</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reducers provide an alternative approach to using <a href="sequences">sequences</a> to manipulate standard Clojure collections. Sequence functions are typically applied lazily, in order, create intermediate results, and in a single thread. However, many sequence functions (like map and filter) could conceptually be applied in parallel, yielding code that will get faster automatically as machines get more cores. For more details on the rationale for reducers, see the original <a href="http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html">blog</a> <a href="http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html">posts</a>.</p>
+</div>
+<div class="paragraph">
+<p>A <em>reducer</em> is the combination of a <em>reducible collection</em> (a collection that knows how to reduce itself) with a <em>reducing function</em> (the "recipe" for what needs to be done during the reduction). The standard sequence operations are replaced with new versions that do not perform the operation but merely transform the reducing function. Execution of the operations is deferred until the final reduction is performed. This removes the intermediate results and lazy evaluation seen with sequences.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, some collections (persistent vectors and maps) are <em>foldable</em>. The <em>fold</em> operation on a reducer executes the reduction in parallel by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Partitioning the reducible collection at a specified granularity (default = 512 elements)</p>
+</li>
+<li>
+<p>Applying reduce to each partition</p>
+</li>
+<li>
+<p>Recursively combining each partition using Java&#8217;s <a href="http://gee.cs.oswego.edu/dl/papers/fj.pdf">fork/join</a> framework.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If a collection does not support folding, it will fall back to non-parallel reduce instead.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reduce_and_fold">reduce and fold</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>clojure.core.reducers</strong> namespace (aliased here as <strong>r</strong>) provides an alternate <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/reduce">r/reduce</a> function.</p>
+</div>
+<div class="paragraph">
+<p><strong>(r/reduce f coll)</strong><br>
+<strong>(r/reduce f init coll)</strong></p>
+</div>
+<div class="paragraph">
+<p>The reducers version differs in that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Map colls are reduced with reduce-kv</p>
+</li>
+<li>
+<p>When init is not provided, f is invoked with no arguments to produce an identity value</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Note: f may be invoked multiple times to provide the identity value</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In general most users will not call r/reduce directly and instead should prefer <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/fold">r/fold</a>, which implements parallel reduce and combine. However, it may be useful to execute an eager reduce with fewer intermediate results.</p>
+</div>
+<div class="paragraph">
+<p><strong>(r/fold reducef coll)</strong><br>
+<strong>(r/fold combinef reducef coll)</strong><br>
+<strong>(r/fold n combinef reducef coll)</strong>*</p>
+</div>
+<div class="paragraph">
+<p>r/fold takes a reducible collection and partitions it into groups of approximately n (default 512) elements. Each group is reduced using the reducef function. The reducef function will be called with no arguments to produce an identity value <em>in each partition</em>. The results of those reductions are then reduced with the combinef (defaults to reducef) function. When called with no arguments, (combinef) must produce its identity element - this will be called multiple times. Operations may be performed in parallel. Results will preserve order.</p>
+</div>
+<div class="paragraph">
+<p>The following functions (analagous to the sequence versions) create reducers from a reducible or foldable collection: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map">r/map</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/mapcat">r/mapcat</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/filter">r/filter</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/remove">r/remove</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten">r/flatten</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while">r/take-while</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take">r/take</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/drop">r/drop</a>. None of these functions actually transforms the source collection. To produce an accumulated result, you must use r/reduce or r/fold. To produce an output collection, use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">clojure.core/into</a> to choose the collection type or the provided <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat">r/foldcat</a> to produce a collection that is reducible, foldable, seqable, and counted.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_reducers">Using Reducers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use fold to sum with +:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.core.reducers :as r])
+(r/fold + (r/filter even? (r/map inc [1 1 1 2])))
+;=&gt; 6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">into</a> to produce a final collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(into [] (r/filter even? (r/map inc (range 100000))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat">r/foldcat</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(r/foldcat (r/filter even? (r/map inc (range 100000))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Specify a reduce function and a combine function with fold:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn count-words
+  ([] {})
+  ([freqs word]
+    (assoc freqs word (inc (get freqs word 0)))))
+
+(defn merge-counts
+  ([] {})
+  ([&amp; m] (apply merge-with + m)))
+
+(defn word-frequency [text]
+  (r/fold merge-counts count-words (clojure.string/split text #"\s+")))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_to_use">When to use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the reducer form of these operations for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Efficient eager application of a multi-step transformation</p>
+</li>
+<li>
+<p>Avoiding the dangling I/O resource issues (as seen with lazy seqs)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use <code>fold</code> when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Source data can be generated and held in memory</p>
+</li>
+<li>
+<p>Work to be performed is computation (not I/O or blocking)</p>
+</li>
+<li>
+<p>Number of data items or work to be done is "large"</p>
+</li>
+</ul>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>
