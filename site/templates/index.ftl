@@ -1,20 +1,12 @@
 <#include "header.ftl">
 
-	<#include "menu.ftl">
+<#include "menu.ftl">
 
-	<div class="page-header">
-		<h1>Blog</h1>
-	</div>
-	<#list posts as post>
-  		<#if (post.status == "published")>
-  			<a href="${post.uri}"><h1><#escape x as x?xml>${post.title}</#escape></h1></a>
-  			<p></p>
-  			<p>${post.body}</p>
-  		</#if>
-  	</#list>
+<div class="page-header">
+  <h1>Clojure の日本語ドキュメント</h1>
+  <h2><a href="http://clojure.org/">clojure.org</a> の日本語訳です</h2>
+</div>
 
-	<hr />
-
-	<p>Older posts are available in the <a href="${content.rootpath}${config.archive_file}">archive</a>.</p>
+<hr />
 
 <#include "footer.ftl">

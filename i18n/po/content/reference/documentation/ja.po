@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-07-02 10:10+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -50,7 +50,7 @@ msgstr ""
 #: en/content/community/downloads_older.adoc:4
 #: en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
-msgstr ""
+msgstr "Rich Hickey 2015-01-01"
 
 #. type: Title ====
 #: en/content/reference/documentation.adoc:1 en/content/about/spec.adoc:310

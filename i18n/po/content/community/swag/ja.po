@@ -33,7 +33,7 @@ msgstr ""
 #: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
 #: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
 msgid "Rich Hickey 2015-01-01"
-msgstr ""
+msgstr "Rich Hickey 2015-01-01"
 
 #. type: Title =
 #: en/content/community/swag.adoc:1
