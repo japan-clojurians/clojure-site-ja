@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-07-01 15:54+0900\n"
-"PO-Revision-Date: 2016-07-01 16:06+0900\n"
+"PO-Revision-Date: 2016-07-02 12:24+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -167,7 +167,7 @@ msgstr ""
 "** Integer (整数)は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang."
 "BigIntとして読み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して"
 "表記することが出来る。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,"
-"%20int)[Long.parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42`は全て同じLongになる。\n"
+"%20int)[Long.parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。\n"
 "** 浮動少数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。\n"
 "** 分数もサポートされている。 (例： `22/7`)"
 
@@ -226,7 +226,7 @@ msgstr "Vectors (ベクター)"
 #. type: Plain text
 #: en/content/reference/reader.adoc:55
 msgid "Vectors are zero or more forms enclosed in square brackets: `[1 2 3]`"
-msgstr "ベクターは0個以上の角括弧で括られたフォーム:`[1 2 3]`"
+msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 3]`"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:56 en/content/about/spec.adoc:198
@@ -321,7 +321,7 @@ msgstr "Sets (セット)"
 #. type: Plain text
 #: en/content/reference/reader.adoc:99
 msgid "Sets are zero or more forms enclosed in braces preceded by `pass:[#]`: `#{:a :b :c}`"
-msgstr "セットは0個以上の、先頭に`pass:[#]`を持つ波括弧で括られたフォーム： `#{:a :b :c}`"
+msgstr "セットは0個以上の、先頭に `pass:[#]` を持つ波括弧で括られたフォーム： `#{:a :b :c}`"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:100
@@ -395,7 +395,7 @@ msgstr "Character (\\) (文字)"
 #. type: Plain text
 #: en/content/reference/reader.adoc:118
 msgid "As per above, yields a character literal. Example character literals are: `\\a \\b \\c`."
-msgstr "上記のように文字リテラルを生成する。文字リテラルの例: `\\a \\b \\c"
+msgstr "上記のように文字リテラルを生成する。文字リテラルの例: `\\a \\b \\c`"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:120
@@ -412,8 +412,8 @@ msgid ""
 "Unicode support follows Java conventions with support corresponding to the underlying Java version. A Unicode literal "
 "is of the form `\\uNNNN`, for example `\\u03A9` is the literal for Ω."
 msgstr ""
-"UnicodeのサポートはJavaの規約に準拠しており、Javaのバージョンに対応するサポートがある。Unicodeのリテラルは`\\uNNNN`の"
-"形式となる。例えばΩのリテラルは`\\u03A9`になる。"
+"UnicodeのサポートはJavaの規約に準拠しており、Javaのバージョンに対応するサポートがある。Unicodeのリテラルは `\\uNNNN` "
+"の形式となる。例えばΩのリテラルは `\\u03A9` になる。"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:123
@@ -455,8 +455,8 @@ msgstr ""
 "メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラ"
 "ル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読"
 "み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/with-meta[with-meta] を参照): + `^{:a 1 :b 2} [1 2 3]` は`{:a 1 :b 2}`をメタデータマップにもつ "
-"`[1 2 3]` を生成する。 +"
+"api.html#clojure.core/with-meta[with-meta] を参照):\n"
+"`^{:a 1 :b 2} [1 2 3]` は `{:a 1 :b 2}` をメタデータマップにもつ `[1 2 3]` を生成する。 "
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:138
@@ -466,13 +466,13 @@ msgid ""
 "tag java.lang.String} x` +"
 msgstr ""
 "簡略化したバージョンではメタデータを単純なシンボルもしくは文字列として指定出来る。その場合メタデータはキーを:tag,バ"
-"リューを(解決後の)シンボルもしくは文字列とした単一エントリーのマップになる。例: + `^String x` は `^{:tag java.lang."
-"String} x`と同等。 +"
+"リューを(解決後の)シンボルもしくは文字列とした単一エントリーのマップになる。例:\n"
+"`^String x` は `^{:tag java.lang.String} x` と同等。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:140
 msgid "Such tags can be used to convey type information to the compiler. +"
-msgstr "このようなタグはコンパイラーに型情報を渡すことに使用出来る。 +"
+msgstr "このようなタグはコンパイラーに型情報を渡すことに使用出来る。 "
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:143
@@ -481,7 +481,7 @@ msgid ""
 "a key of the keyword and a value of true, e.g.: + `^:dynamic x` is the same as `^{:dynamic true} x` +"
 msgstr ""
 "もう一つの簡略した表記ではメタデータにキーワードを使用出来る。その場合、メタデータはキーを指定したキーワードバリューを"
-"trueとした単一エントリーのマップとして扱われる: + `^:dynamic x` は `^{:dynamic true} x` と同等。 +"
+"trueとした単一エントリーのマップとして扱われる: `^:dynamic x` は `^{:dynamic true} x` と同等。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:145
@@ -576,7 +576,7 @@ msgstr "Syntax-quote (シンタックスクォート) (`, バッククォート�
 #. type: Plain text
 #: en/content/reference/reader.adoc:169
 msgid "For all forms other than Symbols, Lists, Vectors, Sets and Maps, `x is the same as 'x. +"
-msgstr "シンボル、リスト、ベクター、セット、マップ以外のフォームについては `xと'xは同等。 +"
+msgstr "シンボル、リスト、ベクター、セット、マップ以外のフォームについては `xと'xは同等。 "
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:171
@@ -590,7 +590,7 @@ msgstr ""
 "シンボルに対してシンタックスクォートはシンボルを現在のコンテキストで _解決_ し、完全修飾されたシンボルを生成する。"
 "(例: namespace/name もしくは fully.qualified.Classname)。シンボルがネームスペースで修飾されておらず、pass:['#']で終わ"
 "る場合、同じ名前に'_'とユニークなIDを末尾につけた自動生成されたシンボルに解決される。例: x# は x_123に解決される。同じ"
-"シンタックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。+"
+"シンタックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:173
@@ -603,7 +603,7 @@ msgstr ""
 "リスト/ベクター/セット/マップに対するシンタックスクォートは対応するデータ構造のテンプレートを設ける。テンプレートの内"
 "部では未修飾のフォームはあたかも再帰的にシンタックスクォートされたように振る舞うが、アンクォートもしくはアンクォートス"
 "プライシング修飾することでフォームを再帰的なシンタックスクォートの対象から外すことが出来る。その場合、フォームは式とし"
-"て扱われ、テンプレートの中でそれぞれその値、もしくは値のシークエンスで置き換えられる。+"
+"て扱われ、テンプレートの中でそれぞれその値、もしくは値のシークエンスで置き換えられる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:175 en/content/reference/transducers.adoc:39
@@ -701,8 +701,8 @@ msgid ""
 "by invoking the Var `#'my.project.foo/bar` on the vector `[1 2 3]`. The data reader function is invoked on the form "
 "AFTER it has been read as a normal Clojure data structure by the reader."
 msgstr ""
-"Var `#'my.project.foo/bar`をベクター`[1 2 3]` に対して呼び出す。データリーダー関数はフォームが通常のClojureデータ構造"
-"としてリーダーに読み込まれた後に呼び出される。"
+"Var `#'my.project.foo/bar` をベクター `[1 2 3]` に対して呼び出す。データリーダー関数はフォームが通常のClojureデータ構"
+"造としてリーダーに読み込まれた後に呼び出される。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:206
@@ -762,12 +762,12 @@ msgid ""
 "and can be used to provide a default. If no branches match, no form will be read (as if no reader conditional "
 "expression was present)."
 msgstr ""
-"リーダーコンディショナルは`pass:[#?]` もしくは `pass:[#?@]`で始まる新しいディスパッチフォームだ。どちらも`cond`と似た"
-"ような形でフィーチャーと式を含む。全てのClojureプラットフォームはよく知られた \"プラットフォームフィーチャー\" が存在"
-"する - `:clj`, `:cljs`, `:cljr`。リーダーコンディショナルの条件はプラットフォームにマッチするフィーチャーが見つかるま"
-"で順番に検査され、そのフィーチャーの式を読み込んで返す。マッチしなかった分岐の式は読み込まれはするが、スキップされる。"
-"よく知られた `:default` フィーチャーは必ずマッチするためデフォルトとして使える。マッチするブランチが存在しない場合、"
-"フォームは一切読み込まれない(リーダーコンディショナルが最初から存在しないのと同等)。"
+"リーダーコンディショナルは `pass:[#?]` もしくは `pass:[#?@]` で始まる新しいディスパッチフォームだ。どちらも `cond` と"
+"似たような形でフィーチャーと式を含む。全てのClojureプラットフォームはよく知られた \"プラットフォームフィーチャー\" が"
+"存在する - `:clj`, `:cljs`, `:cljr`。リーダーコンディショナルの条件はプラットフォームにマッチするフィーチャーが見つか"
+"るまで順番に検査され、そのフィーチャーの式を読み込んで返す。マッチしなかった分岐の式は読み込まれはするが、スキップされ"
+"る。よく知られた `:default` フィーチャーは必ずマッチするためデフォルトとして使える。マッチするブランチが存在しない場"
+"合、フォームは一切読み込まれない(リーダーコンディショナルが最初から存在しないのと同等)。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:216
@@ -876,10 +876,10 @@ msgid ""
 "retrieval for keys with `:form` and a `:splicing?` flag. Read but skipped tagged literals will be returned as a type "
 "that supports keyword retrieval for keys with `:form` and `:tag` keys."
 msgstr ""
-"リーダーが `{:read-cond :preserve}`で呼び出された場合、リーダーコンディショナルと未実行の分岐がデータとして保持された"
-"フォームを返す。その場合、リーダーコンディショナルは`:form` と`:splicing?`フラグのキーワード取得をサポートする型として"
-"返される。読み込まれたもののスキップされたタグ付きリテラルは`:form` `:tag` のキーによるキーワード取得をサポートする型"
-"として返される。"
+"リーダーが `{:read-cond :preserve}` で呼び出された場合、リーダーコンディショナルと未実行の分岐がデータとして保持された"
+"フォームを返す。その場合、リーダーコンディショナルは `:form` と `:splicing?` フラグのキーワード取得をサポートする型と"
+"して返される。読み込まれたもののスキップされたタグ付きリテラルは `:form` `:tag` のキーによるキーワード取得をサポートす"
+"る型として返される。"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:264
