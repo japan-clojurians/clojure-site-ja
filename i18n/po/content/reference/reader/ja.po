@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-07-01 15:54+0900\n"
-"PO-Revision-Date: 2016-07-02 12:24+0900\n"
+"PO-Revision-Date: 2016-07-05 08:19+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -253,7 +253,7 @@ msgstr "キーとバリューにはどのようなフォームも使用出来る
 #: en/content/reference/reader.adoc:62
 #, no-wrap
 msgid "Map namespace syntax"
-msgstr ""
+msgstr "ネームスペース付きマップ記法"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:65
@@ -262,11 +262,14 @@ msgid ""
 "is the name of a namespace and the prefix precedes the opening brace `{` of the map. Additionally, `pass:[#::]` can "
 "be used to auto-resolve namespaces with the same semantics as auto-resolved keywords."
 msgstr ""
+"マップのリテラルには任意でキーに対するデフォルトのネームスペースコンテキストを `#:ns` プレフィックスによって指定するこ"
+"とが可能で、その場合 _ns_ にはネームスペースの名前を指定し、プレフィックスはマップの `{` の前に置く。加えて `pass:"
+"[#::]` を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することが出来る。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:67
 msgid "A map literal with namespace syntax is read with the following differences from a map without:"
-msgstr ""
+msgstr "ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:72
@@ -276,16 +279,25 @@ msgid ""
 "read. This allows for the specification of keywords or symbols without namespaces as keys in a map literal with "
 "namespace syntax.  ** Keys that are not symbols or keywords are not affected."
 msgstr ""
+"* キー\n"
+" ** ネームスペースの指定が無いキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
+" ** ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
+"`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースの指定があるマップの中で、ネームス"
+"ペースの指定が無いキーワード、シンボルを使用することが可能になる。\n"
+" ** キーワード、シンボルでないキーは影響を受けない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:75
 msgid "Values ** Values are not affected.  ** Nested map literal keys are not affected."
 msgstr ""
+"* バリュー\n"
+"** バリューは影響されない。\n"
+"** ネストしたマップリテラルのキーは影響されない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:77
 msgid "For example, the following map literal with namespace syntax:"
-msgstr ""
+msgstr "例として以下のネームスペース指定付きの以下のマップ:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:84
@@ -296,11 +308,15 @@ msgid ""
 "         :ship #:ship{:name \"Millenium Falcon\"\n"
 "                      :model \"YT-1300f light freighter\"}}\n"
 msgstr ""
+"#:person{:first \"Han\"\n"
+"         :last \"Solo\"\n"
+"         :ship #:ship{:name \"Millenium Falcon\"\n"
+"                      :model \"YT-1300f light freighter\"}}\n"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:87
 msgid "is read as:"
-msgstr ""
+msgstr "は以下のように読み込まれる:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:94
@@ -311,6 +327,10 @@ msgid ""
 " :person/ship {:ship/name \"Millenium Falcon\" \n"
 "               :ship/model \"YT-1300f light freighter\"}}\n"
 msgstr ""
+"{:person/first \"Han\"\n"
+" :person/last \"Solo\"\n"
+" :person/ship {:ship/name \"Millenium Falcon\" \n"
+"               :ship/model \"YT-1300f light freighter\"}}\n"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:96 en/content/reference/data_structures.adoc:235
