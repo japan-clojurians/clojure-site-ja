@@ -246,30 +246,51 @@ Keywords (キーワード型) - キーワードは以下の点以外はシンボ
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_map_namespace_syntax">Map namespace syntax</h4>
+<h4 id="_ネームスペース付きマップ記法">ネームスペース付きマップ記法</h4>
 <div class="paragraph">
-<p>Map literals can optionally specify a default namespace context for keys in
-the map using a <code>#:ns</code> prefix, where <em>ns</em> is the name of a namespace and the
-prefix precedes the opening brace <code>{</code> of the map. Additionally, <code>#::</code>
-can be used to auto-resolve namespaces with the same semantics as
-auto-resolved keywords.</p>
+<p>マップのリテラルには任意でキーに対するデフォルトのネームスペースコンテキストを <code>#:ns</code> プレフィックスによって指定することが可能で、その場合
+<em>ns</em> にはネームスペースの名前を指定し、プレフィックスはマップの <code>{</code> の前に置く。加えて <code>#::</code>
+を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することが出来る。</p>
 </div>
 <div class="paragraph">
-<p>A map literal with namespace syntax is read with the following differences
-from a map without:</p>
+<p>ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>キー</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ネームスペースの指定が無いキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。</p>
+</li>
+<li>
+<p>ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 <strong>ただし</strong> 、特別なネームスペース <code>_</code>
+は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースの指定があるマップの中で、ネームスペースの指定が無いキーワード、シンボルを使用することが可能になる。</p>
+</li>
+<li>
+<p>キーワード、シンボルでないキーは影響を受けない。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>バリュー</p>
+<div class="ulist">
+<ul>
+<li>
+<p>バリューは影響されない。</p>
+</li>
+<li>
+<p>ネストしたマップリテラルのキーは影響されない。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Keys <strong> Keys that are keywords or symbols without a namespace are read with
-the default namespace.  </strong> Keys that are keywords or symbols with a
-namespace are not affected <strong>except</strong> for the special namespace <code>_</code>, which is
-removed during read. This allows for the specification of keywords or
-symbols without namespaces as keys in a map literal with namespace syntax.
-<strong> Keys that are not symbols or keywords are not affected.
-Values </strong> Values are not affected.  ** Nested map literal keys are not
-affected.</p>
-</div>
-<div class="paragraph">
-<p>For example, the following map literal with namespace syntax:</p>
+<p>例として以下のネームスペース指定付きの以下のマップ:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -280,7 +301,7 @@ affected.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>is read as:</p>
+<p>は以下のように読み込まれる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
