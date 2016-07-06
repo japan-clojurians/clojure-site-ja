@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-07-11 18:19+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -60,7 +60,7 @@ msgstr "toc::[]"
 #: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
 #: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
-msgstr ""
+msgstr "''''"
 
 #. type: Title ==
 #: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41
@@ -73,13 +73,13 @@ msgstr ""
 #: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
-msgstr ""
+msgstr "関連する関数"
 
 #. type: Title =
 #: en/content/reference/libs.adoc:1
 #, no-wrap
 msgid "Using Libs"
-msgstr ""
+msgstr "ライブラリの使用"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:18
@@ -88,22 +88,24 @@ msgid ""
 "source code contained in a Java resource within classpath. A lib will typically provide the complete set of "
 "definitions that make up one Clojure namespace."
 msgstr ""
+"Clojureはコードローディングと依存関係の追跡のための \"lib\" 機構を提供している。libとはクラスパス内のJavaリソースに存"
+"在する、単一の名前ついたClojureソースコードである。libは一般的に、一つのClojureネームスペースの完全な定義を提供する。"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:19
 #, no-wrap
 msgid "Lib Conventions"
-msgstr ""
+msgstr "Libの規約"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:22
 msgid "Clojure defines conventions for naming and structuring libs:"
-msgstr ""
+msgstr "Clojureはlibの命名と構成における規約を定義している:"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:24
 msgid "A lib name is a symbol that will typically contain two or more parts separated by periods."
-msgstr ""
+msgstr "libの名前は通常ふたつ以上のピリオドで区切られたシンボルである。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:29
@@ -113,6 +115,12 @@ msgid ""
 "underscores in the path ** The path may end with \".class\", \".clj\", or \".cljc\" (see <<libs#order,Lib load "
 "order>> below)"
 msgstr ""
+"lib は Java のリソースとして、 lib の名前から導出されたクラスパスに対して相対的なパスに格納される:\n"
+"** パスは文字列\n"
+"** lib名のピリオドはパスではスラッシュで置換される\n"
+"** lib名のハイフンはパスではアンダースコアで置換される\n"
+"** パスの拡張子には \".class\"、 \".clj\"、 もしくは \".cljc\" を使用することが出来る。(以下の <<libs#order,Lib load "
+"order>> を参照)"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:32
@@ -120,6 +128,9 @@ msgid ""
 "A lib begins with an \"ns\" form that ** creates the Clojure namespace that shares its name, and ** declares its "
 "dependencies on Java classes, Clojure's core facilities, and/or other libs,"
 msgstr ""
+"libは以下を行う \"ns\" フォームで始まる:\n"
+"** libと同じ名前のClojureネームスペースの作成\n"
+"** Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係の宣言"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:34
@@ -127,17 +138,19 @@ msgid ""
 "Clojure ensures that if the call to \"ns\" completes without throwing an exception, the declared dependencies have "
 "been satisfied and the capabilities they provide are available."
 msgstr ""
+"Clojureは \"ns\" に対する呼び出しが例外無しで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は"
+"使用可能であることを保証する。"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:35
 #, no-wrap
 msgid "Example Lib"
-msgstr ""
+msgstr "Libの例"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:38
 msgid "A simple lib:"
-msgstr ""
+msgstr "単純なlib:"
 
 #. type: delimited block -
 #: en/content/reference/libs.adoc:45
@@ -148,6 +161,10 @@ msgid ""
 "  (:use [clojure.string :only (join)])\n"
 "  (:require [clojure.java.io :as jio]))\n"
 msgstr ""
+"(ns com.my-company.clojure.examples.my-utils\n"
+"  (:import java.util.Date)\n"
+"  (:use [clojure.string :only (join)])\n"
+"  (:require [clojure.java.io :as jio]))\n"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:48
@@ -156,6 +173,9 @@ msgid ""
 "defined in a source file at the classpath-relative path: com/my_company/clojure/examples/my_utils.clj (note the "
 "translations from period to slash and hyphen to underscore)."
 msgstr ""
+"`ns` フォームがlibのネームスペースに名前を付けるとともに依存関係の宣言を行う。このlibは通常名前によって相対クラスパス"
+"のパスに存在するソースファイルに定義される: com/my_company/clojure/examples/my_utils.clj (ピリオドからスラッシュ、ハイ"
+"フンからアンダースコアへの変換に注意)。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:49
@@ -163,6 +183,8 @@ msgid ""
 "The `:import` clause declares this lib's use of `java.util.Date` and makes it available to code in this lib using its "
 "unqualified name."
 msgstr ""
+"`:import` 句でこのlibが `java.util.Date` を使用していることを宣言し、このlibのコード内において名前の装飾無しで使用する"
+"ことが可能になる。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:50
@@ -170,6 +192,8 @@ msgid ""
 "The `:use` clause declares a dependency on the `clojure.string` lib for its `join` function only. +join+ may be used "
 "in this lib's code using its unqualified name."
 msgstr ""
+"`:use` 句は `clojure.string` ライブラリの `join` 関数のみに対するして依存関係を宣言している。このライブラリ中のコード"
+"では +join+ を修飾無しで使用することが出来る。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:51
@@ -177,12 +201,14 @@ msgid ""
 "The `:require` clause declares a dependency on the `clojure.java.io` lib and enables using its members using the "
 "shorter namespace alias `jio`."
 msgstr ""
+"`:require` 句は `clojure.java.io` ライブラリ内の関数に対する依存関係を宣言し、それらを省略したネームスペースエイリア"
+"ス `jio` を使用して呼び出すことが出来る。"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:52
 #, no-wrap
 msgid "Prefix Lists"
-msgstr ""
+msgstr "プレフィックスリスト"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:55
@@ -191,6 +217,9 @@ msgid ""
 "and `use` (and in `:require` and `:use` clauses within an +ns+ form), the common prefix can be extracted and provided "
 "once using a prefix list. For example, these two forms are equivalent:"
 msgstr ""
+"Libが名前のプレフィックスを共有する複数のライブラリに依存することは一般的であり、 `require` と `use` (及び +ns+ フォー"
+"ムにおける `:require` と `:use` 句) に対する呼び出しにおいて共通のプレフィックスを取り出し、一度だけ指定することが出来"
+"る。例えば以下の2つのフォームは同義になる:"
 
 #. type: delimited block -
 #: en/content/reference/libs.adoc:60
@@ -199,11 +228,13 @@ msgid ""
 "(require 'clojure.contrib.def 'clojure.contrib.except 'clojure.contrib.sql)\n"
 "(require '(clojure.contrib def except sql))\n"
 msgstr ""
+"(require 'clojure.contrib.def 'clojure.contrib.except 'clojure.contrib.sql)\n"
+"(require '(clojure.contrib def except sql))\n"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:67
 msgid "Creating a namespace: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
-msgstr ""
+msgstr "ネームスペースの作成: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:69
@@ -211,18 +242,21 @@ msgid ""
 "Ensuring a lib is loaded: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] http://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
 msgstr ""
+"libがロードされたことを保証する: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:71
 msgid ""
 "Listing loaded libs: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
 msgstr ""
+"ロードされたlibsの一覧: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:73
 #, no-wrap
 msgid "Lib load order"
-msgstr ""
+msgstr "Libのロード順"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:76
@@ -230,6 +264,8 @@ msgid ""
 "Libs may exist in either compiled (`.class`) or source (`.clj` or `.cljc`) form. In some cases, one or even all of "
 "these might exist on the classpath. The lib is loaded from one of them based on the following rules:"
 msgstr ""
+"Libはコンパイル後 (`.class`) もしくはソース (`.clj` or `.cljc`) の形式で存在しうる。クラスパス上に一つ、もしくはそれら"
+"全てが存在する可能性があり、以下のルールでその中の一つからLibがロードされる:"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:78
@@ -237,11 +273,13 @@ msgid ""
 "A `.class` file is always preferred over a source file, unless the source file's timestamp is newer than the `.class` "
 "file, in which case the source file is preferred."
 msgstr ""
+"`.class` ファイルはソースのタイムスタンプが `.class` のファイルより新しくない限り、常にソースファイルより優先される。"
+"ソースファイルのタイムスタンプの方が新しい場合はソースファイルが優先される。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:79
 msgid "A `.clj` (platform-specific file) is always preferred over a `.cljc` (common across platforms)."
-msgstr ""
+msgstr "常に `.clj` (プラットフォーム特定のファイル) は常に `.cljc` より優先される(プラットフォーム間で共通)。"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:80
@@ -249,3 +287,5 @@ msgid ""
 "The second rule allows a library author to ship both a portable common definition of a lib while also shipping "
 "platform-specific libs that override the portable version to do something that leverages the host platform."
 msgstr ""
+"２つ目のルールは、ライブラリの作者がポータブルな共通の定義と、ホストプラットフォームを活かしたプラットフォーム固有の処"
+"理の上書きを同時に配布することを可能にする。"
