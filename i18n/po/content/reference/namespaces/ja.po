@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-07-08 08:32+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -62,14 +62,14 @@ msgstr "toc::[]"
 #: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
-msgstr ""
+msgstr "関連する関数"
 
 #. type: Title ==
 #: en/content/reference/namespaces.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
 #, no-wrap
 msgid "Namespaces"
-msgstr ""
+msgstr "ネームスペース"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:17
@@ -83,6 +83,14 @@ msgid ""
 "import[import]. Note that namespaces are first-class, they can be enumerated etc. Namespaces are also dynamic, they "
 "can be created, removed and modified at runtime, at the Repl etc."
 msgstr ""
+"ネームスペースは単純な(未装飾の)シンボルからVar、クラスへのマッピングを定義する。Varは _**def**_ やその派生を使って"
+"ネームスペースにインターンすることが出来る。その場合Varは単純な名前としてのシンボルとそれを含むネームスペースの参照及"
+"び同じvarを示すネームスペースマップを持つ。ネームスペースは  http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/refer[refer] や http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use] を使用"
+"して他のネームスペースにインターンされたVarに対するマッピングを含むことや、 http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/import[import] を使用してクラスオブジェクトのシンボルに対するマッピングを含むことが出来る。"
+"ネームスペースはファーストクラスなので列挙すること等が出来る。加えてネームスペースは動的なのでランタイムにRepl等で作"
+"成、変更、削除を行うことが出来る。"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:19
@@ -91,6 +99,9 @@ msgid ""
 "clojure/clojure.core-api.html#clojure.core/ns[ns macro]. By default this will create a new namespace contains "
 "mappings for the classnames in +java.lang+ plus `clojure.lang.Compiler`, and the functions in `clojure.core`."
 msgstr ""
+"Clojureのソースファイルの一番始めにネームスペースを定義する最良の方法は  http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/ns[ns マクロ] を使用することだ。これはデフォルトでは +java.lang+ と `clojure.lang."
+"Compiler` のクラス名及び `clojure.core` 内の関数へのマッピングを含むネームスペースを新たに作成する。"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:21
@@ -100,6 +111,10 @@ msgid ""
 "names from the `clojure.core` namespace you must execute +(clojure.core/refer 'clojure.core)+. The `user` namespace "
 "at the Repl has already done this."
 msgstr ""
+"Replからは http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns] を使用するのがベストで、新"
+"しく作られたネームスペースには +java.lang+ のクラス名のマッピングのみが含まれる。 `clojure.core` のネームスペースにあ"
+"る名前アクセスするには +(clojure.core/refer 'clojure.core)+ を実行する必要がある。Replにおける `user` ネームスペースで"
+"はすでにこれが実行されている。"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:23
@@ -108,6 +123,10 @@ msgid ""
 "clojure.core-api.html#clojure.core/in-ns[in-ns] or the http://clojure.github.io/clojure/clojure.core-api.html#clojure."
 "core/ns[ns macro], both of which create the namespace if it doesn't exist."
 msgstr ""
+"現在のネームスペース、 _pass:[*ns*]_ は http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-"
+"ns] 、もしくは http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns マクロ] で設定することが出"
+"来、またこれらの方法でのみ作られるべきである。どちらも指定されたネームスペースが存在しない場合、新たにそのネームスペー"
+"スを作成する。"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:32
@@ -132,3 +151,22 @@ msgid ""
 "clojure/clojure.core-api.html#clojure.core/ns-unmap[ns-unmap] http://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/remove-ns[remove-ns]"
 msgstr ""
+"ネームスペースの作成と切り替え: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/create-ns[create-ns] ネームスペースへの追加: http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/alias[alias] <<special_forms#def#,def>> http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/import[import] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern[intern] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer[refer] どのようなネームスペースが存在するか"
+"を調べる: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns[all-ns] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/find-ns[find-ns] ネームスペースの中身を調べる: http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ns-name[ns-name] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/ns-aliases[ns-aliases] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-"
+"imports[ns-imports] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns[ns-interns] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map[ns-map] http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/ns-publics[ns-publics] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"ns-refers[ns-refers] シンボルからネームスペースを取得する: http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/resolve[resolve] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve[ns-"
+"resolve] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace[namespace] 除外する: http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias[ns-unalias] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/ns-unmap[ns-unmap] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/remove-ns[remove-ns]"
