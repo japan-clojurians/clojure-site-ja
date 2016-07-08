@@ -125,10 +125,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/other_functions.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/other_libraries.html</loc>
         <lastmod></lastmod>
     </url>
@@ -162,6 +158,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/namespaces.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/other_functions.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
