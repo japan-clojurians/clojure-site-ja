@@ -105,19 +105,11 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/libs.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/lisps.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -154,6 +146,14 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/transients.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/libs.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

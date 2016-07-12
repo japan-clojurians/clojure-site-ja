@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Using Libs</title>
+    <title>Clojure - ライブラリの使用</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Using Libs</h1>
+  <h1>ライブラリの使用</h1>
 </div>
 
 <p><em></em></p>
@@ -82,57 +82,51 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_lib_conventions">Lib Conventions</a></li>
-<li><a href="#_example_lib">Example Lib</a></li>
-<li><a href="#_prefix_lists">Prefix Lists</a></li>
-<li><a href="#_related_functions">Related functions</a></li>
-<li><a href="#order">Lib load order</a></li>
+<li><a href="#_libの規約">Libの規約</a></li>
+<li><a href="#_libの例">Libの例</a></li>
+<li><a href="#_プレフィックスリスト">プレフィックスリスト</a></li>
+<li><a href="#_関連する関数">関連する関数</a></li>
+<li><a href="#order">Libのロード順</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure provides for code loading and dependency tracking via its "lib" facility. A lib is a named unit of Clojure source code contained in a Java resource within classpath. A lib will typically provide the complete set of definitions that make up one Clojure namespace.</p>
+<p>Clojureはコードローディングと依存関係の追跡のための "lib"
+機構を提供している。libとはクラスパス内のJavaリソースに存在する、単一の名前ついたClojureソースコードである。libは一般的に、一つのClojureネームスペースの完全な定義を提供する。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lib_conventions">Lib Conventions</h2>
+<h2 id="_libの規約">Libの規約</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure defines conventions for naming and structuring libs:</p>
+<p>Clojureはlibの命名と構成における規約を定義している:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A lib name is a symbol that will typically contain two or more parts separated by periods.</p>
-</li>
-<li>
-<p>A lib&#8217;s container is a Java resource whose classpath-relative path is derived from the lib name:</p>
+<p>libの名前は通常ふたつ以上のピリオドで区切られたシンボルである。
+lib は Java のリソースとして、 lib の名前から導出されたクラスパスに対して相対的なパスに格納される:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The path is a string</p>
+<p>パスは文字列</p>
 </li>
 <li>
-<p>Periods in the lib name are replaced by slashes in the path</p>
+<p>lib名のピリオドはパスではスラッシュで置換される</p>
 </li>
 <li>
-<p>Hyphens in the lib name are replaced by underscores in the path</p>
+<p>lib名のハイフンはパスではアンダースコアで置換される</p>
 </li>
 <li>
-<p>The path may end with ".class", ".clj", or ".cljc" (see <a href="libs#order">Lib load order</a> below)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>A lib begins with an "ns" form that</p>
-<div class="ulist">
-<ul>
-<li>
-<p>creates the Clojure namespace that shares its name, and</p>
+<p>パスの拡張子には ".class"、 ".clj"、 もしくは ".cljc" を使用することが出来る。(以下の <a href="libs#order">Lib
+load order</a> を参照)
+libは以下を行う "ns" フォームで始まる:</p>
 </li>
 <li>
-<p>declares its dependencies on Java classes, Clojure&#8217;s core facilities, and/or other libs,</p>
+<p>libと同じ名前のClojureネームスペースの作成</p>
+</li>
+<li>
+<p>Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係の宣言</p>
 </li>
 </ul>
 </div>
@@ -140,15 +134,16 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure ensures that if the call to "ns" completes without throwing an exception, the declared dependencies have been satisfied and the capabilities they provide are available.</p>
+<p>Clojureは "ns"
+に対する呼び出しが例外無しで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は使用可能であることを保証する。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example_lib">Example Lib</h2>
+<h2 id="_libの例">Libの例</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A simple lib:</p>
+<p>単純なlib:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -161,26 +156,34 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>ns</code> form names the lib&#8217;s namespace and declares its dependencies. Based on its name, this lib is typically defined in a source file at the classpath-relative path: com/my_company/clojure/examples/my_utils.clj (note the translations from period to slash and hyphen to underscore).</p>
+<p><code>ns</code>
+フォームがlibのネームスペースに名前を付けるとともに依存関係の宣言を行う。このlibは通常名前によって相対クラスパスのパスに存在するソースファイルに定義される:
+com/my_company/clojure/examples/my_utils.clj
+(ピリオドからスラッシュ、ハイフンからアンダースコアへの変換に注意)。</p>
 </li>
 <li>
-<p>The <code>:import</code> clause declares this lib&#8217;s use of <code>java.util.Date</code> and makes it available to code in this lib using its unqualified name.</p>
+<p><code>:import</code> 句でこのlibが <code>java.util.Date</code>
+を使用していることを宣言し、このlibのコード内において名前の装飾無しで使用することが可能になる。</p>
 </li>
 <li>
-<p>The <code>:use</code> clause declares a dependency on the <code>clojure.string</code> lib for its <code>join</code> function only. join may be used in this lib&#8217;s code using its unqualified name.</p>
+<p><code>:use</code> 句は <code>clojure.string</code> ライブラリの <code>join</code>
+関数のみに対するして依存関係を宣言している。このライブラリ中のコードでは join を修飾無しで使用することが出来る。</p>
 </li>
 <li>
-<p>The <code>:require</code> clause declares a dependency on the <code>clojure.java.io</code> lib and enables using its members using the shorter namespace alias <code>jio</code>.</p>
+<p><code>:require</code> 句は <code>clojure.java.io</code> ライブラリ内の関数に対する依存関係を宣言し、それらを省略したネームスペースエイリアス
+<code>jio</code> を使用して呼び出すことが出来る。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prefix_lists">Prefix Lists</h2>
+<h2 id="_プレフィックスリスト">プレフィックスリスト</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s common for a lib to depend on several other libs whose full names share a common prefix. In calls to <code>require</code> and <code>use</code> (and in <code>:require</code> and <code>:use</code> clauses within an ns form), the common prefix can be extracted and provided once using a prefix list. For example, these two forms are equivalent:</p>
+<p>Libが名前のプレフィックスを共有する複数のライブラリに依存することは一般的であり、 <code>require</code> と <code>use</code> (及び ns
+フォームにおける <code>:require</code> と <code>:use</code> 句)
+に対する呼び出しにおいて共通のプレフィックスを取り出し、一度だけ指定することが出来る。例えば以下の2つのフォームは同義になる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -192,37 +195,43 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_related_functions">Related functions</h2>
+<h2 id="_関連する関数">関連する関数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Creating a namespace: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a></p>
+<p>ネームスペースの作成:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a></p>
 </div>
 <div class="paragraph">
-<p>Ensuring a lib is loaded: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use">use</a></p>
+<p>libがロードされたことを保証する:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use">use</a></p>
 </div>
 <div class="paragraph">
-<p>Listing loaded libs: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs">loaded-libs</a></p>
+<p>ロードされたlibsの一覧:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs">loaded-libs</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="order">Lib load order</h2>
+<h2 id="order">Libのロード順</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Libs may exist in either compiled (<code>.class</code>) or source (<code>.clj</code> or <code>.cljc</code>) form. In some cases, one or even all of these might exist on the classpath. The lib is loaded from one of them based on the following rules:</p>
+<p>Libはコンパイル後 (<code>.class</code>) もしくはソース (<code>.clj</code> or <code>.cljc</code>)
+の形式で存在しうる。クラスパス上に一つ、もしくはそれら全てが存在する可能性があり、以下のルールでその中の一つからLibがロードされる:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A <code>.class</code> file is always preferred over a source file, unless the source file&#8217;s timestamp is newer than the <code>.class</code> file, in which case the source file is preferred.</p>
+<p><code>.class</code> ファイルはソースのタイムスタンプが <code>.class</code>
+のファイルより新しくない限り、常にソースファイルより優先される。ソースファイルのタイムスタンプの方が新しい場合はソースファイルが優先される。</p>
 </li>
 <li>
-<p>A <code>.clj</code> (platform-specific file) is always preferred over a <code>.cljc</code> (common across platforms).</p>
+<p>常に <code>.clj</code> (プラットフォーム特定のファイル) は常に <code>.cljc</code> より優先される(プラットフォーム間で共通)。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The second rule allows a library author to ship both a portable common definition of a lib while also shipping platform-specific libs that override the portable version to do something that leverages the host platform.</p>
+<p>２つ目のルールは、ライブラリの作者がポータブルな共通の定義と、ホストプラットフォームを活かしたプラットフォーム固有の処理の上書きを同時に配布することを可能にする。</p>
 </div>
 </div>
 </div></p>
