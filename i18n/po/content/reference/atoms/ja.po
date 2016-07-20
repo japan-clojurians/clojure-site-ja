@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-08-03 08:46+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/reference/atoms.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:39
 #, no-wrap
 msgid "Atoms"
-msgstr ""
+msgstr "Atom (アトム)"
 
 #. type: Plain text
 #: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
@@ -52,6 +52,13 @@ msgid ""
 "html#clojure.core/compare-and-set![compare-and-set!] is also provided. Changes to atoms are always free of race "
 "conditions."
 msgstr ""
+"アトムは共有された、同期的な独立した状態を管理する手段を提供する。アトムはrefやvarと同様に参照型である。 http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/atom[atom] を使用してアトムを作成することが出来、 http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref/@] を使用することでその状態にアクセスすること"
+"が出来る。refやエージェントと同様にバリデーターをサポートしている。アトムの値を変更するには http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/swap![swap!] を使用することが出来る。また、低水準な http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/compare-and-set![compare-and-set!] も提供されている。アトムに対する変更"
+"で競合は発生しない。"
 
 #. type: Plain text
 #: en/content/reference/atoms.adoc:17
@@ -65,6 +72,13 @@ msgid ""
 "the result of the application of the supplied function to a current value, atomically. However, because the function "
 "might be called multiple times, it must be free of side effects."
 msgstr ""
+"全ての参照型と同様に、アトムの想定されている使われ方はClojureのイミュータブルなデータ構造を保持することだ。また、refの"
+"alterやagentのsendと同様に、古い値に関数を適用することで値を変更することが出来る。これは http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/swap![swap!] によってアトミックに行われる。内的には http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/swap![swap!] が現在の値を読み込み、関数を適用し、 compare-and-set を試み"
+"る。アトムの値の更新を試みる際に他のスレッドによって値が変更された場合、リトライが必要な可能性があり、そのリトライは"
+"ループで行われる。最終的な結果として、アトムの値は常に現在値に与えた関数をアトミックに適用した結果の値となる。与える関"
+"数は複数回呼び出される可能性があるので副作用が存在しない必要がある。"
 
 #. type: Plain text
 #: en/content/reference/atoms.adoc:19
@@ -73,6 +87,8 @@ msgid ""
 "which you wish to make synchronous changes (unlike agents, which are similarly independent but asynchronous). A "
 "typical usage might be for memoization:"
 msgstr ""
+"アトムは協調の必要がない、同期的に変更される状態を効率的に表現する方法だ (エージェントと異なり、独立してはいるが同期"
+"的)。使用例としてメモ化が挙げられる:"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:30
@@ -87,6 +103,14 @@ msgid ""
 "          (swap! mem assoc args ret)\n"
 "          ret)))))\n"
 msgstr ""
+"(defn memoize [f]\n"
+"  (let [mem (atom {})]\n"
+"    (fn [& args]\n"
+"      (if-let [e (find @mem args)]\n"
+"        (val e)\n"
+"        (let [ret (apply f args)]\n"
+"          (swap! mem assoc args ret)\n"
+"          ret)))))\n"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:35
@@ -97,6 +121,10 @@ msgid ""
 "    n\n"
 "    (+ (fib (dec n)) (fib (- n 2)))))\n"
 msgstr ""
+"(defn fib [n]\n"
+"  (if (<= n 1)\n"
+"    n\n"
+"    (+ (fib (dec n)) (fib (- n 2)))))\n"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:38
@@ -105,21 +133,23 @@ msgid ""
 "(time (fib 35))\n"
 "user=> \"Elapsed time: 941.445 msecs\"\n"
 msgstr ""
+"(time (fib 35))\n"
+"user=> \"Elapsed time: 941.445 msecs\"\n"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:40
 #, no-wrap
 msgid "(def fib (memoize fib))\n"
-msgstr ""
+msgstr "(def fib (memoize fib))\n"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:42
 #, no-wrap
 msgid "(time (fib 35))\n"
-msgstr ""
+msgstr "(time (fib 35))\n"
 
 #. type: delimited block -
 #: en/content/reference/atoms.adoc:44
 #, no-wrap
 msgid "user=> \"Elapsed time: 0.044 msecs\"\n"
-msgstr ""
+msgstr "user=> \"Elapsed time: 0.044 msecs\"\n"
