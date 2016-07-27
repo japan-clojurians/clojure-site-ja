@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-07-01 15:54+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-07-28 08:32+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/reference/multimethods.adoc:1
 #, no-wrap
 msgid "Multimethods and Hierarchies"
-msgstr ""
+msgstr "マルチメソッドとヒエラルキー"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:17
@@ -66,6 +66,11 @@ msgid ""
 "runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata "
 "of, and relationships between, one or more arguments."
 msgstr ""
+"Clojure は状況ごとに新しいデータ型を定義するような伝統的オブジェクト指向のアプローチを避け、代わりに少ないデータ型に対"
+"する関数群からなる巨大なライブラリを構築することを好む。しかしながら、Clojureも柔軟で拡張可能なシステムアーキテクチャ"
+"を可能にするランタイムポリモーフィズムの価値は認識している。Clojureはタイプ、値、属性と引数のメタデータ、ひとつ以上の"
+"引数の関連性によるディスパッチをサポートするマルチメソッドシステムを通して洗練されたランタイムポリモーフィズムを提供す"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:19
@@ -79,6 +84,13 @@ msgid ""
 "dispatching value, the multimethod will look for a method associated with the default dispatching value (which "
 "defaults to _**:default**_), and will use that if present. Otherwise the call is an error."
 msgstr ""
+"Clojureのマルチメソッドは _ディスパッチ関数_ と一つ以上の _メソッド_ で定義される。 _**defmulti**_ を使用してマルチメ"
+"ソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が _ディスパッチ値_ の生成のためにマルチメソッドの引"
+"数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索し"
+"する。関連するメソッドが定義されている場合、( http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmethod[defmethod] 経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義"
+"が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは _**:default**_)、"
+"存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:21
@@ -90,16 +102,15 @@ msgid ""
 "associated with a dispatch-value and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-"
 "method[prefer-method] creates an ordering between methods when they would otherwise be ambiguous."
 msgstr ""
+"マルチメソッドシステムはこのAPIを提供している: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmulti[defmulti] マルチメソッドを新しく作成する、 http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/defmethod[defmethod] ディスパッチ値と関連するメソッドをマルチメソッドに新しく定義する。 http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/remove-method[remove-method] ディスパッチ値と関連するメソッドを削除する。 "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] メソッドの間の優先順"
+"位が曖昧な場合に優先順位を定義する。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:23
-#, fuzzy
-#| msgid ""
-#| "The following functions can also be used as predicates or constructors for these types: + http://clojure.github.io/"
-#| "clojure/clojure.core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] http://clojure.github.io/"
-#| "clojure/clojure.core-api.html#clojure.core/reader-conditional[reader-conditional] http://clojure.github.io/clojure/"
-#| "clojure.core-api.html#clojure.core/tagged-literal%3F[tagged-literal?] http://clojure.github.io/clojure/clojure."
-#| "core-api.html#clojure.core/tagged-literal[tagged-literal]"
 msgid ""
 "Derivation is determined by a combination of either Java inheritance (for class values), or using Clojure's ad hoc "
 "hierarchy system. The hierarchy system supports derivation relationships between names (either symbols or keywords), "
@@ -109,11 +120,12 @@ msgid ""
 "core-api.html#clojure.core/isa?[isa?] is not http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "instance?[instance?]."
 msgstr ""
-"これらの型の述語やコンストラクタとして以下の関数を使用することが出来る: + http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/reader-conditional[reader-conditional] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/tagged-literal%3F[tagged-literal?] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/tagged-literal[tagged-literal]"
+"導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシ"
+"ステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。 http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] 関数はこの関連性を作成し、 the http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] 関数が関連性の存在をテストする。 http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] と http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/instance?[instance?] は異なる点に注意。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:25
@@ -121,11 +133,13 @@ msgid ""
 "You can define hierarchical relationships with +(derive child parent)+. Child and parent can be either symbols or "
 "keywords, and must be namespace-qualified:"
 msgstr ""
+"+(derive child parent)+ を使って階層的な関連を定義することが出来る。子と親にはネームスペースで修飾されたシンボルとキー"
+"ワードを使用することが出来る:"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:27
 msgid "_Note the pass:[::] reader syntax, ::keywords resolve namespaces._"
-msgstr ""
+msgstr "_注: pass:[::] のリーダー文法をキーワードに使用すると(::keywords)名前空間に解決される。_"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:32
@@ -134,6 +148,8 @@ msgid ""
 "::rect\n"
 "-> :user/rect\n"
 msgstr ""
+"::rect\n"
+"-> :user/rect\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:34
@@ -141,6 +157,7 @@ msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] is the fundamental relationship-"
 "maker"
 msgstr ""
+"基本的には http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive]を使って関係性を作る。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:38
@@ -149,6 +166,8 @@ msgid ""
 "(derive ::rect ::shape)\n"
 "(derive ::square ::rect)\n"
 msgstr ""
+"(derive ::rect ::shape)\n"
+"(derive ::square ::rect)\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:40
@@ -158,6 +177,10 @@ msgid ""
 "html#clojure.core/descendants[descendants] and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
 "%3F[isa?] let you query the hierarchy"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/descendants[descendants] と http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
+"%3F[isa?]を使うことでヒエラルキーについて調べることが出来る。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:45
@@ -166,6 +189,8 @@ msgid ""
 "(parents ::rect)\n"
 "-> #{:user/shape}\n"
 msgstr ""
+"(parents ::rect)\n"
+"-> #{:user/shape}\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:48
@@ -174,6 +199,8 @@ msgid ""
 "(ancestors ::square)\n"
 "-> #{:user/rect :user/shape}\n"
 msgstr ""
+"(ancestors ::square)\n"
+"-> #{:user/rect :user/shape}\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:51
@@ -182,11 +209,13 @@ msgid ""
 "(descendants ::shape)\n"
 "-> #{:user/rect :user/square}\n"
 msgstr ""
+"(descendants ::shape)\n"
+"-> #{:user/rect :user/square}\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:54
 msgid "`(= x y)` implies `(isa? x y)`"
-msgstr ""
+msgstr "`(= x y)` が真なら `(isa? x y)` も真となる。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:59
@@ -195,11 +224,13 @@ msgid ""
 "(isa? 42 42)\n"
 "-> true\n"
 msgstr ""
+"(isa? 42 42)\n"
+"-> true\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:62
 msgid "`isa?` uses the hierarchy system"
-msgstr ""
+msgstr "`isa?`はヒエラルキーシステムを使う。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:67
@@ -208,6 +239,8 @@ msgid ""
 "(isa? ::square ::shape)\n"
 "-> true\n"
 msgstr ""
+"(isa? ::square ::shape)\n"
+"-> true\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:70
@@ -215,11 +248,13 @@ msgid ""
 "You can also use a class as the child (but not the parent, the only way to make something the child of a class is via "
 "Java inheritance)."
 msgstr ""
+"クラスを子として使うことも出来る。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしか出来"
+"ない)。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:72
 msgid "This allows you to superimpose new taxonomies on the existing Java class hierarchy:"
-msgstr ""
+msgstr "これを使用して既存のJavaクラスのヒエラルキーに新たな分類を重ねて定義することが可能になる:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:77
@@ -228,6 +263,8 @@ msgid ""
 "(derive java.util.Map ::collection)\n"
 "(derive java.util.Collection ::collection)\n"
 msgstr ""
+"(derive java.util.Map ::collection)\n"
+"(derive java.util.Collection ::collection)\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:80
@@ -236,12 +273,16 @@ msgid ""
 "(isa? java.util.HashMap ::collection)\n"
 "-> true\n"
 msgstr ""
+"(isa? java.util.HashMap ::collection)\n"
+"-> true\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:83
 msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] also tests for class relationships:"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はクラス間の関連性についてもテストす"
+"る。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:88
@@ -250,6 +291,8 @@ msgid ""
 "(isa? String Object)\n"
 "-> true\n"
 msgstr ""
+"(isa? String Object)\n"
+"-> true\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:91
@@ -257,6 +300,9 @@ msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] works with vectors by calling http://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] on their corresponding elements:"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はベクターに対しても使用することが出"
+"来る。その場合、 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] を各要素に対して呼び"
+"出した結果を返す:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:96
@@ -265,6 +311,8 @@ msgid ""
 "(isa? [::square ::rect] [::shape ::shape])\n"
 "-> true\n"
 msgstr ""
+"(isa? [::square ::rect] [::shape ::shape])\n"
+"-> true\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:99
@@ -273,6 +321,9 @@ msgid ""
 "clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] (but not http://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/descendants[descendants], since class descendants are an open set)"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] も同様。(http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/descendants[descendants] は子孫はオープンセットであるため異なる。)"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:107
@@ -284,12 +335,17 @@ msgid ""
 "    java.util.AbstractCollection\n"
 "    java.util.RandomAccess java.util.AbstractList}\n"
 msgstr ""
+"(ancestors java.util.ArrayList)\n"
+"-> #{java.lang.Cloneable java.lang.Object java.util.List\n"
+"    java.util.Collection java.io.Serializable\n"
+"    java.util.AbstractCollection\n"
+"    java.util.RandomAccess java.util.AbstractList}\n"
 
 #. type: Title ==
 #: en/content/reference/multimethods.adoc:109
 #, no-wrap
 msgid "isa? based dispatch"
-msgstr ""
+msgstr "isa? に基づくディスパッチ"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:112
@@ -298,6 +354,9 @@ msgid ""
 "testing for dispatch value matches. Note that the first test of http://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/isa%3F[isa?] is =, so exact matches work."
 msgstr ""
+"マルチメソッドはディスパッチ値の比較に=ではなく、 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"isa%3F[isa?] を使用する。 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] で最初に行"
+"われる比較は=なので同値の場合でも正しい結果になる。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:118
@@ -307,6 +366,9 @@ msgid ""
 "(defmethod foo ::collection [c] :a-collection)\n"
 "(defmethod foo String [s] :a-string)\n"
 msgstr ""
+"(defmulti foo class)\n"
+"(defmethod foo ::collection [c] :a-collection)\n"
+"(defmethod foo String [s] :a-string)\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:121
@@ -315,6 +377,8 @@ msgid ""
 "(foo [])\n"
 ":a-collection\n"
 msgstr ""
+"(foo [])\n"
+":a-collection\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:124
@@ -323,6 +387,8 @@ msgid ""
 "(foo (java.util.HashMap.))\n"
 ":a-collection\n"
 msgstr ""
+"(foo (java.util.HashMap.))\n"
+":a-collection\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:127
@@ -331,6 +397,8 @@ msgid ""
 "(foo \"bar\")\n"
 ":a-string\n"
 msgstr ""
+"(foo \"bar\")\n"
+":a-string\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:130
@@ -339,12 +407,15 @@ msgid ""
 "disambiguating in case of multiple matches where neither dominates the other. You can just declare, per multimethod, "
 "that one dispatch value is preferred over another:"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] はディスパッチ値が複"
+"数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別の"
+"ディスパッチ値よりも優先されることを宣言することが出来る:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:134
 #, no-wrap
 msgid "(derive ::rect ::shape)\n"
-msgstr ""
+msgstr "(derive ::rect ::shape)\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:138
@@ -354,6 +425,9 @@ msgid ""
 "(defmethod bar [::rect ::shape] [x y] :rect-shape)\n"
 "(defmethod bar [::shape ::rect] [x y] :shape-rect)\n"
 msgstr ""
+"(defmulti bar (fn [x y] [x y]))\n"
+"(defmethod bar [::rect ::shape] [x y] :rect-shape)\n"
+"(defmethod bar [::shape ::rect] [x y] :shape-rect)\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:145
@@ -366,6 +440,12 @@ msgid ""
 "   and [:user/shape :user/rect],\n"
 "   and neither is preferred\n"
 msgstr ""
+"(bar ::rect ::rect)\n"
+"-> java.lang.IllegalArgumentException:\n"
+"   Multiple methods match dispatch value:\n"
+"   [:user/rect :user/rect] -> [:user/rect :user/shape]\n"
+"   and [:user/shape :user/rect],\n"
+"   and neither is preferred\n"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:149
@@ -375,6 +455,9 @@ msgid ""
 "(bar ::rect ::rect)\n"
 "-> :rect-shape\n"
 msgstr ""
+"(prefer-method bar [::rect ::shape] [::shape ::rect])\n"
+"(bar ::rect ::rect)\n"
+"-> :rect-shape\n"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:152
@@ -383,6 +466,9 @@ msgid ""
 "can also be created with http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-"
 "hierarchy], and all of the above functions can take an optional hierarchy as a first argument."
 msgstr ""
+"上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、 http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-hierarchy] で完全に独立したヒエラルキーを作ることも可能"
+"で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:154
@@ -393,6 +479,11 @@ msgid ""
 "not hard-wired to class/type, they can be based on any attribute of the arguments, on multiple arguments, can do "
 "validation of arguments and route to error-handling methods etc."
 msgstr ""
+"このシンプルなシステムは非常に強力だ。Clojureのマルチメソッドと伝統的なJavaスタイルのシングルディスパッチの関係を理解"
+"するひとつの方法は、シングルディスパッチはClojureのマルチメソッドにおいてディスパッチ関数が第一引数に対してgetClassを"
+"呼び出し、かつメソッドがそのクラスと関連しているようなものだ。Clojureのマルチメソッドはクラスや型と密に結びついていな"
+"いため、複数の引数のどのような属性に基づくことが出来、また引数に対するバリデーションを行いエラー処理メソッドを呼び出す"
+"こと等が可能になる。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:157
@@ -400,6 +491,8 @@ msgid ""
 "_Note: In this example, the keyword :Shape is being used as the dispatch function, as keywords are functions of maps, "
 "as described in the <<data_structures#,Data Structures>> section._"
 msgstr ""
+"_注: この例では :Shape のキーワードをディスパッチ関数として使用している。<<data_structures#,Data Structures>> section."
+"_で記述されている通り、キーワードはマップに対する関数として使える。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:176
@@ -422,3 +515,19 @@ msgid ""
 "(area {})\n"
 "-> :oops\n"
 msgstr ""
+"(defmulti area :Shape)\n"
+"(defn rect [wd ht] {:Shape :Rect :wd wd :ht ht})\n"
+"(defn circle [radius] {:Shape :Circle :radius radius})\n"
+"(defmethod area :Rect [r]\n"
+"    (* (:wd r) (:ht r)))\n"
+"(defmethod area :Circle [c]\n"
+"    (* (. Math PI) (* (:radius c) (:radius c))))\n"
+"(defmethod area :default [x] :oops)\n"
+"(def r (rect 4 13))\n"
+"(def c (circle 12))\n"
+"(area r)\n"
+"-> 52\n"
+"(area c)\n"
+"-> 452.3893421169302\n"
+"(area {})\n"
+"-> :oops\n"
