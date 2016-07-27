@@ -113,10 +113,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/multimethods.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/other_libraries.html</loc>
         <lastmod></lastmod>
     </url>
@@ -154,6 +150,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/multimethods.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

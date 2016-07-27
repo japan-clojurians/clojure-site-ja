@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Multimethods and Hierarchies</title>
+    <title>Clojure - マルチメソッドとヒエラルキー</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Multimethods and Hierarchies</h1>
+  <h1>マルチメソッドとヒエラルキー</h1>
 </div>
 
 <p><em></em></p>
@@ -82,26 +82,49 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_isa_based_dispatch">isa? based dispatch</a></li>
+<li><a href="#_isa_に基づくディスパッチ">isa? に基づくディスパッチ</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure eschews the traditional object-oriented approach of creating a new data type for each new situation, instead preferring to build a large library of functions on a small set of types. However, Clojure fully recognizes the value of runtime polymorphism in enabling flexible and extensible system architecture. Clojure supports sophisticated runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata of, and relationships between, one or more arguments.</p>
+<p>Clojure
+は状況ごとに新しいデータ型を定義するような伝統的オブジェクト指向のアプローチを避け、代わりに少ないデータ型に対する関数群からなる巨大なライブラリを構築することを好む。しかしながら、Clojureも柔軟で拡張可能なシステムアーキテクチャを可能にするランタイムポリモーフィズムの価値は認識している。Clojureはタイプ、値、属性と引数のメタデータ、ひとつ以上の引数の関連性によるディスパッチをサポートするマルチメソッドシステムを通して洗練されたランタイムポリモーフィズムを提供する。</p>
 </div>
 <div class="paragraph">
-<p>A Clojure multimethod is a combination of a <em>dispatching</em> <em>function</em>, and one or more <em>methods</em>. When a multimethod is defined, using <em><strong>defmulti</strong></em>, a dispatching function must be supplied. This function will be applied to the arguments to the multimethod in order to produce a <em>dispatching value</em>. The multimethod will then try to find the method associated with the dispatching value or a value from which the dispatching value is derived. If one has been defined (via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>), it will then be called with the arguments and that will be the value of the multimethod call. If no method is associated with the dispatching value, the multimethod will look for a method associated with the default dispatching value (which defaults to <em><strong>:default</strong></em>), and will use that if present. Otherwise the call is an error.</p>
+<p>Clojureのマルチメソッドは <em>ディスパッチ関数</em> と一つ以上の <em>メソッド</em> で定義される。 <em><strong>defmulti</strong></em>
+を使用してマルチメソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が <em>ディスパッチ値</em>
+の生成のためにマルチメソッドの引数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索しする。関連するメソッドが定義されている場合、(
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
+経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは
+<em><strong>:default</strong></em>)、存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。</p>
 </div>
 <div class="paragraph">
-<p>The multimethod system exposes this API: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a> creates new multimethods, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a> creates and installs a new method of multimethod associated with a dispatch-value, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method">remove-method</a> removes the method associated with a dispatch-value and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a> creates an ordering between methods when they would otherwise be ambiguous.</p>
+<p>マルチメソッドシステムはこのAPIを提供している:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>
+マルチメソッドを新しく作成する、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
+ディスパッチ値と関連するメソッドをマルチメソッドに新しく定義する。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method">remove-method</a>
+ディスパッチ値と関連するメソッドを削除する。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
+メソッドの間の優先順位が曖昧な場合に優先順位を定義する。</p>
 </div>
 <div class="paragraph">
-<p>Derivation is determined by a combination of either Java inheritance (for class values), or using Clojure&#8217;s ad hoc hierarchy system. The hierarchy system supports derivation relationships between names (either symbols or keywords), and relationships between classes and names. The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a> function creates these relationships, and the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a> function tests for their existence. Note that <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a> is not <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?">instance?</a>.</p>
+<p>導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>
+関数はこの関連性を作成し、 the
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
+関数が関連性の存在をテストする。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
+と
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?">instance?</a>
+は異なる点に注意。</p>
 </div>
 <div class="paragraph">
-<p>You can define hierarchical relationships with (derive child parent). Child and parent can be either symbols or keywords, and must be namespace-qualified:</p>
+<p>(derive child parent)
+を使って階層的な関連を定義することが出来る。子と親にはネームスペースで修飾されたシンボルとキーワードを使用することが出来る:</p>
 </div>
 <div class="paragraph">
-<p><em>Note the :: reader syntax, ::keywords resolve namespaces.</em></p>
+<p><em>注: :: のリーダー文法をキーワードに使用すると(::keywords)名前空間に解決される。</em></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -110,7 +133,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a> is the fundamental relationship-maker</p>
+<p>基本的には
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>を使って関係性を作る。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -119,7 +143,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> let you query the hierarchy</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
+/
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
+/
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
+と
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>を使うことでヒエラルキーについて調べることが出来る。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -134,7 +164,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><code>(= x y)</code> implies <code>(isa? x y)</code></p>
+<p><code>(= x y)</code> が真なら <code>(isa? x y)</code> も真となる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -143,7 +173,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><code>isa?</code> uses the hierarchy system</p>
+<p>`isa?`はヒエラルキーシステムを使う。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -152,10 +182,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>You can also use a class as the child (but not the parent, the only way to make something the child of a class is via Java inheritance).</p>
+<p>クラスを子として使うことも出来る。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしか出来ない)。</p>
 </div>
 <div class="paragraph">
-<p>This allows you to superimpose new taxonomies on the existing Java class hierarchy:</p>
+<p>これを使用して既存のJavaクラスのヒエラルキーに新たな分類を重ねて定義することが可能になる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -167,7 +197,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> also tests for class relationships:</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+はクラス間の関連性についてもテストする。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -176,7 +207,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> works with vectors by calling <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> on their corresponding elements:</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+はベクターに対しても使用することが出来る。その場合、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+を各要素に対して呼び出した結果を返す:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -185,7 +219,11 @@
 </div>
 </div>
 <div class="paragraph">
-<p>as do <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a> / <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a> (but not <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>, since class descendants are an open set)</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
+/
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
+も同様。(<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
+は子孫はオープンセットであるため異なる。)</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -199,10 +237,14 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_isa_based_dispatch">isa? based dispatch</h2>
+<h2 id="_isa_に基づくディスパッチ">isa? に基づくディスパッチ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Multimethods use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> rather than = when testing for dispatch value matches. Note that the first test of <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a> is =, so exact matches work.</p>
+<p>マルチメソッドはディスパッチ値の比較に=ではなく、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+を使用する。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+で最初に行われる比較は=なので同値の場合でも正しい結果になる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -221,7 +263,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a> is used for disambiguating in case of multiple matches where neither dominates the other. You can just declare, per multimethod, that one dispatch value is preferred over another:</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
+はディスパッチ値が複数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別のディスパッチ値よりも優先されることを宣言することが出来る:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -244,13 +287,16 @@
 </div>
 </div>
 <div class="paragraph">
-<p>All of the examples above use the global hierarchy used by the multimethod system, but entire independent hierarchies can also be created with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>, and all of the above functions can take an optional hierarchy as a first argument.</p>
+<p>上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>
+で完全に独立したヒエラルキーを作ることも可能で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。</p>
 </div>
 <div class="paragraph">
-<p>This simple system is extremely powerful. One way to understand the relationship between Clojure multimethods and traditional Java-style single dispatch is that single dispatch is like a Clojure multimethod whose dispatch function calls getClass on the first argument, and whose methods are associated with those classes. Clojure multimethods are not hard-wired to class/type, they can be based on any attribute of the arguments, on multiple arguments, can do validation of arguments and route to error-handling methods etc.</p>
+<p>このシンプルなシステムは非常に強力だ。Clojureのマルチメソッドと伝統的なJavaスタイルのシングルディスパッチの関係を理解するひとつの方法は、シングルディスパッチはClojureのマルチメソッドにおいてディスパッチ関数が第一引数に対してgetClassを呼び出し、かつメソッドがそのクラスと関連しているようなものだ。Clojureのマルチメソッドはクラスや型と密に結びついていないため、複数の引数のどのような属性に基づくことが出来、また引数に対するバリデーションを行いエラー処理メソッドを呼び出すこと等が可能になる。</p>
 </div>
 <div class="paragraph">
-<p><em>Note: In this example, the keyword :Shape is being used as the dispatch function, as keywords are functions of maps, as described in the <a href="data_structures">Data Structures</a> section.</em></p>
+<p>_注: この例では :Shape のキーワードをディスパッチ関数として使用している。<a href="data_structures">Data
+Structures</a> section._で記述されている通り、キーワードはマップに対する関数として使える。</p>
 </div>
 <div class="listingblock">
 <div class="content">
