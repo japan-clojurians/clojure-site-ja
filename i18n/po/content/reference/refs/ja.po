@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-07-28 08:52+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,13 +55,13 @@ msgstr "toc::[]"
 #: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35 en/content/reference/agents.adoc:39
 #, no-wrap
 msgid "Example"
-msgstr ""
+msgstr "例"
 
 #. type: Title =
 #: en/content/reference/refs.adoc:1
 #, no-wrap
 msgid "Refs and Transactions"
-msgstr ""
+msgstr "Refとトランザクション"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:17
@@ -71,6 +71,10 @@ msgid ""
 "Software_transactional_memory[software transactional memory] (STM) system. Refs are bound to a single storage "
 "location for their lifetime, and only allow mutation of that location to occur within a transaction."
 msgstr ""
+"<<vars#,Vars>> はスレッド間の _分離_ によってミュータブルなストレージの安全な使用を保証しているが、トランザクショナル"
+"な参照(Ref)は http://en.wikipedia.org/wiki/Software_transactional_memory[software transactional memory] (STM) システム"
+"によってミュータブルなストレージの安全な _共有_ を保証する。Refは最初から最後まで単一のストレージに束縛され、変更をト"
+"ランザクションの中でしか許容しない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:19
@@ -82,6 +86,12 @@ msgid ""
 "while it is running. Another feature common to STMs is that, should a transaction have a conflict while running, it "
 "is automatically retried."
 msgstr ""
+"データベースのトランザクションを使用したことがあればClojureのトランザクションを理解することは容易だ - Refに対する全て"
+"の処理がアトミックで一貫性があり、分離されていることを保証する。アトミックとは、トランザクション内でのRefに対する変更"
+"が全て起こるか、一切起こらないかのどちらかであることを意味する。一貫性があるとは全ての新しい値に対して、トランザクショ"
+"ンのコミットの前にバリデーション関数でチェックを行うことが出来ることを意味する。分離されているとはトランザクション内で"
+"の影響は、トランザクションが動いている間は他のトランザクションから観測されないことを意味する。もう一つ、STMの一般的な"
+"機能としてトランザクションの動作中に競合が起こった場合の自動的なリトライもある。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:21
@@ -91,11 +101,15 @@ msgid ""
 "control] with adaptive history queues for http://en.wikipedia.org/wiki/Snapshot_isolation[snapshot isolation], and "
 "provides a distinct http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] operation."
 msgstr ""
+"STMを実現するには複数の方式があり (ロック/悲観的, ロックフリー/楽観的 及び それらの混合) 、未だに研究の対象となる問題"
+"である。ClojureのSTMは http://en.wikipedia.org/wiki/Multiversion_concurrency_control[multiversion concurrency "
+"control] と adaptive history queue を http://en.wikipedia.org/wiki/Snapshot_isolation[snapshot isolation] のために使用"
+"し、固有の http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] 処理を提供している。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:23
 msgid "In practice, this means:"
-msgstr ""
+msgstr "これの現実的な意味は:"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:25
@@ -103,6 +117,9 @@ msgid ""
 "All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction (its "
 "'read point'). The transaction _will_ see any changes it has made. This is called the _in-transaction-value_."
 msgstr ""
+"Refに対する全ての読み込みは 'Refの世界' の一貫性のあるスナップショットをトランザクションの開始地点のように観測する(ト"
+"ランザクションの 'read point')。トランザクションはRefに対する全ての変更を _観測する_ 。これを _in-transaction-value_ "
+"と呼ぶ。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:26
@@ -112,6 +129,10 @@ msgid ""
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute]) will appear to occur at a single point "
 "in the 'Ref world' timeline (its 'write point')."
 msgstr ""
+"トランザクション内に行われたRefに対する全ての変更( http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/ref-set[ref-set], http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] を使用)は 「Refの世界」 のタイムライン上"
+"の一点で起こったと映る (Refの 'wirte point') 。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:27
@@ -119,6 +140,8 @@ msgid ""
 "No changes will have been made by any other transactions to any Refs that have been *ref-set**_ / _**altered**_ / "
 "_**ensured**_ by this transaction."
 msgstr ""
+"このトランザクション内で *ref-set**_ / _**altered**_ / _**ensured**_ されたRefには他のトランザクションからの変更はな"
+"い。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:28
@@ -126,16 +149,18 @@ msgid ""
 "Changes _may have_ been made by other transactions to any Refs that have been commuted by this transaction. That "
 "should be okay since the function applied by _**commute**_ should be commutative."
 msgstr ""
+"このトランザクションによりコミュートされたRefは、他のトランザクションから変更を受ける _かもしれない_ 。 _**commute**_ "
+"を使用して適用した関数は可換であるべきなのでこれは問題にならない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:29
 msgid "Readers and commuters will never block writers, commuters, or other readers."
-msgstr ""
+msgstr "リーダーとコミューターはライター、コミューター、他のリーダーを決してブロックしない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:30
 msgid "Writers will never block commuters, or readers."
-msgstr ""
+msgstr "ライターはコミューターもしくはリーダーを決してブロックしない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:31
@@ -144,6 +169,9 @@ msgid ""
 "The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!] macro can be used to prevent the use "
 "of an impure function in a transaction."
 msgstr ""
+"トランザクションはリトライが _行われる_ のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、 http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!] マクロを使用することでトランザクション内で純粋で"
+"はない関数の使用を防ぐことが出来る。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:32
@@ -153,6 +181,9 @@ msgid ""
 "io/clojure/clojure.core-api.html#clojure.core/ensure[ensure]. Refs 'ensured' this way will be protected (item #3), "
 "but don't change the world (item #2)."
 msgstr ""
+"変更を受けているあるRefの値の正当性の制約が同時に _変更を受けていない_ 別のRefの値に依存する場合、 http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] を使用して2つ目のRefを変更から保護することが出来"
+"る。 'ensure' されたRef(3つ目)は保護されるが、元のRef(2つ目)に対する変更は保護されない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:33
@@ -162,11 +193,17 @@ msgid ""
 "imperative that there be a low cost to making copies and modifications. Persistent collections have free copies (just "
 "use the original, it can't be changed), and 'modifications' share structure efficiently. In any case:"
 msgstr ""
+"Clojure MVCC STM パーシスタントなコレクションと共に良く動作するように設計されているため、Refの値にはClojureのコレク"
+"ションを使用することが強く推奨される。STMのトランザクション内での処理は投機的であることから、コピーや変更のコストが低"
+"いことは必須であるためだ。パーシスタントなコレクションの場合、コピーのコストはゼロであり(不変であるため元のものを使用"
+"すれば良い)、 '変更' は構造が効率的に共有される。いずれにせよ:"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:34
 msgid "The values placed in Refs _must be, or be considered, immutable_!! Otherwise, Clojure can't help you."
 msgstr ""
+"Ref内の値は _イミュータブルである、もしくはイミュータブルとして扱われる必要がある_ !! そうでない場合、Clojureがあなた"
+"の助けになることはない。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:37
@@ -175,6 +212,9 @@ msgid ""
 "Then a set of threads are started that repeatedly select two random positions in two random vectors and swap them, in "
 "a transaction. No special effort is made to prevent the inevitable conflicts other than the use of transactions."
 msgstr ""
+"この例ではユニークな数字(最初は昇順)を含むベクターに対する参照のベクターが作成される。そして複数のスレッドが起動し、繰"
+"り返しトランザクション内でランダムなベクターからランダムな位置を選択し入れ替えを行う。トランザクションを使用する以外に"
+"は不可避な衝突を防ぐ工夫はしていない。"
 
 #. type: delimited block -
 #: en/content/reference/refs.adoc:57
@@ -199,17 +239,35 @@ msgid ""
 "    (dorun (apply pcalls (repeat nthreads #(dotimes [_ niters] (swap)))))\n"
 "    (report)))\n"
 msgstr ""
+"(defn run [nvecs nitems nthreads niters]\n"
+"  (let [vec-refs (vec (map (comp ref vec)\n"
+"                           (partition nitems (range (* nvecs nitems)))))\n"
+"        swap #(let [v1 (rand-int nvecs)\n"
+"                    v2 (rand-int nvecs)\n"
+"                    i1 (rand-int nitems)\n"
+"                    i2 (rand-int nitems)]\n"
+"                (dosync\n"
+"                 (let [temp (nth @(vec-refs v1) i1)]\n"
+"                   (alter (vec-refs v1) assoc i1 (nth @(vec-refs v2) i2))\n"
+"                   (alter (vec-refs v2) assoc i2 temp))))\n"
+"        report #(do\n"
+"                 (prn (map deref vec-refs))\n"
+"                 (println \"Distinct:\"\n"
+"                          (count (distinct (apply concat (map deref vec-refs))))))]\n"
+"    (report)\n"
+"    (dorun (apply pcalls (repeat nthreads #(dotimes [_ niters] (swap)))))\n"
+"    (report)))\n"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:60
 msgid "When run, we see no values get lost or duplicated in the shuffle:"
-msgstr ""
+msgstr "シャッフルの実行にあたって値の喪失や重複が起こらないことが確認出来る:"
 
 #. type: delimited block -
 #: en/content/reference/refs.adoc:63
 #, no-wrap
 msgid "(run 100 10 10 100000)\n"
-msgstr ""
+msgstr "(run 100 10 10 100000)\n"
 
 #. type: delimited block -
 #: en/content/reference/refs.adoc:67
@@ -219,6 +277,9 @@ msgid ""
 " [990 991 992 993 994 995 996 997 998 999])\n"
 "Distinct: 1000\n"
 msgstr ""
+"([0 1 2 3 4 5 6 7 8 9] [10 11 12 13 14 15 16 17 18 19] ...\n"
+" [990 991 992 993 994 995 996 997 998 999])\n"
+"Distinct: 1000\n"
 
 #. type: delimited block -
 #: en/content/reference/refs.adoc:71
@@ -228,6 +289,9 @@ msgid ""
 " [484 216 622 139 651 592 379 228 242 355])\n"
 "Distinct: 1000\n"
 msgstr ""
+"([382 318 466 963 619 22 21 273 45 596] [808 639 804 471 394 904 952 75 289 778] ...\n"
+" [484 216 622 139 651 592 379 228 242 355])\n"
+"Distinct: 1000\n"
 
 #. type: Title ==
 #: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41
@@ -240,12 +304,12 @@ msgstr ""
 #: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
-msgstr ""
+msgstr "関連する関数"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:76
 msgid "Create a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
-msgstr ""
+msgstr "Refの作成: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:78
@@ -253,6 +317,8 @@ msgid ""
 "Examine a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _(see also the +@+ "
 "<<reader#,reader>> macro)_"
 msgstr ""
+"Refの観測: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _( +@+ <<reader#,reader>> "
+"マクロも参照)_"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:80
@@ -260,6 +326,8 @@ msgid ""
 "Transaction macros: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] http://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/io![io!]"
 msgstr ""
+"トランザクションマクロ: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:82
@@ -269,6 +337,10 @@ msgid ""
 "clojure.core-api.html#clojure.core/alter[alter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "commute[commute]"
 msgstr ""
+"トランザクション内でのみ使用可能: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set[ref-set] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/alter[alter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"commute[commute]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
@@ -276,3 +348,5 @@ msgid ""
 "Ref validators: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 msgstr ""
+"Refバリデーター: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
