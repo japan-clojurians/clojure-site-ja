@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Refs and Transactions</title>
+    <title>Clojure - Refとトランザクション</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Refs and Transactions</h1>
+  <h1>Refとトランザクション</h1>
 </div>
 
 <p><em></em></p>
@@ -82,63 +82,91 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_example">Example</a></li>
-<li><a href="#_related_functions">Related functions</a></li>
+<li><a href="#_例">例</a></li>
+<li><a href="#_関連する関数">関連する関数</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>While <a href="vars">Vars</a> ensure safe use of mutable storage locations via thread <em>isolation</em>, transactional references (Refs) ensure safe <em>shared</em> use of mutable storage locations via a <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">software transactional memory</a> (STM) system. Refs are bound to a single storage location for their lifetime, and only allow mutation of that location to occur within a transaction.</p>
+<p><a href="vars">Vars</a> はスレッド間の <em>分離</em>
+によってミュータブルなストレージの安全な使用を保証しているが、トランザクショナルな参照(Ref)は
+<a href="http://en.wikipedia.org/wiki/Software_transactional_memory">software
+transactional memory</a> (STM) システムによってミュータブルなストレージの安全な <em>共有</em>
+を保証する。Refは最初から最後まで単一のストレージに束縛され、変更をトランザクションの中でしか許容しない。</p>
 </div>
 <div class="paragraph">
-<p>Clojure transactions should be easy to understand if you&#8217;ve ever used database transactions - they ensure that all actions on Refs are atomic, consistent, and isolated. Atomic means that every change to Refs made within a transaction occurs or none do. Consistent means that each new value can be checked with a validator function before allowing the transaction to commit. Isolated means that no transaction sees the effects of any other transaction while it is running. Another feature common to STMs is that, should a transaction have a conflict while running, it is automatically retried.</p>
+<p>データベースのトランザクションを使用したことがあればClojureのトランザクションを理解することは容易だ -
+Refに対する全ての処理がアトミックで一貫性があり、分離されていることを保証する。アトミックとは、トランザクション内でのRefに対する変更が全て起こるか、一切起こらないかのどちらかであることを意味する。一貫性があるとは全ての新しい値に対して、トランザクションのコミットの前にバリデーション関数でチェックを行うことが出来ることを意味する。分離されているとはトランザクション内での影響は、トランザクションが動いている間は他のトランザクションから観測されないことを意味する。もう一つ、STMの一般的な機能としてトランザクションの動作中に競合が起こった場合の自動的なリトライもある。</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to do STMs (locking/pessimistic, lock-free/optimistic and hybrids) and it is still a research problem. The Clojure STM uses <a href="http://en.wikipedia.org/wiki/Multiversion_concurrency_control">multiversion concurrency control</a> with adaptive history queues for <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>, and provides a distinct <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a> operation.</p>
+<p>STMを実現するには複数の方式があり (ロック/悲観的, ロックフリー/楽観的 及び それらの混合)
+、未だに研究の対象となる問題である。ClojureのSTMは
+<a href="http://en.wikipedia.org/wiki/Multiversion_concurrency_control">multiversion
+concurrency control</a> と adaptive history queue を
+<a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>
+のために使用し、固有の
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
+処理を提供している。</p>
 </div>
 <div class="paragraph">
-<p>In practice, this means:</p>
+<p>これの現実的な意味は:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>All reads of Refs will see a consistent snapshot of the 'Ref world' as of the starting point of the transaction (its 'read point'). The transaction <em>will</em> see any changes it has made. This is called the <em>in-transaction-value</em>.</p>
+<p>Refに対する全ての読み込みは 'Refの世界' の一貫性のあるスナップショットをトランザクションの開始地点のように観測する(トランザクションの
+'read point')。トランザクションはRefに対する全ての変更を <em>観測する</em> 。これを <em>in-transaction-value</em> と呼ぶ。</p>
 </li>
 <li>
-<p>All changes made to Refs during a transaction (via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a> or <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>) will appear to occur at a single point in the 'Ref world' timeline (its 'write point').</p>
+<p>トランザクション内に行われたRefに対する全ての変更(
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>,
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+or
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
+を使用)は 「Refの世界」 のタイムライン上の一点で起こったと映る (Refの 'wirte point') 。</p>
 </li>
 <li>
-<p>No changes will have been made by any other transactions to any Refs that have been <strong>ref-set<strong>_ / <em></strong>altered<strong></em> / <em></strong>ensured</strong>*</em> by this transaction.</p>
+<p>このトランザクション内で <strong>ref-set<strong>_ / <em></strong>altered<strong></em> / <em></strong>ensured</strong>*</em>
+されたRefには他のトランザクションからの変更はない。</p>
 </li>
 <li>
-<p>Changes <em>may have</em> been made by other transactions to any Refs that have been commuted by this transaction. That should be okay since the function applied by <em><strong>commute</strong></em> should be commutative.</p>
+<p>このトランザクションによりコミュートされたRefは、他のトランザクションから変更を受ける <em>かもしれない</em> 。 <em><strong>commute</strong></em>
+を使用して適用した関数は可換であるべきなのでこれは問題にならない。</p>
 </li>
 <li>
-<p>Readers and commuters will never block writers, commuters, or other readers.</p>
+<p>リーダーとコミューターはライター、コミューター、他のリーダーを決してブロックしない。</p>
 </li>
 <li>
-<p>Writers will never block commuters, or readers.</p>
+<p>ライターはコミューターもしくはリーダーを決してブロックしない。</p>
 </li>
 <li>
-<p>I/O and other activities with side-effects should be avoided in transactions, since transactions <em>will</em> be retried. The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a> macro can be used to prevent the use of an impure function in a transaction.</p>
+<p>トランザクションはリトライが <em>行われる</em> のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a>
+マクロを使用することでトランザクション内で純粋ではない関数の使用を防ぐことが出来る。</p>
 </li>
 <li>
-<p>If a constraint on the validity of a value of a Ref that is being changed depends upon the simultaneous value of a Ref that is <em>not being changed</em>, that second Ref can be protected from modification by calling <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>. Refs 'ensured' this way will be protected (item #3), but don&#8217;t change the world (item #2).</p>
+<p>変更を受けているあるRefの値の正当性の制約が同時に <em>変更を受けていない</em> 別のRefの値に依存する場合、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
+を使用して2つ目のRefを変更から保護することが出来る。 'ensure'
+されたRef(3つ目)は保護されるが、元のRef(2つ目)に対する変更は保護されない。</p>
 </li>
 <li>
-<p>The Clojure MVCC STM is designed to work with the persistent collections, and it is strongly recommended that you use the Clojure collections as the values of your Refs. Since all work done in an STM transaction is speculative, it is imperative that there be a low cost to making copies and modifications. Persistent collections have free copies (just use the original, it can&#8217;t be changed), and 'modifications' share structure efficiently. In any case:</p>
+<p>Clojure MVCC STM
+パーシスタントなコレクションと共に良く動作するように設計されているため、Refの値にはClojureのコレクションを使用することが強く推奨される。STMのトランザクション内での処理は投機的であることから、コピーや変更のコストが低いことは必須であるためだ。パーシスタントなコレクションの場合、コピーのコストはゼロであり(不変であるため元のものを使用すれば良い)、
+'変更' は構造が効率的に共有される。いずれにせよ:</p>
 </li>
 <li>
-<p>The values placed in Refs <em>must be, or be considered, immutable</em>!! Otherwise, Clojure can&#8217;t help you.</p>
+<p>Ref内の値は <em>イミュータブルである、もしくはイミュータブルとして扱われる必要がある</em> !!
+そうでない場合、Clojureがあなたの助けになることはない。</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example">Example</h2>
+<h2 id="_例">例</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this example a vector of references to vectors is created, each containing (initially sequential) unique numbers. Then a set of threads are started that repeatedly select two random positions in two random vectors and swap them, in a transaction. No special effort is made to prevent the inevitable conflicts other than the use of transactions.</p>
+<p>この例ではユニークな数字(最初は昇順)を含むベクターに対する参照のベクターが作成される。そして複数のスレッドが起動し、繰り返しトランザクション内でランダムなベクターからランダムな位置を選択し入れ替えを行う。トランザクションを使用する以外には不可避な衝突を防ぐ工夫はしていない。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -163,7 +191,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>When run, we see no values get lost or duplicated in the shuffle:</p>
+<p>シャッフルの実行にあたって値の喪失や重複が起こらないことが確認出来る:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -181,22 +209,33 @@ Distinct: 1000</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_related_functions">Related functions</h2>
+<h2 id="_関連する関数">関連する関数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a Ref: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a></p>
+<p>Refの作成:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a></p>
 </div>
 <div class="paragraph">
-<p>Examine a Ref: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a> <em>(see also the @ <a href="reader">reader</a> macro)</em></p>
+<p>Refの観測:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
+<em>( @ <a href="reader">reader</a> マクロも参照)</em></p>
 </div>
 <div class="paragraph">
-<p>Transaction macros: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
+<p>トランザクションマクロ:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
 </div>
 <div class="paragraph">
-<p>Allowed only in a transaction: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a></p>
+<p>トランザクション内でのみ使用可能:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a></p>
 </div>
 <div class="paragraph">
-<p>Ref validators: <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
+<p>Refバリデーター:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
 </div>
 </div>
 </div></p>
