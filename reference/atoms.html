@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Atoms</title>
+    <title>Clojure - Atom (アトム)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,19 +72,33 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Atoms</h1>
+  <h1>Atom (アトム)</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>Atoms provide a way to manage shared, synchronous, independent state. They are a reference type like refs and vars. You create an atom with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/atom">atom</a>, and can access its state with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref/@</a>. Like refs and agents, atoms support validators. To change the value of an atom, you can use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a>. A lower-level <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare-and-set!">compare-and-set!</a> is also provided. Changes to atoms are always free of race conditions.</p>
+<p>アトムは共有された、同期的な独立した状態を管理する手段を提供する。アトムはrefやvarと同様に参照型である。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/atom">atom</a>
+を使用してアトムを作成することが出来、
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref/@</a>
+を使用することでその状態にアクセスすることが出来る。refやエージェントと同様にバリデーターをサポートしている。アトムの値を変更するには
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a>
+を使用することが出来る。また、低水準な
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare-and-set!">compare-and-set!</a>
+も提供されている。アトムに対する変更で競合は発生しない。</p>
 </div>
 <div class="paragraph">
-<p>As with all reference types, the intended use of atom is to hold one of Clojure&#8217;s immutable data structures. And, similar to ref&#8217;s alter and agent&#8217;s send, you change the value by applying a function to the old value. This is done in an atomic manner by <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a> Internally, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a> reads the current value, applies the function to it, and attempts to compare-and-set it in. Since another thread may have changed the value in the intervening time, it may have to retry, and does so in a spin loop. The net effect is that the value will always be the result of the application of the supplied function to a current value, atomically. However, because the function might be called multiple times, it must be free of side effects.</p>
+<p>全ての参照型と同様に、アトムの想定されている使われ方はClojureのイミュータブルなデータ構造を保持することだ。また、refのalterやagentのsendと同様に、古い値に関数を適用することで値を変更することが出来る。これは
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a>
+によってアトミックに行われる。内的には
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!">swap!</a>
+が現在の値を読み込み、関数を適用し、 compare-and-set
+を試みる。アトムの値の更新を試みる際に他のスレッドによって値が変更された場合、リトライが必要な可能性があり、そのリトライはループで行われる。最終的な結果として、アトムの値は常に現在値に与えた関数をアトミックに適用した結果の値となる。与える関数は複数回呼び出される可能性があるので副作用が存在しない必要がある。</p>
 </div>
 <div class="paragraph">
-<p>Atoms are an efficient way to represent some state that will never need to be coordinated with any other, and for which you wish to make synchronous changes (unlike agents, which are similarly independent but asynchronous). A typical usage might be for memoization:</p>
+<p>アトムは協調の必要がない、同期的に変更される状態を効率的に表現する方法だ
+(エージェントと異なり、独立してはいるが同期的)。使用例としてメモ化が挙げられる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
