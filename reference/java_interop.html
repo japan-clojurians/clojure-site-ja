@@ -413,7 +413,10 @@ user=&gt; (time (reduce + (map len2 (repeat 1000000 "asdf"))))
 <h2 id="TypeAliases">Aliases</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class names. For example, long arrays (long-array []) have a type of "[J".</p>
+<p>Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class names.
+The types are represented according to the specification of
+<a href="http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.3.2-200">Java Field Descriptors</a>.
+For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 <div class="ulist">
 <ul>
