@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,9 +157,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:33
 msgid ""
-"If in a local scope (i.e. in a function definition), a lookup is done to see "
-"if it names a local binding (e.g. a function argument or let-bound name). If "
-"so, the value is the value of the local binding."
+"If in a local scope (e.g. in a function definition or a let form), a lookup "
+"is done to see if it names a local binding (e.g. a function argument or let-"
+"bound name). If so, the value is the value of the local binding."
 msgstr ""
 
 #. type: Plain text

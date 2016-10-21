@@ -74,7 +74,7 @@ msgstr "Sets (セット)"
 #: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
-msgstr ""
+msgstr "関連する関数"
 
 #. type: Title =
 #: en/content/reference/data_structures.adoc:1

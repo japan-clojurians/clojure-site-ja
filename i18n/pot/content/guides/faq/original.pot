@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,14 +42,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/special_forms.adoc:176
-#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:170
+#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:177
 msgid "Example:"
 msgstr ""
 
 #. type: Title ==
 #: en/content/reference/namespaces.adoc:1
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
-#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
+#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:126
 #, no-wrap
 msgid "Namespaces"
 msgstr ""
@@ -98,11 +98,42 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/faq.adoc:23
 #, no-wrap
-msgid "**<<faq#reader_macros,Why does Clojure not have user-extensible reader macros?>>**\n"
+msgid "**<<faq#unreadable_keywords,Why is it possible to create keywords that can't be read by the reader?>>**\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/faq.adoc:25
+msgid ""
+"The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"keyword[`keyword`] function can be used to programmatically create keywords "
+"based on user data or other sources of input. Similarly, the http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/namespace[`namespace`] "
+"and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"name[`name`] functions can be used to pull a keyword back apart into "
+"components. It is common for programs to use this functionality to create "
+"keywords to be used as identifiers or map keys without ever printing and "
+"reading that data back."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:27
+msgid ""
+"Because of this use case (and also for general performance), no validation "
+"check is performed on the inputs to `keyword` (or `symbol`), which makes it "
+"possible to create keywords that, when printed, cannot be read back into a "
+"keyword (due to spaces or other non-allowed characters). If this is "
+"important to you, you should validate the keyword inputs first, before "
+"creating the keyword."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:30
+#, no-wrap
+msgid "**<<faq#reader_macros,Why does Clojure not have user-extensible reader macros?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:32
 msgid ""
 "The reader takes text (Clojure source) and returns Clojure data, which is "
 "subsequently compiled and evaluated. Reader macros tell the Clojure reader "
@@ -114,7 +145,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:27
+#: en/content/guides/faq.adoc:34
 msgid ""
 "However, unlike Lisp, Clojure does not allow the user to extend this set of "
 "reader macros. This avoids the possibility of creating code that another "
@@ -124,13 +155,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:30
+#: en/content/guides/faq.adoc:37
 #, no-wrap
 msgid "**<<faq#underscore,What does an _ mean in a let binding or parameter?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:32
+#: en/content/guides/faq.adoc:39
 msgid ""
 "_ has no special meaning in Clojure as a symbol. However, it is a convention "
 "to use _ (or a leading _) to denote a binding that will not be used in the "
@@ -138,7 +169,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/faq.adoc:38
+#: en/content/guides/faq.adoc:45
 #, no-wrap
 msgid ""
 "(defn get-x [point]\n"
@@ -147,13 +178,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:42
+#: en/content/guides/faq.adoc:49
 #, no-wrap
 msgid "**<<faq#anon_vector,Why doesn't the anonymous function `#([%1])` work to construct a vector?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:44
+#: en/content/guides/faq.adoc:51
 msgid ""
 "`++#()++` always expands to include parens around the expression you give "
 "it, thus in this case it yields `(fn [x] ([x]))` which fails when the vector "
@@ -162,19 +193,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:45
+#: en/content/guides/faq.adoc:52
 #, no-wrap
 msgid "Collections, Sequences, and Transducers"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:49
+#: en/content/guides/faq.adoc:56
 #, no-wrap
 msgid "**<<faq#conj,Why does `conj` add to the front of a list, but the back of a vector?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:51
+#: en/content/guides/faq.adoc:58
 msgid ""
 "Most Clojure data structure operations, including `conj` (conjoin), are "
 "designed to give the user a performance expectation. With `conj`, the "
@@ -186,7 +217,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:53
+#: en/content/guides/faq.adoc:60
 msgid ""
 "If your goal is specifically to \"add to the front of the collection\", then "
 "the appropriate function to use is `cons`, which will always add to the "
@@ -195,20 +226,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:56
+#: en/content/guides/faq.adoc:63
 #, no-wrap
 msgid "**<<faq#seqs_vs_colls,I keep forgetting that after calling sequence functions on vectors/sets, the return value is no longer a vector or a set.>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:58
+#: en/content/guides/faq.adoc:65
 msgid ""
 "Generally you should divide the Clojure core functions into these two "
 "categories:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:60
+#: en/content/guides/faq.adoc:67
 msgid ""
 "Data structure functions - take a data structure and return a modified "
 "versions of that data structure (conj, disj, assoc, dissoc, etc). These "
@@ -216,7 +247,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:61
+#: en/content/guides/faq.adoc:68
 msgid ""
 "Sequence functions - take a \"seqable\" and return a seqable. [Generally we "
 "try to avoid committing to the return values actually being an instance of "
@@ -225,7 +256,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:63
+#: en/content/guides/faq.adoc:70
 msgid ""
 "It sounds like you are using the latter but expecting the semantics of the "
 "former (which is a common issue for new Clojurists!). If you want to apply "
@@ -234,7 +265,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:65
+#: en/content/guides/faq.adoc:72
 msgid ""
 "Use data-structure equivalents like mapv or filterv, etc - this is a very "
 "limited set that lets you perform these ops but return a data structure "
@@ -242,14 +273,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:66
+#: en/content/guides/faq.adoc:73
 msgid ""
 "Pour the results of your sequence transformations back into a data structure "
 "with into: `(into [] (map inc (filter odd? [1 2 3])))`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:67
+#: en/content/guides/faq.adoc:74
 msgid ""
 "Use transducers (likely with `into`) - this has much the same effect as #2, "
 "but combinations of transformations can be applied more efficiently without "
@@ -259,7 +290,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:69
+#: en/content/guides/faq.adoc:76
 msgid ""
 "Note that all of these are eager transformations - they produce the output "
 "vector when you invoke them. The original sequence version `(map inc (filter "
@@ -269,13 +300,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:72
+#: en/content/guides/faq.adoc:79
 #, no-wrap
 msgid "**<<faq#transducers_vs_seqs,What are good use cases for transducers?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:74
+#: en/content/guides/faq.adoc:81
 msgid ""
 "When performing a series of transformations, sequences will create an "
 "intermediate (cached) sequence between each transformation. Transducers "
@@ -284,12 +315,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:76
+#: en/content/guides/faq.adoc:83
 msgid "Performance benefits of transducers:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:78
+#: en/content/guides/faq.adoc:85
 msgid ""
 "Source collection iteration - when used on reducible inputs (collections and "
 "other things), avoid creating an unnecessary input collection sequence - "
@@ -297,7 +328,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:79
+#: en/content/guides/faq.adoc:86
 msgid ""
 "Intermediate sequences and cached values - as the transformation happens in "
 "a single pass, you remove all intermediate sequence and cached value "
@@ -308,12 +339,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:81
+#: en/content/guides/faq.adoc:88
 msgid "Design / usage benefits of transducers:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:83
+#: en/content/guides/faq.adoc:90
 msgid ""
 "Transformation composition - some use cases will have a cleaner design if "
 "they separate transformation composition from transformation application. "
@@ -321,7 +352,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:84
+#: en/content/guides/faq.adoc:91
 msgid ""
 "Eagerness - transducers are great for cases where eagerly processing a "
 "transformation (and potentially encountering any errors) is more important "
@@ -329,7 +360,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:85
+#: en/content/guides/faq.adoc:92
 msgid ""
 "Resource control - because you have more control over when the input "
 "collection is traversed, you also know when processing is complete. It's "
@@ -338,12 +369,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:87
+#: en/content/guides/faq.adoc:94
 msgid "Performance benefits of sequences:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:89
+#: en/content/guides/faq.adoc:96
 msgid ""
 "Laziness - if you will only need some of the outputs (for example a user is "
 "deciding how many to use), then lazy sequences can often be more efficient "
@@ -353,19 +384,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:90
+#: en/content/guides/faq.adoc:97
 msgid ""
 "Infinite streams - because transducers are typically eagerly consumed, they "
 "don't match well with infinite streams of values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:92
+#: en/content/guides/faq.adoc:99
 msgid "Design benefits of sequences:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:94
+#: en/content/guides/faq.adoc:101
 msgid ""
 "Consumer control - returning a seq from an API lets you combine input + "
 "transformation into something that gives the consumer control. Transducers "
@@ -374,24 +405,24 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:95
+#: en/content/guides/faq.adoc:102
 #, no-wrap
 msgid "State and Concurrency"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:99
+#: en/content/guides/faq.adoc:106
 #, no-wrap
 msgid "**<<faq#concurrency_features,What are the trade-offs between reducers, core.async, futures, and pmap?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:101
+#: en/content/guides/faq.adoc:108
 msgid "Each of these really addresses a different use case."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:103
+#: en/content/guides/faq.adoc:110
 msgid ""
 "Reducers are best for fine-grained data parallelism when computing a "
 "transformation over existing in-memory data (in a map or vector). Generally "
@@ -400,7 +431,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:104
+#: en/content/guides/faq.adoc:111
 msgid ""
 "Futures are best for pushing work onto a background thread and picking it up "
 "later (or for doing I/O waits in parallel). It's better for big chunky tasks "
@@ -408,7 +439,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:105
+#: en/content/guides/faq.adoc:112
 msgid ""
 "core.async is primarily used to organize the subsystems or internal "
 "structure of your application. It has channels (queues) to convey values "
@@ -421,7 +452,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:106
+#: en/content/guides/faq.adoc:113
 msgid ""
 "Tools like pmap, java.util queues and executors, and libraries like "
 "claypoole are doing coarse-level \"task\" concurrency. There is some overlap "
@@ -430,13 +461,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:109
+#: en/content/guides/faq.adoc:116
 #, no-wrap
 msgid "**<<faq#agent_shutdown,Why does Clojure \"hang\" for 1 minute when my program ends?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:111
+#: en/content/guides/faq.adoc:118
 msgid ""
 "This is most commonly asked in the context of programs that use `future`, "
 "`pmap`, `agent-send`, or other functions that invoke those functions. When a "
@@ -446,7 +477,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:113
+#: en/content/guides/faq.adoc:120
 msgid ""
 "Clojure uses two internal thread pools to service futures and agent function "
 "executions. Both pools use non-daemon threads and the JVM will not exit "
@@ -458,13 +489,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:116
+#: en/content/guides/faq.adoc:123
 #, no-wrap
 msgid "**<<faq#write_skew,Why does the Clojure STM does not guarantee serializability but only snapshot isolation?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:118
+#: en/content/guides/faq.adoc:125
 msgid ""
 "If reads were included by default, then STM would be slower (as more "
 "transactions would require serializability). However, in many cases, reads "
@@ -473,13 +504,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:123
+#: en/content/guides/faq.adoc:130
 #, no-wrap
 msgid "**<<faq#ns_file,Do namespaces map 1-to-1 with files?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:125
+#: en/content/guides/faq.adoc:132
 msgid ""
 "No (although that is typical). One namespace can be split across multiple "
 "files by using `load` to load secondary files and `in-ns` in those files to "
@@ -489,49 +520,49 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:128
+#: en/content/guides/faq.adoc:135
 #, no-wrap
 msgid "**<<faq#ns_as_fn,Do namespaces work like regular functions? Looking at the syntax, it seems ns could be returning a function that makes a namespace, and then if you just stick parens around the contents of the file, that would be a regular S expression too. Does that imply you can put more than one in a file?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:130
+#: en/content/guides/faq.adoc:137
 msgid "ns is a macro that does a number of things:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:132
+#: en/content/guides/faq.adoc:139
 msgid "creates a new internal Namespace object (if it does not yet exist)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:133
+#: en/content/guides/faq.adoc:140
 msgid "makes that namespace the new current namespace (*ns*)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:134
+#: en/content/guides/faq.adoc:141
 msgid ""
 "auto-refers all vars from clojure.core and imports all classes from java.lang"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:135
+#: en/content/guides/faq.adoc:142
 msgid "requires/refers other namespaces and vars as specified"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:136
+#: en/content/guides/faq.adoc:143
 msgid "(and other optional things)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:138
+#: en/content/guides/faq.adoc:145
 msgid "ns does not return a function or anything invokable as you suggest."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:140
+#: en/content/guides/faq.adoc:147
 msgid ""
 "While ns is typically placed at the top of a clj file, it is actually just a "
 "normal macro and can be invoked at the repl just the same. It could also be "
@@ -540,19 +571,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:141
+#: en/content/guides/faq.adoc:148
 #, no-wrap
 msgid "Compiler"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:145
+#: en/content/guides/faq.adoc:152
 #, no-wrap
 msgid "**<<faq#direct_linking_repl,How does direct linking affect the REPL experience?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:147
+#: en/content/guides/faq.adoc:154
 msgid ""
 "Anything that has been direct linked will not see redefinitions to vars. For "
 "example, if you redefine something in clojure.core, other parts of core that "
@@ -561,7 +592,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:149
+#: en/content/guides/faq.adoc:156
 msgid ""
 "For parts of your own app, you may wish to only enable direct linking when "
 "you build and deploy for production, rather than using it when you "
@@ -570,57 +601,57 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:150
+#: en/content/guides/faq.adoc:157
 #, no-wrap
 msgid "Java and Interop"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:154
+#: en/content/guides/faq.adoc:161
 #, no-wrap
 msgid "**<<faq#inner,How do you refer to a nested or inner class?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:156
+#: en/content/guides/faq.adoc:163
 msgid ""
 "Use a $ to separate outer from inner class name. For example: `java.util.Map"
 "$Entry` is the Entry inner class inside Map."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:159
+#: en/content/guides/faq.adoc:166
 #, no-wrap
 msgid "**<<faq#primitive_type,How do you refer to the class representing a primitive?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:161
+#: en/content/guides/faq.adoc:168
 msgid ""
 "Primitive types can be found as the static TYPE field on the boxed class, "
 "for example: `Integer/TYPE`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:164
+#: en/content/guides/faq.adoc:171
 #, no-wrap
 msgid "**<<faq#varargs,How do you invoke a Java method with a vararg signature?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:166
+#: en/content/guides/faq.adoc:173
 msgid ""
 "Java treats a trailing varargs parameter as an array and it can be invoked "
 "from Clojure. Example:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:168
+#: en/content/guides/faq.adoc:175
 msgid "`(.method object fixed-args... (into-array type variable-args...))`"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/faq.adoc:175
+#: en/content/guides/faq.adoc:182
 #, no-wrap
 msgid ""
 ";; asList takes an Object vararg parameter\n"
@@ -628,7 +659,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/faq.adoc:178
+#: en/content/guides/faq.adoc:185
 #, no-wrap
 msgid ""
 ";; format takes one fixed parameter and a varargs\n"
@@ -636,19 +667,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:180
+#: en/content/guides/faq.adoc:187
 #, no-wrap
 msgid "Design and Use"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:184
+#: en/content/guides/faq.adoc:191
 #, no-wrap
 msgid "**<<faq#encapsulation,How do you achieve encapsulation with Clojure?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:186
+#: en/content/guides/faq.adoc:193
 msgid ""
 "Because of its focus on immutable data, there is generally not a high value "
 "placed on data encapsulation. Because data is immutable, there is no need to "
@@ -658,7 +689,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:188
+#: en/content/guides/faq.adoc:195
 msgid ""
 "All Clojure vars are globally available so again there is not much in the "
 "way of encapsulation of functions within namespaces. However, the ability to "

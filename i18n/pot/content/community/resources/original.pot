@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-07-01 15:52+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,7 +406,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:86
-msgid "https://code.google.com/p/counterclockwise/[Eclipse Counterclockwise]"
+msgid "http://doc.ccw-ide.org/[Eclipse Counterclockwise]"
 msgstr ""
 
 #. type: Plain text

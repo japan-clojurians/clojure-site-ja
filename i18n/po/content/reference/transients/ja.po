@@ -163,7 +163,7 @@ msgstr ""
 #: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35 en/content/reference/agents.adoc:39
 #, no-wrap
 msgid "Example"
-msgstr ""
+msgstr "例"
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:45

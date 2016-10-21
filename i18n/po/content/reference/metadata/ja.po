@@ -89,7 +89,7 @@ msgstr ""
 #: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
 #: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
-msgstr ""
+msgstr "''''"
 
 #. type: Title ==
 #: en/content/reference/metadata.adoc:24

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/namespaces.adoc:1
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
-#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
+#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:126
 #, no-wrap
 msgid "Namespaces"
 msgstr ""
@@ -121,7 +121,7 @@ msgstr ""
 msgid ""
 "The best way to set up a new namespace at the top of a Clojure source file "
 "is to use the http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/ns[ns macro]. By default this will create a new namespace contains "
+"core/ns[ns macro]. By default this will create a new namespace that contains "
 "mappings for the classnames in +java.lang+ plus `clojure.lang.Compiler`, and "
 "the functions in `clojure.core`."
 msgstr ""

@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:1
+#, no-wrap
+msgid "ClojureBridge Minnesota"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:4
+msgid "ClojureBridge 2016-11-04"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:12
+msgid ""
+"ClojureBridge aims to increase diversity within the Clojure community by "
+"offering free, beginner-friendly Clojure programming workshops for "
+"underrepresented groups in tech."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:14
+msgid ""
+"We'll meet up Friday night to install all of the software you need on your "
+"laptop, and then spend Saturday learning and writing code:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:16
+msgid "Track1: simple application"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_minneapolis.adoc:16
+msgid "Track2: basic syntax, data structure and more"
+msgstr ""
