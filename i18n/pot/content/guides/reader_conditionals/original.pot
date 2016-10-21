@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/namespaces.adoc:1
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
-#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
+#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:126
 #, no-wrap
 msgid "Namespaces"
 msgstr ""
@@ -102,7 +102,7 @@ msgstr ""
 msgid ""
 "#?(:clj  (Clojure expression)\n"
 "   :cljs (ClojureScript expression)\n"
-"   :clr  (Clojure CLR expression))\n"
+"   :cljr (Clojure CLR expression))\n"
 msgstr ""
 
 #. type: Plain text
@@ -217,10 +217,10 @@ msgstr ""
 #: en/content/guides/reader_conditionals.adoc:87
 msgid ""
 "Namespaces are the other big pain point for sharing code between Clojure and "
-"ClojureScript. ClojureScript has different syntax for https://github.com/"
-"clojure/clojurescript/wiki/Differences-from-Clojure#lisp[requiring macros] "
-"than Clojure. To use macros that work in both Clojure and ClojureScript in a "
-"`.cljc` file, you'll need reader conditionals in the namespace declaration."
+"ClojureScript. ClojureScript has different syntax for http://clojurescript."
+"org/about/differences#_macros[requiring macros] than Clojure. To use macros "
+"that work in both Clojure and ClojureScript in a `.cljc` file, you'll need "
+"reader conditionals in the namespace declaration."
 msgstr ""
 
 #. type: Plain text

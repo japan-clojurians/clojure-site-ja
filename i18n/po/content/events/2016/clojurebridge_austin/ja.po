@@ -1,0 +1,47 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"PO-Revision-Date: 2016-10-21 09:53+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_austin.adoc:1
+#, no-wrap
+msgid "ClojureBridge Austin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_austin.adoc:4
+msgid "ClojureBridge 2016-11-06"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_austin.adoc:12
+msgid ""
+"http://www.clojurebridge.org/[ClojureBridge Workshops] are intended for Women Developers and those that identify as "
+"Women."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_austin.adoc:14
+msgid ""
+"Learn Clojure, a functional language built on top of java. We will use Clojure to build a simple web app, learning as "
+"we go."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_austin.adoc:15
+msgid "Experience Needed: You should be familiar with basic coding and have a laptop able to run Java 1.8."
+msgstr ""

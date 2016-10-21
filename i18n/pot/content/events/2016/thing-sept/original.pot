@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2016/thing-sept.adoc:1
+#, no-wrap
+msgid "Clojure and thi.ng for 3D Printing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/thing-sept.adoc:4
+msgid "Clojure and thi.ng for 3D Printing 2016-09-10"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/thing-sept.adoc:11
+msgid ""
+"3D printing technology is becoming ever more affordable and there's no "
+"shortage of design tools. However, this workshop is for anyone interested in "
+"using an algorithmic approach to fabricate physical objects and do so using "
+"a language & toolset, which makes playing with data and geometry truly "
+"joyful. Over the two days of this workshop, you'll will learn hands-on some "
+"of the endless potential, which procedural generation can bring to the field "
+"of digital fabrication. And, you'll not only be able to take home your own "
+"3D printed object, but too learn about important skills and pitfalls to "
+"watch out for in your future practice with these technologies."
+msgstr ""

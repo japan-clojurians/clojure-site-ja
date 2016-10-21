@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,12 +39,31 @@ msgid "_Listed in order of descending release date of newest edition._"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:14 en/content/community/books.adoc:156
+#: en/content/community/books.adoc:14 en/content/community/books.adoc:166
 msgid "|==="
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/books.adoc:19
+msgid ""
+"| image::https://s3.amazonaws.com/titlepages.leanpub.com/clojurescript-"
+"unraveled/small[ClojureScript Unraveled,link=\"https://leanpub.com/"
+"clojurescript-unraveled\"] | https://leanpub.com/clojurescript-"
+"unraveled[ClojureScript Unraveled] + by Andrey Antukh, Alejandro Gómez + Jul "
+"25, 2016"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/books.adoc:24
+msgid ""
+"| image::http://ecx.images-amazon.com/images/I/518xLvhHZ1L._SL160.jpg[Web "
+"Development with Clojure,link=\"https://amzn.com/1680500821\"] | http://amzn."
+"com/1680500821[Web Development with Clojure] + by Dmitri Sotnikov + Jul 17, "
+"2016"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/books.adoc:29
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51iq-PKIZ8L._SL160."
 "jpg[Professional Clojure, link=\"http://amzn.com/1119267277\"] | http://amzn."
@@ -53,7 +72,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:24
+#: en/content/community/books.adoc:34
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/61TJZjnjO0L._SL160."
 "jpg[Mastering Clojure, link=\"http://amzn.com/B017XSFL4Q\"] | http://amzn."
@@ -61,7 +80,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:29
+#: en/content/community/books.adoc:39
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/61p47dd81cL._SL160."
 "jpg[Clojure for Java Developers, link=\"http://amzn.com/B019OP7JIW\"] | "
@@ -70,7 +89,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:34
+#: en/content/community/books.adoc:44
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51ofF2ckdkL._SL160."
 "jpg[Clojure for Finance, link=\"http://amzn.com/1785289284\"] | http://amzn."
@@ -78,7 +97,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:39
+#: en/content/community/books.adoc:49
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51QWOEjmtIL._SL160."
 "jpg[Clojure In Action, link=\"http://amzn.com/1617291528\"] | http://amzn."
@@ -86,7 +105,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:44
+#: en/content/community/books.adoc:54
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/6112vbQYDLL._SL160."
 "jpg[Clojure for the Brave and True,link=\"http://amzn.com/1593275919\"] | "
@@ -95,7 +114,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:49
+#: en/content/community/books.adoc:59
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51aMgNS%2BK7L._SL160."
 "jpg[Clojure Recipes,link=\"http://amzn.com/0321927737\"] | http://amzn."
@@ -103,7 +122,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:54
+#: en/content/community/books.adoc:64
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/41iH5aTHB3L._SL160."
 "jpg[Clojure Applied,link=\"http://amzn.com/1680500740\"] | http://amzn."
@@ -112,7 +131,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:59
+#: en/content/community/books.adoc:69
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51ki-47i6bL._SL160."
 "jpg[Clojure for Data Science,link=\"http://amzn.com/1784397180\"] | http://"
@@ -121,7 +140,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:64
+#: en/content/community/books.adoc:74
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51Nym1wJXVL._SL160."
 "jpg[Clojure High Performance Programming,link=\"http://amzn."
@@ -130,7 +149,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:69
+#: en/content/community/books.adoc:79
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/515vh5czqnL._SL160."
 "jpg[Clojure Data Structures and Algorithms,link=\"http://amzn."
@@ -139,7 +158,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:74
+#: en/content/community/books.adoc:84
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/5122uV93jfL._SL160.jpg[Living "
 "Clojure,link=\"http://amzn.com/1491909048\"] | http://amzn."
@@ -147,7 +166,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:79
+#: en/content/community/books.adoc:89
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51l1oGz9N7L._SL160."
 "jpg[Clojure Reactive Programming,link=\"http://amzn.com/1783986662\"] | "
@@ -156,7 +175,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:84
+#: en/content/community/books.adoc:94
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51XnilmUaIL._SL160."
 "jpg[Clojure Web Development Essentials,link=\"http://amzn.com/1784392227\"] "
@@ -165,7 +184,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:89
+#: en/content/community/books.adoc:99
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51-B3kElSiL._SL160."
 "jpg[Clojure Data Analysis Cookbook, link=\"http://amzn.com/1784390291\"] | "
@@ -174,7 +193,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:94
+#: en/content/community/books.adoc:104
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51nhUEYSLhL._SL160."
 "jpg[Mastering Clojure Macros,link=\"http://amzn.com/1941222226\"] | http://"
@@ -182,7 +201,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:99
+#: en/content/community/books.adoc:109
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/518RxlXpXsL._SL160.jpg[The "
 "Joy of Clojure,link=\"http://amzn.com/1617291412\"] | http://amzn."
@@ -191,7 +210,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:104
+#: en/content/community/books.adoc:114
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51gyxyvmX3L._SL160."
 "jpg[Mastering Clojure Data Analysis,link=\"http://amzn.com/1783284137\"] | "
@@ -200,7 +219,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:109
+#: en/content/community/books.adoc:119
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51Af%2B5qKOeL._SL160."
 "jpg[Clojure for Machine Learning,link=\"http://amzn.com/1783284358\"] | "
@@ -209,7 +228,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:114
+#: en/content/community/books.adoc:124
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51NPZu-5PiL._SL160."
 "jpg[Clojure Cookbook, link=\"http://amzn.com/1449366171\"] | http://amzn."
@@ -218,16 +237,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:119
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51t6UhYc%2BCL._SL160.jpg[Web "
-"Development with Clojure,link=\"http://amzn.com/1680500821\"] | http://amzn."
-"com/1680500821[Web Development with Clojure] + by Dmitri Sotnikov + Jan 12, "
-"2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:124
+#: en/content/community/books.adoc:129
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/515hwMhZELL._SL160."
 "jpg[Clojure for Domain-specific Languages,link=\"http://amzn."
@@ -236,7 +246,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:129
+#: en/content/community/books.adoc:134
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/41FPAAxXDhL._SL160."
 "jpg[Clojure Made Simple,link=\"http://amzn.com/B00BSY20HS\"] | http://amzn."
@@ -244,7 +254,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:134
+#: en/content/community/books.adoc:139
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51i1Cn-IqdL._SL160."
 "jpg[Functional Programming Patterns in Scala and Clojure,link=\"http://amzn."
@@ -253,7 +263,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:139
+#: en/content/community/books.adoc:144
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51KgF%2B-38WL._SL160."
 "jpg[ClojureScript: Up and Running,link=\"http://amzn.com/1449327435\"] | "
@@ -262,7 +272,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:144
+#: en/content/community/books.adoc:149
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/41sY2b6MKiL._SL160."
 "jpg[Clojure Programming,link=\"http://amzn.com/1449394701\"] | http://amzn."
@@ -271,7 +281,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:149
+#: en/content/community/books.adoc:154
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/41aJY7x54bL._SL160."
 "jpg[Programming Clojure,link=\"http://amzn.com/1934356867\"] | http://amzn."
@@ -280,7 +290,15 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/books.adoc:154
+#: en/content/community/books.adoc:159
+msgid ""
+"| image::http://clojure-buch.de/cover.jpg[Clojure,link=\"http://clojure-buch."
+"de/\",width=130] | http://clojure-buch.de/[Clojure] + by Stefan Kamphausen, "
+"Tim Oliver Kaiser + Sep 20, 2010"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/books.adoc:164
 msgid ""
 "| image::http://ecx.images-amazon.com/images/I/51dWGdAPwUL._SL160."
 "jpg[Practical Clojure, link=\"http://amzn.com/1430272317\"] | http://amzn."

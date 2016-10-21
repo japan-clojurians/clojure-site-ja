@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/reference/atoms.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:39
 #, no-wrap
 msgid "Atoms"
-msgstr ""
+msgstr "Atom (アトム)"
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:36
@@ -33,7 +33,7 @@ msgstr ""
 #: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
 #, no-wrap
 msgid "Namespaces"
-msgstr ""
+msgstr "ネームスペース"
 
 #. type: Title =
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:1

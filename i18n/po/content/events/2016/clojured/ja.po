@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
-#: en/content/events/2016/clojured.adoc:1
+#: en/content/events/2017/clojured.adoc:1 en/content/events/2016/clojured.adoc:1
 #, no-wrap
 msgid ":clojureD"
 msgstr ""
 
 #. type: Plain text
-#: en/content/events/2016/clojured.adoc:4
-msgid "clojureD 2016-02-20"
+#: en/content/events/2017/clojured.adoc:13 en/content/events/2016/clojured.adoc:13
+msgid "The conference will be held in English."
 msgstr ""
 
 #. type: Plain text
-#: en/content/events/2016/clojured.adoc:13
-msgid "The conference will be held in English."
+#: en/content/events/2016/clojured.adoc:4
+msgid "clojureD 2016-02-20"
 msgstr ""

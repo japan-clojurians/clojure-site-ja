@@ -1,0 +1,38 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2016 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"PO-Revision-Date: 2016-10-21 09:53+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2016/inclojure.adoc:1
+#, no-wrap
+msgid "InClojure "
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/inclojure.adoc:4
+msgid "InClojure 2016-11-26"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/inclojure.adoc:11
+msgid ""
+"InClojure is India’s first conference focused on the many joys of Clojure. The inaugural edition will be held in "
+"Pune, India on November 26th, 2016. InClojure 2016 will be a 1-day, single track conference with 5 or 6 high quality "
+"talks and plenty of time for interaction and Q&A. Our goal with this conference is to nurture the small but growing "
+"community of Clojure programmers in India. We expect to have between 100 to 150 attendees from India and abroad, with "
+"a mix of experienced Clojure programmers and enthusiasts."
+msgstr ""

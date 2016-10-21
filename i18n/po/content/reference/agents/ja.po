@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35 en/content/reference/agents.adoc:39
 #, no-wrap
 msgid "Example"
-msgstr ""
+msgstr "例"
 
 #. type: Title ==
 #: en/content/reference/refs.adoc:73 en/content/reference/other_functions.adoc:41
@@ -68,7 +68,7 @@ msgstr ""
 #: en/content/reference/namespaces.adoc:24 en/content/reference/libs.adoc:64
 #, no-wrap
 msgid "Related functions"
-msgstr ""
+msgstr "関連する関数"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
@@ -76,6 +76,8 @@ msgid ""
 "Ref validators: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 msgstr ""
+"Refバリデーター: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 
 #. type: Title =
 #: en/content/reference/agents.adoc:1
