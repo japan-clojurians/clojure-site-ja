@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-11-09 08:51+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/reference/reducers.adoc:1
 #, no-wrap
 msgid "Reducers"
-msgstr ""
+msgstr "Reducer"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:17
@@ -67,6 +67,11 @@ msgid ""
 "see the original http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html[blog] "
 "http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[posts]."
 msgstr ""
+"Reducerは <<sequences#,sequences>> を使用した操作とは異なるアプローチで、標準的なClojureのコレクションに対する操作を提"
+"供する。Sequence関数は一般的に単一のスレッドで、逐次的に中間の結果を作りながら遅延評価される。しかし、多くのSequence関"
+"数は概念的には並列に適用することが可能で、マシンのコア数に比例したコードの速度を実現出来る。Reducerの背景についての詳"
+"細は元の http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html[blog] http://"
+"clojure.com/blog/2012/05/15/anatomy-of-reducer.html[posts] を参照。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:19
@@ -77,6 +82,10 @@ msgid ""
 "Execution of the operations is deferred until the final reduction is performed. This removes the intermediate results "
 "and lazy evaluation seen with sequences."
 msgstr ""
+"_reducer_ とは   _畳み込み可能なコレクション_ (自分自身の畳み込み方を知っているコレクション) と _畳み込み関数_ (畳み込"
+"みの際に必要な処理の \"レシピ\") の組み合せである。標準的なSequence操作は、実際の操作を行わない代わりに畳込み関数を変"
+"換するもので置き換えられる。操作の実行は最終的な畳込みが行われるまで保留される。これによってsequenceにあるような中間結"
+"果や遅延評価を取り除くことが出来る。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:21
@@ -84,33 +93,35 @@ msgid ""
 "Additionally, some collections (persistent vectors and maps) are _foldable_. The _fold_ operation on a reducer "
 "executes the reduction in parallel by:"
 msgstr ""
+"加えていくつかのコレクションは (persistent な ベクター や マップ) は _フォールド可能_ である。Reducerに対する  _フォー"
+"ルド_ 操作は畳み込みを次のように並列に実行する:"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:23
 msgid "Partitioning the reducible collection at a specified granularity (default = 512 elements)"
-msgstr ""
+msgstr "畳み込み可能なコレクションを指定されたサイズに分割する (デフォルト = 512 要素)"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:24
 msgid "Applying reduce to each partition"
-msgstr ""
+msgstr "各分割に対して reduce を適用する"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:25
 msgid ""
 "Recursively combining each partition using Java's http://gee.cs.oswego.edu/dl/papers/fj.pdf[fork/join] framework."
-msgstr ""
+msgstr "再帰的に各分割を Javaの http://gee.cs.oswego.edu/dl/papers/fj.pdf[fork/join] フレームワークを使用して結合する。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:27
 msgid "If a collection does not support folding, it will fall back to non-parallel reduce instead."
-msgstr ""
+msgstr "コレクションがフォールドをサポートしていない場合は非並列なreduceにフォールバックする。"
 
 #. type: Title ==
 #: en/content/reference/reducers.adoc:28
 #, no-wrap
 msgid "reduce and fold"
-msgstr ""
+msgstr "reduce と fold"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:31
@@ -118,6 +129,8 @@ msgid ""
 "The *clojure.core.reducers* namespace (aliased here as *r*) provides an alternate http://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] function."
 msgstr ""
+"*clojure.core.reducers* のネームスペースでは (ここでは *r* としてエイリアスしている) http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] 関数の代わりを提供している。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:35
@@ -126,16 +139,18 @@ msgid ""
 "*(r/reduce f coll)*\n"
 "*(r/reduce f init coll)*\n"
 msgstr ""
+"*(r/reduce f coll)*\n"
+"*(r/reduce f init coll)*\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:37
 msgid "The reducers version differs in that:"
-msgstr ""
+msgstr "reducer のバージョンは次の点で異なる:"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:39
 msgid "Map colls are reduced with reduce-kv"
-msgstr ""
+msgstr "マップのコレクションは reduce-kv でreduceされる"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:41
@@ -143,6 +158,8 @@ msgid ""
 "When init is not provided, f is invoked with no arguments to produce an identity value ** _Note: f may be invoked "
 "multiple times to provide the identity value_"
 msgstr ""
+"init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。 ** _注: 初期値を作り出すために f が"
+"複数呼び出される場合がある。_"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:43
@@ -151,6 +168,9 @@ msgid ""
 "clojure.core-api.html#clojure.core.reducers/fold[r/fold], which implements parallel reduce and combine. However, it "
 "may be useful to execute an eager reduce with fewer intermediate results."
 msgstr ""
+"一般的にはほとんどのユーザーは、 r/reduce を直接呼び出す代わりに、並列なreduceと結合を実装する http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core.reducers/fold[r/fold] を使用するべきである。ただし、中間結果を削減する目"
+"的で貪欲なreduceを実行することは有用かもしれない。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:48
@@ -160,6 +180,9 @@ msgid ""
 "*(r/fold combinef reducef coll)*\n"
 "*(r/fold n combinef reducef coll)**\n"
 msgstr ""
+"*(r/fold reducef coll)*\n"
+"*(r/fold combinef reducef coll)*\n"
+"*(r/fold n combinef reducef coll)**\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:50
@@ -170,6 +193,10 @@ msgid ""
 "reducef) function. When called with no arguments, (combinef) must produce its identity element - this will be called "
 "multiple times. Operations may be performed in parallel. Results will preserve order."
 msgstr ""
+"r/fold はreduce可能なコレクションを受け取り、それを要素数がほぼ n (デフォルト 512)のグループに分割する。各グループは"
+"reducef関数でreduceされる。reducef関数は _各分割で_ 初期値を作り出すため引数無しで呼び出される。それぞれのreduceの結果"
+"がさらにcombinef関数でreduceされる(defaultがreducef)。引数無しで.呼び出される場合にcombinef関数はその恒等値を作りだす"
+"必要がある - これは複数回呼び出される。操作は並列に実行されうる。結果は順序を保持する。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:52
@@ -187,17 +214,28 @@ msgid ""
 "the collection type or the provided http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/"
 "foldcat[r/foldcat] to produce a collection that is reducible, foldable, seqable, and counted."
 msgstr ""
+"以下の関数は (sequence版と同様に) reducerをreduce、fold可能なコレクションを作成する: http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.reducers/map[r/map] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core.reducers/mapcat[r/mapcat] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/filter[r/"
+"filter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/remove[r/remove] http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/flatten] http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core.reducers/take[r/take] 及び http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"reducers/drop[r/drop] 。 これらの関数は実際には元のコレクションを変換しない。積算した結果を得るには r/reduce か r/"
+"fold を使用する。出力を得るには http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[clojure.core/"
+"into] を使用してコレクションのタイプを選択するか、提供されている http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core.reducers/foldcat[r/foldcat] を使用してreduce可能,fold可能,seq可能、count可能なコレクションを得る。"
 
 #. type: Title ==
 #: en/content/reference/reducers.adoc:53
 #, no-wrap
 msgid "Using Reducers"
-msgstr ""
+msgstr "Reducerを使用する"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:56
 msgid "Use fold to sum with +:"
-msgstr ""
+msgstr "fold を使用して + で和を求める:"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:61
@@ -207,34 +245,39 @@ msgid ""
 "(r/fold + (r/filter even? (r/map inc [1 1 1 2])))\n"
 ";=> 6\n"
 msgstr ""
+"(require '[clojure.core.reducers :as r])\n"
+"(r/fold + (r/filter even? (r/map inc [1 1 1 2])))\n"
+";=> 6\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:63
 msgid ""
 "Use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] を使用して最終的なコレクションを作成す"
+"る:"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:66
 #, no-wrap
 msgid "(into [] (r/filter even? (r/map inc (range 100000))))\n"
-msgstr ""
+msgstr "(into [] (r/filter even? (r/map inc (range 100000))))\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:68
 msgid "Or http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
-msgstr ""
+msgstr "もしくは http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:71
 #, no-wrap
 msgid "(r/foldcat (r/filter even? (r/map inc (range 100000))))\n"
-msgstr ""
+msgstr "(r/foldcat (r/filter even? (r/map inc (range 100000))))\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:73
 msgid "Specify a reduce function and a combine function with fold:"
-msgstr ""
+msgstr "foldのreduce関数とcombine関数を指定する:"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:79
@@ -245,6 +288,10 @@ msgid ""
 "  ([freqs word]\n"
 "    (assoc freqs word (inc (get freqs word 0)))))\n"
 msgstr ""
+"(defn count-words\n"
+"  ([] {})\n"
+"  ([freqs word]\n"
+"    (assoc freqs word (inc (get freqs word 0)))))\n"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:83
@@ -254,6 +301,9 @@ msgid ""
 "  ([] {})\n"
 "  ([& m] (apply merge-with + m)))\n"
 msgstr ""
+"(defn merge-counts\n"
+"  ([] {})\n"
+"  ([& m] (apply merge-with + m)))\n"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:86
@@ -262,44 +312,46 @@ msgid ""
 "(defn word-frequency [text]\n"
 "  (r/fold merge-counts count-words (clojure.string/split text #\"\\s+\")))\n"
 msgstr ""
+"(defn word-frequency [text]\n"
+"  (r/fold merge-counts count-words (clojure.string/split text #\"\\s+\")))\n"
 
 #. type: Title ==
 #: en/content/reference/reducers.adoc:88
 #, no-wrap
 msgid "When to use"
-msgstr ""
+msgstr "使用するべき時"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:91
 msgid "Use the reducer form of these operations for:"
-msgstr ""
+msgstr "reducer formを使用するべき操作:"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:93
 msgid "Efficient eager application of a multi-step transformation"
-msgstr ""
+msgstr "効率の良い、積極的な複数ステップの変換の適用"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:94
 msgid "Avoiding the dangling I/O resource issues (as seen with lazy seqs)"
-msgstr ""
+msgstr "遅延シーケンスに見られるような、取り残されたI/Oリソースの問題を避ける"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:96
 msgid "Use `fold` when:"
-msgstr ""
+msgstr "`fold` を使用するべき時:"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:98
 msgid "Source data can be generated and held in memory"
-msgstr ""
+msgstr "ソースのデータが、メモリ内で生成出来、かつ保持出来る"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:99
 msgid "Work to be performed is computation (not I/O or blocking)"
-msgstr ""
+msgstr "処理の内容が計算である (I/O や ブロッキングではない)"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:99
 msgid "Number of data items or work to be done is \"large\""
-msgstr ""
+msgstr "処理件数や行う処理が \"大きい\" 場合"
