@@ -113,10 +113,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/reducers.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/repl_and_main.html</loc>
         <lastmod></lastmod>
     </url>
@@ -162,6 +158,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/reader.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/reducers.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
