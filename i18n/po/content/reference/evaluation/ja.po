@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-10-21 09:53+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2016-11-14 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -50,27 +50,27 @@ msgstr "''''"
 #: en/content/reference/evaluation.adoc:1
 #, no-wrap
 msgid "Evaluation"
-msgstr ""
+msgstr "Evaluation(評価)"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:15
 msgid "Evaluation can occur in many contexts:"
-msgstr ""
+msgstr "評価は様々なコンテキストで行われ得る:"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:17
 msgid "Interactively, in the REPL"
-msgstr ""
+msgstr "REPLでインタラクティブに"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:18
 msgid "On a sequence of forms read from a stream, via `load` / `load-file` / `load-reader` / `load-string`"
-msgstr ""
+msgstr "`load` / `load-file` / `load-reader` / `load-string`を通して読み込まれたフォームのシーケンスに対して"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:19
 msgid "Programmatically, via `eval`"
-msgstr ""
+msgstr "`eval` を通してプログラマティカルに"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:22
@@ -82,16 +82,21 @@ msgid ""
 "an expression needs to be compiled, it will be. There is no separate compilation step, nor any need to worry that a "
 "function you have defined is being interpreted. _Clojure has no interpreter_."
 msgstr ""
+"Clojureのプログラムは式が組み合わさって成り立っている。スペシャルフォームやマクロで扱われない全てのフォームは、コンパ"
+"イラによって値を作り出すために評価される。宣言やステートメントは存在しないが、副作用を起こす目的で式の評価を行い、値を"
+"無視することはある。全ての場合において評価は同じで、一つのオブジェクトがコンパイラに扱われ、評価され、値が戻される。式"
+"をコンパイルする必要がある場合はコンパイルされる。別のコンパイルのステップは存在せず、また定義された関数が解釈されるこ"
+"とを心配する必要もない。 _Clojure にインタプリタは存在しない_ 。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:24
 msgid "Strings, numbers, characters, `true`, `false`, `nil` and keywords evaluate to themselves."
-msgstr ""
+msgstr "文字列、数字、 `true` 、 `false` 、 `nil` はそれら自身として評価される。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:26
 msgid "A Symbol is _resolved_:"
-msgstr ""
+msgstr "以下の場合、シンボルは _解決される_ :"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:28
@@ -100,6 +105,8 @@ msgid ""
 "error if there is no global var named by the symbol, or if the reference is to a non-public var in a different "
 "namespace."
 msgstr ""
+"ネームスペースで修飾されている場合、値はそのシンボルが指すグローバルなvarの値となる。シンボルが指すグローバルなvarが存"
+"在しない、もしくはパブリックではない別のネームスペースのvarを指している場合はエラーとなる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:29
@@ -107,16 +114,18 @@ msgid ""
 "If it is package-qualified, the value is the Java class named by the symbol. It is an error if there is no Class "
 "named by the symbol."
 msgstr ""
+"パッケージ修飾されている場合、値はシンボルが指すJavaのクラスとなる。シンボルが指すクラスが存在しない場合はエラーとな"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:30
 msgid "Else, it is not qualified and the first of the following applies:"
-msgstr ""
+msgstr "それ以外の場合は修飾がなく、以下の最初のものが適用される:"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:31
 msgid "If it names a special form it is considered a special form, and must be utilized accordingly."
-msgstr ""
+msgstr "スペシャルフォームを指す場合、スペシャルフォームとして扱われ、そのように扱われる必要がある。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:32
@@ -125,6 +134,9 @@ msgid ""
 "is considered to name a Java class object. Note that class names normally denote class objects, but are treated "
 "specially in certain special forms, e.g. `.` and `new`."
 msgstr ""
+"現在のネームスペースにシンボルに対応するクラスが存在するかを確認するためルックアップが行われる。存在する場合、シンボル"
+"はJavaのクラスオブジェクトを指すものとして扱われる。クラス名は通常クラスオブジェクトを意味するが、特別に扱われるフォー"
+"ムが存在することに注意 (例: '.' 及び 'new' )。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:33
@@ -132,6 +144,8 @@ msgid ""
 "If in a local scope (e.g. in a function definition or a let form), a lookup is done to see if it names a local "
 "binding (e.g. a function argument or let-bound name). If so, the value is the value of the local binding."
 msgstr ""
+"ローカルスコープにおいては (つまりは、関数の定義内においては)、ローカルバインディングを指すかをルックアップが行われる"
+"(例 関数の引数かletで束縛された名前)。ローカルバインディングを指す場合、値はローカルバインディングの名前となる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:34
@@ -139,16 +153,18 @@ msgid ""
 "A lookup is done in the current namespace to see if there is a mapping from the symbol to a var. If so, the value is "
 "the value of the binding of the var referred-to by the symbol."
 msgstr ""
+"シンボルからvarへのマッピングの存在を現在のネームスペース内でルックアップする。存在する場合、値はシンボルに指されるvar"
+"のバインディングとなる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:35
 msgid "It is an error."
-msgstr ""
+msgstr "エラーとして扱われる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:37
 msgid "If a Symbol has metadata, it may be used by the compiler, but will not be part of the resulting value."
-msgstr ""
+msgstr "シンボルにメタデータが含まれている場合、コンパイラがそれを使用する場合もあるが、結果の値には含まれない。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:39
@@ -158,6 +174,9 @@ msgid ""
 "The same is true of metadata maps. If the vector or map has metadata, the _evaluated_ metadata map will become the "
 "metadata of the resulting value."
 msgstr ""
+"ベクター、セット、マップはそれぞれの中にあるオブジェクトが _評価された後の値_ を含むvector、  (hash) set、 map を返"
+"す。ベクターの要素は左から右へ評価されるが、セットとマップについては評価の順番が定義されていない。メタデータマップにつ"
+"いても同様。ベクター、もしくはマップがメタデータを持つ場合、_評価後の_ メタデータマップが結果の値のメタデータとなる。"
 
 #. type: delimited block -
 #: en/content/reference/evaluation.adoc:46
@@ -168,11 +187,15 @@ msgid ""
 "user=> ^{:x x} [x y 3]\n"
 "^{:x 1} [1 2 3]\n"
 msgstr ""
+"user=> (def x 1)\n"
+"user=> (def y 2)\n"
+"user=> ^{:x x} [x y 3]\n"
+"^{:x 1} [1 2 3]\n"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:49
 msgid "An empty list `()` evaluates to an empty list."
-msgstr ""
+msgstr "空のリスト `()` は空のリストに評価される。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:51
@@ -180,6 +203,8 @@ msgid ""
 "Non-empty Lists are considered _calls_ to either special forms, macros, or functions. A call has the form +(operator "
 "operands*)+."
 msgstr ""
+"空ではないリストはスペシャルフォーム、マクロ、関数への呼び出しとして扱われる。呼び出しの形式は +(operator operands*)+ "
+"となる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:53
@@ -188,6 +213,9 @@ msgid ""
 "that resolves to the name of a special form, the call is to that special form. Each form discussed individually under "
 "<<special_forms#,Special Forms>>."
 msgstr ""
+"スペシャルフォームはコアな操作を行う、Clojureに組み込まれているプリミティブなフォームである。呼び出しの演算子がスペ"
+"シャルフォーム名前に解決される場合、呼び出しはそのスペシャルフォームに対する呼び出しとなる。各フォームについては "
+"<<special_forms#,Special Forms>> で触れている。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:55
@@ -196,6 +224,9 @@ msgid ""
 "is a symbol that names a global var that is a macro function, that macro function is called and is passed the "
 "_unevaluated_ operand forms. The return value of the macro is then evaluated in its place."
 msgstr ""
+"<<macros#,Macros>> はフォームを操作する関数で、文法の抽象化を可能にする。呼び出しの演算子がマクロ関数を指すグローバル"
+"なvarを指すシンボルである場合、そのマクロ関数が呼び出され、_評価する前_ の被演算子フォームを渡される。マクロの戻り値は"
+"その後、その場で評価される。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:58
@@ -207,11 +238,16 @@ msgid ""
 "by the compiler, but will not be part of the resulting value.  Note that special forms and macros might have other-"
 "than-normal evaluation of their arguments, as described in their entries under <<special_forms#,Special Forms>>."
 msgstr ""
+"演算子がスペシャルフォームかマクロではない場合、呼び出しは関数に対するものとして扱われる。演算子、及び被演算子（存在す"
+"る場合）は両方とも左から右へと評価される。演算子の評価の結果がIFn(Clojureの関数を表現するインターフェース)にキャストさ"
+"れ,invoke()がそれに対して引数を渡した上で呼び出される。invoke()の戻り値が呼び出した式の値となる。関数呼び出しにメタ"
+"データが存在する場合、コンパイラーに使用される場合があるが、結果の値には含まれることはない。 <<special_forms#,Special "
+"Forms>> にあるように、スペシャルフォームとマクロは通常とは異なる引数の評価の仕方をする場合がある点に注意。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:60
 msgid "Any object other than those discussed above will evaluate to itself."
-msgstr ""
+msgstr "上記で触れられている以外のオブジェクトは全て自分自身に評価される。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:67
@@ -222,6 +258,10 @@ msgid ""
 "*(_load-reader_ reader)* +\n"
 "*(_load-string_ string)*\n"
 msgstr ""
+"*(_load_ classpath-resource ...)* +\n"
+"*(_load-file_ filename)* +\n"
+"*(_load-reader_ reader)* +\n"
+"*(_load-string_ string)*\n"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:69
@@ -230,6 +270,8 @@ msgid ""
 "set of forms contained in the source. Such sets of forms usually have side effects, often on the global environment, "
 "defining functions etc."
 msgstr ""
+"上記は単一のフォームの評価を記述している。各種ロードフォームはソースに含まれるフォームを逐次的に読み込み評価する。その"
+"ようなフォームは一般的にはグローバルな環境に対する副作用を伴い、関数の定義等を行う。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:71
@@ -238,17 +280,20 @@ msgid ""
 "form have an effect on that var (e.g. +in-namespace+), the effect will unwind at the completion of the load. load et "
 "al return the value produced by the last expression."
 msgstr ""
+"ロード関数は一時的なコンテキストで実行され、 +*ns*+ には新しいバインディングが付与される。これが意味するところは、"
+"フォームがvarに対して影響を持つ場合、(e.g. +in-namespace+ )、その効果の発現はロードの完了の際に起こる。load 等は最後の"
+"式によって作成された値を返す。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:75
 #, no-wrap
 msgid "*(_eval_ form)*\n"
-msgstr ""
+msgstr "*(_eval_ form)*\n"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:77
 msgid "Evaluates the form _data structure_ (not text!) and returns the result."
-msgstr ""
+msgstr "フォームの _データ構造_ (テキストではない!) を評価し、結果を返す。"
 
 #. type: delimited block -
 #: en/content/reference/evaluation.adoc:82
@@ -257,3 +302,5 @@ msgid ""
 "(eval (list + 1 2 3))\n"
 "-> 6\n"
 msgstr ""
+"(eval (list + 1 2 3))\n"
+"-> 6\n"
