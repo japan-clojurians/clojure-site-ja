@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Evaluation</title>
+    <title>Clojure - Evaluation(評価)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,63 +72,65 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Evaluation</h1>
+  <h1>Evaluation(評価)</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>Evaluation can occur in many contexts:</p>
+<p>評価は様々なコンテキストで行われ得る:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Interactively, in the REPL</p>
+<p>REPLでインタラクティブに</p>
 </li>
 <li>
-<p>On a sequence of forms read from a stream, via <code>load</code> / <code>load-file</code> / <code>load-reader</code> / <code>load-string</code></p>
+<p><code>load</code> / <code>load-file</code> / <code>load-reader</code> / `load-string`を通して読み込まれたフォームのシーケンスに対して</p>
 </li>
 <li>
-<p>Programmatically, via <code>eval</code></p>
+<p><code>eval</code> を通してプログラマティカルに</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure programs are composed of expressions. Every form not handled specially by a special form or macro is considered by the compiler to be an expression, which is evaluated to yield a value. There are no declarations or statements, although sometimes expressions may be evaluated for their side-effects and their values ignored.
-In all cases, evaluation is the same - a single object is considered by the compiler, evaluated, and its result returned. If an expression needs to be compiled, it will be. There is no separate compilation step, nor any need to worry that a function you have defined is being interpreted. <em>Clojure has no interpreter</em>.</p>
+<p>Clojureのプログラムは式が組み合わさって成り立っている。スペシャルフォームやマクロで扱われない全てのフォームは、コンパイラによって値を作り出すために評価される。宣言やステートメントは存在しないが、副作用を起こす目的で式の評価を行い、値を無視することはある。全ての場合において評価は同じで、一つのオブジェクトがコンパイラに扱われ、評価され、値が戻される。式をコンパイルする必要がある場合はコンパイルされる。別のコンパイルのステップは存在せず、また定義された関数が解釈されることを心配する必要もない。
+<em>Clojure にインタプリタは存在しない</em> 。</p>
 </div>
 <div class="paragraph">
-<p>Strings, numbers, characters, <code>true</code>, <code>false</code>, <code>nil</code> and keywords evaluate to themselves.</p>
+<p>文字列、数字、 <code>true</code> 、 <code>false</code> 、 <code>nil</code> はそれら自身として評価される。</p>
 </div>
 <div class="paragraph">
-<p>A Symbol is <em>resolved</em>:</p>
+<p>以下の場合、シンボルは <em>解決される</em> :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If it is namespace-qualified, the value is the value of the binding of the global var named by the symbol. It is an error if there is no global var named by the symbol, or if the reference is to a non-public var in a different namespace.</p>
+<p>ネームスペースで修飾されている場合、値はそのシンボルが指すグローバルなvarの値となる。シンボルが指すグローバルなvarが存在しない、もしくはパブリックではない別のネームスペースのvarを指している場合はエラーとなる。</p>
 </li>
 <li>
-<p>If it is package-qualified, the value is the Java class named by the symbol. It is an error if there is no Class named by the symbol.</p>
+<p>パッケージ修飾されている場合、値はシンボルが指すJavaのクラスとなる。シンボルが指すクラスが存在しない場合はエラーとなる。</p>
 </li>
 <li>
-<p>Else, it is not qualified and the first of the following applies:</p>
+<p>それ以外の場合は修飾がなく、以下の最初のものが適用される:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>If it names a special form it is considered a special form, and must be utilized accordingly.</p>
+<p>スペシャルフォームを指す場合、スペシャルフォームとして扱われ、そのように扱われる必要がある。</p>
 </li>
 <li>
-<p>A lookup is done in the current namespace to see if there is a mapping from the symbol to a class. If so, the symbol is considered to name a Java class object. Note that class names normally denote class objects, but are treated specially in certain special forms, e.g. <code>.</code> and <code>new</code>.</p>
+<p>現在のネームスペースにシンボルに対応するクラスが存在するかを確認するためルックアップが行われる。存在する場合、シンボルはJavaのクラスオブジェクトを指すものとして扱われる。クラス名は通常クラスオブジェクトを意味するが、特別に扱われるフォームが存在することに注意
+(例: '.' 及び 'new' )。</p>
 </li>
 <li>
-<p>If in a local scope (e.g. in a function definition or a let form), a lookup is done to see if it names a local binding (e.g. a function argument or let-bound name). If so, the value is the value of the local binding.</p>
+<p>ローカルスコープにおいては (つまりは、関数の定義内においては)、ローカルバインディングを指すかをルックアップが行われる(例
+関数の引数かletで束縛された名前)。ローカルバインディングを指す場合、値はローカルバインディングの名前となる。</p>
 </li>
 <li>
-<p>A lookup is done in the current namespace to see if there is a mapping from the symbol to a var. If so, the value is the value of the binding of the var referred-to by the symbol.</p>
+<p>シンボルからvarへのマッピングの存在を現在のネームスペース内でルックアップする。存在する場合、値はシンボルに指されるvarのバインディングとなる。</p>
 </li>
 <li>
-<p>It is an error.</p>
+<p>エラーとして扱われる。</p>
 </li>
 </ol>
 </div>
@@ -136,10 +138,12 @@ In all cases, evaluation is the same - a single object is considered by the comp
 </ul>
 </div>
 <div class="paragraph">
-<p>If a Symbol has metadata, it may be used by the compiler, but will not be part of the resulting value.</p>
+<p>シンボルにメタデータが含まれている場合、コンパイラがそれを使用する場合もあるが、結果の値には含まれない。</p>
 </div>
 <div class="paragraph">
-<p>Vectors, Sets and Maps yield vectors and (hash) sets and maps whose contents are the <em>evaluated values</em> of the objects they contain. Vector elements are evaluated left to right, Sets and Maps are evaluated in an undefined order. The same is true of metadata maps. If the vector or map has metadata, the <em>evaluated</em> metadata map will become the metadata of the resulting value.</p>
+<p>ベクター、セット、マップはそれぞれの中にあるオブジェクトが <em>評価された後の値</em> を含むvector、  (hash) set、 map
+を返す。ベクターの要素は左から右へ評価されるが、セットとマップについては評価の順番が定義されていない。メタデータマップについても同様。ベクター、もしくはマップがメタデータを持つ場合、<em>評価後の</em>
+メタデータマップが結果の値のメタデータとなる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -150,23 +154,27 @@ user=&gt; ^{:x x} [x y 3]
 </div>
 </div>
 <div class="paragraph">
-<p>An empty list <code>()</code> evaluates to an empty list.</p>
+<p>空のリスト <code>()</code> は空のリストに評価される。</p>
 </div>
 <div class="paragraph">
-<p>Non-empty Lists are considered <em>calls</em> to either special forms, macros, or functions. A call has the form (operator operands*).</p>
+<p>空ではないリストはスペシャルフォーム、マクロ、関数への呼び出しとして扱われる。呼び出しの形式は (operator operands*) となる。</p>
 </div>
 <div class="paragraph">
-<p>Special forms are primitives built-in to Clojure that perform core operations. If the operator of a call is a symbol that resolves to the name of a special form, the call is to that special form. Each form discussed individually under <a href="special_forms">Special Forms</a>.</p>
+<p>スペシャルフォームはコアな操作を行う、Clojureに組み込まれているプリミティブなフォームである。呼び出しの演算子がスペシャルフォーム名前に解決される場合、呼び出しはそのスペシャルフォームに対する呼び出しとなる。各フォームについては
+<a href="special_forms">Special Forms</a> で触れている。</p>
 </div>
 <div class="paragraph">
-<p><a href="macros">Macros</a> are functions that manipulate forms, allowing for syntactic abstraction. If the operator of a call is a symbol that names a global var that is a macro function, that macro function is called and is passed the <em>unevaluated</em> operand forms. The return value of the macro is then evaluated in its place.</p>
+<p><a href="macros">Macros</a>
+はフォームを操作する関数で、文法の抽象化を可能にする。呼び出しの演算子がマクロ関数を指すグローバルなvarを指すシンボルである場合、そのマクロ関数が呼び出され、<em>評価する前</em>
+の被演算子フォームを渡される。マクロの戻り値はその後、その場で評価される。</p>
 </div>
 <div class="paragraph">
-<p>If the operator is not a special form or macro, the call is considered a function call. Both the operator and the operands (if any) are evaluated, from left to right. The result of the evaluation of the operator is then cast to IFn (the interface representing Clojure functions), and invoke() is called on it, passing the evaluated arguments. The return value of invoke() is the value of the call expression. If the function call form has metadata, it may be used by the compiler, but will not be part of the resulting value.
-Note that special forms and macros might have other-than-normal evaluation of their arguments, as described in their entries under <a href="special_forms">Special Forms</a>.</p>
+<p>演算子がスペシャルフォームかマクロではない場合、呼び出しは関数に対するものとして扱われる。演算子、及び被演算子（存在する場合）は両方とも左から右へと評価される。演算子の評価の結果がIFn(Clojureの関数を表現するインターフェース)にキャストされ,invoke()がそれに対して引数を渡した上で呼び出される。invoke()の戻り値が呼び出した式の値となる。関数呼び出しにメタデータが存在する場合、コンパイラーに使用される場合があるが、結果の値には含まれることはない。
+<a href="special_forms">Special Forms</a>
+にあるように、スペシャルフォームとマクロは通常とは異なる引数の評価の仕方をする場合がある点に注意。</p>
 </div>
 <div class="paragraph">
-<p>Any object other than those discussed above will evaluate to itself.</p>
+<p>上記で触れられている以外のオブジェクトは全て自分自身に評価される。</p>
 </div>
 <hr>
 <div class="paragraph">
@@ -176,17 +184,19 @@ Note that special forms and macros might have other-than-normal evaluation of th
 <strong>(<em>load-string</em> string)</strong></p>
 </div>
 <div class="paragraph">
-<p>The above describes the evaluation of a single form. The various load forms will sequentially read and evaluate the set of forms contained in the source. Such sets of forms usually have side effects, often on the global environment, defining functions etc.</p>
+<p>上記は単一のフォームの評価を記述している。各種ロードフォームはソースに含まれるフォームを逐次的に読み込み評価する。そのようなフォームは一般的にはグローバルな環境に対する副作用を伴い、関数の定義等を行う。</p>
 </div>
 <div class="paragraph">
-<p>The loading functions occur in a temporary context, in which *ns* has a fresh binding. That means that, should any form have an effect on that var (e.g. in-namespace), the effect will unwind at the completion of the load. load et al return the value produced by the last expression.</p>
+<p>ロード関数は一時的なコンテキストで実行され、 *ns*
+には新しいバインディングが付与される。これが意味するところは、フォームがvarに対して影響を持つ場合、(e.g. in-namespace
+)、その効果の発現はロードの完了の際に起こる。load 等は最後の式によって作成された値を返す。</p>
 </div>
 <hr>
 <div class="paragraph">
 <p><strong>(<em>eval</em> form)</strong></p>
 </div>
 <div class="paragraph">
-<p>Evaluates the form <em>data structure</em> (not text!) and returns the result.</p>
+<p>フォームの <em>データ構造</em> (テキストではない!) を評価し、結果を返す。</p>
 </div>
 <div class="listingblock">
 <div class="content">
