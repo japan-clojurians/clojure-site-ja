@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-03-09 16:20+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -56,7 +56,7 @@ msgstr "toc::[]"
 #: en/content/about/rationale.adoc:1
 #, no-wrap
 msgid "Rationale"
-msgstr ""
+msgstr "論理的根拠"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:15
@@ -69,6 +69,12 @@ msgid ""
 "context. It endeavors to be a general-purpose language suitable in those areas where Java is suitable. It reflects "
 "the reality that, for the concurrent programming future, pervasive, unmoderated mutation simply has to go."
 msgstr ""
+"JVMのような業界標準のプラットフォームに対して、顧客やステークホルダーは相当な額の投資を行い、そのパフォーマンスや"
+"セキュリティ、安定性に快適さを感じている。Java開発者たちは動的言語の簡潔さや柔軟性、生産性をうらやんでいるかもしれないが、"
+"顧客が認めるインフラでの実行、既存のコードベースやライブラリへのアクセス、パフォーマンスを気にしている。さらに、"
+"ネイティブスレッドとロックによる並行処理の問題にまさに直面している。Clojureはこうした文脈での実用的で動的な言語設計の"
+"努力の成果だ。ClojureはJavaが適している領域にふさわしい汎用言語になろうとしている。Clojureは、並行プログラミングの未来には"
+"現在普及している度を越した変更(mutation)はなくなるべきだ、という現実を反映している。"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:17
@@ -78,73 +84,76 @@ msgid ""
 "concurrency support via software transactional memory and asynchronous agents. The result is robust, practical, and "
 "fast."
 msgstr ""
+"Clojureはその目標を次の方法で達成している: 業界標準でオープンなプラットフォームJVMを受け入れること、偉大なるLispを"
+"現代化すること、イミュータブルで永続的なデータ構造で関数型プログラミングを促進すること、ソフトウェアトランザクショナルメモリと"
+"非同期のエージェントによって並行処理を組み込みでサポートすること。その結果は、堅牢で実用的で高速な言語だ。"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:19
 msgid "Clojure has a distinctive approach to <<state#,state and identity>>."
-msgstr ""
+msgstr "Clocjureは <<state#,状態とアイデンティティ>> に対して独自のアプローチをとっている。"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:20
 #, no-wrap
 msgid "Why Clojure?"
-msgstr ""
+msgstr "なぜClojureなのか?"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:23
 msgid "Why did I write yet another programming language? Basically because I wanted:"
-msgstr ""
+msgstr "なぜ私はさらに別のプログラミング言語を書いたのか? それは基本的に私が次のものがほしかったからだ:"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:25
 msgid "A Lisp"
-msgstr ""
+msgstr "Lisp"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:26
 msgid "for Functional Programming"
-msgstr ""
+msgstr "関数型プログラミングのための言語"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:27
 msgid "symbiotic with an established Platform"
-msgstr ""
+msgstr "確立されたプラットフォームと共存できる言語"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:28
 msgid "designed for Concurrency"
-msgstr ""
+msgstr "並行処理のために設計された言語"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:30
 msgid "and couldn't find one. Here's an outline of some of the motivating ideas behind Clojure."
-msgstr ""
+msgstr "そして、そういうものは見つけられなかったからだ。以下がClojureの背景にある動機となったアイディアのいくつかだ。"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:31
 #, no-wrap
 msgid "Lisp is a good thing"
-msgstr ""
+msgstr "Lispは良いものだ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:34
 msgid "Often emulated/pillaged, still not duplicated"
-msgstr ""
+msgstr "たびたび模倣され略奪されてきたが、いまだ複製されるには至っていない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:35
 msgid "Lambda calculus yields an extremely small core"
-msgstr ""
+msgstr "ラムダ計算は極めて小さなコアをもたらす"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:36
 msgid "Almost no syntax"
-msgstr ""
+msgstr "ほとんどシンタックスがない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:37
 msgid "Core advantage still code-as-data and syntactic abstraction"
-msgstr ""
+msgstr "いまだ核心的な強みであるデータとしてのコード(code-as-data)とシンタックスの抽象化"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:43
@@ -153,6 +162,9 @@ msgid ""
 "structures mutable, not extensible ** No concurrency in specs ** Good implementations already exist for JVM (ABCL, "
 "Kawa, SISC et al)  ** Standard Lisps are their own platforms"
 msgstr ""
+"標準のLisp(Common LispとScheme)はどうだろう? ** 標準化以降のイノベーションが遅い/ない ** コアとなるデータ構造が"
+"ミュータブルで、拡張もできない ** 並行処理が仕様に含まれていない ** JVM向けの良い実装がすでに存在する(ABCL, Kawa, SISC"
+"など) ** 標準のLispはそれぞれ固有のプラットフォームになっている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:48
@@ -160,17 +172,19 @@ msgid ""
 "Clojure is a Lisp not constrained by backwards compatibility ** Extends the code-as-data paradigm to maps and vectors "
 "** Defaults to immutability ** Core data structures are extensible abstractions ** Embraces a platform (JVM)"
 msgstr ""
+"Clojureは後方互換性による制約のないLispだ ** code-as-dataのパラダイムをマップとベクターに拡張している "
+"** デフォルトでイミュータブルになっている ** コアとなるデータ構造は拡張可能な抽象だ ** プラットフォーム(JVM)を受け入れている"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:49
 #, no-wrap
 msgid "Functional programming is a good thing"
-msgstr ""
+msgstr "関数型プログラミングは良いものだ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:52
 msgid "Immutable data + first-class functions"
-msgstr ""
+msgstr "イミュータブルなデータ + 第一級関数"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:55
@@ -178,11 +192,13 @@ msgid ""
 "Could always be done in Lisp, by discipline/convention ** But if a data structure _can_ be mutated, dangerous to "
 "presume it won't be ** In traditional Lisp, only the list data structure is structurally recursive"
 msgstr ""
+"Lispでは規律や規約によって常に可能だった ** しかしデータ構造が変更されうるものであれば変更されないと推定するのは"
+"危険だ ** 伝統的なLispでは、リストというデータ構造だけが構造的に再帰的だ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:57
 msgid "Pure functional languages tend to strongly static types ** Not for everyone, or every task"
-msgstr ""
+msgstr "純粋関数型言語は強い静的型付けである傾向にある ** みんなに適しているわけではないし、あらゆるタスクに適しているわけでもない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:61
@@ -190,12 +206,14 @@ msgid ""
 "Clojure is a functional language with a dynamic emphasis ** All data structures immutable & persistent, supporting "
 "recursion ** Heterogeneous collections, return types ** Dynamic polymorphism"
 msgstr ""
+"Clojureは動的であることを重視する関数型言語だ ** すべてのデータ構造はイミュータブルで永続的で再帰をサポートしている "
+"** 異なる型の値が混在したコレクションや戻り型 ** 動的ポリモーフィズム"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:62
 #, no-wrap
 msgid "Languages and Platforms"
-msgstr ""
+msgstr "言語とプラットフォーム"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:75
@@ -204,6 +222,9 @@ msgid ""
 "Libraries *** Abstract away OSes *** _Huge_ set of facilities *** Built-in and 3rd-party ** Memory and other resource "
 "management *** GC is platform, not language, facility ** Bytecode + JIT compilation *** Abstracts away hardware"
 msgstr ""
+"OSではなくVMが未来のプラットフォームであり、次のものを提供する:  ** 型システム *** 動的な強制と安全性 ** "
+"ライブラリ *** OSの抽象化 *** 非常に多数の機能の集合 *** 組み込みとサードパーティ ** メモリと他のリソースの管理 "
+"*** GCは言語ではなくプラットフォームの機能である ** バイトコード + JITコンパイル *** ハードウェアの抽象化"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:80
@@ -211,6 +232,9 @@ msgid ""
 "Language as platform vs. language + platform ** Old way - each language defines its own runtime *** GC, bytecode, "
 "type system, libraries etc ** New way (JVM, .Net)  *** Common runtime independent of language"
 msgstr ""
+"プラットフォームとしての言語 vs. 言語 + プラットフォーム ** 古いやり方 - 各言語がそれぞれランタイムを定義する *** GC、"
+"バイトコード、型システム、ライブラリなど ** 新しいやり方(JVM, .NET) *** 言語とは独立した共通のランタイム"
+
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:86
@@ -219,6 +243,10 @@ msgid ""
 "approach ** When ported, have platform-on-platform issues *** Memory management, type-system, threading issues *** "
 "Library duplication *** If original language based on C, some extension libraries written in C don't come over"
 msgstr ""
+"プラットフォームのために構築された言語 vs プラットフォームにポートされた言語 ** 多くの新しい言語はいまだ「プラットフォーム"
+"としての言語」というアプローチをとっている ** ポートされる際にプラットフォーム上のプラットフォームという問題を抱えることに"
+"なる *** メモリ管理、型システム、スレッドの問題 *** ライブラリの重複 *** 元の言語がC言語をベースにしていても、C言語で書かれた"
+"一部の拡張ライブラリはついてこない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:92
@@ -227,6 +255,9 @@ msgid ""
 "established track record and trust level *** Now also open source ** Interop with other code required *** C linkage "
 "insufficient these days"
 msgstr ""
+"プラットフォームは顧客に指定されている ** 「JVM(または.NET)上で実行しなければならない」vs「UNIX(またはWindows)で実行しなければ"
+"ならない」 ** JVMは実績と信頼できるレベルを確立してきた *** 今やオープンソースでもある ** 他のコードとの相互運用が求められる "
+"*** C言語との連携では最近では不十分になってきている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:97
@@ -235,17 +266,20 @@ msgid ""
 "by Sun ** Java can be tedious, insufficiently expressive *** Lack of first-class functions, no type inference, etc ** "
 "Ability to call/consume Java is critical"
 msgstr ""
+"Java/JVMは言語 + プラットフォーム ** もともとそうだったわけではないが、JVM向けの他の言語は常に存在し、今やSunにも受け入れ"
+"られている ** Javaは冗長で表現力が不十分になりがちだ *** 第一級関数を欠き、型推論がない、など ** Javaを呼び出し取り込む"
+"能力は決定的に重要だ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:98
 msgid "Clojure is the language, JVM the platform"
-msgstr ""
+msgstr "Clojureは言語であり、JVMがプラットフォームだ"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:99
 #, no-wrap
 msgid "Object Orientation is overrated"
-msgstr ""
+msgstr "オブジェクト指向は過大評価されている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:103
@@ -253,17 +287,21 @@ msgid ""
 "Born of simulation, now used for everything, even when inappropriate ** Encouraged by Java/C# in all situations, due "
 "to their lack of (idiomatic) support for anything else"
 msgstr ""
+"シミュレーションから生まれ、今ではあらゆるものに、時には適していないものにさえ利用されている ** Java/C#によってあらゆる"
+"状況で奨励されてきたが、それはJava/C#がそれ以外の(慣用的な)方法を欠いていたためだ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:106
 msgid ""
 "Mutable stateful objects are the new spaghetti code ** Hard to understand, test, reason about ** Concurrency disaster"
 msgstr ""
+"ミュータブルでステートフルなオブジェクトは新たなスパゲッティコードだ ** 理解するのもテストするのも推論するのも難しい "
+"** 並行処理にとって災難だ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:107
 msgid "Inheritance is _not_ the only way to do polymorphism"
-msgstr ""
+msgstr "継承はポリモーフィズムを実現する唯一の方法ではない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:108
@@ -271,6 +309,8 @@ msgid ""
 "\"It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data "
 "structures.\" - Alan J. Perlis"
 msgstr ""
+"「10個のデータ構造それぞれに操作する関数が10個ずつあるより、1個のデータ構造を操作する関数が100個あるほうが"
+"良い。」 - Alan J. Perlis"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:109
@@ -278,32 +318,34 @@ msgid ""
 "Clojure models its data structures as immutable objects represented by interfaces, and otherwise does not offer its "
 "own class system."
 msgstr ""
+"Clojureはデータ構造をインターフェースで表現されたイミュータブルなオブジェクトとしてモデル化し、それ以外の方法で"
+"独自のクラスシステムを提供していない"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:110
 msgid "Many functions defined on few primary data structures (seq, map, vector, set)."
-msgstr ""
+msgstr "少数の基本的なデータ構造(seq, map, vector, set)に対して定義された多数の関数"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:111
 msgid "Write Java in Java, consume and extend Java from Clojure."
-msgstr ""
+msgstr "JavaでJavaを書き、ClojureからJavaを取り込み拡張する"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:112
 #, no-wrap
 msgid "Polymorphism is a good thing"
-msgstr ""
+msgstr "ポリモーフィズムは良いものだ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:115
 msgid "Switch statements, structural matching etc yield brittle systems"
-msgstr ""
+msgstr "switch文や構造的なマッチなどは脆いシステムをもたらす"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:116
 msgid "Polymorphism yields extensible, flexible systems"
-msgstr ""
+msgstr "ポリモーフィズムは拡張可能で柔軟なシステムをもたらす"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:119
@@ -311,32 +353,34 @@ msgid ""
 "Clojure multimethods decouple polymorphism from OO and types ** Supports multiple taxonomies ** Dispatches via "
 "static, dynamic or external properties, metadata, etc"
 msgstr ""
+"Clojureのマルチメソッドはオブジェクト指向と型からポリモーフィズムを分離したものだ ** 複数の基準での分類をサポート"
+"している ** 静的、動的または外部的なプロパティ、メタデータなどによってディスパッチする"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:120
 #, no-wrap
 msgid "Concurrency and the multi-core future"
-msgstr ""
+msgstr "並行処理とマルチコアの未来"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:124
 msgid "Immutability makes much of the problem go away ** Share freely between threads"
-msgstr ""
+msgstr "イミュータブルであることによって多くの問題はなくなる ** スレッド間で自由に共有できる"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:125
 msgid "But changing state a reality for simulations and for in-program proxies to the outside world"
-msgstr ""
+msgstr "しかし、状態の変更はシミュレーションや外部世界に対するプログラムでのプロキシとして現実に必要なものだ"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:126
 msgid "Locking is too hard to get right over and over again"
-msgstr ""
+msgstr "ロックは繰り返し正しく行うにはあまりにも難しい"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:127
 msgid "Clojure's software transactional memory and agent systems do the hard part"
-msgstr ""
+msgstr "Clojureのソフトウェアトランザクショナルメモリとエージェントのシステムはその困難な部分を担っている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:128
@@ -344,3 +388,5 @@ msgid ""
 "In short, I think Clojure occupies a unique niche as a functional Lisp for the JVM with strong concurrency support. "
 "Check out some of the <<features#,features>>."
 msgstr ""
+"要するに、ClojureはJVM向けで強力な並行処理サポートを備えた関数型のLispとして独自のニッチを占めていると私は考えている。 "
+"<<features#,特徴>> を確認しよう。"
