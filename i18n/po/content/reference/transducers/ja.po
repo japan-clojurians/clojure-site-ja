@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-03-02 09:07+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -60,7 +60,7 @@ msgstr "例:"
 #: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10
 #, no-wrap
 msgid "Transducers"
-msgstr ""
+msgstr "Transducers(トランスデューサー)"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:17
@@ -71,6 +71,10 @@ msgid ""
 "streams, channels, observables, etc. Transducers compose directly, without awareness of input or creation of "
 "intermediate aggregates."
 msgstr ""
+"トランスデューサーは合成可能な、演算的変換である。トランスデューサーは入出力ソースから独立しており、個別の要素に対する"
+"変換のエッセンスのみを指定する。トランスデューサーは入出力ソースとは分離されているため、様々な処理で使用することが可能"
+"である - コレクション、ストリーム、チャネル、オブザーバブル等。トランスデューサーは入力を意識することも中間集計結果を"
+"生成することもなく、直接的に合成する。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:19
@@ -78,19 +82,21 @@ msgid ""
 "Also see the introductory http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] and this https://"
 "www.youtube.com/watch?v=6mTbuzafcII[video]."
 msgstr ""
+"導入として次のブログポスト及びビデオを参照: http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] "
+"https://www.youtube.com/watch?v=6mTbuzafcII[video]"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:20
 #, no-wrap
 msgid "Terminology"
-msgstr ""
+msgstr "用語"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:23
 msgid ""
 "A _reducing function_ is the kind of function you'd pass to *reduce* - it is a function that takes an accumulated "
 "result and a new input and returns a new accumulated result:"
-msgstr ""
+msgstr "_reducing関数_ とは *reduce* に渡すような関数 - 累積結果と新しい入力を受け取り、新しい累積結果を返す関数だ:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:27
@@ -99,11 +105,13 @@ msgid ""
 ";; reducing function signature\n"
 "whatever, input -> whatever\n"
 msgstr ""
+";; reducing関数のシグネチャ\n"
+"whatever, input -> whatever\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:29
 msgid "A _transducer_ (sometimes referred to as xform or xf) is a transformation from one reducing function to another:"
-msgstr ""
+msgstr "_トランスデューサー_ (xformもしくはxfと書かれることもある) はreducing関数を別のreducing関数に変換する:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:33
@@ -112,12 +120,14 @@ msgid ""
 ";; transducer signature\n"
 "(whatever, input -> whatever) -> (whatever, input -> whatever)\n"
 msgstr ""
+";; トランスデューサーのシグネチャ\n"
+"(whatever, input -> whatever) -> (whatever, input -> whatever)\n"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:34
 #, no-wrap
 msgid "Defining Transformations With Transducers"
-msgstr ""
+msgstr "トランスデューサーで変換を定義する"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:37
@@ -126,6 +136,9 @@ msgid ""
 "collection; the inputs will be supplied by the process applying the transducer. _Note: this reduced arity is not "
 "currying or partial application._"
 msgstr ""
+"Clojureに含まれるほとんどのシーケンス関数は、トランスデューサーを返すアリティを持つ。そのアリティは入力のコレクション"
+"を省いたものになっている; 入力のコレクションはトランスデューサーを適用する処理によって与えられる。 _注: この個数の減ったアリティはカリー"
+"化や部分適用ではない。_"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:44
@@ -135,6 +148,9 @@ msgid ""
 "(map inc)     ;; returns a mapping transducer for incrementing\n"
 "(take 5)      ;; returns a transducer that will take the first 5 values\n"
 msgstr ""
+"(filter odd?) ;; 奇数をフィルタするトランスデューサーを返す\n"
+"(map inc)     ;; incによるマッピングを行うトランスデューサーを返す\n"
+"(take 5)      ;; 最初の5つの値を取得するトランスデューサーを返す\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:47
@@ -143,6 +159,9 @@ msgid ""
 "and how many times to call the transducer it wraps. The recommended way to compose transducers is with the existing "
 "*comp* function:"
 msgstr ""
+"トランスデューサーは通常の関数合成によって合成される。トランスデューサーは、ラップしているトランスデューサーを呼び出す"
+"か否か、何回呼び出すかを判断する前に自分自身の処理を行う。トランスデューサーの合成には既存の *comp* 関数の使用が推奨さ"
+"れる:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:55
@@ -154,6 +173,11 @@ msgid ""
 "    (map inc)\n"
 "    (take 5)))\n"
 msgstr ""
+"(def xf\n"
+"  (comp\n"
+"    (filter odd?)\n"
+"    (map inc)\n"
+"    (take 5)))\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:58
@@ -162,6 +186,9 @@ msgid ""
 "function in the stack is performed _before_ the operation it wraps. Composition of the transformer runs right-to-left "
 "but builds a transformation stack that runs left-to-right (filtering happens before mapping in this example)."
 msgstr ""
+"トランスデューサーxfは一連の入力要素に対する処理によって適用される変換のまとまりである。まとまりの中の各関数はラップしている"
+"操作の _前に_ 実行される。変換器の合成は右から左に流れるが、変換の処理は左から右に流れる変換のまとまりとして組み立てられる (この例ではマッピングの"
+"前にフィルタが行われる)。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:60
@@ -169,6 +196,8 @@ msgid ""
 "As a mnemonic, remember that the ordering of transducer functions in *comp* is the same order as sequence "
 "transformations in *pass:[->>]*. The transformation above is equivalent to the sequence transformation:"
 msgstr ""
+"記憶の助けとして、 *comp* のトランスデューサーの順序は *pass:[->>]* によるシーケンスの変換と同じであることを覚えてお"
+"くこと。上記の変換は下記のシーケンス変換と同等である:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:67
@@ -179,6 +208,10 @@ msgid ""
 "     (map inc)\n"
 "     (take 5))\n"
 msgstr ""
+"(->> coll\n"
+"     (filter odd?)\n"
+"     (map inc)\n"
+"     (take 5))\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:71
@@ -200,23 +233,39 @@ msgid ""
 "html#clojure.core/interpose[interpose] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "dedupe[dedupe] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample[random-sample]"
 msgstr ""
+"次の関数は入力コレクションの引数が省略されている場合トランスデューサーを返す: http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/map[map] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"cat[cat] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat[mapcat] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/filter[filter] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/remove[remove] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take[take] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while[take-while] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/take-nth[take-nth] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/drop[drop] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while[drop-"
+"while] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace[replace] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/partition-by[partition-by] http://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/partition-all[partition-all] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/keep[keep] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed[keep-indexed] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed[map-indexed] http://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/distinct[distinct] http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/interpose[interpose] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"dedupe[dedupe] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample[random-sample]"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:72
 #, no-wrap
 msgid "Using Transducers"
-msgstr ""
+msgstr "トランスデューサーを使用する"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:75
 msgid "Transducers can be used in many contexts (see below for how to create new ones)."
-msgstr ""
+msgstr "トランスデューサーは様々なコンテキストで使用することができる (新しいコンテキストの作り方は下記を参照)。."
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:76
 #, no-wrap
 msgid "transduce"
-msgstr ""
+msgstr "transduce"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:79
@@ -224,6 +273,8 @@ msgid ""
 "One of the most common ways to apply transducers is with the http://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/transduce[transduce] function, which is analogous to the standard reduce function:"
 msgstr ""
+"最も一般的なトランスデューサーの適用方法は http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"transduce[transduce] 関数で、標準のreduce関数と似ている:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:84
@@ -232,12 +283,14 @@ msgid ""
 "(transduce xform f coll)\n"
 "(transduce xform f init coll)\n"
 msgstr ""
+"(transduce xform f coll)\n"
+"(transduce xform f init coll)\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:87
 #, no-wrap
 msgid "*transduce* will immediately (not lazily) reduce over *coll* with the transducer *xform* applied to the reducing function *f*, using init as the initial value if supplied or (f) otherwise. f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.\n"
-msgstr ""
+msgstr "*transduce* は *coll* を即時に (遅延評価せずに) reduceing関数 *f* にトランスデューサー *xform* を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:95
@@ -249,6 +302,11 @@ msgid ""
 "(transduce xf + 100 (range 5))\n"
 ";; => 106\n"
 msgstr ""
+"(def xf (comp (filter odd?) (map inc)))\n"
+"(transduce xf + (range 5))\n"
+";; => 6\n"
+"(transduce xf + 100 (range 5))\n"
+";; => 106\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:98
@@ -256,18 +314,20 @@ msgid ""
 "The composed xf transducer will be invoked left-to-right with a final call to the reducing function f. In the last "
 "example, input values will be filtered, then incremented, and finally summed."
 msgstr ""
+"合成されたxfトランスデューサーは最終的なreducing関数fへの呼び出しとともに左から右へと呼び出される。直前の例では、入力"
+"値がフィルタ、インクリメント、合計される。"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
 #, no-wrap
 msgid "/images/content/reference/transducers/xf.png"
-msgstr ""
+msgstr "/images/content/reference/transducers/xf.png"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:101
 #, no-wrap
 msgid "eduction"
-msgstr ""
+msgstr "eduction"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:104
@@ -277,6 +337,9 @@ msgid ""
 "iterable application of the transducer to the items in coll. These applications will be performed each time reduce/"
 "iterator is called."
 msgstr ""
+"トランスデューサーをcollに適用する際の処理を捕捉するには http://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/eduction[eduction] 関数を使用する。この関数は任意の数の xform と最後に coll を受け取り、reduce可能で"
+"イテラブルな、collの各要素へのトランスデューサーの適用を返す。これらの適用はreduce/iteratorが呼び出される度に行われる。"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:109
@@ -286,12 +349,15 @@ msgid ""
 "(reduce + 0 iter)\n"
 ";; => 6\n"
 msgstr ""
+"(def iter (eduction xf (range 5)))\n"
+"(reduce + 0 iter)\n"
+";; => 6\n"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:110
 #, no-wrap
 msgid "into"
-msgstr ""
+msgstr "into"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:112
@@ -299,18 +365,21 @@ msgid ""
 "To apply a transducer to an input collection and construct a new output collection, use http://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/into[into] (which efficiently uses reduce and transients if possible):"
 msgstr ""
+"トランスデューサーを入力コレクションに適用し、出力コレクションを新たに構築する場合は http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/into[into] を使用する (内部で効率的にreduceを行い、可能であればtransientを使用す"
+"る):"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:115
 #, no-wrap
 msgid "(into [] xf (range 1000))\n"
-msgstr ""
+msgstr "(into [] xf (range 1000))\n"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:116
 #, no-wrap
 msgid "sequence"
-msgstr ""
+msgstr "sequence"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:118
@@ -318,12 +387,14 @@ msgid ""
 "To create a sequence from the application of a transducer to an input collection, use http://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/sequence[sequence]:"
 msgstr ""
+"入力コレクションに対するトランスデューサーの適用からシーケンスを作成する場合には http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/sequence[sequence] を使用する:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:121
 #, no-wrap
 msgid "(sequence xf (range 1000))\n"
-msgstr ""
+msgstr "(sequence xf (range 1000))\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:123
@@ -332,17 +403,19 @@ msgid ""
 "needed and fully realize intermediate operations. This behavior differs from the equivalent operations on lazy "
 "sequences."
 msgstr ""
+"結果のシーケンスの要素っは一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行す"
+"る。この挙動は遅延シーケンスに対する同様の処理とは異なる。"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:124
 #, no-wrap
 msgid "Creating Transducers"
-msgstr ""
+msgstr "トランスデューサーの作成"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:127
 msgid "Most functions that produce transducers have the following shape (custom code in \"...\"):"
-msgstr ""
+msgstr "トランスデューサーを返すほとんどの関数は次のような形態をとる (custom code in \"...\"):"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:133
@@ -353,6 +426,10 @@ msgid ""
 "      ([result] ...)\n"
 "      ([result input] ...)))\n"
 msgstr ""
+"(fn [xf]\n"
+"  (fn ([] ...)\n"
+"      ([result] ...)\n"
+"      ([result input] ...)))\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:135
@@ -361,29 +438,32 @@ msgid ""
 "count, etc) and return a transducer of this shape closing over those arguments. In some cases, like *cat*, the core "
 "function _is_ a transducer function and does not take an *xf*."
 msgstr ""
+"コアのシーケンス関数の多く (map、 filter、etc) は処理特有の引数を受け取り、(述語、関数、個数、 etc) それらの引数を包"
+"含するトランスデューサーを返す。中には *cat* 等 _それ自体が_ トランスデューサーであり、 *xf* を受け取らない関数もあ"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:137
 msgid "The inner function is defined with 3 arities used for different purposes:"
-msgstr ""
+msgstr "内部の関数は異なる用途のために3種類のアリエィで定義されている:"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:139
 #, no-wrap
 msgid "*Init* (arity 0) - should call the init arity on the nested transform *xf*, which will eventually call out to the transducing process.\n"
-msgstr ""
+msgstr "*Init* (アリティ 0) - ネストしている変換 *xf* をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:140
 #, no-wrap
 msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *xf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *xf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
-msgstr ""
+msgstr "*Step* (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって *xf* の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって *xf* を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:141
 #, no-wrap
 msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *xf* completion arity exactly once.\n"
-msgstr ""
+msgstr "*Completion* (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば *transduce* )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は *xf* の完了引数を一度のみ呼び出す必要がある。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:143
@@ -392,17 +472,20 @@ msgid ""
 "The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing[completing] function can be used "
 "to convert a reducing function to a transducing function by adding a default completion arity."
 msgstr ""
+"*completion* の利用例は *partition-all* で、この関数は入力の最後に残っている要素をフラッシュする必要がある。 http://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/completing[completing] 関数を使用すると デフォルトのcompletionアリティを追加するこ"
+"とによってreducing関数をトランスデューサー関数に変換することができる。"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:144
 #, no-wrap
 msgid "Early termination"
-msgstr ""
+msgstr "早期終了"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:147
 msgid "Clojure has a mechanism for specifying early termination of a reduce:"
-msgstr ""
+msgstr "Clojureにはreduceの早期終了を指定するメカニズムがある:"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:149
@@ -410,6 +493,8 @@ msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced[reduced] - takes a value and returns a "
 "_reduced_ value indicating reduction should stop"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced[reduced] - 値を受け取り  "
+"reduceの終了すべきことを示す、 _reduced(reduce済みの)_ 値を返す。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:150
@@ -417,6 +502,8 @@ msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?[reduced?] - returns true if the value "
 "was created with _reduced_"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?[reduced?] - _reduced_ を使用して作成され"
+"た値に対して true を返す。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:151
@@ -424,6 +511,8 @@ msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] or @ can be used to retrieve the "
 "value inside a _reduced_"
 msgstr ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] もしくは @ を使用して _reduced_ の中"
+"の値を取得することができる。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:153
@@ -432,12 +521,15 @@ msgid ""
 "in Creating Transducible Processes). Additionally, a transducer step function that uses a nested reduce must check "
 "for and convey reduced values when they are encountered. (See the implementation of cat for an example.)"
 msgstr ""
+"トランスデューサーを使用するプロセスは、step関数がreducedな値を返すかをチェックし、reducedを返す場合は停止する必要"
+"がある。 (transduce可能なプロセス作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数"
+"もreducedな値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:154
 #, no-wrap
 msgid "Transducers with reduction state"
-msgstr ""
+msgstr "reduce処理の状態を持つトランスデューサー"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:157
@@ -447,6 +539,9 @@ msgid ""
 "a series of duplicate values into a single value. This transducer must remember the previous value to determine "
 "whether the current value should be passed on:"
 msgstr ""
+"いくつかのトランスデューサー( *take* 、 *partition* 等)はreduce処理に状態が必要となる。この状態はtransduce可能な処理がトラ"
+"ンスデューサーを適用する度に作成される。例として連続する重複した値を一つにまとめるdedupeトランスデューサーを考える。こ"
+"のトランスデューサーは現在の値を引き渡すかどうかを決めるにあたって、一つ前の値を記憶する必要がある:"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:171
@@ -465,6 +560,18 @@ msgid ""
 "                result\n"
 "                (xf result input))))))))\n"
 msgstr ""
+"(defn dedupe []\n"
+"  (fn [xf]\n"
+"    (let [prev (volatile! ::none)]\n"
+"      (fn\n"
+"        ([] (xf))\n"
+"        ([result] (xf result))\n"
+"        ([result input]\n"
+"          (let [prior @prev]\n"
+"            (vreset! prev input)\n"
+"              (if (= prior input)\n"
+"                result\n"
+"                (xf result input))))))))\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:173
@@ -474,6 +581,9 @@ msgid ""
 "process starts (in a call to *transduce* for example). The stateful interactions are therefore contained within the "
 "context of the transducible process."
 msgstr ""
+"dedupeでは *prev* はreduce処理の間に、一つ前の値を保持するステートフルなコンテナである。prevの値はパフォーマンスのためvolatileだが、atomとし"
+"ても定義できる。prevの値はトランスデューサー処理が開始するまで初期化されない(例: *transduce* への呼び出し)。よって、ス"
+"テートフルなやり取りはトランスデューサー処理のコンテキストに内包される。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:175
@@ -482,12 +592,14 @@ msgid ""
 "transformer's completion function, unless it has previously seen a reduced value from the nested step in which case "
 "pending state should be discarded."
 msgstr ""
+"完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り((観測し"
+"た場合は保留にしている状態を破棄するべき)、ネストしている変換器の完了関数を呼び出す前に状態をフラッシュするべきだ。"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:176
 #, no-wrap
 msgid "Creating Transducible Processes"
-msgstr ""
+msgstr "transduce可能な処理の作成"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:179
@@ -496,11 +608,14 @@ msgid ""
 "steps where each step ingests an input. The source of the inputs is specific to each process (from a collection, an "
 "iterator, a stream, etc). Similarly, the process must choose what to do with the outputs produced by each step."
 msgstr ""
+"トランスデューサーは様々な処理で使用できるように設計されている。トランスデューサー処理は各ステップが一つの入力を消化す"
+"る、一連のステップとして定義される。入力ソースは各処理に特有のものであり (コレクション、イテレータ, ストリーム等)、 同様"
+"に、各ステップの出力の処理方法も処理によって選択する必要がある。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:181
 msgid "If you have a new context for applying transducers, there are a few general rules to be aware of:"
-msgstr ""
+msgstr "トランスデューサーを新たなコンテキストに適用する場合、いくつかの一般的な注意点がある。:"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:184
@@ -508,11 +623,13 @@ msgid ""
 "If a step function returns a _reduced_ value, the transducible process must not supply any more inputs to the step "
 "function. The reduced value must be unwrapped with deref before completion."
 msgstr ""
+"step関数が _reduced (reduce済み)_ の値を返す場合、トランスデューサー処理はそれ以上の入力をステップ関数に与えてはならない。reduce済み"
+"の値はderefを使用して完了前に展開する必要がある。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:185
 msgid "A completing process must call the completion operation on the final accumulated value exactly once."
-msgstr ""
+msgstr "completion操作は、最終的な集計値に対して完了処置を一度のみ呼び出す必要がある。"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:185
@@ -520,3 +637,5 @@ msgid ""
 "A transducing process must encapsulate references to the function returned by invoking a transducer - these may be "
 "stateful and unsafe for use across threads."
 msgstr ""
+"transducing処理はトランスデューサーを呼び出した際に返される関数への参照を内包する必要がある - これらはステー"
+"トフルで、スレッド間での使用が安全でない場合もある。"
