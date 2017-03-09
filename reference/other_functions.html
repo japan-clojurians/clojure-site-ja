@@ -89,20 +89,20 @@
 </div>
 <div class="paragraph">
 <p>Boolean and comparison functions:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/=">=</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/==">==</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identical?">identical?</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not=">not=</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not">not</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/true?">true?</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/false?">false?</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nil?">nil?</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/=">=</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/==">==</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identical?">identical?</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not=">not=</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not">not</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/true?">true?</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/false?">false?</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nil?">nil?</a><br>
 Miscellaneous:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identity">identity</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes">dotimes</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time">time</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert">assert</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open">with-open</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identity">identity</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes">dotimes</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time">time</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert">assert</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open">with-open</a></p>
 </div>
 </div>
 </div>
@@ -114,13 +114,13 @@ Miscellaneous:<br>
 <a href="special_forms#fn">fn</a> | <code>(map (fn [x] (+ 2 x)) [1 2 3])</code> | <code>(3 4 5)</code> | |
 #() <a href="reader">reader</a> macro | <code>(map #(+ 2 %) [1 2 3])</code> | <code>(3 4 5)</code> |
 |
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial">partial</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial">partial</a>
 | <code>(map (partial + 2) [1 2 3])</code> | <code>(3 4 5)</code> | |
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp">comp</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp">comp</a>
 | <code>(map (comp - *) [2 4 6] [1 2 3])</code> | <code>(-2 -8 -18)</code> | |
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement">complement</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement">complement</a>
 | <code>(map (complement zero?) [3 2 1 0])</code> | <code>(true true true false)</code> | |
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly">constantly</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly">constantly</a>
 | <code>(map (constantly 9) [1 2 3])</code> | <code>(9 9 9)</code> | |===</p>
 </div>
 </div>
@@ -133,30 +133,30 @@ Miscellaneous:<br>
 the current value of <code>*out*</code>. The -str versions bind <code>*out*</code>
 to a StringWriter, print to that, and return the resulting
 string.
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
 prints the object(s), separated by spaces if there is more than
 one.
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
 does the same and follows it with a
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline">newline</a>.
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline">newline</a>.
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a>
 and
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a>
 call
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
 and
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
 respectively, with <code>*print-readably*</code> (which defaults to true) bound
 to nil, which causes strings to print without surrounding quotes or any
 escape character encoding, and characters to print without the leading '\',
 or any escape character encoding. By default,
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a>
 and
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a>
 print in a way that objects can be read by the reader, while
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a>
 and
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a>
 produce output for human consumption. When <code>*print-readably*</code> is
 non-nil, the printing of metadata is toggled by <code>*print-meta*</code>, which
 defaults to nil.</p>
@@ -165,17 +165,17 @@ defaults to nil.</p>
 <h3 id="_関連する関数">関連する関数</h3>
 <div class="paragraph">
 <p>Print to <code>*out*</code>:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline">newline</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr">pr</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn">prn</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print">print</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline">newline</a><br>
 Print to string:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str">pr-str</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str">prn-str</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str">print-str</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str">println-str</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str">pr-str</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str">prn-str</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str">print-str</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str">println-str</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a></p>
 </div>
 </div>
 </div>
@@ -186,7 +186,7 @@ Print to string:<br>
 <div class="paragraph">
 <p>Regex patterns can be compiled at read-time via the <code>#"pattern"</code> reader
 macro, or at run time with
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-pattern">re-pattern</a>.
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-pattern">re-pattern</a>.
 Both forms produce
 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html">java.util.regex.Pattern</a>
 objects.</p>
@@ -207,11 +207,11 @@ user=&gt; (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 <div class="sect2">
 <h3 id="_関連する関数_2">関連する関数</h3>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matcher">re-matcher</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-find">re-find</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matches">re-matches</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-groups">re-groups</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-seq">re-seq</a></p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matcher">re-matcher</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-find">re-find</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matches">re-matches</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-groups">re-groups</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-seq">re-seq</a></p>
 </div>
 </div>
 </div>

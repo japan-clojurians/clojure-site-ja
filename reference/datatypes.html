@@ -105,7 +105,7 @@
 <h2 id="_basics">Basics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The datatype features - <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> , provide the mechanism for defining implementations of abstractions, and in the case of reify, instances of those implementations. The abstractions themselves are defined by either <a href="protocols">protocols</a> or interfaces. A datatype provides a host type, (named in the case of deftype and defrecord, anonymous in the case of reify), with some structure (explicit fields in the case of deftype and defrecord, implicit closure in the case of reify), and optional in-type implementations of abstraction methods. They support, in a relatively clean manner, access to the highest-performance primitive representation and polymorphism mechanisms of the host. N.B. that they are not merely host-in-parens constructs. They support only a circumscribed subset of the host facilities, often with more dynamism than the host itself. The intent is that, unless interop forces one to go beyond their circumscribed scope, one need not leave Clojure to get the highest-performing data structures possible on the platform.</p>
+<p>The datatype features - <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> , provide the mechanism for defining implementations of abstractions, and in the case of reify, instances of those implementations. The abstractions themselves are defined by either <a href="protocols">protocols</a> or interfaces. A datatype provides a host type, (named in the case of deftype and defrecord, anonymous in the case of reify), with some structure (explicit fields in the case of deftype and defrecord, implicit closure in the case of reify), and optional in-type implementations of abstraction methods. They support, in a relatively clean manner, access to the highest-performance primitive representation and polymorphism mechanisms of the host. N.B. that they are not merely host-in-parens constructs. They support only a circumscribed subset of the host facilities, often with more dynamism than the host itself. The intent is that, unless interop forces one to go beyond their circumscribed scope, one need not leave Clojure to get the highest-performing data structures possible on the platform.</p>
 </div>
 </div>
 </div>
@@ -113,7 +113,7 @@
 <h2 id="_deftype_and_defrecord">deftype and defrecord</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> dynamically generate compiled bytecode for a named class with a set of given fields, and, optionally, methods for one or more protocols and/or interfaces. They are suitable for dynamic and interactive development, need not be AOT compiled, and can be re-evaluated in the course of a single session. They are similar to defstruct in generating data structures with named fields, but differ from defstruct in that:</p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> dynamically generate compiled bytecode for a named class with a set of given fields, and, optionally, methods for one or more protocols and/or interfaces. They are suitable for dynamic and interactive development, need not be AOT compiled, and can be re-evaluated in the course of a single session. They are similar to defstruct in generating data structures with named fields, but differ from defstruct in that:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -164,7 +164,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> differ in the following ways:</p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> differ in the following ways:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -317,7 +317,7 @@
 <h2 id="_reify">reify</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While deftype and defrecord define named types, <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> defines both an anonymous type and creates an instance of that type. The use case is where you need a one-off implementation of one or more protocols or interfaces and would like to take advantage of the local context. In this respect it is use case similar to proxy, or anonymous inner classes in Java.</p>
+<p>While deftype and defrecord define named types, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> defines both an anonymous type and creates an instance of that type. The use case is where you need a one-off implementation of one or more protocols or interfaces and would like to take advantage of the local context. In this respect it is use case similar to proxy, or anonymous inner classes in Java.</p>
 </div>
 <div class="paragraph">
 <p>The method bodies of reify are lexical closures, and can refer to the surrounding local scope. <strong>reify</strong> differs from <strong>proxy</strong> in that:</p>
@@ -372,30 +372,30 @@
 
 (definterface Foo (foo []))
 
-;annotation on type
+;; annotation on type
 (deftype ^{Deprecated true
-            Retention RetentionPolicy/RUNTIME
-            javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
-            javax.xml.ws.soap.Addressing {:enabled false :required true}
-            WebServiceRefs [(WebServiceRef {:name "fred" :type String})
-                            (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+           Retention RetentionPolicy/RUNTIME
+           javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+           javax.xml.ws.soap.Addressing {:enabled false :required true}
+           WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+                           (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
   Bar [^int a
-       ;on field
+       ;; on field
        ^{:tag int
-          Deprecated true
-          Retention RetentionPolicy/RUNTIME
-          javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
-          javax.xml.ws.soap.Addressing {:enabled false :required true}
-          WebServiceRefs [(WebServiceRef {:name "fred" :type String})
-                          (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+         Deprecated true
+         Retention RetentionPolicy/RUNTIME
+         javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+         javax.xml.ws.soap.Addressing {:enabled false :required true}
+         WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+                         (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
        b]
-  ;on method
+  ;; on method
   Foo (^{Deprecated true
-          Retention RetentionPolicy/RUNTIME
-          javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
-          javax.xml.ws.soap.Addressing {:enabled false :required true}
-          WebServiceRefs [(WebServiceRef {:name "fred" :type String})
-                          (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+         Retention RetentionPolicy/RUNTIME
+         javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+         javax.xml.ws.soap.Addressing {:enabled false :required true}
+         WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+                         (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
        foo [this] 42))
 
 (seq (.getAnnotations Bar))

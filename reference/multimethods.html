@@ -93,30 +93,30 @@
 <p>Clojureのマルチメソッドは <em>ディスパッチ関数</em> と一つ以上の <em>メソッド</em> で定義される。 <em><strong>defmulti</strong></em>
 を使用してマルチメソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が <em>ディスパッチ値</em>
 の生成のためにマルチメソッドの引数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索しする。関連するメソッドが定義されている場合、(
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
 経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは
 <em><strong>:default</strong></em>)、存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。</p>
 </div>
 <div class="paragraph">
 <p>マルチメソッドシステムはこのAPIを提供している:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>
 マルチメソッドを新しく作成する、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
 ディスパッチ値と関連するメソッドをマルチメソッドに新しく定義する。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method">remove-method</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method">remove-method</a>
 ディスパッチ値と関連するメソッドを削除する。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
 メソッドの間の優先順位が曖昧な場合に優先順位を定義する。</p>
 </div>
 <div class="paragraph">
 <p>導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>
 関数はこの関連性を作成し、 the
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
 関数が関連性の存在をテストする。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
 と
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?">instance?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?">instance?</a>
 は異なる点に注意。</p>
 </div>
 <div class="paragraph">
@@ -134,7 +134,7 @@
 </div>
 <div class="paragraph">
 <p>基本的には
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>を使って関係性を作る。</p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>を使って関係性を作る。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -143,13 +143,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
 /
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
 /
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
 と
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>を使うことでヒエラルキーについて調べることが出来る。</p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>を使うことでヒエラルキーについて調べることが出来る。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -197,7 +197,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
 はクラス間の関連性についてもテストする。</p>
 </div>
 <div class="listingblock">
@@ -207,9 +207,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
 はベクターに対しても使用することが出来る。その場合、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
 を各要素に対して呼び出した結果を返す:</p>
 </div>
 <div class="listingblock">
@@ -219,10 +219,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
 /
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
-も同様。(<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
+も同様。(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
 は子孫はオープンセットであるため異なる。)</p>
 </div>
 <div class="listingblock">
@@ -241,9 +241,9 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>マルチメソッドはディスパッチ値の比較に=ではなく、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
 を使用する。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
 で最初に行われる比較は=なので同値の場合でも正しい結果になる。</p>
 </div>
 <div class="listingblock">
@@ -263,7 +263,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
 はディスパッチ値が複数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別のディスパッチ値よりも優先されることを宣言することが出来る:</p>
 </div>
 <div class="listingblock">
@@ -288,7 +288,7 @@
 </div>
 <div class="paragraph">
 <p>上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>
 で完全に独立したヒエラルキーを作ることも可能で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。</p>
 </div>
 <div class="paragraph">

@@ -123,7 +123,7 @@ Common Lisp)とその他のプログラミング言語の間の重要な差だ�
 <div class="paragraph">
 <p>readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップetc
 によって定義されていると言うものもいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現されるオブジェクトを返す
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
 関数によって表現されている。</p>
 </div>
 <div class="paragraph">
@@ -190,30 +190,15 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </li>
 <li>
 <p>Booleans (ブール型) - <code>true</code> と <code>false</code>
-Keywords (キーワード型) - キーワードは以下の点以外はシンボルと似たようなものだが、</p>
-<div class="ulist">
-<ul>
-<li>
-<p>コロン(:) で始まらなければならない(例: :fred)。</p>
-</li>
-<li>
-<p>'.'を含めたりクラスの名前に使用したり出来ない。</p>
-</li>
-<li>
-<p>シンボルと同様にネームスペースを含むことが出来る。<code>:person/name</code></p>
-</li>
-<li>
-<p>コロン2つで始まるキーワードは現在のネームスペースに解決される。</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ユーザーのネームスペースでは <code>::rect</code> は <code>user/rect</code> として読み込まれる。</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+Keywords - Keywords are like symbols, except: <strong> They can and must begin
+with a colon, e.g. :fred.  </strong> They cannot contain '.' or name classes.  <strong>
+Like symbols, they can contain a namespace, <code>:person/name</code> </strong> A keyword that
+begins with two colons is auto-resolved in the current namespace to a
+qualified keyword: <strong>* If the keyword is unqualified, the namespace will be
+the current namespace. In <code>user</code>, <code>::rect</code> is read as <code>:user/rect</code>.  </strong>* If
+the keyword is qualified, the namespace will be resolved using aliases in
+the current namespace. In a namespace where <code>x</code> is aliased to <code>example</code>,
+<code>::x/foo</code> resolves to <code>:example/foo</code>.</p>
 </li>
 </ul>
 </div>
@@ -385,7 +370,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 <h3 id="_metadata_メタデータ">Metadata (^) (メタデータ)</h3>
 <div class="paragraph">
 <p>メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>
 を参照):
 <code>^{:a 1 :b 2} [1 2 3]</code> は <code>{:a 1 :b 2}</code> をメタデータマップにもつ <code>[1 2 3]</code> を生成する。</p>
 </div>
@@ -431,17 +416,20 @@ java.util.regex.Patternタイプになる。正規表現のエスケープ文字
 <li>
 <p>匿名関数リテラル (#())</p>
 <div class="paragraph">
-<p><code><mark>(&#8230;&#8203;)</code> &#8658; <code>(fn [args] (&#8230;&#8203;))</code> + ここで引数は%、%n 、%&amp;の形を取る引数リテラルの存在によって決定される。% は
-%1と同様で、 %n は(1から始まる)n番目の引数を指定し、%&amp; はrest引数を指定する。これは
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn">fn</a>
-を置き換えるものでは無い - 慣習的には短く一度しか使用しないマッピングやフィルター関数として利用する。</mark>()フォームをネストすることは出来ない。</p>
+<p><code>#(&#8230;&#8203;)</code> &#8658; <code>(fn [args] (&#8230;&#8203;))</code> + where args are determined by the presence
+of argument literals taking the form %, %n or %&amp;. % is a synonym for %1, %n
+designates the nth arg (1-based), and %&amp; designates a rest arg. This is not
+a replacement for
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn">fn</a>
+- idiomatic use would be for very short one-off mapping/filter fns and the
+like. #() forms cannot be nested.</p>
 </div>
 </li>
 <li>
 <p>次のフォームを無視する (#_)</p>
 <div class="paragraph">
 <p>#_
-の後に続くフォームはreaderによって完全に無視される。(<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment">comment</a>
+の後に続くフォームはreaderによって完全に無視される。(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment">comment</a>
 マクロはnilを返すのでこちらの方がより完全なフォームの除去になる)。</p>
 </div>
 </li>
@@ -520,11 +508,11 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 <div class="paragraph">
 <p>ネームスペースで修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a>
 で定義されているが、 <code>data_readers.clj</code> で上書きすることも出来るし、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A">*data-readers*</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A">*data-readers*</a>
 を再束縛することも出来る。 タグに対してデータリーダーが見つからなかった場合、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A">*default-data-reader-fn*</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A">*default-data-reader-fn*</a>
 で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 *default-data-reader-fn*
 がnilの場合(デフォルト)RuntimeExceptionが発生する。</p>
 </div>
@@ -575,9 +563,9 @@ js/NaN、それ以外のプラットフォームではnilとして読み込ま�
 </div>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
 と
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read-string">read-string</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read-string">read-string</a>
 関数は任意でオプションを指定したマップを第一引数に取ることが出きる。このオプションマップのキーとバリューで現在のフィーチャーとリーダーコンディショナルの挙動を指定することが出来る:</p>
 </div>
 <div class="listingblock">
@@ -620,10 +608,10 @@ js/NaN、それ以外のプラットフォームではnilとして読み込ま�
 </div>
 <div class="paragraph">
 <p>これらの型の述語やコンストラクタとして以下の関数を使用することが出来る:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional%3F">reader-conditional?</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional">reader-conditional</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal%3F">tagged-literal?</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal">tagged-literal</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional%3F">reader-conditional?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional">reader-conditional</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal%3F">tagged-literal?</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal">tagged-literal</a></p>
 </div>
 </div>
 </div></p>

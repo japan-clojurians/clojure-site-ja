@@ -98,14 +98,14 @@
 手続き的なメッセージループやブロッキングレシーブ等は存在しない。エージェントの状態自体はイミュータブル
 (Clojureの永続的なコレクションのインスタンスが好ましい) にするべきで、エージェントの状態はどのスレッドからでもメッセージ無しで即座に読み込める
 (
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
 関数か <a href="reader">reader</a> macro @ を使用する) 。要するに、観測においては協調や調停が不要である。</p>
 </div>
 <div class="paragraph">
 <p>エージェントのアクションディスパッチは (send agent fn args*) の形式を取る。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
 (及び
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>)
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>)
 は即座にリターンされ、後ほど別のスレッドで以下が起こる:</p>
 </div>
 <div class="olist arabic">
@@ -115,7 +115,7 @@
 </li>
 <li>
 <p>エージェントに対してバリデーター関数がセットされている場合、 fn の戻り値がバリデーター関数に渡される。詳細については
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
 を参照</p>
 </li>
 <li>
@@ -123,7 +123,7 @@
 </li>
 <li>
 <p>エージェントに対してウォッチャーが追加されている場合、それらが呼ばれる。詳細については
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a>
 を参照</p>
 </li>
 <li>
@@ -133,17 +133,17 @@
 </div>
 <div class="paragraph">
 <p>アクション関数によって例外が投げられた場合、ネストされたディスパッチは起こらず、例外はエージェント自身にキャッシュされる。エラーがキャッシュされたエージェントに対しては、エラーがクリアされるまで後に続く全ての操作が即座に例外となる。エージェントのエラー内容は
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
 で取得することが可能で、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
 を使用してエージェントを再起動することが出来る。</p>
 </div>
 <div class="paragraph">
 <p>全てのエージェントのアクションはスレッドプール内のスレッドにインターリーブされる。どの時点でも各エージェントに対して最大でも一つのアクションが実行される。別のエージェントやスレッドからエージェントへとディスパッチされたアクションは
 send が行われた順番で起こり、他のソースからディスパッチされたアクションと( 可能性として )インターリーブされる。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
 はCPUバウンドな処理に使用するべきで、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>
 はIOでブロックする可能性があるアクションに適切なものとなっている。</p>
 </div>
 <div class="paragraph">
@@ -155,7 +155,7 @@ send が行われた順番で起こり、他のソースからディスパッチ
 </div>
 <div class="paragraph">
 <p>エージェントを使用すると非デーモンバックグラウンドスレッドのプールが立ち上がり、JVMのシャットダウンを妨げる点には注意が必要になる。シャットダウンを行い場合は
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a>
 を使用してこれらのスレッドを終了させる。</p>
 </div>
 </div>
@@ -195,49 +195,49 @@ send が行われた順番で起こり、他のソースからディスパッチ
 <div class="sectionbody">
 <div class="paragraph">
 <p>エージェントを作成する:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent">agent</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent">agent</a></p>
 </div>
 <div class="paragraph">
 <p>エージェントの観察:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
 <em>( @ <a href="reader">reader</a> マクロも参照)</em>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
 </div>
 <div class="paragraph">
 <p>エージェントの状態を変更する:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a></p>
 </div>
 <div class="paragraph">
 <p>エージェントに対してブロックを伴う待ちを行う:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await">await</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for">await-for</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await">await</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for">await-for</a></p>
 </div>
 <div class="paragraph">
 <p>Refバリデーター:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
 </div>
 <div class="paragraph">
 <p>ウォッチャー:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch">remove-watch</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch">remove-watch</a></p>
 </div>
 <div class="paragraph">
 <p>エージェントのスレッドを管理する:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a></p>
 </div>
 <div class="paragraph">
 <p>エージェントのエラーマネジメント:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler!">set-error-handler!</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode!">set-error-mode!</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler!">set-error-handler!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode!">set-error-mode!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
 </div>
 </div>
 </div></p>

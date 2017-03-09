@@ -458,7 +458,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <div class="sect2">
 <h3 id="_vector_binding_destructuring">Vector binding destructuring</h3>
 <div class="paragraph">
-<p>Vector binding-exprs allow you to bind names to parts of <em>sequential</em> things (not just vectors), like vectors, lists, seqs, strings, arrays, and anything that supports nth. The basic sequential form is a vector of binding-forms, which will be bound to successive elements from the init-expr, looked up via nth. In addition, and optionally, &amp; followed by a binding-forms will cause that binding-form to be bound to the remainder of the sequence, i.e. that part not yet bound, looked up via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext">nthnext</a> .</p>
+<p>Vector binding-exprs allow you to bind names to parts of <em>sequential</em> things (not just vectors), like vectors, lists, seqs, strings, arrays, and anything that supports nth. The basic sequential form is a vector of binding-forms, which will be bound to successive elements from the init-expr, looked up via nth. In addition, and optionally, &amp; followed by a binding-forms will cause that binding-form to be bound to the remainder of the sequence, i.e. that part not yet bound, looked up via <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext">nthnext</a> .</p>
 </div>
 <div class="paragraph">
 <p>Finally, also optional, :as followed by a symbol will cause that symbol to be bound to the entire init-expr:</p>

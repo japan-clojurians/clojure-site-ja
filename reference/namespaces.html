@@ -88,31 +88,31 @@
 <div class="paragraph">
 <p>ネームスペースは単純な(未装飾の)シンボルからVar、クラスへのマッピングを定義する。Varは <em><strong>def</strong></em>
 やその派生を使ってネームスペースにインターンすることが出来る。その場合Varは単純な名前としてのシンボルとそれを含むネームスペースの参照及び同じvarを示すネームスペースマップを持つ。ネームスペースは
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a>
 や
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use">use</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use">use</a>
 を使用して他のネームスペースにインターンされたVarに対するマッピングを含むことや、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a>
 を使用してクラスオブジェクトのシンボルに対するマッピングを含むことが出来る。ネームスペースはファーストクラスなので列挙すること等が出来る。加えてネームスペースは動的なのでランタイムにRepl等で作成、変更、削除を行うことが出来る。</p>
 </div>
 <div class="paragraph">
 <p>Clojureのソースファイルの一番始めにネームスペースを定義する最良の方法は
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
 マクロ</a> を使用することだ。これはデフォルトでは java.lang と <code>clojure.lang.Compiler</code> のクラス名及び
 <code>clojure.core</code> 内の関数へのマッピングを含むネームスペースを新たに作成する。</p>
 </div>
 <div class="paragraph">
 <p>Replからは
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
 を使用するのがベストで、新しく作られたネームスペースには java.lang のクラス名のマッピングのみが含まれる。 <code>clojure.core</code>
 のネームスペースにある名前アクセスするには (clojure.core/refer 'clojure.core)
 を実行する必要がある。Replにおける <code>user</code> ネームスペースではすでにこれが実行されている。</p>
 </div>
 <div class="paragraph">
 <p>現在のネームスペース、 <em>*ns*</em> は
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
 、もしくは
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns
 マクロ</a>
 で設定することが出来、またこれらの方法でのみ作られるべきである。どちらも指定されたネームスペースが存在しない場合、新たにそのネームスペースを作成する。</p>
 </div>
@@ -123,34 +123,34 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>ネームスペースの作成と切り替え:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns">create-ns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns">create-ns</a><br>
 ネームスペースへの追加:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias">alias</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias">alias</a><br>
 <a href="special_forms#def">def</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern">intern</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import">import</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern">intern</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer">refer</a><br>
 どのようなネームスペースが存在するかを調べる:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns">all-ns</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns">find-ns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns">all-ns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns">find-ns</a><br>
 ネームスペースの中身を調べる:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-name">ns-name</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-aliases">ns-aliases</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-imports">ns-imports</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns">ns-interns</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map">ns-map</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-publics">ns-publics</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers">ns-refers</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-name">ns-name</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-aliases">ns-aliases</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-imports">ns-imports</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns">ns-interns</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map">ns-map</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-publics">ns-publics</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers">ns-refers</a><br>
 シンボルからネームスペースを取得する:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resolve">resolve</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve">ns-resolve</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace">namespace</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resolve">resolve</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve">ns-resolve</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace">namespace</a><br>
 除外する:<br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias">ns-unalias</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unmap">ns-unmap</a><br>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-ns">remove-ns</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias">ns-unalias</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unmap">ns-unmap</a><br>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-ns">remove-ns</a></p>
 </div>
 </div>
 </div></p>

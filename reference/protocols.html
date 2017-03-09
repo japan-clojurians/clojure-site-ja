@@ -161,7 +161,7 @@ Protocols were introduced in Clojure 1.2.
 <h2 id="_basics">Basics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A protocol is a named set of named methods and their signatures, defined using <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a>:</p>
+<p>A protocol is a named set of named methods and their signatures, defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -198,10 +198,10 @@ Protocols were introduced in Clojure 1.2.
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a> will automatically generate a corresponding interface, with the same name as the protocol, e.g. given a protocol my.ns/Protocol, an interface my.ns.Protocol. The interface will have methods corresponding to the protocol functions, and the protocol will automatically work with instances of the interface.</p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a> will automatically generate a corresponding interface, with the same name as the protocol, e.g. given a protocol my.ns/Protocol, an interface my.ns.Protocol. The interface will have methods corresponding to the protocol functions, and the protocol will automatically work with instances of the interface.</p>
 </div>
 <div class="paragraph">
-<p>Note that you do not need to use this interface with <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> , or <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>, as they support protocols directly:</p>
+<p>Note that you do not need to use this interface with <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> , or <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>, as they support protocols directly:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -232,7 +232,7 @@ Protocols were introduced in Clojure 1.2.
 <p>A Java client looking to participate in the protocol can do so most efficiently by implementing the protocol-generated interface.</p>
 </div>
 <div class="paragraph">
-<p>External implementations of the protocol (which are needed when you want a class or type not in your control to participate in the protocol) can be provided using the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend">extend</a> construct:</p>
+<p>External implementations of the protocol (which are needed when you want a class or type not in your control to participate in the protocol) can be provided using the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend">extend</a> construct:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -299,12 +299,12 @@ Protocols were introduced in Clojure 1.2.
 </ul>
 </div>
 <div class="paragraph">
-<p>Protocols are fully reified and support reflective capabilities via <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extends%3F">extends?</a> , <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extenders">extenders</a> , and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F">satisfies?</a> .</p>
+<p>Protocols are fully reified and support reflective capabilities via <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extends%3F">extends?</a> , <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extenders">extenders</a> , and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F">satisfies?</a> .</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Note the convenience macros <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type">extend-type</a> , and <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol">extend-protocol</a></p>
+<p>Note the convenience macros <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type">extend-type</a> , and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol">extend-protocol</a></p>
 </li>
 <li>
 <p>If you are providing external definitions inline, these will be more convenient than using <strong>extend</strong> directly</p>

@@ -104,7 +104,7 @@ Refに対する全ての処理がアトミックで一貫性があり、分離�
 concurrency control</a> と adaptive history queue を
 <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>
 のために使用し、固有の
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
 処理を提供している。</p>
 </div>
 <div class="paragraph">
@@ -118,10 +118,10 @@ concurrency control</a> と adaptive history queue を
 </li>
 <li>
 <p>トランザクション内に行われたRefに対する全ての変更(
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>,
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
 or
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
 を使用)は 「Refの世界」 のタイムライン上の一点で起こったと映る (Refの 'wirte point') 。</p>
 </li>
 <li>
@@ -140,12 +140,12 @@ or
 </li>
 <li>
 <p>トランザクションはリトライが <em>行われる</em> のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a>
 マクロを使用することでトランザクション内で純粋ではない関数の使用を防ぐことが出来る。</p>
 </li>
 <li>
 <p>変更を受けているあるRefの値の正当性の制約が同時に <em>変更を受けていない</em> 別のRefの値に依存する場合、
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
 を使用して2つ目のRefを変更から保護することが出来る。 'ensure'
 されたRef(3つ目)は保護されるが、元のRef(2つ目)に対する変更は保護されない。</p>
 </li>
@@ -213,29 +213,29 @@ Distinct: 1000</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refの作成:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a></p>
 </div>
 <div class="paragraph">
 <p>Refの観測:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
 <em>( @ <a href="reader">reader</a> マクロも参照)</em></p>
 </div>
 <div class="paragraph">
 <p>トランザクションマクロ:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
 </div>
 <div class="paragraph">
 <p>トランザクション内でのみ使用可能:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute">commute</a></p>
 </div>
 <div class="paragraph">
 <p>Refバリデーター:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator">get-validator</a></p>
 </div>
 </div>
 </div></p>
