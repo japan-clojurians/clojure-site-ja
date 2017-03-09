@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-07-01 15:54+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -495,7 +495,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/special_forms.adoc:176
-#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:170
+#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:177
 msgid "Example:"
 msgstr ""
 
@@ -674,7 +674,7 @@ msgid ""
 "which will be bound to successive elements from the init-expr, looked up via "
 "nth. In addition, and optionally, & followed by a binding-forms will cause "
 "that binding-form to be bound to the remainder of the sequence, i.e. that "
-"part not yet bound, looked up via http://clojure.github.io/clojure/clojure."
+"part not yet bound, looked up via https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/nthnext[nthnext] ."
 msgstr ""
 

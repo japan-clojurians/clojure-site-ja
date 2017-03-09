@@ -1,0 +1,42 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: 2017-03-09 15:46+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2017/euroclojure.adoc:1 en/content/events/2016/euroclojure.adoc:1
+#, no-wrap
+msgid "EuroClojure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/euroclojure.adoc:4
+msgid "EuroClojure 2017-07-20"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/euroclojure.adoc:13
+msgid ""
+"EuroClojure is the largest Clojure conference in Europe and draws developers from all over the continent to gather "
+"and learn what is happening with the language, in the community, and within organizations using Clojure.  This year's "
+"event will be held in Berlin, Germany from July 20-21. EuroClojure offers a great mix of experienced Clojurists and "
+"new adopters and everyone can find something to suit their needs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/euroclojure.adoc:14 en/content/events/2016/euroclojure.adoc:14
+msgid "EuroClojure is a Cognitect event."
+msgstr ""

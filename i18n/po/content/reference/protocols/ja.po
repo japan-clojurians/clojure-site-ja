@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -126,7 +126,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/protocols.adoc:39
 msgid ""
-"A protocol is a named set of named methods and their signatures, defined using http://clojure.github.io/clojure/"
+"A protocol is a named set of named methods and their signatures, defined using https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/defprotocol[defprotocol]:"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/protocols.adoc:56
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol[defprotocol] will automatically "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol[defprotocol] will automatically "
 "generate a corresponding interface, with the same name as the protocol, e.g. given a protocol my.ns/Protocol, an "
 "interface my.ns.Protocol. The interface will have methods corresponding to the protocol functions, and the protocol "
 "will automatically work with instances of the interface."
@@ -179,9 +179,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/protocols.adoc:58
 msgid ""
-"Note that you do not need to use this interface with http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/deftype[deftype] , http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord[defrecord] , or "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify[reify], as they support protocols directly:"
+"Note that you do not need to use this interface with https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/deftype[deftype] , https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord[defrecord] , "
+"or https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify[reify], as they support protocols "
+"directly:"
 msgstr ""
 
 #. type: delimited block -
@@ -245,8 +246,8 @@ msgstr ""
 #: en/content/reference/protocols.adoc:87
 msgid ""
 "External implementations of the protocol (which are needed when you want a class or type not in your control to "
-"participate in the protocol) can be provided using the http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/extend[extend] construct:"
+"participate in the protocol) can be provided using the https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/extend[extend] construct:"
 msgstr ""
 
 #. type: delimited block -
@@ -309,17 +310,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/protocols.adoc:115
 msgid ""
-"Protocols are fully reified and support reflective capabilities via http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/extends%3F[extends?] , http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"extenders[extenders] , and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies"
+"Protocols are fully reified and support reflective capabilities via https://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/extends%3F[extends?] , https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"extenders[extenders] , and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies"
 "%3F[satisfies?] ."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:117
 msgid ""
-"Note the convenience macros http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type[extend-"
-"type] , and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol[extend-protocol]"
+"Note the convenience macros https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type[extend-"
+"type] , and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol[extend-protocol]"
 msgstr ""
 
 #. type: Plain text

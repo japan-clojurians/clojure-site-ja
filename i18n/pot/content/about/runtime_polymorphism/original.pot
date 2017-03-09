@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,8 +70,8 @@ msgstr ""
 #: en/content/about/runtime_polymorphism.adoc:19
 msgid ""
 "Clojure supports the generation of implementations of Java interfaces in "
-"Clojure using http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/proxy[proxy] (<<jvm_hosted#,see JVM Hosted>>)."
+"Clojure using https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/proxy[proxy] (<<jvm_hosted#,see JVM Hosted>>)."
 msgstr ""
 
 #. type: Plain text
@@ -108,10 +108,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:25
 msgid ""
-"Multimethods are defined using http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/defmulti[defmulti], which takes the name of the "
+"Multimethods are defined using https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/defmulti[defmulti], which takes the name of the "
 "multimethod and the dispatch function. Methods are independently defined "
-"using http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"using https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "defmethod[defmethod], passing the multimethod name, the dispatch _value_ and "
 "the function body."
 msgstr ""
@@ -142,7 +142,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:48
 msgid ""
-"Multimethods are in every respect fns, e.g. can be passed to http://clojure."
+"Multimethods are in every respect fns, e.g. can be passed to https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/map[map] etc."
 msgstr ""
 

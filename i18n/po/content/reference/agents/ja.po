@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-10-31 09:13+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -73,11 +73,11 @@ msgstr "関連する関数"
 #. type: Plain text
 #: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
 msgid ""
-"Ref validators: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+"Ref validators: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 msgstr ""
-"Refバリデーター: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+"Refバリデーター: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 
 #. type: Title =
 #: en/content/reference/agents.adoc:1
@@ -110,25 +110,25 @@ msgstr ""
 msgid ""
 "Clojure's Agents are _reactive_, not autonomous - there is no imperative message loop and no blocking receive. The "
 "state of an Agent should be itself immutable (preferably an instance of one of Clojure's persistent collections), and "
-"the state of an Agent is always immediately available for reading by any thread (using the http://clojure.github.io/"
+"the state of an Agent is always immediately available for reading by any thread (using the https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/deref[deref] function or <<reader#,reader>> macro +@+) without any "
 "messages, i.e. observation does not require cooperation or coordination."
 msgstr ""
 "Clojureのエージェントは _リアクティブ_ であり、自律的ではない - 手続き的なメッセージループやブロッキングレシーブ等は存"
 "在しない。エージェントの状態自体はイミュータブル (Clojureの永続的なコレクションのインスタンスが好ましい) にするべき"
-"で、エージェントの状態はどのスレッドからでもメッセージ無しで即座に読み込める ( http://clojure.github.io/clojure/"
+"で、エージェントの状態はどのスレッドからでもメッセージ無しで即座に読み込める ( https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/deref[deref] 関数か <<reader#,reader>> macro +@+ を使用する) 。要するに、観測におい"
 "ては協調や調停が不要である。"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:22
 msgid ""
-"Agent action dispatches take the form +(send agent fn args*)+. http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/send[send] (and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-"
+"Agent action dispatches take the form +(send agent fn args*)+. https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/send[send] (and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-"
 "off]) always returns immediately. At some point later, in another thread, the following will happen:"
 msgstr ""
-"エージェントのアクションディスパッチは +(send agent fn args*)+ の形式を取る。 http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/send[send] (及び http://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"エージェントのアクションディスパッチは +(send agent fn args*)+ の形式を取る。 https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/send[send] (及び https://clojure.github.io/clojure/clojure.core-api.html#clojure."
 "core/send-off[send-off]) は即座にリターンされ、後ほど別のスレッドで以下が起こる:"
 
 #. type: Plain text
@@ -139,11 +139,11 @@ msgstr "与えられた +fn+ がエージェントの _状態_ と任意の引�
 #. type: Plain text
 #: en/content/reference/agents.adoc:25
 msgid ""
-"The return value of +fn+ will be passed to the validator function, if one has been set on the Agent. See http://"
+"The return value of +fn+ will be passed to the validator function, if one has been set on the Agent. See https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] for details."
 msgstr ""
 "エージェントに対してバリデーター関数がセットされている場合、 +fn+ の戻り値がバリデーター関数に渡される。詳細について"
-"は http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] を参照"
+"は https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] を参照"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:26
@@ -157,10 +157,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/agents.adoc:27
 msgid ""
-"If any watchers were added to the Agent, they will be called. See http://clojure.github.io/clojure/clojure.core-api."
+"If any watchers were added to the Agent, they will be called. See https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/add-watch[add-watch] for details."
 msgstr ""
-"エージェントに対してウォッチャーが追加されている場合、それらが呼ばれる。詳細については http://clojure.github.io/"
+"エージェントに対してウォッチャーが追加されている場合、それらが呼ばれる。詳細については https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] を参照"
 
 #. type: Plain text
@@ -176,14 +176,14 @@ msgstr ""
 msgid ""
 "If any exceptions are thrown by an action function, no nested dispatches will occur, and the exception will be cached "
 "in the Agent itself. When an Agent has errors cached, any subsequent interactions will immediately throw an "
-"exception, until the agent's errors are cleared. Agent errors can be examined with http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/agent-error[agent-error] and the agent restarted with http://clojure.github.io/"
+"exception, until the agent's errors are cleared. Agent errors can be examined with https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/agent-error[agent-error] and the agent restarted with https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent]."
 msgstr ""
 "アクション関数によって例外が投げられた場合、ネストされたディスパッチは起こらず、例外はエージェント自身にキャッシュされ"
 "る。エラーがキャッシュされたエージェントに対しては、エラーがクリアされるまで後に続く全ての操作が即座に例外となる。エー"
-"ジェントのエラー内容は http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] で"
-"取得することが可能で、 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-"
+"ジェントのエラー内容は https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] "
+"で取得することが可能で、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-"
 "agent] を使用してエージェントを再起動することが出来る。"
 
 #. type: Plain text
@@ -192,14 +192,14 @@ msgid ""
 "The actions of all Agents get interleaved amongst threads in a thread pool. At any point in time, at most one action "
 "for each Agent is being executed. Actions dispatched to an agent from another single agent or thread will occur in "
 "the order they were sent, potentially interleaved with actions dispatched to the same agent from other sources. "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] should be used for actions that are "
-"CPU limited, while http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] is "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] should be used for actions that are "
+"CPU limited, while https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] is "
 "appropriate for actions that may block on IO."
 msgstr ""
 "全てのエージェントのアクションはスレッドプール内のスレッドにインターリーブされる。どの時点でも各エージェントに対して最"
 "大でも一つのアクションが実行される。別のエージェントやスレッドからエージェントへとディスパッチされたアクションは send "
-"が行われた順番で起こり、他のソースからディスパッチされたアクションと( 可能性として )インターリーブされる。 http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] はCPUバウンドな処理に使用するべきで、 http://"
+"が行われた順番で起こり、他のソースからディスパッチされたアクションと( 可能性として )インターリーブされる。 https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] はCPUバウンドな処理に使用するべきで、 https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] はIOでブロックする可能性があるアクショ"
 "ンに適切なものとなっている。"
 
@@ -221,12 +221,12 @@ msgstr "全てのClojureの並列サポートと同じく、ユーザーコー�
 #: en/content/reference/agents.adoc:38
 msgid ""
 "Note that use of Agents starts a pool of non-daemon background threads that will prevent shutdown of the JVM. Use "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents[shutdown-agents] to terminate "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents[shutdown-agents] to terminate "
 "these threads and allow shutdown."
 msgstr ""
 "エージェントを使用すると非デーモンバックグラウンドスレッドのプールが立ち上がり、JVMのシャットダウンを妨げる点には注意"
-"が必要になる。シャットダウンを行い場合は http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-"
-"agents[shutdown-agents] を使用してこれらのスレッドを終了させる。"
+"が必要になる。シャットダウンを行い場合は https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"shutdown-agents[shutdown-agents] を使用してこれらのスレッドを終了させる。"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:42
@@ -289,73 +289,73 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:67
-msgid "Create an Agent: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent[agent]"
-msgstr "エージェントを作成する: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent[agent]"
+msgid "Create an Agent: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent[agent]"
+msgstr "エージェントを作成する: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent[agent]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:69
 msgid ""
-"Examine an Agent: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _(see also the +@+ "
-"<<reader#,reader>> macro)_ http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-"
-"error] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] http://"
+"Examine an Agent: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _(see also the +@"
+"+ <<reader#,reader>> macro)_ https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-"
+"error] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
 msgstr ""
-"エージェントの観察: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _( +@+ <<reader#,"
-"reader>> マクロも参照)_ http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
+"エージェントの観察: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _( +@+ "
+"<<reader#,reader>> マクロも参照)_ https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-"
+"error[agent-error] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] "
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:71
 msgid ""
-"Change Agent state: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/restart-agent[restart-agent]"
+"Change Agent state: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/restart-agent[restart-agent]"
 msgstr ""
-"エージェントの状態を変更する: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] http://clojure.github.io/clojure/"
+"エージェントの状態を変更する: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] http://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/restart-agent[restart-agent]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:73
 msgid ""
-"Block waiting for an Agent: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await[await] http://"
+"Block waiting for an Agent: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await[await] https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for[await-for]"
 msgstr ""
-"エージェントに対してブロックを伴う待ちを行う: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"await[await] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for[await-for]"
+"エージェントに対してブロックを伴う待ちを行う: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"await[await] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for[await-for]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:77
 msgid ""
-"Watchers: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] http://clojure."
+"Watchers: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/remove-watch[remove-watch]"
 msgstr ""
-"ウォッチャー: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/remove-watch[remove-watch]"
+"ウォッチャー: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch[remove-watch]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:79
 msgid ""
-"Agent thread management: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents[shutdown-"
-"agents]"
+"Agent thread management: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-"
+"agents[shutdown-agents]"
 msgstr ""
-"エージェントのスレッドを管理する: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-"
+"エージェントのスレッドを管理する: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-"
 "agents[shutdown-agents]"
 
 #. type: Plain text
 #: en/content/reference/agents.adoc:80
 msgid ""
-"Agent error management: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/set-error-mode![set-error-mode!] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/error-mode[error-mode]"
+"Agent error management: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/set-error-mode![set-error-mode!] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/error-mode[error-mode]"
 msgstr ""
-"エージェントのエラーマネジメント: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-"
-"error[agent-error] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/set-error-mode![set-error-mode!] http://clojure.github.io/clojure/clojure."
+"エージェントのエラーマネジメント: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-"
+"error[agent-error] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/set-error-mode![set-error-mode!] https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/error-mode[error-mode]"

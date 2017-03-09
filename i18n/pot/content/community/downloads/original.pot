@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/downloads.adoc:13
 msgid ""
-"http://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8.0."
+"https://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8.0."
 "zip[Clojure 1.8.0]"
 msgstr ""
 
@@ -70,57 +70,63 @@ msgstr ""
 msgid "https://github.com/clojure/clojure/blob/master/changes.md[Changelog]"
 msgstr ""
 
-#. type: Title ==
+#. type: Plain text
 #: en/content/community/downloads.adoc:15
-#, no-wrap
-msgid "Development Release: 1.9.0-alpha13"
+#: en/content/community/downloads.adoc:21
+msgid "Requirements: Java 1.6, 1.7, or 1.8"
 msgstr ""
 
-#. type: Plain text
-#: en/content/community/downloads.adoc:18
-msgid ""
-"http://repo1.maven.org/maven2/org/clojure/clojure/1.9.0-alpha13/"
-"clojure-1.9.0-alpha13.zip[Clojure 1.9.0-alpha13]"
+#. type: Title ==
+#: en/content/community/downloads.adoc:16
+#, no-wrap
+msgid "Development Release: 1.9.0-alpha14"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/downloads.adoc:19
 msgid ""
-"http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A"
-"%22clojure%22%20AND%20v%3A1.9.0*[Clojure 1.9 pre-release builds]"
+"https://repo1.maven.org/maven2/org/clojure/clojure/1.9.0-alpha14/"
+"clojure-1.9.0-alpha14.zip[Clojure 1.9.0-alpha14]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/downloads.adoc:20
+msgid ""
+"https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.clojure%22%20AND%20a"
+"%3A%22clojure%22%20AND%20v%3A1.9.0*[Clojure 1.9 pre-release builds]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:20
+#: en/content/community/downloads.adoc:22
 #, no-wrap
 msgid "Clojure Source"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:23
+#: en/content/community/downloads.adoc:25
 msgid ""
-"Clojure source code is hosted at http://github.com/clojure/clojure[github."
+"Clojure source code is hosted at https://github.com/clojure/clojure[github."
 "com/clojure/clojure]. Builds of the very latest version of Clojure's master "
 "branch are available at https://oss.sonatype.org/content/repositories/"
 "snapshots/org/clojure/clojure/1.9.0-master-SNAPSHOT/[build.clojure.org]."
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:24
+#: en/content/community/downloads.adoc:26
 #, no-wrap
 msgid "Get Clojure via Leiningen"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:27
+#: en/content/community/downloads.adoc:29
 msgid ""
-"Modify the dependencies and repositories sections of your http://leiningen."
+"Modify the dependencies and repositories sections of your https://leiningen."
 "org/[Leiningen] project.clj file, specifying the version of Clojure that you "
 "want:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/community/downloads.adoc:31
+#: en/content/community/downloads.adoc:33
 #, no-wrap
 msgid ""
 "; under dependencies, select the release of clojure that you want\n"
@@ -128,13 +134,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:33
+#: en/content/community/downloads.adoc:35
 #, no-wrap
 msgid "Where did Clojure Contrib go?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:36
+#: en/content/community/downloads.adoc:38
 msgid ""
 "If you are migrating from a pre-1.3 version of Clojure, please see http://"
 "dev.clojure.org/display/community/Where+Did+Clojure.Contrib+Go[this page] "
@@ -142,7 +148,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:37
+#: en/content/community/downloads.adoc:39
 #, no-wrap
 msgid "<<downloads_older#,Older Releases>>"
 msgstr ""

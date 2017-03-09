@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,8 +79,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/lazy.adoc:14
 msgid ""
-"_(Note: this section describes work in prerelease, available in the SVN "
-"trunk since rev 1287)_"
+"_(Note: this page describes the changes made in the last large update to "
+"sequences, when Rich was also exploring an alternative called streams. Treat "
+"this page as a useful historical record of these design decisions, rather "
+"than as reference documentation.)_"
 msgstr ""
 
 #. type: Plain text

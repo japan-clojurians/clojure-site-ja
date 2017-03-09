@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_berlin_2.adoc:1
+#, no-wrap
+msgid "ClojureBridge Berlin Germany"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin_2.adoc:4
+msgid "ClojureBridge 2016-11-25"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin_2.adoc:12
+msgid ""
+"We are offing this workshop to help make the Clojure community more "
+"accessible to a diverse range of participants. As such, registration is open "
+"to people who identify as a woman or have a nonbinary gender identity. Note "
+"that our coaches and organizers who will also be present at the event are "
+"members of the local Clojure community of various genders."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_berlin_2.adoc:13
+msgid ""
+"We'll meet up Friday late afternoon to install all of the software you need, "
+"and then spend Saturday learning and writing code. You will learn and "
+"practice in small groups of 2 to 4 attendees each."
+msgstr ""

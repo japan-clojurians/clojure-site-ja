@@ -1,0 +1,36 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: 2017-03-09 15:46+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2017/clojurewest.adoc:1 en/content/events/2016/clojurewest.adoc:1
+#, no-wrap
+msgid "Clojure/west"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojurewest.adoc:4
+msgid "Cognitect 2017-03-30"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojurewest.adoc:14 en/content/events/2016/clojurewest.adoc:14
+msgid ""
+"Clojure/west is the biggest Clojure conference in the western United States.  Founded in 2012, the conference is a "
+"great place to meet Clojure developers and learn about what is happening in the language, in the community, and in "
+"companies using Clojure. Clojure/west features two tracks of sessions."
+msgstr ""

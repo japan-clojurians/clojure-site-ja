@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -216,7 +216,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:92
 msgid ""
-"but is easier to write, read, and understand. See also the http://clojure.github.com/clojure/clojure.core-api."
+"but is easier to write, read, and understand. See also the https://clojure.github.com/clojure/clojure.core-api."
 "html#clojure.core/%2d%3e[pass:[->]] macro which can be used similarly:"
 msgstr ""
 
@@ -418,9 +418,9 @@ msgstr ""
 #: en/content/reference/java_interop.adoc:191
 msgid ""
 "Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy[proxy] macro. The resulting objects are of "
-"an anonymous class. You can also generate statically-named classes and .class files with http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/gen-class[gen-class]. As of Clojure 1.2, http://clojure.github.io/clojure/"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy[proxy] macro. The resulting objects are of "
+"an anonymous class. You can also generate statically-named classes and .class files with https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/gen-class[gen-class]. As of Clojure 1.2, https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/reify[reify] is also available for implementing interfaces."
 msgstr ""
 
@@ -478,31 +478,32 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:217
 msgid ""
-"Create array from existing collection: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"aclone[aclone] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/to-array[to-array] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/to-array-2d[to-array-2d] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-"
-"array[into-array] Multi-dimensional array support: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/aget[aget] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/to-array-2d[to-array-2d] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/make-array[make-array] Type-specific array constructors: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/boolean-array[boolean-array] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/byte-array[byte-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-"
-"array[char-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double-array[double-array] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array[float-array] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/int-array[int-array] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/long-array[long-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/object-"
-"array[object-array] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array[short-array] "
-"Primitive array casts: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/booleans[booleans] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes[bytes] http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/chars[chars] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"doubles[doubles] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/floats[floats] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/longs[longs] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts[shorts] "
-"Mutate an array: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] Process an existing "
-"array: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/alength[alength] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/amap[amap] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce[areduce]"
+"Create array from existing collection: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"aclone[aclone] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/to-array[to-array] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/to-array-2d[to-array-2d] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-"
+"array[into-array] Multi-dimensional array support: https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/aget[aget] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset[aset] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d[to-array-2d] https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/make-array[make-array] Type-specific array constructors: https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/boolean-array[boolean-array] https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/byte-array[byte-array] https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/char-array[char-array] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double-array[double-"
+"array] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array[float-array] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/int-array[int-array] https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/long-array[long-array] https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/object-array[object-array] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-"
+"array[short-array] Primitive array casts: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"booleans[booleans] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes[bytes] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/chars[chars] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/doubles[doubles] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"floats[floats] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/longs[longs] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/shorts[shorts] Mutate an array: https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/aset[aset] Process an existing array: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"aget[aget] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength[alength] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/areduce[areduce]"
 msgstr ""
 
 #. type: Title ==
@@ -744,22 +745,23 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:303
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] / http://clojure.github.io/clojure/"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget[aget] / https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/aset[aset] are overloaded for arrays of primitives"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:304
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone[aclone], http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/alength[alength] functions for arrays of primitives"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone[aclone], https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/alength[alength] functions for arrays of primitives"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:305
 msgid ""
-"constructor functions for primitive arrays: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-"
-"array[float-array], http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array[int-array], etc."
+"constructor functions for primitive arrays: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"float-array[float-array], https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array[int-array], "
+"etc."
 msgstr ""
 
 #. type: Plain text
@@ -770,49 +772,49 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:307
 msgid ""
-"Coercion ops http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int[int], http://clojure.github.io/"
+"Coercion ops https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int[int], https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/float[float], etc. produce primitives when consumer can take primitive"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:308
 msgid ""
-"The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] coercion function boxes primitives "
+"The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] coercion function boxes primitives "
 "to force generic arithmetic"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:309
 msgid ""
-"Array cast functions http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] http://clojure."
+"Array cast functions https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints[ints] https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/longs[longs], etc. which produce +int[]+, +long[]+, etc."
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:310
 msgid ""
-"A set of \"unchecked\" operations for utmost performing, but potentially unsafe, integer (int/long) ops: http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-multiply[unchecked-multiply] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/unchecked-dec[unchecked-dec] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/unchecked-inc[unchecked-inc] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/unchecked-negate[unchecked-negate] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/unchecked-add[unchecked-add] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
-"subtract[unchecked-subtract] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
-"remainder[unchecked-remainder] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"A set of \"unchecked\" operations for utmost performing, but potentially unsafe, integer (int/long) ops: https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-multiply[unchecked-multiply] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/unchecked-dec[unchecked-dec] https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/unchecked-inc[unchecked-inc] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/unchecked-negate[unchecked-negate] https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/unchecked-add[unchecked-add] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"subtract[unchecked-subtract] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
+"remainder[unchecked-remainder] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-"
 "divide[unchecked-divide]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:311
 msgid ""
-"A dynamic var to automatically swap safe operations with unchecked operations: http://clojure.github.io/clojure/"
+"A dynamic var to automatically swap safe operations with unchecked operations: https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/%2Aunchecked-math%2A[pass:[*unchecked-math*]]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:312
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] and http://clojure.github.io/clojure/"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap[amap] and https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/areduce[areduce] macros for functionally (i.e. non-destructively) processing one "
 "or more arrays in order to produce a new array or aggregate value respectively."
 msgstr ""
@@ -911,14 +913,14 @@ msgstr ""
 #: en/content/reference/java_interop.adoc:364
 msgid ""
 "At times it is necessary to have a value of a particular primitive type. These coercion functions yield a value of "
-"the indicated type as long as such a coercion is possible: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/bigdec[bigdec] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint[bigint] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean[boolean] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/byte[byte] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"char[char] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double[double] http://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/float[float] http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/int[int] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long[long] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] http://clojure.github.io/clojure/clojure.core-"
+"the indicated type as long as such a coercion is possible: https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/bigdec[bigdec] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint[bigint] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean[boolean] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/byte[byte] https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/char[char] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double[double] https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/float[float] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/int[int] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long[long] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/num[num] https://clojure.github.io/clojure/clojure.core-"
 "api.html#clojure.core/short[short]"
 msgstr ""
 
@@ -1024,7 +1026,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:393
 msgid ""
-"The http://clojure.github.io/clojure/javadoc[clojure.java.api] package provides a minimal interface to bootstrap "
+"The https://clojure.github.io/clojure/javadoc[clojure.java.api] package provides a minimal interface to bootstrap "
 "Clojure access from other JVM languages. It does this by providing:"
 msgstr ""
 
@@ -1053,12 +1055,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:402
-msgid "http://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure.html[clojure.java.api.Clojure]"
+msgid "https://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure.html[clojure.java.api.Clojure]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:403
-msgid "http://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html[clojure.lang.IFn]"
+msgid "https://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html[clojure.lang.IFn]"
 msgstr ""
 
 #. type: Plain text

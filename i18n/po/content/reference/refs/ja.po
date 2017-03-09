@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-07-28 08:52+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -99,12 +99,12 @@ msgid ""
 "There are many ways to do STMs (locking/pessimistic, lock-free/optimistic and hybrids) and it is still a research "
 "problem. The Clojure STM uses http://en.wikipedia.org/wiki/Multiversion_concurrency_control[multiversion concurrency "
 "control] with adaptive history queues for http://en.wikipedia.org/wiki/Snapshot_isolation[snapshot isolation], and "
-"provides a distinct http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] operation."
+"provides a distinct https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] operation."
 msgstr ""
 "STMを実現するには複数の方式があり (ロック/悲観的, ロックフリー/楽観的 及び それらの混合) 、未だに研究の対象となる問題"
 "である。ClojureのSTMは http://en.wikipedia.org/wiki/Multiversion_concurrency_control[multiversion concurrency "
 "control] と adaptive history queue を http://en.wikipedia.org/wiki/Snapshot_isolation[snapshot isolation] のために使用"
-"し、固有の http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] 処理を提供している。"
+"し、固有の https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] 処理を提供している。"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:23
@@ -124,13 +124,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/refs.adoc:26
 msgid ""
-"All changes made to Refs during a transaction (via http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/ref-set[ref-set], http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or http://"
+"All changes made to Refs during a transaction (via https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/ref-set[ref-set], https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute]) will appear to occur at a single point "
 "in the 'Ref world' timeline (its 'write point')."
 msgstr ""
-"トランザクション内に行われたRefに対する全ての変更( http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/ref-set[ref-set], http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or http://"
+"トランザクション内に行われたRefに対する全ての変更( https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/ref-set[ref-set], https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute[commute] を使用)は 「Refの世界」 のタイムライン上"
 "の一点で起こったと映る (Refの 'wirte point') 。"
 
@@ -166,10 +166,10 @@ msgstr "ライターはコミューターもしくはリーダーを決してブ
 #: en/content/reference/refs.adoc:31
 msgid ""
 "I/O and other activities with side-effects should be avoided in transactions, since transactions _will_ be retried. "
-"The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!] macro can be used to prevent the use "
-"of an impure function in a transaction."
+"The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!] macro can be used to prevent the "
+"use of an impure function in a transaction."
 msgstr ""
-"トランザクションはリトライが _行われる_ のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、 http://"
+"トランザクションはリトライが _行われる_ のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、 https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!] マクロを使用することでトランザクション内で純粋で"
 "はない関数の使用を防ぐことが出来る。"
 
@@ -177,11 +177,11 @@ msgstr ""
 #: en/content/reference/refs.adoc:32
 msgid ""
 "If a constraint on the validity of a value of a Ref that is being changed depends upon the simultaneous value of a "
-"Ref that is _not being changed_, that second Ref can be protected from modification by calling http://clojure.github."
+"Ref that is _not being changed_, that second Ref can be protected from modification by calling https://clojure.github."
 "io/clojure/clojure.core-api.html#clojure.core/ensure[ensure]. Refs 'ensured' this way will be protected (item #3), "
 "but don't change the world (item #2)."
 msgstr ""
-"変更を受けているあるRefの値の正当性の制約が同時に _変更を受けていない_ 別のRefの値に依存する場合、 http://clojure."
+"変更を受けているあるRefの値の正当性の制約が同時に _変更を受けていない_ 別のRefの値に依存する場合、 https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] を使用して2つ目のRefを変更から保護することが出来"
 "る。 'ensure' されたRef(3つ目)は保護されるが、元のRef(2つ目)に対する変更は保護されない。"
 
@@ -308,45 +308,45 @@ msgstr "関連する関数"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:76
-msgid "Create a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
-msgstr "Refの作成: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
+msgid "Create a Ref: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
+msgstr "Refの作成: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref[ref]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:78
 msgid ""
-"Examine a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _(see also the +@+ "
+"Examine a Ref: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _(see also the +@+ "
 "<<reader#,reader>> macro)_"
 msgstr ""
-"Refの観測: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _( +@+ <<reader#,reader>> "
-"マクロも参照)_"
+"Refの観測: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] _( +@+ <<reader#,"
+"reader>> マクロも参照)_"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:80
 msgid ""
-"Transaction macros: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/io![io!]"
+"Transaction macros: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!]"
 msgstr ""
-"トランザクションマクロ: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] http://"
+"トランザクションマクロ: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] http://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/io![io!]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:82
 msgid ""
-"Allowed only in a transaction: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set[ref-set] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/alter[alter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"commute[commute]"
+"Allowed only in a transaction: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set[ref-set] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/alter[alter] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/commute[commute]"
 msgstr ""
-"トランザクション内でのみ使用可能: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set[ref-set] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/alter[alter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"commute[commute]"
+"トランザクション内でのみ使用可能: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set[ref-set] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/alter[alter] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/commute[commute]"
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
 msgid ""
-"Ref validators: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+"Ref validators: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 msgstr ""
-"Refバリデーター: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
+"Refバリデーター: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator![set-validator!] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"

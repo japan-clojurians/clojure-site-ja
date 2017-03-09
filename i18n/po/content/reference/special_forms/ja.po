@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-07-01 15:54+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -452,7 +452,7 @@ msgid "**pre-expr** and **post-expr** are boolean expressions that may refer to 
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:176 en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:170
+#: en/content/reference/special_forms.adoc:176 en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:177
 msgid "Example:"
 msgstr ""
 
@@ -612,7 +612,7 @@ msgid ""
 "seqs, strings, arrays, and anything that supports nth. The basic sequential form is a vector of binding-forms, which "
 "will be bound to successive elements from the init-expr, looked up via nth. In addition, and optionally, & followed "
 "by a binding-forms will cause that binding-form to be bound to the remainder of the sequence, i.e. that part not yet "
-"bound, looked up via http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext[nthnext] ."
+"bound, looked up via https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext[nthnext] ."
 msgstr ""
 
 #. type: Plain text

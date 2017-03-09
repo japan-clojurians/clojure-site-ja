@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgid ""
 "en.wikipedia.org/wiki/Multiversion_concurrency_control[multiversion "
 "concurrency control] with adaptive history queues for http://en.wikipedia."
 "org/wiki/Snapshot_isolation[snapshot isolation], and provides a distinct "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "commute[commute] operation."
 msgstr ""
 
@@ -136,9 +136,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/refs.adoc:26
 msgid ""
-"All changes made to Refs during a transaction (via http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/ref-set[ref-set], http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or http://"
+"All changes made to Refs during a transaction (via https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ref-set[ref-set], https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] or https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "commute[commute]) will appear to occur at a single point in the 'Ref world' "
 "timeline (its 'write point')."
@@ -174,7 +174,7 @@ msgstr ""
 #: en/content/reference/refs.adoc:31
 msgid ""
 "I/O and other activities with side-effects should be avoided in "
-"transactions, since transactions _will_ be retried. The http://clojure."
+"transactions, since transactions _will_ be retried. The https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/io![io!] macro can be "
 "used to prevent the use of an impure function in a transaction."
 msgstr ""
@@ -184,10 +184,10 @@ msgstr ""
 msgid ""
 "If a constraint on the validity of a value of a Ref that is being changed "
 "depends upon the simultaneous value of a Ref that is _not being changed_, "
-"that second Ref can be protected from modification by calling http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure]. Refs "
-"'ensured' this way will be protected (item #3), but don't change the world "
-"(item #2)."
+"that second Ref can be protected from modification by calling https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure[ensure]. "
+"Refs 'ensured' this way will be protected (item #3), but don't change the "
+"world (item #2)."
 msgstr ""
 
 #. type: Plain text
@@ -296,39 +296,39 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/refs.adoc:76
 msgid ""
-"Create a Ref: http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/ref[ref]"
+"Create a Ref: https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/ref[ref]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:78
 msgid ""
-"Examine a Ref: http://clojure.github.io/clojure/clojure.core-api."
+"Examine a Ref: https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/deref[deref] _(see also the +@+ <<reader#,reader>> macro)_"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:80
 msgid ""
-"Transaction macros: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/dosync[dosync] http://clojure.github.io/clojure/clojure."
+"Transaction macros: https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/dosync[dosync] https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/io![io!]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:82
 msgid ""
-"Allowed only in a transaction: http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/ensure[ensure] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/ref-set[ref-set] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/alter[alter] http://clojure."
+"Allowed only in a transaction: https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/ensure[ensure] https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/ref-set[ref-set] https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/alter[alter] https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/commute[commute]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/refs.adoc:83 en/content/reference/agents.adoc:75
 msgid ""
-"Ref validators: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/set-validator![set-validator!] http://clojure.github.io/"
+"Ref validators: https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/set-validator![set-validator!] https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/get-validator[get-validator]"
 msgstr ""

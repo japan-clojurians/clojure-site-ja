@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,7 +175,7 @@ msgstr ""
 #: en/content/reference/lisps.adoc:37
 msgid ""
 "No letrec, labels or flet - use (fn name [args]...) for self-reference, "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "letfn[letfn] for mutual reference."
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -128,7 +128,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/compilation.adoc:34
 msgid ""
-"A stand-alone http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class[gen-class] facility is "
+"A stand-alone https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class[gen-class] facility is "
 "provided to create named classes for direct use as Java classes, with facilities for:"
 msgstr ""
 
@@ -187,8 +187,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/compilation.adoc:46
 msgid ""
-"An optional http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class[:gen-class] directive can "
-"be used in the http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns] declaration to generate a "
+"An optional https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class[:gen-class] directive can "
+"be used in the https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns] declaration to generate a "
 "named class corresponding to a namespace. (:gen-class ...), when supplied, defaults to :name corresponding to the ns "
 "name, :main true, :impl-ns same as ns, and :init-impl-ns true. All options of gen-class are supported."
 msgstr ""
@@ -201,7 +201,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/compilation.adoc:48
 msgid ""
-"A stand-alone http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface[gen-interface] "
+"A stand-alone https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface[gen-interface] "
 "facility is provided for generating named interface classes for direct use as Java interfaces, with facilities for:"
 msgstr ""
 
@@ -224,7 +224,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/compilation.adoc:54
 msgid ""
-"To compile a lib, use the http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile[compile] "
+"To compile a lib, use the https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile[compile] "
 "function, and supply the namespace name as a symbol. For some namespace my.domain.lib, defined in my/domain/lib.clj, "
 "in the classpath, the following should occur:"
 msgstr ""

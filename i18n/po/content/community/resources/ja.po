@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-10-21 09:53+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,12 +23,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:68 en/content/community/resources.adoc:40
-msgid "http://clojuredocs.org[ClojureDocs] - community provided example repository"
+msgid "https://clojuredocs.org[ClojureDocs] - community provided example repository"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:69 en/content/community/resources.adoc:41
-msgid "http://crossclj.info/[CrossClj] - library cross-reference"
+msgid "https://crossclj.info/[CrossClj] - library cross-reference"
 msgstr ""
 
 #. type: Plain text
@@ -50,7 +50,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:13
-msgid "http://groups.google.com/group/clojure[Clojure Google Group]"
+msgid "https://groups.google.com/group/clojure[Clojure Google Group]"
 msgstr ""
 
 #. type: Plain text
@@ -101,12 +101,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:26
-msgid "http://clojure.github.io/clojure/[Clojure API Docs]"
+msgid "https://clojure.github.io/clojure/[Clojure API Docs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:27
-msgid "http://clojure.github.io/[Clojure Contrib Library API Docs]"
+msgid "https://clojure.github.io/[Clojure Contrib Library API Docs]"
 msgstr ""
 
 #. type: Plain text
@@ -335,7 +335,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/resources.adoc:82
 msgid ""
-"http://leiningen.org/[Leiningen] - an extensible build tool that provides dependency management, REPL support, "
+"https://leiningen.org/[Leiningen] - an extensible build tool that provides dependency management, REPL support, "
 "testing, packaging, deployment, and many other capabilities."
 msgstr ""
 

@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2017/clojureremote.adoc:1
+#: en/content/events/2016/clojureremote.adoc:1
+#, no-wrap
+msgid "Clojure Remote"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:4
+msgid "Ryan Neufeld & Homegrown Labs 2017-02-09"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:12
+msgid ""
+"The second edition of Clojure Remote takes place this February 9th & 10th, "
+"2017."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:14
+msgid ""
+"Clojure Remote is an online Clojure conference targeted at *practicing* "
+"Clojure developers. During the two-day event, you'll experience not only "
+"talks, but interactive tutorials and workshops. All these sessions will "
+"culminate in a team breakout session where you can explore the new ideas "
+"teeming in your head with speaker assistance and the help of your team."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:16
+msgid ""
+"As with https://2016.clojureremote.com[Clojure Remote 2016], videos and "
+"source from the conference will be made freely available after the "
+"conference as a gift to the community."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:18
+msgid ""
+"Clojure Remote's schedule is being developed iteratively this year. Visit "
+"the https://clojureremote.com/schedule[current schedule here], or https://"
+"clojureremote.com[the homepage] for event information and tickets."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:20
+msgid "We hope to see you and your team at the conference this year!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureremote.adoc:24
+msgid ""
+"Cheers, + Ryan Neufeld at Clojure Remote + https://twitter.com/clojureremote"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/events/2017/clojureremote.adoc:25
+#, no-wrap
+msgid "https://raw.githubusercontent.com/clojureremote/cr17/master/logos/Expanded-1000px.png"
+msgstr ""

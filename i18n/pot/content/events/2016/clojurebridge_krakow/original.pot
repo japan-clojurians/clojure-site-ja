@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_krakow.adoc:1
+#, no-wrap
+msgid "ClojureBridge Kraków, Poland"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_krakow.adoc:4
+msgid "ClojureBridge 2016-12-02"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_krakow.adoc:12
+msgid ""
+"We're aiming the event at women who are new to programming. The mentors are "
+"experienced developers, but perhaps not Clojure experts – we'll all be "
+"learning."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_krakow.adoc:13
+msgid ""
+"We'll meet on Friday evening to install Clojure and all of the software we "
+"need. On Saturday, we will learn to code Clojure."
+msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -84,7 +84,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:44
 msgid ""
-"Taking an initial value as its first argument, http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/++"
+"Taking an initial value as its first argument, https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/++"
 "+->+++[`+++->+++`] threads it through one or more expressions."
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid ""
 "Like `transform`, `calculate` is a pipeline of transformations, but unlike the former, the threaded value appears in "
 "each function call in the final position in the argument list. Instead of the thread-first macro we need to use the "
-"thread-last macro http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++->>+++[`+++->>+++`] instead:"
+"thread-last macro https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++->>+++[`+++->>+++`] instead:"
 msgstr ""
 
 #. type: delimited block -
@@ -231,10 +231,10 @@ msgstr ""
 #: en/content/guides/threading_macros.adoc:142
 msgid ""
 "Core functions that operate on data structures, on the other hand, expect the value they work on as their first "
-"argument. These include http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc[`assoc`], http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/update[`update`], http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/dissoc[`dissoc`], http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/get[`get`] and their http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in[`-in`] "
+"argument. These include https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc[`assoc`], https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/update[`update`], https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/dissoc[`dissoc`], https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/get[`get`] and their https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in[`-in`] "
 "variants.  Pipelines that transform maps using these functions often require the `+++->+++` macro."
 msgstr ""
 
@@ -254,16 +254,16 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:156
 msgid ""
-"Note also the more specialized interop macros http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/++"
-"+..+++[`..`] and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto[`doto`]."
+"Note also the more specialized interop macros https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/++"
+"+..+++[`..`] and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto[`doto`]."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:165
 msgid ""
 "Finally, there are cases where neither `+++->+++` nor `+++->>+++` are applicable. A pipeline may consist of function "
-"calls with varying insertion points. In these cases, you'll need to use http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/+++as->+++[`+++as->+++`], the more flexible alternative. `+++as->+++` expects two fixed "
+"calls with varying insertion points. In these cases, you'll need to use https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/+++as->+++[`+++as->+++`], the more flexible alternative. `+++as->+++` expects two fixed "
 "arguments and a variable number of expressions. As with `+++->+++`, the first argument is a value to be threaded "
 "through the following forms. The second argument is the name of a binding. In each of the subsequent forms, the bound "
 "name can be used for the prior expression's result.  This allows a value to thread into any argument position, not "
@@ -295,13 +295,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:186
 msgid ""
-"Two of Clojure's more specialized threading macros, http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/+++some->+++[`+++some->+++`] and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++some->>++"
-"+[`+++some->>+++`], are used most commonly when interfacing with Java methods. `+++some->+++` resembles `+++->+++` in "
-"that it threads a value through a number of expressions. However, it also short-circuits execution when an expression "
-"evaluates as `nil` at any point in the chain. One common problem with arrow macros in the context of <<xref/../../"
-"reference/java_interop#,Java interop>> is that Java methods do not expect to be passed `nil` (`null`). One way to "
-"avoid a `NullPointerException` in these cases is to add an explict guard:"
+"Two of Clojure's more specialized threading macros, https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/+++some->+++[`+++some->+++`] and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++some->>+"
+"++[`+++some->>+++`], are used most commonly when interfacing with Java methods. `+++some->+++` resembles `+++->+++` "
+"in that it threads a value through a number of expressions. However, it also short-circuits execution when an "
+"expression evaluates as `nil` at any point in the chain. One common problem with arrow macros in the context of "
+"<<xref/../../reference/java_interop#,Java interop>> is that Java methods do not expect to be passed `nil` (`null`). "
+"One way to avoid a `NullPointerException` in these cases is to add an explict guard:"
 msgstr ""
 
 #. type: delimited block -
@@ -347,14 +347,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:223
 msgid ""
-"Like `+++->+++`, the macro http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++cond->+++[`+++cond->"
-"+++`] takes an initial value, but unlike the former, it interprets its argument list as a series of `test, expr` "
+"Like `+++->+++`, the macro https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++cond->+++[`+++cond-"
+">+++`] takes an initial value, but unlike the former, it interprets its argument list as a series of `test, expr` "
 "pairs. `+++cond->+++` threads a value through the expressions but skips those with failing tests. For each pair, "
 "`test` is evaluated. If the result is truthy, the expression is evaluated with the threaded value inserted as its "
-"first argument; otherwise evaluation proceeds with the next `test, expr` pair. Note that unlike its relatives, http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++some->+++[`+++some->+++`] or http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/cond[`cond`], `+++cond->+++` never short-circuits evaluation, even if a "
-"test evaluates to `false` or `nil`:"
+"first argument; otherwise evaluation proceeds with the next `test, expr` pair. Note that unlike its relatives, "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/+++some->+++[`+++some->+++`] or https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/cond[`cond`], `+++cond->+++` never short-circuits evaluation, "
+"even if a test evaluates to `false` or `nil`:"
 msgstr ""
 
 #. type: delimited block -

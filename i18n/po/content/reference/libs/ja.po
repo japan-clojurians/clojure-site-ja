@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-07-11 18:19+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -233,24 +233,24 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:67
-msgid "Creating a namespace: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
-msgstr "ネームスペースの作成: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
+msgid "Creating a namespace: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
+msgstr "ネームスペースの作成: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:69
 msgid ""
-"Ensuring a lib is loaded: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
+"Ensuring a lib is loaded: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
 msgstr ""
-"libがロードされたことを保証する: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
+"libがロードされたことを保証する: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"require[require] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use[use]"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:71
 msgid ""
-"Listing loaded libs: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
+"Listing loaded libs: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
 msgstr ""
-"ロードされたlibsの一覧: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
+"ロードされたlibsの一覧: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs[loaded-libs]"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:73

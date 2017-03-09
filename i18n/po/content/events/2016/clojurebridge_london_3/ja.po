@@ -1,0 +1,50 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: 2017-03-09 15:46+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events/2016/clojurebridge_london_3.adoc:1
+#, no-wrap
+msgid "ClojureBridge London - November"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_london_3.adoc:4
+msgid "ClojureBridge 2016-11-15"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_london_3.adoc:12
+msgid ""
+"ClojureBridge London aims to further increase diversity within the Clojure community by offering free, beginner-"
+"friendly Clojure programming workshops for under-represented groups in technology. Priority is given to those who "
+"identify as women, trans-gener or non-binary gender. Males may register as a guest of one of these participants."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_london_3.adoc:14
+msgid ""
+"Its essential to attend the evening session on the 25th November if you wish to attend the workshop the next day. "
+"This avoids delays to getting started with the workshop."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2016/clojurebridge_london_3.adoc:15
+msgid ""
+"Food and drinks will be provided throughout the event, so please let us know if you have any special requirements "
+"when you register."
+msgstr ""

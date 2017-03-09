@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,22 +246,22 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/libs.adoc:67
 msgid ""
-"Creating a namespace: http://clojure.github.io/clojure/clojure.core-api."
+"Creating a namespace: https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/ns[ns]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:69
 msgid ""
-"Ensuring a lib is loaded: http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/require[require] http://clojure.github.io/clojure/clojure."
+"Ensuring a lib is loaded: https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/require[require] https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/use[use]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:71
 msgid ""
-"Listing loaded libs: http://clojure.github.io/clojure/clojure.core-api."
+"Listing loaded libs: https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/loaded-libs[loaded-libs]"
 msgstr ""
 

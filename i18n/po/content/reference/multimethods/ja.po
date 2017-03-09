@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-07-01 15:54+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-07-28 08:32+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -79,7 +79,7 @@ msgid ""
 "is defined, using _**defmulti**_, a dispatching function must be supplied. This function will be applied to the "
 "arguments to the multimethod in order to produce a _dispatching value_. The multimethod will then try to find the "
 "method associated with the dispatching value or a value from which the dispatching value is derived. If one has been "
-"defined (via http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod]), it will then "
+"defined (via https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod]), it will then "
 "be called with the arguments and that will be the value of the multimethod call. If no method is associated with the "
 "dispatching value, the multimethod will look for a method associated with the default dispatching value (which "
 "defaults to _**:default**_), and will use that if present. Otherwise the call is an error."
@@ -87,7 +87,7 @@ msgstr ""
 "Clojureのマルチメソッドは _ディスパッチ関数_ と一つ以上の _メソッド_ で定義される。 _**defmulti**_ を使用してマルチメ"
 "ソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が _ディスパッチ値_ の生成のためにマルチメソッドの引"
 "数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索し"
-"する。関連するメソッドが定義されている場合、( http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"する。関連するメソッドが定義されている場合、( https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "defmethod[defmethod] 経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義"
 "が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは _**:default**_)、"
 "存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。"
@@ -95,36 +95,36 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:21
 msgid ""
-"The multimethod system exposes this API: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"defmulti[defmulti] creates new multimethods, http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"defmethod[defmethod] creates and installs a new method of multimethod associated with a dispatch-value, http://"
+"The multimethod system exposes this API: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmulti[defmulti] creates new multimethods, https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmethod[defmethod] creates and installs a new method of multimethod associated with a dispatch-value, https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method[remove-method] removes the method "
-"associated with a dispatch-value and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-"
+"associated with a dispatch-value and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-"
 "method[prefer-method] creates an ordering between methods when they would otherwise be ambiguous."
 msgstr ""
-"マルチメソッドシステムはこのAPIを提供している: http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"defmulti[defmulti] マルチメソッドを新しく作成する、 http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core/defmethod[defmethod] ディスパッチ値と関連するメソッドをマルチメソッドに新しく定義する。 http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/remove-method[remove-method] ディスパッチ値と関連するメソッドを削除する。 "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] メソッドの間の優先順"
-"位が曖昧な場合に優先順位を定義する。"
+"マルチメソッドシステムはこのAPIを提供している: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"defmulti[defmulti] マルチメソッドを新しく作成する、 https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/defmethod[defmethod] ディスパッチ値と関連するメソッドをマルチメソッドに新しく定義する。 https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/remove-method[remove-method] ディスパッチ値と関連するメソッドを削除す"
+"る。 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] メソッドの間の"
+"優先順位が曖昧な場合に優先順位を定義する。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:23
 msgid ""
 "Derivation is determined by a combination of either Java inheritance (for class values), or using Clojure's ad hoc "
 "hierarchy system. The hierarchy system supports derivation relationships between names (either symbols or keywords), "
-"and relationships between classes and names. The http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"derive[derive] function creates these relationships, and the http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/isa?[isa?] function tests for their existence. Note that http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/isa?[isa?] is not http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"and relationships between classes and names. The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"derive[derive] function creates these relationships, and the https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/isa?[isa?] function tests for their existence. Note that https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/isa?[isa?] is not https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "instance?[instance?]."
 msgstr ""
 "導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシ"
-"ステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。 http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] 関数はこの関連性を作成し、 the http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] 関数が関連性の存在をテストする。 http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] と http://clojure.github.io/clojure/clojure."
+"ステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。 https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] 関数はこの関連性を作成し、 the https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] 関数が関連性の存在をテストする。 https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] と https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/instance?[instance?] は異なる点に注意。"
 
 #. type: Plain text
@@ -154,10 +154,10 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:34
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] is the fundamental relationship-"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] is the fundamental relationship-"
 "maker"
 msgstr ""
-"基本的には http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive]を使って関係性を作る。"
+"基本的には https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive]を使って関係性を作る。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:38
@@ -172,14 +172,14 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:40
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/descendants[descendants] and http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
-"%3F[isa?] let you query the hierarchy"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/descendants[descendants] and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"isa%3F[isa?] let you query the hierarchy"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/descendants[descendants] と http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/descendants[descendants] と https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
 "%3F[isa?]を使うことでヒエラルキーについて調べることが出来る。"
 
 #. type: delimited block -
@@ -279,9 +279,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:83
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] also tests for class relationships:"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] also tests for class relationships:"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はクラス間の関連性についてもテストす"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はクラス間の関連性についてもテストす"
 "る。"
 
 #. type: delimited block -
@@ -297,12 +297,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:91
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] works with vectors by calling http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] on their corresponding elements:"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] works with vectors by calling "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] on their corresponding elements:"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はベクターに対しても使用することが出"
-"来る。その場合、 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] を各要素に対して呼び"
-"出した結果を返す:"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はベクターに対しても使用することが出"
+"来る。その場合、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] を各要素に対して呼"
+"び出した結果を返す:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:96
@@ -317,12 +317,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:99
 msgid ""
-"as do http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] (but not http://clojure.github.io/clojure/clojure."
+"as do https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] (but not https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/descendants[descendants], since class descendants are an open set)"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] も同様。(http://clojure.github.io/clojure/clojure."
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] も同様。(https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/descendants[descendants] は子孫はオープンセットであるため異なる。)"
 
 #. type: delimited block -
@@ -350,13 +350,13 @@ msgstr "isa? に基づくディスパッチ"
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:112
 msgid ""
-"Multimethods use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] rather than = when "
-"testing for dispatch value matches. Note that the first test of http://clojure.github.io/clojure/clojure.core-api."
+"Multimethods use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] rather than = when "
+"testing for dispatch value matches. Note that the first test of https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/isa%3F[isa?] is =, so exact matches work."
 msgstr ""
-"マルチメソッドはディスパッチ値の比較に=ではなく、 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"isa%3F[isa?] を使用する。 http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] で最初に行"
-"われる比較は=なので同値の場合でも正しい結果になる。"
+"マルチメソッドはディスパッチ値の比較に=ではなく、 https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/isa%3F[isa?] を使用する。 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] で最"
+"初に行われる比較は=なので同値の場合でも正しい結果になる。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:118
@@ -403,11 +403,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:130
 msgid ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] is used for "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] is used for "
 "disambiguating in case of multiple matches where neither dominates the other. You can just declare, per multimethod, "
 "that one dispatch value is preferred over another:"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] はディスパッチ値が複"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] はディスパッチ値が複"
 "数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別の"
 "ディスパッチ値よりも優先されることを宣言することが出来る:"
 
@@ -463,12 +463,12 @@ msgstr ""
 #: en/content/reference/multimethods.adoc:152
 msgid ""
 "All of the examples above use the global hierarchy used by the multimethod system, but entire independent hierarchies "
-"can also be created with http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-"
+"can also be created with https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-"
 "hierarchy], and all of the above functions can take an optional hierarchy as a first argument."
 msgstr ""
-"上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、 http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-hierarchy] で完全に独立したヒエラルキーを作ることも可能"
-"で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。"
+"上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、 https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-hierarchy] で完全に独立したヒエラルキーを作ることも"
+"可能で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:154

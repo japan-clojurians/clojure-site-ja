@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: 2016-11-09 08:51+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -126,11 +126,11 @@ msgstr "reduce と fold"
 #. type: Plain text
 #: en/content/reference/reducers.adoc:31
 msgid ""
-"The *clojure.core.reducers* namespace (aliased here as *r*) provides an alternate http://clojure.github.io/clojure/"
+"The *clojure.core.reducers* namespace (aliased here as *r*) provides an alternate https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] function."
 msgstr ""
-"*clojure.core.reducers* のネームスペースでは (ここでは *r* としてエイリアスしている) http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] 関数の代わりを提供している。"
+"*clojure.core.reducers* のネームスペースでは (ここでは *r* としてエイリアスしている) https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core.reducers/reduce[r/reduce] 関数の代わりを提供している。"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:35
@@ -164,11 +164,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:43
 msgid ""
-"In general most users will not call r/reduce directly and instead should prefer http://clojure.github.io/clojure/"
+"In general most users will not call r/reduce directly and instead should prefer https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core.reducers/fold[r/fold], which implements parallel reduce and combine. However, it "
 "may be useful to execute an eager reduce with fewer intermediate results."
 msgstr ""
-"一般的にはほとんどのユーザーは、 r/reduce を直接呼び出す代わりに、並列なreduceと結合を実装する http://clojure.github."
+"一般的にはほとんどのユーザーは、 r/reduce を直接呼び出す代わりに、並列なreduceと結合を実装する https://clojure.github."
 "io/clojure/clojure.core-api.html#clojure.core.reducers/fold[r/fold] を使用するべきである。ただし、中間結果を削減する目"
 "的で貪欲なreduceを実行することは有用かもしれない。"
 
@@ -202,29 +202,30 @@ msgstr ""
 #: en/content/reference/reducers.adoc:52
 msgid ""
 "The following functions (analagous to the sequence versions) create reducers from a reducible or foldable collection: "
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core.reducers/filter[r/filter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
-"reducers/remove[r/remove] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/"
-"flatten] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take[r/take] and http://clojure.github.io/"
-"clojure/clojure.core-api.html#clojure.core.reducers/drop[r/drop]. None of these functions actually transforms the "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] https://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core.reducers/filter[r/filter] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"reducers/remove[r/remove] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/"
+"flatten] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take[r/take] and https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core.reducers/drop[r/drop]. None of these functions actually transforms the "
 "source collection. To produce an accumulated result, you must use r/reduce or r/fold. To produce an output "
-"collection, use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[clojure.core/into] to choose "
-"the collection type or the provided http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/"
-"foldcat[r/foldcat] to produce a collection that is reducible, foldable, seqable, and counted."
+"collection, use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[clojure.core/into] to "
+"choose the collection type or the provided https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"reducers/foldcat[r/foldcat] to produce a collection that is reducible, foldable, seqable, and counted."
 msgstr ""
-"以下の関数は (sequence版と同様に) reducerをreduce、fold可能なコレクションを作成する: http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/map[r/map] http://clojure.github.io/clojure/clojure.core-api.html#clojure."
-"core.reducers/mapcat[r/mapcat] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/filter[r/"
-"filter] http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/remove[r/remove] http://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/flatten] http://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] http://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core.reducers/take[r/take] 及び http://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
-"reducers/drop[r/drop] 。 これらの関数は実際には元のコレクションを変換しない。積算した結果を得るには r/reduce か r/"
-"fold を使用する。出力を得るには http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[clojure.core/"
-"into] を使用してコレクションのタイプを選択するか、提供されている http://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core.reducers/foldcat[r/foldcat] を使用してreduce可能,fold可能,seq可能、count可能なコレクションを得る。"
+"以下の関数は (sequence版と同様に) reducerをreduce、fold可能なコレクションを作成する: https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core.reducers/mapcat[r/mapcat] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"reducers/filter[r/filter] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/remove[r/"
+"remove] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten[r/flatten] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while[r/take-while] https://clojure.github."
+"io/clojure/clojure.core-api.html#clojure.core.reducers/take[r/take] 及び https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core.reducers/drop[r/drop] 。 これらの関数は実際には元のコレクションを変換しない。積算した結果を"
+"得るには r/reduce か r/fold を使用する。出力を得るには https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/into[clojure.core/into] を使用してコレクションのタイプを選択するか、提供されている https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat] を使用してreduce可能,fold可能,seq可"
+"能、count可能なコレクションを得る。"
 
 #. type: Title ==
 #: en/content/reference/reducers.adoc:53
@@ -252,9 +253,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reducers.adoc:63
 msgid ""
-"Use http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
+"Use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
 msgstr ""
-"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] を使用して最終的なコレクションを作成す"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] を使用して最終的なコレクションを作成す"
 "る:"
 
 #. type: delimited block -
@@ -265,8 +266,8 @@ msgstr "(into [] (r/filter even? (r/map inc (range 100000))))\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:68
-msgid "Or http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
-msgstr "もしくは http://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
+msgid "Or https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
+msgstr "もしくは https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat]:"
 
 #. type: delimited block -
 #: en/content/reference/reducers.adoc:71

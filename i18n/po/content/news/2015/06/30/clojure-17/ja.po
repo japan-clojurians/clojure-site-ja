@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10
 #, no-wrap
 msgid "Transducers"
-msgstr ""
+msgstr "Transducers(トランスデューサー)"
 
 #. type: Plain text
 #: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:104 en/content/news/2015/06/30/clojure-17.adoc:39

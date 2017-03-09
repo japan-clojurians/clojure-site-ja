@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-03-09 15:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,20 +92,20 @@ msgstr ""
 #: en/content/reference/other_libraries.adoc:23
 #, no-wrap
 msgid ""
-"**http://clojure.github.io/clojure/clojure.java.io-api.html[clojure.java.io]**\n"
+"**https://clojure.github.io/clojure/clojure.java.io-api.html[clojure.java.io]**\n"
 "Contains polymorphic I/O utility functions for Clojure backed by Java classes.\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/other_libraries.adoc:25
 #, no-wrap
-msgid "**http://clojure.github.io/clojure/clojure.java.javadoc-api.html[clojure.java.javadocs]**\n"
+msgid "**https://clojure.github.io/clojure/clojure.java.javadoc-api.html[clojure.java.javadocs]**\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/other_libraries.adoc:27
 msgid ""
-"Provides the function http://clojure.github.io/clojure/clojure.java.javadoc-"
+"Provides the function https://clojure.github.io/clojure/clojure.java.javadoc-"
 "api.html#clojure.java.javadoc/javadoc[javadoc] that attempts to display the "
 "appropriate Javadocs for a class or instance class."
 msgstr ""
@@ -113,13 +113,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/other_libraries.adoc:29
 #, no-wrap
-msgid "**http://clojure.github.io/clojure/clojure.java.shell-api.html[clojure.java.shell]**\n"
+msgid "**https://clojure.github.io/clojure/clojure.java.shell-api.html[clojure.java.shell]**\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/other_libraries.adoc:31
 msgid ""
-"Provides a http://clojure.github.io/clojure/clojure.java.shell-api."
+"Provides a https://clojure.github.io/clojure/clojure.java.shell-api."
 "html#clojure.java.shell/sh[sh] function that facilitates launching and "
 "managing subprocesses. See the function documentation for details on its "
 "expected arguments."
@@ -210,7 +210,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:58
 #, no-wrap
-msgid "Reflection Utilities (http://clojure.github.io/clojure/clojure.reflect-api.html[clojure.reflect])"
+msgid "Reflection Utilities (https://clojure.github.io/clojure/clojure.reflect-api.html[clojure.reflect])"
 msgstr ""
 
 #. type: Plain text
@@ -223,7 +223,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:62
 #, no-wrap
-msgid "REPL Utilities (http://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl])"
+msgid "REPL Utilities (https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl])"
 msgstr ""
 
 #. type: Plain text
@@ -234,7 +234,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:66
 #, no-wrap
-msgid "Sets and Relational Algebra (http://clojure.github.io/clojure/clojure.set-api.html[clojure.set])"
+msgid "Sets and Relational Algebra (https://clojure.github.io/clojure/clojure.set-api.html[clojure.set])"
 msgstr ""
 
 #. type: Plain text
@@ -247,7 +247,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:70
 #, no-wrap
-msgid "String Handling (http://clojure.github.io/clojure/clojure.string-api.html[clojure.string])"
+msgid "String Handling (https://clojure.github.io/clojure/clojure.string-api.html[clojure.string])"
 msgstr ""
 
 #. type: Plain text
@@ -258,7 +258,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:74
 #, no-wrap
-msgid "Unit Testing (http://clojure.github.io/clojure/clojure.test-api.html[clojure.test])"
+msgid "Unit Testing (https://clojure.github.io/clojure/clojure.test-api.html[clojure.test])"
 msgstr ""
 
 #. type: Plain text
@@ -269,7 +269,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:78
 #, no-wrap
-msgid "Walking Data Structures (http://clojure.github.io/clojure/clojure.walk-api.html[clojure.walk])"
+msgid "Walking Data Structures (https://clojure.github.io/clojure/clojure.walk-api.html[clojure.walk])"
 msgstr ""
 
 #. type: Plain text
@@ -280,7 +280,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:82
 #, no-wrap
-msgid "XML (http://clojure.github.io/clojure/clojure.xml-api.html[clojure.xml])"
+msgid "XML (https://clojure.github.io/clojure/clojure.xml-api.html[clojure.xml])"
 msgstr ""
 
 #. type: Plain text
@@ -291,7 +291,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/other_libraries.adoc:86
 #, no-wrap
-msgid "Zippers - Functional Tree Editing (http://clojure.github.io/clojure/clojure.zip-api.html[clojure.zip])"
+msgid "Zippers - Functional Tree Editing (https://clojure.github.io/clojure/clojure.zip-api.html[clojure.zip])"
 msgstr ""
 
 #. type: Plain text
@@ -304,10 +304,10 @@ msgid ""
 "hierarchical data structure, and the path it took to get there. It provides "
 "down/up/left/right navigation, and localized functional 'editing', insertion "
 "and removal of nodes. With zippers you can write code that looks like an "
-"imperative, destructive walk through a tree, call http://clojure.github.io/"
+"imperative, destructive walk through a tree, call https://clojure.github.io/"
 "clojure/clojure.zip-api.html#clojure.zip/root[root] when you are done and "
 "get a new tree reflecting all the changes, when in fact nothing at all is "
-"mutated - it's all thread safe and shareable. The http://clojure.github.io/"
+"mutated - it's all thread safe and shareable. The https://clojure.github.io/"
 "clojure/clojure.zip-api.html#clojure.zip/next[next] function does a depth-"
 "first walk, making for easy to understand loops:"
 msgstr ""
