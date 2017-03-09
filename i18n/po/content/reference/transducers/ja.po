@@ -290,7 +290,7 @@ msgstr ""
 #: en/content/reference/transducers.adoc:87
 #, no-wrap
 msgid "*transduce* will immediately (not lazily) reduce over *coll* with the transducer *xform* applied to the reducing function *f*, using init as the initial value if supplied or (f) otherwise. f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.\n"
-msgstr "*transduce* は *coll* を即時に (遅延評価せずに) reduceing関数 *f* にトランスデューサー *xform* を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。"
+msgstr "*transduce* は *coll* を即時に (遅延評価せずに) reducing関数 *f* にトランスデューサー *xform* を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:95
@@ -321,7 +321,7 @@ msgstr ""
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
 #, no-wrap
 msgid "/images/content/reference/transducers/xf.png"
-msgstr "/images/content/reference/transducers/xf.png"
+msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
 
 #. type: Title ===
 #: en/content/reference/transducers.adoc:101
@@ -403,7 +403,7 @@ msgid ""
 "needed and fully realize intermediate operations. This behavior differs from the equivalent operations on lazy "
 "sequences."
 msgstr ""
-"結果のシーケンスの要素っは一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行す"
+"結果のシーケンスの要素は一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行す"
 "る。この挙動は遅延シーケンスに対する同様の処理とは異なる。"
 
 #. type: Title ==
@@ -445,7 +445,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/transducers.adoc:137
 msgid "The inner function is defined with 3 arities used for different purposes:"
-msgstr "内部の関数は異なる用途のために3種類のアリエィで定義されている:"
+msgstr "内部の関数は異なる用途のために3種類のアリティで定義されている:"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:139
@@ -522,7 +522,7 @@ msgid ""
 "for and convey reduced values when they are encountered. (See the implementation of cat for an example.)"
 msgstr ""
 "トランスデューサーを使用するプロセスは、step関数がreducedな値を返すかをチェックし、reducedを返す場合は停止する必要"
-"がある。 (transduce可能なプロセス作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数"
+"がある。 (transduce可能な処理の作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数"
 "もreducedな値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)"
 
 #. type: Title ===
@@ -592,7 +592,7 @@ msgid ""
 "transformer's completion function, unless it has previously seen a reduced value from the nested step in which case "
 "pending state should be discarded."
 msgstr ""
-"完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り((観測し"
+"完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り(観測し"
 "た場合は保留にしている状態を破棄するべき)、ネストしている変換器の完了関数を呼び出す前に状態をフラッシュするべきだ。"
 
 #. type: Title ==
