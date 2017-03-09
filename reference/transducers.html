@@ -225,7 +225,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>transduce</strong> は <strong>coll</strong> を即時に (遅延評価せずに) reduceing関数 <strong>f</strong> にトランスデューサー <strong>xform</strong> を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。</p>
+<p><strong>transduce</strong> は <strong>coll</strong> を即時に (遅延評価せずに) reducing関数 <strong>f</strong> にトランスデューサー <strong>xform</strong> を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -241,7 +241,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/images/content/reference/transducers/xf.png" alt="Nested transformations">
+<img src="/clojure-site-ja/images/content/reference/transducers/xf.png" alt="Nested transformations">
 </div>
 </div>
 </div>
@@ -287,7 +287,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>結果のシーケンスの要素っは一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行する。この挙動は遅延シーケンスに対する同様の処理とは異なる。</p>
+<p>結果のシーケンスの要素は一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行する。この挙動は遅延シーケンスに対する同様の処理とは異なる。</p>
 </div>
 </div>
 </div>
@@ -311,7 +311,7 @@ whatever, input -&gt; whatever</code></pre>
 それらの引数を包含するトランスデューサーを返す。中には <strong>cat</strong> 等 <em>それ自体が</em> トランスデューサーであり、 <strong>xf</strong> を受け取らない関数もある。</p>
 </div>
 <div class="paragraph">
-<p>内部の関数は異なる用途のために3種類のアリエィで定義されている:</p>
+<p>内部の関数は異なる用途のために3種類のアリティで定義されている:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -358,7 +358,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 <div class="paragraph">
 <p>トランスデューサーを使用するプロセスは、step関数がreducedな値を返すかをチェックし、reducedを返す場合は停止する必要がある。
-(transduce可能なプロセス作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数もreducedな値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)</p>
+(transduce可能な処理の作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数もreducedな値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)</p>
 </div>
 </div>
 <div class="sect2">
@@ -389,7 +389,7 @@ whatever, input -&gt; whatever</code></pre>
 <strong>transduce</strong> への呼び出し)。よって、ステートフルなやり取りはトランスデューサー処理のコンテキストに内包される。</p>
 </div>
 <div class="paragraph">
-<p>完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り((観測した場合は保留にしている状態を破棄するべき)、ネストしている変換器の完了関数を呼び出す前に状態をフラッシュするべきだ。</p>
+<p>完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り(観測した場合は保留にしている状態を破棄するべき)、ネストしている変換器の完了関数を呼び出す前に状態をフラッシュするべきだ。</p>
 </div>
 </div>
 </div>
