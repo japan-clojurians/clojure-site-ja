@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Transducers</title>
+    <title>Clojure - Transducers(トランスデューサー)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Transducers</h1>
+  <h1>Transducers(トランスデューサー)</h1>
 </div>
 
 <p><em></em></p>
@@ -82,74 +82,79 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_terminology">Terminology</a></li>
-<li><a href="#_defining_transformations_with_transducers">Defining Transformations With Transducers</a>
+<li><a href="#_用語">用語</a></li>
+<li><a href="#_トランスデューサーで変換を定義する">トランスデューサーで変換を定義する</a>
 <ul class="sectlevel2">
-<li><a href="#_using_transducers">Using Transducers</a></li>
+<li><a href="#_トランスデューサーを使用する">トランスデューサーを使用する</a></li>
 <li><a href="#_transduce">transduce</a></li>
 <li><a href="#_eduction">eduction</a></li>
 <li><a href="#_into">into</a></li>
 <li><a href="#_sequence">sequence</a></li>
 </ul>
 </li>
-<li><a href="#_creating_transducers">Creating Transducers</a>
+<li><a href="#_トランスデューサーの作成">トランスデューサーの作成</a>
 <ul class="sectlevel2">
-<li><a href="#_early_termination">Early termination</a></li>
-<li><a href="#_transducers_with_reduction_state">Transducers with reduction state</a></li>
+<li><a href="#_早期終了">早期終了</a></li>
+<li><a href="#_reduce処理の状態を持つトランスデューサー">reduce処理の状態を持つトランスデューサー</a></li>
 </ul>
 </li>
-<li><a href="#_creating_transducible_processes">Creating Transducible Processes</a></li>
+<li><a href="#_transduce可能な処理の作成">transduce可能な処理の作成</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Transducers are composable algorithmic transformations. They are independent from the context of their input and output sources and specify only the essence of the transformation in terms of an individual element. Because transducers are decoupled from input or output sources, they can be used in many different processes - collections, streams, channels, observables, etc. Transducers compose directly, without awareness of input or creation of intermediate aggregates.</p>
+<p>トランスデューサーは合成可能な、演算的変換である。トランスデューサーは入出力ソースから独立しており、個別の要素に対する変換のエッセンスのみを指定する。トランスデューサーは入出力ソースとは分離されているため、様々な処理で使用することが可能である
+- コレクション、ストリーム、チャネル、オブザーバブル等。トランスデューサーは入力を意識することも中間集計結果を生成することもなく、直接的に合成する。</p>
 </div>
 <div class="paragraph">
-<p>Also see the introductory <a href="http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming">blog post</a> and this <a href="https://www.youtube.com/watch?v=6mTbuzafcII">video</a>.</p>
+<p>導入として次のブログポスト及びビデオを参照:
+<a href="http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming">blog post</a>
+<a href="https://www.youtube.com/watch?v=6mTbuzafcII">video</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_terminology">Terminology</h2>
+<h2 id="_用語">用語</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <em>reducing function</em> is the kind of function you&#8217;d pass to <strong>reduce</strong> - it is a function that takes an accumulated result and a new input and returns a new accumulated result:</p>
+<p><em>reducing関数</em> とは <strong>reduce</strong> に渡すような関数 - 累積結果と新しい入力を受け取り、新しい累積結果を返す関数だ:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; reducing function signature
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; reducing関数のシグネチャ
 whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>A <em>transducer</em> (sometimes referred to as xform or xf) is a transformation from one reducing function to another:</p>
+<p><em>トランスデューサー</em> (xformもしくはxfと書かれることもある) はreducing関数を別のreducing関数に変換する:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; transducer signature
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; トランスデューサーのシグネチャ
 (whatever, input -&gt; whatever) -&gt; (whatever, input -&gt; whatever)</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_defining_transformations_with_transducers">Defining Transformations With Transducers</h2>
+<h2 id="_トランスデューサーで変換を定義する">トランスデューサーで変換を定義する</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most sequence functions included in Clojure have an arity that produces a transducer. This arity omits the input collection; the inputs will be supplied by the process applying the transducer. <em>Note: this reduced arity is not currying or partial application.</em></p>
+<p>Clojureに含まれるほとんどのシーケンス関数は、トランスデューサーを返すアリティを持つ。そのアリティは入力のコレクションを省いたものになっている;
+入力のコレクションはトランスデューサーを適用する処理によって与えられる。 <em>注: この個数の減ったアリティはカリー化や部分適用ではない。</em></p>
 </div>
 <div class="paragraph">
-<p>For example:</p>
+<p>例:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(filter odd?) ;; returns a transducer that filters odd
-(map inc)     ;; returns a mapping transducer for incrementing
-(take 5)      ;; returns a transducer that will take the first 5 values</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(filter odd?) ;; 奇数をフィルタするトランスデューサーを返す
+(map inc)     ;; incによるマッピングを行うトランスデューサーを返す
+(take 5)      ;; 最初の5つの値を取得するトランスデューサーを返す</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Transducers compose with ordinary function composition. A transducer performs its operation before deciding whether and how many times to call the transducer it wraps. The recommended way to compose transducers is with the existing <strong>comp</strong> function:</p>
+<p>トランスデューサーは通常の関数合成によって合成される。トランスデューサーは、ラップしているトランスデューサーを呼び出すか否か、何回呼び出すかを判断する前に自分自身の処理を行う。トランスデューサーの合成には既存の
+<strong>comp</strong> 関数の使用が推奨される:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -161,10 +166,13 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The transducer xf is a transformation stack that will be applied by a process to a series of input elements. Each function in the stack is performed <em>before</em> the operation it wraps. Composition of the transformer runs right-to-left but builds a transformation stack that runs left-to-right (filtering happens before mapping in this example).</p>
+<p>トランスデューサーxfは一連の入力要素に対する処理によって適用される変換のまとまりである。まとまりの中の各関数はラップしている操作の <em>前に</em>
+実行される。変換器の合成は右から左に流れるが、変換の処理は左から右に流れる変換のまとまりとして組み立てられる
+(この例ではマッピングの前にフィルタが行われる)。</p>
 </div>
 <div class="paragraph">
-<p>As a mnemonic, remember that the ordering of transducer functions in <strong>comp</strong> is the same order as sequence transformations in <strong>->></strong>. The transformation above is equivalent to the sequence transformation:</p>
+<p>記憶の助けとして、 <strong>comp</strong> のトランスデューサーの順序は <strong>->></strong>
+によるシーケンスの変換と同じであることを覚えておくこと。上記の変換は下記のシーケンス変換と同等である:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -175,19 +183,40 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The following functions produce a transducer when the input collection is omitted:
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map">map</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat">cat</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat">mapcat</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter">filter</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove">remove</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take">take</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while">take-while</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth">take-nth</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop">drop</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while">drop-while</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace">replace</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by">partition-by</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all">partition-all</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep">keep</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed">keep-indexed</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed">map-indexed</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct">distinct</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose">interpose</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe">dedupe</a> <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample">random-sample</a></p>
+<p>次の関数は入力コレクションの引数が省略されている場合トランスデューサーを返す:
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map">map</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat">cat</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat">mapcat</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter">filter</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove">remove</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take">take</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while">take-while</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth">take-nth</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop">drop</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while">drop-while</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace">replace</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by">partition-by</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all">partition-all</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep">keep</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed">keep-indexed</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed">map-indexed</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct">distinct</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose">interpose</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe">dedupe</a>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample">random-sample</a></p>
 </div>
 <div class="sect2">
-<h3 id="_using_transducers">Using Transducers</h3>
+<h3 id="_トランスデューサーを使用する">トランスデューサーを使用する</h3>
 <div class="paragraph">
-<p>Transducers can be used in many contexts (see below for how to create new ones).</p>
+<p>トランスデューサーは様々なコンテキストで使用することができる (新しいコンテキストの作り方は下記を参照)。.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_transduce">transduce</h3>
 <div class="paragraph">
-<p>One of the most common ways to apply transducers is with the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/transduce">transduce</a> function, which is analogous to the standard reduce function:</p>
+<p>最も一般的なトランスデューサーの適用方法は
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/transduce">transduce</a>
+関数で、標準のreduce関数と似ている:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -196,7 +225,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>transduce</strong> will immediately (not lazily) reduce over <strong>coll</strong> with the transducer <strong>xform</strong> applied to the reducing function <strong>f</strong>, using init as the initial value if supplied or (f) otherwise. f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.</p>
+<p><strong>transduce</strong> は <strong>coll</strong> を即時に (遅延評価せずに) reduceing関数 <strong>f</strong> にトランスデューサー <strong>xform</strong> を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -208,7 +237,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The composed xf transducer will be invoked left-to-right with a final call to the reducing function f. In the last example, input values will be filtered, then incremented, and finally summed.</p>
+<p>合成されたxfトランスデューサーは最終的なreducing関数fへの呼び出しとともに左から右へと呼び出される。直前の例では、入力値がフィルタ、インクリメント、合計される。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -219,7 +248,10 @@ whatever, input -&gt; whatever</code></pre>
 <div class="sect2">
 <h3 id="_eduction">eduction</h3>
 <div class="paragraph">
-<p>To capture the process of applying a transducer to a coll, use the <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction">eduction</a> function. It takes any number of xforms and a final coll and returns a reducible/iterable application of the transducer to the items in coll. These applications will be performed each time reduce/iterator is called.</p>
+<p>トランスデューサーをcollに適用する際の処理を捕捉するには
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction">eduction</a>
+関数を使用する。この関数は任意の数の xform と最後に coll
+を受け取り、reduce可能でイテラブルな、collの各要素へのトランスデューサーの適用を返す。これらの適用はreduce/iteratorが呼び出される度に行われる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -232,7 +264,9 @@ whatever, input -&gt; whatever</code></pre>
 <div class="sect2">
 <h3 id="_into">into</h3>
 <div class="paragraph">
-<p>To apply a transducer to an input collection and construct a new output collection, use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">into</a> (which efficiently uses reduce and transients if possible):</p>
+<p>トランスデューサーを入力コレクションに適用し、出力コレクションを新たに構築する場合は
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">into</a>
+を使用する (内部で効率的にreduceを行い、可能であればtransientを使用する):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -243,7 +277,9 @@ whatever, input -&gt; whatever</code></pre>
 <div class="sect2">
 <h3 id="_sequence">sequence</h3>
 <div class="paragraph">
-<p>To create a sequence from the application of a transducer to an input collection, use <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence">sequence</a>:</p>
+<p>入力コレクションに対するトランスデューサーの適用からシーケンスを作成する場合には
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence">sequence</a>
+を使用する:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -251,16 +287,16 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The resulting sequence elements are incrementally computed. These sequences will consume input incrementally as needed and fully realize intermediate operations. This behavior differs from the equivalent operations on lazy sequences.</p>
+<p>結果のシーケンスの要素っは一つずつ計算される。このようなシーケンスは入力を必要に応じて一つずつ消費し、かつ中間処理を全て実行する。この挙動は遅延シーケンスに対する同様の処理とは異なる。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_transducers">Creating Transducers</h2>
+<h2 id="_トランスデューサーの作成">トランスデューサーの作成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most functions that produce transducers have the following shape (custom code in "&#8230;&#8203;"):</p>
+<p>トランスデューサーを返すほとんどの関数は次のような形態をとる (custom code in "&#8230;&#8203;"):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -271,53 +307,65 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Many of the core sequence functions (like map, filter, etc) take operation-specific arguments (a predicate, function, count, etc) and return a transducer of this shape closing over those arguments. In some cases, like <strong>cat</strong>, the core function <em>is</em> a transducer function and does not take an <strong>xf</strong>.</p>
+<p>コアのシーケンス関数の多く (map、 filter、etc) は処理特有の引数を受け取り、(述語、関数、個数、 etc)
+それらの引数を包含するトランスデューサーを返す。中には <strong>cat</strong> 等 <em>それ自体が</em> トランスデューサーであり、 <strong>xf</strong> を受け取らない関数もある。</p>
 </div>
 <div class="paragraph">
-<p>The inner function is defined with 3 arities used for different purposes:</p>
+<p>内部の関数は異なる用途のために3種類のアリエィで定義されている:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Init</strong> (arity 0) - should call the init arity on the nested transform <strong>xf</strong>, which will eventually call out to the transducing process.</p>
-</li>
-<li>
-<p><strong>Step</strong> (arity 2) - this is a standard reduction function but it is expected to call the <strong>xf</strong> step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call <strong>xf</strong> or not. map will always call it exactly once. cat may call it many times depending on the inputs.</p>
-</li>
-<li>
-<p><strong>Completion</strong> (arity 1) - some processes will not end, but for those that do (like <strong>transduce</strong>), the completion arity is used to produce a final value and/or flush state. This arity must call the <strong>xf</strong> completion arity exactly once.</p>
+<p><strong>Init</strong> (アリティ 0) - ネストしている変換 <strong>xf</strong> をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。* <strong>Step</strong> (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって <strong>xf</strong> の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって <strong>xf</strong> を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。* <strong>Completion</strong> (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば <strong>transduce</strong> )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は <strong>xf</strong> の完了引数を一度のみ呼び出す必要がある。
+<strong>completion</strong> の利用例は <strong>partition-all</strong> で、この関数は入力の最後に残っている要素をフラッシュする必要がある。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing">completing</a>
+関数を使用すると デフォルトのcompletionアリティを追加することによってreducing関数をトランスデューサー関数に変換することができる。</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>An example use of <strong>completion</strong> is <strong>partition-all</strong>, which must flush any remaining elements at the end of the input. The <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing">completing</a> function can be used to convert a reducing function to a transducing function by adding a default completion arity.</p>
-</div>
 <div class="sect2">
-<h3 id="_early_termination">Early termination</h3>
+<h3 id="_早期終了">早期終了</h3>
 <div class="paragraph">
-<p>Clojure has a mechanism for specifying early termination of a reduce:</p>
+<p>Clojureにはreduceの早期終了を指定するメカニズムがある:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced">reduced</a> - takes a value and returns a <em>reduced</em> value indicating reduction should stop</p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced">reduced</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>値を受け取り  reduceの終了すべきことを示す、 <em>reduced(reduce済みの)</em> 値を返す。</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?">reduced?</a> - returns true if the value was created with <em>reduced</em></p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?">reduced?</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>reduced</em> を使用して作成された値に対して true を返す。</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a> or @ can be used to retrieve the value inside a <em>reduced</em></p>
+<p><a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
+もしくは @ を使用して <em>reduced</em> の中の値を取得することができる。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A process that uses transducers must check for and stop when the step function returns a reduced value (more on that in Creating Transducible Processes). Additionally, a transducer step function that uses a nested reduce must check for and convey reduced values when they are encountered. (See the implementation of cat for an example.)</p>
+<p>トランスデューサーを使用するプロセスは、step関数がreducedな値を返すかをチェックし、reducedを返す場合は停止する必要がある。
+(transduce可能なプロセス作成で後述する)。加えて、ネストしたreduceを使用するトランスデューサーのstep関数もreducedな値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_transducers_with_reduction_state">Transducers with reduction state</h3>
+<h3 id="_reduce処理の状態を持つトランスデューサー">reduce処理の状態を持つトランスデューサー</h3>
 <div class="paragraph">
-<p>Some transducers (such as <strong>take</strong>, <strong>partition</strong>, etc) require state during the reduction process. This state is created each time the transducible process applies the transducer. For example, consider the dedupe transducer that collapses a series of duplicate values into a single value. This transducer must remember the previous value to determine whether the current value should be passed on:</p>
+<p>いくつかのトランスデューサー( <strong>take</strong> 、 <strong>partition</strong>
+等)はreduce処理に状態が必要となる。この状態はtransduce可能な処理がトランスデューサーを適用する度に作成される。例として連続する重複した値を一つにまとめるdedupeトランスデューサーを考える。このトランスデューサーは現在の値を引き渡すかどうかを決めるにあたって、一つ前の値を記憶する必要がある:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -336,33 +384,38 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In dedupe, <strong>prev</strong> is a stateful container that stores the previous value during the reduction. The prev value is a volatile for performance, but it could also be an atom. The prev value will not be initialized until the transducing process starts (in a call to <strong>transduce</strong> for example). The stateful interactions are therefore contained within the context of the transducible process.</p>
+<p>dedupeでは <strong>prev</strong>
+はreduce処理の間に、一つ前の値を保持するステートフルなコンテナである。prevの値はパフォーマンスのためvolatileだが、atomとしても定義できる。prevの値はトランスデューサー処理が開始するまで初期化されない(例:
+<strong>transduce</strong> への呼び出し)。よって、ステートフルなやり取りはトランスデューサー処理のコンテキストに内包される。</p>
 </div>
 <div class="paragraph">
-<p>In the completion step, a transducer with reduction state should flush state prior to calling the nested transformer&#8217;s completion function, unless it has previously seen a reduced value from the nested step in which case pending state should be discarded.</p>
+<p>完了ステップでは、reduce処理の状態を持つトランスデューサーは、ネストしているステップからredecedな値を観測していない限り((観測した場合は保留にしている状態を破棄するべき)、ネストしている変換器の完了関数を呼び出す前に状態をフラッシュするべきだ。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_transducible_processes">Creating Transducible Processes</h2>
+<h2 id="_transduce可能な処理の作成">transduce可能な処理の作成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Transducers are designed to be used in many kinds of processes. A transducible process is defined as a succession of steps where each step ingests an input. The source of the inputs is specific to each process (from a collection, an iterator, a stream, etc). Similarly, the process must choose what to do with the outputs produced by each step.</p>
+<p>トランスデューサーは様々な処理で使用できるように設計されている。トランスデューサー処理は各ステップが一つの入力を消化する、一連のステップとして定義される。入力ソースは各処理に特有のものであり
+(コレクション、イテレータ, ストリーム等)、 同様に、各ステップの出力の処理方法も処理によって選択する必要がある。</p>
 </div>
 <div class="paragraph">
-<p>If you have a new context for applying transducers, there are a few general rules to be aware of:</p>
+<p>トランスデューサーを新たなコンテキストに適用する場合、いくつかの一般的な注意点がある。:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If a step function returns a <em>reduced</em> value, the transducible process must not supply any more inputs to the step function. The reduced value must be unwrapped with deref before completion.</p>
+<p>step関数が <em>reduced (reduce済み)</em>
+の値を返す場合、トランスデューサー処理はそれ以上の入力をステップ関数に与えてはならない。reduce済みの値はderefを使用して完了前に展開する必要がある。</p>
 </li>
 <li>
-<p>A completing process must call the completion operation on the final accumulated value exactly once.</p>
+<p>completion操作は、最終的な集計値に対して完了処置を一度のみ呼び出す必要がある。</p>
 </li>
 <li>
-<p>A transducing process must encapsulate references to the function returned by invoking a transducer - these may be stateful and unsafe for use across threads.</p>
+<p>transducing処理はトランスデューサーを呼び出した際に返される関数への参照を内包する必要がある -
+これらはステートフルで、スレッド間での使用が安全でない場合もある。</p>
 </li>
 </ul>
 </div>

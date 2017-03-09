@@ -117,10 +117,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/transducers.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/transients.html</loc>
         <lastmod></lastmod>
     </url>
@@ -166,6 +162,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/refs.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/transducers.html</loc>
         <lastmod></lastmod>
     </url>
 </urlset>
