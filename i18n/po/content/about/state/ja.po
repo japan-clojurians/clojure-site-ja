@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-02 16:44+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,13 +55,13 @@ msgstr "toc::[]"
 #: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74 en/content/guides/comparators.adoc:12
 #, no-wrap
 msgid "Summary"
-msgstr ""
+msgstr "まとめ"
 
 #. type: Title =
 #: en/content/about/state.adoc:1
 #, no-wrap
 msgid "Values and Change: Clojure's approach to Identity and State"
-msgstr ""
+msgstr "値と変更: Clojureのアイデンティティと状態に対するアプローチ"
 
 #. type: Plain text
 #: en/content/about/state.adoc:18
@@ -72,12 +72,16 @@ msgid ""
 "essay intends to illuminate Clojure's approach to the problems faced by imperative and functional programs in "
 "modeling the world."
 msgstr ""
+"命令型言語からClojureに来た人の多くは、Clojureでのアプローチのしかたに直面して勝手が違うことに気づく。一方、より関数型"
+"の背景を持って来た人は、ひとたびClojureの関数型のサブセットを離れれば、Javaで見られるような状態と同じような話に直面す"
+"ることになると想定する。この文章は、命令型と関数型のプログラムが世界をモデリングする際に直面する問題に対するClojureの"
+"アプローチを明らかにすることを意図している。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:19
 #, no-wrap
 msgid "Imperative programming"
-msgstr ""
+msgstr "命令型プログラミング"
 
 #. type: Plain text
 #: en/content/about/state.adoc:22
@@ -87,6 +91,10 @@ msgid ""
 "\"change that\" and it changes. Imperative programming languages are oriented around saying do this/do that, and "
 "changing memory locations."
 msgstr ""
+"命令型のプログラムは世界(例えばメモリ)を直接操作する。それは今では維持できないシングルスレッドという前提――世界を観察し"
+"たり変更したりする間、世界は停止している――に基づいている。「これをせよ」と言えばそれは起こり、「あれを変更せよ」と言え"
+"ばそれは変化する。命令型プログラミング言語は、これをせよ/あれをせよと言ってメモリロケーションを変更することを指向して"
+"いる。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:24
@@ -98,12 +106,17 @@ msgid ""
 "manipulate, and a lot of overhead to propagate changes to shared memory so they are seen by other cores. It doesn't "
 "work very well."
 msgstr ""
+"これはマルチスレッド以前でさえ素晴らしいアイディアではなかった。並行処理が加わると現実の問題になる、というのも「世界は"
+"停止している」という前提はもはや全く正しくなく、その幻想を取り戻すのは極めて困難でエラーを引き起こしがちだからだ。複数"
+"の参加者が、それぞれ全能であるかのように振る舞う中で、他者の仮定や努力の成果を破壊してしまうのを何とかして避けなければ"
+"ならない。これには、個々の参加者が操作する領域を遮断するためにミューテックスやロックが必要となり、他のコアからも見える"
+"ように共有メモリの変更を伝播させる大きなオーバーヘッドを要する。これはあまり上手くいかない。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:25
 #, no-wrap
 msgid "Functional programming"
-msgstr ""
+msgstr "関数型プログラミング"
 
 #. type: Plain text
 #: en/content/about/state.adoc:28
@@ -113,12 +126,16 @@ msgid ""
 "easier to understand, reason about, and test, since the activity of functions is completely local. To the extent a "
 "portion of a program is purely functional, concurrency is a non-issue, as there is simply no change to coordinate."
 msgstr ""
+"関数型プログラミングはより数学的に世界を捉え、プログラムは特定の値を取って別の値を生み出す関数だとみなす。関数型のプロ"
+"グラムは、命令型のプログラムが持つ外界への「効果」を避けるため、理解しやすく、推論しやすく、テストしやすいものになる、"
+"というのも関数の活動は完全にローカルなものだからだ。プログラムが純粋に関数型である限り、並行処理は問題にならない。なぜ"
+"なら協調させるべき変更が全く存在しないからだ。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:29
 #, no-wrap
 msgid "Working Models and Identity"
-msgstr ""
+msgstr "ワーキングモデルとアイデンティティ"
 
 #. type: Plain text
 #: en/content/about/state.adoc:32
@@ -130,6 +147,12 @@ msgid ""
 "'today' or 'America' had to represent a single constant value for all time? Note that by identities I don't mean "
 "names (I call my mother Mom, but you wouldn't)."
 msgstr ""
+"一部のプログラムは大きな関数(例えばコンパイラや定理証明器)だが、その他の多くのプログラムはそうではない――むしろワーキン"
+"グモデルのようなもので、私がこの議論で *_アイデンティティ_* と呼ぶものをサポートする必要がある。アイデンティティという"
+"のは *_時間とともに異なる一連の値と結び付いた、安定した論理的なエンティティ_* のことを意味している。人間にアイデンティ"
+"ティが必要であるのと同様な理由で、世界を表現するためにモデルにはアイデンティティが必要だ。「今日」や「アメリカ」のよう"
+"なアイデンティティが常に単一の定数値を表さなければならないとしたらどうなるだろう? アイデンティティというのは名前のこと"
+"を意味しているわけではないことに注意が必要だ(私は自分の母親のことをママと呼ぶが、あなたはそうではないかもしれない)。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:34
@@ -139,6 +162,10 @@ msgid ""
 "don't change, no matter what some bad class libraries may cause you to believe. Even aggregates are values. The set "
 "of my favorite foods doesn't change, i.e. if I prefer different foods in the future, that will be a different set."
 msgstr ""
+"というわけで、この議論では、アイデンティティとは、ある時点での値としての状態を持つエンティティのことだ。そして *_値と"
+"は変化しないもののことだ_* 。42は変化しない。2008年6月29日は変化しない。点は移動することがないし、ひどいクラスライブラ"
+"リが何を信じさせようとも、日付は変化することがない。集合体(aggregate)でさえ値だ。私の好きな食べ物の集合は変化しない、"
+"つまり私が将来、別の食べ物を好むようになったとしたら、それは別の集合ということだ"
 
 #. type: Plain text
 #: en/content/about/state.adoc:36
@@ -146,12 +173,14 @@ msgid ""
 "Identities are mental tools we use to superimpose continuity on a world which is constantly, functionally, creating "
 "new values of itself."
 msgstr ""
+"アイデンティティは、絶えず関数的に自身の新たな値を生み出していく世界を連続性のあるものとして捉えるためのメンタルツール"
+"だ。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:37
 #, no-wrap
 msgid "Object Oriented programming (OO)"
-msgstr ""
+msgstr "オブジェクト指向プログラミング(OO)"
 
 #. type: Plain text
 #: en/content/about/state.adoc:40
@@ -164,6 +193,13 @@ msgid ""
 "different value other than in-place memory mutation. In other words, *_typical OO has imperative programming baked "
 "into it!_* OO doesn't have to be this way, but, usually, it is (Java/C++/Python/Ruby etc)."
 msgstr ""
+"OOとは、何よりも、プログラムにおいてアイデンティティと状態をモデリングするためのツールを提供する試みだ(振る舞いを状態"
+"に関連付けることや階層的な分類はどちらもここでは無視する)。OOは典型的にはアイデンティティと状態を統合している、つまり"
+"オブジェクト(アイデンティティ)が状態の値を保持するメモリに対するポインタになっている。コピーすることなくアイデンティ"
+"ティから独立した状態を取得する方法はない。変更されるのをブロックすることなく安定した状態を観察する方法も(コピーする方"
+"法さえ)ない。置き換えによるメモリ変更以外でアイデンティティの状態に異なる値を関連付ける方法もない。言い換えれば、 *_典"
+"型的なOOは命令型プログラミングを焼き込んでいる!_* OOはこのようである必要はないのだが、たいていそうなっている(Java/C++/"
+"Python/Rubyなど)。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:42
@@ -175,12 +211,17 @@ msgid ""
 "programmers to create many more identities than they should, creating identities out of things that should be values "
 "etc."
 msgstr ""
+"OOに慣れている人はプログラムをオブジェクトの値を変更するものと考えている。彼らは値(例えば42)の真の観念は決して変わるこ"
+"とのないものだと理解しているが、たいていその値の観念をオブジェクトの状態に拡大することはない。それは彼らのプログラミン"
+"グ言語の欠陥だ。そうした言語は、アイデンティティやオブジェクトのために使うのと同じ構造を値のモデリングのために利用し、"
+"ミュータブルをデフォルトとしており、最も熟練のプログラマ以外の誰もが必要以上に多くのアイデンティティを作ってしまう原因"
+"となり、値その他であるべきものからアイデンティティを作っている。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:43
 #, no-wrap
 msgid "Clojure programming"
-msgstr ""
+msgstr "Clojureプログラミング"
 
 #. type: Plain text
 #: en/content/about/state.adoc:46
@@ -192,6 +233,12 @@ msgid ""
 "state at any point in time. And that state is a true value, i.e. it never changes. If an identity appears to change, "
 "it is because it becomes associated with different state values over time. This is the Clojure model."
 msgstr ""
+"方法は他にもあり、それはアイデンティティと状態を分離することだ(再び、間接化がプログラミングにおける困難から救ってくれ"
+"る)。私たちは、状態の観念を「このメモリブロックの中身」から離れて「このアイデンティティに現在関連付けられている *_値"
+"_* 」に変える必要がある。したがって、アイデンティティは異なる時点で異なる状態をとりうるが、 _状態自身が変化することは"
+"ない_ 。つまり、アイデンティティが状態なのではなく、アイデンティティが状態を *_持っている_* のだ。あらゆる時点において"
+"ちょうど1つだけの状態。そしてその状態は真の値だ、つまり決して変わることがない。アイデンティティが変化しているように見"
+"えたとしても、それは時間とともに異なる状態の値が関連付けられるからだ。これがClojureのモデルだ。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:48
@@ -203,6 +250,12 @@ msgid ""
 "participants and the programming language/system, Clojure, is in charge of world consistency management. The value of "
 "a reference (state of an identity) is always observable without coordination, and freely shareable between threads."
 msgstr ""
+"Clojureのモデルでは、値の計算は純粋に関数型だ。値は決して変化しない。新しい値は古い値の関数であり、古い値を変更したも"
+"のではない。しかし論理的なアイデンティティは値に対するアトミックな参照(<<xref/../../reference/refs#,Refs>> と "
+"<<xref/../../reference/agents#,Agents>>)としてしっかりサポートされている。参照に対する変更はシステムによって制御/調整"
+"されている、つまり協調させることは選択的でも手動でもない。世界は参加者の協調的な努力によって前進し、プログラミング言"
+"語/システムであるClojureが世界の一貫性の管理を担っている。参照の値(アイデンティティの状態)は常に調整なく観察することが"
+"でき、スレッド間で自由に共有できる"
 
 #. type: Plain text
 #: en/content/about/state.adoc:50
@@ -211,12 +264,15 @@ msgid ""
 "understand/test when functional value calculation is independent of identity/value association. And it's easy to add "
 "other participants when they are (inevitably) needed."
 msgstr ""
+"参加者(スレッド)がただ1つしかないときでも、このような方法でプログラムを構築する価値はある。関数の値の計算がアイデン"
+"ティティ/値の関連から独立していると、プログラムはより理解しやすくテストしやすくなる。そして(必然的に)必要になったとき"
+"に他の参加者を追加するのも簡単だ。"
 
 #. type: Title ===
 #: en/content/about/state.adoc:51
 #, no-wrap
 msgid "Concurrency"
-msgstr ""
+msgstr "並行処理"
 
 #. type: Plain text
 #: en/content/about/state.adoc:54
@@ -228,6 +284,12 @@ msgid ""
 "our sensory systems. The nice thing is any such state value won't change in hand during the processing, as it is "
 "immutable."
 msgstr ""
+"並行処理に取り組むということは、全能という幻想をあきらめることを意味する。他の参加者が存在しうるし、世界は変化し続ける"
+"ということをプログラムは認識しなければならない。そのため、何らかのアイデンティティの状態の値を観察することで得られるの"
+"はせいぜいスナップショットだということをプログラムは理解しなければならない、というのもそれらのアイデンティティは後に新"
+"たな値を取りうるからだ。しかし、多くの場合には決定を下したりレポートしたりする目的にはそれで十分だ。私たち人間は自らの"
+"感覚系から得られるスナップショットで上手くやっている。そうした状態の値はイミュータブルなので、処理中に手元で変化するこ"
+"とがないのが良いところだ。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:56
@@ -241,6 +303,12 @@ msgid ""
 "function will be passed the current state of the Agent and the return value of the function will become the Agent's "
 "new state."
 msgstr ""
+"一方で、状態を新しい値に変更するには「現在の」値とアイデンティティにアクセスする必要がある。ClojureのRefとAgentはこれ"
+"を自動的に行う。Refの場合には、いかなる相互作用もトランザクション内で行わなければならず(そうでなければClojureは例外を"
+"投げる)、そうしたすべての相互作用はある時点での世界の一貫したビューを見ることになり、変更されるべき状態が途中で他の参"
+"加者に変更されていないのでなければいかなる変更も生じない。トランザクションは複数のRefに対する同期的な変更をサポートし"
+"ている。他方、Agentは単一の参照に対する非同期的な変更を提供している。関数と値を渡すと、未来のある時点でその関数にAgent"
+"の現在の状態が渡され、関数の戻り値がAgentの新しい状態になる。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:58
@@ -254,12 +322,21 @@ msgid ""
 "core/alter[alter], https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/commute[commute] and https://"
 "clojure.github.com/clojure/clojure.core-api.html#clojure.core/send[send] functions."
 msgstr ""
+"いずれの場合でも、プログラムは世界にある値の安定したビューを見ることになる、というのもそうした値は変化することができ"
+"ず、値をコアの間で共有するのも上手くいくからだ。難しいのは「値は決して変化しない」ということは古い値から新しい値を作る"
+"のが効率的でなければならないということで、Clojureでは永続的データ構造のおかげで実際に効率的になっている。永続的データ"
+"構造によって最終的にfavor immutability(イミュータブルであることを好め)というよく言われる助言に従うことが可能になる。そ"
+"してあるアイデンティティの状態を新しい値に設定するには、アイデンティティの現在の値を読み取り、純粋な関数をその値に対し"
+"て呼び出して新しい値を生み出し、その値を新しい状態として設定することによって行う。こうした複合的な操作は https://"
+"clojure.github.com/clojure/clojure.core-api.html#clojure.core/alter[alter] や https://clojure.github.com/clojure/"
+"clojure.core-api.html#clojure.core/commute[commute] 、 https://clojure.github.com/clojure/clojure.core-api."
+"html#clojure.core/send[send] という関数で簡単にアトミックに行うことができる。"
 
 #. type: Title ==
 #: en/content/about/state.adoc:60
 #, no-wrap
 msgid "Message Passing and Actors"
-msgstr ""
+msgstr "メッセージパッシングとアクター"
 
 #. type: Plain text
 #: en/content/about/state.adoc:63
@@ -275,12 +352,22 @@ msgid ""
 "supports transparent distribution. If you write all of your code this way, you are not bound to the actual location "
 "of the other actors, allowing a system to be spread over multiple processes/machines without changing the code."
 msgstr ""
+"アイデンティティと状態をモデリングする方法は他にもあり、人気のある方法のひとつがメッセージパッシングの https://en."
+"wikipedia.org/wiki/Actor_model[アクターモデル] で、 https://en.wikipedia.org/wiki/Erlang_%28programming_language"
+"%29[Erlang] が非常に印象的な好例だ。アクターモデルでは、状態はアクター(アイデンティティ)にカプセル化され、メッセージ"
+"(値)を渡すことによってのみ影響を与えたり見たりすることができる。Erlangでのような非同期的なシステムでは、あるアクターの"
+"状態のある面を読み取るには、リクエストメッセージを送り、レスポンスを待ち、そのアクターがレスポンスを送る必要がある。 _"
+"アクターモデルは *分散* プログラムの問題に対処するために設計された_ ということを理解しておくのは重要なことだ。そして、"
+"分散プログラムの問題はずっと難しい――複数の世界(アドレス空間)があり、直接的な観察は可能ではなく、信頼できないかもしれな"
+"いチャネルを通して相互作用が行われる、など。アクターモデルは透過的な分散(transparent distribution)をサポートしている。"
+"すべてのコードをこのように書けば、他のアクターの実際の場所に縛られることはなくなり、コードを変更することなくシステムを"
+"複数のプロセス/マシンに拡大することが可能になる。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:65
 msgid ""
 "I chose not to use the Erlang-style actor model for same-process state management in Clojure for several reasons:"
-msgstr ""
+msgstr "私はいくつかの理由からErlang式のアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:"
 
 #. type: Plain text
 #: en/content/about/state.adoc:68
@@ -290,6 +377,10 @@ msgid ""
 "modes of distribution means utilizing timeouts etc. It causes a bifurcation of the program protocols, some of which "
 "are represented by functions and others by the values of messages."
 msgstr ""
+"最もシンプルなデータの読み取りにも2つのメッセージのやり取りを必要とし、ブロックするメッセージ受け取りを利用しなければ"
+"ならず、それによってデッドロックの可能性が生まれる、ずっと複雑なプログラミングモデルだ。分散処理の故障モードのためにプ"
+"ログラミングするということはタイムアウトなどを利用することを意味する。それはプログラムのプロトコルを関数で表されるもの"
+"とメッセージの値で表されるものに二分してしまう原因になる。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:69
@@ -298,6 +389,9 @@ msgid ""
 "directly share a large immutable data structure between threads, but the actor model forces intervening conversations "
 "and, potentially, copying. Reads and writes get serialized and block each other, etc."
 msgstr ""
+"同一プロセスであることによる効率性を十分に活用できない。大きなイミュータブルデータ構造をスレッド間で効率的に直接共有す"
+"ることは十分可能だが、アクターモデルでは介在するやり取り、もしかするとコピーも強いられることになる。読み書きがシリアラ"
+"イズされ相互にブロックする、など。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:70
@@ -308,6 +402,10 @@ msgid ""
 "observe anything without its cooperation/coordination - making ad-hoc reporting or analysis impossible, instead "
 "forcing every actor to participate in each protocol."
 msgstr ""
+"モデリングの柔軟性が低下する――これはみんなが窓のない部屋に座ってメールのみによってコミュニケーションを取るような世界"
+"だ。プログラムは大量のブロックするswitch文に分解される。受け取ることを予想しているメッセージを扱うことしかできない。複"
+"数のアクターが関わる活動を協調させるのは非常に困難だ。協調/調整させることなくして何も観察することができない――アドホッ"
+"クにレポートしたり分析したりするのは不可能で、むしろすべてのアクターがそれぞれのプロトコルに参加することを強いられる。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:71
@@ -316,6 +414,9 @@ msgid ""
 "- the conversation granularity is too chatty or the message payloads are too large or the failure modes change the "
 "optimal work partitioning, i.e. transparent distribution isn't transparent and the code has to change anyway."
 msgstr ""
+"ローカルで上手く動作するものを透過的に分散させると上手く動作しなくなることがよくある――やり取りの粒度が細かすぎたり、"
+"メッセージのペイロードが大きすぎたり、故障モードが最適な仕事の分割を変えてしまったり、つまり透過的な分散は透過的ではな"
+"く、結局コードを変更しなければならない。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:73
@@ -323,6 +424,8 @@ msgid ""
 "Clojure may eventually support the actor model for distributed programming, paying the price only when distribution "
 "is required, but I think it is quite cumbersome for same-process programming. YMMV of course."
 msgstr ""
+"Clojureもやがて、分散処理が必要な場合にだけ代価を払って、分散プログラミングのためにアクターモデルをサポートするかもし"
+"れないが、私は同一プロセスでのプログラミングには扱いづらすぎると考えている。もちろんあなたの立場は異なるかもしれない。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:77
@@ -330,6 +433,8 @@ msgid ""
 "Clojure is a functional language that explicitly supports programs as models and provides robust and easy-to-use "
 "facilities for managing identity and state in a single process in the face of concurrency."
 msgstr ""
+"Clojureは、モデルとしてのプログラムを明示的にサポートし、並行処理に際してシングルプロセスでのアイデンティティと状態を"
+"管理するための堅牢で使いやすい機能を提供する関数型言語だ。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:79
@@ -341,6 +446,12 @@ msgid ""
 "want to encapsulate or abstract away the details of your values, a good idea if they are non-trivial, write a set of "
 "functions for viewing and manipulating them. If you want polymorphism, use Clojure's multimethods."
 msgstr ""
+"OO言語からClojureに来たのであれば、オブジェクトの代わりに <<xref/../../reference/data_structures#,永続的なコレクション"
+">> 、例えばマップを利用することができる。可能な限り値を利用しよう。そして、オブジェクトが本当にアイデンティティをモデ"
+"リングしている場合(そう考え始めるのはあなたが考える以上にずっとまれなことだが)には、変化する状態を持つアイデンティティ"
+"をモデリングするために、例えばマップを状態としたRefやAgentを利用することができる。値の詳細をカプセル化したり抽象化した"
+"りしたいのであれば、些細なものでなければ良いアイディアだが、値を参照したり操作したりする一連の関数を書こう。ポリモー"
+"フィズムがほしいのであれば、Clojureのマルチメソッドを利用しよう。"
 
 #. type: Plain text
 #: en/content/about/state.adoc:80
@@ -349,3 +460,6 @@ msgid ""
 "loop, you can instead do it functionally with <<xref/../../reference/special_forms#recur#,recur>> or https://clojure."
 "github.com/clojure/clojure.core-api.html#clojure.core/reduce[reduce]."
 msgstr ""
+"ローカルな場合には、Clojureにはミュータブルなローカル変数がないので、変更を伴うループで値を組み立てる代わりに、 "
+"<<xref/../../reference/special_forms#recur#,recur>> や https://clojure.github.com/clojure/clojure.core-api."
+"html#clojure.core/reduce[reduce] で関数的に値を組み立てることができる。"
