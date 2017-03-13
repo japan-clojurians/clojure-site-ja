@@ -316,12 +316,20 @@ whatever, input -&gt; whatever</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Init</strong> (アリティ 0) - ネストしている変換 <strong>xf</strong> をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。* <strong>Step</strong> (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって <strong>xf</strong> の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって <strong>xf</strong> を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。* <strong>Completion</strong> (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば <strong>transduce</strong> )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は <strong>xf</strong> の完了引数を一度のみ呼び出す必要がある。
-<strong>completion</strong> の利用例は <strong>partition-all</strong> で、この関数は入力の最後に残っている要素をフラッシュする必要がある。
-<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing">completing</a>
-関数を使用すると デフォルトのcompletionアリティを追加することによってreducing関数をトランスデューサー関数に変換することができる。</p>
+<p><strong>Init</strong> (アリティ 0) - ネストしている変換 <strong>xf</strong> をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。</p>
+</li>
+<li>
+<p><strong>Step</strong> (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって <strong>xf</strong> の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって <strong>xf</strong> を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。</p>
+</li>
+<li>
+<p><strong>Completion</strong> (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば <strong>transduce</strong> )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は <strong>xf</strong> の完了引数を一度のみ呼び出す必要がある。</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong>completion</strong> の利用例は <strong>partition-all</strong> で、この関数は入力の最後に残っている要素をフラッシュする必要がある。
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing">completing</a>
+関数を使用すると デフォルトのcompletionアリティを追加することによってreducing関数をトランスデューサー関数に変換することができる。</p>
 </div>
 <div class="sect2">
 <h3 id="_早期終了">早期終了</h3>
