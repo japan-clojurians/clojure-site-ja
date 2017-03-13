@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-07-05 08:19+0900\n"
+"PO-Revision-Date: 2017-03-12 23:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -53,9 +53,9 @@ msgid ""
 "Clojure programs to manipulate, transform and produce other Clojure programs."
 msgstr ""
 "Clojureには http://en.wikipedia.org/wiki/Homoiconicity[同図像性] という特性がある。同図像性というのはClojureのプログラ"
-"ムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(及び Common Lisp)とその他のプログラミング"
-"言語の間の重要な差だ。- Clojureはストリームやファイルの中の文法 *ではなく* 、データ構造の評価で定義される。Clojure プ"
-"ログラムが他の Clojure プログラムを操作や変形、あるいは創り出すということはとても一般的で、簡単に行うことができる。"
+"ムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(及びCommon Lisp)とその他のプログラミング"
+"言語の間の重要な差だ。- Clojureはストリームやファイルの中の文法 *ではなく* 、データ構造の評価で定義される。Clojureプロ"
+"グラムが他のClojureプログラムを操作や変形、あるいは創り出すということはとても一般的で、簡単に行うことができる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:17
@@ -77,9 +77,9 @@ msgid ""
 "returns the object represented by that form."
 msgstr ""
 "readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップetc によって定義されていると言う"
-"ものもいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現される"
-"オブジェクトを返す https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] 関数によって表現さ"
-"れている。"
+"人もいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現されるオ"
+"ブジェクトを返す https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] 関数によって表現され"
+"ている。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:21
@@ -109,7 +109,7 @@ msgid ""
 "Symbols begin with a non-numeric character and can contain alphanumeric characters and *, +, !, -, _, ', and ? (other "
 "characters may be allowed eventually)."
 msgstr ""
-"シンボルは数字でない文字で始まり、英数字及び*、+、!、 -、 _、 '、? を含むことができる(将来他の文字が許容される可能性も"
+"シンボルは数字でない文字で始まり、英数字及び*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性も"
 "ある)。"
 
 #. type: Plain text
@@ -118,7 +118,7 @@ msgid ""
 "'/' has special meaning, it can be used once in the middle of a symbol to separate the namespace from the name, e.g. "
 "`my-namespace/foo`. '/' by itself names the division function."
 msgstr ""
-"'/' には特別な意味が存在し、シンボルの途中に含むことでネームスペースとシンボルの名前を分割することができる(例： 'my-"
+"'/' には特別な意味があり、シンボルの途中に含むことでネームスペースとシンボルの名前を分割することができる(例： 'my-"
 "namespace/foo')。'/'単体は除算関数を指す。"
 
 #. type: Plain text
@@ -128,17 +128,17 @@ msgid ""
 "class name, e.g. `java.util.BitSet`, or in namespace names. Symbols beginning or ending with '.' are reserved by "
 "Clojure. Symbols containing / or . are said to be 'qualified'."
 msgstr ""
-"'.' には特別な意味が存在する - シンボルの途中に含むことで完全修飾されたクラス名 (例： 'java.util.BitSet')、またはネー"
-"ムスペースを指定することができる。'.' で開始、または終了するシンボルはClojureに予約されている。/ か . を含むシンボルは"
-"「修飾されている」と呼ばれる。"
+"'.' には特別な意味がある - シンボルの途中に含むことで完全修飾されたクラス名 (例： 'java.util.BitSet')、またはネームス"
+"ペースを指定することができる。'.' で開始、または終了するシンボルはClojureに予約されている。/ か . を含むシンボルは「修"
+"飾されている」と呼ばれる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:30
 msgid ""
 "Symbols beginning or ending with ':' are reserved by Clojure. A symbol can contain one or more non-repeating ':'s."
 msgstr ""
-"':' で開始、もしくは終了する文字はClojureによって予約されている。シンボルには一つ、もしくは連続しない':'を含むことが出"
-"来る。"
+"':' で開始、もしくは終了する文字はClojureによって予約されている。シンボルには一つ、もしくは連続しない':'を含むことがで"
+"きる。"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:31
@@ -150,8 +150,8 @@ msgstr "Literals (リテラル)"
 #: en/content/reference/reader.adoc:34
 msgid "Strings - Enclosed in \"double quotes\". May span multiple lines. Standard Java escape characters are supported."
 msgstr ""
-"Strings (文字列リテラル) - \"ダブルクォート\" で囲まれている。複数行に跨ることも出来る。標準のJavaエスケープ文字がサ"
-"ポートされている。"
+"Strings (文字列リテラル) - \"ダブルクォート\" で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字が"
+"サポートされている。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:38
@@ -166,7 +166,7 @@ msgstr ""
 "Numbers (数字リテラル) - 一般的に Java と同様に表記される。\n"
 "** Integer (整数)は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang."
 "BigIntとして読み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して"
-"表記することが出来る。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,"
+"表記することができる。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,"
 "%20int)[Long.parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。\n"
 "** 浮動少数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。\n"
 "** 分数もサポートされている。 (例： `22/7`)"
@@ -185,21 +185,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reader.adoc:40
 msgid "nil Means 'nothing/no-value'- represents Java null and tests logical false"
-msgstr "nilは'何も無い、もしくは値が無い'ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。"
+msgstr "nilは'何もない、もしくは値がない'ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:41
 msgid "Booleans - `true` and `false`"
-msgstr "Booleans (ブール型) - `true` と `false`"
+msgstr "Booleans (ブーリアンリテラル) - `true` と `false`"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:48
-#, fuzzy
-#| msgid ""
-#| "Keywords - Keywords are like symbols, except: ** They can and must begin with a colon, e.g. :fred.  ** They cannot "
-#| "contain '.' or name classes.  ** Like symbols, they can contain a namespace, `:person/name` ** A keyword that "
-#| "begins with two colons is resolved in the current namespace: *** In the user namespace, `::rect` is read as `:user/"
-#| "rect`"
 msgid ""
 "Keywords - Keywords are like symbols, except: ** They can and must begin with a colon, e.g. :fred.  ** They cannot "
 "contain '.' or name classes.  ** Like symbols, they can contain a namespace, `:person/name` ** A keyword that begins "
@@ -208,12 +202,15 @@ msgid ""
 "qualified, the namespace will be resolved using aliases in the current namespace. In a namespace where `x` is aliased "
 "to `example`, `::x/foo` resolves to `:example/foo`."
 msgstr ""
-"Keywords (キーワード型) - キーワードは以下の点以外はシンボルと似たようなものだが、\n"
-"** コロン(:) で始まらなければならない(例: :fred)。\n"
-"** '.'を含めたりクラスの名前に使用したり出来ない。\n"
-"** シンボルと同様にネームスペースを含むことが出来る。`:person/name`\n"
-"** コロン2つで始まるキーワードは現在のネームスペースに解決される。\n"
-"*** ユーザーのネームスペースでは `::rect` は `user/rect` として読み込まれる。"
+"* Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる: \n"
+"** コロン(:) で始まらなければならない(例：:fred)。\n"
+"** '.'を含めたりクラスの名前に使用したりできない。\n"
+"** シンボルと同様にネームスペースを含むことができる。 `:person/name` \n"
+"** コロン2つで始まるキーワードは現在のネームスペースにおいて修飾されたキーワードに自動的に解決される: \n"
+"*** キーワードが修飾されていない場合、そのネームスペースは現在のネームスペースになる。 `user` では `::rect` は `user/"
+"rect` として読み込まれる。\n"
+"*** キーワードが修飾されている場合、そのネームスペースは現在のネームスペースでのエイリアスを利用して解決される。 `x` "
+"が `example` にエイリアスされたネームスペースでは、 `::x/foo` は `:example/foo` に解決される。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
@@ -256,7 +253,7 @@ msgstr "カンマは空白と同様に扱われ、マップの対を区切るこ
 #. type: Plain text
 #: en/content/reference/reader.adoc:62
 msgid "Keys and values can be any forms."
-msgstr "キーとバリューにはどのようなフォームも使用出来る。"
+msgstr "キーとバリューにはどのようなフォームも使用できる。"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:63
@@ -278,7 +275,7 @@ msgid ""
 msgstr ""
 "マップのリテラルには任意でキーに対するデフォルトのネームスペースコンテキストを `#:ns` プレフィックスによって指定するこ"
 "とが可能で、その場合 _ns_ にはネームスペースの名前を指定し、プレフィックスはマップの `{` の前に置く。加えて `pass:"
-"[#::]` を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することが出来る。"
+"[#::]` を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することができる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:70
@@ -294,10 +291,10 @@ msgid ""
 "namespace syntax.  ** Keys that are not symbols or keywords are not affected."
 msgstr ""
 "* キー\n"
-" ** ネームスペースの指定が無いキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
+" ** ネームスペースの指定がないキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
 " ** ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
 "`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースの指定があるマップの中で、ネームス"
-"ペースの指定が無いキーワード、シンボルを使用することが可能になる。\n"
+"ペースの指定がないキーワード、シンボルを使用することが可能になる。\n"
 " ** キーワード、シンボルでないキーは影響を受けない。"
 
 #. type: Plain text
@@ -370,7 +367,7 @@ msgid ""
 "preceded by # and followed by a vector: `#my.klass_or_type_or_record[:a :b :c]` +"
 msgstr ""
 "Javaのクラス、deftype、defrecordのコンストラクタは完全修飾されたクラス名の先頭に#を、末尾にベクターを付けることで呼び"
-"出すことが出来る: `#my.klass_or_type_or_record[:a :b :c]` +"
+"出すことができる: `#my.klass_or_type_or_record[:a :b :c]` +"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:107
@@ -379,7 +376,7 @@ msgid ""
 "created with a similar form that takes a map instead: `#my.record{:a 1, :b 2}` +"
 msgstr ""
 "ベクターの中の要素は*評価されずに*各コンストラクタに渡される。defrecordのインスタンスはマップを代わりに受け取る似たよ"
-"うなフォームを使用して作成することが出来る: `my.record{:a 1, :b 2}` +"
+"うなフォームを使用して作成することができる: `my.record{:a 1, :b 2}` +"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:108
@@ -388,7 +385,7 @@ msgid ""
 "without corresponding entries in the literal map are assigned nil as their value. Any extra keyed values in the map "
 "literal are added to the resulting defrecord instance."
 msgstr ""
-"キーを付与されたバリューは*評価されずに*defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーが無"
+"キーを付与されたバリューは*評価されずに*defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがな"
 "いdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果のdefrecord"
 "インスタンスに追加される。"
 
@@ -407,7 +404,7 @@ msgid ""
 msgstr ""
 "リーダーの挙動はリーダー自身に組み込まれている定義とリードテーブルによる拡張システムの組み合わせで決定される。read "
 "tableのエントリーはマクロキャラクターと呼ばれる特定の文字に対応する、リーダーマクロと呼ばれるる読み込みの動作のマッピ"
-"ングを定義する。特別な指定が無い限り、マクロキャラクターはユーザーシンボルに含めることは出来ない"
+"ングを定義する。特別な指定がない限り、マクロキャラクターはユーザーシンボルに含めることはできない"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:114
@@ -499,14 +496,14 @@ msgid ""
 "entry map with a key of :tag and a value of the (resolved) symbol or string, e.g.: + `^String x` is the same as `^{:"
 "tag java.lang.String} x` +"
 msgstr ""
-"簡略化したバージョンではメタデータを単純なシンボルもしくは文字列として指定出来る。その場合メタデータはキーを:tag,バ"
+"簡略化したバージョンではメタデータを単純なシンボルもしくは文字列として指定できる。その場合メタデータはキーを:tag,バ"
 "リューを(解決後の)シンボルもしくは文字列とした単一エントリーのマップになる。例:\n"
 "`^String x` は `^{:tag java.lang.String} x` と同等。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:143
 msgid "Such tags can be used to convey type information to the compiler. +"
-msgstr "このようなタグはコンパイラーに型情報を渡すことに使用出来る。 "
+msgstr "このようなタグはコンパイラーに型情報を渡すことに使用できる。 "
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:146
@@ -514,13 +511,13 @@ msgid ""
 "Another shorthand version allows the metadata to be a keyword, in which case it is treated as a single entry map with "
 "a key of the keyword and a value of true, e.g.: + `^:dynamic x` is the same as `^{:dynamic true} x` +"
 msgstr ""
-"もう一つの簡略した表記ではメタデータにキーワードを使用出来る。その場合、メタデータはキーを指定したキーワードバリューを"
+"もう一つの簡略した表記ではメタデータにキーワードを使用できる。その場合、メタデータはキーを指定したキーワードバリューを"
 "trueとした単一エントリーのマップとして扱われる: `^:dynamic x` は `^{:dynamic true} x` と同等。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:148
 msgid "Metadata can be chained in which case they are merged from right to left."
-msgstr "メタデータはチェインすることが出来る。その場合、メタデータは右から左へとマージされる。"
+msgstr "メタデータはチェインすることができる。その場合、メタデータは右から左へとマージされる。"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:149
@@ -556,7 +553,7 @@ msgid ""
 msgstr ""
 "正規表現パターンは _読み込み時に_ コンパイルされる。コンパイルした結果のオブジェクトは java.util.regex.Patternタイプに"
 "なる。正規表現のエスケープ文字のルールは文字列とは異なる。特にバックスラッシュはそれ自身として扱われる。(なのでエス"
-"ケープするためにもうひとつバックスラッシュを付ける必要が無い)。例えば、 `(re-pattern \"\\\\s*\\\\d+\")` は簡潔に `#"
+"ケープするためにもうひとつバックスラッシュを付ける必要がない)。例えば、 `(re-pattern \"\\\\s*\\\\d+\")` は簡潔に `#"
 "\"\\s*\\d+\"` と書ける。"
 
 #. type: Plain text
@@ -572,26 +569,20 @@ msgstr "`#'x` => `(var x)`"
 #. type: Plain text
 #: en/content/reference/reader.adoc:161
 msgid "Anonymous function literal (#())"
-msgstr "匿名関数リテラル (#())"
+msgstr "無名関数リテラル (#())"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:164
-#, fuzzy
-#| msgid ""
-#| "`#(...)` => `(fn [args] (...))` + where args are determined by the presence of argument literals taking the form "
-#| "%, %n or %&. % is a synonym for %1, %n designates the nth arg (1-based), and %& designates a rest arg. This is not "
-#| "a replacement for http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn[fn] - idiomatic use would "
-#| "be for very short one-off mapping/filter fns and the like. #() forms cannot be nested."
 msgid ""
 "`#(...)` => `(fn [args] (...))` + where args are determined by the presence of argument literals taking the form %, "
 "%n or %&. % is a synonym for %1, %n designates the nth arg (1-based), and %& designates a rest arg. This is not a "
 "replacement for https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn[fn] - idiomatic use would be "
 "for very short one-off mapping/filter fns and the like. #() forms cannot be nested."
 msgstr ""
-"`#(...)` => `(fn [args] (...))` + ここで引数は%、%n 、%&の形を取る引数リテラルの存在によって決定される。% は %1と同様"
-"で、 %n は(1から始まる)n番目の引数を指定し、%& はrest引数を指定する。これは http://clojure.github.io/clojure/clojure."
-"core-api.html#clojure.core/fn[fn] を置き換えるものでは無い - 慣習的には短く一度しか使用しないマッピングやフィルター関"
-"数として利用する。#()フォームをネストすることは出来ない。"
+"`#(...)` => `(fn [args] (...))` + ここで引数は%、%n 、%nまたは%&の形をとる引数リテラルの存在によって決定される。%は%1"
+"と同義で、 %nは(1から始まる)n番目の引数を指定し、%& はrest引数を指定する。これは http://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/fn[fn] を置き換えるものではない - 慣習的には短く一度しか使用しないマッピングやフィ"
+"ルター関数などのために利用する。#()フォームをネストすることはできない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:165
@@ -642,7 +633,7 @@ msgid ""
 msgstr ""
 "リスト/ベクター/セット/マップに対するシンタックスクォートは対応するデータ構造のテンプレートを設ける。テンプレートの内"
 "部では未修飾のフォームはあたかも再帰的にシンタックスクォートされたように振る舞うが、アンクォートもしくはアンクォートス"
-"プライシング修飾することでフォームを再帰的なシンタックスクォートの対象から外すことが出来る。その場合、フォームは式とし"
+"プライシング修飾することでフォームを再帰的なシンタックスクォートの対象から外すことができる。その場合、フォームは式とし"
 "て扱われ、テンプレートの中でそれぞれその値、もしくは値のシークエンスで置き換えられる。"
 
 #. type: Plain text
@@ -667,7 +658,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reader.adoc:188
 msgid "The read table is currently not accessible to user programs."
-msgstr "現在リードテーブルをユーザープログラムからアクセスすることは出来ない。"
+msgstr "現在リードテーブルをユーザープログラムからアクセスすることはできない。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:189
@@ -757,8 +748,8 @@ msgid ""
 msgstr ""
 "ネームスペースで修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers[default-data-readers] で定義されてい"
-"るが、 `data_readers.clj` で上書きすることも出来るし、 https://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/%2Adata-readers%2A[pass:[*data-readers*]] を再束縛することも出来る。 タグに対してデータリーダーが見"
+"るが、 `data_readers.clj` で上書きすることもできるし、 https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/%2Adata-readers%2A[pass:[*data-readers*]] を再束縛することもできる。 タグに対してデータリーダーが見"
 "つからなかった場合、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn"
 "%2A[pass:[*default-data-reader-fn*]] で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 pass:[*default-"
 "data-reader-fn*] がnilの場合(デフォルト)RuntimeExceptionが発生する。"
@@ -776,7 +767,7 @@ msgid ""
 "The primary mechanism for managing platform-specific code is to isolate that code into a minimal set of namespaces, "
 "and then provide platform-specific versions (.clj/.class or .cljs) of those namespaces."
 msgstr ""
-"Clojure 1.7 で複数のClojureプラットフォームの間でロード出来るポータブルなファイルのための新しい拡張子 (.cljc)が導入さ"
+"Clojure 1.7 で複数のClojureプラットフォームの間でロードできるポータブルなファイルのための新しい拡張子 (.cljc)が導入さ"
 "れた。プラットフォームに特有なコードを管理する主なメカニズムはプラットフォームに特有なコードをできるだけ小さなネームス"
 "ペースに隔離し、それらのプラットフォーム毎のバージョン(.clj/.class or.cljs)を用意することだ。"
 
@@ -863,7 +854,7 @@ msgid ""
 msgstr ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] と https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/read-string[read-string] 関数は任意でオプションを指定したマップを第一引数に取ること"
-"が出きる。このオプションマップのキーとバリューで現在のフィーチャーとリーダーコンディショナルの挙動を指定することが出来"
+"ができる。このオプションマップのキーとバリューで現在のフィーチャーとリーダーコンディショナルの挙動を指定することができ"
 "る:"
 
 #. type: delimited block -
@@ -905,7 +896,7 @@ msgid ""
 "However, note that the Clojure reader will _always_ inject the platform feature :clj as well. For platform-agnostic "
 "reading, see https://github.com/clojure/tools.reader[tools.reader]."
 msgstr ""
-"ただ、Clojureのリーダーは _常に_ プラットフォームフィーチャーである:cljも注入する点には注意するべき。プラットフォーム"
+"ただ、Clojureのリーダーは _常に_ プラットフォームフィーチャーである:cljも注入する点には注意が必要だ。プラットフォーム"
 "に依存しない読み込みに関しては https://github.com/clojure/tools.reader[tools.reader]を参照。"
 
 #. type: Plain text
@@ -944,7 +935,7 @@ msgid ""
 "clojure.core-api.html#clojure.core/tagged-literal%3F[tagged-literal?] https://clojure.github.io/clojure/clojure.core-"
 "api.html#clojure.core/tagged-literal[tagged-literal]"
 msgstr ""
-"これらの型の述語やコンストラクタとして以下の関数を使用することが出来る: + https://clojure.github.io/clojure/clojure."
+"これらの型の述語やコンストラクタとして以下の関数を使用することができる: + https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] https://clojure.github.io/clojure/clojure.core-"
 "api.html#clojure.core/reader-conditional[reader-conditional] https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/tagged-literal%3F[tagged-literal?] https://clojure.github.io/clojure/clojure.core-api.html#clojure."

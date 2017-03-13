@@ -452,19 +452,19 @@ msgstr "内部の関数は異なる用途のために3種類のアリティで�
 #: en/content/reference/transducers.adoc:139
 #, no-wrap
 msgid "*Init* (arity 0) - should call the init arity on the nested transform *xf*, which will eventually call out to the transducing process.\n"
-msgstr "*Init* (アリティ 0) - ネストしている変換 *xf* をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。"
+msgstr "*Init* (アリティ 0) - ネストしている変換 *xf* をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:140
 #, no-wrap
 msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *xf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *xf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
-msgstr "*Step* (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって *xf* の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって *xf* を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。"
+msgstr "*Step* (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって *xf* の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって *xf* を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:141
 #, no-wrap
 msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *xf* completion arity exactly once.\n"
-msgstr "*Completion* (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば *transduce* )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は *xf* の完了引数を一度のみ呼び出す必要がある。"
+msgstr "*Completion* (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば *transduce* )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は *xf* の完了引数を一度のみ呼び出す必要がある。\n"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:143

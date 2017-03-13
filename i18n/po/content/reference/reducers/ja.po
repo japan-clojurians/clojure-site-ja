@@ -150,7 +150,7 @@ msgstr "reducer のバージョンは次の点で異なる:"
 #. type: Plain text
 #: en/content/reference/reducers.adoc:39
 msgid "Map colls are reduced with reduce-kv"
-msgstr "マップのコレクションは reduce-kv でreduceされる"
+msgstr "マップのコレクションは reduce-kv でreduceされる\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:41
@@ -158,8 +158,8 @@ msgid ""
 "When init is not provided, f is invoked with no arguments to produce an identity value ** _Note: f may be invoked "
 "multiple times to provide the identity value_"
 msgstr ""
-"init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。 ** _注: 初期値を作り出すために f が"
-"複数呼び出される場合がある。_"
+"* init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。\n"
+"** _注: 初期値を作り出すために f が複数呼び出される場合がある。_"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:43
