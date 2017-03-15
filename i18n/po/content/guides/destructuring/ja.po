@@ -741,6 +741,7 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/guides/destructuring.adoc:381
+#, no-wrap
 msgid "Namespaced keywords"
 msgstr ""
 

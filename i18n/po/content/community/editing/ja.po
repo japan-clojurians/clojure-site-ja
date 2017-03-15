@@ -256,6 +256,7 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/community/editing.adoc:136
+#, no-wrap
 msgid "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn[defn]\n"
 msgstr ""
 

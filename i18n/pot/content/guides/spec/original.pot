@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-03-15 09:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,7 +98,7 @@ msgstr ""
 #. type: delimited block -
 #: en/content/guides/spec.adoc:19
 #, no-wrap
-msgid "[org.clojure/clojure \"1.9.0-alpha14\"]\n"
+msgid "[org.clojure/clojure \"1.9.0-alpha15\"]\n"
 msgstr ""
 
 #. type: Plain text
