@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-03-30 11:27+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2017/clojutre.adoc:1
+#: en/content/events/2016/clojutre.adoc:1
+#, no-wrap
+msgid "clojuTRE"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojutre.adoc:4
+msgid "clojuTRE 2017-09-02"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojutre.adoc:12
+msgid ""
+"clojuTRE is a Clojure conference organized by http://www.metosin.fi/"
+"[Metosin]. The event has single track, late start, short talks (20 minutes "
+"and 5 minutes Q&A) and a funky after party for networking, discussions and "
+"draft beer. We welcome both newbies and seasoned Clojurists."
+msgstr ""
