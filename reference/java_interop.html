@@ -161,6 +161,9 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <p>If the first operand is a symbol that resolves to a class name, the access is considered to be to a static member of the named class. Note that nested classes are named EnclosingClass$NestedClass, per the JVM spec. Otherwise it is presumed to be an instance member and the first argument is evaluated to produce the target object.</p>
 </div>
 <div class="paragraph">
+<p>For the special case of invoking an instance member on a Class instance, the first argument must be an expression that evaluates to the class instance - note that the preferred form at the top expands <code>Classname</code> to <code>(identity Classname)</code>.</p>
+</div>
+<div class="paragraph">
 <p>If the second operand is a symbol and no args are supplied it is taken to be a field access - the name of the field is the name of the symbol, and the value of the expression is the value of the field, <em>unless</em> there is a no argument public method of the same name, in which case it resolves to a call to the method. If the second operand is a symbol starting with <em>-</em>, the member-symbol will resolve only as field access (never as a 0-arity method) and should be preferred when that is the intent.</p>
 </div>
 <div class="paragraph">
@@ -196,7 +199,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <p>but is easier to write, read, and understand. See also the <a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/%2d%3e">-></a> macro which can be used similarly:</p>
 </div>
 <div class="paragraph">
-<p><code>(&#8594; (System/getProperties) (.get "os.name"))</code></p>
+<p><code>(-> (System/getProperties) (.get "os.name"))</code></p>
 </div>
 <hr>
 <div class="paragraph">
