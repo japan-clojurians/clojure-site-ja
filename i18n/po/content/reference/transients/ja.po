@@ -62,7 +62,7 @@ msgstr ""
 #: en/content/about/rationale.adoc:1
 #, no-wrap
 msgid "Rationale"
-msgstr ""
+msgstr "論理的根拠"
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:21

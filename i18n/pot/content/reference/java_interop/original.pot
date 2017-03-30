@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-03-30 11:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,13 +44,13 @@ msgstr ""
 #: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
 #: en/content/reference/evaluation.adoc:62
 #: en/content/reference/evaluation.adoc:73
-#: en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96
-#: en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131
-#: en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152
-#: en/content/reference/java_interop.adoc:193 en/content/reference/libs.adoc:63
+#: en/content/reference/java_interop.adoc:78
+#: en/content/reference/java_interop.adoc:98
+#: en/content/reference/java_interop.adoc:111
+#: en/content/reference/java_interop.adoc:133
+#: en/content/reference/java_interop.adoc:140
+#: en/content/reference/java_interop.adoc:154
+#: en/content/reference/java_interop.adoc:195 en/content/reference/libs.adoc:63
 #: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
 #: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121
 #: en/content/community/editing.adoc:131
@@ -143,7 +143,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:62
-#: en/content/reference/java_interop.adoc:115
+#: en/content/reference/java_interop.adoc:117
 msgid "Special form."
 msgstr ""
 
@@ -167,6 +167,15 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:68
 msgid ""
+"For the special case of invoking an instance member on a Class instance, the "
+"first argument must be an expression that evaluates to the class instance - "
+"note that the preferred form at the top expands `Classname` to `(identity "
+"Classname)`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/java_interop.adoc:70
+msgid ""
 "If the second operand is a symbol and no args are supplied it is taken to be "
 "a field access - the name of the field is the name of the symbol, and the "
 "value of the expression is the value of the field, _unless_ there is a no "
@@ -177,7 +186,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:70
+#: en/content/reference/java_interop.adoc:72
 msgid ""
 "If the second operand is a list, or args are supplied, it is taken to be a "
 "method call. The first element of the list must be a simple symbol, and the "
@@ -190,7 +199,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:72
+#: en/content/reference/java_interop.adoc:74
 msgid ""
 "Note that boolean return values will be turned into Booleans, chars will "
 "become Characters, and numeric primitives will become Numbers unless they "
@@ -198,14 +207,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:74
+#: en/content/reference/java_interop.adoc:76
 msgid ""
 "The member access forms given at the top of this section are preferred for "
 "use in all cases other than in macros."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:80
+#: en/content/reference/java_interop.adoc:82
 #, no-wrap
 msgid ""
 "*(_.._ instance-expr member+)*\n"
@@ -213,34 +222,34 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:82
+#: en/content/reference/java_interop.adoc:84
 msgid "member => fieldName-symbol or (instanceMethodName-symbol args*)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:84
+#: en/content/reference/java_interop.adoc:86
 msgid ""
 "Macro. Expands into a member access (.) of the first member on the first "
 "argument, followed by the next member on the result, etc. For instance:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:86
+#: en/content/reference/java_interop.adoc:88
 msgid "`(.. System (getProperties) (get \"os.name\"))`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:88
+#: en/content/reference/java_interop.adoc:90
 msgid "expands to:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:90
+#: en/content/reference/java_interop.adoc:92
 msgid "`(. (. System (getProperties)) (get \"os.name\"))`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:92
+#: en/content/reference/java_interop.adoc:94
 msgid ""
 "but is easier to write, read, and understand. See also the https://clojure."
 "github.com/clojure/clojure.core-api.html#clojure.core/%2d%3e[pass:[->]] "
@@ -248,25 +257,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:94
-msgid "`(-> (System/getProperties) (.get \"os.name\"))`"
+#: en/content/reference/java_interop.adoc:96
+msgid "`(pass:[->] (System/getProperties) (.get \"os.name\"))`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:98
+#: en/content/reference/java_interop.adoc:100
 #, no-wrap
 msgid "*(_doto_ instance-expr (instanceMethodName-symbol args*)*)*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:100
+#: en/content/reference/java_interop.adoc:102
 msgid ""
 "Macro. Evaluates instance-expr then calls all of the methods/functions with "
 "the supplied arguments in succession on the resulting object, returning it."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:105
+#: en/content/reference/java_interop.adoc:107
 #, no-wrap
 msgid ""
 "(doto (new java.util.HashMap) (.put \"a\" 1) (.put \"b\" 2))\n"
@@ -274,7 +283,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:113
+#: en/content/reference/java_interop.adoc:115
 #, no-wrap
 msgid ""
 "*(Classname. args*)*\n"
@@ -282,7 +291,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:117
+#: en/content/reference/java_interop.adoc:119
 msgid ""
 "The args, if any, are evaluated from left to right, and passed to the "
 "constructor of the class named by Classname. The constructed object is "
@@ -290,53 +299,53 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/java_interop.adoc:118
+#: en/content/reference/java_interop.adoc:120
 #, no-wrap
 msgid "Alternative Macro Syntax"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:121
+#: en/content/reference/java_interop.adoc:123
 msgid ""
 "As shown, in addition to the canonic special form new, Clojure supports "
 "special macroexpansion of symbols containing '.':"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:123
+#: en/content/reference/java_interop.adoc:125
 msgid "`(new Classname args*)`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:125
+#: en/content/reference/java_interop.adoc:127
 msgid "can be written"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:127
+#: en/content/reference/java_interop.adoc:129
 msgid "`(Classname. args*) ;note trailing dot`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:129
+#: en/content/reference/java_interop.adoc:131
 msgid "the latter expanding into the former at macro expansion time."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:133
+#: en/content/reference/java_interop.adoc:135
 #, no-wrap
 msgid "*(_instance?_ Class expr)*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:135
+#: en/content/reference/java_interop.adoc:137
 msgid ""
 "Evaluates expr and tests if it is an instance of the class. Returns true or "
 "false"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:142
+#: en/content/reference/java_interop.adoc:144
 #, no-wrap
 msgid ""
 "*(_set!_ (. instance-expr instanceFieldName-symbol) expr)*\n"
@@ -344,12 +353,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:144 en/content/reference/vars.adoc:65
+#: en/content/reference/java_interop.adoc:146 en/content/reference/vars.adoc:65
 msgid "Assignment special form."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:146
+#: en/content/reference/java_interop.adoc:148
 msgid ""
 "When the first operand is a field member access form, the assignment is to "
 "the corresponding field. If it is an instance field, the instance expr will "
@@ -357,25 +366,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:148
+#: en/content/reference/java_interop.adoc:150
 msgid "In all cases the value of expr is returned."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:150 en/content/reference/vars.adoc:69
+#: en/content/reference/java_interop.adoc:152 en/content/reference/vars.adoc:69
 msgid ""
 "Note - _you cannot assign to function params or local bindings. Only Java "
 "fields, Vars, Refs and Agents are mutable in Clojure_."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:154
+#: en/content/reference/java_interop.adoc:156
 #, no-wrap
 msgid "*(_memfn_ method-name arg-names*)*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:156
+#: en/content/reference/java_interop.adoc:158
 msgid ""
 "Macro. Expands into code that creates a fn that expects to be passed an "
 "object and any args and calls the named instance method on the object "
@@ -384,7 +393,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:161
+#: en/content/reference/java_interop.adoc:163
 #, no-wrap
 msgid ""
 "(map (memfn charAt i) [\"fred\" \"ethel\" \"lucy\"] [1 2 3])\n"
@@ -392,13 +401,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:164
+#: en/content/reference/java_interop.adoc:166
 msgid ""
 "Note it almost always preferable to do this directly now, with syntax like:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:169
+#: en/content/reference/java_interop.adoc:171
 #, no-wrap
 msgid ""
 "(map #(.charAt %1 %2) [\"fred\" \"ethel\" \"lucy\"] [1 2 3])\n"
@@ -406,19 +415,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:173
+#: en/content/reference/java_interop.adoc:175
 msgid "'''' *(_bean_ obj)*"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:175
+#: en/content/reference/java_interop.adoc:177
 msgid ""
 "Takes a Java object and returns a read-only implementation of the map "
 "abstraction based upon its JavaBean properties."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:182
+#: en/content/reference/java_interop.adoc:184
 #, no-wrap
 msgid ""
 "(bean java.awt.Color/black)\n"
@@ -428,13 +437,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:184
+#: en/content/reference/java_interop.adoc:186
 #, no-wrap
 msgid "Support for Java in Clojure Library Functions"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:187
+#: en/content/reference/java_interop.adoc:189
 msgid ""
 "Many of the Clojure library functions have defined semantics for objects of "
 "Java types. contains? and get work on Java Maps, arrays, Strings, the latter "
@@ -446,13 +455,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:188
+#: en/content/reference/java_interop.adoc:190
 #, no-wrap
 msgid "Implementing Interfaces and Extending Classes"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:191
+#: en/content/reference/java_interop.adoc:193
 msgid ""
 "Clojure supports the dynamic creation of objects that implement one or more "
 "interfaces and/or extend a class with the https://clojure.github.io/clojure/"
@@ -465,13 +474,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:195
+#: en/content/reference/java_interop.adoc:197
 #, no-wrap
 msgid "*( _proxy_ [class-and-interfaces] [args] fs+)*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:199
+#: en/content/reference/java_interop.adoc:201
 msgid ""
 "class-and-interfaces - a vector of class names + args - a (possibly empty) "
 "vector of arguments to the superclass constructor. + f => (name [params*] "
@@ -479,12 +488,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:201
+#: en/content/reference/java_interop.adoc:203
 msgid "Macro"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:203
+#: en/content/reference/java_interop.adoc:205
 msgid ""
 "Expands to code which creates a instance of a proxy class that implements "
 "the named class/interface(s) by calling the supplied fns. A single class, if "
@@ -501,13 +510,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:204
+#: en/content/reference/java_interop.adoc:206
 #, no-wrap
 msgid "Arrays"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:207
+#: en/content/reference/java_interop.adoc:209
 msgid ""
 "Clojure supports the creation, reading and modification of Java arrays. It "
 "is recommended that you limit use of arrays to interop with Java libraries "
@@ -515,7 +524,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:209
+#: en/content/reference/java_interop.adoc:211
 msgid ""
 "Note that many other Clojure functions work with arrays such as via the "
 "<<sequences#,seq library>>. The functions listed here exist for initial "
@@ -524,7 +533,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:217
+#: en/content/reference/java_interop.adoc:219
 msgid ""
 "Create array from existing collection: https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/aclone[aclone] https://clojure.github.io/"
@@ -568,13 +577,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:219
+#: en/content/reference/java_interop.adoc:221
 #, no-wrap
 msgid "Type Hints"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:222
+#: en/content/reference/java_interop.adoc:224
 msgid ""
 "Clojure supports the use of type hints to assist the compiler in avoiding "
 "reflection in performance-critical areas of code. Normally, one should avoid "
@@ -585,7 +594,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:227
+#: en/content/reference/java_interop.adoc:229
 #, no-wrap
 msgid ""
 "(defn len [x]\n"
@@ -593,7 +602,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:230
+#: en/content/reference/java_interop.adoc:232
 #, no-wrap
 msgid ""
 "(defn len2 [^String x]\n"
@@ -601,7 +610,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:237
+#: en/content/reference/java_interop.adoc:239
 #, no-wrap
 msgid ""
 "user=> (time (reduce + (map len (repeat 1000000 \"asdf\"))))\n"
@@ -613,7 +622,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:240
+#: en/content/reference/java_interop.adoc:242
 msgid ""
 "Once a type hint has been placed on an identifier or expression, the "
 "compiler will try to resolve any calls to methods thereupon at compile time. "
@@ -625,14 +634,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:242
+#: en/content/reference/java_interop.adoc:244
 msgid ""
 "There is a pass:[*warn-on-reflection*] flag (defaults to false) which will "
 "cause the compiler to warn you when it can't resolve to a direct call:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:247
+#: en/content/reference/java_interop.adoc:249
 #, no-wrap
 msgid ""
 "(set! *warn-on-reflection* true)\n"
@@ -640,7 +649,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:251
+#: en/content/reference/java_interop.adoc:253
 #, no-wrap
 msgid ""
 "(defn foo [s] (.charAt s 1))\n"
@@ -649,7 +658,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:254
+#: en/content/reference/java_interop.adoc:256
 #, no-wrap
 msgid ""
 "(defn foo [^String s] (.charAt s 1))\n"
@@ -657,14 +666,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:257
+#: en/content/reference/java_interop.adoc:259
 msgid ""
 "For function return values, the type hint can be placed before the arguments "
 "vector:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:264
+#: en/content/reference/java_interop.adoc:266
 #, no-wrap
 msgid ""
 "(defn hinted\n"
@@ -674,19 +683,19 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:266
+#: en/content/reference/java_interop.adoc:268
 #, no-wrap
 msgid "-> #user/hinted\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:269
+#: en/content/reference/java_interop.adoc:271
 #, no-wrap
 msgid "Aliases"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:275
+#: en/content/reference/java_interop.adoc:277
 msgid ""
 "Clojure provides aliases for primitive Java types and arrays which do not "
 "have typical representations as Java class names.  The types are represented "
@@ -696,98 +705,98 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:277
+#: en/content/reference/java_interop.adoc:279
 msgid "int - A primitive int"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:278
+#: en/content/reference/java_interop.adoc:280
 msgid "ints - An int array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:279
+#: en/content/reference/java_interop.adoc:281
 msgid "long - A primitive long"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:280
+#: en/content/reference/java_interop.adoc:282
 msgid "longs - A long array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:281
+#: en/content/reference/java_interop.adoc:283
 msgid "float - A primitive float"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:282
+#: en/content/reference/java_interop.adoc:284
 msgid "floats - A float array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:283
+#: en/content/reference/java_interop.adoc:285
 msgid "double - A primitive double"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:284
+#: en/content/reference/java_interop.adoc:286
 msgid "doubles - A double array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:285
+#: en/content/reference/java_interop.adoc:287
 msgid "void - A void return"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:286
+#: en/content/reference/java_interop.adoc:288
 msgid "short - A primitive short"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:287
+#: en/content/reference/java_interop.adoc:289
 msgid "shorts - A short array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:288
+#: en/content/reference/java_interop.adoc:290
 msgid "boolean - A primitive boolean"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:289
+#: en/content/reference/java_interop.adoc:291
 msgid "booleans - A boolean array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:290
+#: en/content/reference/java_interop.adoc:292
 msgid "byte - A primitive byte"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:291
+#: en/content/reference/java_interop.adoc:293
 msgid "bytes - A byte array"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:292
+#: en/content/reference/java_interop.adoc:294
 msgid "char - A primitive character"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:293
+#: en/content/reference/java_interop.adoc:295
 msgid "chars - A character array"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:295
+#: en/content/reference/java_interop.adoc:297
 #, no-wrap
 msgid "Support for Java Primitives"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:298
+#: en/content/reference/java_interop.adoc:300
 msgid ""
 "Clojure has support for high-performance manipulation of, and arithmetic "
 "involving, Java primitive types in local contexts. All Java primitive types "
@@ -795,28 +804,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:300
+#: en/content/reference/java_interop.adoc:302
 msgid ""
 "_**let**_/_**loop**_-bound locals can be of primitive types, having the "
 "inferred, possibly primitive type of their init-form."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:301
+#: en/content/reference/java_interop.adoc:303
 msgid ""
 "_**recur**_ forms that rebind primitive locals do so without boxing, and do "
 "type-checking for same primitive type."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:302
+#: en/content/reference/java_interop.adoc:304
 msgid ""
 "Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for primitive types "
 "where semantics are same."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:303
+#: en/content/reference/java_interop.adoc:305
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "aget[aget] / https://clojure.github.io/clojure/clojure.core-api.html#clojure."
@@ -824,7 +833,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:304
+#: en/content/reference/java_interop.adoc:306
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "aclone[aclone], https://clojure.github.io/clojure/clojure.core-api."
@@ -832,7 +841,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:305
+#: en/content/reference/java_interop.adoc:307
 msgid ""
 "constructor functions for primitive arrays: https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/float-array[float-array], https://"
@@ -841,12 +850,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:306
+#: en/content/reference/java_interop.adoc:308
 msgid "Type hints for primitive arrays - +^ints, ^floats+, etc."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:307
+#: en/content/reference/java_interop.adoc:309
 msgid ""
 "Coercion ops https://clojure.github.io/clojure/clojure.core-api.html#clojure."
 "core/int[int], https://clojure.github.io/clojure/clojure.core-api."
@@ -855,14 +864,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:308
+#: en/content/reference/java_interop.adoc:310
 msgid ""
 "The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "num[num] coercion function boxes primitives to force generic arithmetic"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:309
+#: en/content/reference/java_interop.adoc:311
 msgid ""
 "Array cast functions https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/ints[ints] https://clojure.github.io/clojure/clojure.core-"
@@ -871,7 +880,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:310
+#: en/content/reference/java_interop.adoc:312
 msgid ""
 "A set of \"unchecked\" operations for utmost performing, but potentially "
 "unsafe, integer (int/long) ops: https://clojure.github.io/clojure/clojure."
@@ -889,7 +898,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:311
+#: en/content/reference/java_interop.adoc:313
 msgid ""
 "A dynamic var to automatically swap safe operations with unchecked "
 "operations: https://clojure.github.io/clojure/clojure.core-api.html#clojure."
@@ -897,7 +906,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:312
+#: en/content/reference/java_interop.adoc:314
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "amap[amap] and https://clojure.github.io/clojure/clojure.core-api."
@@ -907,12 +916,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:314
+#: en/content/reference/java_interop.adoc:316
 msgid "Rather than write this Java:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:322
+#: en/content/reference/java_interop.adoc:324
 #, no-wrap
 msgid ""
 "static public float asum(float[] xs){\n"
@@ -924,12 +933,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:325
+#: en/content/reference/java_interop.adoc:327
 msgid "you can write this Clojure:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:331
+#: en/content/reference/java_interop.adoc:333
 #, no-wrap
 msgid ""
 "(defn asum [^floats xs]\n"
@@ -938,14 +947,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:334
+#: en/content/reference/java_interop.adoc:336
 msgid ""
 "and the resulting code is exactly the same speed (when run with java -"
 "server)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:336
+#: en/content/reference/java_interop.adoc:338
 msgid ""
 "The best aspect of this is that you need not do anything special in your "
 "initial coding. Quite often these optimizations are unneeded. Should a bit "
@@ -953,7 +962,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:344
+#: en/content/reference/java_interop.adoc:346
 #, no-wrap
 msgid ""
 "(defn foo [n]\n"
@@ -964,7 +973,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:348
+#: en/content/reference/java_interop.adoc:350
 #, no-wrap
 msgid ""
 "(time (foo 100000))\n"
@@ -973,7 +982,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:355
+#: en/content/reference/java_interop.adoc:357
 #, no-wrap
 msgid ""
 "(defn foo2 [n]\n"
@@ -985,7 +994,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:359
+#: en/content/reference/java_interop.adoc:361
 #, no-wrap
 msgid ""
 "(time (foo2 100000))\n"
@@ -994,13 +1003,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:361
+#: en/content/reference/java_interop.adoc:363
 #, no-wrap
 msgid "Coercions"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:364
+#: en/content/reference/java_interop.adoc:366
 msgid ""
 "At times it is necessary to have a value of a particular primitive type. "
 "These coercion functions yield a value of the indicated type as long as such "
@@ -1020,13 +1029,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:366
+#: en/content/reference/java_interop.adoc:368
 #, no-wrap
 msgid "Some optimization tips"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:369
+#: en/content/reference/java_interop.adoc:371
 msgid ""
 "All arguments are passed to Clojure fns as objects, so there's no point to "
 "putting non-array primitive type hints on fn args. Instead, use the let "
@@ -1035,14 +1044,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:370
+#: en/content/reference/java_interop.adoc:372
 msgid ""
 "(let [foo (int bar)] ...) is the correct way to get a primitive local. Do "
 "not use ^Integer etc."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:371
+#: en/content/reference/java_interop.adoc:373
 msgid ""
 "Don't rush to unchecked math unless you want truncating operations. HotSpot "
 "does a good job at optimizing the overflow check, which will yield an "
@@ -1053,7 +1062,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:372
+#: en/content/reference/java_interop.adoc:374
 msgid ""
 "There's usually no point in trying to optimize an outer loop, in fact it can "
 "hurt you as you'll be representing things as primitives which just have to "
@@ -1063,7 +1072,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:373
+#: en/content/reference/java_interop.adoc:375
 msgid ""
 "Almost every time someone presents something they are trying to optimize "
 "with hints, the faster version has far fewer hints than the original. If a "
@@ -1071,7 +1080,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:374
+#: en/content/reference/java_interop.adoc:376
 msgid ""
 "Many people seem to presume only the unchecked- ops do primitive arithmetic "
 "- not so. When the args are primitive locals, regular + and * etc do "
@@ -1079,7 +1088,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:375
+#: en/content/reference/java_interop.adoc:377
 msgid ""
 "So, the simplest route to fast math is to leave the operators alone and just "
 "make sure the source literals and locals are primitive. Arithmetic on "
@@ -1091,25 +1100,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:376
+#: en/content/reference/java_interop.adoc:378
 #, no-wrap
 msgid "Simple XML Support"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:378
+#: en/content/reference/java_interop.adoc:380
 msgid ""
 "Included with the distribution is simple XML support, found in the src/xml."
 "clj file. All names from this file are in the xml namespace."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:381
+#: en/content/reference/java_interop.adoc:383
 msgid "'''' *(_parse_ source)*"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:383
+#: en/content/reference/java_interop.adoc:385
 msgid ""
 "Parses and loads the source, which can be a File, InputStream or String "
 "naming a URI. Returns a tree of the xml/element struct-map, which has the "
@@ -1117,7 +1126,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:388
+#: en/content/reference/java_interop.adoc:390
 #, no-wrap
 msgid ""
 "(xml/parse \"/Users/rich/dev/clojure/build.xml\")\n"
@@ -1125,13 +1134,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/java_interop.adoc:390
+#: en/content/reference/java_interop.adoc:392
 #, no-wrap
 msgid "Calling Clojure From Java"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:393
+#: en/content/reference/java_interop.adoc:395
 msgid ""
 "The https://clojure.github.io/clojure/javadoc[clojure.java.api] package "
 "provides a minimal interface to bootstrap Clojure access from other JVM "
@@ -1139,19 +1148,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:395
+#: en/content/reference/java_interop.adoc:397
 msgid ""
 "The ability to use Clojure's namespaces to locate an arbitrary var, "
 "returning the var's clojure.lang.IFn interface."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:396
+#: en/content/reference/java_interop.adoc:398
 msgid "A convenience method read for reading data using Clojure's edn reader"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:398
+#: en/content/reference/java_interop.adoc:400
 msgid ""
 "IFns provide complete access to Clojure's APIs. You can also access any "
 "other library written in Clojure, after adding either its source or compiled "
@@ -1159,40 +1168,40 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:400
+#: en/content/reference/java_interop.adoc:402
 msgid ""
 "The public Java API for Clojure consists of the following classes and "
 "interfaces:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:402
+#: en/content/reference/java_interop.adoc:404
 msgid ""
 "https://clojure.github.io/clojure/javadoc/clojure/java/api/Clojure."
 "html[clojure.java.api.Clojure]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:403
+#: en/content/reference/java_interop.adoc:405
 msgid ""
 "https://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html[clojure.lang."
 "IFn]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:405
+#: en/content/reference/java_interop.adoc:407
 msgid ""
 "All other Java classes should be treated as implementation details, and "
 "applications should avoid relying on them."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:407
+#: en/content/reference/java_interop.adoc:409
 msgid "To lookup and call a Clojure function:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:411
+#: en/content/reference/java_interop.adoc:413
 #, no-wrap
 msgid ""
 "IFn plus = Clojure.var(\"clojure.core\", \"+\");\n"
@@ -1200,14 +1209,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:413
+#: en/content/reference/java_interop.adoc:415
 msgid ""
 "Functions in clojure.core are automatically loaded. Other namespaces can be "
 "loaded via require:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:417
+#: en/content/reference/java_interop.adoc:419
 #, no-wrap
 msgid ""
 "IFn require = Clojure.var(\"clojure.core\", \"require\");\n"
@@ -1215,14 +1224,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:419
+#: en/content/reference/java_interop.adoc:421
 msgid ""
 "IFns can be passed to higher order functions, e.g. the example below passes "
 "plus to read:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:424
+#: en/content/reference/java_interop.adoc:426
 #, no-wrap
 msgid ""
 "IFn map = Clojure.var(\"clojure.core\", \"map\");\n"
@@ -1231,14 +1240,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:426
+#: en/content/reference/java_interop.adoc:428
 msgid ""
 "Most IFns in Clojure refer to functions. A few, however, refer to non-"
 "function data values. To access these, use deref instead of fn:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/java_interop.adoc:431
+#: en/content/reference/java_interop.adoc:433
 #, no-wrap
 msgid ""
 "IFn printLength = Clojure.var(\"clojure.core\", \"*print-length*\");\n"
