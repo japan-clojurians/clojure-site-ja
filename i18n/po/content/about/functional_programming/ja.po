@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-05 02:06+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/about/functional_programming.adoc:1
 #, no-wrap
 msgid "Functional Programming"
-msgstr ""
+msgstr "関数型プログラミング"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:17
@@ -66,12 +66,17 @@ msgid ""
 "philosophy behind Clojure is that most parts of most programs should be functional, and that programs that are more "
 "functional are more robust."
 msgstr ""
+"Clojureは関数型プログラミング言語だ。Clojureは、ミュータブルな状態を避けるためのツールを提供し、ファーストクラスオブ"
+"ジェクトとしての関数を提供し、副作用に基づくループの代わりに再帰的な繰り返しに重きを置いている。Clojureは、プログラム"
+"が参照透過であることを強制しないし「証明可能」なプログラムを目指しているわけでもないという点で _非純粋(impure)_ だ。"
+"Clojureの背後にある哲学は、ほとんどのプログラムのほとんどの部分は関数型であるべきであり、プログラムが関数型であればあ"
+"るほど堅牢になる、というものだ。"
 
 #. type: Title ==
 #: en/content/about/functional_programming.adoc:18
 #, no-wrap
 msgid "First-class functions"
-msgstr ""
+msgstr "ファーストクラスの関数"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:21
@@ -79,6 +84,8 @@ msgid ""
 "<<xref/../../reference/special_forms#fn#,fn>> creates a function object. It yields a value like any other - you can "
 "store it in a var, pass it to functions etc."
 msgstr ""
+"<<xref/../../reference/special_forms#fn#,fn>> は関数オブジェクトを作る。他のものと同様に値を作り出す――varに格納したり"
+"関数に渡したりなどできる。"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:27
@@ -89,6 +96,10 @@ msgid ""
 "(hello)\n"
 "-> \"Hello world\"\n"
 msgstr ""
+"(def hello (fn [] \"Hello world\"))\n"
+"-> #'user/hello\n"
+"(hello)\n"
+"-> \"Hello world\"\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:30
@@ -97,6 +108,9 @@ msgid ""
 "functions a little simpler.  Clojure supports arity overloading in a _single_ function object, self-reference, and "
 "variable-arity functions using *&*:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn[defn] は関数定義を少しシンプルにしてくれるマ"
+"クロだ。Clojureは、 _単一の_ 関数オブジェクトでのアリティオーバーロード、自己参照、 *&* による可変アリティ関数をサポー"
+"トしている:"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:47
@@ -118,6 +132,21 @@ msgid ""
 "(argcount 1 2 3 4 5)\n"
 "-> 5\n"
 msgstr ""
+";でっち上げの例\n"
+"(defn argcount\n"
+"  ([] 0)\n"
+"  ([x] 1)\n"
+"  ([x y] 2)\n"
+"  ([x y & more] (+ (argcount x y) (count more))))\n"
+"-> #'user/argcount\n"
+"(argcount)\n"
+"-> 0\n"
+"(argcount 1)\n"
+"-> 1\n"
+"(argcount 1 2)\n"
+"-> 2\n"
+"(argcount 1 2 3 4 5)\n"
+"-> 5\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:49
@@ -126,6 +155,9 @@ msgid ""
 "html#clojure.core/let[let]. The scope of any local names is lexical, so a function created in the scope of local "
 "names will close over their values:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let[let] を利用することで関数内の値に対する名前を"
+"作り出すことができる。あらゆるローカルな名前のスコープはレキシカルなため、ローカルな名前のスコープ内で作られた関数はそ"
+"の値を閉じ込める:"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:57
@@ -138,18 +170,24 @@ msgid ""
 "(add2 4)\n"
 "-> 6\n"
 msgstr ""
+"(defn make-adder [x]\n"
+"  (let [y x]\n"
+"    (fn [z] (+ y z))))\n"
+"(def add2 (make-adder 2))\n"
+"(add2 4)\n"
+"-> 6\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:59
 #, no-wrap
 msgid "*Locals created with https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let[let] are not variables. Once created their values never change!*\n"
-msgstr ""
+msgstr "*https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let[let] で作られるローカルなものは変数ではない。一度作られるとその値は決して変化しない!*\n"
 
 #. type: Title ==
 #: en/content/about/functional_programming.adoc:61
 #, no-wrap
 msgid "Immutable Data Structures"
-msgstr ""
+msgstr "イミュータブルなデータ構造"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:63
@@ -165,6 +203,15 @@ msgid ""
 "structures, to which Clojure adds a hash map, set and vector both based upon array mapped hash tries. The collections "
 "have readable representations and common interfaces:"
 msgstr ""
+"状態の変更を避ける最も簡単な方法はイミュータブルな <<xref/../../reference/data_structures#,データ構造>> を利用すること"
+"だ。Clojureはイミュータブルなリスト、ベクター、セット、マップを提供している。それらは変更できないため、イミュータブル"
+"なコレクションから「追加」したり「削除」したりするのは、ちょうど古いコレクションに必要な変更を加えたような新しいコレク"
+"ションを作ることを意味する。 _永続性(persistence)_ とは「変更」後にもコレクションの古いバージョンを得ることができ、た"
+"いていの操作についてパフォーマンスを保証する性質のことをいう用語だ。特に、これは新しいバージョンが完全なコピーを使って"
+"作られることはないということを意味する、というのもそれには線形時間を必要とするからだ。必然的に、永続的なコレクションは"
+"連結データ構造で実装され、それにより新しいバージョンは以前のバージョンと構造を共有することができる。単方向連結リストと"
+"ツリーが基本的な関数型データ構造で、Clojureはこれにarray mapped hash trieをもとにしたハッシュマップ、セット、ベクター"
+"を追加している。コレクションは読みやすい表現と共通のインターフェースを持っている:"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:77
@@ -183,6 +230,18 @@ msgid ""
 "    my-list))\n"
 "-> ([1 2 3 4 5] {:ricky \"lucy\", :fred \"ethel\"} (5 4 3 2 1) [1 2 3 4] {:fred \"ethel\"} (4 3 2 1))\n"
 msgstr ""
+"(let [my-vector [1 2 3 4]\n"
+"      my-map {:fred \"ethel\"}\n"
+"      my-list (list 4 3 2 1)]\n"
+"  (list\n"
+"    (conj my-vector 5)\n"
+"    (assoc my-map :ricky \"lucy\")\n"
+"    (conj my-list 5)\n"
+"    ;オリジナルはそのまま\n"
+"    my-vector\n"
+"    my-map\n"
+"    my-list))\n"
+"-> ([1 2 3 4 5] {:ricky \"lucy\", :fred \"ethel\"} (5 4 3 2 1) [1 2 3 4] {:fred \"ethel\"} (4 3 2 1))\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:79
@@ -193,6 +252,11 @@ msgid ""
 "api.html#clojure.core/meta[meta] function. Metadata does _not_ impact equality semantics, nor will metadata be seen "
 "in operations on the value of a collection. Metadata can be read, and can be printed."
 msgstr ""
+"データの論理的な値に直交した属性やその他のデータに関するデータをアプリケーションに関連付けることが必要になることはよく"
+"ある。Clojureは <<xref/../../reference/metadata#,メタデータ>> で直接これをサポートしている。シンボルとすべてのコレク"
+"ションはメタデータマップをサポートしている。メタデータマップには https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/meta[meta] という関数でアクセスできる。メタデータは等価性の意味に影響することは _ない_ し、メタデー"
+"タがコレクションの値に対する操作で見えることもない。メタデータは読み取ったり出力したりすることができる。"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:87
@@ -205,12 +269,18 @@ msgid ""
 "(= v attributed-v)\n"
 "-> true\n"
 msgstr ""
+"(def v [1 2 3])\n"
+"(def attributed-v (with-meta v {:source :trusted}))\n"
+"(:source (meta attributed-v))\n"
+"-> :trusted\n"
+"(= v attributed-v)\n"
+"-> true\n"
 
 #. type: Title ==
 #: en/content/about/functional_programming.adoc:89
 #, no-wrap
 msgid "Extensible Abstractions"
-msgstr ""
+msgstr "拡張可能な抽象"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:92
@@ -219,6 +289,9 @@ msgid ""
 "concrete implementations of these interfaces, and the library functions will work with these extensions. This is a "
 "big improvement vs. hardwiring a language to the concrete implementations of its data types."
 msgstr ""
+"Clojureはそのコアとなるデータ構造を定義するのにJavaのインターフェースを利用している。これにより、これらのインター"
+"フェースの新たな具体的実装にClojureを拡張し、ライブラリ関数がそうした拡張に対しても動作するようにすることが可能にな"
+"る。これはデータ型の具体的実装を言語に組み込んでしまうのに対して大きな改善だ。"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:94
@@ -230,6 +303,11 @@ msgid ""
 "Seqs are extremely simple, providing a *_first_* function, which return the first item in the sequence, and a "
 "*_rest_* function which returns the rest of the sequence, which is itself either a seq or nil."
 msgstr ""
+"<<xref/../../reference/sequences#,seq>> がその好例だ。コアとなるLispのリスト構造を抽象化することにより、中身へのシーケ"
+"ンシャルなインターフェースを提供できるあらゆるデータ構造に対して豊富なライブラリ関数が拡張される。Clojureのすべての"
+"データ構造はseqを提供することができる。seqは他の言語におけるイテレータやジェネレータのように利用できるが、seqにはイ"
+"ミュータブルで永続的だという重要な利点がある。seqは極めてシンプルで、シーケンスの最初の要素を返す *_first_* 関数と、"
+"シーケンスの残り(それ自身がseqまたはnilのどちらか)を返す *_rest_* 関数を提供している。"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:106
@@ -246,11 +324,21 @@ msgid ""
 "   (rest my-list)])\n"
 "-> [1 (2 3 4) (:ricky :fred) (\"lucy\" \"ethel\") 4 (3 2 1)]\n"
 msgstr ""
+"(let [my-vector [1 2 3 4]\n"
+"      my-map {:fred \"ethel\" :ricky \"lucy\"}\n"
+"      my-list (list 4 3 2 1)]\n"
+"  [(first my-vector)\n"
+"   (rest my-vector)\n"
+"   (keys my-map)\n"
+"   (vals my-map)\n"
+"   (first my-list)\n"
+"   (rest my-list)])\n"
+"-> [1 (2 3 4) (:ricky :fred) (\"lucy\" \"ethel\") 4 (3 2 1)]\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:108
 msgid "Many of the Clojure library functions produce and consume seqs _lazily_:"
-msgstr ""
+msgstr "Clojureのライブラリ関数の多くはseqを _遅延評価_ で生み出したり取り込んだりする:"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:113
@@ -260,6 +348,9 @@ msgid ""
 "(take 15 (cycle [1 2 3 4]))\n"
 "-> (1 2 3 4 1 2 3 4 1 2 3 4 1 2 3)\n"
 msgstr ""
+";cycleは「無限」のseqを生成する!\n"
+"(take 15 (cycle [1 2 3 4]))\n"
+"-> (1 2 3 4 1 2 3 4 1 2 3 4 1 2 3)\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:115
@@ -269,6 +360,10 @@ msgid ""
 "produce a list of 0 or more items. Here's a simplified https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/take[take]:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq[lazy-seq] マクロを利用することで独自の遅"
+"延シーケンスを生み出す関数を定義することができる。lazy-seqマクロは必要に応じて呼び出される式の本体を取って0個以上の要"
+"素のリストを生み出す。これが単純化した https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"take[take] だ:"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:122
@@ -280,12 +375,17 @@ msgid ""
 "      (when-let [s (seq coll)]\n"
 "       (cons (first s) (take (dec n) (rest s)))))))\n"
 msgstr ""
+"(defn take [n coll]\n"
+"  (lazy-seq\n"
+"    (when (pos? n)\n"
+"      (when-let [s (seq coll)]\n"
+"       (cons (first s) (take (dec n) (rest s)))))))\n"
 
 #. type: Title ==
 #: en/content/about/functional_programming.adoc:124
 #, no-wrap
 msgid "Recursive Looping"
-msgstr ""
+msgstr "再帰的なループ"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:127
@@ -300,6 +400,14 @@ msgid ""
 "optimization, it allows most of the same elegant constructs, and offers the advantage of checking that calls to recur "
 "can only happen in a tail position."
 msgstr ""
+"ミュータブルなローカル変数がないため、ループと繰り返しは、状態変更によって制御される組み込みの _for_ や _while_ を持つ"
+"言語におけるものとは異なる形をとらなければならない。関数型言語ではループと繰り返しは再帰的な関数呼び出しによって置き換"
+"えられ/実装されている。多くのそうした言語は末尾位置での関数呼び出しがスタック空間を消費しないことを保証しているため、"
+"再帰的なループは定数空間を利用できる。ClojureはJavaの呼出規約を利用しているため、同様な末尾呼び出し最適化を保証するこ"
+"とができないし、していない。代わりに <<xref/../../reference/special_forms#recur,recur特殊オペレータ>> を提供し、これに"
+"よって再束縛と最も近いloopまたは関数フレームへのジャンプによる定数空間での再帰ループを行う。末尾呼び出し最適化ほど一般"
+"的なものではないが、同様にエレガントな構造のほとんどを可能にし、recurの呼び出しが末尾位置でのみ起こりうることをチェッ"
+"クできるという利点を提供している。"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:140
@@ -317,6 +425,17 @@ msgid ""
 "(my-zipmap [:a :b :c] [1 2 3])\n"
 "-> {:b 2, :c 3, :a 1}\n"
 msgstr ""
+"(defn my-zipmap [keys vals]\n"
+"  (loop [my-map {}\n"
+"         my-keys (seq keys)\n"
+"         my-vals (seq vals)]\n"
+"    (if (and my-keys my-vals)\n"
+"      (recur (assoc my-map (first my-keys) (first my-vals))\n"
+"             (next my-keys)\n"
+"             (next my-vals))\n"
+"      my-map)))\n"
+"(my-zipmap [:a :b :c] [1 2 3])\n"
+"-> {:b 2, :c 3, :a 1}\n"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:141
@@ -324,3 +443,5 @@ msgid ""
 "For situations where mutual recursion is called for, recur can't be used. Instead, https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/trampoline[trampoline] may be a good option."
 msgstr ""
+"相互再帰が必要な状況でrecurを利用することはできない。代わりに https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/trampoline[trampoline] が良い選択肢になるかもしれない。"
