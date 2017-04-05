@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-05 10:41+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/lisp.adoc:1
 #, no-wrap
 msgid "Clojure as a Dialect of Lisp"
-msgstr ""
+msgstr "Lisp方言としてのClojure"
 
 #. type: Plain text
 #: en/content/about/lisp.adoc:17
@@ -49,6 +49,10 @@ msgid ""
 "extends the code-as-data system beyond parenthesized lists (s-expressions) to vectors and maps. Thus vectors and maps "
 "can be used in macro syntax, have literal reader representations etc."
 msgstr ""
+"ClojureはLisp族の一員だ。Lispの特徴の多くは他の言語に入っていったが、データとしてのコード(code-as-data)というLispのア"
+"プローチと <<xref/../../reference/macros#,マクロシステム>> はいまだLispを他とは異なるものにしている。Clojureはcode-as-"
+"dataのシステムを丸括弧で囲まれたリスト(S式)を超えてベクターとマップにまで拡張している。そのため、ベクターとマップもマ"
+"クロのシンタックスの中で利用することができ、リテラルのリーダー表現などを持っている。"
 
 #. type: Plain text
 #: en/content/about/lisp.adoc:19
@@ -64,6 +68,14 @@ msgid ""
 "identifiers etc. Many of the core constructs of Clojure are not built-in primitives but macros just like users can "
 "define. Here's _**and**_:"
 msgstr ""
+"Lispのデータ、したがってLispのコードは <<xref/../../reference/reader#,リーダー>> に読み取られる。読み取り結果はフォー"
+"ムで表現されたデータ構造だ。Clojureはコードを表現するデータ構造をコンパイルすることができ、その過程でマクロの呼び出し"
+"を探す。マクロを見つけると、フォーム自体を引数として渡してそのマクロを呼び出し、マクロの戻り値をマクロ自身の代わりに利"
+"用する。したがって、マクロとはコンパイル時にコードの変換を行うために呼び出される関数だ。コードはデータなので、Clojure"
+"ライブラリのすべてがその変換処理を支援してくれる。そういうわけで、マクロはLisp、そしてClojureがシンタックスの抽象化を"
+"サポートすることを可能にしている。関数を使うのと同じ理由、つまりコード内の重複を削減するためにマクロを使うのだ。マクロ"
+"は、関数では不十分な状況、例えば評価を制御する必要がある時、識別子を生成する必要がある時などにとっておくべきだ。"
+"Clojureのコアとなる構造の多くは、組み込みのプリミティヴではなくユーザーが定義できるのと全く同じようなマクロだ。"
 
 #. type: delimited block -
 #: en/content/about/lisp.adoc:28
@@ -76,9 +88,17 @@ msgid ""
 "    `(let [and# ~x]\n"
 "       (if and# (and ~@rest) and#))))\n"
 msgstr ""
+"(defmacro and\n"
+"  ([] true)\n"
+"  ([x] x)\n"
+"  ([x & rest]\n"
+"    `(let [and# ~x]\n"
+"       (if and# (and ~@rest) and#))))\n"
 
 #. type: Plain text
 #: en/content/about/lisp.adoc:30
 msgid ""
 "Note the use of syntax-quote (`), which makes it easy to define macros whose forms mimic the forms they generate."
 msgstr ""
+"シンタックスクォート(`)を使うことで、マクロが生成するフォームによく似たフォームのマクロを定義するのが簡単になることを"
+"覚えておこう。"
