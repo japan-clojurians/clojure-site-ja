@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-03 00:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,19 +55,19 @@ msgstr "toc::[]"
 #: en/content/reference/datatypes.adoc:21 en/content/reference/protocols.adoc:36 en/content/about/dynamic.adoc:42
 #, no-wrap
 msgid "Basics"
-msgstr ""
+msgstr "基本"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:66 en/content/about/dynamic.adoc:25
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main\n"
-msgstr ""
+msgstr "java -cp clojure.jar clojure.main\n"
 
 #. type: Title =
 #: en/content/about/dynamic.adoc:1
 #, no-wrap
 msgid "Dynamic Development"
-msgstr ""
+msgstr "動的な開発"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:18
@@ -78,12 +78,17 @@ msgid ""
 "different experience from running a program, examining its results (or failures) and trying again. In particular, you "
 "can grow your program, with data loaded, adding features, fixing bugs, testing, in an unbroken stream."
 msgstr ""
+"第一に何よりもまず、Clojureは動的だ。それは、Clojureのプログラムはただコンパイルして実行するものではなく相互作用するこ"
+"とが可能なものだということを意味する。Clojureは言語抽象ではなく環境であり、そこではほとんどすべての言語構造は具象化"
+"(reify)されているため、調べたり変更したりすることができる。これはプログラムを実行してその結果(または失敗)を調べてやり"
+"直すのとは大きく異なる体験につながる。とりわけ、データをロードし、機能を追加し、バグを修正し、テストをする、途切れるこ"
+"とのない流れの中でプログラムを成長させていくことができる。"
 
 #. type: Title ==
 #: en/content/about/dynamic.adoc:19
 #, no-wrap
 msgid "The REPL"
-msgstr ""
+msgstr "REPL"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:22
@@ -93,22 +98,25 @@ msgid ""
 "commands, and examine their results. You can start the Clojure REPL like this, and then follow along trying the "
 "samples in this feature tour:"
 msgstr ""
+"ClojureはJavaアプリケーションに組み込んだりスクリプト言語として利用したりすることもできるが、主要なプログラミングイン"
+"ターフェースはRead-Eval-Print-Loop(REPL)だ。これはコマンドを入力して実行し、結果を調べることができるシンプルなコンソー"
+"ルインターフェースだ。次のようにClojure REPLを起動して、この機能ツアーのサンプルを試していくことができる:"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:27
 msgid "This will give you a prompt like this:"
-msgstr ""
+msgstr "こうすると次のようなプロンプトが得られる:"
 
 #. type: delimited block -
 #: en/content/about/dynamic.adoc:30
 #, no-wrap
 msgid "user=>\n"
-msgstr ""
+msgstr "user=>\n"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:32
 msgid "Most Clojure commands take the form (command arguments*). Try it:"
-msgstr ""
+msgstr "たいていのClojureコマンドは (コマンド 引数*) という形式をとる。試してみよう:"
 
 #. type: delimited block -
 #: en/content/about/dynamic.adoc:40
@@ -121,11 +129,17 @@ msgid ""
 "(+ x y)\n"
 "-> 42\n"
 msgstr ""
+"(def x 6)\n"
+"-> #'user/x\n"
+"(def y 36)\n"
+"-> #'user/y\n"
+"(+ x y)\n"
+"-> 42\n"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:45
 msgid "Clojure has arbitrary precision integers, strings, ratios, doubles, characters, symbols, keywords."
-msgstr ""
+msgstr "Clojureには任意精度整数、文字列、有理数、倍精度浮動小数点数、文字、シンボル、キーワードがある。"
 
 #. type: delimited block -
 #: en/content/about/dynamic.adoc:62
@@ -147,12 +161,27 @@ msgid ""
 "-> :keyword\n"
 ";a comment\n"
 msgstr ""
+"(* 12345678 12345678)\n"
+"-> 152415765279684\n"
+"\"string\"\n"
+"-> \"string\"\n"
+"22/7\n"
+"-> 22/7\n"
+"3.14159\n"
+"-> 3.14159\n"
+"\\a\n"
+"-> \\a\n"
+"'symbol\n"
+"-> symbol\n"
+":keyword\n"
+"-> :keyword\n"
+";a comment\n"
 
 #. type: Title ==
 #: en/content/about/dynamic.adoc:64
 #, no-wrap
 msgid "Dynamic Compilation"
-msgstr ""
+msgstr "動的なコンパイル"
 
 #. type: Plain text
 #: en/content/about/dynamic.adoc:66
@@ -161,3 +190,6 @@ msgid ""
 "into the REPL or load using load-file is automatically compiled to JVM bytecode on the fly. Compiling ahead-of-time "
 "is also possible, but not required."
 msgstr ""
+"Clojureはコンパイルされる言語なので、いつコンパイラを実行しなければならないのか疑問に思うかもしれない。その必要はな"
+"い。REPLに入力したものやload-fileでロードしたものは何でも直ちに自動的にJVMのバイトコードにコンパイルされる。事前にコン"
+"パイルすることも可能だが、必須ではない。"
