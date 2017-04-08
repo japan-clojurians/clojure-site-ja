@@ -12,7 +12,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-              <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about/rationale.html">概要</a></li> -->
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about/rationale.html">概要</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>reference/documentation">リファレンス</a></li>
             <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>api/api.html">API</a></li>
               <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>community/downloads.html">リリース</a></li>
