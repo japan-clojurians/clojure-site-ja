@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Concurrent Programming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Concurrent Programming</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div class="paragraph">
+<p>Today&#8217;s systems have to deal with many simultaneous tasks and leverage the power of multi-core CPUs. Doing so with threads can be very difficult due to the complexities of synchronization. Clojure simplifies multi-threaded programming in several ways. Because the core data structures are immutable, they can be shared readily between threads. However, it is often necessary to have state change in a program. Clojure, being a practical language, allows state to change but provides mechanism to ensure that, when it does so, it remains consistent, while alleviating developers from having to avoid conflicts manually using locks etc. The <a href="xref/../../reference/refs">software transactional memory system</a> (STM), exposed through <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>, et al, supports <em>sharing</em> changing state between threads in a <em>synchronous</em> and <em>coordinated</em> manner. The <a href="xref/../../reference/agents">agent</a> system supports sharing changing state between threads in an <em>asynchronous</em> and <em>independent</em> manner. The <a href="xref/../../reference/atoms">atoms</a> system supports sharing changing state between threads in a <em>synchronous</em> and <em>independent</em> manner. The <a href="xref/../../reference/vars">dynamic var system</a>, exposed through <a href="xref/../../reference/special_forms#def">def</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>, et al, supports isolating changing state within threads.</p>
+</div>
+<div class="paragraph">
+<p>In all cases, Clojure does not replace the Java thread system, rather it works with it. Clojure functions are java.util.concurrent.Callable, therefore they work with the Executor framework etc.</p>
+</div>
+<div class="paragraph">
+<p>Most of this is covered in more detail in the <a href="https://www.youtube.com/watch?v=dGVqrGmwOAw">concurrency screencast</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="xref/../../reference/refs">Refs</a> are mutable references to objects. They can be <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a> or <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>ed to refer to different objects during transactions, which are delimited by <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a> blocks. All ref modifications within a transaction happen or none do. Also, reads of refs within a transaction reflect a snapshot of the reference world at a particular point in time, i.e. each transaction is isolated from other transactions. If a conflict occurs between 2 transactions trying to modify the same reference, one of them will be retried. All of this occurs without explicit locking.</p>
+</div>
+<div class="paragraph">
+<p>In this example a vector of Refs containing integers is created <em>(refs)</em>, then a set of threads are set up <em>(pool)</em> to run a number of iterations of incrementing every Ref <em>(tasks)</em>. This creates extreme contention, but yields the correct result. No locks!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(import '(java.util.concurrent Executors))
+
+(defn test-stm [nitems nthreads niters]
+  (let [refs  (map ref (repeat nitems 0))
+        pool  (Executors/newFixedThreadPool nthreads)
+        tasks (map (fn [t]
+                      (fn []
+                        (dotimes [n niters]
+                          (dosync
+                            (doseq [r refs]
+                              (alter r + 1 t))))))
+                   (range nthreads))]
+    (doseq [future (.invokeAll pool tasks)]
+      (.get future))
+    (.shutdown pool)
+    (map deref refs)))
+
+(test-stm 10 10 10000)
+-&gt; (550000 550000 550000 550000 550000 550000 550000 550000 550000 550000)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In typical use refs can refer to Clojure collections, which, being persistent and immutable, efficiently support simultaneous speculative 'modifications' by multiple transactions. Mutable objects should not be put in refs.</p>
+</div>
+<div class="paragraph">
+<p>By default Vars are static, but per-thread bindings for Vars defined with <a href="xref/../../reference/metadata">metadata</a> mark them as dynamic. <a href="xref/../../reference/vars">Dynamic vars</a> are also mutable references to objects. They have a (thread-shared) root binding which can be established by <a href="xref/../../reference/special_forms#def">def</a>, and can be set using <em>*set!*</em>, but only if they have been bound to a new storage location thread-locally using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>. Those bindings and any subsequent modifications to those bindings will only be seen <em>within</em> the thread by code in the dynamic scope of the binding block. Nested bindings obey a stack protocol and unwind as control exits the binding block.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def ^:dynamic *v*)
+
+(defn incv [n] (set! *v* (+ *v* n)))
+
+(defn test-vars [nthreads niters]
+  (let [pool (Executors/newFixedThreadPool nthreads)
+        tasks (map (fn [t]
+                     #(binding [*v* 0]
+                        (dotimes [n niters]
+                          (incv t))
+                        *v*))
+                   (range nthreads))]
+      (let [ret (.invokeAll pool tasks)]
+        (.shutdown pool)
+        (map #(.get %) ret))))
+
+(test-vars 10 1000000)
+-&gt; (0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000)
+(set! *v* 4)
+-&gt; java.lang.IllegalStateException: Can't change/establish root binding of: *v* with set</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dynamic vars provide a way to communicate between different points on the call stack without polluting the argument lists and return values of the intervening calls. In addition, dynamic vars support a flavor of context-oriented programming. Because fns defined with <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> are stored in vars, they too can be dynamically rebound:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn ^:dynamic say [&amp; args]
+  (apply str args))
+
+(defn loves [x y]
+  (say x " loves " y))
+
+(defn test-rebind []
+  (println (loves "ricky" "lucy"))
+  (let [say-orig say]
+    (binding [say (fn [&amp; args]
+                      (println "Logging say")
+                      (apply say-orig args))]
+      (println (loves "fred" "ethel")))))
+
+(test-rebind)
+
+ricky loves lucy
+Logging say
+fred loves ethel</code></pre>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

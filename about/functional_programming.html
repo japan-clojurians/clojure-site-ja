@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - 関数型プログラミング</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>関数型プログラミング</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ファーストクラスの関数">ファーストクラスの関数</a></li>
+<li><a href="#_イミュータブルなデータ構造">イミュータブルなデータ構造</a></li>
+<li><a href="#_拡張可能な抽象">拡張可能な抽象</a></li>
+<li><a href="#_再帰的なループ">再帰的なループ</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojureは関数型プログラミング言語だ。Clojureは、ミュータブルな状態を避けるためのツールを提供し、ファーストクラスオブジェクトとしての関数を提供し、副作用に基づくループの代わりに再帰的な繰り返しに重きを置いている。Clojureは、プログラムが参照透過であることを強制しないし「証明可能」なプログラムを目指しているわけでもないという点で
+<em>非純粋(impure)</em>
+だ。Clojureの背後にある哲学は、ほとんどのプログラムのほとんどの部分は関数型であるべきであり、プログラムが関数型であればあるほど堅牢になる、というものだ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ファーストクラスの関数">ファーストクラスの関数</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="xref/../../reference/special_forms#fn">fn</a>
+は関数オブジェクトを作る。他のものと同様に値を作り出す――varに格納したり関数に渡したりなどできる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def hello (fn [] "Hello world"))
+-&gt; #'user/hello
+(hello)
+-&gt; "Hello world"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a>
+は関数定義を少しシンプルにしてくれるマクロだ。Clojureは、 <em>単一の</em> 関数オブジェクトでのアリティオーバーロード、自己参照、 <strong>&amp;</strong>
+による可変アリティ関数をサポートしている:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;でっち上げの例
+(defn argcount
+  ([] 0)
+  ([x] 1)
+  ([x y] 2)
+  ([x y &amp; more] (+ (argcount x y) (count more))))
+-&gt; #'user/argcount
+(argcount)
+-&gt; 0
+(argcount 1)
+-&gt; 1
+(argcount 1 2)
+-&gt; 2
+(argcount 1 2 3 4 5)
+-&gt; 5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let">let</a>
+を利用することで関数内の値に対する名前を作り出すことができる。あらゆるローカルな名前のスコープはレキシカルなため、ローカルな名前のスコープ内で作られた関数はその値を閉じ込める:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn make-adder [x]
+  (let [y x]
+    (fn [z] (+ y z))))
+(def add2 (make-adder 2))
+(add2 4)
+-&gt; 6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let">let</a> で作られるローカルなものは変数ではない。一度作られるとその値は決して変化しない!</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_イミュータブルなデータ構造">イミュータブルなデータ構造</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>状態の変更を避ける最も簡単な方法はイミュータブルな <a href="xref/../../reference/data_structures">データ構造</a>
+を利用することだ。Clojureはイミュータブルなリスト、ベクター、セット、マップを提供している。それらは変更できないため、イミュータブルなコレクションから「追加」したり「削除」したりするのは、ちょうど古いコレクションに必要な変更を加えたような新しいコレクションを作ることを意味する。
+<em>永続性(persistence)</em>
+とは「変更」後にもコレクションの古いバージョンを得ることができ、たいていの操作についてパフォーマンスを保証する性質のことをいう用語だ。特に、これは新しいバージョンが完全なコピーを使って作られることはないということを意味する、というのもそれには線形時間を必要とするからだ。必然的に、永続的なコレクションは連結データ構造で実装され、それにより新しいバージョンは以前のバージョンと構造を共有することができる。単方向連結リストとツリーが基本的な関数型データ構造で、Clojureはこれにarray
+mapped hash
+trieをもとにしたハッシュマップ、セット、ベクターを追加している。コレクションは読みやすい表現と共通のインターフェースを持っている:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [my-vector [1 2 3 4]
+      my-map {:fred "ethel"}
+      my-list (list 4 3 2 1)]
+  (list
+    (conj my-vector 5)
+    (assoc my-map :ricky "lucy")
+    (conj my-list 5)
+    ;オリジナルはそのまま
+    my-vector
+    my-map
+    my-list))
+-&gt; ([1 2 3 4 5] {:ricky "lucy", :fred "ethel"} (5 4 3 2 1) [1 2 3 4] {:fred "ethel"} (4 3 2 1))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>データの論理的な値に直交した属性やその他のデータに関するデータをアプリケーションに関連付けることが必要になることはよくある。Clojureは
+<a href="xref/../../reference/metadata">メタデータ</a>
+で直接これをサポートしている。シンボルとすべてのコレクションはメタデータマップをサポートしている。メタデータマップには
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/meta">meta</a>
+という関数でアクセスできる。メタデータは等価性の意味に影響することは <em>ない</em>
+し、メタデータがコレクションの値に対する操作で見えることもない。メタデータは読み取ったり出力したりすることができる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def v [1 2 3])
+(def attributed-v (with-meta v {:source :trusted}))
+(:source (meta attributed-v))
+-&gt; :trusted
+(= v attributed-v)
+-&gt; true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_拡張可能な抽象">拡張可能な抽象</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureはそのコアとなるデータ構造を定義するのにJavaのインターフェースを利用している。これにより、これらのインターフェースの新たな具体的実装にClojureを拡張し、ライブラリ関数がそうした拡張に対しても動作するようにすることが可能になる。これはデータ型の具体的実装を言語に組み込んでしまうのに対して大きな改善だ。</p>
+</div>
+<div class="paragraph">
+<p><a href="xref/../../reference/sequences">seq</a>
+がその好例だ。コアとなるLispのリスト構造を抽象化することにより、中身へのシーケンシャルなインターフェースを提供できるあらゆるデータ構造に対して豊富なライブラリ関数が拡張される。Clojureのすべてのデータ構造はseqを提供することができる。seqは他の言語におけるイテレータやジェネレータのように利用できるが、seqにはイミュータブルで永続的だという重要な利点がある。seqは極めてシンプルで、シーケンスの最初の要素を返す
+<strong><em>first</em></strong> 関数と、シーケンスの残り(それ自身がseqまたはnilのどちらか)を返す <strong><em>rest</em></strong> 関数を提供している。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [my-vector [1 2 3 4]
+      my-map {:fred "ethel" :ricky "lucy"}
+      my-list (list 4 3 2 1)]
+  [(first my-vector)
+   (rest my-vector)
+   (keys my-map)
+   (vals my-map)
+   (first my-list)
+   (rest my-list)])
+-&gt; [1 (2 3 4) (:ricky :fred) ("lucy" "ethel") 4 (3 2 1)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojureのライブラリ関数の多くはseqを <em>遅延評価</em> で生み出したり取り込んだりする:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;cycleは「無限」のseqを生成する!
+(take 15 (cycle [1 2 3 4]))
+-&gt; (1 2 3 4 1 2 3 4 1 2 3 4 1 2 3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq">lazy-seq</a>
+マクロを利用することで独自の遅延シーケンスを生み出す関数を定義することができる。lazy-seqマクロは必要に応じて呼び出される式の本体を取って0個以上の要素のリストを生み出す。これが単純化した
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take">take</a>
+だ:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn take [n coll]
+  (lazy-seq
+    (when (pos? n)
+      (when-let [s (seq coll)]
+       (cons (first s) (take (dec n) (rest s)))))))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_再帰的なループ">再帰的なループ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ミュータブルなローカル変数がないため、ループと繰り返しは、状態変更によって制御される組み込みの <em>for</em> や <em>while</em>
+を持つ言語におけるものとは異なる形をとらなければならない。関数型言語ではループと繰り返しは再帰的な関数呼び出しによって置き換えられ/実装されている。多くのそうした言語は末尾位置での関数呼び出しがスタック空間を消費しないことを保証しているため、再帰的なループは定数空間を利用できる。ClojureはJavaの呼出規約を利用しているため、同様な末尾呼び出し最適化を保証することができないし、していない。代わりに
+<a href="xref/../../reference/special_forms#recur">recur特殊オペレータ</a>
+を提供し、これによって再束縛と最も近いloopまたは関数フレームへのジャンプによる定数空間での再帰ループを行う。末尾呼び出し最適化ほど一般的なものではないが、同様にエレガントな構造のほとんどを可能にし、recurの呼び出しが末尾位置でのみ起こりうることをチェックできるという利点を提供している。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn my-zipmap [keys vals]
+  (loop [my-map {}
+         my-keys (seq keys)
+         my-vals (seq vals)]
+    (if (and my-keys my-vals)
+      (recur (assoc my-map (first my-keys) (first my-vals))
+             (next my-keys)
+             (next my-vals))
+      my-map)))
+(my-zipmap [:a :b :c] [1 2 3])
+-&gt; {:b 2, :c 3, :a 1}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>相互再帰が必要な状況でrecurを利用することはできない。代わりに
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/trampoline">trampoline</a>
+が良い選択肢になるかもしれない。</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

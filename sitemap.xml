@@ -168,4 +168,52 @@
         <loc>http://clojure-site-ja.github.io/reference/transducers.html</loc>
         <lastmod></lastmod>
     </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/clojureclr.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/concurrent_programming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/features.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/jvm_hosted.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/runtime_polymorphism.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/spec.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/clojurescript.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/dynamic.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/functional_programming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/lisp.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/rationale.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/state.html</loc>
+        <lastmod></lastmod>
+    </url>
 </urlset>

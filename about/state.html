@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - 値と変更: Clojureのアイデンティティと状態に対するアプローチ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>値と変更: Clojureのアイデンティティと状態に対するアプローチ</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_命令型プログラミング">命令型プログラミング</a></li>
+<li><a href="#_関数型プログラミング">関数型プログラミング</a></li>
+<li><a href="#_ワーキングモデルとアイデンティティ">ワーキングモデルとアイデンティティ</a></li>
+<li><a href="#_オブジェクト指向プログラミング_oo">オブジェクト指向プログラミング(OO)</a></li>
+<li><a href="#_clojureプログラミング">Clojureプログラミング</a>
+<ul class="sectlevel2">
+<li><a href="#_並行処理">並行処理</a></li>
+</ul>
+</li>
+<li><a href="#actors">メッセージパッシングとアクター</a></li>
+<li><a href="#_まとめ">まとめ</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>命令型言語からClojureに来た人の多くは、Clojureでのアプローチのしかたに直面して勝手が違うことに気づく。一方、より関数型の背景を持って来た人は、ひとたびClojureの関数型のサブセットを離れれば、Javaで見られるような状態と同じような話に直面することになると想定する。この文章は、命令型と関数型のプログラムが世界をモデリングする際に直面する問題に対するClojureのアプローチを明らかにすることを意図している。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_命令型プログラミング">命令型プログラミング</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>命令型のプログラムは世界(例えばメモリ)を直接操作する。それは今では維持できないシングルスレッドという前提――世界を観察したり変更したりする間、世界は停止している――に基づいている。「これをせよ」と言えばそれは起こり、「あれを変更せよ」と言えばそれは変化する。命令型プログラミング言語は、これをせよ/あれをせよと言ってメモリロケーションを変更することを指向している。</p>
+</div>
+<div class="paragraph">
+<p>これはマルチスレッド以前でさえ素晴らしいアイディアではなかった。並行処理が加わると現実の問題になる、というのも「世界は停止している」という前提はもはや全く正しくなく、その幻想を取り戻すのは極めて困難でエラーを引き起こしがちだからだ。複数の参加者が、それぞれ全能であるかのように振る舞う中で、他者の仮定や努力の成果を破壊してしまうのを何とかして避けなければならない。これには、個々の参加者が操作する領域を遮断するためにミューテックスやロックが必要となり、他のコアからも見えるように共有メモリの変更を伝播させる大きなオーバーヘッドを要する。これはあまり上手くいかない。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_関数型プログラミング">関数型プログラミング</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>関数型プログラミングはより数学的に世界を捉え、プログラムは特定の値を取って別の値を生み出す関数だとみなす。関数型のプログラムは、命令型のプログラムが持つ外界への「効果」を避けるため、理解しやすく、推論しやすく、テストしやすいものになる、というのも関数の活動は完全にローカルなものだからだ。プログラムが純粋に関数型である限り、並行処理は問題にならない。なぜなら協調させるべき変更が全く存在しないからだ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ワーキングモデルとアイデンティティ">ワーキングモデルとアイデンティティ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一部のプログラムは大きな関数(例えばコンパイラや定理証明器)だが、その他の多くのプログラムはそうではない――むしろワーキングモデルのようなもので、私がこの議論で
+<strong><em>アイデンティティ</em></strong> と呼ぶものをサポートする必要がある。アイデンティティというのは
+<strong><em>時間とともに異なる一連の値と結び付いた、安定した論理的なエンティティ</em></strong>
+のことを意味している。人間にアイデンティティが必要であるのと同様な理由で、世界を表現するためにモデルにはアイデンティティが必要だ。「今日」や「アメリカ」のようなアイデンティティが常に単一の定数値を表さなければならないとしたらどうなるだろう?
+アイデンティティというのは名前のことを意味しているわけではないことに注意が必要だ(私は自分の母親のことをママと呼ぶが、あなたはそうではないかもしれない)。</p>
+</div>
+<div class="paragraph">
+<p>というわけで、この議論では、アイデンティティとは、ある時点での値としての状態を持つエンティティのことだ。そして <strong><em>値とは変化しないもののことだ</em></strong>
+。42は変化しない。2008年6月29日は変化しない。点は移動することがないし、ひどいクラスライブラリが何を信じさせようとも、日付は変化することがない。集合体(aggregate)でさえ値だ。私の好きな食べ物の集合は変化しない、つまり私が将来、別の食べ物を好むようになったとしたら、それは別の集合ということだ</p>
+</div>
+<div class="paragraph">
+<p>アイデンティティは、絶えず関数的に自身の新たな値を生み出していく世界を連続性のあるものとして捉えるためのメンタルツールだ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_オブジェクト指向プログラミング_oo">オブジェクト指向プログラミング(OO)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OOとは、何よりも、プログラムにおいてアイデンティティと状態をモデリングするためのツールを提供する試みだ(振る舞いを状態に関連付けることや階層的な分類はどちらもここでは無視する)。OOは典型的にはアイデンティティと状態を統合している、つまりオブジェクト(アイデンティティ)が状態の値を保持するメモリに対するポインタになっている。コピーすることなくアイデンティティから独立した状態を取得する方法はない。変更されるのをブロックすることなく安定した状態を観察する方法も(コピーする方法さえ)ない。置き換えによるメモリ変更以外でアイデンティティの状態に異なる値を関連付ける方法もない。言い換えれば、
+<strong><em>典型的なOOは命令型プログラミングを焼き込んでいる!</em></strong>
+OOはこのようである必要はないのだが、たいていそうなっている(Java/C++/Python/Rubyなど)。</p>
+</div>
+<div class="paragraph">
+<p>OOに慣れている人はプログラムをオブジェクトの値を変更するものと考えている。彼らは値(例えば42)の真の観念は決して変わることのないものだと理解しているが、たいていその値の観念をオブジェクトの状態に拡大することはない。それは彼らのプログラミング言語の欠陥だ。そうした言語は、アイデンティティやオブジェクトのために使うのと同じ構造を値のモデリングのために利用し、ミュータブルをデフォルトとしており、最も熟練のプログラマ以外の誰もが必要以上に多くのアイデンティティを作ってしまう原因となり、値その他であるべきものからアイデンティティを作っている。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojureプログラミング">Clojureプログラミング</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>方法は他にもあり、それはアイデンティティと状態を分離することだ(再び、間接化がプログラミングにおける困難から救ってくれる)。私たちは、状態の観念を「このメモリブロックの中身」から離れて「このアイデンティティに現在関連付けられている
+<strong><em>値</em></strong> 」に変える必要がある。したがって、アイデンティティは異なる時点で異なる状態をとりうるが、 <em>状態自身が変化することはない</em>
+。つまり、アイデンティティが状態なのではなく、アイデンティティが状態を <strong><em>持っている</em></strong>
+のだ。あらゆる時点においてちょうど1つだけの状態。そしてその状態は真の値だ、つまり決して変わることがない。アイデンティティが変化しているように見えたとしても、それは時間とともに異なる状態の値が関連付けられるからだ。これがClojureのモデルだ。</p>
+</div>
+<div class="paragraph">
+<p>Clojureのモデルでは、値の計算は純粋に関数型だ。値は決して変化しない。新しい値は古い値の関数であり、古い値を変更したものではない。しかし論理的なアイデンティティは値に対するアトミックな参照(<a href="xref/../../reference/refs">Refs</a>
+と
+<a href="xref/../../reference/agents">Agents</a>)としてしっかりサポートされている。参照に対する変更はシステムによって制御/調整されている、つまり協調させることは選択的でも手動でもない。世界は参加者の協調的な努力によって前進し、プログラミング言語/システムであるClojureが世界の一貫性の管理を担っている。参照の値(アイデンティティの状態)は常に調整なく観察することができ、スレッド間で自由に共有できる</p>
+</div>
+<div class="paragraph">
+<p>参加者(スレッド)がただ1つしかないときでも、このような方法でプログラムを構築する価値はある。関数の値の計算がアイデンティティ/値の関連から独立していると、プログラムはより理解しやすくテストしやすくなる。そして(必然的に)必要になったときに他の参加者を追加するのも簡単だ。</p>
+</div>
+<div class="sect2">
+<h3 id="_並行処理">並行処理</h3>
+<div class="paragraph">
+<p>並行処理に取り組むということは、全能という幻想をあきらめることを意味する。他の参加者が存在しうるし、世界は変化し続けるということをプログラムは認識しなければならない。そのため、何らかのアイデンティティの状態の値を観察することで得られるのはせいぜいスナップショットだということをプログラムは理解しなければならない、というのもそれらのアイデンティティは後に新たな値を取りうるからだ。しかし、多くの場合には決定を下したりレポートしたりする目的にはそれで十分だ。私たち人間は自らの感覚系から得られるスナップショットで上手くやっている。そうした状態の値はイミュータブルなので、処理中に手元で変化することがないのが良いところだ。</p>
+</div>
+<div class="paragraph">
+<p>一方で、状態を新しい値に変更するには「現在の」値とアイデンティティにアクセスする必要がある。ClojureのRefとAgentはこれを自動的に行う。Refの場合には、いかなる相互作用もトランザクション内で行わなければならず(そうでなければClojureは例外を投げる)、そうしたすべての相互作用はある時点での世界の一貫したビューを見ることになり、変更されるべき状態が途中で他の参加者に変更されていないのでなければいかなる変更も生じない。トランザクションは複数のRefに対する同期的な変更をサポートしている。他方、Agentは単一の参照に対する非同期的な変更を提供している。関数と値を渡すと、未来のある時点でその関数にAgentの現在の状態が渡され、関数の戻り値がAgentの新しい状態になる。</p>
+</div>
+<div class="paragraph">
+<p>いずれの場合でも、プログラムは世界にある値の安定したビューを見ることになる、というのもそうした値は変化することができず、値をコアの間で共有するのも上手くいくからだ。難しいのは「値は決して変化しない」ということは古い値から新しい値を作るのが効率的でなければならないということで、Clojureでは永続的データ構造のおかげで実際に効率的になっている。永続的データ構造によって最終的にfavor
+immutability(イミュータブルであることを好め)というよく言われる助言に従うことが可能になる。そしてあるアイデンティティの状態を新しい値に設定するには、アイデンティティの現在の値を読み取り、純粋な関数をその値に対して呼び出して新しい値を生み出し、その値を新しい状態として設定することによって行う。こうした複合的な操作は
+<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+や
+<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/commute">commute</a>
+、
+<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/send">send</a>
+という関数で簡単にアトミックに行うことができる。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actors">メッセージパッシングとアクター</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アイデンティティと状態をモデリングする方法は他にもあり、人気のある方法のひとつがメッセージパッシングの
+<a href="https://en.wikipedia.org/wiki/Actor_model">アクターモデル</a> で、
+<a href="https://en.wikipedia.org/wiki/Erlang_%28programming_language%29">Erlang</a>
+が非常に印象的な好例だ。アクターモデルでは、状態はアクター(アイデンティティ)にカプセル化され、メッセージ(値)を渡すことによってのみ影響を与えたり見たりすることができる。Erlangでのような非同期的なシステムでは、あるアクターの状態のある面を読み取るには、リクエストメッセージを送り、レスポンスを待ち、そのアクターがレスポンスを送る必要がある。
+<em>アクターモデルは <strong>分散</strong> プログラムの問題に対処するために設計された</em>
+ということを理解しておくのは重要なことだ。そして、分散プログラムの問題はずっと難しい――複数の世界(アドレス空間)があり、直接的な観察は可能ではなく、信頼できないかもしれないチャネルを通して相互作用が行われる、など。アクターモデルは透過的な分散(transparent
+distribution)をサポートしている。すべてのコードをこのように書けば、他のアクターの実際の場所に縛られることはなくなり、コードを変更することなくシステムを複数のプロセス/マシンに拡大することが可能になる。</p>
+</div>
+<div class="paragraph">
+<p>私はいくつかの理由からErlang式のアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>最もシンプルなデータの読み取りにも2つのメッセージのやり取りを必要とし、ブロックするメッセージ受け取りを利用しなければならず、それによってデッドロックの可能性が生まれる、ずっと複雑なプログラミングモデルだ。分散処理の故障モードのためにプログラミングするということはタイムアウトなどを利用することを意味する。それはプログラムのプロトコルを関数で表されるものとメッセージの値で表されるものに二分してしまう原因になる。</p>
+</li>
+<li>
+<p>同一プロセスであることによる効率性を十分に活用できない。大きなイミュータブルデータ構造をスレッド間で効率的に直接共有することは十分可能だが、アクターモデルでは介在するやり取り、もしかするとコピーも強いられることになる。読み書きがシリアライズされ相互にブロックする、など。</p>
+</li>
+<li>
+<p>モデリングの柔軟性が低下する――これはみんなが窓のない部屋に座ってメールのみによってコミュニケーションを取るような世界だ。プログラムは大量のブロックするswitch文に分解される。受け取ることを予想しているメッセージを扱うことしかできない。複数のアクターが関わる活動を協調させるのは非常に困難だ。協調/調整させることなくして何も観察することができない――アドホックにレポートしたり分析したりするのは不可能で、むしろすべてのアクターがそれぞれのプロトコルに参加することを強いられる。</p>
+</li>
+<li>
+<p>ローカルで上手く動作するものを透過的に分散させると上手く動作しなくなることがよくある――やり取りの粒度が細かすぎたり、メッセージのペイロードが大きすぎたり、故障モードが最適な仕事の分割を変えてしまったり、つまり透過的な分散は透過的ではなく、結局コードを変更しなければならない。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojureもやがて、分散処理が必要な場合にだけ代価を払って、分散プログラミングのためにアクターモデルをサポートするかもしれないが、私は同一プロセスでのプログラミングには扱いづらすぎると考えている。もちろんあなたの立場は異なるかもしれない。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_まとめ">まとめ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureは、モデルとしてのプログラムを明示的にサポートし、並行処理に際してシングルプロセスでのアイデンティティと状態を管理するための堅牢で使いやすい機能を提供する関数型言語だ。</p>
+</div>
+<div class="paragraph">
+<p>OO言語からClojureに来たのであれば、オブジェクトの代わりに
+<a href="xref/../../reference/data_structures">永続的なコレクション</a>
+、例えばマップを利用することができる。可能な限り値を利用しよう。そして、オブジェクトが本当にアイデンティティをモデリングしている場合(そう考え始めるのはあなたが考える以上にずっとまれなことだが)には、変化する状態を持つアイデンティティをモデリングするために、例えばマップを状態としたRefやAgentを利用することができる。値の詳細をカプセル化したり抽象化したりしたいのであれば、些細なものでなければ良いアイディアだが、値を参照したり操作したりする一連の関数を書こう。ポリモーフィズムがほしいのであれば、Clojureのマルチメソッドを利用しよう。</p>
+</div>
+<div class="paragraph">
+<p>ローカルな場合には、Clojureにはミュータブルなローカル変数がないので、変更を伴うループで値を組み立てる代わりに、
+<a href="xref/../../reference/special_forms#recur">recur</a> や
+<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce">reduce</a>
+で関数的に値を組み立てることができる。</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

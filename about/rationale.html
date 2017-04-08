@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - 論理的根拠</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>論理的根拠</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_なぜclojureなのか">なぜClojureなのか?</a></li>
+<li><a href="#_lispは良いものだ">Lispは良いものだ</a></li>
+<li><a href="#_関数型プログラミングは良いものだ">関数型プログラミングは良いものだ</a></li>
+<li><a href="#_言語とプラットフォーム">言語とプラットフォーム</a></li>
+<li><a href="#_オブジェクト指向は過大評価されている">オブジェクト指向は過大評価されている</a></li>
+<li><a href="#_ポリモーフィズムは良いものだ">ポリモーフィズムは良いものだ</a></li>
+<li><a href="#_並行処理とマルチコアの未来">並行処理とマルチコアの未来</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>JVMのような業界標準のプラットフォームに対して、顧客やステークホルダーは相当な額の投資を行い、そのパフォーマンスやセキュリティ、安定性に快適さを感じている。Java開発者たちは動的言語の簡潔さや柔軟性、生産性をうらやんでいるかもしれないが、顧客が認めるインフラでの実行、既存のコードベースやライブラリへのアクセス、パフォーマンスを気にしている。さらに、ネイティブスレッドとロックによる並行処理の問題にまさに直面している。Clojureはこうした文脈での実用的で動的な言語設計の努力の成果だ。ClojureはJavaが適している領域にふさわしい汎用言語になろうとしている。Clojureは、並行プログラミングの未来には現在普及している度を越した変更(mutation)はなくなるべきだ、という現実を反映している。</p>
+</div>
+<div class="paragraph">
+<p>Clojureはその目標を次の方法で達成している:
+業界標準でオープンなプラットフォームJVMを受け入れること、偉大なるLispを現代化すること、イミュータブルで永続的なデータ構造で関数型プログラミングを促進すること、ソフトウェアトランザクショナルメモリと非同期のエージェントによって並行処理を組み込みでサポートすること。その結果は、堅牢で実用的で高速な言語だ。</p>
+</div>
+<div class="paragraph">
+<p>Clocjureは <a href="state">状態とアイデンティティ</a> に対して独自のアプローチをとっている。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_なぜclojureなのか">なぜClojureなのか?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>なぜ私はさらに別のプログラミング言語を書いたのか? それは基本的に私が次のものがほしかったからだ:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lisp</p>
+</li>
+<li>
+<p>関数型プログラミングのための言語</p>
+</li>
+<li>
+<p>確立されたプラットフォームと共存できる言語</p>
+</li>
+<li>
+<p>並行処理のために設計された言語</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>そして、そういうものは見つけられなかったからだ。以下がClojureの背景にある動機となったアイディアのいくつかだ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lispは良いものだ">Lispは良いものだ</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>たびたび模倣され略奪されてきたが、いまだ複製されるには至っていない</p>
+</li>
+<li>
+<p>ラムダ計算は極めて小さなコアをもたらす</p>
+</li>
+<li>
+<p>ほとんどシンタックスがない</p>
+</li>
+<li>
+<p>いまだ核心的な強みであるデータとしてのコード(code-as-data)とシンタックスの抽象化</p>
+</li>
+<li>
+<p>標準のLisp(Common LispとScheme)はどうだろう?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>標準化以降のイノベーションが遅い/ない</p>
+</li>
+<li>
+<p>コアとなるデータ構造がミュータブルで、拡張もできない</p>
+</li>
+<li>
+<p>並行処理が仕様に含まれていない</p>
+</li>
+<li>
+<p>JVM向けの良い実装がすでに存在する(ABCL, Kawa, SISCなど)</p>
+</li>
+<li>
+<p>標準のLispはそれぞれ固有のプラットフォームになっている</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Clojureは後方互換性による制約のないLispだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>code-as-dataのパラダイムをマップとベクターに拡張している</p>
+</li>
+<li>
+<p>デフォルトでイミュータブルになっている</p>
+</li>
+<li>
+<p>コアとなるデータ構造は拡張可能な抽象だ</p>
+</li>
+<li>
+<p>プラットフォーム(JVM)を受け入れている</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_関数型プログラミングは良いものだ">関数型プログラミングは良いものだ</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>イミュータブルなデータ + 第一級関数</p>
+</li>
+<li>
+<p>Lispでは規律や規約によって常に可能だった</p>
+<div class="ulist">
+<ul>
+<li>
+<p>しかしデータ構造が変更されうるものであれば変更されないと推定するのは危険だ</p>
+</li>
+<li>
+<p>伝統的なLispでは、リストというデータ構造だけが構造的に再帰的だ</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>純粋関数型言語は強い静的型付けである傾向にある</p>
+<div class="ulist">
+<ul>
+<li>
+<p>みんなに適しているわけではないし、あらゆるタスクに適しているわけでもない</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Clojureは動的であることを重視する関数型言語だ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>すべてのデータ構造はイミュータブルで永続的で再帰をサポートしている</p>
+</li>
+<li>
+<p>異なる型の値が混在したコレクションや戻り型</p>
+</li>
+<li>
+<p>動的ポリモーフィズム</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_言語とプラットフォーム">言語とプラットフォーム</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OSではなくVMが未来のプラットフォームであり、次のものを提供する:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>型システム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>動的な強制と安全性</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ライブラリ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OSの抽象化</p>
+</li>
+<li>
+<p>非常に多数の機能の集合</p>
+</li>
+<li>
+<p>組み込みとサードパーティ</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>メモリと他のリソースの管理</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GCは言語ではなくプラットフォームの機能である</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>バイトコード + JITコンパイル</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ハードウェアの抽象化</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームとしての言語 vs. 言語 + プラットフォーム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>古いやり方 - 各言語がそれぞれランタイムを定義する</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GC、バイトコード、型システム、ライブラリなど</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>新しいやり方(JVM, .NET)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>言語とは独立した共通のランタイム</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームのために構築された言語 vs プラットフォームにポートされた言語</p>
+<div class="ulist">
+<ul>
+<li>
+<p>多くの新しい言語はいまだ「プラットフォームとしての言語」というアプローチをとっている</p>
+</li>
+<li>
+<p>ポートされる際にプラットフォーム上のプラットフォームという問題を抱えることになる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>メモリ管理、型システム、スレッドの問題</p>
+</li>
+<li>
+<p>ライブラリの重複</p>
+</li>
+<li>
+<p>元の言語がC言語をベースにしていても、C言語で書かれた一部の拡張ライブラリはついてこない</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームは顧客に指定されている</p>
+<div class="ulist">
+<ul>
+<li>
+<p>「JVM(または.NET)上で実行しなければならない」vs「UNIX(またはWindows)で実行しなければならない」</p>
+</li>
+<li>
+<p>JVMは実績と信頼できるレベルを確立してきた</p>
+<div class="ulist">
+<ul>
+<li>
+<p>今やオープンソースでもある</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>他のコードとの相互運用が求められる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>C言語との連携では最近では不十分になってきている</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Java/JVMは言語 + プラットフォーム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>もともとそうだったわけではないが、JVM向けの他の言語は常に存在し、今やSunにも受け入れられている</p>
+</li>
+<li>
+<p>Javaは冗長で表現力が不十分になりがちだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>第一級関数を欠き、型推論がない、など</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Javaを呼び出し取り込む能力は決定的に重要だ</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Clojureは言語であり、JVMがプラットフォームだ</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_オブジェクト指向は過大評価されている">オブジェクト指向は過大評価されている</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>シミュレーションから生まれ、今ではあらゆるものに、時には適していないものにさえ利用されている</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Java/C#によってあらゆる状況で奨励されてきたが、それはJava/C#がそれ以外の(慣用的な)方法を欠いていたためだ</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ミュータブルでステートフルなオブジェクトは新たなスパゲッティコードだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>理解するのもテストするのも推論するのも難しい</p>
+</li>
+<li>
+<p>並行処理にとって災難だ</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>継承はポリモーフィズムを実現する唯一の方法ではない</p>
+</li>
+<li>
+<p>「10個のデータ構造それぞれに操作する関数が10個ずつあるより、1個のデータ構造を操作する関数が100個あるほうが良い。」 - Alan</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Perlis</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clojureはデータ構造をインターフェースで表現されたイミュータブルなオブジェクトとしてモデル化し、それ以外の方法で独自のクラスシステムを提供していない</p>
+</li>
+<li>
+<p>少数の基本的なデータ構造(seq, map, vector, set)に対して定義された多数の関数</p>
+</li>
+<li>
+<p>JavaでJavaを書き、ClojureからJavaを取り込み拡張する</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ポリモーフィズムは良いものだ">ポリモーフィズムは良いものだ</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>switch文や構造的なマッチなどは脆いシステムをもたらす</p>
+</li>
+<li>
+<p>ポリモーフィズムは拡張可能で柔軟なシステムをもたらす</p>
+</li>
+<li>
+<p>Clojureのマルチメソッドはオブジェクト指向と型からポリモーフィズムを分離したものだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>複数の基準での分類をサポートしている</p>
+</li>
+<li>
+<p>静的、動的または外部的なプロパティ、メタデータなどによってディスパッチする</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_並行処理とマルチコアの未来">並行処理とマルチコアの未来</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>イミュータブルであることによって多くの問題はなくなる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>スレッド間で自由に共有できる</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>しかし、状態の変更はシミュレーションや外部世界に対するプログラムでのプロキシとして現実に必要なものだ</p>
+</li>
+<li>
+<p>ロックは繰り返し正しく行うにはあまりにも難しい</p>
+</li>
+<li>
+<p>Clojureのソフトウェアトランザクショナルメモリとエージェントのシステムはその困難な部分を担っている</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>要するに、ClojureはJVM向けで強力な並行処理サポートを備えた関数型のLispとして独自のニッチを占めていると私は考えている。
+<a href="features">特徴</a> を確認しよう。</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

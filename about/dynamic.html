@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Metadata</title>
+    <title>Clojure - 動的な開発</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Metadata</h1>
+  <h1>動的な開発</h1>
 </div>
 
 <p><em></em></p>
@@ -82,73 +82,83 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#__em_meta_em_obj">(<em>meta</em> obj)</a></li>
-<li><a href="#__em_with_meta_em_obj_map">(<em>with-meta</em> obj map)</a></li>
-<li><a href="#_metadata_reader_macros">Metadata Reader Macros</a></li>
+<li><a href="#_repl">REPL</a></li>
+<li><a href="#_基本">基本</a></li>
+<li><a href="#_動的なコンパイル">動的なコンパイル</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Symbols and collections support metadata, a map of data <em>about</em> the symbol
-or collection. The metadata system allows for arbitrary annotation of
-data. It is used to convey information to the compiler about types, but can
-also be used by application developers for many purposes, annotating data
-sources, policy etc.</p>
-</div>
-<div class="paragraph">
-<p>An important thing to understand about metadata is that it is not considered
-to be part of the value of an object. As such, <em>metadata does not impact
-equality (or hash codes)</em>. Two objects that differ only in metadata are
-equal.</p>
-</div>
-<div class="paragraph">
-<p>That said, metadata and its relationship to an object is immutable - an
-object with different metadata is a different object. One consequence of
-this is that applying metadata to a lazy sequence will realize the head of
-the sequence so that both objects can share the same sequence.</p>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__em_meta_em_obj">(<em>meta</em> obj)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Returns the metadata of obj, returns nil if there is no metadata.</p>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__em_with_meta_em_obj_map">(<em>with-meta</em> obj map)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Returns an object of the same type and value as obj, with map as its
-metadata.</p>
+<p>第一に何よりもまず、Clojureは動的だ。それは、Clojureのプログラムはただコンパイルして実行するものではなく相互作用することが可能なものだということを意味する。Clojureは言語抽象ではなく環境であり、そこではほとんどすべての言語構造は具象化(reify)されているため、調べたり変更したりすることができる。これはプログラムを実行してその結果(または失敗)を調べてやり直すのとは大きく異なる体験につながる。とりわけ、データをロードし、機能を追加し、バグを修正し、テストをする、途切れることのない流れの中でプログラムを成長させていくことができる。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_metadata_reader_macros">Metadata Reader Macros</h2>
+<h2 id="_repl">REPL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In addition to with-meta, there are a number of reader macros
-(<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata
-to the expression following it:</p>
+<p>ClojureはJavaアプリケーションに組み込んだりスクリプト言語として利用したりすることもできるが、主要なプログラミングインターフェースはRead-Eval-Print-Loop(REPL)だ。これはコマンドを入力して実行し、結果を調べることができるシンプルなコンソールインターフェースだ。次のようにClojure
+REPLを起動して、この機能ツアーのサンプルを試していくことができる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided
-map.  <strong> Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code>
-<code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.
-</strong> Equivalent to <code>^{:dynamic true} obj</code>
-<code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.  <strong>
-Equivalent to <code>^{:tag java.lang.String} obj</code> </strong> Used to hint an objects type
-to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type
-Hints</a> for more information and a complete list of special type hints.</p>
+<p>こうすると次のようなプロンプトが得られる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt;</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>It is possible to add multiple pieces of metadata by chaining the metadata
-reader macros together.  For example: <code>^:dynamic ^ints obj</code> would apply both
-the :dynamic flag and ints type-hint to obj.</p>
+<p>たいていのClojureコマンドは (コマンド 引数*) という形式をとる。試してみよう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def x 6)
+-&gt; #'user/x
+(def y 36)
+-&gt; #'user/y
+(+ x y)
+-&gt; 42</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基本">基本</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureには任意精度整数、文字列、有理数、倍精度浮動小数点数、文字、シンボル、キーワードがある。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(* 12345678 12345678)
+-&gt; 152415765279684
+"string"
+-&gt; "string"
+22/7
+-&gt; 22/7
+3.14159
+-&gt; 3.14159
+\a
+-&gt; \a
+'symbol
+-&gt; symbol
+:keyword
+-&gt; :keyword
+;a comment</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_動的なコンパイル">動的なコンパイル</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureはコンパイルされる言語なので、いつコンパイラを実行しなければならないのか疑問に思うかもしれない。その必要はない。REPLに入力したものやload-fileでロードしたものは何でも直ちに自動的にJVMのバイトコードにコンパイルされる。事前にコンパイルすることも可能だが、必須ではない。</p>
 </div>
 </div>
 </div></p>

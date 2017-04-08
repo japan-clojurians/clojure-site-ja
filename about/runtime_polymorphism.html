@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Metadata</title>
+    <title>Clojure - Runtime Polymorphism</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,85 +72,62 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Metadata</h1>
+  <h1>Runtime Polymorphism</h1>
 </div>
 
 <p><em></em></p>
 
-<p><div id="preamble">
-<div class="sectionbody">
-<div id="toc" class="toc">
-<div id="toctitle" class="title">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#__em_meta_em_obj">(<em>meta</em> obj)</a></li>
-<li><a href="#__em_with_meta_em_obj_map">(<em>with-meta</em> obj map)</a></li>
-<li><a href="#_metadata_reader_macros">Metadata Reader Macros</a></li>
+<p><div class="paragraph">
+<p>Systems that utilize runtime polymorphism are easier to change and extend. Clojure supports polymorphism in several ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Most core infrastructure data structures in the Clojure runtime are defined by Java interfaces.</p>
+</li>
+<li>
+<p>Clojure supports the generation of implementations of Java interfaces in Clojure using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> (<a href="jvm_hosted">see JVM Hosted</a>).</p>
+</li>
+<li>
+<p>The Clojure language supports polymorphism along both class and custom hierarchies with <a href="xref/../../reference/multimethods">multimethod</a>s.</p>
+</li>
+<li>
+<p>The Clojure language also supports a faster form of polymorphism with <a href="xref/../../reference/protocols">protocols</a> (but limited only to class polymorphism to take advantage of the JVMs existing capabilities for invocation).</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Symbols and collections support metadata, a map of data <em>about</em> the symbol
-or collection. The metadata system allows for arbitrary annotation of
-data. It is used to convey information to the compiler about types, but can
-also be used by application developers for many purposes, annotating data
-sources, policy etc.</p>
+<p>Clojure multimethods are a simple yet powerful mechanism for runtime polymorphism that is free of the trappings of OO, types and inheritance. The basic idea behind runtime polymorphism is that a single function designator dispatches to multiple independently-defined function definitions based upon some value of the call. For traditional single-dispatch OO languages that value is the type of the 'receiver' or 'this'. CLOS generic functions extend dispatch value to a composite of the type or value of multiple arguments, and are thus multimethods. Clojure multimethods go further still to allow the dispatch value to be the result of an arbitrary function of the arguments. Clojure does not support implementation inheritance.</p>
 </div>
 <div class="paragraph">
-<p>An important thing to understand about metadata is that it is not considered
-to be part of the value of an object. As such, <em>metadata does not impact
-equality (or hash codes)</em>. Two objects that differ only in metadata are
-equal.</p>
+<p>Multimethods are defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>, which takes the name of the multimethod and the dispatch function. Methods are independently defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>, passing the multimethod name, the dispatch <em>value</em> and the function body.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defmulti encounter (fn [x y] [(:Species x) (:Species y)]))
+(defmethod encounter [:Bunny :Lion] [b l] :run-away)
+(defmethod encounter [:Lion :Bunny] [l b] :eat)
+(defmethod encounter [:Lion :Lion] [l1 l2] :fight)
+(defmethod encounter [:Bunny :Bunny] [b1 b2] :mate)
+(def b1 {:Species :Bunny :other :stuff})
+(def b2 {:Species :Bunny :other :stuff})
+(def l1 {:Species :Lion :other :stuff})
+(def l2 {:Species :Lion :other :stuff})
+(encounter b1 b2)
+-&gt; :mate
+(encounter b1 l1)
+-&gt; :run-away
+(encounter l1 b1)
+-&gt; :eat
+(encounter l1 l2)
+-&gt; :fight</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>That said, metadata and its relationship to an object is immutable - an
-object with different metadata is a different object. One consequence of
-this is that applying metadata to a lazy sequence will realize the head of
-the sequence so that both objects can share the same sequence.</p>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__em_meta_em_obj">(<em>meta</em> obj)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Returns the metadata of obj, returns nil if there is no metadata.</p>
-</div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__em_with_meta_em_obj_map">(<em>with-meta</em> obj map)</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Returns an object of the same type and value as obj, with map as its
-metadata.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_metadata_reader_macros">Metadata Reader Macros</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In addition to with-meta, there are a number of reader macros
-(<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata
-to the expression following it:</p>
+<p>Multimethods are in every respect fns, e.g. can be passed to <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map">map</a> etc.</p>
 </div>
 <div class="paragraph">
-<p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided
-map.  <strong> Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code>
-<code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.
-</strong> Equivalent to <code>^{:dynamic true} obj</code>
-<code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.  <strong>
-Equivalent to <code>^{:tag java.lang.String} obj</code> </strong> Used to hint an objects type
-to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type
-Hints</a> for more information and a complete list of special type hints.</p>
-</div>
-<div class="paragraph">
-<p>It is possible to add multiple pieces of metadata by chaining the metadata
-reader macros together.  For example: <code>^:dynamic ^ints obj</code> would apply both
-the :dynamic flag and ints type-hint to obj.</p>
-</div>
-</div>
+<p>Similar to interfaces, Clojure protocols define only function specifications (no implementation) and allow types to implement multiple protocols. Additionally, protocols are open to later dynamic extension for new types. Protocols are limited just to dispatch on class type to take advantage of the native Java performance of polymorphic method calls. For more details, see the <a href="xref/../../reference/protocols">protocols</a> page.</p>
 </div></p>
 
 <hr />
