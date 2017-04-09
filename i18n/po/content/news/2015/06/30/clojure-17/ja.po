@@ -211,7 +211,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
 msgid "Rich Hickey"
-msgstr ""
+msgstr "Rich Hickey"
 
 #. type: Plain text
 #: en/content/news/2015/06/30/clojure-17.adoc:51

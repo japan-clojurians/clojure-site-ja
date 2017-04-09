@@ -45,7 +45,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/documentation.adoc:1 en/content/about/spec.adoc:310
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメンテーション"
 
 #. type: Title ==
 #: en/content/reference/documentation.adoc:10

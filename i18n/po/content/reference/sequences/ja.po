@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
 #, no-wrap
 msgid "Sequences"
-msgstr ""
+msgstr "シーケンス"
 
 #. type: Plain text
 #: en/content/reference/sequences.adoc:17
