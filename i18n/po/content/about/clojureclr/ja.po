@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-10 00:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/clojureclr.adoc:1
 #, no-wrap
 msgid "Clojure CLR"
-msgstr ""
+msgstr "Clojure CLR"
 
 #. type: Plain text
 #: en/content/about/clojureclr.adoc:14
@@ -47,18 +47,20 @@ msgid ""
 "This project is a native implementation of Clojure on the Common Language Runtime (CLR), the execution engine of "
 "Microsoft's .Net Framework."
 msgstr ""
+"このプロジェクトは、Microsoftの.NET Frameworkの実行エンジンである共通言語ランタイム(CLR)でのClojureのネイティヴ実装"
+"だ。"
 
 #. type: Plain text
 #: en/content/about/clojureclr.adoc:16
 msgid "ClojureCLR is programmed in C# (and Clojure itself) and makes use of Microsoft's Dynamic Language Runtime (DLR)."
-msgstr ""
+msgstr "Clojure CLRはC#(とClojure自身)でプログラムされ、Microsoftの動的言語ランタイム(DLR)を利用している。"
 
 #. type: Plain text
 #: en/content/about/clojureclr.adoc:18
 msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
-msgstr ""
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
 
 #. type: Plain text
 #: en/content/about/clojureclr.adoc:18
 msgid "https://github.com/clojure/clojure-clr/wiki/Getting-binaries[Downloading Binaries]"
-msgstr ""
+msgstr "https://github.com/clojure/clojure-clr/wiki/Getting-binaries[バイナリのダウンロード]"
