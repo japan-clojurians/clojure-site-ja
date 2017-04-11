@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-10 00:16+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/features.adoc:1 en/content/about/spec.adoc:189
 #, no-wrap
 msgid "Features"
-msgstr ""
+msgstr "特徴"
 
 #. type: Plain text
 #: en/content/about/features.adoc:11
@@ -49,33 +49,37 @@ msgid ""
 "tour of some of the features of Clojure. Consult the <<xref/../../reference/documentation#,reference>> for more "
 "details."
 msgstr ""
+"Clojureは、シンプルで一貫していて強力なツールを全体として形作る便利な特徴を備えている。ClojureであなたはLisp、ML、"
+"Haskellその他からのアイディアを見つけるかもしれないが、最終的な結果はユニークなものになっている。このセクションは簡潔"
+"で網羅的ではないClojureのいくつかの特徴のツアーになっている。より詳細には <<xref/../../reference/documentation#,リファ"
+"レンス>> を参照。"
 
 #. type: Plain text
 #: en/content/about/features.adoc:13
 msgid "<<dynamic#,Dynamic Development>>"
-msgstr ""
+msgstr "<<dynamic#,動的な開発>>"
 
 #. type: Plain text
 #: en/content/about/features.adoc:14
 msgid "<<functional_programming#,Functional Programming>>"
-msgstr ""
+msgstr "<<functional_programming#,関数型プログラミング>>"
 
 #. type: Plain text
 #: en/content/about/features.adoc:15
 msgid "<<lisp#,Lisp>>"
-msgstr ""
+msgstr "<<lisp#,Lisp>>"
 
 #. type: Plain text
 #: en/content/about/features.adoc:16
 msgid "<<runtime_polymorphism#,Runtime Polymorphism>>"
-msgstr ""
+msgstr "<<runtime_polymorphism#,実行時ポリモーフィズム>>"
 
 #. type: Plain text
 #: en/content/about/features.adoc:17
 msgid "<<concurrent_programming#,Concurrent Programming>>"
-msgstr ""
+msgstr "<<concurrent_programming#,並行プログラミング>>"
 
 #. type: Plain text
 #: en/content/about/features.adoc:17
 msgid "<<jvm_hosted#,Hosted on the JVM>>"
-msgstr ""
+msgstr "<<jvm_hosted#,JVMにホストされた言語>>"
