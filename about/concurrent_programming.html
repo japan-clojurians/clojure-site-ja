@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Concurrent Programming</title>
+    <title>Clojure - 並行プログラミング</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,25 +72,47 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Concurrent Programming</h1>
+  <h1>並行プログラミング</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>Today&#8217;s systems have to deal with many simultaneous tasks and leverage the power of multi-core CPUs. Doing so with threads can be very difficult due to the complexities of synchronization. Clojure simplifies multi-threaded programming in several ways. Because the core data structures are immutable, they can be shared readily between threads. However, it is often necessary to have state change in a program. Clojure, being a practical language, allows state to change but provides mechanism to ensure that, when it does so, it remains consistent, while alleviating developers from having to avoid conflicts manually using locks etc. The <a href="xref/../../reference/refs">software transactional memory system</a> (STM), exposed through <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>, et al, supports <em>sharing</em> changing state between threads in a <em>synchronous</em> and <em>coordinated</em> manner. The <a href="xref/../../reference/agents">agent</a> system supports sharing changing state between threads in an <em>asynchronous</em> and <em>independent</em> manner. The <a href="xref/../../reference/atoms">atoms</a> system supports sharing changing state between threads in a <em>synchronous</em> and <em>independent</em> manner. The <a href="xref/../../reference/vars">dynamic var system</a>, exposed through <a href="xref/../../reference/special_forms#def">def</a>, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>, et al, supports isolating changing state within threads.</p>
+<p>今日のシステムは多くの同時タスクを扱わなければならず、マルチコアCPUの力を活用しなければならない。スレッドでそれを行うのは同期の複雑さのため非常に困難になりうる。Clojureは複数の方法でマルチスレッドプログラミングをシンプルなものにしている。コアとなるデータ構造がイミュータブルなため、簡単にスレッド間で共有できる。しかし、プログラムで状態変更が必要になることはよくある。実用的な言語であるClojureは、状態の変更を認めているが、ロックなどを利用して手動で競合を避けなければならないことから開発者の負担を軽減する一方で、状態を変更する時にはそれが一貫していることを保証するメカニズムを提供している。
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref">ref</a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+などを通して提供されている <a href="xref/../../reference/refs">software transactional
+memoryシステム</a> (STM)は、<em>同期的</em> で <em>協調的</em> な方法でのスレッド間での状態変更の <em>共有</em> をサポートしている。
+<a href="xref/../../reference/agents">agent</a> システムは、 <em>非同期的</em> で <em>独立</em>
+した方法でのスレッド間での状態変更の共有をサポートしている。 <a href="xref/../../reference/atoms">atom</a> システムは、
+<em>同期的</em> で <em>独立</em> した方法でのスレッド間での状態変更の共有をサポートしている。
+<a href="xref/../../reference/special_forms#def">def</a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>
+などを通して提供されている <a href="xref/../../reference/vars">動的varシステム</a>
+は、スレッド内での状態変更の隔離をサポートしている。</p>
 </div>
 <div class="paragraph">
-<p>In all cases, Clojure does not replace the Java thread system, rather it works with it. Clojure functions are java.util.concurrent.Callable, therefore they work with the Executor framework etc.</p>
+<p>いずれの場合でも、ClojureはJavaのスレッドシステムを置き換えるのではなく、むしろそれとともに機能する。Clojureの関数はjava.util.concurrent.Callableであるため、Executorフレームワークなどで動作する。</p>
 </div>
 <div class="paragraph">
-<p>Most of this is covered in more detail in the <a href="https://www.youtube.com/watch?v=dGVqrGmwOAw">concurrency screencast</a>.</p>
+<p>これについてより詳しくは <a href="https://www.youtube.com/watch?v=dGVqrGmwOAw">concurrency
+screencast</a> でカバーされている。</p>
 </div>
 <div class="paragraph">
-<p><a href="xref/../../reference/refs">Refs</a> are mutable references to objects. They can be <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a> or <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>ed to refer to different objects during transactions, which are delimited by <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a> blocks. All ref modifications within a transaction happen or none do. Also, reads of refs within a transaction reflect a snapshot of the reference world at a particular point in time, i.e. each transaction is isolated from other transactions. If a conflict occurs between 2 transactions trying to modify the same reference, one of them will be retried. All of this occurs without explicit locking.</p>
+<p><a href="xref/../../reference/refs">Ref</a> はオブジェクトに対するミュータブルな参照だ。
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set">ref-set</a>
+や
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter">alter</a>
+でトランザクション中に別のオブジェクトを参照するようにすることができ、そのトランザクションは
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a>
+ブロックによって区切られる。トランザクションにおけるrefの変更はすべて起こるか全く起こらないかのどちらかだ。また、トランザクション内でのrefの読み取りは特定の時点での参照の世界のスナップショットを反映している、つまり各トランザクションは他のトランザクションから隔離されている。同一の参照を変更しようとする2つのトランザクションの間で競合が生じた場合、そのうち一方がリトライされる。これらすべてのことは明示的なロックを用いることなく生じる。</p>
 </div>
 <div class="paragraph">
-<p>In this example a vector of Refs containing integers is created <em>(refs)</em>, then a set of threads are set up <em>(pool)</em> to run a number of iterations of incrementing every Ref <em>(tasks)</em>. This creates extreme contention, but yields the correct result. No locks!</p>
+<p>この例では、整数を保持するRefのベクターが作られ <em>(refs)</em> 、それぞれのRefをインクリメントする多数の繰り返し処理
+<em>(tasks)</em> を実行するためのスレッド <em>(pool)</em>
+が用意される。これは激しい競合を引き起こすが、正しい結果が得られる。全くロックを使うことなくだ!</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -116,10 +138,17 @@
 </div>
 </div>
 <div class="paragraph">
-<p>In typical use refs can refer to Clojure collections, which, being persistent and immutable, efficiently support simultaneous speculative 'modifications' by multiple transactions. Mutable objects should not be put in refs.</p>
+<p>典型的な利用方法では、refは永続的でイミュータブルなClojureのコレクションを参照し、複数のトランザクションによる同時の投機的な「変更」を効率的にサポートしている。ミュータブルなオブジェクトをrefに入れるべきではない。</p>
 </div>
 <div class="paragraph">
-<p>By default Vars are static, but per-thread bindings for Vars defined with <a href="xref/../../reference/metadata">metadata</a> mark them as dynamic. <a href="xref/../../reference/vars">Dynamic vars</a> are also mutable references to objects. They have a (thread-shared) root binding which can be established by <a href="xref/../../reference/special_forms#def">def</a>, and can be set using <em>*set!*</em>, but only if they have been bound to a new storage location thread-locally using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>. Those bindings and any subsequent modifications to those bindings will only be seen <em>within</em> the thread by code in the dynamic scope of the binding block. Nested bindings obey a stack protocol and unwind as control exits the binding block.</p>
+<p>デフォルトではVarは静的だが、 <a href="xref/../../reference/metadata">メタデータ</a>
+とともに定義されたVarのスレッド別の束縛は動的(dynamic)とマークされる。
+<a href="xref/../../reference/vars">動的var</a> もまたオブジェクトに対するミュータブルな参照だ。動的varは、
+<a href="xref/../../reference/special_forms#def">def</a> で作られる(スレッド共有の)ルート束縛を持ち、
+<strong><em>set!</em></strong> を使って設定することができるが、それが可能なのは
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>
+を使って新しい格納先にスレッドローカルに束縛された場合だけだ。そうした束縛や束縛に対するその後のあらゆる変更は、スレッド <em>内</em>
+でbindingブロックの動的スコープ内のコードからのみ見ることができる。ネストされた束縛はスタックのルールに従い、制御がbindingブロックを出ると巻き戻される。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -146,7 +175,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Dynamic vars provide a way to communicate between different points on the call stack without polluting the argument lists and return values of the intervening calls. In addition, dynamic vars support a flavor of context-oriented programming. Because fns defined with <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> are stored in vars, they too can be dynamically rebound:</p>
+<p>動的varは、コールスタックの異なる点の間で、介在する呼び出しの引数リストや戻り値を汚すことなくコミュニケーションする方法を提供する。加えて、動的varはコンテキスト指向プログラミングのようなものをサポートする。
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a>
+で定義されたfnはvarに格納されるため、動的に再束縛することが可能だ:</p>
 </div>
 <div class="listingblock">
 <div class="content">
