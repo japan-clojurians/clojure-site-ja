@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-09 23:32+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/concurrent_programming.adoc:1
 #, no-wrap
 msgid "Concurrent Programming"
-msgstr ""
+msgstr "並行プログラミング"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:16
@@ -61,6 +61,21 @@ msgid ""
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding[binding], et al, supports isolating changing "
 "state within threads."
 msgstr ""
+"今日のシステムは多くの同時タスクを扱わなければならず、マルチコアCPUの力を活用しなければならない。スレッドでそれを行う"
+"のは同期の複雑さのため非常に困難になりうる。Clojureは複数の方法でマルチスレッドプログラミングをシンプルなものにしてい"
+"る。コアとなるデータ構造がイミュータブルなため、簡単にスレッド間で共有できる。しかし、プログラムで状態変更が必要になる"
+"ことはよくある。実用的な言語であるClojureは、状態の変更を認めているが、ロックなどを利用して手動で競合を避けなければな"
+"らないことから開発者の負担を軽減する一方で、状態を変更する時にはそれが一貫していることを保証するメカニズムを提供してい"
+"る。 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync], https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/ref[ref], https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/ref-set[ref-set], https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter[alter] などを通して"
+"提供されている <<xref/../../reference/refs#,software transactional memoryシステム>> (STM)は、_同期的_ で _協調的_ な方"
+"法でのスレッド間での状態変更の _共有_ をサポートしている。 <<xref/../../reference/agents#,agent>> システムは、 _非同期"
+"的_ で _独立_ した方法でのスレッド間での状態変更の共有をサポートしている。 <<xref/../../reference/atoms#,atom>> システ"
+"ムは、 _同期的_ で _独立_ した方法でのスレッド間での状態変更の共有をサポートしている。 <<xref/../../reference/"
+"special_forms#def#,def>>, https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding[binding] などを"
+"通して提供されている <<xref/../../reference/vars#,動的varシステム>> は、スレッド内での状態変更の隔離をサポートしてい"
+"る。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:18
@@ -68,12 +83,15 @@ msgid ""
 "In all cases, Clojure does not replace the Java thread system, rather it works with it. Clojure functions are java."
 "util.concurrent.Callable, therefore they work with the Executor framework etc."
 msgstr ""
+"いずれの場合でも、ClojureはJavaのスレッドシステムを置き換えるのではなく、むしろそれとともに機能する。Clojureの関数は"
+"java.util.concurrent.Callableであるため、Executorフレームワークなどで動作する。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:20
 msgid ""
 "Most of this is covered in more detail in the https://www.youtube.com/watch?v=dGVqrGmwOAw[concurrency screencast]."
 msgstr ""
+"これについてより詳しくは https://www.youtube.com/watch?v=dGVqrGmwOAw[concurrency screencast] でカバーされている。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:22
@@ -87,6 +105,14 @@ msgid ""
 "transactions trying to modify the same reference, one of them will be retried. All of this occurs without explicit "
 "locking."
 msgstr ""
+"<<xref/../../reference/refs#,Ref>> はオブジェクトに対するミュータブルな参照だ。 https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/ref-set[ref-set] や https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/alter[alter] でトランザクション中に別のオブジェクトを参照するようにすることができ、そのトランザク"
+"ションは https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync[dosync] ブロックによって区切られ"
+"る。トランザクションにおけるrefの変更はすべて起こるか全く起こらないかのどちらかだ。また、トランザクション内でのrefの読"
+"み取りは特定の時点での参照の世界のスナップショットを反映している、つまり各トランザクションは他のトランザクションから隔"
+"離されている。同一の参照を変更しようとする2つのトランザクションの間で競合が生じた場合、そのうち一方がリトライされる。"
+"これらすべてのことは明示的なロックを用いることなく生じる。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:24
@@ -95,12 +121,15 @@ msgid ""
 "+)_ to run a number of iterations of incrementing every Ref _(+tasks+)_. This creates extreme contention, but yields "
 "the correct result. No locks!"
 msgstr ""
+"この例では、整数を保持するRefのベクターが作られ _(+refs+)_ 、それぞれのRefをインクリメントする多数の繰り返し処理 "
+"_(+tasks+)_ を実行するためのスレッド _(+pool+)_ が用意される。これは激しい競合を引き起こすが、正しい結果が得られる。全"
+"くロックを使うことなくだ!"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:27
 #, no-wrap
 msgid "(import '(java.util.concurrent Executors))\n"
-msgstr ""
+msgstr "(import '(java.util.concurrent Executors))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:42
@@ -121,6 +150,20 @@ msgid ""
 "    (.shutdown pool)\n"
 "    (map deref refs)))\n"
 msgstr ""
+"(defn test-stm [nitems nthreads niters]\n"
+"  (let [refs  (map ref (repeat nitems 0))\n"
+"        pool  (Executors/newFixedThreadPool nthreads)\n"
+"        tasks (map (fn [t]\n"
+"                      (fn []\n"
+"                        (dotimes [n niters]\n"
+"                          (dosync\n"
+"                            (doseq [r refs]\n"
+"                              (alter r + 1 t))))))\n"
+"                   (range nthreads))]\n"
+"    (doseq [future (.invokeAll pool tasks)]\n"
+"      (.get future))\n"
+"    (.shutdown pool)\n"
+"    (map deref refs)))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:45
@@ -129,6 +172,8 @@ msgid ""
 "(test-stm 10 10 10000)\n"
 "-> (550000 550000 550000 550000 550000 550000 550000 550000 550000 550000)\n"
 msgstr ""
+"(test-stm 10 10 10000)\n"
+"-> (550000 550000 550000 550000 550000 550000 550000 550000 550000 550000)\n"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:47
@@ -136,6 +181,8 @@ msgid ""
 "In typical use refs can refer to Clojure collections, which, being persistent and immutable, efficiently support "
 "simultaneous speculative 'modifications' by multiple transactions. Mutable objects should not be put in refs."
 msgstr ""
+"典型的な利用方法では、refは永続的でイミュータブルなClojureのコレクションを参照し、複数のトランザクションによる同時の投"
+"機的な「変更」を効率的にサポートしている。ミュータブルなオブジェクトをrefに入れるべきではない。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:49
@@ -148,18 +195,25 @@ msgid ""
 "modifications to those bindings will only be seen _within_ the thread by code in the dynamic scope of the binding "
 "block. Nested bindings obey a stack protocol and unwind as control exits the binding block."
 msgstr ""
+"デフォルトではVarは静的だが、 <<xref/../../reference/metadata#,メタデータ>> とともに定義されたVarのスレッド別の束縛は"
+"動的(dynamic)とマークされる。 <<xref/../../reference/vars#,動的var>> もまたオブジェクトに対するミュータブルな参照だ。"
+"動的varは、 <<xref/../../reference/special_forms#def#,def>> で作られる(スレッド共有の)ルート束縛を持ち、 *_set!_* を"
+"使って設定することができるが、それが可能なのは https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"binding[binding] を使って新しい格納先にスレッドローカルに束縛された場合だけだ。そうした束縛や束縛に対するその後のあら"
+"ゆる変更は、スレッド _内_ でbindingブロックの動的スコープ内のコードからのみ見ることができる。ネストされた束縛はスタッ"
+"クのルールに従い、制御がbindingブロックを出ると巻き戻される。"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:52
 #, no-wrap
 msgid "(def ^:dynamic *v*)\n"
-msgstr ""
+msgstr "(def ^:dynamic *v*)\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:54
 #, no-wrap
 msgid "(defn incv [n] (set! *v* (+ *v* n)))\n"
-msgstr ""
+msgstr "(defn incv [n] (set! *v* (+ *v* n)))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:66
@@ -177,6 +231,17 @@ msgid ""
 "        (.shutdown pool)\n"
 "        (map #(.get %) ret))))\n"
 msgstr ""
+"(defn test-vars [nthreads niters]\n"
+"  (let [pool (Executors/newFixedThreadPool nthreads)\n"
+"        tasks (map (fn [t]\n"
+"                     #(binding [*v* 0]\n"
+"                        (dotimes [n niters]\n"
+"                          (incv t))\n"
+"                        *v*))\n"
+"                   (range nthreads))]\n"
+"      (let [ret (.invokeAll pool tasks)]\n"
+"        (.shutdown pool)\n"
+"        (map #(.get %) ret))))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:71
@@ -187,6 +252,10 @@ msgid ""
 "(set! *v* 4)\n"
 "-> java.lang.IllegalStateException: Can't change/establish root binding of: *v* with set\n"
 msgstr ""
+"(test-vars 10 1000000)\n"
+"-> (0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000)\n"
+"(set! *v* 4)\n"
+"-> java.lang.IllegalStateException: Can't change/establish root binding of: *v* with set\n"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:73
@@ -196,6 +265,10 @@ msgid ""
 "programming. Because fns defined with https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn[defn] "
 "are stored in vars, they too can be dynamically rebound:"
 msgstr ""
+"動的varは、コールスタックの異なる点の間で、介在する呼び出しの引数リストや戻り値を汚すことなくコミュニケーションする方"
+"法を提供する。加えて、動的varはコンテキスト指向プログラミングのようなものをサポートする。 https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/defn[defn] で定義されたfnはvarに格納されるため、動的に再束縛することが可能"
+"だ:"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:77
@@ -204,6 +277,8 @@ msgid ""
 "(defn ^:dynamic say [& args]\n"
 "  (apply str args))\n"
 msgstr ""
+"(defn ^:dynamic say [& args]\n"
+"  (apply str args))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:80
@@ -212,6 +287,8 @@ msgid ""
 "(defn loves [x y]\n"
 "  (say x \" loves \" y))\n"
 msgstr ""
+"(defn loves [x y]\n"
+"  (say x \" loves \" y))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:88
@@ -225,12 +302,19 @@ msgid ""
 "                      (apply say-orig args))]\n"
 "      (println (loves \"fred\" \"ethel\")))))\n"
 msgstr ""
+"(defn test-rebind []\n"
+"  (println (loves \"ricky\" \"lucy\"))\n"
+"  (let [say-orig say]\n"
+"    (binding [say (fn [& args]\n"
+"                      (println \"Logging say\")\n"
+"                      (apply say-orig args))]\n"
+"      (println (loves \"fred\" \"ethel\")))))\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:90
 #, no-wrap
 msgid "(test-rebind)\n"
-msgstr ""
+msgstr "(test-rebind)\n"
 
 #. type: delimited block -
 #: en/content/about/concurrent_programming.adoc:94
@@ -240,3 +324,6 @@ msgid ""
 "Logging say\n"
 "fred loves ethel\n"
 msgstr ""
+"ricky loves lucy\n"
+"Logging say\n"
+"fred loves ethel\n"
