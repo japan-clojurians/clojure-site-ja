@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Hosted on the JVM</title>
+    <title>Clojure - JVMにホストされた言語</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,16 +72,20 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Hosted on the JVM</h1>
+  <h1>JVMにホストされた言語</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>Clojure is designed to be a hosted language, sharing the JVM type system, GC, threads etc. It compiles all functions to JVM bytecode. Clojure is a great Java library consumer, offering the dot-target-member notation for calls to Java. Class names can be referenced in full, or as non-qualified names after being imported. Clojure supports the dynamic implementation of Java interfaces and classes using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a>:</p>
+<p>Clojureはホストされた言語として設計され、JVMの型システム、GC、スレッドなどを共有している。Clojureはすべての関数をJVMのバイトコードにコンパイルする。Clojureは素晴らしいJavaライブラリ消費者であり、Javaを呼び出すためのドットターゲットメンバー記法を提供している。クラス名はフルで、またはインポート後には非修飾名で参照することができる。Clojureは、
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>
+と
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a>
+を利用したJavaインターフェースとクラスの動的な実装をサポートしている:</p>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s a small Swing app:</p>
+<p>これは小さなSwingアプリだ:</p>
 </div>
 <div class="listingblock">
 <div class="content">

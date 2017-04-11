@@ -169,14 +169,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/about/features.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/jvm_hosted.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/about/runtime_polymorphism.html</loc>
         <lastmod></lastmod>
     </url>
@@ -201,7 +193,15 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/about/features.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/about/functional_programming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/jvm_hosted.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
