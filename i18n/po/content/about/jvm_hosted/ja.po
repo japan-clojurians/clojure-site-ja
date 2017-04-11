@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-09 23:34+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/jvm_hosted.adoc:1
 #, no-wrap
 msgid "Hosted on the JVM"
-msgstr ""
+msgstr "JVMにホストされた言語"
 
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:17
@@ -50,11 +50,16 @@ msgid ""
 "implementation of Java interfaces and classes using https://clojure.github.io/clojure/clojure.core-api.html#clojure."
 "core/reify[reify] and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy[proxy]:"
 msgstr ""
+"Clojureはホストされた言語として設計され、JVMの型システム、GC、スレッドなどを共有している。Clojureはすべての関数をJVMの"
+"バイトコードにコンパイルする。Clojureは素晴らしいJavaライブラリ消費者であり、Javaを呼び出すためのドットターゲットメン"
+"バー記法を提供している。クラス名はフルで、またはインポート後には非修飾名で参照することができる。Clojureは、 https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify[reify] と https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core/proxy[proxy] を利用したJavaインターフェースとクラスの動的な実装をサポートしている:"
 
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:19
 msgid "Here's a small Swing app:"
-msgstr ""
+msgstr "これは小さなSwingアプリだ:"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:47
@@ -87,8 +92,34 @@ msgid ""
 "      (.setVisible true))))\n"
 "(celsius)\n"
 msgstr ""
+"(import '(javax.swing JFrame JLabel JTextField JButton)\n"
+"        '(java.awt.event ActionListener)\n"
+"        '(java.awt GridLayout))\n"
+"(defn celsius []\n"
+"  (let [frame (JFrame. \"Celsius Converter\")\n"
+"        temp-text (JTextField.)\n"
+"        celsius-label (JLabel. \"Celsius\")\n"
+"        convert-button (JButton. \"Convert\")\n"
+"        fahrenheit-label (JLabel. \"Fahrenheit\")]\n"
+"    (.addActionListener\n"
+"     convert-button\n"
+"     (reify ActionListener\n"
+"            (actionPerformed\n"
+"             [_ evt]\n"
+"             (let [c (Double/parseDouble (.getText temp-text))]\n"
+"               (.setText fahrenheit-label\n"
+"                         (str (+ 32 (* 1.8 c)) \" Fahrenheit\"))))))\n"
+"    (doto frame\n"
+"      (.setLayout (GridLayout. 2 2 3 3))\n"
+"      (.add temp-text)\n"
+"      (.add celsius-label)\n"
+"      (.add convert-button)\n"
+"      (.add fahrenheit-label)\n"
+"      (.setSize 300 80)\n"
+"      (.setVisible true))))\n"
+"(celsius)\n"
 
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:48
 msgid "<<image:celsius.jpeg#,image:celsius.jpeg>>"
-msgstr ""
+msgstr "<<image:celsius.jpeg#,image:celsius.jpeg>>"
