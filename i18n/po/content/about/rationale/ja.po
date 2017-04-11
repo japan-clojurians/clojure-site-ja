@@ -91,7 +91,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/rationale.adoc:19
 msgid "Clojure has a distinctive approach to <<state#,state and identity>>."
-msgstr "Clocjureは <<state#,状態とアイデンティティ>> に対して独自のアプローチをとっている。"
+msgstr "Clojureは <<state#,状態とアイデンティティ>> に対して独自のアプローチをとっている。"
 
 #. type: Title ==
 #: en/content/about/rationale.adoc:20
