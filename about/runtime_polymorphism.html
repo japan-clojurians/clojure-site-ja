@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Runtime Polymorphism</title>
+    <title>Clojure - 実行時ポリモーフィズム</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,35 +72,43 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Runtime Polymorphism</h1>
+  <h1>実行時ポリモーフィズム</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>Systems that utilize runtime polymorphism are easier to change and extend. Clojure supports polymorphism in several ways:</p>
+<p>実行時ポリモーフィズムを利用するシステムは変更や拡張がしやすい。Clojureは複数の方法でポリモーフィズムをサポートしている:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Most core infrastructure data structures in the Clojure runtime are defined by Java interfaces.</p>
+<p>Clojureランタイムにおけるほとんどのコアとなる基盤データ構造はJavaインターフェースで定義されている。</p>
 </li>
 <li>
-<p>Clojure supports the generation of implementations of Java interfaces in Clojure using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> (<a href="jvm_hosted">see JVM Hosted</a>).</p>
+<p>Clojureは
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a>
+を使うことでClojureでのJavaインターフェースの生成をサポートしている( <a href="jvm_hosted">JVMにホストされた言語</a> 参照)。</p>
 </li>
 <li>
-<p>The Clojure language supports polymorphism along both class and custom hierarchies with <a href="xref/../../reference/multimethods">multimethod</a>s.</p>
+<p>Clojure言語は <a href="xref/../../reference/multimethods">マルチメソッド</a>
+でクラスとカスタム階層の両方でのポリモーフィズムをサポートしている。</p>
 </li>
 <li>
-<p>The Clojure language also supports a faster form of polymorphism with <a href="xref/../../reference/protocols">protocols</a> (but limited only to class polymorphism to take advantage of the JVMs existing capabilities for invocation).</p>
+<p>Clojure言語は <a href="xref/../../reference/protocols">プロトコル</a>
+でポリモーフィズムのより高速な形式もサポートしている(しかし、JVMの既存の呼び出し能力を活用するためクラスのポリモーフィズムに限定されている)。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure multimethods are a simple yet powerful mechanism for runtime polymorphism that is free of the trappings of OO, types and inheritance. The basic idea behind runtime polymorphism is that a single function designator dispatches to multiple independently-defined function definitions based upon some value of the call. For traditional single-dispatch OO languages that value is the type of the 'receiver' or 'this'. CLOS generic functions extend dispatch value to a composite of the type or value of multiple arguments, and are thus multimethods. Clojure multimethods go further still to allow the dispatch value to be the result of an arbitrary function of the arguments. Clojure does not support implementation inheritance.</p>
+<p>Clojureのマルチメソッドはシンプルだが実行時ポリモーフィズムのための強力なメカニズムで、OOの型と継承という罠を免れている。実行時ポリモーフィズムの背後にある基本的なアイディアは、指示者である単一の関数が、呼び出しの何らかの値に基づいて、複数の独立して定義された関数定義にディスパッチするというものだ。伝統的なシングルディスパッチのOO言語ではその値は「レシーバー」または「this」の型だ。CLOSの総称関数は、ディスパッチ値を複数の引数の型または値の組み合わせに拡張していることから、マルチメソッドだといえる。Clojureのマルチメソッドはさらに先を行っていて、ディスパッチ値を引数に対する任意の関数の結果とすることを可能にしている。Clojureは実装継承をサポートしていない。</p>
 </div>
 <div class="paragraph">
-<p>Multimethods are defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>, which takes the name of the multimethod and the dispatch function. Methods are independently defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>, passing the multimethod name, the dispatch <em>value</em> and the function body.</p>
+<p>マルチメソッドは、マルチメソッドの名前とディスパッチ関数をとる、
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a>
+を使って定義する。メソッドは、マルチメソッドの名前とディスパッチ <em>値</em> 、関数本体を渡す、
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
+を使って独立して定義する。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -124,10 +132,13 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Multimethods are in every respect fns, e.g. can be passed to <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map">map</a> etc.</p>
+<p>マルチメソッドはあらゆる面でfnであり、例えば
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map">map</a>
+などに渡すことができる。</p>
 </div>
 <div class="paragraph">
-<p>Similar to interfaces, Clojure protocols define only function specifications (no implementation) and allow types to implement multiple protocols. Additionally, protocols are open to later dynamic extension for new types. Protocols are limited just to dispatch on class type to take advantage of the native Java performance of polymorphic method calls. For more details, see the <a href="xref/../../reference/protocols">protocols</a> page.</p>
+<p>インターフェースに似ていて、Clojureのプロトコルは関数の仕様だけを定義し(実装は定義しない)、型が複数のプロトコルを実装することを認めている。加えて、プロトコルは後に新たな型に動的に拡張することにも開いている。プロトコルは、ネイティヴのJavaのポリモーフィックなメソッド呼び出しのパフォーマンスを活用するためにクラスの型でのディスパッチだけに限定されている。より詳しくは
+<a href="xref/../../reference/protocols">プロトコル</a> のページを参照。</p>
 </div></p>
 
 <hr />
