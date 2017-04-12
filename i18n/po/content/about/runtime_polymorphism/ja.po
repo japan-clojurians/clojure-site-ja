@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-04-05 11:02+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/about/runtime_polymorphism.adoc:1
 #, no-wrap
 msgid "Runtime Polymorphism"
-msgstr ""
+msgstr "実行時ポリモーフィズム"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:16
@@ -47,11 +47,13 @@ msgid ""
 "Systems that utilize runtime polymorphism are easier to change and extend. Clojure supports polymorphism in several "
 "ways:"
 msgstr ""
+"実行時ポリモーフィズムを利用するシステムは変更や拡張がしやすい。Clojureは複数の方法でポリモーフィズムをサポートしてい"
+"る:"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:18
 msgid "Most core infrastructure data structures in the Clojure runtime are defined by Java interfaces."
-msgstr ""
+msgstr "Clojureランタイムにおけるほとんどのコアとなる基盤データ構造はJavaインターフェースで定義されている。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:19
@@ -59,6 +61,8 @@ msgid ""
 "Clojure supports the generation of implementations of Java interfaces in Clojure using https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/proxy[proxy] (<<jvm_hosted#,see JVM Hosted>>)."
 msgstr ""
+"Clojureは https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy[proxy] を使うことでClojureでの"
+"Javaインターフェースの生成をサポートしている( <<jvm_hosted#,JVMにホストされた言語>> 参照)。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:20
@@ -66,6 +70,8 @@ msgid ""
 "The Clojure language supports polymorphism along both class and custom hierarchies with <<xref/../../reference/"
 "multimethods#,multimethod>>s."
 msgstr ""
+"Clojure言語は <<xref/../../reference/multimethods#,マルチメソッド>> でクラスとカスタム階層の両方でのポリモーフィズムを"
+"サポートしている。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:21
@@ -73,6 +79,8 @@ msgid ""
 "The Clojure language also supports a faster form of polymorphism with <<xref/../../reference/protocols#,protocols>> "
 "(but limited only to class polymorphism to take advantage of the JVMs existing capabilities for invocation)."
 msgstr ""
+"Clojure言語は <<xref/../../reference/protocols#,プロトコル>> でポリモーフィズムのより高速な形式もサポートしている(しか"
+"し、JVMの既存の呼び出し能力を活用するためクラスのポリモーフィズムに限定されている)。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:23
@@ -85,6 +93,12 @@ msgid ""
 "further still to allow the dispatch value to be the result of an arbitrary function of the arguments. Clojure does "
 "not support implementation inheritance."
 msgstr ""
+"Clojureのマルチメソッドはシンプルだが実行時ポリモーフィズムのための強力なメカニズムで、OOの型と継承という罠を免れてい"
+"る。実行時ポリモーフィズムの背後にある基本的なアイディアは、指示者である単一の関数が、呼び出しの何らかの値に基づいて、"
+"複数の独立して定義された関数定義にディスパッチするというものだ。伝統的なシングルディスパッチのOO言語ではその値は「レ"
+"シーバー」または「this」の型だ。CLOSの総称関数は、ディスパッチ値を複数の引数の型または値の組み合わせに拡張していること"
+"から、マルチメソッドだといえる。Clojureのマルチメソッドはさらに先を行っていて、ディスパッチ値を引数に対する任意の関数"
+"の結果とすることを可能にしている。Clojureは実装継承をサポートしていない。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:25
@@ -94,6 +108,10 @@ msgid ""
 "defined using https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod], passing the "
 "multimethod name, the dispatch _value_ and the function body."
 msgstr ""
+"マルチメソッドは、マルチメソッドの名前とディスパッチ関数をとる、 https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/defmulti[defmulti] を使って定義する。メソッドは、マルチメソッドの名前とディスパッチ _値_ 、関数本体"
+"を渡す、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod[defmethod] を使って独立して定"
+"義する。"
 
 #. type: delimited block -
 #: en/content/about/runtime_polymorphism.adoc:45
@@ -117,6 +135,23 @@ msgid ""
 "(encounter l1 l2)\n"
 "-> :fight\n"
 msgstr ""
+"(defmulti encounter (fn [x y] [(:Species x) (:Species y)]))\n"
+"(defmethod encounter [:Bunny :Lion] [b l] :run-away)\n"
+"(defmethod encounter [:Lion :Bunny] [l b] :eat)\n"
+"(defmethod encounter [:Lion :Lion] [l1 l2] :fight)\n"
+"(defmethod encounter [:Bunny :Bunny] [b1 b2] :mate)\n"
+"(def b1 {:Species :Bunny :other :stuff})\n"
+"(def b2 {:Species :Bunny :other :stuff})\n"
+"(def l1 {:Species :Lion :other :stuff})\n"
+"(def l2 {:Species :Lion :other :stuff})\n"
+"(encounter b1 b2)\n"
+"-> :mate\n"
+"(encounter b1 l1)\n"
+"-> :run-away\n"
+"(encounter l1 b1)\n"
+"-> :eat\n"
+"(encounter l1 l2)\n"
+"-> :fight\n"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:48
@@ -124,6 +159,8 @@ msgid ""
 "Multimethods are in every respect fns, e.g. can be passed to https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/map[map] etc."
 msgstr ""
+"マルチメソッドはあらゆる面でfnであり、例えば https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"map[map] などに渡すことができる。"
 
 #. type: Plain text
 #: en/content/about/runtime_polymorphism.adoc:49
@@ -133,3 +170,7 @@ msgid ""
 "are limited just to dispatch on class type to take advantage of the native Java performance of polymorphic method "
 "calls. For more details, see the <<xref/../../reference/protocols#,protocols>> page."
 msgstr ""
+"インターフェースに似ていて、Clojureのプロトコルは関数の仕様だけを定義し(実装は定義しない)、型が複数のプロトコルを実装"
+"することを認めている。加えて、プロトコルは後に新たな型に動的に拡張することにも開いている。プロトコルは、ネイティヴの"
+"Javaのポリモーフィックなメソッド呼び出しのパフォーマンスを活用するためにクラスの型でのディスパッチだけに限定されてい"
+"る。より詳しくは <<xref/../../reference/protocols#,プロトコル>> のページを参照。"
