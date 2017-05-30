@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Macros</title>
+    <title>Clojure - Macros(マクロ)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Macros</h1>
+  <h1>Macros(マクロ)</h1>
 </div>
 
 <p><em></em></p>
@@ -82,14 +82,16 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_special_variables">Special variables</a></li>
+<li><a href="#_特殊な変数">特殊な変数</a></li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojure has a programmatic macro system which allows the compiler to be extended by user code. Macros can be used to define syntactic constructs which would require primitives or built-in support in other languages. Many core constructs of Clojure are not, in fact, primitives, but are normal macros.</p>
+<p>Clojureにはプログラマティカルなマクロシステムがあり、ユーザーコードによるコンパイラの拡張を可能にする。マクロを使用することで、他の言語ではプリミティヴや組み込みサポートが必要になる文法構造を定義することができる。実際、Clojureのコアな文法構造はプリミティヴではなく、通常のマクロである。</p>
 </div>
 <div class="paragraph">
-<p>Some macros produce simple combinations of primitive forms. For example, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when"><code>when</code></a> combines <a href="special_forms#if"><code>if</code></a> and <a href="special_forms#do"><code>do</code></a>:</p>
+<p>いくつかのマクロは単純なプリミティヴフォームの組み合わせを作り出す。例えば
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when"><code>when</code></a>
+は <a href="special_forms#if"><code>if</code></a> と <a href="special_forms#do"><code>do</code></a> を組み合わせる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -98,7 +100,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Other macros re-arrange forms in useful ways, like the <code>-></code> macro, which recursively inserts each expression as the first argument of the next expression:</p>
+<p>いくつかのマクロは再帰的に式を次の式の第1引数として挿入する <code>-></code> マクロのようにフォームを便利な形に並べ替える:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -111,38 +113,96 @@ user=&gt; (macroexpand '(-&gt; {} (assoc :a 1) (assoc :b 2)))
 </div>
 </div>
 <div class="sect1">
-<h2 id="_special_variables">Special variables</h2>
+<h2 id="_特殊な変数">特殊な変数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Two special variables are available inside defmacro for more advanced usages:</p>
+<p>高度な用法のために、defmacroの中で使用可能な特別な変数が2つある:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&amp;form</code> - the actual form (as data) that is being invoked</p>
+<p><code>&amp;form</code> - 呼び出される(データとしての)実際のフォーム</p>
 </li>
 <li>
-<p><code>&amp;env</code> - a map of local bindings at the point of macro expansion. The env map is from symbols to objects holding compiler information about that binding.</p>
+<p><code>&amp;env</code> -
+マクロ展開の時点でのローカル束縛のマップ。envマップはシンボルからオブジェクトへのマップであり、その束縛についてのコンパイラ情報を持つ。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>All of the following macros are documented on the <a href="https://clojure.github.io/clojure/">API</a> page. Many are also discussed on topic pages as noted:</p>
+<p>以下のマクロは全て the <a href="http://clojure.github.io/clojure/">API</a>
+にドキュメント化されている。多くは記載のようにトピックページでも扱われている:</p>
 </div>
 <div class="paragraph">
-<p>Creating macros: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand-1">macroexpand-1</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand">macroexpand</a><br>
-Branching: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/and">and</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/or">or</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when">when</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-not">when-not</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-let">when-let</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first">when-first</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-not">if-not</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-let">if-let</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond">cond</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp">condp</a><br>
-Looping (see also <a href="sequences">Sequences</a>): <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for">for</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq">doseq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes">dotimes</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while">while</a><br>
-Working with vars (see also <a href="vars">Vars and Environment</a>): <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare">declare</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-">defn-</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce">defonce</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct">defstruct</a><br>
-Arranging code differently: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto">doto</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e">-></a><br>
-Dynamic scopes (see also <a href="vars">Vars and Environment</a>): <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking">locking</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time">time</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-in-str">with-in-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars">with-local-vars</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open">with-open</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision">with-precision</a><br>
-Creating lazy things (see also <a href="sequences">Sequences</a>): <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat">lazy-cat</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons">lazy-cons</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay">delay</a><br>
-<a href="java_interop">Java interop</a> macros: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce">areduce</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface">gen-interface</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy-super">proxy-super</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/memfn">memfn</a><br>
-Documenting code: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert">assert</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment">comment</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc">doc</a><br>
-Transactions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
+<p>マクロを作成する:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand-1">macroexpand-1</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand">macroexpand</a><br>
+分岐:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/and">and</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/or">or</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when">when</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-not">when-not</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-let">when-let</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first">when-first</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-not">if-not</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-let">if-let</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond">cond</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp">condp</a><br>
+ループ ( <a href="sequences">Sequences</a> も参照):<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for">for</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq">doseq</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes">dotimes</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while">while</a><br>
+varを扱う ( <a href="vars">Vars and Environment</a> も参照):<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare">declare</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-">defn-</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce">defonce</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct">defstruct</a><br>
+コードの並べ替え:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto">doto</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e">-></a><br>
+ダイナミックスコープ ( <a href="vars">Vars and Environment</a> も参照):<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking">locking</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time">time</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-in-str">with-in-str</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars">with-local-vars</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open">with-open</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision">with-precision</a><br>
+lazyなものを作成する ( <a href="sequences">Sequences</a> も参照):<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat">lazy-cat</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons">lazy-cons</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay">delay</a><br>
+<a href="java_interop">Java interop</a> macros:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce">areduce</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface">gen-interface</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy-super">proxy-super</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/memfn">memfn</a><br>
+コードをドキュメント化する:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert">assert</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment">comment</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc">doc</a><br>
+トランザクション:<br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync">dosync</a><br>
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
 </div>
 <div class="paragraph">
-<p>A few <a href="special_forms">special forms</a> are actually implemented as macros, primarily to provide destructuring: fn let loop</p>
+<p>いくつかの <a href="special_forms">special forms</a> は実際には主に分配束縛を提供する目的でマクロとして実装されている: fn
+let loop</p>
 </div>
 </div>
 </div></p>

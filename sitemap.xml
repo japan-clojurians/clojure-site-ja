@@ -97,10 +97,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/other_libraries.html</loc>
         <lastmod></lastmod>
     </url>
@@ -134,6 +130,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/libs.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
