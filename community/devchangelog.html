@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Dev Changelog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+	<div class="page-header">
+		<h1>Dev Changelog</h1>
+	</div>
+
+	<p><em></em></p>
+
+	<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The official <a href="https://github.com/clojure/clojure/blob/master/changes.md">changelog</a> tracks deltas between major stable versions. This page gathers the interim dev release announcements during development.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_1_9">Release 1.9</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_icedbl5q4cy_gm6lryxpaqaj_1_9_0_alpha17_a_may_26_2017"><a href="https://groups.google.com/d/msg/clojure/iceDBL5q4CY/GM6LryxpAQAJ">1.9.0-alpha17</a> (May 26, 2017)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1793">CLJ-1793</a> - Clear 'this' before calls in tail position</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2091">CLJ-2091</a> clojure.lang.APersistentVector#hashCode is not thread-safe</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1860">CLJ-1860</a> Make -0.0 hash consistent with 0.0</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2141">CLJ-2141</a> Return only true/false from qualified-* predicates</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2142">CLJ-2142</a> Fix check for duplicate keys with namespace map syntax</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2128">CLJ-2128</a> spec error during macroexpand no longer throws compiler exception with location</p>
+</li>
+<li>
+<p>Updated to use spec.alpha 0.1.123</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_forum_topic_clojure_nb4qndngs2a_1_9_0_alpha16_a_apr_27_2017"><a href="https://groups.google.com/forum/#!topic/clojure/nB4qnDNGS2A">1.9.0-alpha16</a> (Apr 27, 2017)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha16 includes the following changes since 1.9.0-alpha15:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The namespaces clojure.spec, clojure.spec.gen, clojure.spec.test have been moved to the external library spec.alpha which Clojure includes via dependency</p>
+</li>
+<li>
+<p>These namespaces have been changed and now have an appended ".alpha": clojure.spec.alpha, clojure.spec.gen.alpha, clojure.spec.test.alpha</p>
+</li>
+<li>
+<p>All keyword constants in clojure.spec (like :clojure.spec/invalid) follow the same namespace change (now :clojure.spec.alpha/invalid)</p>
+</li>
+<li>
+<p>spec-related system properties related to assertions did NOT change</p>
+</li>
+<li>
+<p>The specs for clojure.core itself in namespace clojure.core.specs have been moved to the external library core.specs.alpha which Clojure now depends on</p>
+</li>
+<li>
+<p>The clojure.core.specs namespace has changed to clojure.core.specs.alpha. All qualified spec names in that namespace follow the same namespace change (most people were not using these directly)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In most cases, you should be able to update your usage of Clojure 1.9.0-alphaX to Clojure 1.9.0-alpha16 by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updating your Clojure dependency to [org.clojure/clojure "1.9.0-alpha16"]  - this will automatically pull in the 2 additional downstream libraries</p>
+</li>
+<li>
+<p>Changing your namespace declarations in namespaces that declare or use specs to:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(:require [clojure.spec.alpha :as s]
+          [clojure.spec.gen.alpha :as gen]
+          [clojure.spec.test.alpha :as stest])</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_10dbf7w2iqo_ec37tzp5aqaj_1_9_spec_split_a_apr_26_2017"><a href="https://groups.google.com/d/msg/clojure/10dbF7w2IQo/ec37TzP5AQAJ">1.9/spec split</a> (Apr 26, 2017)</h3>
+<div class="paragraph">
+<p>We are moving spec out of the Clojure repo/artifact and into a library to make it easier to evolve spec independently from Clojure. While we consider spec to be an essential part of Clojure 1.9, there are a number of design concerns to resolve before it can be finalized. This allows us to move towards a production Clojure release (1.9) that depends on an alpha version of spec. Users can also pick up newer versions of the spec alpha library as desired. Additionally, this is a first step towards increased support for leveraging dependencies within Clojure.</p>
+</div>
+<div class="paragraph">
+<p>We will be creating two new contrib libraries that will contain the following (renamed) namespaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>org.clojure/spec.alpha
+    clojure.spec.alpha          (previously clojure.spec)
+    clojure.spec.gen.alpha      (previously clojure.spec.gen)
+    clojure.spec.test.alpha     (previously clojure.spec.test)
+
+org.clojure/core.specs.alpha
+    clojure.core.specs.alpha    (previously clojure.core.specs)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In most cases, we expect that users have aliased their reference to the spec namespaces and updating to the changed namespaces will only require a single change at the point of the require.</p>
+</div>
+<div class="paragraph">
+<p><strong>How will ClojureScript&#8217;s spec implementation change?</strong></p>
+</div>
+<div class="paragraph">
+<p>ClojureScript will also change namespace names to match Clojure. Eventually, the ClojureScript implementation may move out of ClojureScript and into the spec.alpha library - this is still under discussion.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why do the libraries and namespaces end in alpha?</strong></p>
+</div>
+<div class="paragraph">
+<p>The "alpha" indicates that the spec API and implementation is still subject to change.</p>
+</div>
+<div class="paragraph">
+<p><strong>What will happen when the spec api is no longer considered alpha?</strong></p>
+</div>
+<div class="paragraph">
+<p>At that point we expect to release a non-alpha version of the spec library (with non-alpha namespaces). Users may immediately begin to use that version of spec along with whatever version of Clojure it depends on. Clojure itself will depend on it at some later point. Timing of all these actions is TBD.</p>
+</div>
+<div class="paragraph">
+<p><strong>Will the library support Clojure 1.8 or older versions?</strong></p>
+</div>
+<div class="paragraph">
+<p>No. spec uses new functions in Clojure 1.9 and it has never been a goal to provide spec for older versions. Rather, we are trying to accelerate the release of a stable Clojure 1.9 so that users can migrate forward to a stable production release with access to an alpha version of spec, and access to ongoing updated versions as they become available.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_7zqgtjjoqeq_rkuyccbeawaj_1_9_0_alpha15_a_mar_14_2017"><a href="https://groups.google.com/d/msg/clojure/7ZqGTjJoQEQ/RkUYCCbeAwAJ">1.9.0-alpha15</a> (Mar 14, 2017)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha15 includes the following changes since 1.9.0-alpha14:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2043">CLJ-2043</a> - s/form of conformer is broken</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2035">CLJ-2035</a> - s/form of collection specs are broken</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2100">CLJ-2100</a> - s/form of s/nilable should include the original spec, not the resolved spec</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Specs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2062">CLJ-2062</a> - added specs for <code>import</code> and <code>refer-clojure</code></p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2114">CLJ-2114</a> - ::defn-args spec incorrectly parses map body as a prepost rather than function body</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2055">CLJ-2055</a> - binding-form spec parses symbol-only maps incorrectly</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Infrastructure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2113">CLJ-2113</a> - Clojure maven build updated</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_w_1h7_xo2r0_lp_ks_bsaqaj_1_9_0_alpha14_a_oct_28_2016"><a href="https://groups.google.com/d/msg/clojure/w-1h7_xO2R0/Lp_ks-BSAQAJ">1.9.0-alpha14</a> (Oct 28, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha14 includes the following changes since 1.9.0-alpha13:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NEW <code>into</code> now has a 0-arity (returns []) and 1-arity (returns the coll you pass)</p>
+</li>
+<li>
+<p>NEW <code>halt-when</code> is a transducer that ends transduction when pred is satisfied. It takes an optional fn that will be invoked with the completed result so far and the input that triggered the predicate.</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2042">CLJ-2042</a> - clojure.spec/form of clojure.spec/? now resolves pred</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2024">CLJ-2024</a> - clojure.spec.test/check now fully resolves aliased fspecs</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2032">CLJ-2032</a> - fixed confusing error if fspec is missing :args spec</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2027">CLJ-2027</a> - fixed 1.9 regression with printing of <code>bean</code> instances</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1790">CLJ-1790</a> - fixed error extending protocols to Java arrays</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1242">CLJ-1242</a> - = on sorted sets or maps with incompatible comparators now returns false rather than throws</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_qwpuwg9bwbe_9a7ymjb9aqaj_1_9_0_alpha13_a_sept_26_2016"><a href="https://groups.google.com/d/msg/clojure/QWPUWG9BwbE/9a7ymJb9AQAJ">1.9.0-alpha13</a> (Sept 26, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha13 includes the following changes since 1.9.0-alpha12:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>s/conform of nilable was always returning the passed value, not the conformed value</p>
+</li>
+<li>
+<p>s/nilable now creates a generator that returns nil 10% of the time (instead of 50% of the time)</p>
+</li>
+<li>
+<p>s/nilable now delays realizing the predicate spec until first use (better for creating recursive specs)</p>
+</li>
+<li>
+<p>clojure.spec.gen now provides a dynload version of clojure.test.check.generators/frequency</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_lq5bezb6qye_zlspo023cgaj_1_9_0_alpha12_a_sept_7_2016"><a href="https://groups.google.com/d/msg/clojure/lQ5beZB6QYE/ZLSPo023CgAJ">1.9.0-alpha12</a> (Sept 7, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha12 includes the following changes since 1.9.0-alpha11:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>spec performance has been improved for many use cases</p>
+</li>
+<li>
+<p>spec explain printer is now pluggable via the dynamic var clojure.spec/<strong>explain-out</strong>
+which should be a function that takes an explain-data and prints to <strong>out</strong></p>
+</li>
+<li>
+<p>when a macro spec fails during macroexpand, throw ex-info with explain-data payload
+rather than IllegalArgumentException</p>
+</li>
+<li>
+<p>pprint prints maps with namespace literal syntax when <strong>print-namespace-maps</strong> is true</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1988">CLJ-1988</a> - coll-of, every extended to conform sequences properly</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2004">CLJ-2004</a> - multi-spec form was missing retag</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2006">CLJ-2006</a> - fix old function name in docstring</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2008">CLJ-2008</a> - omit macros from checkable-syms</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2012">CLJ-2012</a> - fix ns spec on gen-class signatures to allow class names</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1224">CLJ-1224</a> - record instances now cache hasheq and hashCode like maps</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1673">CLJ-1673</a> - clojure.repl/dir-fn now works on namespace aliases</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_slhtn_ej1y_m_ivrodtcqaj_1_9_0_alpha11_a_aug_19_2016"><a href="https://groups.google.com/d/msg/clojure/_slHTn-Ej1Y/M_IVRODtCQAJ">1.9.0-alpha11</a> (Aug 19, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha11 includes the following changes since 1.9.0-alpha10:</p>
+</div>
+<div class="paragraph">
+<p>Clojure now has specs for the following clojure.core macros: let, if-let, when-let, defn, defn-, fn, and ns. Because macro specs are checked during macroexpansion invalid syntax in these macros will now fail at compile time whereas some errors were caught at runtime and some were not caught at all.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1914">CLJ-1914</a> - Fixed race condition in concurrent range realization</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1870">CLJ-1870</a> - Fixed reloading a defmulti removes metadata on the var</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1744">CLJ-1744</a> - Clear unused locals, which can prevent memory leaks in some cases</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1423">CLJ-1423</a> - Allow vars to be invoked with infinite arglists (also, faster)</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1993">CLJ-1993</a> - Added <strong>print-namespace-maps</strong> dynamic var that controls whether to use namespace map syntax for maps with keys from the same namespace. The default is false, but standard REPL bindings set this to true.</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1985">CLJ-1985</a> - Fixed with-gen of conformer losing unform fn</p>
+</li>
+<li>
+<p>Fixed clojure.spec.test/check to skip spec&#8217;ed macros</p>
+</li>
+<li>
+<p>Fixed regression from 1.9.0-alpha8 where type hints within destructuring were lost</p>
+</li>
+<li>
+<p>Fixed clojure.spec/merge docstring to note merge doesn&#8217;t flow conformed values</p>
+</li>
+<li>
+<p>Fixed regex ops to use gen overrides if they are used</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_mrwax8dcjk8_rqsq8u5qcaaj_1_9_0_alpha10_a_jul_11_2016"><a href="https://groups.google.com/d/msg/clojure/MrwAx8DCjK8/rQSq8U5qCAAJ">1.9.0-alpha10</a> (Jul 11, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha10 includes the following changes since 1.9.0-alpha9:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NEW clojure.core/any? - a predicate that matches anything. any? has built-in gen support. The :clojure.spec/any spec has been removed. Additionally, gen support has been added for some?.</p>
+</li>
+<li>
+<p>keys* will now gen</p>
+</li>
+<li>
+<p>gen overrides (see c.s/gen, c.s./exercise, c.s.t/check, c.s.t/instrument) now expect no-arg functions that return gens, rather than gens</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1977">CLJ-1977</a> - fix regression from alpha9 in data conversion of Throwable when stack trace is empty</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_m_zc83yjl10_zn_b2ekbgaj_1_9_0_alpha9_a_jul_5_2016"><a href="https://groups.google.com/d/msg/clojure/M-zC83YJl10/-zN-b2ekBgAJ">1.9.0-alpha9</a> (Jul 5, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha9 includes the following changes since 1.9.0-alpha8:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NEW clojure.spec/assert - a facility for adding spec assertions to your code. See the docs for <strong>compile-asserts</strong> and assert for more details.</p>
+</li>
+<li>
+<p>clojure.spec/merge - now merges rather than flows in conform/unform</p>
+</li>
+<li>
+<p>clojure.spec.test/instrument now reports the caller that caused an :args spec failure and ignores spec&#8217;ed macros</p>
+</li>
+<li>
+<p>clojure.spec.test - <code>test</code>, <code>test-fn</code>, <code>testable-syms</code> renamed to <code>check</code>, <code>check-fn</code>, and <code>checkable-syms</code> to better reflect their purpose. Additionally, some of the return value structure of <code>check</code> has been further improved.</p>
+</li>
+<li>
+<p>clojure.core/Throwable&#8594;map formerly returned StackTraceElements which were later handled by the printer. Now the StackTraceElements are converted to data such that the return value is pure Clojure data, as intended.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_vf3rudwux8i_pvn4iuuuawaj_1_9_0_alpha8_a_jun_28_16"><a href="https://groups.google.com/d/msg/clojure/vF3RuDWuX8I/pvn4IUuUAwAJ">1.9.0-alpha8</a> (Jun 28, 16)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha8 includes the following changes since 1.9.0-alpha7:</p>
+</div>
+<div class="paragraph">
+<p>The collection spec support has been greatly enhanced, with new controls for conforming, generation, counts, distinct elements and collection kinds. See the docs for every, every-kv, coll-of and map-of for details.</p>
+</div>
+<div class="paragraph">
+<p>instrumenting and testing has been streamlined and made more composable, with powerful new features for spec and gen overrides, stubbing, and mocking. See the docs for these functions in clojure.spec.test: instrument, test, enumerate-ns and summarize-results.</p>
+</div>
+<div class="paragraph">
+<p>Namespaced keyword reader format, printing and destructuring have been enhanced for lifting namespaces up for keys, supporting more succinct use of fully-qualified keywords. Updated docs will be added to clojure.org soon.</p>
+</div>
+<div class="paragraph">
+<p>Many utilities have been added, for keys spec merging, fn exercising, Java 1.8 timestamps, bounded-count and more.</p>
+</div>
+<div class="paragraph">
+<p>Changelog:</p>
+</div>
+<div class="paragraph">
+<p>clojure.spec:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[changed] map-of - now conforms all values and optionally all keys, has additional kind, count, gen options</p>
+</li>
+<li>
+<p>[changed] coll-of - now conforms all elements, has additional kind, count, gen options. No longer takes init-coll param.</p>
+</li>
+<li>
+<p>[added] every - validates a collection by sampling, with many additional options</p>
+</li>
+<li>
+<p>[added] every-kv - validates a map by sampling, with many additional options</p>
+</li>
+<li>
+<p>[added] merge</p>
+</li>
+<li>
+<p>[changed] gen overrides can now be specified by either name or path</p>
+</li>
+<li>
+<p>[changed] fspec generator - creates a function that generates return values according to the :ret spec and ignores :fn spec</p>
+</li>
+<li>
+<p>[added] explain-out - produces an explain output string from an explain-data result</p>
+</li>
+<li>
+<p>[changed] explain-data - output is now a vector of problems with a :path element, not a map keyed by path</p>
+</li>
+<li>
+<p>[added] get-spec - for looking up a spec in the registry by keyword or symbol</p>
+</li>
+<li>
+<p>[removed] fn-spec - see get-spec</p>
+</li>
+<li>
+<p>[added] exercise-fn - given a spec&#8217;ed function, returns generated args and the return value</p>
+</li>
+<li>
+<p>All instrument functions moved to clojure.spec.test</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>clojure.spec.test:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[changed] instrument - previously took a var, now takes either a symbol, namespace symbol, or a collection of symbols or namespaces, plus many new options for stubbing or mocking. Check the docstring for more info.</p>
+</li>
+<li>
+<p>[removed] instrument-ns - see instrument</p>
+</li>
+<li>
+<p>[removed] instrument-all - see instrument</p>
+</li>
+<li>
+<p>[changed] unstrument - previously took a var, now takes a symbol, namespace symbol, or collection of symbol or namespaces</p>
+</li>
+<li>
+<p>[removed] unstrument-ns - see unstrument</p>
+</li>
+<li>
+<p>[removed] unstrument-all - see unstrument</p>
+</li>
+<li>
+<p>[added] instrumentable-syms - syms that can be instrumented</p>
+</li>
+<li>
+<p>[added] with-instrument-disabled - disable instrument&#8217;s checking of calls within a scope</p>
+</li>
+<li>
+<p>[changed] check-var renamed to test and has a different signature, check docs</p>
+</li>
+<li>
+<p>[changed] run-tests - see test</p>
+</li>
+<li>
+<p>[changed] run-all-tests - see test</p>
+</li>
+<li>
+<p>[changed] check-fn - renamed to test-fn</p>
+</li>
+<li>
+<p>[added] abbrev-result - returns a briefer description of a test</p>
+</li>
+<li>
+<p>[added] summarize-result - returns a summary of many tests</p>
+</li>
+<li>
+<p>[added] testable-syms - syms that can be tested</p>
+</li>
+<li>
+<p>[added] enumerate-namespace - provides symbols for vars in namespaces</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>clojure.core:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[changed] - inst-ms now works with java.time.Instant instances when Clojure is used with Java 8</p>
+</li>
+<li>
+<p>[added] bounded-count - if coll is counted? returns its count, else counts at most first n elements of coll using its seq</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_3wmgj5b4b6c_ygcjctn8cqaj_1_9_0_alpha7_a_jun_15_2016"><a href="https://groups.google.com/d/msg/clojure/3wmGJ5B4b6c/YgCJCtN8CQAJ">1.9.0-alpha7</a> (Jun 15, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha7 includes the following changes since 1.9.0-alpha6 (all BREAKING vs alpha5/6):</p>
+</div>
+<div class="paragraph">
+<p>clojure.core:
+- long? &#8658; int?  - now checks for all Java fixed precision integer types (byte,short,integer,long)
+- pos-long? &#8658; pos-int?
+- neg-long? &#8658; neg-int?
+- nat-long? &#8658; nat-int?</p>
+</div>
+<div class="paragraph">
+<p>clojure.spec:
+- long-in-range? &#8658; int-in-range?
+- long-in &#8658; int-in</p>
+</div>
+<div class="paragraph">
+<p>If you are interested in checking specifically for long?, please use #(instance? Long %).</p>
+</div>
+<div class="paragraph">
+<p>Sorry for the switcheroo and welcome to alphatown!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_jigmefhalq8_6uxo_rupcqaj_1_9_0_alpha6_a_jun_14_2016"><a href="https://groups.google.com/d/msg/clojure/JIgmEFhAlq8/6UXO_rUpCQAJ">1.9.0-alpha6</a> (Jun 14, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha6 includes the following changes since 1.9.0-alpha5:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&amp; regex op now fails fast when regex passes but preds do not</p>
+</li>
+<li>
+<p>returns from alt/or are now map entries (supporting key/val) rather than 2-element vector</p>
+</li>
+<li>
+<p>[BREAKING] fn-specs was renamed to fn-spec and returns either the registered fspec or nil</p>
+</li>
+<li>
+<p>fspec now accepts ifn?, not fn?</p>
+</li>
+<li>
+<p>fspec impl supports keyword lookup of its :args, :ret, and :fn specs</p>
+</li>
+<li>
+<p>fix fspec describe which was missing keys and improve describe of :args/ret/fn specs</p>
+</li>
+<li>
+<p>instrument now checks <strong>only</strong> the :args spec of a var - use the clojure.spec.test functions to test :ret and :fn specs</p>
+</li>
+<li>
+<p>Added generator support for bytes? and uri? which were accidentally left out in alpha5</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_d_s9drua6d4_ctwk12cxdqaj_1_9_0_alpha5_a_jun_7_2016"><a href="https://groups.google.com/d/msg/clojure/D_s9Drua6D4/CTWk12cXDQAJ">1.9.0-alpha5</a> (Jun 7, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha5 includes the following changes since 1.9.0-alpha4:</p>
+</div>
+<div class="paragraph">
+<p>Fixes:
+- doc was printing "Spec" when none existed
+- fix ? explain</p>
+</div>
+<div class="paragraph">
+<p>New predicates in core (all also now have built-in generator support in spec):
+- seqable?
+- boolean?
+- long?, pos-long?, neg-long?, nat-long?
+- double?, bigdec?
+- ident?, simple-ident?, qualified-ident?
+- simple-symbol?, qualified-symbol?
+- simple-keyword?, qualified-keyword?
+- bytes? (for byte[])
+- indexed?
+- inst? (and new inst-ms)
+- uuid?
+- uri?</p>
+</div>
+<div class="paragraph">
+<p>New in spec:
+- unform - given a spec and a conformed value, returns the unconformed value
+- New preds: long-in-range?, inst-in-range?
+- New specs (with gen support): long-in, inst-in, double-in</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_tr_qufvjwj0_azspfz3xbaaj_1_9_0_alpha4_a_may_31_2016"><a href="https://groups.google.com/d/msg/clojure/TR-qUFVJwj0/aZspfZ3XBAAJ">1.9.0-alpha4</a> (May 31, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha4 includes the following changes since 1.9.0-alpha3:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fix describe empty cat</p>
+</li>
+<li>
+<p>improve update-in perf</p>
+</li>
+<li>
+<p>optimize seq (&amp;) destructuring</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_wxt9kpiwlyi_r5pjpap_cwaj_1_9_0_alpha3_a_may_26_2016"><a href="https://groups.google.com/d/msg/clojure/WxT9kPIwlYI/r5PJpAP_CwAJ">1.9.0-alpha3</a> (May 26, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha3 includes the following changes since 1.9.0-alpha2:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Macro fdef specs should no longer spec the implicit &amp;form or &amp;env  [BREAKING CHANGE]</p>
+</li>
+<li>
+<p>multi-spec includes dispatch values in path</p>
+</li>
+<li>
+<p>multi-spec no longer requires special default method</p>
+</li>
+<li>
+<p>fix for rep* bug</p>
+</li>
+<li>
+<p>added explain-str (explain that returns a string)</p>
+</li>
+<li>
+<p>improved s/+ explain</p>
+</li>
+<li>
+<p>explain output tweaked</p>
+</li>
+<li>
+<p>fix test reporting</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_zbd5_nhruc4_dntp8iqdawaj_1_9_0_alpha2_a_may_25_2016"><a href="https://groups.google.com/d/msg/clojure/ZBD5-Nhruc4/dntP8iQDAwAJ">1.9.0-alpha2</a> (May 25, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha2 includes the following changes since 1.9.0-alpha1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Better describe for s/+</p>
+</li>
+<li>
+<p>Capture <strong>recursion-limit</strong> on gen call</p>
+</li>
+<li>
+<p>explain-data now contains :in key for the input path</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1931">CLJ-1931</a> - with-gen throws AbstractMethodError</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_7jbl34ijnzw_dejsphefawaj_1_9_0_alpha1_a_may_24_2016"><a href="https://groups.google.com/d/msg/clojure/7jbL34IjNzw/dejSpHefAwAJ">1.9.0-alpha1</a> (May 24, 2016)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha1 includes the first release of clojure.spec.</p>
+</div>
+<div class="paragraph">
+<p>A usage guide for spec is now available: <a href="https://clojure.org/guides/spec" class="bare">https://clojure.org/guides/spec</a>.</p>
+</div>
+</div>
+</div>
+</div></p>
+
+	<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

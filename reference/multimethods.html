@@ -207,18 +207,6 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
-はベクターに対しても使用することが出来る。その場合、
-<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
-を各要素に対して呼び出した結果を返す:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? [::square ::rect] [::shape ::shape])
--&gt; true</code></pre>
-</div>
-</div>
-<div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents">parents</a>
 /
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors">ancestors</a>
@@ -232,6 +220,18 @@
     java.util.Collection java.io.Serializable
     java.util.AbstractCollection
     java.util.RandomAccess java.util.AbstractList}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+はベクターに対しても使用することが出来る。その場合、
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>
+を各要素に対して呼び出した結果を返す:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(isa? [::square ::rect] [::shape ::shape])
+-&gt; true</code></pre>
 </div>
 </div>
 </div>

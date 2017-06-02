@@ -521,7 +521,7 @@ the keys corresponding to the matched components. In this way <strong>spec</stro
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (require '[clojure.spec :as s])
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (require '[clojure.spec.alpha :as s])
 (s/def ::even? (s/and integer? even?))
 (s/def ::odd? (s/and integer? odd?))
 (s/def ::a integer?)
@@ -545,7 +545,7 @@ user=&gt; (s/conform s [42 11 13 15 {:a 1 :b 2 :c 3} 1 2 3 42 43 44 11])
 <h4 id="_conform_explain">conform/explain</h4>
 <div class="paragraph">
 <p>As you can see above, the basic operation for using specs is <code>conform</code>, which takes a spec and a value and
-returns the conformed value or <code>:clojure.spec/invalid</code> if the value did not conform. When the value does not conform
+returns the conformed value or <code>:clojure.spec.alpha/invalid</code> if the value did not conform. When the value does not conform
 you can call <code>explain</code> or <code>explain-data</code> to find out why it didn&#8217;t.</p>
 </div>
 </div>
@@ -694,7 +694,7 @@ else  it will be considered a nested pattern.</p>
 <div class="paragraph">
 <p><code>conform</code> is the basic operation for consuming specs, and does both validation and conforming/destructuring.
 Note that conforming is 'deep' and flows through all of the spec and regex operations, map specs etc.
-Since <code>nil</code> and <code>false</code> are legitimate conformed values, conform returns the distinguished <code>:clojure.spec/invalid</code>
+Since <code>nil</code> and <code>false</code> are legitimate conformed values, conform returns the distinguished <code>:clojure.spec.alpha/invalid</code>
 when a value cannot be made to conform. <code>valid</code>? can be used instead as a fully-boolean predicate.</p>
 </div>
 </div>
