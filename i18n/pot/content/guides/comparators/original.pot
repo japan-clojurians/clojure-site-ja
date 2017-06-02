@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74
-#: en/content/guides/comparators.adoc:12
+#: en/content/reference/transients.adoc:75
+#: en/content/guides/comparators.adoc:12 en/content/about/state.adoc:74
 #, no-wrap
 msgid "Summary"
-msgstr ""
-
-#. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:11
-#: en/content/guides/comparators.adoc:71
-#, no-wrap
-msgid "Introduction"
 msgstr ""
 
 #. type: Title =
@@ -173,6 +166,13 @@ msgid ""
 "api.html#clojure.core/sorted-map-by[sorted-map-by], https://clojure.github."
 "io/clojure/clojure.core-api.html#clojure.core/subseq[subseq], https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq[rsubseq]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/comparators.adoc:71
+#: en/content/guides/reader_conditionals.adoc:11
+#, no-wrap
+msgid "Introduction"
 msgstr ""
 
 #. type: Plain text

@@ -250,7 +250,7 @@ msgstr ""
 #: en/content/reference/transients.adoc:75 en/content/about/state.adoc:74 en/content/guides/comparators.adoc:12
 #, no-wrap
 msgid "Summary"
-msgstr ""
+msgstr "まとめ"
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:78

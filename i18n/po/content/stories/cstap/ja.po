@@ -1,0 +1,246 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: 2017-06-01 09:26+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:17 en/content/stories/ona.adoc:17
+#: en/content/stories/cstap.adoc:33 en/content/stories/empear.adoc:17
+#, no-wrap
+msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:43 en/content/stories/ona.adoc:45
+#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
+#, no-wrap
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:21 en/content/stories/cstap.adoc:14
+#: en/content/stories/empear.adoc:21
+#, no-wrap
+msgid "*What product or service are you building with Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
+#: en/content/stories/empear.adoc:29
+#, no-wrap
+msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:33 en/content/stories/cstap.adoc:44
+#: en/content/stories/empear.adoc:33
+#, no-wrap
+msgid "*What about working with Clojure or ClojureScript gives you the most value?*\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/cstap.adoc:1
+#, no-wrap
+msgid "cstap"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:4
+msgid "Alex Miller 2017-04-07"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:9
+msgid ""
+"This interview is with Ikuru Kanuma, a developer for Cybozu Startups in "
+"Japan."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:12
+msgid "image:/images/content/stories/cstap.png[\"cstap\",height=\"80\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:16
+msgid ""
+"We built a https://anpi.cstap.com/anpi2.html[safety confirmation service] "
+"with Clojure and ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:18
+msgid "The main features are:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:20
+msgid ""
+"Trigger emails/notifications through disaster reports (earthquake, tsunami, "
+"etc) from the Japanese Meteorological Agency, or user action."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:21
+msgid ""
+"The users can access a questionnaire from the email/notification and answer "
+"their status, such as whether they are safe, can work/commute etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:22
+msgid ""
+"Provide a summarized view of the responses which can be used to make "
+"business continuity decisions in case of a disaster."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:24
+msgid "The overall system is composed of:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:26
+msgid "A main user facing web application (Clojure/ClojureScript)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:27
+msgid "A worker that sends out the emails/notifications (Clojure)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:28
+msgid "An API server for the mobile app (Clojure)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:29
+msgid ""
+"An API server that allows external systems to update user data (Clojure)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:30
+msgid "A backend Admin application (Clojure/ClojureScript)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:31
+msgid "Mainly deployed on AWS Elastic Beanstalk."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:35
+msgid ""
+"We are a team of 3, and all of us use Clojure for the server side, and "
+"ClojureScript for the frontend. All 3 of us develop in Emacs + Cider. 2 of "
+"us use a Linux machine, and 1 uses a Mac."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:39
+msgid "I would like to mention 2 libraries:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:41
+msgid ""
+"https://github.com/cognitect/transit-clj[transit-clj] - because it removes "
+"much of the friction when passing data between the server and the browser, "
+"which is a common problem in most other languages."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:42
+msgid ""
+"https://github.com/juxt/bidi[bidi] - we cannot imagine life without it! Our "
+"app has quite a few dynamically generated URLs, and creating those without "
+"bidirectional routing would have been a nightmare."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:46
+msgid ""
+"Interactive development with the REPL and the excellent tools such as Cider "
+"and figwheel, which allows for extremely quick iteration."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:47
+msgid ""
+"Immutable data structures, for making the programs really simple and easy to "
+"understand"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:48
+msgid "Ability to share code between the frontend and backend"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:52
+msgid ""
+"Apart from the technical benefits, we are focusing and investing on Clojure "
+"for tech branding, which in turn the ultimate goal is to recruit talented "
+"engineers. The factors that were important for branding were:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:54
+msgid ""
+"Something that is going to stay around for a long time (So a programing "
+"language over some library/framework)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:55
+msgid "Something that helps an engineer grow"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:56
+msgid "Something that makes an engineer excited"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:57
+msgid "Something that engineers interested in it tend to be talented"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:58
+msgid "Did not have to be something popular as we wanted to keep a small team"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:59
+msgid "Less competition in terms of recruitment"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:60
+msgid "Something that we can be the best in Japan"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:61
+msgid ""
+"Clojure matches these factors really well, and so far we are happy with the "
+"results. That is how we gathered the 3 members of our team (all loving "
+"Clojure), and we constantly receive 1 or 2 applications every month. (FYI: "
+"We’re hiring in Japan! -> https://cstap.com/jobs/dev-engineer.html)"
+msgstr ""

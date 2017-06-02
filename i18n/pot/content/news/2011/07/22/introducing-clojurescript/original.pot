@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:1
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:39
-#, no-wrap
-msgid "Atoms"
-msgstr ""
-
-#. type: Plain text
 #: en/content/reference/metadata.adoc:1
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:36
 #, no-wrap
 msgid "Metadata"
 msgstr ""
 
-#. type: Title ==
+#. type: Plain text
 #: en/content/reference/namespaces.adoc:1
+#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:126
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
-#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:119
 #, no-wrap
 msgid "Namespaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/atoms.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:39
+#, no-wrap
+msgid "Atoms"
 msgstr ""
 
 #. type: Title =
@@ -224,7 +224,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:49
 msgid ""
-"We have a http://dev.clojure.org/jira/browse/CLJS[ClojureScript JIRA "
+"We have a https://dev.clojure.org/jira/browse/CLJS[ClojureScript JIRA "
 "instance] set up to track bugs. As with Clojure itself, submitting patches "
 "requires signing the <<xref/../../../../../community/contributing#,Clojure "
 "Contributor Agreement>>. We can only accept patches through JIRA, not GitHub "

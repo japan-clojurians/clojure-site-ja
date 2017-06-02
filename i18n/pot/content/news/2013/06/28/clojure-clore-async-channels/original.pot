@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,13 +22,6 @@ msgstr ""
 #: en/content/about/rationale.adoc:1
 #, no-wrap
 msgid "Rationale"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2014/08/06/transducers-are-coming.adoc:121
-#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
-msgid "Rich"
 msgstr ""
 
 #. type: Title =
@@ -500,4 +493,11 @@ msgstr ""
 msgid ""
 "I hope that these async channels will help you build simpler and more robust "
 "programs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
+#: en/content/news/2014/08/06/transducers-are-coming.adoc:121
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
+msgid "Rich"
 msgstr ""

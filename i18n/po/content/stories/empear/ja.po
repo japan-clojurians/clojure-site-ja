@@ -1,0 +1,216 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: 2017-06-01 09:26+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
+#: en/content/stories/uhn.adoc:71 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
+#, no-wrap
+msgid "*What is your stack?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:17 en/content/stories/ona.adoc:17
+#: en/content/stories/cstap.adoc:33 en/content/stories/empear.adoc:17
+#, no-wrap
+msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:43 en/content/stories/ona.adoc:45
+#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
+#, no-wrap
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:21 en/content/stories/cstap.adoc:14
+#: en/content/stories/empear.adoc:21
+#, no-wrap
+msgid "*What product or service are you building with Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
+#: en/content/stories/empear.adoc:29
+#, no-wrap
+msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/ona.adoc:33 en/content/stories/cstap.adoc:44
+#: en/content/stories/empear.adoc:33
+#, no-wrap
+msgid "*What about working with Clojure or ClojureScript gives you the most value?*\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/empear.adoc:1
+#, no-wrap
+msgid "Empear"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:4
+msgid "Alex Miller 2017-04-24"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:8
+msgid ""
+"This interview is a discussion with Adam Tornhill about http://www.empear."
+"com/[Empear] and their code analysis tool https://codescene.io/[CodeScene]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:11
+msgid "image:/images/content/stories/empear.png[\"Empear\",height=\"100\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:15
+msgid ""
+"Empear launched in 2015 and we used Clojure from the start. Prior to that I "
+"used Clojure for some of my side projects. Clojure was a natural step. I've "
+"been a big fan of Lisp for a decade and to be able to use a Lisp together "
+"with the ecosystem of the JVM was attractive."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:19
+msgid ""
+"We're three developers at the moment and look to expand. All of us code in "
+"Clojure on a daily basis. We also have a few small components written in "
+"Haskell and Python."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:23
+msgid ""
+"Our main product is CodeScene. CodeScene is a tool that helps software "
+"projects improve their efficiency by identifying and prioritizing technical "
+"debt. We take a different approach to software analysis since we base the "
+"results on behavioral and social data."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:25
+msgid ""
+"Our main data source is version-control repositories, which CodeScene views "
+"as a behavioral log of how the developers interact with the codebase. This "
+"means we can prioritize based on how the system grows and also include a "
+"social dimension of code that lets our customers discover team productivity "
+"bottlenecks and save on- and off-boarding costs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:27
+msgid ""
+"We maintain two versions of CodeScene. One is our cloud version, https://"
+"codescene.io/, which is the analyses as a service. The other is our on-"
+"premises version of CodeScene, which our customers install in their own data "
+"centers."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:31
+msgid ""
+"The nature of Clojure and its tight integration with Java makes using "
+"Clojure libraries more of an optional convenience. Some high-quality "
+"libraries that we enjoy are https://github.com/ptaoussanis/carmine[Carmine], "
+"https://github.com/ptaoussanis/timbre[Timbre], and https://github.com/"
+"dakrone/cheshire[Cheshire]. We also found https://github.com/weavejester/"
+"ragtime[Ragtime] helpful for database migrations. In addition, we use "
+"several libraries for statistics and machine learning, although we often end-"
+"up implementing our core algorithms ourselves."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:35
+msgid ""
+"The most rewarding aspect of Clojure is that the language lets you focus on "
+"the problem domain. \"What does the data look like? How should we filter and "
+"transform it before we pass it on? Let's run this in the REPL and see what "
+"happens. OK, now put that in a function. Write a spec for it and stabilize "
+"it with tests.\" That workflow ties in really nice to how human problem "
+"solving works. In practice it lets us implement new features at a rapid pace."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:37
+#, no-wrap
+msgid "*What is your favorite feature of Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:39
+msgid ""
+"The most important feature is Clojure's persistent immutable data "
+"structures. They remove a whole class of problems. No more worries that "
+"something else will change your data."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:41
+msgid ""
+"We also like Clojure spec. Prior to spec we'd reached a point where certain "
+"functions got hard to reason about in isolation. That meant we had to look "
+"at the calling context to find out what data structures the code operated on "
+"and what it actually did. This is of course something that hits you in all "
+"dynamically typed languages, but the issue seemed more pronounced due to the "
+"high abstraction levels that Clojure encourages. spec helped a lot by making "
+"the code easier to reason about, which IMHO is the single most important "
+"aspect to optimize when it comes to software development."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:45
+msgid ""
+"Our web systems use a traditional stack based on https://github.com/ring-"
+"clojure/ring[Ring] and https://github.com/weavejester/compojure[Compojure]. "
+"The rendering is mostly server-side using https://github.com/yogthos/"
+"Selmer[Selmer], with a thin layer of JavaScript on top. We use D3 for "
+"visualizations. Our cloud solution runs on Amazon Web Services."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:49
+msgid ""
+"There are two main reasons. First of all, when we started up I was the only "
+"programmer and I knew we had to iterate fast to build something useful. That "
+"meant I had to use my time as efficiently as possible. Clojure was an "
+"enabler that allowed me to quickly prototype a new idea, evaluate it, and "
+"then iterate until we had a stable solution. This is an aspect of Clojure "
+"that we still benefit from since we're exploring a new domain with our "
+"analyses."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/empear.adoc:50
+msgid ""
+"The second reason isn't technical at all. One of the main reasons I chose "
+"Clojure for Empear was because the language looked fun. And fun is a much "
+"underestimated motivator in the software industry; Fun is virtually a "
+"guarantee that things get done."
+msgstr ""

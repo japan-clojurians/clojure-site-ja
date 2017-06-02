@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
 #: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
 #: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
 #: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr ""
 
-#. type: Title ==
+#. type: Plain text
 #: en/content/reference/namespaces.adoc:1
+#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:126
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
-#: en/content/guides/reader_conditionals.adoc:84 en/content/guides/faq.adoc:126
 #, no-wrap
 msgid "Namespaces"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/comparators.adoc:71
+#: en/content/guides/reader_conditionals.adoc:11
+#, no-wrap
+msgid "Introduction"
 msgstr ""
 
 #. type: Title =
@@ -57,13 +66,6 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/reader_conditionals.adoc:4
 msgid "Daniel Compton 2016-01-14"
-msgstr ""
-
-#. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:11
-#: en/content/guides/comparators.adoc:71
-#, no-wrap
-msgid "Introduction"
 msgstr ""
 
 #. type: Plain text
@@ -79,7 +81,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/reader_conditionals.adoc:16
 msgid ""
-"Reader conditionals are integrated into the Clojure compiler, and don't "
+"Reader conditionals are integrated into the Clojure reader, and don't "
 "require any extra tooling beyond Clojure 1.7 or greater. To use reader "
 "conditionals, all you need is for your file to have a `.cljc` extension and "
 "to use Clojure 1.7 or ClojureScript 0.0-3196 or higher. Reader conditionals "
@@ -97,23 +99,34 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:24
+#: en/content/guides/reader_conditionals.adoc:25
 #, no-wrap
 msgid ""
 "#?(:clj  (Clojure expression)\n"
 "   :cljs (ClojureScript expression)\n"
-"   :cljr (Clojure CLR expression))\n"
+"   :cljr (Clojure CLR expression)\n"
+"   :default (fallthrough expression))\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:27
+#: en/content/guides/reader_conditionals.adoc:28
+msgid ""
+"The platform tags `:clj`, etc are a fixed set of tags hard-coded into each "
+"platform. The `:default` tag is a well-known tag to catch and provide an "
+"expression if no platform tag matches. If no tags match and `:default` is "
+"not provided, the reader conditional will read nothing (not nil, but as if "
+"nothing was read from the stream at all)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/reader_conditionals.adoc:30
 msgid ""
 "The syntax for a splicing reader conditional is `#?@`. It is used to splice "
 "lists into the containing form. So the Clojure reader would read this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:33
+#: en/content/guides/reader_conditionals.adoc:36
 #, no-wrap
 msgid ""
 "(defn build-list []\n"
@@ -122,12 +135,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:36
+#: en/content/guides/reader_conditionals.adoc:39
 msgid "as this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:41
+#: en/content/guides/reader_conditionals.adoc:44
 #, no-wrap
 msgid ""
 "(defn build-list []\n"
@@ -135,7 +148,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:44
+#: en/content/guides/reader_conditionals.adoc:47
 msgid ""
 "One important thing to note is that in Clojure 1.7 a splicing conditional "
 "reader cannot be used to splice in multiple top level forms. In concrete "
@@ -143,7 +156,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:52
+#: en/content/guides/reader_conditionals.adoc:55
 #, no-wrap
 msgid ""
 ";; Don't do this!, will throw an error\n"
@@ -154,12 +167,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:55
+#: en/content/guides/reader_conditionals.adoc:58
 msgid "Instead you'd need to do wrap each function individually:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:60
+#: en/content/guides/reader_conditionals.adoc:63
 #, no-wrap
 msgid ""
 "#?(:clj (defn clj-fn1 [] :abc))\n"
@@ -167,12 +180,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:63
+#: en/content/guides/reader_conditionals.adoc:66
 msgid "or use a `do` to wrap all of the top level functions:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:69
+#: en/content/guides/reader_conditionals.adoc:72
 #, no-wrap
 msgid ""
 "#?(:clj\n"
@@ -181,20 +194,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:72
+#: en/content/guides/reader_conditionals.adoc:75
 msgid ""
 "Let's go through some examples of places you might want to use these new "
 "reader conditionals."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:73
+#: en/content/guides/reader_conditionals.adoc:76
 #, no-wrap
 msgid "Host interop"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:76
+#: en/content/guides/reader_conditionals.adoc:79
 msgid ""
 "Host interop is one of the biggest pain points solved by reader "
 "conditionals. You may have a Clojure file that is almost pure Clojure, but "
@@ -205,7 +218,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:82
+#: en/content/guides/reader_conditionals.adoc:85
 #, no-wrap
 msgid ""
 "(defn str->int [s]\n"
@@ -214,7 +227,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:87
+#: en/content/guides/reader_conditionals.adoc:90
 msgid ""
 "Namespaces are the other big pain point for sharing code between Clojure and "
 "ClojureScript. ClojureScript has different syntax for https://clojurescript."
@@ -224,7 +237,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:89
+#: en/content/guides/reader_conditionals.adoc:92
 msgid ""
 "Here is an example from a https://github.com/lymingtonprecision/route-ccrs/"
 "blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/test/route_ccrs/schema/ids/"
@@ -233,7 +246,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:100
+#: en/content/guides/reader_conditionals.adoc:103
 #, no-wrap
 msgid ""
 "(ns route-ccrs.schema.ids.part-no-test\n"
@@ -247,7 +260,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:103
+#: en/content/guides/reader_conditionals.adoc:106
 msgid ""
 "Here is another example, we want to be able to use the `rethinkdb.query` "
 "namespace in Clojure and ClojureScript. However we can't load the required "
@@ -257,7 +270,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:109
+#: en/content/guides/reader_conditionals.adoc:112
 #, no-wrap
 msgid ""
 "(ns rethinkdb.query\n"
@@ -266,13 +279,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:111
+#: en/content/guides/reader_conditionals.adoc:114
 #, no-wrap
 msgid ";; snip...\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:115
+#: en/content/guides/reader_conditionals.adoc:118
 #, no-wrap
 msgid ""
 "#?(:clj (defn run [query conn]\n"
@@ -281,13 +294,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:117
+#: en/content/guides/reader_conditionals.adoc:120
 #, no-wrap
 msgid "Exception handling"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:120
+#: en/content/guides/reader_conditionals.adoc:123
 msgid ""
 "Exception handling is another area that benefits from reader conditionals. "
 "ClojureScript supports `(catch :default)` to catch everything, however you "
@@ -298,7 +311,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:131
+#: en/content/guides/reader_conditionals.adoc:134
 #, no-wrap
 msgid ""
 "(defn message-container-test [f]\n"
@@ -312,13 +325,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:133
+#: en/content/guides/reader_conditionals.adoc:136
 #, no-wrap
 msgid "Splicing"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:136
+#: en/content/guides/reader_conditionals.adoc:139
 msgid ""
 "The splicing reader conditional is not as widely used as the standard one. "
 "For an example on its usage, let's look at the https://github.com/clojure/"
@@ -330,7 +343,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:147
+#: en/content/guides/reader_conditionals.adoc:150
 #, no-wrap
 msgid ""
 "(deftest reader-conditionals\n"
@@ -344,13 +357,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:149
+#: en/content/guides/reader_conditionals.adoc:152
 #, no-wrap
 msgid "File organisation"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:152
+#: en/content/guides/reader_conditionals.adoc:155
 msgid ""
 "There isn't a clear community consensus yet around where to put `.cljc` "
 "files. Two options are to have a single `src` directory with `.clj`, `."
@@ -359,13 +372,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:153
+#: en/content/guides/reader_conditionals.adoc:156
 #, no-wrap
 msgid "cljx"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:156
+#: en/content/guides/reader_conditionals.adoc:159
 msgid ""
 "Before reader conditionals were introduced, the same goal of sharing code "
 "between platforms was solved by a Leiningen plugin called https://github.com/"
@@ -378,7 +391,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:158
+#: en/content/guides/reader_conditionals.adoc:161
 msgid ""
 "Sente uses cljs for sharing code between Clojure and ClojureScript. I've "
 "rewritten the https://github.com/ptaoussanis/sente/blob/v1.4.1/src/taoensso/"
@@ -389,7 +402,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:175
+#: en/content/guides/reader_conditionals.adoc:178
 #, no-wrap
 msgid ""
 "(ns taoensso.sente\n"
@@ -409,7 +422,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:187
+#: en/content/guides/reader_conditionals.adoc:190
 #, no-wrap
 msgid ""
 "(ns taoensso.sente\n"
@@ -423,7 +436,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:194
+#: en/content/guides/reader_conditionals.adoc:197
 #, no-wrap
 msgid ""
 "  #+cljs\n"
@@ -435,7 +448,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:199
+#: en/content/guides/reader_conditionals.adoc:202
 #, no-wrap
 msgid ""
 "  #+cljs\n"
@@ -445,13 +458,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/reader_conditionals.adoc:201
+#: en/content/guides/reader_conditionals.adoc:204
 #, no-wrap
 msgid "Backwards compatibility"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:203
+#: en/content/guides/reader_conditionals.adoc:206
 msgid ""
 "At the time of writing, there is no way to use `.cljc` files in versions of "
 "Clojure less than 1.7, nor is there any porting mechanism to preprocess `."

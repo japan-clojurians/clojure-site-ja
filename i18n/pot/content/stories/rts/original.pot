@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/community/community_stories.adoc:4 en/content/stories/rts.adoc:4
+msgid "Alex Miller 2017-04-04"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/rts.adoc:1
+#, no-wrap
+msgid "Radio Television Suisse"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:9
+msgid ""
+"Welcome to the first in an ongoing series of interviews with companies using "
+"Clojure and ClojureScript!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:12
+msgid "image:/images/content/stories/rts.jpeg[\"RTS\",height=\"80\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:14
+msgid ""
+"This first interview is with Frédéric Vergez about his work at https://rts."
+"ch/[RTS (Radio Télévision Suisse)], the Swiss national TV and radio "
+"broadcaster, and the https://www.rts.ch/info[national news website]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:16 en/content/stories/collbox.adoc:14
+#: en/content/stories/uhn.adoc:13 en/content/stories/ona.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:18
+msgid ""
+"For the last 3 years with Clojure, a bit more than a year with ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:20
+#, no-wrap
+msgid "*How are you using Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:22
+msgid ""
+"Mainly data processing and visualisation for news articles, maps, and web-"
+"services in the data-journalism domain. Some examples include a map of "
+"events during the 5 year period after the \"Arab Spring\" and https://www."
+"rts.ch/sweethome/[$weethome], a \"quality of life\" simulator in Switzerland."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:24
+#, no-wrap
+msgid "*What libraries have you enjoyed working with the most?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:26
+msgid "We use a lot of libraries, but the most important ones would be:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:28
+msgid ""
+"https://github.com/clojure/core.async[core.async]: everywhere, backend, "
+"front-end. It definitely changed the way we're addressing concurrency/"
+"parallelism concerns, especially with ClojureScript"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:29
+msgid ""
+"http://reagent-project.github.io/[reagent]: absolute must on frontend for SPA"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:30
+msgid ""
+"http://incanter.org/[incanter]: really useful for data processing (we "
+"confess, we're also using python)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:31
+msgid "http://cascalog.org/[cascalog]: sometimes we're not far from big data"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:32
+msgid ""
+"https://github.com/weavejester/compojure[compojure], https://github.com/ring-"
+"clojure/ring[ring] & http://immutant.org/[immutant]: as core REST backend"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:33
+msgid "https://github.com/cgrand/enlive/wiki[enlive]: we do scraping, a lot"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:34
+msgid "http://www.http-kit.org/[clj(s)-http/http-kit]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:35
+msgid "https://github.com/plumatic/dommy[dommy]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:36
+msgid "https://github.com/weavejester/environ[environ]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:38
+msgid ""
+"We're still evaluating https://clojure.org/about/spec[clojure.spec], and use "
+"it mainly on backends. Also considering http://www.datomic.com/[Datomic] "
+"(still in early phases / P.O.C)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:40
+#, no-wrap
+msgid "*What about working with Clojure gives you the most value?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:42
+msgid "functional"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:43
+msgid "pragmatism"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:44
+msgid "readability"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:45
+msgid "performance"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:46
+msgid "one language/philosophy from backend to frontend"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:48
+#, no-wrap
+msgid "*What is your favorite feature of Clojure/ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:50
+msgid "LISP"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:51
+msgid "JVM/Node/V8/CLR : omnipresence"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:52
+msgid "REPL based"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:53
+msgid "Good IDE support"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
+#: en/content/stories/uhn.adoc:71 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
+#, no-wrap
+msgid "*What is your stack?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:57
+msgid ""
+"Mainly based on AWS (S3, EC2, Beanstalk, EMR, RDS...) for backend. We use "
+"PostgreSQL and PostGIS a lot but are considering Datalog on some projects. "
+"We're currently evaluating using AWS Lambda with Clojure, and seriously "
+"considering using it with ClojureScript + Node."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:59
+#, no-wrap
+msgid "*Why is using Clojure/ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:61
+msgid "sustainability"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:62
+msgid "relative simplicity"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:63
+msgid "coherence of the language/stack/community"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:64
+msgid "time to market"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:64
+msgid "fun!"
+msgstr ""

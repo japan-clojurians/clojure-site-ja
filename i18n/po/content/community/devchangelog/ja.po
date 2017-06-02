@@ -1,0 +1,1199 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2017 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: 2017-06-01 09:26+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/community/devchangelog.adoc:1
+#, no-wrap
+msgid "Dev Changelog"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:4
+msgid "Alex Miller 2017-04-28"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:11
+msgid ""
+"The official https://github.com/clojure/clojure/blob/master/changes.md[changelog] tracks deltas between major stable "
+"versions. This page gathers the interim dev release announcements during development."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/devchangelog.adoc:12
+#, no-wrap
+msgid "Release 1.9"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:14
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/iceDBL5q4CY/GM6LryxpAQAJ[1.9.0-alpha17] (May 26, 2017)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:17
+msgid "https://dev.clojure.org/jira/browse/CLJ-1793[CLJ-1793] - Clear 'this' before calls in tail position"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:18
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2091[CLJ-2091] clojure.lang.APersistentVector#hashCode is not thread-safe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:19
+msgid "https://dev.clojure.org/jira/browse/CLJ-1860[CLJ-1860] Make -0.0 hash consistent with 0.0"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:20
+msgid "https://dev.clojure.org/jira/browse/CLJ-2141[CLJ-2141] Return only true/false from qualified-* predicates"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:21
+msgid "https://dev.clojure.org/jira/browse/CLJ-2142[CLJ-2142] Fix check for duplicate keys with namespace map syntax"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:22
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2128[CLJ-2128] spec error during macroexpand no longer throws compiler "
+"exception with location"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:23
+msgid "Updated to use spec.alpha 0.1.123"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:24
+#, no-wrap
+msgid "https://groups.google.com/forum/#!topic/clojure/nB4qnDNGS2A[1.9.0-alpha16] (Apr 27, 2017)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:27
+msgid "1.9.0-alpha16 includes the following changes since 1.9.0-alpha15:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:29
+msgid ""
+"The namespaces clojure.spec, clojure.spec.gen, clojure.spec.test have been moved to the external library spec.alpha "
+"which Clojure includes via dependency"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:30
+msgid ""
+"These namespaces have been changed and now have an appended \".alpha\": clojure.spec.alpha, clojure.spec.gen.alpha, "
+"clojure.spec.test.alpha"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:31
+msgid ""
+"All keyword constants in clojure.spec (like :clojure.spec/invalid) follow the same namespace change (now :clojure."
+"spec.alpha/invalid)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:32
+msgid "spec-related system properties related to assertions did NOT change"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:34
+msgid ""
+"The specs for clojure.core itself in namespace clojure.core.specs have been moved to the external library core.specs."
+"alpha which Clojure now depends on"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:35
+msgid ""
+"The clojure.core.specs namespace has changed to clojure.core.specs.alpha. All qualified spec names in that namespace "
+"follow the same namespace change (most people were not using these directly)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:37
+msgid "In most cases, you should be able to update your usage of Clojure 1.9.0-alphaX to Clojure 1.9.0-alpha16 by:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:39
+msgid ""
+"Updating your Clojure dependency to [org.clojure/clojure \"1.9.0-alpha16\"] - this will automatically pull in the 2 "
+"additional downstream libraries"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:40
+msgid "Changing your namespace declarations in namespaces that declare or use specs to:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/devchangelog.adoc:46
+#, no-wrap
+msgid ""
+"(:require [clojure.spec.alpha :as s]\n"
+"          [clojure.spec.gen.alpha :as gen]\n"
+"          [clojure.spec.test.alpha :as stest])\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:48
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/10dbF7w2IQo/ec37TzP5AQAJ[1.9/spec split] (Apr 26, 2017)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:51
+msgid ""
+"We are moving spec out of the Clojure repo/artifact and into a library to make it easier to evolve spec independently "
+"from Clojure. While we consider spec to be an essential part of Clojure 1.9, there are a number of design concerns to "
+"resolve before it can be finalized. This allows us to move towards a production Clojure release (1.9) that depends on "
+"an alpha version of spec. Users can also pick up newer versions of the spec alpha library as desired. Additionally, "
+"this is a first step towards increased support for leveraging dependencies within Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:53
+msgid "We will be creating two new contrib libraries that will contain the following (renamed) namespaces:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/devchangelog.adoc:59
+#, no-wrap
+msgid ""
+"org.clojure/spec.alpha\n"
+"    clojure.spec.alpha          (previously clojure.spec)\n"
+"    clojure.spec.gen.alpha      (previously clojure.spec.gen)\n"
+"    clojure.spec.test.alpha     (previously clojure.spec.test)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/devchangelog.adoc:62
+#, no-wrap
+msgid ""
+"org.clojure/core.specs.alpha\n"
+"    clojure.core.specs.alpha    (previously clojure.core.specs)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:65
+msgid ""
+"In most cases, we expect that users have aliased their reference to the spec namespaces and updating to the changed "
+"namespaces will only require a single change at the point of the require."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:67
+#, no-wrap
+msgid "*How will ClojureScript's spec implementation change?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:69
+msgid ""
+"ClojureScript will also change namespace names to match Clojure. Eventually, the ClojureScript implementation may "
+"move out of ClojureScript and into the spec.alpha library - this is still under discussion."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:71
+#, no-wrap
+msgid "*Why do the libraries and namespaces end in alpha?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:73
+msgid "The \"alpha\" indicates that the spec API and implementation is still subject to change."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:75
+#, no-wrap
+msgid "*What will happen when the spec api is no longer considered alpha?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:77
+msgid ""
+"At that point we expect to release a non-alpha version of the spec library (with non-alpha namespaces). Users may "
+"immediately begin to use that version of spec along with whatever version of Clojure it depends on. Clojure itself "
+"will depend on it at some later point. Timing of all these actions is TBD."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:79
+#, no-wrap
+msgid "*Will the library support Clojure 1.8 or older versions?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:81
+msgid ""
+"No. spec uses new functions in Clojure 1.9 and it has never been a goal to provide spec for older versions. Rather, "
+"we are trying to accelerate the release of a stable Clojure 1.9 so that users can migrate forward to a stable "
+"production release with access to an alpha version of spec, and access to ongoing updated versions as they become "
+"available."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:82
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/7ZqGTjJoQEQ/RkUYCCbeAwAJ[1.9.0-alpha15] (Mar 14, 2017)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:85
+msgid "1.9.0-alpha15 includes the following changes since 1.9.0-alpha14:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:87
+msgid "https://dev.clojure.org/jira/browse/CLJ-2043[CLJ-2043] - s/form of conformer is broken"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:88
+msgid "https://dev.clojure.org/jira/browse/CLJ-2035[CLJ-2035] - s/form of collection specs are broken"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:89
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2100[CLJ-2100] - s/form of s/nilable should include the original spec, not "
+"the resolved spec"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:91
+msgid "Specs:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:93
+msgid "https://dev.clojure.org/jira/browse/CLJ-2062[CLJ-2062] - added specs for `import` and `refer-clojure`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:94
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2114[CLJ-2114] - ::defn-args spec incorrectly parses map body as a prepost "
+"rather than function body"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:95
+msgid "https://dev.clojure.org/jira/browse/CLJ-2055[CLJ-2055] - binding-form spec parses symbol-only maps incorrectly"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:97
+msgid "Infrastructure:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:99
+msgid "https://dev.clojure.org/jira/browse/CLJ-2113[CLJ-2113] - Clojure maven build updated"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:100
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/w-1h7_xO2R0/Lp_ks-BSAQAJ[1.9.0-alpha14] (Oct 28, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:103
+msgid "1.9.0-alpha14 includes the following changes since 1.9.0-alpha13:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:105
+msgid "NEW `into` now has a 0-arity (returns []) and 1-arity (returns the coll you pass)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:106
+msgid ""
+"NEW `halt-when` is a transducer that ends transduction when pred is satisfied. It takes an optional fn that will be "
+"invoked with the completed result so far and the input that triggered the predicate."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:107
+msgid "https://dev.clojure.org/jira/browse/CLJ-2042[CLJ-2042] - clojure.spec/form of clojure.spec/? now resolves pred"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:108
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2024[CLJ-2024] - clojure.spec.test/check now fully resolves aliased fspecs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:109
+msgid "https://dev.clojure.org/jira/browse/CLJ-2032[CLJ-2032] - fixed confusing error if fspec is missing :args spec"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:110
+msgid "https://dev.clojure.org/jira/browse/CLJ-2027[CLJ-2027] - fixed 1.9 regression with printing of `bean` instances"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:111
+msgid "https://dev.clojure.org/jira/browse/CLJ-1790[CLJ-1790] - fixed error extending protocols to Java arrays"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:112
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1242[CLJ-1242] - = on sorted sets or maps with incompatible comparators now "
+"returns false rather than throws"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:113
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/QWPUWG9BwbE/9a7ymJb9AQAJ[1.9.0-alpha13] (Sept 26, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:116
+msgid "1.9.0-alpha13 includes the following changes since 1.9.0-alpha12:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:118
+msgid "s/conform of nilable was always returning the passed value, not the conformed value"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:119
+msgid "s/nilable now creates a generator that returns nil 10% of the time (instead of 50% of the time)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:120
+msgid "s/nilable now delays realizing the predicate spec until first use (better for creating recursive specs)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:121
+msgid "clojure.spec.gen now provides a dynload version of clojure.test.check.generators/frequency"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:122
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/lQ5beZB6QYE/ZLSPo023CgAJ[1.9.0-alpha12] (Sept 7, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:125
+msgid "1.9.0-alpha12 includes the following changes since 1.9.0-alpha11:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:127
+msgid "spec performance has been improved for many use cases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:129
+msgid ""
+"spec explain printer is now pluggable via the dynamic var clojure.spec/*explain-out* which should be a function that "
+"takes an explain-data and prints to *out*\t"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:131
+msgid ""
+"when a macro spec fails during macroexpand, throw ex-info with explain-data payload rather than "
+"IllegalArgumentException"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:132
+msgid "pprint prints maps with namespace literal syntax when *print-namespace-maps* is true"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:133
+msgid "https://dev.clojure.org/jira/browse/CLJ-1988[CLJ-1988] - coll-of, every extended to conform sequences properly"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:134
+msgid "https://dev.clojure.org/jira/browse/CLJ-2004[CLJ-2004] - multi-spec form was missing retag"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:135
+msgid "https://dev.clojure.org/jira/browse/CLJ-2006[CLJ-2006] - fix old function name in docstring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:136
+msgid "https://dev.clojure.org/jira/browse/CLJ-2008[CLJ-2008] - omit macros from checkable-syms"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:137
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-2012[CLJ-2012] - fix ns spec on gen-class signatures to allow class names"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:138
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1224[CLJ-1224] - record instances now cache hasheq and hashCode like maps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:139
+msgid "https://dev.clojure.org/jira/browse/CLJ-1673[CLJ-1673] - clojure.repl/dir-fn now works on namespace aliases"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:140
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/_slHTn-Ej1Y/M_IVRODtCQAJ[1.9.0-alpha11] (Aug 19, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:143
+msgid "1.9.0-alpha11 includes the following changes since 1.9.0-alpha10:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:145
+msgid ""
+"Clojure now has specs for the following clojure.core macros: let, if-let, when-let, defn, defn-, fn, and ns. Because "
+"macro specs are checked during macroexpansion invalid syntax in these macros will now fail at compile time whereas "
+"some errors were caught at runtime and some were not caught at all."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:147
+msgid "https://dev.clojure.org/jira/browse/CLJ-1914[CLJ-1914] - Fixed race condition in concurrent range realization"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:148
+msgid "https://dev.clojure.org/jira/browse/CLJ-1870[CLJ-1870] - Fixed reloading a defmulti removes metadata on the var"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:149
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1744[CLJ-1744] - Clear unused locals, which can prevent memory leaks in some "
+"cases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:150
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1423[CLJ-1423] - Allow vars to be invoked with infinite arglists (also, "
+"faster)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:151
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1993[CLJ-1993] - Added *print-namespace-maps* dynamic var that controls "
+"whether to use namespace map syntax for maps with keys from the same namespace. The default is false, but standard "
+"REPL bindings set this to true."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:152
+msgid "https://dev.clojure.org/jira/browse/CLJ-1985[CLJ-1985] - Fixed with-gen of conformer losing unform fn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:153
+msgid "Fixed clojure.spec.test/check to skip spec'ed macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:154
+msgid "Fixed regression from 1.9.0-alpha8 where type hints within destructuring were lost"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:155
+msgid "Fixed clojure.spec/merge docstring to note merge doesn't flow conformed values"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:156
+msgid "Fixed regex ops to use gen overrides if they are used"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:157
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/MrwAx8DCjK8/rQSq8U5qCAAJ[1.9.0-alpha10] (Jul 11, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:160
+msgid "1.9.0-alpha10 includes the following changes since 1.9.0-alpha9:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:162
+msgid ""
+"NEW clojure.core/any? - a predicate that matches anything. any? has built-in gen support. The :clojure.spec/any spec "
+"has been removed. Additionally, gen support has been added for some?."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:164
+msgid "keys* will now gen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:166
+msgid ""
+"gen overrides (see c.s/gen, c.s./exercise, c.s.t/check, c.s.t/instrument) now expect no-arg functions that return "
+"gens, rather than gens"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:168
+msgid ""
+"https://dev.clojure.org/jira/browse/CLJ-1977[CLJ-1977] - fix regression from alpha9 in data conversion of Throwable "
+"when stack trace is empty"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:169
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/M-zC83YJl10/-zN-b2ekBgAJ[1.9.0-alpha9] (Jul 5, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:172
+msgid "1.9.0-alpha9 includes the following changes since 1.9.0-alpha8:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:174
+msgid ""
+"NEW clojure.spec/assert - a facility for adding spec assertions to your code. See the docs for *compile-asserts* and "
+"assert for more details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:176
+msgid "clojure.spec/merge - now merges rather than flows in conform/unform"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:178
+msgid "clojure.spec.test/instrument now reports the caller that caused an :args spec failure and ignores spec'ed macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:180
+msgid ""
+"clojure.spec.test - `test`, `test-fn`, `testable-syms` renamed to `check`, `check-fn`, and `checkable-syms` to better "
+"reflect their purpose. Additionally, some of the return value structure of `check` has been further improved."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:182
+msgid ""
+"clojure.core/Throwable->map formerly returned StackTraceElements which were later handled by the printer. Now the "
+"StackTraceElements are converted to data such that the return value is pure Clojure data, as intended."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:183
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/vF3RuDWuX8I/pvn4IUuUAwAJ[1.9.0-alpha8] (Jun 28, 16)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:186
+msgid "1.9.0-alpha8 includes the following changes since 1.9.0-alpha7:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:188
+msgid ""
+"The collection spec support has been greatly enhanced, with new controls for conforming, generation, counts, distinct "
+"elements and collection kinds. See the docs for every, every-kv, coll-of and map-of for details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:190
+msgid ""
+"instrumenting and testing has been streamlined and made more composable, with powerful new features for spec and gen "
+"overrides, stubbing, and mocking. See the docs for these functions in clojure.spec.test: instrument, test, enumerate-"
+"ns and summarize-results."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:192
+msgid ""
+"Namespaced keyword reader format, printing and destructuring have been enhanced for lifting namespaces up for keys, "
+"supporting more succinct use of fully-qualified keywords. Updated docs will be added to clojure.org soon."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:194
+msgid ""
+"Many utilities have been added, for keys spec merging, fn exercising, Java 1.8 timestamps, bounded-count and more."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:196
+msgid "Changelog:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:198 en/content/community/devchangelog.adoc:248
+msgid "clojure.spec:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:200
+msgid "[changed] map-of - now conforms all values and optionally all keys, has additional kind, count, gen options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:201
+msgid ""
+"[changed] coll-of - now conforms all elements, has additional kind, count, gen options. No longer takes init-coll "
+"param."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:202
+msgid "[added] every - validates a collection by sampling, with many additional options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:203
+msgid "[added] every-kv - validates a map by sampling, with many additional options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:204
+msgid "[added] merge"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:205
+msgid "[changed] gen overrides can now be specified by either name or path"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:206
+msgid ""
+"[changed] fspec generator - creates a function that generates return values according to the :ret spec and ignores :"
+"fn spec"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:207
+msgid "[added] explain-out - produces an explain output string from an explain-data result"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:208
+msgid "[changed] explain-data - output is now a vector of problems with a :path element, not a map keyed by path"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:209
+msgid "[added] get-spec - for looking up a spec in the registry by keyword or symbol"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:210
+msgid "[removed] fn-spec - see get-spec"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:211
+msgid "[added] exercise-fn - given a spec'ed function, returns generated args and the return value"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:212
+msgid "All instrument functions moved to clojure.spec.test"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:214
+msgid "clojure.spec.test:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:216
+msgid ""
+"[changed] instrument - previously took a var, now takes either a symbol, namespace symbol, or a collection of symbols "
+"or namespaces, plus many new options for stubbing or mocking. Check the docstring for more info."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:217
+msgid "[removed] instrument-ns - see instrument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:218
+msgid "[removed] instrument-all - see instrument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:219
+msgid ""
+"[changed] unstrument - previously took a var, now takes a symbol, namespace symbol, or collection of symbol or "
+"namespaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:220
+msgid "[removed] unstrument-ns - see unstrument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:221
+msgid "[removed] unstrument-all - see unstrument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:222
+msgid "[added] instrumentable-syms - syms that can be instrumented"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:223
+msgid "[added] with-instrument-disabled - disable instrument's checking of calls within a scope"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:224
+msgid "[changed] check-var renamed to test and has a different signature, check docs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:225
+msgid "[changed] run-tests - see test"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:226
+msgid "[changed] run-all-tests - see test"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:227
+msgid "[changed] check-fn - renamed to test-fn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:228
+msgid "[added] abbrev-result - returns a briefer description of a test"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:229
+msgid "[added] summarize-result - returns a summary of many tests"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:230
+msgid "[added] testable-syms - syms that can be tested"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:231
+msgid "[added] enumerate-namespace - provides symbols for vars in namespaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:233 en/content/community/devchangelog.adoc:242
+#, fuzzy
+#| msgid "ClojureScript"
+msgid "clojure.core:"
+msgstr "ClojureScript"
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:235
+msgid "[changed] - inst-ms now works with java.time.Instant instances when Clojure is used with Java 8"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:236
+msgid ""
+"[added] bounded-count - if coll is counted? returns its count, else counts at most first n elements of coll using its "
+"seq"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:237
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/3wmGJ5B4b6c/YgCJCtN8CQAJ[1.9.0-alpha7] (Jun 15, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:240
+msgid "1.9.0-alpha7 includes the following changes since 1.9.0-alpha6 (all BREAKING vs alpha5/6):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:243
+msgid "long? => int? - now checks for all Java fixed precision integer types (byte,short,integer,long)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:244
+msgid "pos-long? => pos-int?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:245
+msgid "neg-long? => neg-int?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:246
+msgid "nat-long? => nat-int?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:249
+msgid "long-in-range? => int-in-range?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:250
+msgid "long-in => int-in"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:252
+msgid "If you are interested in checking specifically for long?, please use #(instance? Long %)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:254
+msgid "Sorry for the switcheroo and welcome to alphatown!"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:255
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/JIgmEFhAlq8/6UXO_rUpCQAJ[1.9.0-alpha6] (Jun 14, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:258
+msgid "1.9.0-alpha6 includes the following changes since 1.9.0-alpha5:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:260
+msgid "& regex op now fails fast when regex passes but preds do not"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:261
+msgid "returns from alt/or are now map entries (supporting key/val) rather than 2-element vector"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:262
+msgid "[BREAKING] fn-specs was renamed to fn-spec and returns either the registered fspec or nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:263
+msgid "fspec now accepts ifn?, not fn?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:264
+msgid "fspec impl supports keyword lookup of its :args, :ret, and :fn specs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:265
+msgid "fix fspec describe which was missing keys and improve describe of :args/ret/fn specs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:266
+msgid ""
+"instrument now checks *only* the :args spec of a var - use the clojure.spec.test functions to test :ret and :fn specs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:267
+msgid "Added generator support for bytes? and uri? which were accidentally left out in alpha5"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:268
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/D_s9Drua6D4/CTWk12cXDQAJ[1.9.0-alpha5] (Jun 7, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:271
+msgid "1.9.0-alpha5 includes the following changes since 1.9.0-alpha4:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:273
+msgid "Fixes:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:274
+msgid "doc was printing \"Spec\" when none existed"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:275
+msgid "fix ? explain"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:277
+msgid "New predicates in core (all also now have built-in generator support in spec):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:278
+msgid "seqable?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:279
+msgid "boolean?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:280
+msgid "long?, pos-long?, neg-long?, nat-long?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:281
+msgid "double?, bigdec?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:282
+msgid "ident?, simple-ident?, qualified-ident?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:283
+msgid "simple-symbol?, qualified-symbol?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:284
+msgid "simple-keyword?, qualified-keyword?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:285
+msgid "bytes? (for byte[])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:286
+msgid "indexed?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:287
+msgid "inst? (and new inst-ms)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:288
+msgid "uuid?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:289
+msgid "uri?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:291
+msgid "New in spec:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:292
+msgid "unform - given a spec and a conformed value, returns the unconformed value"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:293
+msgid "New preds: long-in-range?, inst-in-range?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:294
+msgid "New specs (with gen support): long-in, inst-in, double-in"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:295
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/TR-qUFVJwj0/aZspfZ3XBAAJ[1.9.0-alpha4] (May 31, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:298
+msgid "1.9.0-alpha4 includes the following changes since 1.9.0-alpha3:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:300
+msgid "fix describe empty cat"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:301
+msgid "improve update-in perf"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:302
+msgid "optimize seq (&) destructuring"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:303
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/WxT9kPIwlYI/r5PJpAP_CwAJ[1.9.0-alpha3] (May 26, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:306
+msgid "1.9.0-alpha3 includes the following changes since 1.9.0-alpha2:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:308
+msgid "Macro fdef specs should no longer spec the implicit &form or &env [BREAKING CHANGE]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:309
+msgid "multi-spec includes dispatch values in path"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:310
+msgid "multi-spec no longer requires special default method"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:311
+msgid "fix for rep* bug"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:312
+msgid "added explain-str (explain that returns a string)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:313
+msgid "improved s/+ explain"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:314
+msgid "explain output tweaked"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:315
+msgid "fix test reporting"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:316
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/ZBD5-Nhruc4/dntP8iQDAwAJ[1.9.0-alpha2] (May 25, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:319
+msgid "1.9.0-alpha2 includes the following changes since 1.9.0-alpha1:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:321
+msgid "Better describe for s/+"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:322
+msgid "Capture *recursion-limit* on gen call"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:323
+msgid "explain-data now contains :in key for the input path"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:324
+msgid "https://dev.clojure.org/jira/browse/CLJ-1931[CLJ-1931] - with-gen throws AbstractMethodError"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:325
+#, no-wrap
+msgid "https://groups.google.com/d/msg/clojure/7jbL34IjNzw/dejSpHefAwAJ[1.9.0-alpha1] (May 24, 2016)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:328
+msgid "1.9.0-alpha1 includes the first release of clojure.spec."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:329
+msgid "A usage guide for spec is now available: https://clojure.org/guides/spec."
+msgstr ""

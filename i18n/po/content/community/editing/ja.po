@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73 en/content/reference/java_interop.adoc:76
-#: en/content/reference/java_interop.adoc:96 en/content/reference/java_interop.adoc:109
-#: en/content/reference/java_interop.adoc:131 en/content/reference/java_interop.adoc:138
-#: en/content/reference/java_interop.adoc:152 en/content/reference/java_interop.adoc:193
-#: en/content/reference/libs.adoc:63 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
+#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/libs.adoc:63
+#: en/content/reference/java_interop.adoc:78 en/content/reference/java_interop.adoc:98
+#: en/content/reference/java_interop.adoc:111 en/content/reference/java_interop.adoc:133
+#: en/content/reference/java_interop.adoc:140 en/content/reference/java_interop.adoc:154
+#: en/content/reference/java_interop.adoc:195 en/content/reference/evaluation.adoc:62
+#: en/content/reference/evaluation.adoc:73 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
 #: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr "''''"
-
-#. type: Title ==
-#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
-#, no-wrap
-msgid "Lists"
-msgstr "Lists (リスト)"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
 #, no-wrap
 msgid "/images/content/reference/transducers/xf.png"
 msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#, no-wrap
+msgid "Lists"
+msgstr "Lists (リスト)"
 
 #. type: Title =
 #: en/content/community/editing.adoc:1

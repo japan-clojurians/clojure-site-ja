@@ -36,7 +36,7 @@ msgstr "toc::[]"
 #: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:748 en/content/guides/destructuring.adoc:522
 #, no-wrap
 msgid "Macros"
-msgstr ""
+msgstr "Macros(マクロ)"
 
 #. type: Title =
 #: en/content/guides/destructuring.adoc:1

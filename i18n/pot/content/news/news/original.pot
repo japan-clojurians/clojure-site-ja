@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:4
-#: en/content/news/news.adoc:4
-msgid "Rich Hickey 2016-05-23"
-msgstr ""
-
 #. type: Title =
 #: en/content/news/news.adoc:1
 #, no-wrap
 msgid "News "
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/news.adoc:4
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:4
+msgid "Rich Hickey 2016-05-23"
 msgstr ""

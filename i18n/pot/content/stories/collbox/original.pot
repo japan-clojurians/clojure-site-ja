@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:16 en/content/stories/collbox.adoc:14
+#: en/content/stories/uhn.adoc:13 en/content/stories/ona.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
+#: en/content/stories/uhn.adoc:71 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
+#, no-wrap
+msgid "*What is your stack?*\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/collbox.adoc:1
+#, no-wrap
+msgid "CollBox"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:4
+msgid "Alex Miller 2017-04-06"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:9
+msgid ""
+"We talked with Cameron Desautels about his use of Clojure and ClojureScript "
+"at https://collbox.co/[CollBox]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:12
+msgid "image:/images/content/stories/collbox.png[\"CollBox\",height=\"80\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:16
+msgid ""
+"I've been using Clojure for about five years, and ClojureScript for one "
+"year. I discovered Lisps early in my programming career (probably via Emacs) "
+"and thus have been a Lisp fan for about 15 years, so Clojure felt like "
+"coming home."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:18
+#, no-wrap
+msgid "*What product or service are you building?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:20
+msgid ""
+"We're using Clojure and ClojureScript to build the next generation of debt "
+"collection services. We integrate with cloud accounting software to "
+"conveniently ingest and validate debt, manage a network of reputable debt "
+"collectors behind the scenes, and intelligently match debt with collectors "
+"to optimize for the best rates and odds of collection. At the same time, "
+"we're working to raise the bar on accountability and transparency in an "
+"industry that has historically not been known for those things."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:22
+#, no-wrap
+msgid "*How big is your team?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:24
+msgid ""
+"Just me! We're a small startup, and I comprise the engineering team (for "
+"now). But I consider it a testament to Clojure that a sole developer can "
+"build and maintain a production web application. In fact, the roots of our "
+"company trace back to winning the grand prize at the at 2015 QuickBooks "
+"Connect Hackathon, where we beat out teams with five professional engineers "
+"who work together every day—again, with Clojure and one engineer. A good "
+"tool is a force multiplier."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:26 en/content/stories/uhn.adoc:49
+#, no-wrap
+msgid "*What about working with Clojure and ClojureScript gives you the most value?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:28
+msgid ""
+"The single most valuable aspect of working with Clojure, for me, is the "
+"language's commitment to reusing a small number of readable, immutable data "
+"structures. I configure my application with basic data structures; I wire my "
+"application's dependencies together with basic data structures; I write my "
+"database queries in them, I log metrics with them, and when I have to "
+"diagnose a web exception at 2am, I'm very fortunate that that request came "
+"in as a familiar data structure that I can print, log, inspect, or update "
+"with the same tools I've spent years getting comfortable with."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:30
+msgid ""
+"I can't stress enough how superior this is to having a reference to an "
+"opaque Foo object and wondering \"what can this thing do? What's inside of "
+"it? Can I serialize it? How do I create one? Is it going to change out from "
+"under me?\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:33
+msgid ""
+"Our frontend is all ClojureScript using https://github.com/Day8/re-frame[re-"
+"frame]. The backend is Clojure running on AWS backed by http://www.datomic."
+"com/[Datomic] (on DynamoDB). Our web framework is custom-built, but makes "
+"heavy use of https://github.com/ztellman/aleph[aleph], https://github.com/"
+"juxt/bidi[bidi], https://github.com/stuartsierra/component[component], and "
+"https://github.com/cognitect/transit-format[transit]."
+msgstr ""

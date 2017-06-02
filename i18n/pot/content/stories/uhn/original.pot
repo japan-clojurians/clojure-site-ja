@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:16 en/content/stories/collbox.adoc:14
+#: en/content/stories/uhn.adoc:13 en/content/stories/ona.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
+#: en/content/stories/uhn.adoc:71 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
+#, no-wrap
+msgid "*What is your stack?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:26 en/content/stories/uhn.adoc:49
+#, no-wrap
+msgid "*What about working with Clojure and ClojureScript gives you the most value?*\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/uhn.adoc:1
+#, no-wrap
+msgid "University Health Network"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:4
+msgid "Alex Miller 2017-04-11"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:8
+msgid ""
+"This interview is a discussion with Dmitri Sotnikov about his use of Clojure "
+"and ClojureScript at University Health Network (UHN)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:11
+msgid "image:/images/content/stories/logo-uhn.png[\"UHN\",height=\"55\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:15
+msgid ""
+"My team started using Clojure about six years ago, and we integrated "
+"ClojureScript into our stack last year with our latest project."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:17 en/content/stories/ona.adoc:17
+#: en/content/stories/cstap.adoc:33 en/content/stories/empear.adoc:17
+#, no-wrap
+msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:19
+msgid ""
+"We have a team of about 30 developers, some of them are using Clojure while "
+"others are using other languages such as Java and C#. The number of people "
+"using Clojure has been steadily increasing as the benefits have become "
+"evident. My immediate team consists of eight developers working exclusively "
+"with Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:21
+#, no-wrap
+msgid "*What products or services are you building?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:23
+msgid ""
+"The clinicians at the University Health Network (UHN) operate in a complex "
+"healthcare environment where many aspects of patient care have to be "
+"coordinated between multiple disciplines. Our team builds products that help "
+"clinicians streamline their workflow."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:25
+msgid ""
+"An example of such a workflow is the one found at the Bariatric Clinic, "
+"where obese patients require assessments for weight loss surgery. Let's take "
+"a look at the problem we faced and how we addressed it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:27
+msgid ""
+"Assessments are conducted by professionals from across five disciplines. The "
+"assessment starts with a nurse consultation, followed by a visit with a "
+"social worker, then a dietitian, and then the psych team. Finally, patient "
+"is scheduled for the surgeon interview. The surgeon must have the "
+"information collected by other disciplines in condensed form."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:29
+msgid ""
+"The assessments must be completed in a specific order with each assessment "
+"being dependent on the results from the previous ones."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:31
+msgid ""
+"The task is further complicated by the fact that all the assessments work "
+"with a common set of data. Each discipline requires to see a subset of the "
+"data and uses a different set of terminologies when referring to the data "
+"elements."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:33
+msgid ""
+"When a piece of data is modified, it may trigger updates in the data model "
+"including those that aren't part of the view that the user is working on. "
+"Since multiple users may be working on different parts of the assessment "
+"concurrently, we have to take extra care to ensure data integrity within the "
+"application."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:35
+msgid ""
+"The project aimed to provide a new kind of workflow for the users, and this "
+"implied having evolving requirements as we continued to receive user "
+"feedback."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:37
+msgid ""
+"The project team chose to use an agile development approach to allow for "
+"greater flexibility. The workflow was broken up into modules for each "
+"discipline. We would deploy each module as it was finished, and integrate "
+"user feedback into design of the system as further modules were developed."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:39
+msgid ""
+"The team created a Clojure DSL for writing screens and business logic for "
+"the application. These definitions are stored in a database, and are used to "
+"generate the views at runtime."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:41
+msgid ""
+"This model provides us with the ability to modify any aspect of the "
+"assessment without the need to redeploy either the client or the server "
+"portions of the application."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:43 en/content/stories/ona.adoc:45
+#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
+#, no-wrap
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:45
+msgid ""
+"Clojure allowed us to deliver an innovative product that provided the best "
+"possible workflow for the users. Our application was ultimately the "
+"recipient of the http://www.itworldcanada.com/article/university-health-"
+"network-transforms-patient-care/387156[2016 ITAC Ingenious Award]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:47
+msgid ""
+"Through the use of the of the application, the clinic dramatically reduced "
+"wait times for the patients from 128 to 63 days. While the dictation time "
+"used by clinicians fell by 80%, representing a total savings so far of "
+"$240,000."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:51
+msgid ""
+"We really like working with the JVM, and wish to continue leveraging this "
+"platform for our projects. However, we also recognized the need for a "
+"language that facilitated both rapid development and prototyping while "
+"allowing us to produce robust and maintainable applications."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:53
+msgid ""
+"Our prior experience with Java projects showed that it was a poor fit for "
+"these requirements. Meanwhile, Clojure stood out as a strong technology "
+"choice for a variety of reasons."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:55
+msgid ""
+"The language lets us seamlessly use existing Java libraries and tools in our "
+"projects. This allowed for a gentle transition from our legacy stack towards "
+"a modern one based around Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:57
+msgid ""
+"Clojure allows us to develop the system interactively, and to quickly "
+"respond to changing needs of the project. The team is able to quickly "
+"prototype solutions without sacrificing code quality. The dynamic nature of "
+"the language allows for a cheaper and faster development process than what "
+"was available to us with Java."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:59
+msgid ""
+"REPL driven development provides us with the ability to explore the problem "
+"space interactively and come up with the best solution through "
+"experimentation. We find that the REPL workflow results in a better feedback "
+"loop than unit testing."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:61
+msgid ""
+"Clojure based solutions end up having a fraction of the code seen in the "
+"projects of similar scope that we previously built in Java. Not only that, "
+"but Clojure makes it much easier to separate the intent of the code from the "
+"implementation details. The ability to separate what is being done from how "
+"it is done results in code that's much easier to maintain."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:63
+msgid ""
+"Clojure's focus on immutability facilitates a natural decoupling between "
+"parts of the application. In absence of shared global state, it becomes "
+"possible to work on parts of the application in isolation. The resulting "
+"code requires fewer tests since the functions are pure and do not depend on "
+"the overall application state."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:65
+msgid ""
+"Since Clojure is a small and focused language, it made it easy to train new "
+"developers to become productive with it. Our partner CyLogix was able to "
+"train their contractors to work with Clojure in a short time."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:67
+msgid ""
+"Macros provided us with the ability to create domain specific abstractions. "
+"This let us express domain specific logic using the semantics of that domain."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:69
+msgid ""
+"Finally, Clojure proved to be a stable and reliable platform. We were able "
+"to upgrade the project to new versions of the language without any changes "
+"throughout the development cycle."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:73
+msgid ""
+"We use the http://www.luminusweb.net/[Luminus] stack as the base for our "
+"projects. Some of the libraries that I'd like to mention specifically are:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:75
+msgid "http://www.hugsql.org/[HugSQL]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:76
+msgid "http://immutant.org/[Immutant]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:77
+msgid "https://github.com/Day8/re-frame[re-frame]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:78
+msgid "https://github.com/ring-clojure/[Ring]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/uhn.adoc:79
+msgid "https://github.com/ptaoussanis/sente[Sente]"
+msgstr ""

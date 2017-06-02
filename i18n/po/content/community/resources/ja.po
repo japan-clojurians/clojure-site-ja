@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-06-01 09:26+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/api/api.adoc:67 en/content/community/resources.adoc:39
+#: en/content/api/api.adoc:68 en/content/community/resources.adoc:39
 msgid "http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + examples"
 msgstr ""
 
 #. type: Plain text
-#: en/content/api/api.adoc:68 en/content/community/resources.adoc:40
+#: en/content/api/api.adoc:69 en/content/community/resources.adoc:40
 msgid "https://clojuredocs.org[ClojureDocs] - community provided example repository"
 msgstr ""
 
 #. type: Plain text
-#: en/content/api/api.adoc:69 en/content/community/resources.adoc:41
+#: en/content/api/api.adoc:70 en/content/community/resources.adoc:41
 msgid "https://crossclj.info/[CrossClj] - library cross-reference"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:4 en/content/community/books.adoc:4 en/content/community/resources.adoc:4
+#: en/content/reference/reader.adoc:4 en/content/community/resources.adoc:4 en/content/community/books.adoc:4
 msgid "Rich Hickey 2016-02-15"
 msgstr "Rich Hickey 2016-02-15"
 
@@ -65,7 +65,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:16
-msgid "http://dev.clojure.org/display/community/Clojure+User+Groups[Clojure User Groups]"
+msgid "https://dev.clojure.org/display/community/Clojure+User+Groups[Clojure User Groups]"
 msgstr ""
 
 #. type: Plain text
@@ -75,17 +75,17 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:18
-msgid "http://dev.clojure.org/display/community/Home[Community Wiki]"
+msgid "https://dev.clojure.org/display/community/Home[Community Wiki]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:19
-msgid "http://dev.clojure.org/display/doc/Home[Documentation Wiki]"
+msgid "https://dev.clojure.org/display/doc/Home[Documentation Wiki]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:20
-msgid "http://dev.clojure.org/display/design/Home[Design Wiki]"
+msgid "https://dev.clojure.org/display/design/Home[Design Wiki]"
 msgstr ""
 
 #. type: Title ==
@@ -129,8 +129,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/resources.adoc:31
 msgid ""
-"Issues - http://dev.clojure.org/jira/browse/CLJ[Clojure], http://dev.clojure.org/jira/browse/CLJS[ClojureScript], "
-"http://dev.clojure.org/jira/browse/CLJCLR[ClojureCLR]"
+"Issues - https://dev.clojure.org/jira/browse/CLJ[Clojure], https://dev.clojure.org/jira/browse/CLJS[ClojureScript], "
+"https://dev.clojure.org/jira/browse/CLJCLR[ClojureCLR]"
 msgstr ""
 
 #. type: Plain text
@@ -328,8 +328,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/resources.adoc:80
 msgid ""
-"Community volunteers maintain http://dev.clojure.org/display/doc/getting+started[Getting Started] documentation for a "
-"number of different tools and approaches. Some of the most commonly used tools include:"
+"Community volunteers maintain <<xref/../../guides/getting_started#,Getting Started>> documentation for a number of "
+"different tools and approaches. Some of the most commonly used tools include:"
 msgstr ""
 
 #. type: Plain text
