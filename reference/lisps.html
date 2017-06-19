@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Differences with other Lisps</title>
+    <title>Clojure - 他のLispとの違い</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,105 +72,113 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Differences with other Lisps</h1>
+  <h1>他のLispとの違い</h1>
 </div>
 
 <p><em></em></p>
 
 <p><div class="paragraph">
-<p>This information is provided for programmers familiar with Common Lisp or Scheme.</p>
+<p>この情報はCommon LispやSchemeを知っているプログラマーのために提供されている。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Clojure is case sensitive</p>
+<p>Clojureは大文字と小文字の違いを気にする</p>
 </li>
 <li>
-<p>Clojure is a Lisp-1</p>
+<p>ClojureはLisp-1である</p>
 </li>
 <li>
-<p>() is not the same as nil</p>
+<p>()はnilとは異なる</p>
 </li>
 <li>
-<p>The reader is side-effect free</p>
+<p>readerは副作用を起こさない</p>
 </li>
 <li>
-<p>Keywords are not Symbols</p>
+<p>キーワードはシンボルではない</p>
 </li>
 <li>
-<p>Symbols are not storage locations (see Var)</p>
+<p>シンボルはストレージではない (Varを参照)</p>
 </li>
 <li>
-<p><em><strong>nil</strong></em> is not a Symbol</p>
+<p><em><strong>nil</strong></em> はシンボルではない</p>
 </li>
 <li>
-<p>t is not syntax, use <em><strong>true</strong></em></p>
+<p>t はシンタックスに含まれない。 <em><strong>true</strong></em> を使用する</p>
 </li>
 <li>
-<p>The read table is currently not accessible to user programs</p>
+<p>現在、ユーザープログラムがリードテーブルにアクセスすることはできない</p>
 </li>
 <li>
-<p><em><strong>let</strong></em> binds sequentially</p>
+<p><em><strong>let</strong></em> は逐次的に束縛を行う</p>
 </li>
 <li>
-<p><em><strong>do</strong></em> is not a looping construct</p>
+<p><em><strong>do</strong></em> はループ構造ではない</p>
 </li>
 <li>
-<p>There is no tail-call optimization, use <em><strong>recur</strong></em>.</p>
+<p>末尾呼び出し最適化はない。 <em><strong>recur</strong></em> を使用する。</p>
 </li>
 <li>
-<p>syntax-quote does symbol resolution, so `x is not the same as 'x.</p>
+<p>シンタックスクォートはシンボルの解決を行うため、 `x は 'x と異なる。</p>
 </li>
 <li>
-<p>` has auto-gensyms.</p>
+<p>` は自動的にgensymを行う。</p>
 </li>
 <li>
-<p>~ is unquote ',' is whitespace</p>
+<p>~ はアンクォートで、 ',' は空白である</p>
 </li>
 <li>
-<p>There is reader syntax for maps, vectors, and sets</p>
+<p>マップ、ベクター、セットに対してリーダーのシンタックスが定義されている</p>
 </li>
 <li>
-<p><em><strong>cons</strong></em>, <em><strong>first</strong></em> and <em><strong>rest</strong></em> manipulate sequence abstractions, not concrete cons cells</p>
+<p><em><strong>cons</strong></em>, <em><strong>first</strong></em> 及び <em><strong>rest</strong></em> は具体的なコンスセルに対してではなく、シーケンス抽象を操作する。</p>
 </li>
 <li>
-<p>Most data structures are immutable</p>
+<p>ほとんどのデータ構造はイミュータブルである。</p>
 </li>
 <li>
-<p>lambda is <em><strong>fn</strong></em>, and supports overloading by arity</p>
+<p>ラムダは <em><strong>fn</strong></em> であり、アリティによるオーバーロードをサポートしている。</p>
 </li>
 <li>
-<p><em><strong>=</strong></em> is the equality predicate</p>
+<p><em><strong>=</strong></em> は等価性を示す述語である</p>
 </li>
 <li>
-<p>Global Vars can be dynamically rebound (if declared dynamic) without interfering with lexical local bindings. No special declarations are necessary to distinguish between dynamic and lexical bindings. Since Clojure is a Lisp-1, (global) functions can be dynamically rebound (if they are marked as dynamic).</p>
+<p>グローバルなVarは、動的(dynamic)と宣言されている場合には、ローカルなシンボルの束縛に干渉することなく動的に再束縛することができる。動的な束縛とレキシカルな束縛を区別するための特別な宣言などは必要ない。ClojureはLisp-1であるため、グローバルな関数は動的に再束縛することができる。</p>
 </li>
 <li>
-<p>No letrec, labels or flet - use (fn name [args]&#8230;&#8203;) for self-reference, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn">letfn</a> for mutual reference.</p>
+<p>letrec、labels や flet は存在しない - 自己参照には (fn name [args]&#8230;&#8203;) を使用する。相互参照には
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn">letfn</a>
+を使用する。</p>
 </li>
 <li>
-<p>In Clojure <em><strong>nil</strong></em> means 'nothing'. It signifies the absence of a value, of any type, and is not specific to lists or sequences.</p>
+<p>Clojure では <em><strong>nil</strong></em> は 「無」 を意味する。どのような型においてもが値がないこと示し、リストやシーケンス特有のものではない。</p>
 </li>
 <li>
-<p>Empty collections are distinct from <em><strong>nil</strong></em>. Clojure does not equate <em><strong>nil</strong></em> and '().</p>
+<p>空のコレクションは <em><strong>nil</strong></em> とは明確に異なる。Clojureは <em><strong>nil</strong></em> と '() を同値として扱わない。</p>
 </li>
 <li>
-<p><em><strong>false</strong></em> means one of the two possible boolean values, the other being <em><strong>true</strong></em></p>
+<p><em><strong>false</strong></em> はboolean型でとりうる２つの値のうちのひとつを示し、もうひとつの値は <em><strong>true</strong></em> である。</p>
 </li>
 <li>
-<p>There is more to collections than lists. You can have instances of empty collections, some of which have literal support ([], {}, and ()). Thus there can be no sentinel empty collection value.</p>
+<p>リスト以外にもコレクションは存在する。空のコレクションのインスタンスを作ることができ、いくつかはリテラルをサポートしている ([]、 {}、 及び
+())。よって、空のコレクションを示すセンチネルな値は存在しない。</p>
 </li>
 <li>
-<p>Coming from Scheme, <em><strong>nil</strong></em> may map most closely to your notion of #f.</p>
+<p>Schemeから来た場合、 <em><strong>nil</strong></em> は#fの概念に最も似ているかもしれない。</p>
 </li>
 <li>
-<p>A big difference in Clojure, is sequences. Sequences are not specific collections, esp. they are not necessarily concrete lists. When you ask an empty collection for a sequence of its elements (by calling <strong>seq</strong>) it returns <em><strong>nil</strong></em>, saying "I can&#8217;t produce one". When you ask a sequence on its last element for the <em><strong>rest</strong></em> it returns <em><strong>another logical sequence.</strong></em> You can only tell if that sequence is empty by calling <strong>seq</strong> on it in turn. This enables sequences and the sequence protocol to be <em>lazy</em>.</p>
+<p>Clojureにおける大きな違いはシーケンスである。シーケンスは特定のコレクションではなく、特に必ずしも具体的なリストではない。 <strong>seq</strong>
+を呼び出して空のコレクションからシーケンスを要求した場合、 <em><strong>nil</strong></em>
+を返し、「シーケンスを作ることができない」ということを示す。シーケンスの最後の要素に対して <em><strong>rest</strong></em> を要求した場合、
+<em><strong>別の論理的なシーケンスを返す。</strong></em> シーケンスが空かどうかはそれに対して <strong>seq</strong>
+を呼び出すことによって判定できる。シーケンスとシーケンスのプロトコルを <em>lazy</em> な(遅延評価される)ものにすることが可能になる。</p>
 </li>
 <li>
-<p>Some of the sequence functions correspond to functions from Scheme and CL that there manipulated only pairs/conses ('lists') and returned sentinel values ('() and nil) that represented 'empty' lists. The Clojure return values differ in not returning specific empty collections, but rather another logical sequence. Some of the sequence functions have no counterpart in Scheme/CL, and map to Haskell/ML-like functions. Some of those functions return infinite or calculated sequences, where the analogy to concrete data-structures like Scheme/CL lists is tenuous at best.</p>
+<p>いくつかのシーケンス関数は、pair/cons (リスト) に対してのみ操作を行い、空リストを意味するセンチネル値 ('() and nil)
+を返すという点がSchemeやCLの関数に対応する。Clojureが返す値は、具体的な空のコレクションではなく、むしろ別の論理的なシーケンスであるという点が異なる。いくつかのシーケンス関数はScheme/CLに相当するものが存在せず、Haskell/MLライクな関数である。これらの関数のいくつかが無限の、または計算されたシーケンスを返し、Scheme/CLにおける具体的なデータ構造とはあまり似ていない。</p>
 </li>
 <li>
-<p>It helps to distinguish collections/data-structures and seqs/iteration. In both CL and Scheme they are conflated, in Clojure they are separate.</p>
+<p>コレクション/データ構造とseq/iterationを区別することは有用だ。CLとSchemeではどちらもそれらが入り混じっているが、Clojureでは区別されている。</p>
 </li>
 </ul>
 </div>
@@ -195,63 +203,63 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Has nil?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means 'nothing'</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means false or empty list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil があるか</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - 「無」を意味する</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - falseまたは空リストを意味する</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Has true?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true があるか</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#t</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true (primitive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (プリミティヴ)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Has false?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false があるか</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#f</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false (primitive)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (プリイティヴ)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conditionals distinguish:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil or false/ everything else</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil/non-nil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#f/non-#f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">条件分岐の際の区別:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil と false/ それ以外</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil/非nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#f/非#f</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false/true</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List/sequence library manipulates distinguished concrete type(s)?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No - seq abstraction with many collection implementations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - cons and vector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - pair</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No - Iterator abstraction with many collection implementations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リスト/シーケンスライブラリが個別の具体的な型を扱うか</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">扱わない - seqによるコレクションの実装の抽象化</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">扱う - コンス と ベクター</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">扱う - ペア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">扱わない - イテレーターによるコレクション実装の抽象化</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Singleton empty-list value?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No - can have distinct empty values of concrete collection types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">シングルトンの空リスト値があるか</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ない - 具体的なコレクション型ごとに空のコレクションの値が存在しうる</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ない</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">End-of-sequence returns:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a logical sequence for which <strong>seq</strong> returns nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">シーケンスの終端の戻り値:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>seq</strong> がnilを返す論理シーケンス</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Host null:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の null:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
@@ -259,7 +267,7 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Host true:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の true:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true (boxed)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
@@ -267,7 +275,7 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Host false:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の false:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false (boxed)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
