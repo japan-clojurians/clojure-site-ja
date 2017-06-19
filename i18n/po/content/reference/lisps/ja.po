@@ -7,6 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"PO-Revision-Date: 2016-09-12 09:18+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -39,112 +40,112 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/lisps.adoc:1
 #, no-wrap
 msgid "Differences with other Lisps"
-msgstr ""
+msgstr "他のLispとの違い"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:14
 msgid "This information is provided for programmers familiar with Common Lisp or Scheme."
-msgstr ""
+msgstr "この情報はCommon LispやSchemeを知っているプログラマーのために提供されている。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:16
 msgid "Clojure is case sensitive"
-msgstr ""
+msgstr "Clojureは大文字と小文字の違いを気にする"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:17
 msgid "Clojure is a Lisp-1"
-msgstr ""
+msgstr "ClojureはLisp-1である"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:18
 msgid "() is not the same as nil"
-msgstr ""
+msgstr "()はnilとは異なる"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:19
 msgid "The reader is side-effect free"
-msgstr ""
+msgstr "readerは副作用を起こさない"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:20
 msgid "Keywords are not Symbols"
-msgstr ""
+msgstr "キーワードはシンボルではない"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:21
 msgid "Symbols are not storage locations (see Var)"
-msgstr ""
+msgstr "シンボルはストレージではない (Varを参照)"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:22
 msgid "_**nil**_ is not a Symbol"
-msgstr ""
+msgstr "_**nil**_ はシンボルではない"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:23
 msgid "t is not syntax, use _**true**_"
-msgstr ""
+msgstr "t はシンタックスに含まれない。 _**true**_ を使用する"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:24
 msgid "The read table is currently not accessible to user programs"
-msgstr ""
+msgstr "現在、ユーザープログラムがリードテーブルにアクセスすることはできない"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:25
 msgid "_**let**_ binds sequentially"
-msgstr ""
+msgstr "_**let**_ は逐次的に束縛を行う"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:26
 msgid "_**do**_ is not a looping construct"
-msgstr ""
+msgstr "_**do**_ はループ構造ではない"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:27
 msgid "There is no tail-call optimization, use _**recur**_."
-msgstr ""
+msgstr "末尾呼び出し最適化はない。 _**recur**_ を使用する。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:28
 msgid "syntax-quote does symbol resolution, so `x is not the same as 'x."
-msgstr ""
+msgstr "シンタックスクォートはシンボルの解決を行うため、 `x は 'x と異なる。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:29
 msgid "` has auto-gensyms."
-msgstr ""
+msgstr "` は自動的にgensymを行う。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:30
 msgid "~ is unquote ',' is whitespace"
-msgstr ""
+msgstr "~ はアンクォートで、 ',' は空白である"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:31
 msgid "There is reader syntax for maps, vectors, and sets"
-msgstr ""
+msgstr "マップ、ベクター、セットに対してリーダーのシンタックスが定義されている"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:32
 msgid "_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not concrete cons cells"
-msgstr ""
+msgstr "_**cons**_, _**first**_ 及び _**rest**_ は具体的なコンスセルに対してではなく、シーケンス抽象を操作する。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:33
 msgid "Most data structures are immutable"
-msgstr ""
+msgstr "ほとんどのデータ構造はイミュータブルである。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:34
 msgid "lambda is _**fn**_, and supports overloading by arity"
-msgstr ""
+msgstr "ラムダは _**fn**_ であり、アリティによるオーバーロードをサポートしている。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:35
 msgid "_**pass:[=]**_ is the equality predicate"
-msgstr ""
+msgstr "_**pass:[=]**_ は等価性を示す述語である"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:36
@@ -153,6 +154,9 @@ msgid ""
 "special declarations are necessary to distinguish between dynamic and lexical bindings. Since Clojure is a Lisp-1, "
 "(global) functions can be dynamically rebound (if they are marked as dynamic)."
 msgstr ""
+"グローバルなVarは、動的(dynamic)と宣言されている場合には、ローカルなシンボルの束縛に干渉することなく動的に再束縛することができる。動"
+"的な束縛とレキシカルな束縛を区別するための特別な宣言などは必要ない。ClojureはLisp-1であるため、グローバルな関数は動的"
+"に再束縛することができる。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:37
@@ -160,6 +164,8 @@ msgid ""
 "No letrec, labels or flet - use (fn name [args]...) for self-reference, https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/letfn[letfn] for mutual reference."
 msgstr ""
+"letrec、labels や flet は存在しない - 自己参照には (fn name [args]...) を使用する。相互参照には http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/letfn[letfn] を使用する。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:38
@@ -167,16 +173,18 @@ msgid ""
 "In Clojure _**nil**_ means 'nothing'. It signifies the absence of a value, of any type, and is not specific to lists "
 "or sequences."
 msgstr ""
+"Clojure では _**nil**_ は 「無」 を意味する。どのような型においてもが値がないこと示し、リストやシーケンス特有のもので"
+"はない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:39
 msgid "Empty collections are distinct from _**nil**_. Clojure does not equate _**nil**_ and '()."
-msgstr ""
+msgstr "空のコレクションは _**nil**_ とは明確に異なる。Clojureは _**nil**_ と '() を同値として扱わない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:40
 msgid "_**false**_ means one of the two possible boolean values, the other being _**true**_"
-msgstr ""
+msgstr "_**false**_ はboolean型でとりうる２つの値のうちのひとつを示し、もうひとつの値は _**true**_ である。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:41
@@ -184,11 +192,13 @@ msgid ""
 "There is more to collections than lists. You can have instances of empty collections, some of which have literal "
 "support ([], {}, and ()). Thus there can be no sentinel empty collection value."
 msgstr ""
+"リスト以外にもコレクションは存在する。空のコレクションのインスタンスを作ることができ、いくつかはリテラルをサポートしている "
+"([]、 {}、 及び ())。よって、空のコレクションを示すセンチネルな値は存在しない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:42
 msgid "Coming from Scheme, _**nil**_ may map most closely to your notion of #f."
-msgstr ""
+msgstr "Schemeから来た場合、 _**nil**_ は#fの概念に最も似ているかもしれない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:43
@@ -199,6 +209,11 @@ msgid ""
 "_**another logical sequence.**_ You can only tell if that sequence is empty by calling *seq* on it in turn. This "
 "enables sequences and the sequence protocol to be _lazy_."
 msgstr ""
+"Clojureにおける大きな違いはシーケンスである。シーケンスは特定のコレクションではなく、特に必ずしも具体的なリストではない。"
+" *seq* を呼び出して空のコレクションからシーケンスを要求した場合、 _**nil**_ を返し、「シーケンスを作ることができな"
+"い」ということを示す。シーケンスの最後の要素に対して _**rest**_ を要求した場合、 _**別の論理的なシーケンス"
+"を返す。**_ シーケンスが空かどうかはそれに対して *seq* を呼び出すことによって判定できる。"
+"シーケンスとシーケンスのプロトコルを _lazy_ な(遅延評価される)ものにすることが可能になる。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:44
@@ -209,6 +224,10 @@ msgid ""
 "no counterpart in Scheme/CL, and map to Haskell/ML-like functions. Some of those functions return infinite or "
 "calculated sequences, where the analogy to concrete data-structures like Scheme/CL lists is tenuous at best."
 msgstr ""
+"いくつかのシーケンス関数は、pair/cons (リスト) に対してのみ操作を行い、空リストを意味するセンチネル値 ('() and nil) を返すと"
+"いう点がSchemeやCLの関数に対応する。Clojureが返す値は、具体的な空のコレクションではなく、むしろ別の論理的なシーケンスである"
+"という点が異なる。いくつかのシーケンス関数はScheme/CLに相当するものが存在せず、Haskell/MLライクな関数である。こ"
+"れらの関数のいくつかが無限の、または計算されたシーケンスを返し、Scheme/CLにおける具体的なデータ構造とはあまり似ていない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:45
@@ -216,6 +235,8 @@ msgid ""
 "It helps to distinguish collections/data-structures and seqs/iteration. In both CL and Scheme they are conflated, in "
 "Clojure they are separate."
 msgstr ""
+"コレクション/データ構造とseq/iterationを区別することは有用だ。CLとSchemeではどちらもそれらが入り混じっているが、Clojureで"
+"は区別されている。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:59
@@ -235,3 +256,16 @@ msgid ""
 "| Host false: | false (boxed) | NA | NA | NA |\n"
 "|===\n"
 msgstr ""
+"|===\n"
+"|   | Clojure | Common Lisp | Scheme | Java |\n"
+"| nil があるか | nil - 「無」を意味する | nil - falseまたは空リストを意味する | - | null |\n"
+"| true があるか | true | - | #t | true (プリミティヴ) |\n"
+"| false があるか | false | - | #f | false (プリイティヴ) |\n"
+"| 条件分岐の際の区別: | nil と false/ それ以外 | nil/非nil | #f/非#f | false/true |\n"
+"| リスト/シーケンスライブラリが個別の具体的な型を扱うか | 扱わない - seqによるコレクションの実装の抽象化 | 扱う - コンス と ベクター | 扱う - ペア | 扱わない - イテレーターによるコレクション実装の抽象化 |\n"
+"| シングルトンの空リスト値があるか | ない - 具体的なコレクション型ごとに空のコレクションの値が存在しうる | nil | '() | ない |\n"
+"| シーケンスの終端の戻り値: | *seq* がnilを返す論理シーケンス | nil | '() | false |\n"
+"| ホスト環境の null: | nil | NA | NA | NA |\n"
+"| ホスト環境の true: | true (boxed) | NA | NA | NA |\n"
+"| ホスト環境の false: | false (boxed) | NA | NA | NA |\n"
+"|===\n"
