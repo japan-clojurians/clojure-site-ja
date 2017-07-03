@@ -102,7 +102,7 @@ msgstr "なぜClojureなのか?"
 #. type: Plain text
 #: en/content/about/rationale.adoc:23
 msgid "Why did I write yet another programming language? Basically because I wanted:"
-msgstr "なぜ私はさらに別のプログラミング言語を書いたのか? それは基本的に私が次のものがほしかったからだ:"
+msgstr "なぜ私はさらに別のプログラミング言語を書いたのか? それは基本的に私が次のものを求めていたからだ:"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:25
