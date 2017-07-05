@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,8 @@ msgstr ""
 #: en/content/reference/data_structures.adoc:16
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 #: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
@@ -101,7 +102,7 @@ msgid "Symbols"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:99
+#: en/content/reference/reader.adoc:100
 #: en/content/reference/data_structures.adoc:235
 #, no-wrap
 msgid "Sets"
@@ -278,11 +279,11 @@ msgid ""
 "clojure.core-api.html#clojure.core/dec%27[dec'] Comparison: https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/%3D%3D[==] https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C[<] https://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C%3D[<=] "
-"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3E[>] "
-"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3E"
-"%3D[>=] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
-"zero%3F[zero?] https://clojure.github.io/clojure/clojure.core-api."
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C%3D[pass:"
+"[<=]] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"%3E[>] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"%3E%3D[>=] https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core/zero%3F[zero?] https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/pos%3F[pos?] https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/neg%3F[neg?] Bitwise operations: https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/bit-and[bit-and] "

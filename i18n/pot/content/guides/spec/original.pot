@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,8 @@ msgstr ""
 #: en/content/reference/data_structures.adoc:16
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 #: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
@@ -466,7 +467,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:181
-msgid "predicate - the actual predicate that was not satsified by val"
+msgid "predicate - the actual predicate that was not satisfied by val"
 msgstr ""
 
 #. type: Plain text
@@ -518,7 +519,7 @@ msgstr ""
 #: en/content/guides/spec.adoc:206
 msgid ""
 "This result also demonstrates the new namespace map literal syntax added in "
-"1.9.0-alpha8. Maps may be prefixed with `#:` or `#::` (for autoresolve) to "
+"1.9.0-alpha8. Maps may be prefixed with `\\#:` or `#::` (for autoresolve) to "
 "specify a default namespace for all keys in the map. In this example, this "
 "is equivalent to `{:clojure.spec.alpha/problems ...}`"
 msgstr ""
@@ -1267,7 +1268,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:531
-msgid "Let's now see the various occurence operators `*`, `+`, and `?`:"
+msgid "Let's now see the various occurrence operators `*`, `+`, and `?`:"
 msgstr ""
 
 #. type: delimited block -

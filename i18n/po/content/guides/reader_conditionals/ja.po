@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,10 +25,10 @@ msgstr ""
 #: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -38,6 +38,45 @@ msgstr "toc::[]"
 #, no-wrap
 msgid "Namespaces"
 msgstr "ネームスペース"
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:700 en/content/guides/reader_conditionals.adoc:25
+#, no-wrap
+msgid ""
+"#?(:clj  (Clojure expression)\n"
+"   :cljs (ClojureScript expression)\n"
+"   :cljr (Clojure CLR expression)\n"
+"   :default (fallthrough expression))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:708 en/content/guides/reader_conditionals.adoc:30
+msgid ""
+"The syntax for a splicing reader conditional is `#?@`. It is used to splice lists into the containing form. So the "
+"Clojure reader would read this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:713 en/content/guides/reader_conditionals.adoc:36
+#, no-wrap
+msgid ""
+"(defn build-list []\n"
+"  (list #?@(:clj  [5 6 7 8]\n"
+"            :cljs [1 2 3 4])))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:715 en/content/guides/reader_conditionals.adoc:39
+msgid "as this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:719 en/content/guides/reader_conditionals.adoc:44
+#, no-wrap
+msgid ""
+"(defn build-list []\n"
+"  (list 5 6 7 8))\n"
+msgstr ""
 
 #. type: Title ==
 #: en/content/guides/comparators.adoc:71 en/content/guides/reader_conditionals.adoc:11
@@ -81,51 +120,12 @@ msgid ""
 "to a traditional `cond`. The syntax for usage is `#?` and looks like:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:25
-#, no-wrap
-msgid ""
-"#?(:clj  (Clojure expression)\n"
-"   :cljs (ClojureScript expression)\n"
-"   :cljr (Clojure CLR expression)\n"
-"   :default (fallthrough expression))\n"
-msgstr ""
-
 #. type: Plain text
 #: en/content/guides/reader_conditionals.adoc:28
 msgid ""
 "The platform tags `:clj`, etc are a fixed set of tags hard-coded into each platform. The `:default` tag is a well-"
 "known tag to catch and provide an expression if no platform tag matches. If no tags match and `:default` is not "
 "provided, the reader conditional will read nothing (not nil, but as if nothing was read from the stream at all)."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:30
-msgid ""
-"The syntax for a splicing reader conditional is `#?@`. It is used to splice lists into the containing form. So the "
-"Clojure reader would read this:"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:36
-#, no-wrap
-msgid ""
-"(defn build-list []\n"
-"  (list #?@(:clj  [5 6 7 8]\n"
-"            :cljs [1 2 3 4])))\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/reader_conditionals.adoc:39
-msgid "as this:"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/reader_conditionals.adoc:44
-#, no-wrap
-msgid ""
-"(defn build-list []\n"
-"  (list 5 6 7 8))\n"
 msgstr ""
 
 #. type: Plain text

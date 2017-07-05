@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
 "PO-Revision-Date: 2017-03-12 23:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,15 +25,15 @@ msgstr ""
 #: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:178
+#: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:179
 msgid "For example:"
 msgstr "例:"
 
@@ -189,8 +189,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:40
-msgid "nil Means 'nothing/no-value'- represents Java null and tests logical false"
-msgstr "nilは'何もない、もしくは値がない'ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。"
+msgid "`nil` Means 'nothing/no-value'- represents Java null and tests logical false"
+msgstr "`nil` は'何もない、もしくは値がない'ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:41
@@ -261,18 +261,18 @@ msgid "Keys and values can be any forms."
 msgstr "キーとバリューにはどのようなフォームも使用できる。"
 
 #. type: Title ====
-#: en/content/reference/reader.adoc:63
+#: en/content/reference/reader.adoc:64
 #, no-wrap
 msgid "Map namespace syntax"
 msgstr "ネームスペース付きマップ記法"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:66
+#: en/content/reference/reader.adoc:67
 msgid "_Added in Clojure 1.9_"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:68
+#: en/content/reference/reader.adoc:69
 msgid ""
 "Map literals can optionally specify a default namespace context for keys in the map using a `#:ns` prefix, where _ns_ "
 "is the name of a namespace and the prefix precedes the opening brace `{` of the map. Additionally, `pass:[#::]` can "
@@ -283,12 +283,12 @@ msgstr ""
 "[#::]` を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することができる。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:70
+#: en/content/reference/reader.adoc:71
 msgid "A map literal with namespace syntax is read with the following differences from a map without:"
 msgstr "ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:75
+#: en/content/reference/reader.adoc:76
 msgid ""
 "Keys ** Keys that are keywords or symbols without a namespace are read with the default namespace.  ** Keys that are "
 "keywords or symbols with a namespace are not affected *except* for the special namespace `_`, which is removed during "
@@ -303,7 +303,7 @@ msgstr ""
 " ** キーワード、シンボルでないキーは影響を受けない。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:78
+#: en/content/reference/reader.adoc:79
 msgid "Values ** Values are not affected.  ** Nested map literal keys are not affected."
 msgstr ""
 "* バリュー\n"
@@ -311,12 +311,12 @@ msgstr ""
 "** ネストしたマップリテラルのキーは影響されない。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:80
+#: en/content/reference/reader.adoc:81 en/content/guides/weird_characters.adoc:474
 msgid "For example, the following map literal with namespace syntax:"
 msgstr "例として以下のネームスペース指定付きの以下のマップ:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:87
+#: en/content/reference/reader.adoc:88
 #, no-wrap
 msgid ""
 "#:person{:first \"Han\"\n"
@@ -330,12 +330,12 @@ msgstr ""
 "                      :model \"YT-1300f light freighter\"}}\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:90
+#: en/content/reference/reader.adoc:91 en/content/guides/weird_characters.adoc:482
 msgid "is read as:"
 msgstr "は以下のように読み込まれる:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:97
+#: en/content/reference/reader.adoc:98
 #, no-wrap
 msgid ""
 "{:person/first \"Han\"\n"
@@ -349,24 +349,24 @@ msgstr ""
 "               :ship/model \"YT-1300f light freighter\"}}\n"
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:99 en/content/reference/data_structures.adoc:235
+#: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235
 #, no-wrap
 msgid "Sets"
 msgstr "Sets (セット)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:102
+#: en/content/reference/reader.adoc:103
 msgid "Sets are zero or more forms enclosed in braces preceded by `pass:[#]`: `#{:a :b :c}`"
 msgstr "セットは0個以上の、先頭に `pass:[#]` を持つ波括弧で括られたフォーム： `#{:a :b :c}`"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:103
+#: en/content/reference/reader.adoc:104
 #, no-wrap
 msgid "deftype, defrecord, and constructor calls (version 1.3 and later):"
 msgstr "deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:106
+#: en/content/reference/reader.adoc:107
 msgid ""
 "Calls to Java class, deftype, and defrecord constructors can be called using their fully qualified class name "
 "preceded by # and followed by a vector: `#my.klass_or_type_or_record[:a :b :c]` +"
@@ -375,7 +375,7 @@ msgstr ""
 "出すことができる: `#my.klass_or_type_or_record[:a :b :c]` +"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:107
+#: en/content/reference/reader.adoc:108
 msgid ""
 "The elements in the vector part are passed *unevaluated* to the relevant constructor. defrecord instances can also be "
 "created with a similar form that takes a map instead: `#my.record{:a 1, :b 2}` +"
@@ -384,7 +384,7 @@ msgstr ""
 "うなフォームを使用して作成することができる: `my.record{:a 1, :b 2}` +"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:108
+#: en/content/reference/reader.adoc:109
 msgid ""
 "The keyed values in the map are assigned *unevaluated* to the relevant fields in the defrecord. Any defrecord fields "
 "without corresponding entries in the literal map are assigned nil as their value. Any extra keyed values in the map "
@@ -395,13 +395,13 @@ msgstr ""
 "インスタンスに追加される。"
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:110
+#: en/content/reference/reader.adoc:111
 #, no-wrap
 msgid "Macro characters"
 msgstr "Macro characters (マクロキャラクター)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:113
+#: en/content/reference/reader.adoc:114
 msgid ""
 "The behavior of the reader is driven by a combination of built-in constructs and an extension system called the read "
 "table. Entries in the read table provide mappings from certain characters, called macro characters, to specific "
@@ -412,29 +412,29 @@ msgstr ""
 "ングを定義する。特別な指定がない限り、マクロキャラクターはユーザーシンボルに含めることはできない"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:114
+#: en/content/reference/reader.adoc:115
 #, no-wrap
 msgid "Quote (')"
 msgstr "Quote (') (クォート)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:117
+#: en/content/reference/reader.adoc:118
 msgid "`'form` => `(quote form)`"
 msgstr "`'form` => `(quote form)`"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:118
+#: en/content/reference/reader.adoc:119
 #, no-wrap
 msgid "Character (\\)"
 msgstr "Character (\\) (文字)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:121
+#: en/content/reference/reader.adoc:122
 msgid "As per above, yields a character literal. Example character literals are: `\\a \\b \\c`."
 msgstr "上記のように文字リテラルを生成する。文字リテラルの例: `\\a \\b \\c`"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:123
+#: en/content/reference/reader.adoc:124
 msgid ""
 "The following special character literals can be used for common characters: `\\newline`, `\\space`, `\\tab`, `"
 "\\formfeed`, `\\backspace`, and `\\return`."
@@ -443,7 +443,7 @@ msgstr ""
 "and `\\return`."
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:125
+#: en/content/reference/reader.adoc:126
 msgid ""
 "Unicode support follows Java conventions with support corresponding to the underlying Java version. A Unicode literal "
 "is of the form `\\uNNNN`, for example `\\u03A9` is the literal for Ω."
@@ -452,35 +452,35 @@ msgstr ""
 "の形式となる。例えばΩのリテラルは `\\u03A9` になる。"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:126
+#: en/content/reference/reader.adoc:127
 #, no-wrap
 msgid "Comment (;)"
 msgstr "Comment (;) (コメント)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:129
+#: en/content/reference/reader.adoc:130
 msgid "Single-line comment, causes the reader to ignore everything from the semicolon to the end-of-line."
 msgstr "単一行コメント。セミコロンから行末までをreaderに無視させる効果がある。"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:130
+#: en/content/reference/reader.adoc:131
 #, no-wrap
 msgid "Deref (@)"
 msgstr "Deref (@)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:133
+#: en/content/reference/reader.adoc:134
 msgid "`@form => (deref form)`"
 msgstr "`@form => (deref form)`"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:134
+#: en/content/reference/reader.adoc:135
 #, no-wrap
 msgid "Metadata (^)"
 msgstr "Metadata (^) (メタデータ)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:138
+#: en/content/reference/reader.adoc:139
 msgid ""
 "Metadata is a map associated with some kinds of objects: Symbols, Lists, Vector, Sets, Maps, tagged literals "
 "returning an IMeta, and record, type, and constructor calls. The metadata reader macro first reads the metadata and "
@@ -495,7 +495,7 @@ msgstr ""
 "`^{:a 1 :b 2} [1 2 3]` は `{:a 1 :b 2}` をメタデータマップにもつ `[1 2 3]` を生成する。 "
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:141
+#: en/content/reference/reader.adoc:142
 msgid ""
 "A shorthand version allows the metadata to be a simple symbol or string, in which case it is treated as a single "
 "entry map with a key of :tag and a value of the (resolved) symbol or string, e.g.: + `^String x` is the same as `^{:"
@@ -506,12 +506,12 @@ msgstr ""
 "`^String x` は `^{:tag java.lang.String} x` と同等。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:143
+#: en/content/reference/reader.adoc:144
 msgid "Such tags can be used to convey type information to the compiler. +"
 msgstr "このようなタグはコンパイラーに型情報を渡すことに使用できる。 "
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:146
+#: en/content/reference/reader.adoc:147
 msgid ""
 "Another shorthand version allows the metadata to be a keyword, in which case it is treated as a single entry map with "
 "a key of the keyword and a value of true, e.g.: + `^:dynamic x` is the same as `^{:dynamic true} x` +"
@@ -520,18 +520,18 @@ msgstr ""
 "trueとした単一エントリーのマップとして扱われる: `^:dynamic x` は `^{:dynamic true} x` と同等。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:148
+#: en/content/reference/reader.adoc:149
 msgid "Metadata can be chained in which case they are merged from right to left."
 msgstr "メタデータはチェインすることができる。その場合、メタデータは右から左へとマージされる。"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:149
+#: en/content/reference/reader.adoc:150
 #, no-wrap
 msgid "Dispatch (pass:[#])"
 msgstr "Dispatch (pass:[#]) (ディスパッチ)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:152
+#: en/content/reference/reader.adoc:153
 msgid ""
 "The dispatch macro causes the reader to use a reader macro from another table, indexed by the character following"
 msgstr ""
@@ -539,17 +539,17 @@ msgstr ""
 "る。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:154
+#: en/content/reference/reader.adoc:155
 msgid "pass:[#{}] - see Sets above"
 msgstr "pass:[#{}] - 上記のセットを参照"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:155
+#: en/content/reference/reader.adoc:156
 msgid "Regex patterns (pass:[#\"pattern\"])"
 msgstr "正規表現パターン (pass:[#\"pattern\"])"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:157
+#: en/content/reference/reader.adoc:158
 msgid ""
 "A regex pattern is read and _compiled at read time_. The resulting object is of type java.util.regex.Pattern. Regex "
 "strings do not follow the same escape character rules as strings. Specifically, backslashes in the pattern are "
@@ -562,22 +562,22 @@ msgstr ""
 "\"\\s*\\d+\"` と書ける。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:158
+#: en/content/reference/reader.adoc:159
 msgid "Var-quote (pass:[#'])"
 msgstr "Var-quote (pass:[#'])"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:160
+#: en/content/reference/reader.adoc:161
 msgid "`#'x` => `(var x)`"
 msgstr "`#'x` => `(var x)`"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:161
+#: en/content/reference/reader.adoc:162
 msgid "Anonymous function literal (#())"
 msgstr "無名関数リテラル (#())"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:164
+#: en/content/reference/reader.adoc:165
 msgid ""
 "`#(...)` => `(fn [args] (...))` + where args are determined by the presence of argument literals taking the form %, "
 "%n or %&. % is a synonym for %1, %n designates the nth arg (1-based), and %& designates a rest arg. This is not a "
@@ -590,12 +590,12 @@ msgstr ""
 "ルター関数などのために利用する。#()フォームをネストすることはできない。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:165
+#: en/content/reference/reader.adoc:166
 msgid "Ignore next form (pass:[#_])"
 msgstr "次のフォームを無視する (pass:[#_])"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:167
+#: en/content/reference/reader.adoc:168
 msgid ""
 "The form following pass:[#_] is completely skipped by the reader. (This is a more complete removal than the https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment[comment] macro which yields nil)."
@@ -604,18 +604,18 @@ msgstr ""
 "html#clojure.core/comment[comment] マクロはnilを返すのでこちらの方がより完全なフォームの除去になる)。"
 
 #. type: Title ===
-#: en/content/reference/reader.adoc:169
+#: en/content/reference/reader.adoc:170
 #, no-wrap
 msgid "Syntax-quote (`, note, the \"backquote\" character), Unquote (~) and Unquote-splicing (~@)"
 msgstr "Syntax-quote (シンタックスクォート) (`, バッククォートである点について注意), Unquote (アンクォート)(~) 及び Unquote-splicing (アンクォートスプライシング) (~@)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:172
+#: en/content/reference/reader.adoc:173
 msgid "For all forms other than Symbols, Lists, Vectors, Sets and Maps, `x is the same as 'x. +"
 msgstr "シンボル、リスト、ベクター、セット、マップ以外のフォームについては `xと'xは同等。 "
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:174
+#: en/content/reference/reader.adoc:175
 msgid ""
 "For Symbols, syntax-quote _resolves_ the symbol in the current context, yielding a fully-qualified symbol (i.e. "
 "namespace/name or fully.qualified.Classname). If a symbol is non-namespace-qualified and ends with pass:['#'], it is "
@@ -629,7 +629,7 @@ msgstr ""
 "シンタックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:176
+#: en/content/reference/reader.adoc:177
 msgid ""
 "For Lists/Vectors/Sets/Maps, syntax-quote establishes a template of the corresponding data structure. Within the "
 "template, unqualified forms behave as if recursively syntax-quoted, but forms can be exempted from such recursive "
@@ -642,7 +642,7 @@ msgstr ""
 "て扱われ、テンプレートの中でそれぞれその値、もしくは値のシークエンスで置き換えられる。"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:185
+#: en/content/reference/reader.adoc:186
 #, no-wrap
 msgid ""
 "user=> (def x 5)\n"
@@ -656,18 +656,18 @@ msgstr ""
 "(user/fred user/x 5 user/lst a b c 7 8 :nine)\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:188
+#: en/content/reference/reader.adoc:189
 msgid "The read table is currently not accessible to user programs."
 msgstr "現在リードテーブルをユーザープログラムからアクセスすることはできない。"
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:189
+#: en/content/reference/reader.adoc:190
 #, no-wrap
 msgid "extensible data notation (edn)"
 msgstr "extensible data notation (edn) (拡張可能なデータ記法)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:191
+#: en/content/reference/reader.adoc:192
 msgid ""
 "Clojure's reader supports a superset of https://github.com/edn-format/edn[extensible data notation (edn)]. The edn "
 "specification is under active development, and complements this document by defining a subset of Clojure data syntax "
@@ -678,20 +678,20 @@ msgstr ""
 "依らない形で補完している。"
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:192
+#: en/content/reference/reader.adoc:194
 #, no-wrap
 msgid "Tagged Literals"
 msgstr "Tagged Literals (タグ付きリテラル)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:194
+#: en/content/reference/reader.adoc:196
 msgid ""
 "Tagged literals are Clojure's implementation of edn https://github.com/edn-format/edn#tagged-elements[tagged "
 "elements]."
 msgstr "タグ付きリテラルはednのClojureによる実装 https://github.com/edn-format/edn#tagged-elements[tagged elements]."
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:196
+#: en/content/reference/reader.adoc:198
 msgid ""
 "When Clojure starts, it searches for files named `data_readers.clj` at the root of the classpath. Each such file must "
 "contain a Clojure map of symbols, like this:"
@@ -700,7 +700,7 @@ msgstr ""
 "イルには次のようなシンボルをClojureマップに書く:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:200
+#: en/content/reference/reader.adoc:202
 #, no-wrap
 msgid ""
 "{foo/bar my.project.foo/bar\n"
@@ -710,24 +710,24 @@ msgstr ""
 " foo/baz my.project/baz}\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:202
+#: en/content/reference/reader.adoc:204
 msgid ""
 "The key in each pair is a tag that will be recognized by the Clojure reader. The value in the pair is the fully-"
 "qualified name of a <<vars#,Var>> which will be invoked by the reader to parse the form following the tag. For "
 "example, given the `data_readers.clj` file above, the Clojure reader would parse this form:"
 msgstr ""
 "各ペアのキーはClojureリーダーによって認識されるタグとなる。ペアのバリューは完全修飾された <<vars#,Var>> の名前であり、"
-"リーダーがタグの後に続くフォームをパースするために参照される。例えば上記の `data_eaders.clj` ファイルが与えられた場合、"
-"Clojureのリーダーはこのフォームを次のようにパースする:"
+"リーダーがタグの後に続くフォームをパースするために参照される。例えば上記の `data_eaders.clj` ファイルが与えられた場"
+"合、Clojureのリーダーはこのフォームを次のようにパースする:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:205
+#: en/content/reference/reader.adoc:207
 #, no-wrap
 msgid "#foo/bar [1 2 3]\n"
 msgstr "#foo/bar [1 2 3]\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:207
+#: en/content/reference/reader.adoc:209
 msgid ""
 "by invoking the Var `#'my.project.foo/bar` on the vector `[1 2 3]`. The data reader function is invoked on the form "
 "AFTER it has been read as a normal Clojure data structure by the reader."
@@ -736,7 +736,7 @@ msgstr ""
 "造としてリーダーに読み込まれた後に呼び出される。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:209
+#: en/content/reference/reader.adoc:211
 msgid ""
 "Reader tags without namespace qualifiers are reserved for Clojure. Default reader tags are defined in https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers[default-data-readers] but may be overridden "
@@ -755,13 +755,13 @@ msgstr ""
 "data-reader-fn*] がnilの場合(デフォルト)RuntimeExceptionが発生する。"
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:210
+#: en/content/reference/reader.adoc:212
 #, no-wrap
 msgid "Reader Conditionals"
 msgstr "Reader Conditionals (リーダーコンディショナル)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:213
+#: en/content/reference/reader.adoc:215
 msgid ""
 "Clojure 1.7 introduced a new extension (.cljc) for portable files that can be loaded by multiple Clojure platforms. "
 "The primary mechanism for managing platform-specific code is to isolate that code into a minimal set of namespaces, "
@@ -772,7 +772,7 @@ msgstr ""
 "ペースに隔離し、それらのプラットフォーム毎のバージョン(.clj/.class or.cljs)を用意することだ。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:215
+#: en/content/reference/reader.adoc:217
 msgid ""
 "In cases where is not feasible to isolate the varying parts of the code, or where the code is mostly portable with "
 "only small platform-specific parts, 1.7 also introduced _reader conditionals_, which are supported only in cljc files "
@@ -783,7 +783,7 @@ msgstr ""
 "コンディショナル_ は控えめに、必要な時だけ使うことが推奨される。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:217
+#: en/content/reference/reader.adoc:219
 msgid ""
 "Reader conditionals are a new reader dispatch form starting with `pass:[#?]` or `pass:[#?@]`. Both consist of a "
 "series of alternating features and expressions, similar to `cond`. Every Clojure platform has a well-known \"platform "
@@ -801,14 +801,14 @@ msgstr ""
 "合、フォームは一切読み込まれない(リーダーコンディショナルが最初から存在しないのと同等)。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:219
+#: en/content/reference/reader.adoc:221
 msgid ""
 "The following example will read as Double/NaN in Clojure, js/NaN in ClojureScript, and nil in any other platform:"
 msgstr ""
 "以下の例はClojureでは Double/NaN ClojureScript では js/NaN、それ以外のプラットフォームではnilとして読み込まれる。"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:225
+#: en/content/reference/reader.adoc:227
 #, no-wrap
 msgid ""
 "#?(:clj     Double/NaN\n"
@@ -820,7 +820,7 @@ msgstr ""
 "   :default nil)\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:228
+#: en/content/reference/reader.adoc:230
 msgid ""
 "The syntax for `pass:[#?@]` is exactly the same but the expression is expected to return a collection that can be "
 "spliced into the surrounding context, similar to unquote-splicing in syntax quote. Use of reader conditional splicing "
@@ -831,7 +831,7 @@ msgstr ""
 "発生する。例:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:235
+#: en/content/reference/reader.adoc:237
 #, no-wrap
 msgid ""
 "[1 2 #?@(:clj [3 4] :cljs [5 6])]\n"
@@ -845,7 +845,7 @@ msgstr ""
 ";; anywhere else => [1 2]\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:238
+#: en/content/reference/reader.adoc:240
 msgid ""
 "The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] and https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/read-string[read-string] functions optionally take a map of options as a "
@@ -858,7 +858,7 @@ msgstr ""
 "る:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:244
+#: en/content/reference/reader.adoc:246
 #, no-wrap
 msgid ""
 "  :read-cond - :allow to process reader conditionals, or\n"
@@ -870,12 +870,12 @@ msgstr ""
 "  :features - 有効なフィーチャーキーワードのパーシスタントセット。\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:247
+#: en/content/reference/reader.adoc:249
 msgid "An example of how to test ClojureScript reader conditionals from Clojure:"
 msgstr "ClojureScriptのリーダーコンデショナルをClojureからテストする例:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:255
+#: en/content/reference/reader.adoc:257
 #, no-wrap
 msgid ""
 "(read-string\n"
@@ -891,7 +891,7 @@ msgstr ""
 ";; :works!\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:258
+#: en/content/reference/reader.adoc:260
 msgid ""
 "However, note that the Clojure reader will _always_ inject the platform feature :clj as well. For platform-agnostic "
 "reading, see https://github.com/clojure/tools.reader[tools.reader]."
@@ -900,7 +900,7 @@ msgstr ""
 "に依存しない読み込みに関しては https://github.com/clojure/tools.reader[tools.reader]を参照。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:260
+#: en/content/reference/reader.adoc:262
 msgid ""
 "If the reader is invoked with `{:read-cond :preserve}`, the reader conditional and non-executed branches will be "
 "preserved, as data, in the returned form. The reader-conditional will be returned as a type that supports keyword "
@@ -913,7 +913,7 @@ msgstr ""
 "る型として返される。"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:267
+#: en/content/reference/reader.adoc:269
 #, no-wrap
 msgid ""
 "(read-string\n"
@@ -927,7 +927,7 @@ msgstr ""
 ";; [1 2 #?@(:clj [3 4] :cljs [5 6])]\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:270
+#: en/content/reference/reader.adoc:272
 msgid ""
 "The following functions can also be used as predicates or constructors for these types: + https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] https://clojure.github.io/"

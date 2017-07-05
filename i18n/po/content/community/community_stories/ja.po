@@ -29,7 +29,5 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/community_stories.adoc:11
-msgid ""
-"If you'd like to share your Clojure story, please contact __alex."
-"miller@cognitect.com__."
+msgid "If you'd like to share your Clojure story, please contact __alex.miller@cognitect.com__."
 msgstr ""

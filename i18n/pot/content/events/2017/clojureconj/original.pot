@@ -24,6 +24,11 @@ msgid "Clojure/conj"
 msgstr ""
 
 #. type: Plain text
+#: en/content/events/2017/clojureconj.adoc:4
+msgid "Cognitect 2017-10-12"
+msgstr ""
+
+#. type: Plain text
 #: en/content/events/2017/clojureconj.adoc:12
 #: en/content/events/2016/clojureconj.adoc:12
 msgid ""
@@ -43,14 +48,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/events/2016/clojureconj.adoc:4
-msgid "Cognitect 2016-12-01"
-msgstr ""
-
-#. type: Plain text
-#: en/content/events/2016/clojureconj.adoc:16
+#: en/content/events/2017/clojureconj.adoc:16
 msgid ""
-"This year's event will be held in Austin, TX from December 1-3. The Conj "
+"This year's event will be held in Baltimore, MD from October 12-14. The Conj "
 "offers a great mix of experienced Clojurists and new adopters and everyone "
-"can find something to suit their need."
+"can find something to suit their need. This will be a special year for the "
+"Conj as Clojure will celebrate it's 10th birthday!"
 msgstr ""

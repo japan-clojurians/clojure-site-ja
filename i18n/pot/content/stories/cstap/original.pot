@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,10 +24,18 @@ msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/uhn.adoc:43 en/content/stories/ona.adoc:45
-#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
+#: en/content/stories/uhn.adoc:43 en/content/stories/signal.adoc:42
+#: en/content/stories/ona.adoc:45 en/content/stories/cstap.adoc:50
+#: en/content/stories/empear.adoc:47
 #, no-wrap
 msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/signal.adoc:26 en/content/stories/ona.adoc:25
+#: en/content/stories/cstap.adoc:37 en/content/stories/empear.adoc:29
+#, no-wrap
+msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text
@@ -35,13 +43,6 @@ msgstr ""
 #: en/content/stories/empear.adoc:21
 #, no-wrap
 msgid "*What product or service are you building with Clojure or ClojureScript?*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
-#: en/content/stories/empear.adoc:29
-#, no-wrap
-msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text

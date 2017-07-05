@@ -1,0 +1,1880 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:81
+#: en/content/guides/weird_characters.adoc:474
+msgid "For example, the following map literal with namespace syntax:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:91
+#: en/content/guides/weird_characters.adoc:482
+msgid "is read as:"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/weird_characters.adoc:1
+#, no-wrap
+msgid "Reading Clojure Characters"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:4
+msgid "James Hughes 2017-05-27"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:18
+msgid ""
+"This page explains the Clojure syntax for characters that are difficult to "
+"\"google\".  Sections are not in any particular order, but related items are "
+"grouped for ease.  Please refer to <<xref/../../reference/reader#,the reader "
+"reference page>> as the authoritative reference on the Clojure reader.  This "
+"guide is based on http://twitter.com/kouphax[James Hughes] original https://"
+"yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/"
+"[blog post] and has been updated and expanded here with the permission of "
+"the author."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:20
+#, no-wrap
+msgid "`( ... )` - List"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:23
+msgid ""
+"Lists are sequential heterogeneous collections implemented as a linked list."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:25
+msgid ""
+"<<xref/../../reference/data_structures#Lists,Clojure Documentation: Lists>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:27
+msgid "A list of three values:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:31
+#, no-wrap
+msgid "(1 \"two\" 3.0)\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:34
+#, no-wrap
+msgid "`[ ... ]` - Vector"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:37
+msgid ""
+"Vectors are sequential, indexed, heterogeneous collections. Indexing is 0-"
+"based."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:39
+msgid ""
+"An example of retrieving the value at index 1 in a vector of three values:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:44
+#, no-wrap
+msgid ""
+"user=> (get [\"a\" 13.7 :foo] 1)\n"
+"13.7\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:47
+msgid ""
+"<<xref/../../reference/data_structures#Vectors,Clojure Documentation: "
+"Vectors>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:49
+#, no-wrap
+msgid "`{ ... }` - Map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:52
+msgid ""
+"Maps are heterogeneous collections specified with alternating keys and "
+"values:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:57
+#, no-wrap
+msgid ""
+"user=> (keys {:a 1 :b 2})\n"
+"(:a :b)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:60
+msgid ""
+"<<xref/../../reference/data_structures#Maps,Clojure Documentation: Maps>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:62
+#, no-wrap
+msgid "`#` - Dispatch character"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:65
+msgid "You'll see this character beside another e.g. `\\#(` or `#\"`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:68
+msgid ""
+"`#` is a special character that tells the Clojure reader (the component that "
+"takes Clojure source and \"reads\" it as Clojure data) how to interpret the "
+"next character using a _read table_. Although some Lisps allow the read "
+"table to be extended by users, Clojure <<faq#reader_macros,does not>>."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:70
+msgid ""
+"The `#` is also used at the _end_ of a symbol when creating <<xref/../"
+"weird_characters#gensym,generated symbols>> inside a syntax quote."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:71
+#, no-wrap
+msgid "`#{ ... }` - Set"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:74
+#: en/content/guides/weird_characters.adoc:100
+#: en/content/guides/weird_characters.adoc:133
+#: en/content/guides/weird_characters.adoc:152
+msgid "See <<xref/../weird_characters#dispatch,`#`>> for additional details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:77
+msgid ""
+"`#{...}` defines a set (a collection of unique values), specifically a `hash-"
+"set`. The following are equivalent:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:84
+#, no-wrap
+msgid ""
+"user=> #{1 2 3 4}\n"
+"#{1 2 3 4}\n"
+"user=> (hash-set 1 2 3 4)\n"
+"#{1 2 3 4}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:87
+msgid ""
+"Sets cannot contain duplicates and thus the `set` reader will throw an "
+"exception in this case as it is an invalid literal. When items are added to "
+"a set, they are simply dropped if the value is already present."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:91
+#, no-wrap
+msgid "user=> #{1 2 3 4 1}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:93
+#, no-wrap
+msgid "IllegalArgumentException Duplicate key: 1  clojure.lang.PersistentHashSet.createWithCheck (PersistentHashSet.java:68)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:96
+msgid ""
+"<<xref/../../reference/data_structures#sets,Clojure Documentation: Sets>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:97
+#, no-wrap
+msgid "`#_` - Discard"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:102
+msgid "`#_` tells the reader to ignore the next form completely."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:107
+#, no-wrap
+msgid ""
+"user=> [1 2 3 #_ 4 5]\n"
+"[1 2 3 5]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:109
+msgid "Note that the space following `#_` is optional, so"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:113
+#, no-wrap
+msgid ""
+"user=> [1 2 3 #_4 5]\n"
+"[1 2 3 5]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:115
+msgid "also works. Also note that the discard character works in edn."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:117
+msgid ""
+"A neat trick is that multiple `#_` can be stacked to omit multiple forms"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:121
+#, no-wrap
+msgid ""
+"user=> {:a 1, #_#_ :b 2, :c 3}\n"
+"{:a 1, :c 3}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:126
+msgid ""
+"The docs suggest that \"The form following `#_` is completely skipped by the "
+"reader (This is a more complete removal than the `comment` macro which "
+"yields `nil`).\".  This can prove useful for debugging situations or for "
+"multiline comments."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:128
+msgid "<<xref/../../reference/reader#,Clojure Documentation - Reader>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:129
+#: en/content/guides/weird_characters.adoc:226
+msgid "https://github.com/edn-format/edn#tagged-elements[edn Tagged Elements]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:130
+#, no-wrap
+msgid "`#\"...\"` - Regular Expression"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:135
+msgid "`#\"` indicates the start of a regular expression"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:140
+#, no-wrap
+msgid ""
+"user=> (re-matches #\"^test$\" \"test\")\n"
+"\"test\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:145
+msgid ""
+"This form is compiled at _read time_ into a host-specific regex machinery, "
+"but it is not available in edn. Note that when using regexes in Clojure, "
+"Java string escaping is not required"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:147
+msgid ""
+"<<xref/../../reference/other_functions#regex,Clojure Documentation: Regex "
+"Support>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:148
+msgid ""
+"http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html[Java "
+"Regex]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:149
+#, no-wrap
+msgid "`#(...)` - Anonymous function"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:155
+msgid ""
+"`#(` begins the short hand syntax for an inline function definition. The "
+"following two snippets of code are similar:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:160
+#, no-wrap
+msgid ""
+"; anonymous function taking a single argument and printing it\n"
+"(fn [line] (println line))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:163
+#, no-wrap
+msgid ""
+"; anonymous function taking a single argument and printing it - shorthand\n"
+"#(println %)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:168
+msgid ""
+"The reader expands an anonymous function into a function definition whose "
+"arity (the number of arguments it takes) is defined by how the `%` "
+"placeholders are declared. See the `%` character for discussion around arity."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:173
+#, no-wrap
+msgid ""
+"user=> (macroexpand `#(println %))\n"
+"(fn* [arg] (clojure.core/println arg)) ; argument names shortened for clarity\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:175
+#, no-wrap
+msgid "`#'` - Var quote"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:178
+msgid "`#'` is the var quote which expands into a call to the `var` function:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:191
+#, no-wrap
+msgid ""
+"user=> (read-string \"'foo\")\n"
+"(var foo)\n"
+"user=> (def nine 9)\n"
+"#'user/nine\n"
+"user=> nine\n"
+"9\n"
+"user=> (var nine)\n"
+"#'user/nine\n"
+"user=> #'nine\n"
+"#'user/nine\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:195
+msgid ""
+"When used it will attempt to return the referenced var. This is useful when "
+"you want to talk about the reference/declaration instead of the value it "
+"represents.  See the use of `meta` in the metadata (<<xref/../"
+"weird_characters#metadata,`^`>>) discussion."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:197
+msgid "Note that var quote is not available in edn."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:199
+msgid ""
+"<<xref/../../reference/special_forms#var,Clojure Official Documentation: "
+"Special Forms>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:201
+#, no-wrap
+msgid "`#inst`, `#uuid`, and `#js` etc. - tagged literals"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:206
+msgid ""
+"Tagged literals are defined in edn and supported by the Clojure and "
+"ClojureScript readers natively. The `#inst` and `#uuid` tags are defined by "
+"edn, whereas the #js tag is defined by ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:208
+msgid ""
+"We can use Clojure's `read-string` to read a tagged literal (or use it "
+"directly):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:214
+#, no-wrap
+msgid ""
+"user=> (type #inst \"2014-05-19T19:12:37.925-00:00\")\n"
+"java.util.Date ;; this is host dependent\n"
+"(read-string \"#inst \\\"2014-05-19T19:12:37.925-00:00\\\"\")\n"
+"#inst \"2014-05-19T19:12:37.925-00:00\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:222
+msgid ""
+"A tagged literal tells the reader how to parse the literal value. Other "
+"common uses include `#uuid` for expressing UUIDs and in the ClojureScript "
+"world an extremely common use of tagged literals is `#js` which can be used "
+"to convert ClojureScript data structures into JavaScript structures "
+"directly. Note that `#js` doesn't convert recursively, so if you have a "
+"nested data-structure, use https://cljs.github.io/api/cljs.core/js-"
+"GTclj[`pass:[js->clj]`]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:224
+msgid "Note that while `#inst` and `#uuid` are available in edn, `#js` is not."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:227
+#, no-wrap
+msgid "`%`, `%n`, `%&` - Anonymous function arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:230
+msgid "`%` is an argument in an anonymous function `#(...)` as in `#(* % %)`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:233
+msgid ""
+"When an anonymous function is expanded, it becomes an `fn` form and `%` args "
+"are replaced with gensym'ed names (here we use arg1, etc for readability):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:238
+#, no-wrap
+msgid ""
+"user=> (macroexpand `#(println %))\n"
+"(fn* [arg1] (clojure.core/println arg1)) \n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:242
+msgid ""
+"Numbers can be placed directly after the `%` to indicate the argument "
+"positions (1-based).  Anonymous function arity is determined based on the "
+"highest number `%` argument."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:247
+#, no-wrap
+msgid ""
+"user=> (macroexpand `#(println %1 %2))\n"
+"(fn* [arg1 arg2] (clojure.core/println arg1 arg2)) ; takes 2 args\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:250
+#, no-wrap
+msgid ""
+"user=> (macroexpand `#(println %4))\n"
+"(fn* [arg1 arg2 arg3 arg4] (clojure.core/println arg4)) ; takes 4 args doesn't use 3\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:254
+msgid ""
+"You don't have to use the arguments, but you do need to declare them in the "
+"order you'd expect an external caller to pass them in."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:256
+msgid "`%` and `%1` can be used interchangeably:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:260
+#, no-wrap
+msgid ""
+"user=> (macroexpand `#(println % %1)) ; use both % and %1\n"
+"(fn* [arg1] (clojure.core/println arg1 arg1)) ; still only takes 1 argument\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:264
+msgid ""
+"There is also `%&` which is the symbol used in a variadic anonymous function "
+"to represent the \"rest\" of the arguments (after the highest named "
+"anonymous argument)."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:269
+#, no-wrap
+msgid ""
+"user=> (macroexpand '#(println %&))\n"
+"(fn* [& rest__11#] (println rest__11#))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:272
+msgid "Anonymous functions and `%` are not part of edn."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:273
+#, no-wrap
+msgid "`@` - Deref"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:277
+msgid ""
+"`@` expands into a call to the `deref` function, so these two forms are the "
+"same:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:286
+#, no-wrap
+msgid ""
+"user=> (def x (atom 1))\n"
+"#'user/x\n"
+"user=> @x\n"
+"1\n"
+"user=> (deref x)\n"
+"1\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:291
+msgid ""
+"`@` is used to get the current value of a reference. The above example uses "
+"`@` to get the current value of an <<xref/../../reference/atom#,atom>>, but "
+"`@` can be applied to other things such as `future` s, `delay` s, `promises` "
+"s etc. to force computation and potentially block."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:293
+msgid "Note that `@` is not available in edn."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:294
+#, no-wrap
+msgid "`^` (and `#^`) - Metadata"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:300
+msgid ""
+"`^` is the metadata marker. Metadata is a map of values (with shorthand "
+"option)  that can be attached to various forms in Clojure. This provides "
+"extra information for these forms and can be used for documentation, "
+"compilation warnings, typehints, and other features."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:304
+#, no-wrap
+msgid ""
+"user=> (def ^{:debug true} five 5) ; meta map with single boolean value\n"
+"#'user/five\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:308
+msgid ""
+"We can access the metadata by the `meta` function which should be executed "
+"against the declaration itself (rather than the returned value):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:314
+#, no-wrap
+msgid ""
+"user=> (def ^{:debug true} five 5)\n"
+"#'user/five\n"
+"user=> (meta #'five)\n"
+"{:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file \"NO_SOURCE_PATH\"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:317
+msgid ""
+"As we have a single value here, we can use a shorthand notation for "
+"declaring the metadata `^:name` which is useful for flags, as the value will "
+"be set to true."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:323
+#, no-wrap
+msgid ""
+"user=> (def ^:debug five 5)\n"
+"#'user/five\n"
+"user=> (meta #'five)\n"
+"{:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file \"NO_SOURCE_PATH\"}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:327
+msgid ""
+"Another use of `^` is for type hints. These are used to tell the compiler "
+"what type the value will be and allow it to perform type specific "
+"optimizations thus potentially making resultant code faster:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:333
+#, no-wrap
+msgid ""
+"user=> (def ^Integer five 5)\n"
+"#'user/five\n"
+"user=> (meta #'five)\n"
+"{:ns #<Namespace user>, :name five, :column 1, :line 1, :file \"NO_SOURCE_PATH\", :tag java.lang.Integer}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:335
+msgid "We can see in that example the `:tag` property is set."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:337
+msgid "You can also stack the shorthand notations:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:343
+#, no-wrap
+msgid ""
+"user=> (def ^Integer ^:debug ^:private five 5)\n"
+"#'user/five\n"
+"user=> (meta #'five)\n"
+"{:ns #<Namespace user>, :name five, :column 1, :private true, :debug true, :line 1, :file \"NO_SOURCE_PATH\", :tag java.lang.Integer}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:346
+msgid ""
+"Originally, meta was declared with `pass:[#^]`, which is now deprecated (but "
+"still works). Later, this was simplified to just `^` and that is what you "
+"will see in most Clojure, but occasionally you will encounter the `pass:"
+"[#^]` syntax in older code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:348
+msgid "Note that metadata is available in edn, but type hints are not."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:350
+msgid "<<xref/../../reference/metadata#,Clojure Official Documentation>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:351
+msgid ""
+"http://en.wikibooks.org/wiki/Learning_Clojure/Meta_Data[Learning Clojure: "
+"Meta Data]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:352
+#, no-wrap
+msgid "`'` - Quote"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:356
+msgid ""
+"Quoting is used to indicate that the next form should be read but not "
+"evaluated.  The reader expands `'` into a call to the `quote` special form."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:360
+#, no-wrap
+msgid "user=> (1 3 4) ; fails as it tries to invoke 1 as a function\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:367
+#, no-wrap
+msgid ""
+"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval925 (NO_SOURCE_FILE:1)\n"
+"user=> '(1 3 4) ; quote\n"
+"(1 3 4)\n"
+"user=> (quote (1 2 3)) ; using the longer quote method\n"
+"(1 2 3)\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:370
+msgid "<<xref/../../reference/special_forms#quote,Clojure Special Forms>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:371
+#, no-wrap
+msgid "`;` - Comment"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:375
+msgid ""
+"`;` starts a line comment and ignores all input from its starting point to "
+"the end of the line."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:381
+#, no-wrap
+msgid ""
+"user=> (def x \"x\") ; this is a comment\n"
+"#'user/x\n"
+"user=> ; this is a comment too\n"
+"<returns nothing>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:385
+msgid ""
+"It is common in Clojure to use multiple semicolons for readability or "
+"emphasis, but these are all the same to Clojure"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:389
+#, no-wrap
+msgid ";; This is probably more important than\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:391
+#, no-wrap
+msgid "; this\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:393
+#, no-wrap
+msgid "`:` - Keyword"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:397
+msgid ""
+"`:` is the indicator for a keyword. Keywords are often used as keys in maps "
+"and they provide faster comparisons and lower memory overhead than strings "
+"(because instances are cached and reused)."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:402
+#, no-wrap
+msgid ""
+"user=> (type :test)\n"
+"clojure.lang.Keyword\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:404
+msgid ""
+"Alternatively you can use the `keyword` function to create a keyword from a "
+"string"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:408
+#, no-wrap
+msgid ""
+"user=> (keyword \"test\")\n"
+":test\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:410
+msgid ""
+"Keywords can also be invoked as functions to look themselves up as a key in "
+"a map:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:422
+#, no-wrap
+msgid ""
+"user=> (def my-map {:one 1 :two 2})\n"
+"#'user/my-map\n"
+"user=> (:one my-map) ; get the value for :one by invoking it as function\n"
+"1\n"
+"user=> (:three my-map) ; it can safely check for missing keys\n"
+"nil\n"
+"user=> (:three my-map 3) ; it can return a default if specified\n"
+"3\n"
+"user => (get my-map :three 3) ; same as above, but using get\n"
+"3\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:425
+msgid ""
+"<<xref/../../reference/data_structures#Keywords,Data Structures - Keywords>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:427
+#, no-wrap
+msgid "`::` - Auto-resolved keyword"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:432
+msgid ""
+"`::` is used to auto-resolve a keyword in the current namespace. If no "
+"qualifier is specified, it will auto-resolve to the current namespace. If a "
+"qualifier is specified, it may use aliases in the current namespace:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:440
+#, no-wrap
+msgid ""
+"user=> :my-keyword\n"
+":my-keyword\n"
+"user=> ::my-keyword\n"
+":user/my-keyword\n"
+"user=> (= ::my-keyword :my-keyword)\n"
+"false\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:444
+msgid ""
+"This is useful when creating macros. If you want to ensure that a macro that "
+"calls another function in the macro namespace correctly expands to call the "
+"function, you could use `::my-function` to refer to the fully qualified name."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:446
+msgid "Note that `::` is not available in edn."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:448
+#: en/content/guides/weird_characters.adoc:499
+msgid "<<xref/../../reference/reader#,Reader>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:449
+#, no-wrap
+msgid "`pass:[#:]` and `#::` - Namespace Map Syntax"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:454
+msgid ""
+"Namespace map syntax was added in Clojure 1.9 and is used to specify a "
+"default namespace context for keys in a map, where those keywords (or "
+"symbols) share a common namespace."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:457
+msgid ""
+"`#::` can be used to auto-resolve the namespace of keyword or symbol keys in "
+"a map using the current namespace."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:459
+msgid "These two examples are equivalent:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:466
+#, no-wrap
+msgid ""
+"user=> (keys {:user/a 1, :user/b 2})\n"
+"(:user/a :user/b)\n"
+"user=> (keys #::{:a 1, :b 2})\n"
+"(:user/a :user/b)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:472
+msgid ""
+"Similar to <<xref/../weird_characters#autoresolved_keys,autoresolved "
+"keywords>>, you can also specify an alias in the namespace map prefix with "
+"`#:ns` prefix, where _ns_ is the name of a namespace and the prefix precedes "
+"the opening brace `{` of the map."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:480
+#, no-wrap
+msgid ""
+"#:person{:first \"Han\"\n"
+"         :last \"Solo\"\n"
+"         :ship #:ship{:name \"Millennium Falcon\"\n"
+"                      :model \"YT-1300f light freighter\"}}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:488
+#, no-wrap
+msgid ""
+"{:person/first \"Han\"\n"
+" :person/last \"Solo\"\n"
+" :person/ship {:ship/name \"Millennium Falcon\"\n"
+"               :ship/model \"YT-1300f light freighter\"}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:491
+msgid "<<xref/../../reference/reader#map_namespace_syntax,Reader>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:492
+#, no-wrap
+msgid "`/` - Namespace separator"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:497
+msgid ""
+"`/` can be the division function `clojure.core//`, but can also act as a "
+"separator in a symbol name to separate a symbol's name and namespace "
+"qualifier, e.g. `my-namespace/utils`. Namespace qualifiers can thus prevent "
+"naming collisions for simple names."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:500
+#, no-wrap
+msgid "`\\` - Character literal"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:503
+msgid "`\\` indicates a literal character as in:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:508
+#, no-wrap
+msgid ""
+"user=> (str \\h \\i)\n"
+"\"hi\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:511
+msgid ""
+"There are also a small number of special characters to name special ASCII "
+"characters: `\\newline`, `\\space`, `\\tab`, `\\formfeed`, `\\backspace`, "
+"and `\\return`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:513
+msgid ""
+"The `\\` can also be followed by a Unicode literal of the form `\\uNNNN`. "
+"For example, `\\u03A9` is the literal for Ω."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:517
+#, no-wrap
+msgid "`$` - Inner class reference"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:521
+msgid ""
+"Used to reference inner classes and interfaces in Java. Separates the "
+"container class name and the inner class name."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:524
+#, no-wrap
+msgid "(import (basex.core BaseXClient$EventNotifier)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:529
+#, no-wrap
+msgid ""
+"(defn- build-notifier [notifier-action]\n"
+"  (reify BaseXClient$EventNotifier\n"
+"    (notify [this value]\n"
+"      (notifier-action value))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:533
+msgid ""
+"`EventNotifier` is an inner interface of the `BaseXClient` class which is an "
+"imported Java class"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:535
+msgid ""
+"http://blog.jayfields.com/2011/01/clojure-using-java-inner-classes."
+"html[Clojure: Using Java Inner Classes]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:536
+msgid "<<xref/../../reference/java_interop#,Official Documentation>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:537
+#, no-wrap
+msgid "`pass:[->]`, `pass:[->>]`, `pass:[some->]`, `pass:[cond->]`, `pass:[as->]` etc. - Threading macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:540
+msgid ""
+"These are threading macros. Please refer to <<xref/../threading_macros#,"
+"Official Clojure Documentation>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:542
+msgid ""
+"http://blog.fogus.me/2009/09/04/understanding-the-clojure-macro/"
+"[Understanding the Clojure +->+ macro]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:544
+#, no-wrap
+msgid "````` - Syntax quote"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:548
+msgid ""
+"````` is the syntax quote. Syntax quote is similar to quoting (to delay "
+"evaluation) but has some additional effects."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:550
+msgid "Basic syntax quote may look similar to normal quoting:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:557
+#, no-wrap
+msgid ""
+"user=> (1 2 3)\n"
+"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval832 (NO_SOURCE_FILE:1)\n"
+"user=> `(1 2 3)\n"
+"(1 2 3)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:561
+msgid ""
+"However, symbols used within a syntax quote are fully resolved with respect "
+"to the current namespace:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:568
+#, no-wrap
+msgid ""
+"user=> (def five 5)\n"
+"#'user/five\n"
+"user=> `five\n"
+"user/five\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:571
+msgid ""
+"Syntax quote is most used as a \"template\" mechanism within macros. We can "
+"write one now:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:582
+#, no-wrap
+msgid ""
+"user=> (defmacro debug [body]\n"
+"  #_=>   `(let [val# ~body]\n"
+"  #_=>      (println \"DEBUG: \" val#)\n"
+"  #_=>      val#))\n"
+"#'user/debug\n"
+"user=> (debug (+ 2 2))\n"
+"DEBUG:  4\n"
+"4\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:589
+msgid ""
+"Macros are functions invoked by the compiler with code as data. They are "
+"expected to return code (as data) that can be further compiled and "
+"evaluated.  This macro takes a single body expression and returns a `let` "
+"form that will evaluate the body, print its value, and then return the "
+"value. Here the syntax quote creates a list, but does not evaluate it. That "
+"list is actually code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:591
+msgid ""
+"See <<xref/../weird_characters#unquote_splicing,`~@`>> and <<xref/../"
+"weird_characters#unquote,`~`>> for additional syntax allowed only within "
+"syntax quote."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:593
+#: en/content/guides/weird_characters.adoc:618
+#: en/content/guides/weird_characters.adoc:643
+msgid ""
+"http://www.braveclojure.com/writing-macros/[Clojure for the Brave and True - "
+"Writing Macros]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:594
+#: en/content/guides/weird_characters.adoc:619
+#: en/content/guides/weird_characters.adoc:644
+msgid ""
+"http://aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from "
+"the ground up: macros]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:595
+#: en/content/guides/weird_characters.adoc:620
+#: en/content/guides/weird_characters.adoc:645
+msgid "<<xref/../../macros#,Clojure Official Documentation>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:597
+#, no-wrap
+msgid "`~` - Unquote"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:600
+msgid ""
+"See <<xref/../weird_characters#syntax_quote,```>> for additional information."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:603
+msgid ""
+"`~` is unquote. That is within a syntax quoted <<xref/../"
+"weird_characters#syntax_quote,```>> form `~` will _unquote_ the associated "
+"symbol, i.e. evaluate it in the current context:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:613
+#, no-wrap
+msgid ""
+"user=> (def five 5) ; create a named var with the value 5\n"
+"#'user/five\n"
+"user=> five ; the symbol five is evaluated to its value\n"
+"5\n"
+"user=> `five ; syntax quoting five will avoid evaluating the symbol, and fully resolve it\n"
+"user/five\n"
+"user=> `~five ; within a syntax quoted block, ~ will turn evaluation back on just for the next form\n"
+"5\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:616
+msgid ""
+"Syntax quoting and unquote are essential tools for writing macros, which are "
+"functions invoked during compilation that take code and return code."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:622
+#, no-wrap
+msgid "`~@` - Unquote splicing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:625
+msgid ""
+"See <<xref/../weird_characters#syntax_quote,```>> and <<xref/../"
+"weird_characters#unquote,`~`>> for additional information."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:630
+msgid ""
+"`~@` is unquote-splicing. Where unquote <<xref/../weird_characters#unquote,"
+"(`~`)>> evaluates a form and places the result into the quoted result, `~@` "
+"expects the evaluated value to be a collection and splices the _contents_ of "
+"that collection into the quoted result."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:638
+#, no-wrap
+msgid ""
+"user=> (def three-and-four (list 3 4))\n"
+"#'user/three-and-four\n"
+"user=> `(1 ~three-and-four) ; evaluates `three-and-four` and places it in the result\n"
+"(1 (3 4))\n"
+"user=> `(1 ~@three-and-four) ;  evaluates `three-and-four` and places its contents in the result\n"
+"(1 3 4)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:641
+msgid "Again, this is a powerful tool for writing macros."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:647
+#, no-wrap
+msgid "`<symbol>#` - Gensym"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:652
+msgid ""
+"A `#` _at the end_ of a symbol is used to automatically generate a new "
+"symbol.  This is useful inside macros to keep macro specifics from leaking "
+"into the userspace. A regular `let` will fail in a macro definition:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:659
+#, no-wrap
+msgid ""
+"user=> (defmacro m [] `(let [x 1] x))\n"
+"#'user/m\n"
+"user=> (m)\n"
+"CompilerException java.lang.RuntimeException: Can't let qualified name: user/x, compiling:(NO_SOURCE_PATH:1)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:663
+msgid ""
+"This is because symbols inside a syntax quote are fully resolved, including "
+"the local binding `x` here."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:666
+msgid ""
+"Instead you can append `#` to the end of the variable name and let Clojure "
+"generate a unique (unqualified) symbol:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:674
+#, no-wrap
+msgid ""
+"user=> (defmacro m [] `(let [x# 1] x#))\n"
+"#'user/m\n"
+"user=> (m)\n"
+"1\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:677
+msgid ""
+"Importantly, every time a particular `x#` is used within a single syntax "
+"quote, the _same_ generated name will be used."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:679
+msgid "If we expand this macro, we can see the `gensym` 'd name:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:684
+#, no-wrap
+msgid ""
+"user=> (macroexpand '(m))\n"
+"(let* [x__681__auto__ 1] x__681__auto__)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:687
+msgid ""
+"http://clojuredocs.org/clojure_core/clojure.core/gensym[ClojureDocs - "
+"gensyms]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:688
+#, no-wrap
+msgid "`#?` - Reader conditional"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:693
+msgid ""
+"Reader conditionals are designed to allow different dialects of Clojure to "
+"share common code. The reader conditional behaves similarly to a traditional "
+"`cond`. The syntax for usage is `#?` and looks like this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:700
+#: en/content/guides/reader_conditionals.adoc:25
+#, no-wrap
+msgid ""
+"#?(:clj  (Clojure expression)\n"
+"   :cljs (ClojureScript expression)\n"
+"   :cljr (Clojure CLR expression)\n"
+"   :default (fallthrough expression))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:703
+#: en/content/guides/weird_characters.adoc:721
+msgid "<<xref/../reader_conditionals#,Reader conditonals>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:704
+#, no-wrap
+msgid "`#?@` - Splicing Reader conditional"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:708
+#: en/content/guides/reader_conditionals.adoc:30
+msgid ""
+"The syntax for a splicing reader conditional is `#?@`. It is used to splice "
+"lists into the containing form. So the Clojure reader would read this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:713
+#: en/content/guides/reader_conditionals.adoc:36
+#, no-wrap
+msgid ""
+"(defn build-list []\n"
+"  (list #?@(:clj  [5 6 7 8]\n"
+"            :cljs [1 2 3 4])))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:715
+#: en/content/guides/reader_conditionals.adoc:39
+msgid "as this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:719
+#: en/content/guides/reader_conditionals.adoc:44
+#, no-wrap
+msgid ""
+"(defn build-list []\n"
+"  (list 5 6 7 8))\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:722
+#, no-wrap
+msgid "`\\*var-name*` - \"Earmuffs\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:730
+msgid ""
+"Earmuffs (a pair of asterisk bookending var names) is a naming convention in "
+"many LISPs used to denote _special vars_. Most commonly in Clojure this is "
+"used to denote _dynamic_ vars, i.e. ones that can change depending on "
+"dynamic scope. The earmuffs act as a warning that \"here be dragons\" and to "
+"never assume the state of the var. Remember, this is a convention, not a "
+"rule."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:733
+msgid ""
+"Core Clojure examples include `\\*out*` and `\\*in*` which represent the "
+"standard in and out streams for Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:735
+msgid ""
+"http://stackoverflow.com/questions/1986961/how-is-the-var-name-naming-"
+"convention-used-in-clojure[How is the var-name naming-convention used in "
+"clojure?]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:736
+msgid ""
+"http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"\\*out*[Clojure API Docs]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:737
+#, no-wrap
+msgid "`>!!`, `<!!`, `>!`, and `<!` - core.async channel macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:740
+msgid ""
+"These symbols are channel operations in https://github.com/clojure/core."
+"async[`core.async`]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:742
+msgid ""
+"a Clojure/ClojureScript library for channel based asynchronous programming "
+"(specifically http://en.wikipedia.org/wiki/"
+"Communicating_sequential_processes[CSP - Communicating Sequential "
+"Processes])."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:746
+msgid ""
+"If you imagine, for the sake of argument, a channel is a bit like a queue "
+"that things can put stuff on and take stuff off, then these symbols support "
+"that simple API."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:748
+msgid "`>!!` and `<!!` are _blocking put_ and _take_ respectively"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:749
+msgid "`>!` and `<!` are, simply _put_ and _take_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:752
+msgid ""
+"THe difference being the blocking version operate outside `go` blocks and "
+"block the thread they operate on."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:758
+#, no-wrap
+msgid ""
+"user=> (def my-channel (chan 10)) ; create a channel\n"
+"user=> (>!! my-channel \"hello\")   ; put stuff on the channel\n"
+"user=> (println (<!! my-channel)) ; take stuff off the channel\n"
+"hello\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:761
+msgid ""
+"The non-blocking versions need to be executed within a `go` block, otherwise "
+"they'll throw an exception."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:768
+#, no-wrap
+msgid ""
+"user=> (def c (chan))\n"
+"#'user/c\n"
+"user=> (>! c \"nope\")\n"
+"AssertionError Assert failed: >! used not in (go ...) block\n"
+"nil  clojure.core.async/>! (async.clj:123)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:774
+msgid ""
+"While the difference between these is well outside the scope of this guide, "
+"fundamentally the `go` blocks operate and manage their own resources pausing "
+"*execution* of code without blocking threads. This makes asynchronously "
+"executed code appear to be synchronous, removing the pain of managing "
+"asynchronous code from the code base."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:776
+msgid ""
+"https://github.com/clojure/core.async/blob/master/examples/walkthrough."
+"clj[core.async Code Walkthrough]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:777
+msgid "https://github.com/clojure/core.async/wiki[core.async Wiki]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:778
+msgid "<<xref/../core_async_go#,Go Block Best Practices>>"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:779
+#, no-wrap
+msgid "`<symbol>?` - Predicate Suffix"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:785
+msgid ""
+"Putting `?` at the end of a symbol is a naming convention common across many "
+"languages that support special characters in their symbol names. It is used "
+"to indicate that the thing is a predicate, i.e. that it _poses a question_.  "
+"For example, imagine using an API that dealt with buffer manipulation:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:789
+#, no-wrap
+msgid ""
+"(def my-buffer (buffers/create-buffer [1 2 3]))\n"
+"(buffers/empty my-buffer)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:791
+msgid "At a glance, how would you know if the function `empty` in this case,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:793
+msgid "Returned `true` if the passed in buffer was empty, or,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:794
+msgid "Cleared the buffer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:797
+msgid ""
+"While the author could have renamed `empty` to `is-empty`, the richness of "
+"symbol naming in Clojure allows us to express intent more symbolically."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:802
+#, no-wrap
+msgid ""
+"(def my-buffer (buffers/create-buffer [1 2 3]))\n"
+"(buffers/empty? my-buffer)\n"
+"false\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:804
+msgid "This is simply a recommended convention, not a requirement."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:806
+#: en/content/guides/weird_characters.adoc:833
+msgid ""
+"https://github.com/bbatsov/clojure-style-guide#naming[Clojure Style Guide]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:807
+#, no-wrap
+msgid "`<symbol>!` - Unsafe Operations"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:810
+msgid ""
+"https://github.com/bbatsov/clojure-style-guide#changing-state-fns-with-"
+"exclamation-mark[The Clojure style guide has this to say]:"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/weird_characters.adoc:814
+msgid ""
+"The names of functions/macros that are not safe in STM transactions should "
+"end with an exclamation mark (e.g `reset!`)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:818
+msgid ""
+"You'll most commonly see this appended to function names whose purpose is to "
+"mutate state, e.g. connecting to a data store, updating an atom or closing a "
+"file stream"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:826
+#, no-wrap
+msgid ""
+"user=> (def my-stateful-thing (atom 0))\n"
+"#'user/my-stateful-thing\n"
+"user=> (swap! my-stateful-thing inc)\n"
+"1\n"
+"user=> @my-stateful-thing\n"
+"1\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:829
+msgid "This is simply a recommended convention and not a requirement."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:831
+msgid "Note that the exclamation mark is often pronounced as bang."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:834
+#, no-wrap
+msgid "`_` - Unused argument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:838
+msgid ""
+"When you see the underscore character used as function arguments or in a "
+"`let` binding, `pass:[_]` is a common naming convention to indicate you "
+"won't be using this argument."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:842
+msgid ""
+"This is an example using the `add-watch` function that can be used to add "
+"callback style behaviour when atoms change value. Imagine, given an atom, we "
+"want to print the new value every time it changes:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:846
+#, no-wrap
+msgid "(def value (atom 0))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:849
+#, no-wrap
+msgid ""
+"(add-watch value nil (fn [_ _ _ new-value]\n"
+"                       (println new-value))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:854
+#, no-wrap
+msgid ""
+"(reset! value 6)\n"
+"; prints 6\n"
+"(reset! value 9)\n"
+"; prints 9\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:858
+msgid ""
+"`add-watch` takes four arguments, but in our case we only really care about "
+"the last argument - the new value of the atom so we use `_` for the others."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:859
+#, no-wrap
+msgid "`,` - Whitespace character"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:864
+msgid ""
+"In Clojure, `,` is treated as whitespace, exactly the same as spaces, tabs, "
+"or newlines.  Commas are thus never required in literal collections, but are "
+"often used to enhance readability:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:869
+#, no-wrap
+msgid ""
+"user=>(def m {:a 1, :b 2, :c 3}\n"
+"{:a 1, :b 2, :c 3}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:871
+#, no-wrap
+msgid "`#=` Reader eval"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:874
+msgid "`#=` allows the reader to evaluate an arbitrary form during read time:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:881
+#, no-wrap
+msgid ""
+"user=> (read-string \"#=(+ 3 4)\")\n"
+";;=> 7\n"
+"#=123\n"
+";;=> 123\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:884
+#, no-wrap
+msgid ""
+"#=\"foo\"\n"
+";;=> foo\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:888
+#, no-wrap
+msgid ""
+"(def foo 1)\n"
+"#='foo\n"
+";;=> 1\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:891
+msgid "Note that the read-time evaluation can also cause side-effects:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:896
+#, no-wrap
+msgid ""
+"user=> (read-string \"#=(println :foo)\")\n"
+":foo\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:899
+msgid ""
+"Consequently, `read-string` is not safe to call with unverified user input.  "
+"For a safe alternative, see https://clojure.github.io/clojure/clojure.edn-"
+"api.html#clojure.edn/read-string[`clojure.edn/read-string`]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:902
+msgid ""
+"Note that `#=` is not an officially supported feature of the reader, so you "
+"shouldn't rely on its presence in future versions of Clojure."
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/weird_characters.adoc:908
+msgid ""
+"Many thanks to everyone who has contributed ideas and [the copious amounts "
+"of] spelling corrections (crikey I'm bad at speelingz - so thanks Michael R. "
+"Mayne, lobsang_ludd). I've tried to call out people who have specifically "
+"asked for things. Sorry if I've missed you."
+msgstr ""
