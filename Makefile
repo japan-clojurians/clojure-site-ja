@@ -55,9 +55,12 @@ build: clean translate
 	@echo
 	@echo "Build finished."
 
+preview:
+	docker run -v $(PWD)/$(BUILD_DIR)/output:/usr/src/app -p "4000:4000" starefossen/github-pages
+
 publish: build
 	git config --global user.name circle-ci
-	ghp-import -n -m "[ci skip] update site :books:" -b gh-pages build/output
+	ghp-import -n -m "[ci skip] update site :books:" -b gh-pages $(BUILD_DIR)/output
 	git push origin gh-pages
 	@echo
 	@echo "Published."
