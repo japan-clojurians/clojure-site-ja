@@ -148,8 +148,8 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <p><strong>(<em>.</em> instance-expr member-symbol)</strong><br>
 <strong>(<em>.</em> Classname-symbol member-symbol)</strong><br>
 <strong>(<em>.</em> instance-expr -field-symbol)</strong><br>
-<strong>(<em>.</em> instance-expr (method-symbol args</strong>))* or <strong>(<em>.</em> instance-expr method-symbol args</strong>)*<br>
-<strong>(<em>.</em> Classname-symbol (method-symbol args</strong>))* or <strong>(<em>.</em> Classname-symbol method-symbol args</strong>)*</p>
+<strong>(<em>.</em> instance-expr (method-symbol args*))</strong> or <strong>(<em>.</em> instance-expr method-symbol args*)</strong><br>
+<strong>(<em>.</em> Classname-symbol (method-symbol args*))</strong> or <strong>(<em>.</em> Classname-symbol method-symbol args*)</strong></p>
 </div>
 <div class="paragraph">
 <p>Special form.</p>
@@ -203,7 +203,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>(<em>doto</em> instance-expr (instanceMethodName-symbol args</strong>)<strong>)</strong></p>
+<p><strong>(<em>doto</em> instance-expr (instanceMethodName-symbol args*)*)</strong></p>
 </div>
 <div class="paragraph">
 <p>Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.</p>
@@ -216,8 +216,8 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>(Classname. args</strong>)*<br>
-<strong>(<em>new</em> Classname args</strong>)*</p>
+<p><strong>(Classname. args*)</strong><br>
+<strong>(<em>new</em> Classname args*)</strong></p>
 </div>
 <div class="paragraph">
 <p>Special form.</p>
@@ -268,7 +268,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>(<em>memfn</em> method-name arg-names</strong>)*</p>
+<p><strong>(<em>memfn</em> method-name arg-names*)</strong></p>
 </div>
 <div class="paragraph">
 <p>Macro. Expands into code that creates a fn that expects to be passed an object and any args and calls the named instance method on the object passing the args. Use when you want to treat a Java method as a first-class fn.</p>

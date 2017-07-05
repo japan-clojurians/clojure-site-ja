@@ -105,7 +105,7 @@
 </ul>
 </li>
 <li><a href="#_extensible_data_notation_edn_拡張可能なデータ記法">extensible data notation (edn) (拡張可能なデータ記法)</a></li>
-<li><a href="#_tagged_literals_タグ付きリテラル">Tagged Literals (タグ付きリテラル)</a></li>
+<li><a href="#tagged_literals">Tagged Literals (タグ付きリテラル)</a></li>
 <li><a href="#_reader_conditionals_リーダーコンディショナル">Reader Conditionals (リーダーコンディショナル)</a></li>
 </ul>
 </div>
@@ -186,7 +186,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 と表記される。8進数は <code>\oNNN</code> と表記される。</p>
 </li>
 <li>
-<p>nilは&#8217;何もない、もしくは値がない&#8217;ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。</p>
+<p><code>nil</code> Means 'nothing/no-value'- represents Java null and tests logical false</p>
 </li>
 <li>
 <p>Booleans (ブーリアンリテラル) - <code>true</code> と <code>false</code></p>
@@ -253,7 +253,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_ネームスペース付きマップ記法">ネームスペース付きマップ記法</h4>
+<h4 id="map_namespace_syntax">ネームスペース付きマップ記法</h4>
 <div class="paragraph">
 <p><em>Added in Clojure 1.9</em></p>
 </div>
@@ -497,7 +497,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tagged_literals_タグ付きリテラル">Tagged Literals (タグ付きリテラル)</h2>
+<h2 id="tagged_literals">Tagged Literals (タグ付きリテラル)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>タグ付きリテラルはednのClojureによる実装
