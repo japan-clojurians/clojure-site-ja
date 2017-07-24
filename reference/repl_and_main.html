@@ -105,11 +105,87 @@
 <h2 id="_clojure_main_help">clojure.main --help</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>clojure.main/main</code> entry point accepts a variety of arguments and flags as described in its usage message:</p>
+<p>The <code>clojure.main/main</code> entry point accepts a variety of arguments and flags.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>With no options or args, runs an interactive Read-Eval-Print Loop</p>
+</li>
+<li>
+<p>init options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>-i, --init path Load a file or resource</p>
+</li>
+<li>
+<p>-e, --eval string Evaluate expressions in string; print non-nil values</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>main options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>-r, --repl Run a repl</p>
+</li>
+<li>
+<p>path Run a script from a file or resource</p>
+</li>
+<li>
+<p>- Run a script from standard input</p>
+</li>
+<li>
+<p>-m, --main A namespace to find a -main function for execution</p>
+</li>
+<li>
+<p>-h, -?, --help Print this help message and exit</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>operation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Establishes thread-local bindings for commonly set!-able vars</p>
+</li>
+<li>
+<p>Enters the user namespace</p>
+</li>
+<li>
+<p>Binds *command-line-args* to a seq of strings containing command line args that appear after any main option</p>
+</li>
+<li>
+<p>Runs all init options in order</p>
+</li>
+<li>
+<p>Runs a repl or script if requested</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The init options may be repeated and mixed freely, but must appear before
+any main option. The appearance of any eval option before running a repl
+suppresses the usual repl greeting message: "Clojure ~(clojure-version)".</p>
+</div>
+<div class="paragraph">
+<p>Paths may be absolute or relative in the filesystem or relative to
+classpath. Classpath-relative paths have prefix of @ or @/</p>
+</div>
+<div class="paragraph">
+<p>The same is also described in the usage message:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]
 
 With no options or args, runs an interactive Read-Eval-Print Loop
 
@@ -151,7 +227,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -202,7 +278,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main /path/to/myscript.clj</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main /path/to/myscript.clj</code></pre>
 </div>
 </div>
 </div>
@@ -215,7 +291,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -223,7 +299,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">*command-line-args* =&gt; ("arg1" "arg2" "arg3")</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">*command-line-args* =&gt; ("arg1" "arg2" "arg3")</code></pre>
 </div>
 </div>
 </div>
@@ -282,7 +358,7 @@ This feature was added in 1.8.0.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">-Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}"</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">-Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -290,7 +366,7 @@ This feature was added in 1.8.0.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">$ telnet 127.0.0.1 5555
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ telnet 127.0.0.1 5555
 Trying 127.0.0.1...
 Connected to localhost.
 Escape character is '^]'.
@@ -303,7 +379,7 @@ hello</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; :repl/quit
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; :repl/quit
 Connection closed by foreign host.</code></pre>
 </div>
 </div>

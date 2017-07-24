@@ -85,7 +85,27 @@
 を利用したJavaインターフェースとクラスの動的な実装をサポートしている:</p>
 </div>
 <div class="paragraph">
-<p>これは小さなSwingアプリだ:</p>
+<p>Tapping into a Java class is as easy as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(import '[java.time LocalDate])
+
+(defn add-week ^LocalDate [^LocalDate date]
+  (.plusDays date 7))
+
+(defn day-&gt;str [^LocalDate date]
+  (format "%s %s, %s" (.getMonth date) (.getDayOfMonth date) (.getYear date)))
+
+;; infinite sequence of weekly dates, starting from today
+(def future-weeks (iterate add-week (LocalDate/now)))
+
+(map day-&gt;str (take 4 future-weeks))
+;; ("JULY 24, 2017" "JULY 31, 2017" "AUGUST 7, 2017" "AUGUST 14, 2017")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これはもう少し複雑な例になる小さいSwingアプリだ</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -118,7 +138,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="image:celsius">image:celsius.jpeg</a></p>
+<p><span class="image"><img src="/images/content/about/celsius.png" alt="celsius" height="80"></span></p>
 </div></p>
 
 <hr />
