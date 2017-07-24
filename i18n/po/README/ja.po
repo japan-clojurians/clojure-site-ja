@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -115,8 +115,7 @@ msgstr ""
 #. type: Plain text
 #: en/README.adoc:35
 msgid ""
-"`curl -O http://cdn.cognitect.com/clojure.org/clojuretheme.zip` (or download this file with your browser to the "
-"clojure-site directory)"
+"`curl -O https://clojure.org/clojuretheme.zip` (or download this file with your browser to the clojure-site directory)"
 msgstr ""
 
 #. type: Plain text

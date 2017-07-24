@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -428,1092 +428,1107 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:90
-msgid "https://www.docsolver.com/en.html[DocSolver]"
+msgid "https://www.devatics.com/[Devatics]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:91
-msgid "http://dov-e.com[DOV-E]"
+msgid "https://www.docsolver.com/en.html[DocSolver]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:92
-msgid "http://dploy.io/[dploy.io]"
+msgid "http://dov-e.com[DOV-E]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:93
-msgid "http://drwtrading.com[DRW Trading Group]"
+msgid "http://dploy.io/[dploy.io]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:94
-msgid "https://www.dyne.org[Dyne.org]"
+msgid "http://drwtrading.com[DRW Trading Group]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:95
-msgid "http://www.ebay.com/[eBay]"
+msgid "https://www.dyne.org[Dyne.org]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:96
-msgid "http://element84.com[Element 84]"
+msgid "http://www.ebay.com/[eBay]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:97
-msgid "http://www.empear.com/[Empear]"
+msgid "http://element84.com[Element 84]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:98
-msgid "https://writeandimprove.com/[English Language iTutoring]"
+msgid "http://www.empear.com/[Empear]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:99
-msgid "http://enterlab.dk[Enterlab]"
+msgid "https://writeandimprove.com/[English Language iTutoring]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:100
-msgid "http://eventfabric.com/[Event Fabric]"
+msgid "http://enterlab.dk[Enterlab]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:101
-msgid "https://www.eyeota.com/[Eyeota]"
+msgid "http://eventfabric.com/[Event Fabric]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:102
-msgid "https://exoscale.ch/[Exoscale]"
+msgid "https://www.eyeota.com/[Eyeota]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:103
-msgid "http://facebook.com[Facebook]"
+msgid "https://exoscale.ch/[Exoscale]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:104
-msgid "http://www.facjure.com/[Facjure]"
+msgid "http://facebook.com[Facebook]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:105
-msgid "http://www.factual.com/[Factual]"
+msgid "http://www.facjure.com/[Facjure]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:106
-msgid "http://www.farbetter.com/[FarBetter]"
+msgid "http://www.factual.com/[Factual]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:107
-msgid "https://farmlogs.com/[FarmLogs]"
+msgid "http://www.farbetter.com/[FarBetter]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:108
-msgid "http://www.finalist.nl/[Finalist]"
+msgid "https://farmlogs.com/[FarmLogs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:109
-msgid "http://flocktory.com[Flocktory]"
+msgid "http://www.finalist.nl/[Finalist]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:110
-msgid "http://www.flowa.fi/[Flowa]"
+msgid "http://flocktory.com[Flocktory]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:111
-msgid "http://www.formcept.com/[FORMCEPT]"
+msgid "http://www.flowa.fi/[Flowa]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:112
-msgid "http://try.framed.io/[Framed Data]"
+msgid "http://www.formcept.com/[FORMCEPT]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:113
-msgid "https://www.fullcontact.com/[FullContact]"
+msgid "http://try.framed.io/[Framed Data]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:114
-msgid "http://functionalworks.com/[Functional Works]"
+msgid "https://www.fullcontact.com/[FullContact]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:115
-msgid "http://fundingcircle.com[Funding Circle]"
+msgid "http://functionalworks.com/[Functional Works]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:116
-msgid "http://futurice.com/[Futurice]"
+msgid "http://fundingcircle.com[Funding Circle]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:117
-msgid "http://www.getcontented.com.au/[GetContented]"
+msgid "http://futurice.com/[Futurice]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:118
-msgid "http://about.getset.com/[GetSet]"
+msgid "http://www.getcontented.com.au/[GetContented]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:119
-msgid "http://www.gocatch.com/[GoCatch]"
+msgid "http://about.getset.com/[GetSet]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:120
-msgid "https://gofore.com/en/home/[Gofore]"
+msgid "http://www.gocatch.com/[GoCatch]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:121
-msgid "https://www.go-jek.com[GO-JEK]"
+msgid "https://gofore.com/en/home/[Gofore]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:122
-msgid "https://goldfynch.com/[GoldFynch]"
+msgid "https://www.go-jek.com[GO-JEK]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:123
-msgid "https://goodhertz.co/[Goodhertz]"
+msgid "https://goldfynch.com/[GoldFynch]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:124
-msgid "http://www.goopti.com/[GoOpti]"
+msgid "https://goodhertz.co/[Goodhertz]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:125
-msgid "http://www.gracenote.com/[Gracenote]"
+msgid "http://www.goopti.com/[GoOpti]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:126
-msgid "http://www.groupon.com[Groupon]"
+msgid "http://www.gracenote.com/[Gracenote]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:127
-msgid "https://hashrocket.com/[Hashrocket]"
+msgid "http://www.groupon.com[Groupon]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:128
-msgid "http://www.healthfinch.com/[healthfinch]"
+msgid "https://hashrocket.com/[Hashrocket]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:129
-msgid "https://www.helpshift.com/[Helpshift]"
+msgid "http://www.healthfinch.com/[healthfinch]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:130
-msgid "http://www.hendrickauto.com/[Hendrick Automotive Group]"
+msgid "https://www.helpshift.com/[Helpshift]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:131
-msgid "http://www.heroku.com[Heroku]"
+msgid "http://www.hendrickauto.com/[Hendrick Automotive Group]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:132
-msgid "https://hexawise.com/[Hexawise]"
+msgid "http://www.heroku.com[Heroku]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:133
-msgid "https://homescreen.is/[#Homescreen]"
+msgid "https://hexawise.com/[Hexawise]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:134
-msgid "http://www.ib5k.com/[IB5k]"
+msgid "https://homescreen.is/[#Homescreen]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:135
-msgid "http://labs.ig.com/[IG]"
+msgid "http://www.ib5k.com/[IB5k]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:136
-msgid "https://immute.co/[Immute]"
+msgid "http://labs.ig.com/[IG]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:137
-msgid "https://indabamusic.com[Indaba Music]"
+msgid "https://immute.co/[Immute]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:138
-msgid "http://innoq.com[InnoQ]"
+msgid "https://indabamusic.com[Indaba Music]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:139
-msgid "https://instadeq.com/[instadeq]"
+msgid "http://innoq.com[InnoQ]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:140
-msgid "http://www.intentmedia.com/[Intent Media]"
+msgid "https://instadeq.com/[instadeq]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:141
-msgid "http://www.interware.com.mx/[InterWare] - http://caudal.io/[Caudal]"
+msgid "http://www.intentmedia.com/[Intent Media]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:142
-msgid "http://www.intuit.com[Intuit]"
+msgid "http://www.interware.com.mx/[InterWare] - http://caudal.io/[Caudal]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:143
-msgid "http://www.iplantcollaborative.org/[iPlant Collaborative]"
+msgid "http://www.intuit.com[Intuit]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:144
-msgid "http://iris.tv/[IRIS.TV]"
+msgid "http://www.iplantcollaborative.org/[iPlant Collaborative]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:145
-msgid "https://www.jcrew.com/[J.Crew]"
+msgid "http://iris.tv/[IRIS.TV]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:146
-msgid "http://juxt.pro[JUXT]"
+msgid "https://www.jcrew.com/[J.Crew]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:147
-msgid "https://kirasystems.com/[Kira Inc]"
+msgid "http://juxt.pro[JUXT]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:148
-msgid "http://www.kodemaker.no/[Kodemaker]"
+msgid "https://kirasystems.com/[Kira Inc]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:149
-msgid "https://kwelia.com/[Kwelia]"
+msgid "http://www.kodemaker.no/[Kodemaker]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:150
-msgid "https://www.theladders.com/[Ladders]"
+msgid "https://kwelia.com/[Kwelia]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:151
-msgid "http://leancloud.cn[Leancloud.cn]"
+msgid "https://www.theladders.com/[Ladders]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:152
-msgid "http://en.leanheat.com[Leanheat]"
+msgid "http://leancloud.cn[Leancloud.cn]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:153
-msgid "https://www.lendup.com/[LendUp]"
+msgid "http://en.leanheat.com[Leanheat]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:154
-msgid "http://levelmoney.com[Level Money]"
+msgid "https://www.lendup.com/[LendUp]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:155
-msgid "http://www.lifebooker.com[Lifebooker]"
+msgid "http://levelmoney.com[Level Money]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:156
-msgid "http://liftoff.io/[Liftoff]"
+msgid "http://www.lifebooker.com[Lifebooker]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:157
-msgid "http://lightmesh.com[LightMesh]"
+msgid "http://liftoff.io/[Liftoff]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:158
-msgid "http://likely.co/[Likely]"
+msgid "http://lightmesh.com[LightMesh]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:159
-msgid "https://line.me/[LINE]"
+msgid "http://likely.co/[Likely]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:160
-msgid "http://www.listora.com/[Listora]"
+msgid "https://line.me/[LINE]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:161
-msgid "http://www.liveops.com/[LiveOps]"
+msgid "http://www.listora.com/[Listora]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:162
-msgid "https://www.livingsocial.com/[LivingSocial]"
+msgid "http://www.liveops.com/[LiveOps]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:163
-msgid "http://logicsoft.co.in/[Logic Soft Pvt. Ltd.]"
+msgid "https://www.livingsocial.com/[LivingSocial]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:164
-msgid "http://lonocloud.com/[LonoCloud] (acquired by https://www.viasat.com/[ViaSat])"
+msgid "http://logicsoft.co.in/[Logic Soft Pvt. Ltd.]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:165
-msgid "https://www.loway.ch/[Loway]"
+msgid "http://lonocloud.com/[LonoCloud] (acquired by https://www.viasat.com/[ViaSat])"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:166
-msgid "http://www.madriska.com/[Madriska Inc.]"
+msgid "https://www.loway.ch/[Loway]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:167
-msgid "http://www.magnet.coop/[Magnet]"
+msgid "http://www.madriska.com/[Madriska Inc.]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:168
-msgid "http://mainstreetgenome.com/[Main Street Genome]"
+msgid "http://www.magnet.coop/[Magnet]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:169
-msgid "http://www.comidadagente.org/[Marktbauer/Comida da gente]"
+msgid "http://mainstreetgenome.com/[Main Street Genome]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:170
-msgid "http://www.mastodonc.com/[Mastodon C]"
+msgid "http://www.comidadagente.org/[Marktbauer/Comida da gente]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:171
-msgid "https://mazira.com/[Mazira]"
+msgid "http://www.mastodonc.com/[Mastodon C]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:172
-msgid "http://meewee.com[MeeWee]"
+msgid "https://mazira.com/[Mazira]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:173
-msgid "http://www.metabase.com/[Metabase]"
+msgid "http://meewee.com[MeeWee]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:174
-msgid "http://www.metail.com[Metail]"
+msgid "http://www.metabase.com/[Metabase]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:175
-msgid "http://metosin.fi/[Metosin]"
+msgid "http://www.metail.com[Metail]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:176
-msgid "http://www.mixrad.io/[MixRadio]"
+msgid "http://metosin.fi/[Metosin]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:177
-msgid "http://www.modelogiq.com/[modelogiq]"
+msgid "http://www.mixrad.io/[MixRadio]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:178
-msgid "http://www.molequedeideias.net/[Moleque de Ideias]"
+msgid "http://www.modelogiq.com/[modelogiq]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:179
-msgid "http://www.mysema.com/[Mysema]"
+msgid "http://www.molequedeideias.net/[Moleque de Ideias]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:180
-msgid "http://nilenso.com/[nilenso]"
+msgid "http://www.mysema.com/[Mysema]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:181
-msgid "http://nemCV.com[nemCV.com]"
+msgid "http://nilenso.com/[nilenso]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:182
-msgid "https://www.netflix.com[Netflix]"
+msgid "http://nemCV.com[nemCV.com]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:183
-msgid "https://www.neustar.biz/[Neustar]"
+msgid "https://www.netflix.com[Netflix]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:184
-msgid "http://www.nextangles.com[NextAngles]"
+msgid "https://www.neustar.biz/[Neustar]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:185
-msgid "https://www.nubank.com.br/[Nubank]"
+msgid "http://www.nextangles.com[NextAngles]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:186
-msgid "https://nukomeet.com/[Nukomeet]"
+msgid "https://www.nubank.com.br/[Nubank]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:187
-msgid "http://numerical.co.nz/[Numerical Brass Computing]"
+msgid "https://nukomeet.com/[Nukomeet]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:188
-msgid "http://www.omnyway.com/[Omnyway Inc]"
+msgid "http://numerical.co.nz/[Numerical Brass Computing]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:189
-msgid "https://ona.io[Ona]"
+msgid "http://www.omnyway.com/[Omnyway Inc]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:190
-msgid "https://opencompany.com/[OpenCompany]"
+msgid "https://ona.io[Ona]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:191
-msgid "http://OpenSensors.io[OpenSensors.io]"
+msgid "https://opencompany.com/[OpenCompany]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:192
-msgid "http://www.opentable.com/[OpenTable]"
+msgid "http://OpenSensors.io[OpenSensors.io]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:193
-msgid "http://www.oracle.com[Oracle]"
+msgid "http://www.opentable.com/[OpenTable]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:194
-msgid "http://www.orgsync.com/[OrgSync]"
+msgid "http://www.oracle.com[Oracle]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:195
-msgid "https://www.oscaro.com/[Oscaro.com]"
+msgid "http://www.orgsync.com/[OrgSync]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:196
-msgid "http://otto.de[Otto]"
+msgid "https://www.oscaro.com/[Oscaro.com]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:197
-msgid "http://ourhub.dk[OurHub]"
+msgid "http://otto.de[Otto]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:198
-msgid "http://www.outpace.com/[Outpace]"
+msgid "http://ourhub.dk[OurHub]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:199
-msgid "http://corp.outpostgames.com/[Outpost Games]"
+msgid "http://www.outpace.com/[Outpace]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:200
-msgid "http://owsy.com[Owsy]"
+msgid "http://corp.outpostgames.com/[Outpost Games]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:201
-msgid "http://paddleguru.com[PaddleGuru]"
+msgid "http://owsy.com[Owsy]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:202
-msgid "http://www.bdpanacea.com/[Panacea Systems]"
+msgid "http://paddleguru.com[PaddleGuru]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:203
-msgid "http://paper.li[paper.li]"
+msgid "http://www.bdpanacea.com/[Panacea Systems]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:204
-msgid "https://www.parcelbright.com/[ParcelBright]"
+msgid "https://www.pandora.com/[Pandora]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:205
-msgid "http://www.passivsystems.com/[PassivSystems]"
+msgid "http://paper.li[paper.li]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:206
-msgid "http://path.com/[Path]"
+msgid "https://www.parcelbright.com/[ParcelBright]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:207
-msgid "http://paygarden.com[PayGarden]"
+msgid "http://www.passivsystems.com/[PassivSystems]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:208
-msgid "https://www.payoff.com/[Payoff]"
+msgid "http://path.com/[Path]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:209
-msgid "http://www.pennymacusa.com[PennyMac]"
+msgid "http://paygarden.com[PayGarden]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:210
-msgid "http://www.pivotal.io/[Pivotal Labs]"
+msgid "https://www.payoff.com/[Payoff]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:211
-msgid "http://www.pointslope.com[Point Slope]"
+msgid "http://www.pennymacusa.com[PennyMac]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:212
-msgid "https://pol.is/about/[Pol.is]"
+msgid "http://www.pivotal.io/[Pivotal Labs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:213
-msgid "http://dmarc.postmarkapp.com/[Postmark]"
+msgid "http://www.pointslope.com[Point Slope]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:214
-msgid "https://precursorapp.com/[Precursor]"
+msgid "https://pol.is/about/[Pol.is]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:215
-msgid "http://www.premium.nl/[Premium Business Consultants BV]"
+msgid "http://dmarc.postmarkapp.com/[Postmark]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:216
-msgid "http://prime.vc/[Prime.vc]"
+msgid "https://precursorapp.com/[Precursor]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:217
-msgid "http://www.print.io/[Print.IO]"
+msgid "http://www.premium.nl/[Premium Business Consultants BV]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:218
-msgid "http://projexsys.com/[Projexsys]"
+msgid "http://prime.vc/[Prime.vc]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:219
-msgid "https://publizr.com/[Publizr]"
+msgid "http://www.print.io/[Print.IO]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:220
-msgid "http://puppetlabs.com/[Puppet Labs]"
+msgid "http://projexsys.com/[Projexsys]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:221
-msgid "http://purpleapp.com[Purple]"
+msgid "https://publizr.com/[Publizr]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:222
-msgid "https://quartethealth.com/[Quartet Health]"
+msgid "http://puppetlabs.com/[Puppet Labs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:223
-msgid "http://www.quintype.com/[Quintype]"
+msgid "http://purpleapp.com[Purple]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:224
-msgid "http://reaktor.com/[Reaktor]"
+msgid "https://quartethealth.com/[Quartet Health]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:225
-msgid "https://www.redhat.com/[Red Hat]"
+msgid "http://www.quintype.com/[Quintype]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:226
-msgid "https://www.redpineapplemedia.com/[Red Pineapple Media]"
+msgid "http://reaktor.com/[Reaktor]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:227
-msgid "http://rentpath.com/[RentPath]"
+msgid "https://www.redhat.com/[Red Hat]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:228
+msgid "https://www.redpineapplemedia.com/[Red Pineapple Media]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/companies.adoc:229
+msgid "http://rentpath.com/[RentPath]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/companies.adoc:230
 msgid ""
 "http://jbrj.gov.br/[Rio de Janeiro Botanical Garden] - http://cncflora.jbrj.gov.br/[CNCFlora], https://biodivdev."
 "github.io/[OSS]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:229
+#: en/content/community/companies.adoc:231
 msgid "http://rjmetrics.com/[RJMetrics]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:230
+#: en/content/community/companies.adoc:232
 msgid "http://rocketfuel.com/[Rocket Fuel]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:231
+#: en/content/community/companies.adoc:233
 msgid "http://www.romr.com/[Rōmr]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:232
+#: en/content/community/companies.adoc:234
 msgid "http://www.roomkey.com/[RoomKey] - see http://cognitect.com/consulting/case-studies/roomkey[case study]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:233
+#: en/content/community/companies.adoc:235
 msgid "http://roomstorm.com/[Roomstorm]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:234
+#: en/content/community/companies.adoc:236
 msgid "http://roximity.com/[ROXIMITY]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:235
+#: en/content/community/companies.adoc:237
 msgid "https://www.rts.ch/info[RTS]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:236
+#: en/content/community/companies.adoc:238
 msgid "http://www.salesforce.com/[Salesforce]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:237
+#: en/content/community/companies.adoc:239
 msgid "http://www.shareablee.com/[Shareablee]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:238
+#: en/content/community/companies.adoc:240
 msgid "https://sharetribe.com/[Sharetribe]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:239
+#: en/content/community/companies.adoc:241
 msgid "http://shore.li/[shore.li]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:240
+#: en/content/community/companies.adoc:242
 msgid "http://www.signafire.com[Signafire]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:241
+#: en/content/community/companies.adoc:243
 msgid "http://signal.uk.com/[Signal]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:242
+#: en/content/community/companies.adoc:244
 msgid "http://docs.svbplatform.com/[Silicon Valley Bank]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:243
+#: en/content/community/companies.adoc:245
 msgid "http://silverline.mobi/[Silverline Mobile]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:244
+#: en/content/community/companies.adoc:246
 msgid "http://www.silverpond.com.au/[Silverpond]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:245
+#: en/content/community/companies.adoc:247
 msgid "https://www.simple.com/[Simple]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:246
+#: en/content/community/companies.adoc:248
 msgid "https://www.simply.co.za[Simply]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:247
+#: en/content/community/companies.adoc:249
 msgid "http://www.sinapsi.com/[Sinapsi]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:248
+#: en/content/community/companies.adoc:250
 msgid "http://us.sios.com/[SIOS Technology Corp.]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:249
+#: en/content/community/companies.adoc:251
 msgid "http://smilebooth.com/[Smilebooth]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:250
+#: en/content/community/companies.adoc:252
 msgid "http://smxemail.com/[SMX]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:251
+#: en/content/community/companies.adoc:253
 msgid "https://socialsuperstore.com/[Social Superstore]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:252
+#: en/content/community/companies.adoc:254
 msgid "https://www.solita.fi/[Solita]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:253
+#: en/content/community/companies.adoc:255
 msgid "http://sonian.com/[Sonian]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:254
+#: en/content/community/companies.adoc:256
 msgid "https://soundcloud.com[Soundcloud]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:255
+#: en/content/community/companies.adoc:257
 msgid "https://www.sparkfund.co/[SparkFund]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:256
+#: en/content/community/companies.adoc:258
 msgid "https://www.spotify.com[Spotify]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:257
+#: en/content/community/companies.adoc:259
 msgid "https://exchange.staples.com/[Staples Exchange]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:258
+#: en/content/community/companies.adoc:260
 msgid "http://www.staples-sparx.com/[Staples Sparx]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:259
-msgid "https://www.stitchdata.com/[Stitch]"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/companies.adoc:260
-msgid "http://structureddynamics.com/[Structured Dynamics]"
-msgstr ""
-
-#. type: Plain text
 #: en/content/community/companies.adoc:261
-msgid "http://www.studyflow.nl[Studyflow]"
+msgid "https://status.im/[Status]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:262
-msgid "https://www.style.com[Style.com]"
+msgid "https://www.stitchdata.com/[Stitch]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:263
-msgid "http://about.stylitics.com/[Stylitics]"
+msgid "http://structureddynamics.com/[Structured Dynamics]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:264
-msgid "http://www.suprematic.net/[Suprematic]"
+msgid "http://www.studyflow.nl[Studyflow]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:265
-msgid "http://swirrl.com/[Swirrl]"
+msgid "https://www.style.com[Style.com]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:266
-msgid "http://www.tappcommerce.com/[Tapp Commerce]"
+msgid "http://about.stylitics.com/[Stylitics]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:267
-msgid "http://www.technoidentity.com/[TechnoIdentity]"
+msgid "http://www.suprematic.net/[Suprematic]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:268
-msgid "http://www.teradata.com[Teradata] - http://www.teradata.com/Teradata-Loom[Loom]"
+msgid "http://swirrl.com/[Swirrl]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:269
-msgid "http://testdouble.com/[Test Double]"
+msgid "http://www.tappcommerce.com/[Tapp Commerce]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:270
-msgid "http://www.thinktopic.com/[ThinkTopic]"
+msgid "http://www.technoidentity.com/[TechnoIdentity]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:271
-msgid "http://www.thoughtworks.com/[ThoughtWorks] - http://www.thoughtworks.com/clients/ioof[IOOF] (and others)"
+msgid "http://www.teradata.com[Teradata] - http://www.teradata.com/Teradata-Loom[Loom]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:272
-msgid "http://www.threatgrid.com/[ThreatGRID] (acquired by http://www.cisco.com/[Cisco])"
+msgid "http://testdouble.com/[Test Double]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:273
-msgid "http://www.tokenmill.co/[TokenMill]"
+msgid "http://www.thinktopic.com/[ThinkTopic]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:274
-msgid "https://touk.pl[TouK]"
+msgid "http://www.thoughtworks.com/[ThoughtWorks] - http://www.thoughtworks.com/clients/ioof[IOOF] (and others)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:275
-msgid "https://truckerpath.com[Trucker Path]"
+msgid "http://www.threatgrid.com/[ThreatGRID] (acquired by http://www.cisco.com/[Cisco])"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:276
-msgid "http://www.twosigma.com/[Two Sigma]"
+msgid "http://www.tokenmill.co/[TokenMill]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:277
-msgid "https://unacast.com/[Unacast]"
+msgid "https://touk.pl[TouK]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:278
-msgid "http://unbounce.com/[Unbounce]"
+msgid "https://truckerpath.com[Trucker Path]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:279
-msgid "https://unfold.com/[Unfold]"
+msgid "http://www.twosigma.com/[Two Sigma]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:280
-msgid "http://www.uhn.ca/[University Health Network]"
+msgid "https://unacast.com/[Unacast]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:281
-msgid "http://www.upworthy.com/[Upworthy]"
+msgid "http://unbounce.com/[Unbounce]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:282
-msgid "http://ustream.tv/[Ustream]"
+msgid "https://unfold.com/[Unfold]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:283
-msgid "http://www.uswitch.com/[uSwitch]"
+msgid "http://www.uhn.ca/[University Health Network]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:284
-msgid "http://vigiglobe.com/[Vigiglobe]"
+msgid "http://www.upworthy.com/[Upworthy]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:285
-msgid "https://www.virool.com/[Virool]"
+msgid "http://ustream.tv/[Ustream]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:286
-msgid "http://vitallabs.co/[Vital Labs]"
+msgid "http://www.uswitch.com/[uSwitch]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:287
-msgid "http://www.walmartlabs.com/[Walmart Labs]"
+msgid "http://vigiglobe.com/[Vigiglobe]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:288
-msgid "https://weave.fi/[Weave]"
+msgid "https://www.virool.com/[Virool]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:289
-msgid "http://wefarm.org[WeFarm]"
+msgid "http://vitallabs.co/[Vital Labs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:290
-msgid "https://www.whibse.com[Whibse]"
+msgid "http://www.walmartlabs.com/[Walmart Labs]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:291
-msgid "http://wikidocs.com/[Wikidocs] (acquired by https://www.atlassian.com[Atlassian])"
+msgid "https://weave.fi/[Weave]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:292
-msgid "http://wildbit.com/[Wildbit]"
+msgid "http://wefarm.org[WeFarm]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:293
-msgid "http://wit.ai[Wit.ai] (acquired by http://facebook.com[Facebook])"
+msgid "https://www.whibse.com[Whibse]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:294
-msgid "https://work.co/[work.co]"
+msgid "http://wikidocs.com/[Wikidocs] (acquired by https://www.atlassian.com[Atlassian])"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:295
-msgid "https://workframe.com/[Workframe]"
+msgid "http://wildbit.com/[Wildbit]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:296
-msgid "http://www.workinvoice.it/[Workinvoice]"
+msgid "http://wit.ai[Wit.ai] (acquired by http://facebook.com[Facebook])"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:297
-msgid "http://worldsingles.com/[World Singles]"
+msgid "https://work.co/[work.co]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:298
-msgid "https://xcoo.jp/[Xcoo, Inc.] - https://chrov.is[Chrovis], http://newshack.io/[Hacker News Hack]"
+msgid "https://workframe.com/[Workframe]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:299
-msgid "http://xnlogic.com[XN Logic]"
+msgid "http://www.workinvoice.it/[Workinvoice]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:300
-msgid "http://yellerapp.com/[Yeller]"
+msgid "http://worldsingles.com/[World Singles]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:301
-msgid "http://www.yieldbot.com[Yieldbot]"
+msgid "https://xcoo.jp/[Xcoo, Inc.] - https://chrov.is[Chrovis], http://newshack.io/[Hacker News Hack]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:302
-msgid "http://yetanalytics.com/[Yet Analytics]"
+msgid "http://xnlogic.com[XN Logic]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:303
-msgid "http://yousee.dk/[Yousee IT Innovation Labs]"
+msgid "http://yellerapp.com/[Yeller]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:304
-msgid "http://www.yummly.com/[Yummly]"
+msgid "http://www.yieldbot.com[Yieldbot]"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/companies.adoc:305
+msgid "http://yetanalytics.com/[Yet Analytics]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/companies.adoc:306
+msgid "http://yousee.dk/[Yousee IT Innovation Labs]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/companies.adoc:307
+msgid "http://www.yummly.com/[Yummly]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/companies.adoc:308
 msgid "http://www.yuppiechef.com/[Yuppiechef]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:306
+#: en/content/community/companies.adoc:309
 msgid "http://tech.zalando.com[Zalando] - https://zalando.github.io/[OSS]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/companies.adoc:306
+#: en/content/community/companies.adoc:309
 msgid "http://www.zendesk.com[Zendesk]"
 msgstr ""

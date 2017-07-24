@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: 2017-04-09 23:34+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
-#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
-#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
-#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -58,11 +58,54 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:19
-msgid "Here's a small Swing app:"
-msgstr "これは小さなSwingアプリだ:"
+msgid "Tapping into a Java class is as easy as:"
+msgstr ""
 
 #. type: delimited block -
-#: en/content/about/jvm_hosted.adoc:47
+#: en/content/about/jvm_hosted.adoc:22
+#, no-wrap
+msgid "(import '[java.time LocalDate])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:25
+#, no-wrap
+msgid ""
+"(defn add-week ^LocalDate [^LocalDate date] \n"
+"  (.plusDays date 7))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:28
+#, no-wrap
+msgid ""
+"(defn day->str [^LocalDate date] \n"
+"  (format \"%s %s, %s\" (.getMonth date) (.getDayOfMonth date) (.getYear date)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:31
+#, no-wrap
+msgid ""
+";; infinite sequence of weekly dates, starting from today\n"
+"(def future-weeks (iterate add-week (LocalDate/now)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:34
+#, no-wrap
+msgid ""
+"(map day->str (take 4 future-weeks))\n"
+";; (\"JULY 24, 2017\" \"JULY 31, 2017\" \"AUGUST 7, 2017\" \"AUGUST 14, 2017\")\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/about/jvm_hosted.adoc:37
+msgid "Here's a small Swing app as a more involved example:"
+msgstr "これはもう少し複雑な例になる小さいSwingアプリだ"
+
+#. type: delimited block -
+#: en/content/about/jvm_hosted.adoc:65
 #, no-wrap
 msgid ""
 "(import '(javax.swing JFrame JLabel JTextField JButton)\n"
@@ -120,6 +163,6 @@ msgstr ""
 "(celsius)\n"
 
 #. type: Plain text
-#: en/content/about/jvm_hosted.adoc:48
-msgid "<<image:celsius.jpeg#,image:celsius.jpeg>>"
-msgstr "<<image:celsius.jpeg#,image:celsius.jpeg>>"
+#: en/content/about/jvm_hosted.adoc:67
+msgid "image:/images/content/about/celsius.png[\"celsius\",height=\"80\"]"
+msgstr ""

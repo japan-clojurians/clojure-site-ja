@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: 2017-07-05 16:14+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -387,7 +387,7 @@ msgstr ""
 #: en/content/guides/weird_characters.adoc:191
 #, no-wrap
 msgid ""
-"user=> (read-string \"'foo\")\n"
+"user=> (read-string \"#'foo\")\n"
 "(var foo)\n"
 "user=> (def nine 9)\n"
 "#'user/nine\n"

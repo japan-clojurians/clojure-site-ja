@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,10 +44,10 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -59,7 +59,7 @@ msgstr "toc::[]"
 #: en/content/reference/data_structures.adoc:107 en/content/reference/data_structures.adoc:116
 #: en/content/reference/data_structures.adoc:162 en/content/reference/data_structures.adoc:174
 #: en/content/reference/data_structures.adoc:188 en/content/reference/data_structures.adoc:223
-#: en/content/reference/repl_and_main.adoc:159 en/content/reference/agents.adoc:64
+#: en/content/reference/repl_and_main.adoc:185 en/content/reference/agents.adoc:64
 #, no-wrap
 msgid "Related functions"
 msgstr "関連する関数"
@@ -91,23 +91,70 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:24
-msgid "The `clojure.main/main` entry point accepts a variety of arguments and flags as described in its usage message:"
+msgid "The `clojure.main/main` entry point accepts a variety of arguments and flags."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:26
+msgid "With no options or args, runs an interactive Read-Eval-Print Loop"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:29
+msgid ""
+"init options: ** -i, --init path Load a file or resource ** -e, --eval string Evaluate expressions in string; print "
+"non-nil values"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:35
+msgid ""
+"main options: ** -r, --repl Run a repl ** path Run a script from a file or resource ** - Run a script from standard "
+"input ** -m, --main A namespace to find a -main function for execution ** -h, -?, --help Print this help message and "
+"exit"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:41
+msgid ""
+"operation: ** Establishes thread-local bindings for commonly set!-able vars ** Enters the user namespace ** Binds "
+"\\*command-line-args* to a seq of strings containing command line args that appear after any main option ** Runs all "
+"init options in order ** Runs a repl or script if requested"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:45
+msgid ""
+"The init options may be repeated and mixed freely, but must appear before any main option. The appearance of any eval "
+"option before running a repl suppresses the usual repl greeting message: \"Clojure ~(clojure-version)\"."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:48
+msgid ""
+"Paths may be absolute or relative in the filesystem or relative to classpath. Classpath-relative paths have prefix of "
+"@ or @/"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:50
+msgid "The same is also described in the usage message:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:28
+#: en/content/reference/repl_and_main.adoc:54
 #, no-wrap
 msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:30
+#: en/content/reference/repl_and_main.adoc:56
 #, no-wrap
 msgid "With no options or args, runs an interactive Read-Eval-Print Loop\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:34
+#: en/content/reference/repl_and_main.adoc:60
 #, no-wrap
 msgid ""
 "init options:\n"
@@ -116,7 +163,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:41
+#: en/content/reference/repl_and_main.adoc:67
 #, no-wrap
 msgid ""
 "main options:\n"
@@ -128,13 +175,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:43
+#: en/content/reference/repl_and_main.adoc:69
 #, no-wrap
 msgid "operation:\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:50
+#: en/content/reference/repl_and_main.adoc:76
 #, no-wrap
 msgid ""
 "- Establishes thread-local bindings for commonly set!-able vars\n"
@@ -146,7 +193,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:54
+#: en/content/reference/repl_and_main.adoc:80
 #, no-wrap
 msgid ""
 "The init options may be repeated and mixed freely, but must appear before\n"
@@ -155,7 +202,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:57
+#: en/content/reference/repl_and_main.adoc:83
 #, no-wrap
 msgid ""
 "Paths may be absolute or relative in the filesystem or relative to\n"
@@ -163,145 +210,145 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/repl_and_main.adoc:59
+#: en/content/reference/repl_and_main.adoc:85
 #, no-wrap
 msgid "Launching a REPL"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:62
+#: en/content/reference/repl_and_main.adoc:88
 msgid ""
 "The simplest way to launch a Clojure _repl_ is to use the following command line from within Clojure's home directory:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:66 en/content/about/dynamic.adoc:25
+#: en/content/reference/repl_and_main.adoc:92 en/content/about/dynamic.adoc:25
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main\n"
 msgstr "java -cp clojure.jar clojure.main\n"
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:69
+#: en/content/reference/repl_and_main.adoc:95
 msgid "The REPL prompt shows the name of the current namespace (pass:[*ns*]), which defaults to _user_."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:71
+#: en/content/reference/repl_and_main.adoc:97
 msgid "Several special vars are available when using the REPL:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:73
+#: en/content/reference/repl_and_main.adoc:99
 #, no-wrap
 msgid "*1, *2, *3 - hold the result of the last three expressions that were evaluated\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:74
+#: en/content/reference/repl_and_main.adoc:100
 #, no-wrap
 msgid "*e - holds the result of the last exception.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:76
+#: en/content/reference/repl_and_main.adoc:102
 msgid ""
 "The https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] namespace has a number of useful functions "
 "for inspecting the source and documentation of available functions:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:78
+#: en/content/reference/repl_and_main.adoc:104
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var given "
 "its name"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:79
+#: en/content/reference/repl_and_main.adoc:105
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc[find-doc] - prints the docstring for "
 "any var whose doc or name matches the pattern"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:80
+#: en/content/reference/repl_and_main.adoc:106
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos[apropos] - returns a seq of definitions "
 "matching a regex"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:81
+#: en/content/reference/repl_and_main.adoc:107
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source[source] - prints the source for a symbol"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:82
+#: en/content/reference/repl_and_main.adoc:108
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[pst] - **p**rint **s**tack **t**race for a "
 "given exception or *e by default"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/repl_and_main.adoc:83
+#: en/content/reference/repl_and_main.adoc:109
 #, no-wrap
 msgid "Launching a Script"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:86
+#: en/content/reference/repl_and_main.adoc:112
 msgid "To run a file full of Clojure code as a script, pass the path to the script to `clojure.main` as an argument:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:90
+#: en/content/reference/repl_and_main.adoc:116
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main /path/to/myscript.clj\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/repl_and_main.adoc:92
+#: en/content/reference/repl_and_main.adoc:118
 #, no-wrap
 msgid "Passing arguments to a Script"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:95
+#: en/content/reference/repl_and_main.adoc:121
 msgid "To pass in arguments to a script, pass them in as further arguments when launching `clojure.main`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:99
+#: en/content/reference/repl_and_main.adoc:125
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:102
+#: en/content/reference/repl_and_main.adoc:128
 msgid ""
 "The arguments will be provided to your program as a seq of strings bound to the var `pass:[*command-line-args*]`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:106
+#: en/content/reference/repl_and_main.adoc:132
 #, no-wrap
 msgid "*command-line-args* => (\"arg1\" \"arg2\" \"arg3\")\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/repl_and_main.adoc:108
+#: en/content/reference/repl_and_main.adoc:134
 #, no-wrap
 msgid "Launching a Socket Server"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:112
+#: en/content/reference/repl_and_main.adoc:138
 msgid "This feature was added in 1.8.0."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:114
+#: en/content/reference/repl_and_main.adoc:140
 msgid ""
 "The Clojure runtime now has the ability to start a socket server at initialization based on system properties. One "
 "expected use for this is serving a socket-based REPL, but it also has many other potential uses for dynamically "
@@ -309,74 +356,74 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:116
+#: en/content/reference/repl_and_main.adoc:142
 msgid ""
 "A socket server will be started for each JVM system property like \"clojure.server.<server-name>\". The value for "
 "this property is an edn map representing the configuration of the socket server with the following properties:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:118
+#: en/content/reference/repl_and_main.adoc:144
 msgid "`server-daemon` - defaults to true, socket server thread doesn't block exit"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:119
+#: en/content/reference/repl_and_main.adoc:145
 msgid "`address` - host or address, defaults to loopback"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:120
+#: en/content/reference/repl_and_main.adoc:146
 msgid "`port` - positive integer, required"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:121
+#: en/content/reference/repl_and_main.adoc:147
 msgid "`accept` - namespaced symbol of function to invoke on socket accept, required"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:122
+#: en/content/reference/repl_and_main.adoc:148
 msgid "`args` - sequential collection of args to pass to accept"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:123
+#: en/content/reference/repl_and_main.adoc:149
 msgid "`bind-err` - defaults to true, binds `pass:[*err*]` to socket out stream"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:124
+#: en/content/reference/repl_and_main.adoc:150
 msgid "`client-daemon` - defaults to true, socket client thread doesn't block exit"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:126
+#: en/content/reference/repl_and_main.adoc:152
 msgid ""
 "Additionally, there is a repl function provided that is slightly customized for use with the socket server in https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/repl]."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:128
+#: en/content/reference/repl_and_main.adoc:154
 msgid ""
 "Following is an example of starting a socket server with a repl listener. This can be added to any existing Clojure "
 "program to allow it to accept external REPL clients via a local connection to port 5555."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:132
+#: en/content/reference/repl_and_main.adoc:158
 #, no-wrap
 msgid "-Dclojure.server.repl=\"{:port 5555 :accept clojure.core.server/repl}\"\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:135
+#: en/content/reference/repl_and_main.adoc:161
 msgid "An example client you can use to connect to this socket repl is telnet:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:144
+#: en/content/reference/repl_and_main.adoc:170
 #, no-wrap
 msgid ""
 "$ telnet 127.0.0.1 5555\n"
@@ -388,12 +435,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:147
+#: en/content/reference/repl_and_main.adoc:173
 msgid "You can instruct the server to close the client socket repl session by using the special command `:repl/quit`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/repl_and_main.adoc:152
+#: en/content/reference/repl_and_main.adoc:178
 #, no-wrap
 msgid ""
 "user=> :repl/quit\n"
@@ -401,39 +448,39 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:155
+#: en/content/reference/repl_and_main.adoc:181
 msgid "Also see:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:157
+#: en/content/reference/repl_and_main.adoc:183
 msgid "https://dev.clojure.org/jira/browse/CLJ-1671[CLJ-1671]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:158
+#: en/content/reference/repl_and_main.adoc:184
 msgid "https://dev.clojure.org/display/design/Socket+Server+REPL[Socket REPL design page]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:162
+#: en/content/reference/repl_and_main.adoc:188
 msgid "Main entry point: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main[clojure.main/main]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:164
+#: en/content/reference/repl_and_main.adoc:190
 msgid "Reusable REPL: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl[clojure.main/repl]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:166
+#: en/content/reference/repl_and_main.adoc:192
 msgid ""
 "Allowing set! for the customary REPL vars: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-"
 "bindings[clojure.main/with-bindings]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:168
+#: en/content/reference/repl_and_main.adoc:194
 msgid ""
 "Socket server control: `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-"
 "server[clojure.core.server/start-server]` `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
@@ -442,7 +489,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/repl_and_main.adoc:169
+#: en/content/reference/repl_and_main.adoc:195
 msgid ""
 "Socket repl: `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/"
 "repl]`"

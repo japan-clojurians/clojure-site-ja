@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"POT-Creation-Date: 2017-07-25 08:37+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -399,12 +399,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/reader_conditionals.adoc:161
 msgid ""
-"Sente uses cljs for sharing code between Clojure and ClojureScript. I've "
-"rewritten the https://github.com/ptaoussanis/sente/blob/v1.4.1/src/taoensso/"
-"sente.cljx[main] namespace to use reader conditionals. Notice that we've "
-"used the splicing reader conditional to splice the vector into the parent `:"
-"require`. Notice also that some of the requires are duplicated between `:"
-"clj` and `:cljs`."
+"Sente previously used cljx for sharing code between Clojure and "
+"ClojureScript. I've rewritten the https://github.com/ptaoussanis/sente/blob/"
+"v1.4.1/src/taoensso/sente.cljx[main] namespace to use reader conditionals. "
+"Notice that we've used the splicing reader conditional to splice the vector "
+"into the parent `:require`. Notice also that some of the requires are "
+"duplicated between `:clj` and `:cljs`."
 msgstr ""
 
 #. type: delimited block -
