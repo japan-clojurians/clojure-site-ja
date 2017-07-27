@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-07-25 08:37+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2017-07-26 12:20+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -68,13 +68,13 @@ msgstr "関連する関数"
 #: en/content/reference/repl_and_main.adoc:1
 #, no-wrap
 msgid "The REPL and main entry points"
-msgstr ""
+msgstr "REPLとmainエントリーポイント"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:17
 #, no-wrap
 msgid "The clojure.main namespace"
-msgstr ""
+msgstr "clojure.mainネームスペース"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:20
@@ -82,22 +82,24 @@ msgid ""
 "The `clojure.main` namespace provides functions that allow Clojure programs and interactive sessions to be launched "
 "via Java's application launcher tool `java`."
 msgstr ""
+"`clojure.main` のネームスペースはJavaのアプリケーションランチャーツール `java` からClojureプログラムやインタラクティブ"
+"なセッションを起動するための関数を提供している。"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:21
 #, no-wrap
 msgid "clojure.main --help"
-msgstr ""
+msgstr "clojure.main --help"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:24
 msgid "The `clojure.main/main` entry point accepts a variety of arguments and flags."
-msgstr ""
+msgstr "`clojure.main/main` のエントリーポイントは多様な引数とフラグを受けとる:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:26
 msgid "With no options or args, runs an interactive Read-Eval-Print Loop"
-msgstr ""
+msgstr "オプションと引数の指定がない場合、インタラクティブな REPL (Read-Eval-Print Loop) を実行する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:29
@@ -105,6 +107,9 @@ msgid ""
 "init options: ** -i, --init path Load a file or resource ** -e, --eval string Evaluate expressions in string; print "
 "non-nil values"
 msgstr ""
+"* initオプション:\n"
+"** -i, --init パス ファイル、もしくはリソースをロードする\n"
+"** -e, --eval 文字列 文字列中の式を評価する; 非nilな値をプリントする"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:35
@@ -113,6 +118,12 @@ msgid ""
 "input ** -m, --main A namespace to find a -main function for execution ** -h, -?, --help Print this help message and "
 "exit"
 msgstr ""
+"* mainオプション:\n"
+"** -r, --repl replを実行する\n"
+"** path ファイル、もしくはリソースからスクリプトを実行する\n"
+"** - 標準入力からスクリプトを実行する\n"
+"** -m, --main 実行対象の -main 関数を含むネームスペース\n"
+"** -h, -?, --help このメッセージをプリントし終了する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:41
@@ -121,6 +132,12 @@ msgid ""
 "\\*command-line-args* to a seq of strings containing command line args that appear after any main option ** Runs all "
 "init options in order ** Runs a repl or script if requested"
 msgstr ""
+"* 操作:\n"
+"** 一般的に利用される set! 操作が可能な var に対してスレッドローカルな束縛を行う\n"
+"** userネームスペースに切り替える\n"
+"** *command-line-args* を、mainオプションの後に指定されたコマンドライン引数を含む文字列シーケンスに束縛する\n"
+"** 全てのinitオプションを順に実行する\n"
+"** repl、もしくは指定があればスクリプトを実行する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:45
@@ -128,6 +145,9 @@ msgid ""
 "The init options may be repeated and mixed freely, but must appear before any main option. The appearance of any eval "
 "option before running a repl suppresses the usual repl greeting message: \"Clojure ~(clojure-version)\"."
 msgstr ""
+"initオプションは繰り返しても良いし任意に組み合せることができるが、mainオプションよりも前に指定する必要がある。replの実"
+"行前にevalのオプションが指定されている場合、通常のreplのグリーティングメッセージが表示されなくなる: \"Clojure "
+"~(clojure-version)\""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:48
@@ -135,23 +155,25 @@ msgid ""
 "Paths may be absolute or relative in the filesystem or relative to classpath. Classpath-relative paths have prefix of "
 "@ or @/"
 msgstr ""
+"パスは絶対パス、もしくはファイルシステムの相対パス、クラスパスに対する相対パスを指定できる。クラスパスに対する相対パス"
+"は @ もしくは @/ でプリフィックスされる。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:50
 msgid "The same is also described in the usage message:"
-msgstr ""
+msgstr "usageメッセージに同様の内容が記述されている:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:54
 #, no-wrap
 msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
-msgstr ""
+msgstr "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:56
 #, no-wrap
 msgid "With no options or args, runs an interactive Read-Eval-Print Loop\n"
-msgstr ""
+msgstr "With no options or args, runs an interactive Read-Eval-Print Loop\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:60
@@ -161,6 +183,9 @@ msgid ""
 "-i, --init path Load a file or resource\n"
 "-e, --eval string Evaluate expressions in string; print non-nil values\n"
 msgstr ""
+"init options:\n"
+"-i, --init path Load a file or resource\n"
+"-e, --eval string Evaluate expressions in string; print non-nil values\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:67
@@ -173,12 +198,18 @@ msgid ""
 "-m, --main A namespace to find a -main function for execution\n"
 "-h, -?, --help Print this help message and exit\n"
 msgstr ""
+"main options:\n"
+"-r, --repl Run a repl\n"
+"path Run a script from a file or resource\n"
+"- Run a script from standard input\n"
+"-m, --main A namespace to find a -main function for execution\n"
+"-h, -?, --help Print this help message and exit\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:69
 #, no-wrap
 msgid "operation:\n"
-msgstr ""
+msgstr "operation:\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:76
@@ -191,6 +222,12 @@ msgid ""
 "- Runs all init options in order\n"
 "- Runs a repl or script if requested\n"
 msgstr ""
+"- Establishes thread-local bindings for commonly set!-able vars\n"
+"- Enters the user namespace\n"
+"- Binds *command-line-args* to a seq of strings containing command line\n"
+"args that appear after any main option\n"
+"- Runs all init options in order\n"
+"- Runs a repl or script if requested\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:80
@@ -200,6 +237,9 @@ msgid ""
 "any main option. The appearance of any eval option before running a repl\n"
 "suppresses the usual repl greeting message: \"Clojure ~(clojure-version)\".\n"
 msgstr ""
+"The init options may be repeated and mixed freely, but must appear before\n"
+"any main option. The appearance of any eval option before running a repl\n"
+"suppresses the usual repl greeting message: \"Clojure ~(clojure-version)\".\n"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:83
@@ -208,18 +248,20 @@ msgid ""
 "Paths may be absolute or relative in the filesystem or relative to\n"
 "classpath. Classpath-relative paths have prefix of @ or @/\n"
 msgstr ""
+"Paths may be absolute or relative in the filesystem or relative to\n"
+"classpath. Classpath-relative paths have prefix of @ or @/\n"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:85
 #, no-wrap
 msgid "Launching a REPL"
-msgstr ""
+msgstr "REPLの起動"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:88
 msgid ""
 "The simplest way to launch a Clojure _repl_ is to use the following command line from within Clojure's home directory:"
-msgstr ""
+msgstr "Clojureの _repl_ を起動する最もシンプルな方法はClojureのホームディレクトリから次のコマンドを使用することだ:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:92 en/content/about/dynamic.adoc:25
@@ -230,24 +272,24 @@ msgstr "java -cp clojure.jar clojure.main\n"
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:95
 msgid "The REPL prompt shows the name of the current namespace (pass:[*ns*]), which defaults to _user_."
-msgstr ""
+msgstr "REPLプロンプトは現在のネームスペースの名前 (pass:[*ns*]) を表示し、デフォルトは _user_ である。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:97
 msgid "Several special vars are available when using the REPL:"
-msgstr ""
+msgstr "REPLを利用している際には、特別なvarをいくつか利用できる:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:99
 #, no-wrap
 msgid "*1, *2, *3 - hold the result of the last three expressions that were evaluated\n"
-msgstr ""
+msgstr "*1, *2, *3 - 評価済みの最後の3つの式の結果を保持する\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:100
 #, no-wrap
 msgid "*e - holds the result of the last exception.\n"
-msgstr ""
+msgstr "*e - 最後に発生した例外の結果を保持する\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:102
@@ -255,6 +297,8 @@ msgid ""
 "The https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] namespace has a number of useful functions "
 "for inspecting the source and documentation of available functions:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] ネームスペースには、利用可能な関数のソースやド"
+"キュメントの閲覧に有用な関数がいくつもある:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:104
@@ -262,6 +306,8 @@ msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var given "
 "its name"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
+"トする"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:105
@@ -269,6 +315,8 @@ msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc[find-doc] - prints the docstring for "
 "any var whose doc or name matches the pattern"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc[find-doc] - 指定されたパターンに一致する"
+"docか名前を持つ全てのvarのdocstringをプリントする。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:106
@@ -276,12 +324,15 @@ msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos[apropos] - returns a seq of definitions "
 "matching a regex"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos[apropos] - regexにマッチする定義のseqを返"
+"す"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:107
 msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source[source] - prints the source for a symbol"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source[source] - シンボルのソースをプリントする"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:108
@@ -289,63 +340,67 @@ msgid ""
 "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[pst] - **p**rint **s**tack **t**race for a "
 "given exception or *e by default"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[pst] - 指定された例外、もしくは *eのスタック"
+"トレースをプリントする (**p**rint **s**tack **t**race)"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:109
 #, no-wrap
 msgid "Launching a Script"
-msgstr ""
+msgstr "スクリプトの起動"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:112
 msgid "To run a file full of Clojure code as a script, pass the path to the script to `clojure.main` as an argument:"
 msgstr ""
+"Clojureコードが書かれたファイルをスクリプトとして実行するには、スクリプトのパスを `clojure.main` の引数として渡す:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:116
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main /path/to/myscript.clj\n"
-msgstr ""
+msgstr "java -cp clojure.jar clojure.main /path/to/myscript.clj\n"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:118
 #, no-wrap
 msgid "Passing arguments to a Script"
-msgstr ""
+msgstr "スクリプトに引数を渡す"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:121
 msgid "To pass in arguments to a script, pass them in as further arguments when launching `clojure.main`:"
-msgstr ""
+msgstr "スクリプトの引数は `clojure.main` を起動する際の追加の引数として渡す:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:125
 #, no-wrap
 msgid "java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3\n"
-msgstr ""
+msgstr "java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:128
 msgid ""
 "The arguments will be provided to your program as a seq of strings bound to the var `pass:[*command-line-args*]`:"
 msgstr ""
+"これらの引数はプログラム内のvar `pass:[*command-line-args*]` に束縛された文字列のseqとしてプログラムに提供される:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:132
 #, no-wrap
 msgid "*command-line-args* => (\"arg1\" \"arg2\" \"arg3\")\n"
-msgstr ""
+msgstr "*command-line-args* => (\"arg1\" \"arg2\" \"arg3\")\n"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:134
 #, no-wrap
 msgid "Launching a Socket Server"
-msgstr ""
+msgstr "ソケットサーバーの起動"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:138
 msgid "This feature was added in 1.8.0."
-msgstr ""
+msgstr "この機能は1.8.0で追加された。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:140
@@ -354,6 +409,9 @@ msgid ""
 "expected use for this is serving a socket-based REPL, but it also has many other potential uses for dynamically "
 "adding server capability to existing programs without code changes."
 msgstr ""
+"現在のClojureランタイムではシステムプロパティを基に、初期化時にソケットサーバーを起動することが可能となっている。想定"
+"される活用方法の一つはソケットベースのREPLだが、他にも既存のプログラムのコードの変更を行わずに動的にサーバー機能を追加"
+"する様々なことに利用可能なポテンシャルがある。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:142
@@ -361,41 +419,43 @@ msgid ""
 "A socket server will be started for each JVM system property like \"clojure.server.<server-name>\". The value for "
 "this property is an edn map representing the configuration of the socket server with the following properties:"
 msgstr ""
+"\"clojure.server.<server-name>\" のようなJVMシステムプロパティ全てに対してソケットサーバーが起動される。このプロパティ"
+"の値には、ソケットサーバーの設定を表現する、下記のプロパティを持つednのマップを指定する:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:144
 msgid "`server-daemon` - defaults to true, socket server thread doesn't block exit"
-msgstr ""
+msgstr "`server-daemon` - デフォルトでtrue、ソケットサーバーのスレッドがexitをブロックしない"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:145
 msgid "`address` - host or address, defaults to loopback"
-msgstr ""
+msgstr "`address` - ホストもしくはアドレス、デフォルトはループバック"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:146
 msgid "`port` - positive integer, required"
-msgstr ""
+msgstr "`port` - 正の整数、必須"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:147
 msgid "`accept` - namespaced symbol of function to invoke on socket accept, required"
-msgstr ""
+msgstr "`accept` - ソケットの受理時に呼び出される関数のネームスペース付きのシンボル、必須"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:148
 msgid "`args` - sequential collection of args to pass to accept"
-msgstr ""
+msgstr "`args` - acceptに渡す引数のシーケンシャルなコレクション"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:149
 msgid "`bind-err` - defaults to true, binds `pass:[*err*]` to socket out stream"
-msgstr ""
+msgstr "`bind-err` - デフォルトtrue、 `pass:[*err*]` をソケットの出力ストリームに束縛する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:150
 msgid "`client-daemon` - defaults to true, socket client thread doesn't block exit"
-msgstr ""
+msgstr "`client-daemon` - デフォルトでtrue、ソケットのクライアントのスレッドがexitをブロックしない"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:152
@@ -403,6 +463,8 @@ msgid ""
 "Additionally, there is a repl function provided that is slightly customized for use with the socket server in https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/repl]."
 msgstr ""
+"加えて、ソケットサーバーでの利用のために少々カスタマイズされているrepl関数が https://clojure.github.io/clojure/"
+"clojure.core-api.html#clojure.core.server/repl[clojure.core.server/repl] にある。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:154
@@ -410,17 +472,19 @@ msgid ""
 "Following is an example of starting a socket server with a repl listener. This can be added to any existing Clojure "
 "program to allow it to accept external REPL clients via a local connection to port 5555."
 msgstr ""
+"以下はソケットサーバーをreplリスナーとともに起動する例だ。これを任意のClojureプログラムに追加することで、外部からポー"
+"ト5555のローカルコネクションを経由したREPLクライアントを受理することが可能になる。"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:158
 #, no-wrap
 msgid "-Dclojure.server.repl=\"{:port 5555 :accept clojure.core.server/repl}\"\n"
-msgstr ""
+msgstr "-Dclojure.server.repl=\"{:port 5555 :accept clojure.core.server/repl}\"\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:161
 msgid "An example client you can use to connect to this socket repl is telnet:"
-msgstr ""
+msgstr "このソケットreplには、例えばtelnetをクライアントとして接続することができる:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:170
@@ -433,11 +497,19 @@ msgid ""
 "user=> (println \"hello\")\n"
 "hello\n"
 msgstr ""
+"$ telnet 127.0.0.1 5555\n"
+"Trying 127.0.0.1...\n"
+"Connected to localhost.\n"
+"Escape character is '^]'.\n"
+"user=> (println \"hello\")\n"
+"hello\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:173
 msgid "You can instruct the server to close the client socket repl session by using the special command `:repl/quit`:"
 msgstr ""
+"特別なコマンド `:repl/quit` を使用することで、サーバーに対してクライアントのソケットreplセッションのクローズを指示する"
+"ことができる:"
 
 #. type: delimited block -
 #: en/content/reference/repl_and_main.adoc:178
@@ -446,31 +518,35 @@ msgid ""
 "user=> :repl/quit\n"
 "Connection closed by foreign host.\n"
 msgstr ""
+"user=> :repl/quit\n"
+"Connection closed by foreign host.\n"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:181
 msgid "Also see:"
-msgstr ""
+msgstr "以下も参照:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:183
 msgid "https://dev.clojure.org/jira/browse/CLJ-1671[CLJ-1671]"
-msgstr ""
+msgstr "https://dev.clojure.org/jira/browse/CLJ-1671[CLJ-1671]"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:184
 msgid "https://dev.clojure.org/display/design/Socket+Server+REPL[Socket REPL design page]"
-msgstr ""
+msgstr "https://dev.clojure.org/display/design/Socket+Server+REPL[ソケットREPLの設計ページ]"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:188
 msgid "Main entry point: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main[clojure.main/main]`"
 msgstr ""
+"Mainエントリーポイント: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main[clojure.main/main]`"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:190
 msgid "Reusable REPL: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl[clojure.main/repl]`"
 msgstr ""
+"再利用可能なREPL: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl[clojure.main/repl]`"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:192
@@ -478,6 +554,8 @@ msgid ""
 "Allowing set! for the customary REPL vars: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-"
 "bindings[clojure.main/with-bindings]`"
 msgstr ""
+"一般的なREPL varへのset!を許可: `https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-"
+"bindings[clojure.main/with-bindings]`"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:194
@@ -487,6 +565,10 @@ msgid ""
 "server/stop-server[clojure.core.server/stop-server]` `https://clojure.github.io/clojure/clojure.core-api.html#clojure."
 "core.server/stop-servers[clojure.core.server/stop-servers]`"
 msgstr ""
+"ソケットサーバーのコントロール: `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-"
+"server[clojure.core.server/start-server]` `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+"server/stop-server[clojure.core.server/stop-server]` `https://clojure.github.io/clojure/clojure.core-api.html#clojure."
+"core.server/stop-servers[clojure.core.server/stop-servers]`"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:195
@@ -494,3 +576,5 @@ msgid ""
 "Socket repl: `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/"
 "repl]`"
 msgstr ""
+"ソケットrepl: `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl[clojure.core.server/"
+"repl]`"
