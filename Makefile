@@ -25,13 +25,13 @@ clean:
 	@echo
 	@echo "Cleanup finished."
 
-test:
-	exit 0
+test: translate
+	$(REDPEN_CMD) -c $(REDPEN_CONF) -f asciidoc `find $(TO_DIR) -name '*.adoc'`
 
  # find ./ja -type f | xargs redpen -c redpen-ja.xml -f asciidoc
 
 updatepot: clean
-	git clone $(ORIGINAL_GIT_PATH) $(FROM_DIR)
+	git clone --depth=1 $(ORIGINAL_GIT_PATH) $(FROM_DIR)
 	$(RE_CREATE_CFG_CMD)
 	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION) --no-translations --msgmerge-opt $(MSGMERGE_POT)
 	@echo
@@ -40,7 +40,7 @@ updatepot: clean
 # find i18n/po -name '*.pot' | xargs sed -i '/$$"POT-Creation-Date: 20/d'
 
 translate:
-	[ -d $(FROM_DIR) ] || git clone $(ORIGINAL_GIT_PATH) $(FROM_DIR)
+	[ -d $(FROM_DIR) ] || git clone --depth=1 $(ORIGINAL_GIT_PATH) $(FROM_DIR)
 	po4a $(PO4A_CONF) --copyright-holder $(COPYRIGHT_HOLDER) --package-name $(PACKAGE_NAME) --package-version $(PACKAGE_VERSION) --msgmerge-opt $(MSGMERGE_POT)
 	@echo
 	@echo "Translate finished."
