@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-31 09:03+0900\n"
+"POT-Creation-Date: 2017-08-07 09:05+0900\n"
 "PO-Revision-Date: 2017-07-31 09:03+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,30 +17,26 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title =
-#: en/content/events/2017/clojurebridge-sanfrancisco.adoc:1
-#: en/content/events/2016/clojurebridge_sanfrancisco.adoc:1
+#: en/content/events/2017/clojurebridge-sanfrancisco.adoc:1 en/content/events/2016/clojurebridge_sanfrancisco.adoc:1
 #, no-wrap
 msgid "ClojureBridge San Francisco"
 msgstr ""
 
 #. type: Plain text
 #: en/content/events/2017/clojurebridge-sanfrancisco.adoc:4
-msgid "ClojureBridge San Francisco 2017-09-16"
+msgid "ClojureBridge San Francisco 2017-09-15"
 msgstr ""
 
 #. type: Plain text
 #: en/content/events/2017/clojurebridge-sanfrancisco.adoc:12
 msgid ""
-"ClojureBridge is a free 1-day workshop aimed at increasing the participation "
-"of women, trans-gener and non-binary gender individuals in the Clojure "
-"community. The workshop is intended for those new to programming as well as "
-"individuals with some programming experience who would like to explore "
-"programming using Clojure, a modern functional programming language."
+"ClojureBridge is a free 1-day workshop aimed at increasing the participation of women, trans* and non-binary gender "
+"individuals in the Clojure community. The workshop is intended for those new to programming as well as individuals "
+"with some programming experience who would like to explore programming using Clojure, a modern functional programming "
+"language."
 msgstr ""
 
 #. type: Plain text
 #: en/content/events/2017/clojurebridge-sanfrancisco.adoc:13
-msgid ""
-"The workshop will introduce participants to fundamental programming concepts "
-"and approaches."
+msgid "The workshop will introduce participants to fundamental programming concepts and approaches."
 msgstr ""
