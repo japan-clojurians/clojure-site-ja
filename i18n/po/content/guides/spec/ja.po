@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"POT-Creation-Date: 2017-08-30 08:34+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,19 +33,19 @@ msgid "toc::[]"
 msgstr "toc::[]"
 
 #. type: Title ====
-#: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:496 en/content/about/spec.adoc:234
+#: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
 #, no-wrap
 msgid "Sequences"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:750 en/content/guides/destructuring.adoc:522
+#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:782 en/content/guides/destructuring.adoc:522
 #, no-wrap
 msgid "Macros"
 msgstr "Macros(マクロ)"
 
 #. type: Title ==
-#: en/content/reference/data_structures.adoc:120 en/content/guides/spec.adoc:418
+#: en/content/reference/data_structures.adoc:120 en/content/guides/spec.adoc:435
 #, no-wrap
 msgid "Collections"
 msgstr ""
@@ -288,14 +288,48 @@ msgid ""
 "names - the important thing is that they are sufficiently unique to avoid conflicts."
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/spec.adoc:116
+msgid "Once a spec has been added to the registry, `doc` knows how to find it and print it as well:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:120
+#, no-wrap
+msgid "(doc ::date)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:124
+#, no-wrap
+msgid ""
+":user/date\n"
+"Spec\n"
+"  inst?\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:126
+msgid "(doc ::suit)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:130
+#, no-wrap
+msgid ""
+":user/suit\n"
+"Spec\n"
+"  #{:spade :heart :diamond :club}\n"
+msgstr ""
+
 #. type: Title ==
-#: en/content/guides/spec.adoc:115
+#: en/content/guides/spec.adoc:132
 #, no-wrap
 msgid "Composing predicates"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:118
+#: en/content/guides/spec.adoc:135
 msgid ""
 "The simplest way to compose specs is with https://clojure.github.io/clojure/branch-master/clojure.spec-api."
 "html#clojure.spec/and[`and`] and https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/"
@@ -303,7 +337,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:125
+#: en/content/guides/spec.adoc:142
 #, no-wrap
 msgid ""
 "(s/def ::big-even (s/and int? even? #(> % 1000)))\n"
@@ -313,12 +347,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:128
+#: en/content/guides/spec.adoc:145
 msgid "We can also use `s/or` to specify two alternatives:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:136
+#: en/content/guides/spec.adoc:153
 #, no-wrap
 msgid ""
 "(s/def ::name-or-id (s/or :name string? \n"
@@ -329,7 +363,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:139
+#: en/content/guides/spec.adoc:156
 msgid ""
 "This `or` spec is the first case we've seen that involves a choice during validity checking. Each choice is annotated "
 "with a tag (here, between `:name` and `:id`) and those tags give the branches names that can be used to understand or "
@@ -337,12 +371,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:141
+#: en/content/guides/spec.adoc:158
 msgid "When an `or` is conformed, it returns a vector with the tag name and conformed value:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:148
+#: en/content/guides/spec.adoc:165
 #, no-wrap
 msgid ""
 "(s/conform ::name-or-id \"abc\")\n"
@@ -352,7 +386,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:151
+#: en/content/guides/spec.adoc:168
 msgid ""
 "Many predicates that check an instance's type do not allow `nil` as a valid value (`string?`, `number?`, `keyword?`, "
 "etc). To include `nil` as a valid value, use the provided function https://clojure.github.io/clojure/branch-master/"
@@ -360,7 +394,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:158
+#: en/content/guides/spec.adoc:175
 #, no-wrap
 msgid ""
 "(s/valid? string? nil)\n"
@@ -370,13 +404,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:160
+#: en/content/guides/spec.adoc:177
 #, no-wrap
 msgid "Explain"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:163
+#: en/content/guides/spec.adoc:180
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/explain[`explain`] is another high-"
 "level operation in spec that can be used to report (to `pass:[*out*]`) why a value does not conform to a spec. Let's "
@@ -384,7 +418,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:173
+#: en/content/guides/spec.adoc:190
 #, no-wrap
 msgid ""
 "(s/explain ::suit 42)\n"
@@ -397,24 +431,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:176
+#: en/content/guides/spec.adoc:193
 msgid ""
 "Let's examine the output of the final example more closely. First note that there are two errors being reported - "
 "spec will evaluate all possible alternatives and report errors on every path. The parts of each error are:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:178
+#: en/content/guides/spec.adoc:195
 msgid "val - the value in the user's input that does not match"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:179
+#: en/content/guides/spec.adoc:196
 msgid "spec - the spec that was being evaluated"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:180
+#: en/content/guides/spec.adoc:197
 msgid ""
 "at - a path (a vector of keywords) indicating the location within the spec where the error occurred - the tags in the "
 "path correspond to any tagged part in a spec (the alternatives in an `or` or `alt`, the parts of a `cat`, the keys in "
@@ -422,19 +456,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:181
+#: en/content/guides/spec.adoc:198
 msgid "predicate - the actual predicate that was not satisfied by val"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:182
+#: en/content/guides/spec.adoc:199
 msgid ""
 "in - the key path through a nested data val to the failing value. In this example, the top-level value is the one "
 "that is failing so this is essentially an empty path and is omitted."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:184
+#: en/content/guides/spec.adoc:201
 msgid ""
 "For the first reported error we can see that the value `:foo` did not satisfy the predicate `string?` at the path `:"
 "name` in the spec `::name-or-id`. The second reported error is similar but fails on the `:id` path instead. The "
@@ -442,7 +476,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:186
+#: en/content/guides/spec.adoc:203
 msgid ""
 "In addition to `explain`, you can use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure."
 "spec/explain-str[`explain-str`] to receive the error messages as a string or https://clojure.github.io/clojure/branch-"
@@ -450,7 +484,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:201
+#: en/content/guides/spec.adoc:218
 #, no-wrap
 msgid ""
 "(s/explain-data ::name-or-id :foo)\n"
@@ -468,7 +502,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/spec.adoc:206
+#: en/content/guides/spec.adoc:223
 msgid ""
 "This result also demonstrates the new namespace map literal syntax added in 1.9.0-alpha8. Maps may be prefixed with `"
 "\\#:` or `#::` (for autoresolve) to specify a default namespace for all keys in the map. In this example, this is "
@@ -476,13 +510,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:208
+#: en/content/guides/spec.adoc:225
 #, no-wrap
 msgid "Entity Maps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:213
+#: en/content/guides/spec.adoc:230
 msgid ""
 "Clojure programs rely heavily on passing around maps of data. A common approach in other libraries is to describe "
 "each entity type, combining both the keys it contains and the structure of their values. Rather than define attribute "
@@ -492,7 +526,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:215
+#: en/content/guides/spec.adoc:232
 msgid ""
 "For example, most Ring middleware functions modify the request or response map with unqualified keys. However, each "
 "middleware could instead use namespaced keys with registered semantics for those keys. The keys could then be checked "
@@ -500,14 +534,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:217
+#: en/content/guides/spec.adoc:234
 msgid ""
 "Entity maps in spec are defined with https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure."
 "spec/keys[`keys`]:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:222
+#: en/content/guides/spec.adoc:239
 #, no-wrap
 msgid ""
 "(def email-regex #\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}$\")\n"
@@ -515,7 +549,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:227
+#: en/content/guides/spec.adoc:244
 #, no-wrap
 msgid ""
 "(s/def ::acctid int?)\n"
@@ -525,7 +559,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:230
+#: en/content/guides/spec.adoc:247
 #, no-wrap
 msgid ""
 "(s/def ::person (s/keys :req [::first-name ::last-name ::email]\n"
@@ -533,7 +567,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:233
+#: en/content/guides/spec.adoc:250
 msgid ""
 "This registers a `::person` spec with the required keys `::first-name`, `::last-name`, and `::email`, with optional "
 "key `::phone`. The map spec never specifies the value spec for the attributes, only what attributes are required or "
@@ -541,7 +575,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:235
+#: en/content/guides/spec.adoc:252
 msgid ""
 "When conformance is checked on a map, it does two things - checking that the required attributes are included, and "
 "checking that every registered key has a conforming value. We'll see later where optional attributes can be useful. "
@@ -550,7 +584,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:243
+#: en/content/guides/spec.adoc:260
 #, no-wrap
 msgid ""
 "(s/valid? ::person\n"
@@ -561,7 +595,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:251
+#: en/content/guides/spec.adoc:268
 #, no-wrap
 msgid ""
 ";; Fails required key check\n"
@@ -574,7 +608,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:260
+#: en/content/guides/spec.adoc:277
 #, no-wrap
 msgid ""
 ";; Fails attribute conformance\n"
@@ -587,37 +621,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:263
+#: en/content/guides/spec.adoc:280
 msgid "Let's take a moment to examine the explain error output on that final example:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:265
+#: en/content/guides/spec.adoc:282
 msgid "in - the path within the data to the failing value (here, a key in the person instance)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:266
+#: en/content/guides/spec.adoc:283
 msgid "val - the failing value, here `\"n/a\"`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:267
+#: en/content/guides/spec.adoc:284
 msgid "spec - the spec that failed, here `:my.domain/email`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:268
+#: en/content/guides/spec.adoc:285
 msgid "at - the path in the spec where the failing value is located"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:269
+#: en/content/guides/spec.adoc:286
 msgid "predicate - the predicate that failed, here `(re-matches email-regex %)`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:271
+#: en/content/guides/spec.adoc:288
 msgid ""
 "Much existing Clojure code does not use maps with namespaced keys and so `keys` can also specify `:req-un` and `:opt-"
 "un` for required and optional unqualified keys. These variants specify namespaced keys used to find their "
@@ -625,14 +659,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:273
+#: en/content/guides/spec.adoc:290
 msgid ""
 "Let's consider a person map that uses unqualified keys but checks conformance against the namespaced specs we "
 "registered earlier:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:279
+#: en/content/guides/spec.adoc:296
 #, no-wrap
 msgid ""
 "(s/def :unq/person \n"
@@ -641,7 +675,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:285
+#: en/content/guides/spec.adoc:302
 #, no-wrap
 msgid ""
 "(s/conform :unq/person\n"
@@ -652,7 +686,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:292
+#: en/content/guides/spec.adoc:309
 #, no-wrap
 msgid ""
 "(s/explain :unq/person\n"
@@ -664,7 +698,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:299
+#: en/content/guides/spec.adoc:316
 #, no-wrap
 msgid ""
 "(s/explain :unq/person\n"
@@ -676,18 +710,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:302
+#: en/content/guides/spec.adoc:319
 msgid "Unqualified keys can also be used to validate record attributes:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:306
+#: en/content/guides/spec.adoc:323
 #, no-wrap
 msgid "(defrecord Person [first-name last-name email phone])\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:311
+#: en/content/guides/spec.adoc:328
 #, no-wrap
 msgid ""
 "(s/explain :unq/person\n"
@@ -697,7 +731,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:316
+#: en/content/guides/spec.adoc:333
 #, no-wrap
 msgid ""
 "(s/conform :unq/person\n"
@@ -707,7 +741,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:319
+#: en/content/guides/spec.adoc:336
 msgid ""
 "One common occurrence in Clojure is the use of \"keyword args\" where keyword keys and values are passed in a "
 "sequential data structure as options. Spec provides special support for this pattern with the regex op https://"
@@ -716,7 +750,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:328
+#: en/content/guides/spec.adoc:345
 #, no-wrap
 msgid ""
 "(s/def ::port number?)\n"
@@ -728,7 +762,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:330
+#: en/content/guides/spec.adoc:347
 msgid ""
 "Sometimes it will be convenient to declare entity maps in parts, either because there are different sources for "
 "requirements on an entity map or because there is a common set of keys and variant-specific parts. The `s/merge` spec "
@@ -738,7 +772,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:346
+#: en/content/guides/spec.adoc:363
 #, no-wrap
 msgid ""
 "(s/def :animal/kind string?)\n"
@@ -757,20 +791,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:348
+#: en/content/guides/spec.adoc:365
 #, no-wrap
 msgid "multi-spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:351
+#: en/content/guides/spec.adoc:368
 msgid ""
 "One common occurrence in Clojure is to use maps as tagged entities and a special field that indicates the \"type\" of "
 "the map where type indicates a potentially open set of types, often with shared attributes across the types."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:353
+#: en/content/guides/spec.adoc:370
 msgid ""
 "As previously discussed, the attributes for all types are well-specified using attributes stored in the registry by "
 "namespaced keyword. Attributes shared across entity types automatically gain shared semantics. However, we also want "
@@ -780,14 +814,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:355
+#: en/content/guides/spec.adoc:372
 msgid ""
 "For example, imagine an API that received event objects which shared some common fields but also had type-specific "
 "shapes. First we would register the event attributes:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:363
+#: en/content/guides/spec.adoc:380
 #, no-wrap
 msgid ""
 "(s/def :event/type keyword?)\n"
@@ -798,14 +832,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:366
+#: en/content/guides/spec.adoc:383
 msgid ""
 "We then need a multimethod that defines a dispatch function for choosing the selector (here our `:event/type` field) "
 "and returns the appropriate spec based on the value:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:374
+#: en/content/guides/spec.adoc:391
 #, no-wrap
 msgid ""
 "(defmulti event-type :event/type)\n"
@@ -816,25 +850,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:377
+#: en/content/guides/spec.adoc:394
 msgid ""
 "The methods should ignore their argument and return the spec for the specified type. Here we've fully spec'ed two "
 "possible events - a \"search\" event and an \"error\" event."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:379
+#: en/content/guides/spec.adoc:396
 msgid "And then finally we are ready to declare our `multi-spec` and try it out."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:383
+#: en/content/guides/spec.adoc:400
 #, no-wrap
 msgid "(s/def :event/event (s/multi-spec event-type :event/type))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:406
+#: en/content/guides/spec.adoc:423
 #, no-wrap
 msgid ""
 "(s/valid? :event/event\n"
@@ -862,7 +896,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:409
+#: en/content/guides/spec.adoc:426
 msgid ""
 "Let's take a moment to examine the explain error output on that final example. There were two different kinds of "
 "failures detected. The first failure is due to the missing required `:event/timestamp` key in the event. The second "
@@ -870,41 +904,41 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:411
+#: en/content/guides/spec.adoc:428
 msgid ""
 "in - the path within the data to the failing value. This is omitted on the first error as it's at the root value but "
 "is the key in the map on the second error."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:412
+#: en/content/guides/spec.adoc:429
 msgid "val - the failing value, either the full map or the individual key in the map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:413
+#: en/content/guides/spec.adoc:430
 msgid "spec - the actual spec that failed"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:414
+#: en/content/guides/spec.adoc:431
 msgid "at - the path in the spec where the failing value occurred"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:415
+#: en/content/guides/spec.adoc:432
 msgid "predicate - the actual predicate that failed"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:417
+#: en/content/guides/spec.adoc:434
 msgid ""
 "The `multi-spec` approach allows us to create an *open* system for spec validation, just like multimethods and "
 "protocols. New event types can be added later by just extending the `event-type` multimethod."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:421
+#: en/content/guides/spec.adoc:438
 msgid ""
 "A few helpers are provided for other special collection cases - https://clojure.github.io/clojure/branch-master/"
 "clojure.spec-api.html#clojure.spec/coll-of[`coll-of`], https://clojure.github.io/clojure/branch-master/clojure.spec-"
@@ -913,14 +947,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:423
+#: en/content/guides/spec.adoc:440
 msgid ""
 "For the special case of a homogenous collection of arbitrary size, you can use `coll-of` to specify a collection of "
 "elements satisfying a predicate."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:430
+#: en/content/guides/spec.adoc:447
 #, no-wrap
 msgid ""
 "(s/conform (s/coll-of keyword?) [:a :b :c])\n"
@@ -930,46 +964,46 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:433
+#: en/content/guides/spec.adoc:450
 msgid "Additionally, `coll-of` can be passed a number of keyword arg options:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:435
+#: en/content/guides/spec.adoc:452
 msgid "`:kind` - a predicate or spec that the incoming collection must satisfy, such as `vector?`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:436
+#: en/content/guides/spec.adoc:453
 msgid "`:count` - specifies exact expected count"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:437
+#: en/content/guides/spec.adoc:454
 msgid "`:min-count`, `:max-count` - checks that collection has `(\\<= min-count count max-count)`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:438
+#: en/content/guides/spec.adoc:455
 msgid "`:distinct` - checks that all elements are distinct"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:439
+#: en/content/guides/spec.adoc:456
 msgid ""
 "`:into` - one of [], (), {}, or #{} for output conformed value. If `:into` is not specified, the input collection "
 "type will be used."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:441
+#: en/content/guides/spec.adoc:458
 msgid ""
 "Following is an example utilizing some of these options to spec a vector containing three distinct numbers conformed "
 "as a set and some of the errors for different kinds of invalid values:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:453
+#: en/content/guides/spec.adoc:470
 #, no-wrap
 msgid ""
 "(s/def ::vnum3 (s/coll-of number? :kind vector? :count 3 :distinct true :into #{}))\n"
@@ -984,7 +1018,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/spec.adoc:458
+#: en/content/guides/spec.adoc:475
 msgid ""
 "Both `coll-of` and `map-of` will conform all of their elements, which may make them unsuitable for large collections. "
 "In that case, consider https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/"
@@ -993,14 +1027,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:461
+#: en/content/guides/spec.adoc:478
 msgid ""
 "While `coll-of` is good for homogenous collections of any size, another case is a fixed-size positional collection "
 "with fields of known type at different positions. For that we have `tuple`."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:467
+#: en/content/guides/spec.adoc:484
 #, no-wrap
 msgid ""
 "(s/def ::point (s/tuple double? double? double?))\n"
@@ -1009,34 +1043,34 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:470
+#: en/content/guides/spec.adoc:487
 msgid ""
 "Note that in this case of a \"point\" structure with x/y/z values we actually had a choice of three possible specs:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:474
+#: en/content/guides/spec.adoc:491
 msgid ""
 "Regular expression - `(s/cat :x double? :y double? :z double?)` ** Allows for matching nested structure (not needed "
 "here)  ** Conforms to map with named keys based on the `cat` tags"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:477
+#: en/content/guides/spec.adoc:494
 msgid ""
 "Collection - `(s/coll-of double?)` ** Designed for arbitrary size homogenous collections ** Conforms to a vector of "
 "the values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:480
+#: en/content/guides/spec.adoc:497
 msgid ""
 "Tuple - `(s/tuple double? double? double?)` ** Designed for fixed size with known positional \"fields\" ** Conforms "
 "to a vector of the values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:482
+#: en/content/guides/spec.adoc:499
 msgid ""
 "In this example, `coll-of` will match other (invalid) values as well (like `[1.0]` or `[1.0 2.0 3.0 4.0])`, so it is "
 "not a suitable choice - we want fixed fields. The choice between a regular expression and tuple here is to some "
@@ -1045,14 +1079,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:484
+#: en/content/guides/spec.adoc:501
 msgid ""
 "In addition to the support for information maps via `keys`, spec also provides `map-of` for maps with homogenous key "
 "and value predicates."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:490
+#: en/content/guides/spec.adoc:507
 #, no-wrap
 msgid ""
 "(s/def ::scores (s/map-of string? int?))\n"
@@ -1061,19 +1095,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:493
+#: en/content/guides/spec.adoc:510
 msgid ""
 "By default `map-of` will validate but not conform keys because conformed keys might create key duplicates that would "
 "cause entries in the map to be overridden. If conformed keys are desired, pass the option `:conform-keys true'."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:495
+#: en/content/guides/spec.adoc:512
 msgid "You can also use the various count-related options on `map-of` that you have with `coll-of`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:499
+#: en/content/guides/spec.adoc:516
 msgid ""
 "Sometimes sequential data is used to encode additional structure (typically new syntax, often used in macros). spec "
 "provides the standard https://en.wikipedia.org/wiki/Regular_expression[regular expression] operators to describe the "
@@ -1081,49 +1115,49 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:501
+#: en/content/guides/spec.adoc:518
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/cat[`cat`] - concatenation of "
 "predicates/patterns"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:502
+#: en/content/guides/spec.adoc:519
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/alt[`alt`] - choice among "
 "alternative predicates/patterns"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:503
+#: en/content/guides/spec.adoc:520
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/*[`pass:[*]`] - 0 or more of a "
 "predicate/pattern"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:504
+#: en/content/guides/spec.adoc:521
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/%2B[`+`] - 1 or more of a "
 "predicate/pattern"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:505
+#: en/content/guides/spec.adoc:522
 msgid ""
 "https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/%3F[`?`] - 0 or 1 of a predicate/"
 "pattern"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:507
+#: en/content/guides/spec.adoc:524
 msgid ""
 "Like `or`, both `cat` and `alt` tag their \"parts\" - these tags are then used in the conformed value to identify "
 "what was matched, to report errors, and more."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:509
+#: en/content/guides/spec.adoc:526
 msgid ""
 "Consider an ingredient represented by a vector containing a quantity (number) and a unit (keyword). The spec for this "
 "data uses `cat` to specify the right components in the right order. Like predicates, regex operators are implicitly "
@@ -1131,7 +1165,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:515
+#: en/content/guides/spec.adoc:532
 #, no-wrap
 msgid ""
 "(s/def ::ingredient (s/cat :quantity number? :unit keyword?))\n"
@@ -1140,12 +1174,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:518
+#: en/content/guides/spec.adoc:535
 msgid "The data is conformed as a map with the tags as keys. We can use `explain` to examine non-conforming data."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:524
+#: en/content/guides/spec.adoc:541
 #, no-wrap
 msgid ""
 ";; pass string for unit instead of keyword\n"
@@ -1154,7 +1188,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:528
+#: en/content/guides/spec.adoc:545
 #, no-wrap
 msgid ""
 ";; leave out the unit\n"
@@ -1163,12 +1197,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:531
+#: en/content/guides/spec.adoc:548
 msgid "Let's now see the various occurrence operators `*`, `+`, and `?`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:539
+#: en/content/guides/spec.adoc:556
 #, no-wrap
 msgid ""
 "(s/def ::seq-of-keywords (s/* keyword?))\n"
@@ -1179,7 +1213,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:548
+#: en/content/guides/spec.adoc:565
 #, no-wrap
 msgid ""
 "(s/def ::odds-then-maybe-even (s/cat :odds (s/+ odd?)\n"
@@ -1193,7 +1227,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:553
+#: en/content/guides/spec.adoc:570
 #, no-wrap
 msgid ""
 ";; opts are alternating keywords and booleans\n"
@@ -1203,14 +1237,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:556
+#: en/content/guides/spec.adoc:573
 msgid ""
 "Finally, we can use `alt` to specify alternatives within the sequential data. Like `cat`, `alt` requires you to tag "
 "each alternative but the conformed data is a vector of tag and value."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:566
+#: en/content/guides/spec.adoc:583
 #, no-wrap
 msgid ""
 "(s/def ::config (s/* \n"
@@ -1223,14 +1257,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:569
+#: en/content/guides/spec.adoc:586
 msgid ""
 "If you need a description of a specification, use `describe` to retrieve one. Let's try it on some of the "
 "specifications we've already defined:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:578
+#: en/content/guides/spec.adoc:595
 #, no-wrap
 msgid ""
 "(s/describe ::seq-of-keywords)\n"
@@ -1242,7 +1276,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:581
+#: en/content/guides/spec.adoc:598
 msgid ""
 "Spec also defines one additional regex operator, https://clojure.github.io/clojure/branch-master/clojure.spec-api."
 "html#clojure.spec/&[`&`], which takes a regex operator and constrains it with one or more additional predicates. This "
@@ -1251,7 +1285,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:589
+#: en/content/guides/spec.adoc:606
 #, no-wrap
 msgid ""
 "(s/def ::even-strings (s/& (s/* string?) #(even? (count %))))\n"
@@ -1262,7 +1296,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:595
+#: en/content/guides/spec.adoc:612
 msgid ""
 "When regex ops are combined, they describe a single sequence. If you need to spec a nested sequential collection, you "
 "must use an explicit call to https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/"
@@ -1271,7 +1305,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:605
+#: en/content/guides/spec.adoc:622
 #, no-wrap
 msgid ""
 "(s/def ::nested\n"
@@ -1284,12 +1318,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:608
+#: en/content/guides/spec.adoc:625
 msgid "If the specs were removed this spec would instead match a sequence like `[:names \"a\" \"b\" :nums 1 2 3]`."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:618
+#: en/content/guides/spec.adoc:635
 #, no-wrap
 msgid ""
 "(s/def ::unnested\n"
@@ -1302,25 +1336,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:620
+#: en/content/guides/spec.adoc:637
 #, no-wrap
 msgid "Using spec for validation"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:623
+#: en/content/guides/spec.adoc:640
 msgid "Now is a good time to step back and think about how spec can be used for runtime data validation."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:625
+#: en/content/guides/spec.adoc:642
 msgid ""
 "One way to use spec is to explicitly call `valid?` to verify input data passed to a function. You can, for example, "
 "use the existing pre- and post-condition support built into `defn`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:633
+#: en/content/guides/spec.adoc:650
 #, no-wrap
 msgid ""
 "(defn person-name\n"
@@ -1331,7 +1365,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:636
+#: en/content/guides/spec.adoc:653
 #, no-wrap
 msgid ""
 "(person-name 42)\n"
@@ -1339,7 +1373,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:639
+#: en/content/guides/spec.adoc:656
 #, no-wrap
 msgid ""
 "(person-name {::first-name \"Elon\" ::last-name \"Musk\" ::email \"elon@example.com\"})\n"
@@ -1347,14 +1381,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:642
+#: en/content/guides/spec.adoc:659
 msgid ""
 "When the function is invoked with something that isn't valid `::person` data, the pre-condition fails. Similarly, if "
 "there was a bug in our code and the output was not a string, the post-condition would fail."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:644
+#: en/content/guides/spec.adoc:661
 msgid ""
 "Another option is to use `s/assert` within your code to assert that a value satisfies a spec. On success the value is "
 "returned and on failure an assertion error is thrown. By default assertion checking is off - this can be changed at "
@@ -1362,7 +1396,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:651
+#: en/content/guides/spec.adoc:668
 #, no-wrap
 msgid ""
 "(defn person-name\n"
@@ -1372,7 +1406,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:659
+#: en/content/guides/spec.adoc:676
 #, no-wrap
 msgid ""
 "(s/check-asserts true)\n"
@@ -1385,19 +1419,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:662
+#: en/content/guides/spec.adoc:679
 msgid ""
 "A deeper level of integration is to call conform and use the return value to destructure the input. This will be "
 "particularly useful for complex inputs with alternate options."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:664
+#: en/content/guides/spec.adoc:681
 msgid "Here we conform using the config specification defined above:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:670
+#: en/content/guides/spec.adoc:687
 #, no-wrap
 msgid ""
 "(defn- set-config [prop val]\n"
@@ -1406,7 +1440,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:677
+#: en/content/guides/spec.adoc:694
 #, no-wrap
 msgid ""
 "(defn configure [input]\n"
@@ -1418,20 +1452,20 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:679
+#: en/content/guides/spec.adoc:696
 #, no-wrap
 msgid "(configure [\"-server\" \"foo\" \"-verbose\" true \"-user\" \"joe\"])\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:682
+#: en/content/guides/spec.adoc:699
 msgid ""
 "Here configure calls `conform` to destructure the config input. The result is either the special `::s/invalid` value "
 "or a destructured form of the result:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:688
+#: en/content/guides/spec.adoc:705
 #, no-wrap
 msgid ""
 "[{:prop \"-server\", :val [:s \"foo\"]} \n"
@@ -1440,7 +1474,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:691
+#: en/content/guides/spec.adoc:708
 msgid ""
 "In the success case, the parsed input is transformed into the desired shape for further processing. In the error "
 "case, we call `explain-data` to generate error message data. The explain data contains information about what "
@@ -1449,20 +1483,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:692
+#: en/content/guides/spec.adoc:709
 #, no-wrap
 msgid "Spec'ing functions"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:695
+#: en/content/guides/spec.adoc:712
 msgid ""
 "The pre- and post-condition example in the previous section hinted at an interesting question - how do we define the "
 "input and output specifications for a function or macro?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:697
+#: en/content/guides/spec.adoc:714
 msgid ""
 "Spec has explicit support for this using https://clojure.github.io/clojure/branch-master/clojure.spec-api."
 "html#clojure.spec/fdef[`fdef`], which defines specifications for a function - the arguments and/or the return value "
@@ -1470,12 +1504,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:699
+#: en/content/guides/spec.adoc:716
 msgid "Let's consider a `ranged-rand` function that produces a random number in a range:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:706
+#: en/content/guides/spec.adoc:723
 #, no-wrap
 msgid ""
 "(defn ranged-rand\n"
@@ -1485,12 +1519,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:709
+#: en/content/guides/spec.adoc:726
 msgid "We can then provide a specification for that function:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:718
+#: en/content/guides/spec.adoc:735
 #, no-wrap
 msgid ""
 "(s/fdef ranged-rand\n"
@@ -1502,7 +1536,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:721
+#: en/content/guides/spec.adoc:738
 msgid ""
 "This function spec demonstrates a number of features. First the `:args` is a compound spec that describes the "
 "function arguments. This spec is invoked with the args in a list, as if they were passed to `(apply fn (arg-list))`. "
@@ -1511,7 +1545,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:723
+#: en/content/guides/spec.adoc:740
 msgid ""
 "The second `:args` predicate takes as input the conformed result of the first predicate and verifies that start < "
 "end. The `:ret` spec indicates the return is also an integer. Finally, the `:fn` spec checks that the return value is "
@@ -1519,42 +1553,89 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:725
-msgid "We'll see later how we can use a function spec for development and testing."
+#: en/content/guides/spec.adoc:742
+msgid "Once a spec has been created for a function, the `doc` for the function will also include it:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:746
+#, no-wrap
+msgid "(doc ranged-rand)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:754
+#, no-wrap
+msgid ""
+"user/ranged-rand\n"
+"([start end])\n"
+"  Returns random int in range start <= rand < end\n"
+"Spec\n"
+"  args: (and (cat :start int? :end int?) (< (:start %) (:end %)))\n"
+"  ret: int?\n"
+"  fn: (and (>= (:ret %) (-> % :args :start)) (< (:ret %) (-> % :args :end)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:757
+#, no-wrap
+msgid "We'll see later how we can use a function spec for development and testing.\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:726
+#: en/content/guides/spec.adoc:758
 #, no-wrap
 msgid "Higher order functions"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:729
+#. type: delimited block -
+#: en/content/guides/spec.adoc:761
 msgid ""
 "Higher order functions are common in Clojure and spec provides https://clojure.github.io/clojure/branch-master/"
 "clojure.spec-api.html#clojure.spec/fspec[`fspec`] to support spec'ing them."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:731
+#. type: delimited block -
+#: en/content/guides/spec.adoc:763
 msgid "For example, consider the `adder` function:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:735
-#, no-wrap
-msgid "(defn adder [x] #(+ x %))\n"
+#: en/content/guides/spec.adoc:765 en/content/guides/spec.adoc:789 en/content/guides/spec.adoc:812
+#: en/content/guides/spec.adoc:883 en/content/guides/spec.adoc:928 en/content/guides/spec.adoc:976
+#: en/content/guides/spec.adoc:1016 en/content/guides/spec.adoc:1074 en/content/guides/spec.adoc:1154
+#: en/content/guides/spec.adoc:1195 en/content/guides/spec.adoc:1204 en/content/guides/spec.adoc:1233
+#: en/content/guides/spec.adoc:1297
+msgid "[source,clojure]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:738
-msgid ""
-"`adder` returns a function that adds x. We can declare a function spec for `adder` using `fspec` for the return value:"
+#: en/content/guides/spec.adoc:767
+msgid "(defn adder [x] #(+ x %))"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:746
+#: en/content/guides/spec.adoc:770
+#, no-wrap
+msgid "`adder` returns a function that adds x. We can declare a function spec for `adder` using `fspec` for the return value:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:772 en/content/guides/spec.adoc:798 en/content/guides/spec.adoc:832
+#: en/content/guides/spec.adoc:844 en/content/guides/spec.adoc:858 en/content/guides/spec.adoc:892
+#: en/content/guides/spec.adoc:917 en/content/guides/spec.adoc:954 en/content/guides/spec.adoc:964
+#: en/content/guides/spec.adoc:996 en/content/guides/spec.adoc:1028 en/content/guides/spec.adoc:1036
+#: en/content/guides/spec.adoc:1048 en/content/guides/spec.adoc:1083 en/content/guides/spec.adoc:1092
+#: en/content/guides/spec.adoc:1114 en/content/guides/spec.adoc:1125 en/content/guides/spec.adoc:1136
+#: en/content/guides/spec.adoc:1163 en/content/guides/spec.adoc:1178 en/content/guides/spec.adoc:1211
+#: en/content/guides/spec.adoc:1248 en/content/guides/spec.adoc:1258 en/content/guides/spec.adoc:1282
+#: en/content/guides/spec.adoc:1312 en/content/guides/spec.adoc:1332
+#, no-wrap
+msgid "[source,clojure]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:778
 #, no-wrap
 msgid ""
 "(s/fdef adder\n"
@@ -1564,16 +1645,14 @@ msgid ""
 "  :fn #(= (-> % :args :x) ((:ret %) 0)))\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:749
-msgid ""
-"The `:ret` spec uses `fspec` to declare that the returning function takes and returns a number. Even more "
-"interesting, the `:fn` spec can state a general property that relates the `:args` (where we know x) and the result we "
-"get from invoking the function returned from `adder`, namely that adding 0 to it should return x."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:781
+#, no-wrap
+msgid "The `:ret` spec uses `fspec` to declare that the returning function takes and returns a number. Even more interesting, the `:fn` spec can state a general property that relates the `:args` (where we know x) and the result we get from invoking the function returned from `adder`, namely that adding 0 to it should return x.\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:753
+#. type: delimited block -
+#: en/content/guides/spec.adoc:785
 msgid ""
 "As macros are functions that take code and produce code, they can also be spec'ed like functions. One special "
 "consideration however is that you must keep in mind that you are receiving code as data, not evaluated arguments, and "
@@ -1581,13 +1660,13 @@ msgid ""
 "(as it's just code)."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:755
+#. type: delimited block -
+#: en/content/guides/spec.adoc:787
 msgid "For example, we could spec the `clojure.core/declare` macro like this:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:761
+#. type: Plain text
+#: en/content/guides/spec.adoc:793
 #, no-wrap
 msgid ""
 "(s/fdef clojure.core/declare\n"
@@ -1595,81 +1674,66 @@ msgid ""
 "    :ret any?)\n"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/guides/spec.adoc:796
+#, no-wrap
+msgid "The Clojure macroexpander will look for and conform :args specs registered for macros at macro expansion time (not runtime!). If an error is detected, `explain` will be invoked to explain the error:\n"
+msgstr ""
+
 #. type: Plain text
-#: en/content/guides/spec.adoc:764
+#: en/content/guides/spec.adoc:803
 msgid ""
-"The Clojure macroexpander will look for and conform :args specs registered for macros at macro expansion time (not "
-"runtime!). If an error is detected, `explain` will be invoked to explain the error:"
+"(declare 100)  ;; ExceptionInfo: Call to clojure.core/declare did not conform to spec: ;; In: [0] val: 100 fails at: "
+"[:args :names] predicate: simple-symbol? ;; :clojure.spec.alpha/args (100)"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:771
+#: en/content/guides/spec.adoc:806
 #, no-wrap
-msgid ""
-"(declare 100)\n"
-";; ExceptionInfo: Call to clojure.core/declare did not conform to spec:\n"
-";; In: [0] val: 100 fails at: [:args :names] predicate: simple-symbol?\n"
-";; :clojure.spec.alpha/args  (100)\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:774
-msgid "Because macros are always checked during macro expansion, you do not need to call instrument for macro specs."
+msgid "Because macros are always checked during macro expansion, you do not need to call instrument for macro specs.\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:775
+#: en/content/guides/spec.adoc:807
 #, no-wrap
 msgid "A game of cards"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:778
+#. type: delimited block -
+#: en/content/guides/spec.adoc:810
 msgid "Here's a bigger set of specs to model a game of cards:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:784
-#, no-wrap
+#. type: Plain text
+#: en/content/guides/spec.adoc:816
 msgid ""
-"(def suit? #{:club :diamond :heart :spade})\n"
-"(def rank? (into #{:jack :queen :king :ace} (range 2 11)))\n"
-"(def deck (for [suit suit? rank rank?] [rank suit]))\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/spec.adoc:787
-#, no-wrap
-msgid ""
-"(s/def ::card (s/tuple rank? suit?))\n"
-"(s/def ::hand (s/* ::card))\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/spec.adoc:791
-#, no-wrap
-msgid ""
-"(s/def ::name string?)\n"
-"(s/def ::score int?)\n"
-"(s/def ::player (s/keys :req [::name ::score ::hand]))\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/spec.adoc:795
-#, no-wrap
-msgid ""
-"(s/def ::players (s/* ::player))\n"
-"(s/def ::deck (s/* ::card))\n"
-"(s/def ::game (s/keys :req [::players ::deck]))\n"
+"(def suit? #{:club :diamond :heart :spade})  (def rank? (into #{:jack :queen :king :ace} (range 2 11)))  (def deck "
+"(for [suit suit? rank rank?] [rank suit]))"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:798
-msgid "We can validate a piece of this data against the schema:"
+#: en/content/guides/spec.adoc:819
+msgid "(s/def ::card (s/tuple rank? suit?))  (s/def ::hand (s/* ::card))"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:823
+msgid "(s/def ::name string?)  (s/def ::score int?)  (s/def ::player (s/keys :req [::name ::score ::hand]))"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:827
+msgid "(s/def ::players (s/* ::player))  (s/def ::deck (s/* ::card))  (s/def ::game (s/keys :req [::players ::deck]))"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:807
+#: en/content/guides/spec.adoc:830
+#, no-wrap
+msgid "We can validate a piece of this data against the schema:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:839
 #, no-wrap
 msgid ""
 "(def kenny\n"
@@ -1680,13 +1744,14 @@ msgid ""
 ";;=> true\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:810
-msgid "Or look at the errors we'll get from some bad data:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:842
+#, no-wrap
+msgid "Or look at the errors we'll get from some bad data:\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:819
+#. type: Plain text
+#: en/content/guides/spec.adoc:851
 #, no-wrap
 msgid ""
 "(s/explain ::game\n"
@@ -1697,23 +1762,20 @@ msgid ""
 ";; In: [::players 0 ::hand 0 1] val: :banana fails spec: ::card at: [::players ::hand 1] predicate: suit?\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:822
-msgid ""
-"The error indicates the key path in the data structure down to the invalid value, the non-matching value, the spec "
-"part it's trying to match, the path in that spec, and the predicate that failed."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:824
-msgid ""
-"If we have a function `deal` that doles out some cards to the players we can spec that function to verify the arg and "
-"return value are both suitable data values. We can also specify a `:fn` spec to verify that the count of cards in the "
-"game before the deal equals the count of cards after the deal."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:854
+#, no-wrap
+msgid "The error indicates the key path in the data structure down to the invalid value, the non-matching value, the spec part it's trying to match, the path in that spec, and the predicate that failed.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:830
+#: en/content/guides/spec.adoc:856
+#, no-wrap
+msgid "If we have a function `deal` that doles out some cards to the players we can spec that function to verify the arg and return value are both suitable data values. We can also specify a `:fn` spec to verify that the count of cards in the game before the deal equals the count of cards after the deal.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:862
 #, no-wrap
 msgid ""
 "(defn total-cards [{:keys [::deck ::players] :as game}]\n"
@@ -1721,14 +1783,13 @@ msgid ""
 "    (map #(-> % ::hand count) players)))\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:832
-#, no-wrap
-msgid "(defn deal [game] .... )\n"
+#. type: Plain text
+#: en/content/guides/spec.adoc:864
+msgid "(defn deal [game] .... )"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:838
+#. type: Plain text
+#: en/content/guides/spec.adoc:870
 #, no-wrap
 msgid ""
 "(s/fdef deal\n"
@@ -1739,26 +1800,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:840
+#: en/content/guides/spec.adoc:872
 #, no-wrap
 msgid "Generators"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:843
+#. type: delimited block -
+#: en/content/guides/spec.adoc:875
 msgid ""
 "A key design constraint of spec is that all specs are also designed to act as generators of sample data that conforms "
 "to the spec (a critical requirement for property-based testing)."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:844
+#: en/content/guides/spec.adoc:876
 #, no-wrap
 msgid "Project Setup"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:847
+#. type: delimited block -
+#: en/content/guides/spec.adoc:879
 msgid ""
 "spec generators rely on the Clojure property testing library https://github.com/clojure/test.check[test.check]. "
 "However, this dependency is dynamically loaded and you can use the parts of spec other than `gen`, `exercise`, and "
@@ -1766,46 +1827,45 @@ msgid ""
 "during testing), you will need to declare a dev dependency on test.check."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:849
+#. type: delimited block -
+#: en/content/guides/spec.adoc:881
 msgid "In Leiningen add this to project.clj:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:853
+#: en/content/guides/spec.adoc:888
 #, no-wrap
-msgid ":profiles {:dev {:dependencies [[org.clojure/test.check \"0.9.0\"]]}}\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:856
-msgid ""
-"In Leiningen the dev profile dependencies are included during testing but not published as a dependency or included "
-"in uber jars."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:858
-msgid ""
-"In Boot, add your dependency with test scope in your build.boot file (this is also possible in Leiningen but the "
-"approach above is preferred):"
+msgid "In Leiningen the dev profile dependencies are included during testing but not published as a dependency or included in uber jars.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:863
+#: en/content/guides/spec.adoc:890
+#, no-wrap
+msgid "In Boot, add your dependency with test scope in your build.boot file (this is also possible in Leiningen but the approach above is preferred):\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:895
 #, no-wrap
 msgid ""
 "(set-env!\n"
 " :dependencies '[[org.clojure/test.check \"0.9.0\" :scope \"test\"]])\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:866
-msgid "In Maven, declare your dependency as a test scope dependency:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:898
+#, no-wrap
+msgid "In Maven, declare your dependency as a test scope dependency:\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:880
+#: en/content/guides/spec.adoc:900
+#, no-wrap
+msgid "[source,xml]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:912
 #, no-wrap
 msgid ""
 "<project>\n"
@@ -1821,32 +1881,32 @@ msgid ""
 "</project>\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:883
-msgid "In your code you also need to include the `clojure.spec.gen.alpha` namespace:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:915
+#, no-wrap
+msgid "In your code you also need to include the `clojure.spec.gen.alpha` namespace:\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:887
-#, no-wrap
-msgid "(require '[clojure.spec.gen.alpha :as gen])\n"
+#. type: Plain text
+#: en/content/guides/spec.adoc:919
+msgid "(require '[clojure.spec.gen.alpha :as gen])"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:889
+#: en/content/guides/spec.adoc:921
 #, no-wrap
 msgid "Sampling Generators"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:892
+#. type: delimited block -
+#: en/content/guides/spec.adoc:924
 msgid ""
 "The https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec/gen[`gen`] function can be "
 "used to obtain the generator for any spec."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:894
+#. type: delimited block -
+#: en/content/guides/spec.adoc:926
 msgid ""
 "Once you have obtained a generator with `gen`, there are several ways to use it. You can generate a single sample "
 "value with https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/"
@@ -1854,44 +1914,32 @@ msgid ""
 "html#clojure.spec.gen/sample[`sample`]. Let's see some basic examples:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:905
-#, no-wrap
+#. type: Plain text
+#: en/content/guides/spec.adoc:937
 msgid ""
-"(gen/generate (s/gen int?))\n"
-";;=> -959\n"
-"(gen/generate (s/gen nil?))\n"
-";;=> nil\n"
-"(gen/sample (s/gen string?))\n"
-";;=> (\"\" \"\" \"\" \"\" \"8\" \"W\" \"\" \"G74SmCm\" \"K9sL9\" \"82vC\")\n"
-"(gen/sample (s/gen #{:club :diamond :heart :spade}))\n"
-";;=> (:heart :diamond :heart :heart :heart :diamond :spade :spade :spade :club)\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/spec.adoc:917
-#, no-wrap
-msgid ""
-"(gen/sample (s/gen (s/cat :k keyword? :ns (s/+ number?))))\n"
-";;=> ((:D -2.0)\n"
-";;=>  (:q4/c 0.75 -1)\n"
-";;=>  (:*!3/? 0)\n"
-";;=>  (:+k_?.p*K.*o!d/*V -3)\n"
-";;=>  (:i -1 -1 0.5 -0.5 -4)\n"
-";;=>  (:?!/! 0.515625 -15 -8 0.5 0 0.75)\n"
-";;=>  (:vv_z2.A??!377.+z1*gR.D9+G.l9+.t9/L34p -1.4375 -29 0.75 -1.25)\n"
-";;=>  (:-.!pm8bS_+.Z2qB5cd.p.JI0?_2m.S8l.a_Xtu/+OM_34* -2.3125)\n"
-";;=>  (:Ci 6.0 -30 -3 1.0)\n"
-";;=>  (:s?cw*8.t+G.OS.xh_z2!.cF-b!PAQ_.E98H4_4lSo/?_m0T*7i 4.4375 -3.5 6.0 108 0.33203125 2 8 -0.517578125 -4))\n"
+"(gen/generate (s/gen int?))  ;;=> -959 (gen/generate (s/gen nil?))  ;;=> nil (gen/sample (s/gen string?))  ;;=> (\"\" "
+"\"\" \"\" \"\" \"8\" \"W\" \"\" \"G74SmCm\" \"K9sL9\" \"82vC\")  (gen/sample (s/gen #{:club :diamond :heart :"
+"spade}))  ;;=> (:heart :diamond :heart :heart :heart :diamond :spade :spade :spade :club)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:920
-msgid "What about generating a random player in our card game?"
+#: en/content/guides/spec.adoc:949
+msgid ""
+"(gen/sample (s/gen (s/cat :k keyword? :ns (s/+ number?))))  ;;=> ((:D -2.0)  ;;=> (:q4/c 0.75 -1)  ;;=> (:*!3/? 0)  ;;"
+"=> (:+k_?.p*K.*o!d/*V -3)  ;;=> (:i -1 -1 0.5 -0.5 -4)  ;;=> (:?!/! 0.515625 -15 -8 0.5 0 0.75)  ;;=> (:vv_z2.A??!377."
+"+z1*gR.D9+G.l9+.t9/L34p -1.4375 -29 0.75 -1.25)  ;;=> (:-.!pm8bS_+.Z2qB5cd.p.JI0?_2m.S8l.a_Xtu/+OM_34* -2.3125)  ;;=> "
+"(:Ci 6.0 -30 -3 1.0)  ;;=> (:s?cw*8.t+G.OS.xh_z2!.cF-b!PAQ_.E98H4_4lSo/?_m0T*7i 4.4375 -3.5 6.0 108 0.33203125 2 8 "
+"-0.517578125 -4))"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:927
+#: en/content/guides/spec.adoc:952
+#, no-wrap
+msgid "What about generating a random player in our card game?\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:959
 #, no-wrap
 msgid ""
 "(gen/generate (s/gen ::player))\n"
@@ -1900,36 +1948,31 @@ msgid ""
 ";;    :spec.examples.guide/hand ([8 :spade] [5 :heart] [9 :club] [3 :heart])}\n"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/guides/spec.adoc:962
+#, no-wrap
+msgid "What about generating a whole game?\n"
+msgstr ""
+
 #. type: Plain text
-#: en/content/guides/spec.adoc:930
-msgid "What about generating a whole game?"
+#: en/content/guides/spec.adoc:967
+msgid "(gen/generate (s/gen ::game))  ;; it works! but the output is really long, so not including it here"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:935
+#: en/content/guides/spec.adoc:970
 #, no-wrap
-msgid ""
-"(gen/generate (s/gen ::game))\n"
-";; it works! but the output is really long, so not including it here\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:938
-msgid ""
-"So we can now start with a spec, extract a generator, and generate some data. All generated data will conform to the "
-"spec we used as a generator. For specs that have a conformed value different than the original value (anything using "
-"s/or, s/cat, s/alt, etc) it can be useful to see a set of generated samples plus the result of conforming that sample "
-"data."
+msgid "So we can now start with a spec, extract a generator, and generate some data. All generated data will conform to the spec we used as a generator. For specs that have a conformed value different than the original value (anything using s/or, s/cat, s/alt, etc) it can be useful to see a set of generated samples plus the result of conforming that sample data. \n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:939
+#: en/content/guides/spec.adoc:971
 #, no-wrap
 msgid "Exercise"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:942
+#. type: delimited block -
+#: en/content/guides/spec.adoc:974
 msgid ""
 "For this we have https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/"
 "exercise[`exercise`], which returns pairs of generated and conformed values for a spec. `exercise` by default "
@@ -1937,21 +1980,16 @@ msgid ""
 "produce."
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:952
-#, no-wrap
+#. type: Plain text
+#: en/content/guides/spec.adoc:984
 msgid ""
-"(s/exercise (s/cat :k keyword? :ns (s/+ number?)) 5)\n"
-";;=>\n"
-";;([(:y -2.0) {:k :y, :ns [-2.0]}]\n"
-";; [(:_/? -1.0 0.5) {:k :_/?, :ns [-1.0 0.5]}]\n"
-";; [(:-B 0 3.0) {:k :-B, :ns [0 3.0]}]\n"
-";; [(:-!.gD*/W+ -3 3.0 3.75) {:k :-!.gD*/W+, :ns [-3 3.0 3.75]}]\n"
-";; [(:_Y*+._?q-H/-3* 0 1.25 1.5) {:k :_Y*+._?q-H/-3*, :ns [0 1.25 1.5]}])\n"
+"(s/exercise (s/cat :k keyword? :ns (s/+ number?)) 5)  ;;=> ;;([(:y -2.0) {:k :y, :ns [-2.0]}] ;; [(:_/? -1.0 0.5) {:"
+"k :_/?, :ns [-1.0 0.5]}] ;; [(:-B 0 3.0) {:k :-B, :ns [0 3.0]}] ;; [(:-!.gD*/W+ -3 3.0 3.75) {:k :-!.gD*/W+, :ns [-3 "
+"3.0 3.75]}] ;; [(:_Y*+._?q-H/-3* 0 1.25 1.5) {:k :_Y*+._?q-H/-3*, :ns [0 1.25 1.5]}])"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:959
+#. type: Plain text
+#: en/content/guides/spec.adoc:991
 #, no-wrap
 msgid ""
 "(s/exercise (s/or :k keyword? :s string? :n number?) 5)\n"
@@ -1962,16 +2000,14 @@ msgid ""
 ";;    [-3.0 [:n -3.0]])\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:962
-msgid ""
-"For spec'ed functions we also have https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec."
-"gen/exercise-fn[`exercise-fn`], which generates sample args, invokes the spec'ed function and returns the args and "
-"the return value."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:994
+#, no-wrap
+msgid "For spec'ed functions we also have https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/exercise-fn[`exercise-fn`], which generates sample args, invokes the spec'ed function and returns the args and the return value.\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:977
+#. type: Plain text
+#: en/content/guides/spec.adoc:1009
 #, no-wrap
 msgid ""
 "(s/exercise-fn `ranged-rand)\n"
@@ -1989,72 +2025,62 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:979
+#: en/content/guides/spec.adoc:1011
 #, no-wrap
 msgid "Using `s/and` Generators"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:982
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1014
 msgid ""
 "All of the generators we've seen worked fine but there are a number of cases where they will need some additional "
 "help. One common case is when the predicate implicitly presumes values of a particular type but the spec does not "
 "specify them:"
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/spec.adoc:1019
+msgid ""
+"(gen/generate (s/gen even?))  ;; CompilerException java.lang.Exception: Unable to construct gen at: [] for: clojure."
+"core$even_QMARK_@188fc6fd"
+msgstr ""
+
 #. type: delimited block -
-#: en/content/guides/spec.adoc:987
+#: en/content/guides/spec.adoc:1022
 #, no-wrap
-msgid ""
-"(gen/generate (s/gen even?))\n"
-";; CompilerException java.lang.Exception: Unable to construct gen at: [] for: clojure.core$even_QMARK_@188fc6fd\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:990
-msgid ""
-"In this case spec was not able to find a generator for the `even?` predicate. Most of the primitive generators in "
-"spec are mapped to the common type predicates (strings, numbers, keywords, etc)."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:992
-msgid ""
-"However, spec is designed to support this case via `and` - the first predicate will determine the generator and "
-"subsequent branches will act as filters by applying the predicate to the produced values (using test.check's `such-"
-"that`)."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:994
-msgid ""
-"If we modify our predicate to use an `and` and a predicate with a mapped generator, the `even?` can be used as a "
-"filter for generated values instead:"
+msgid "In this case spec was not able to find a generator for the `even?` predicate. Most of the primitive generators in spec are mapped to the common type predicates (strings, numbers, keywords, etc).\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:999
+#: en/content/guides/spec.adoc:1024
 #, no-wrap
-msgid ""
-"(gen/generate (s/gen (s/and int? even?)))\n"
-";;=> -15161796\n"
+msgid "However, spec is designed to support this case via `and` - the first predicate will determine the generator and subsequent branches will act as filters by applying the predicate to the produced values (using test.check's `such-that`). \n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1026
+#, no-wrap
+msgid "If we modify our predicate to use an `and` and a predicate with a mapped generator, the `even?` can be used as a filter for generated values instead:\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1002
-msgid ""
-"We can use many predicates to further refine the generated values. For example, say we only wanted to generate "
-"numbers that were positive multiples of 3:"
+#: en/content/guides/spec.adoc:1031
+msgid "(gen/generate (s/gen (s/and int? even?)))  ;;=> -15161796"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1006
+#: en/content/guides/spec.adoc:1034
 #, no-wrap
-msgid "(defn divisible-by [n] #(zero? (mod % n)))\n"
+msgid "We can use many predicates to further refine the generated values. For example, say we only wanted to generate numbers that were positive multiples of 3:\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1011
+#. type: Plain text
+#: en/content/guides/spec.adoc:1038
+msgid "(defn divisible-by [n] #(zero? (mod % n)))"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1043
 #, no-wrap
 msgid ""
 "(gen/sample (s/gen (s/and int?\n"
@@ -2063,40 +2089,33 @@ msgid ""
 ";;=> (3 9 1524 3 1836 6 3 3 927 15027)\n"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1046
+#, no-wrap
+msgid "However, it is possible to go too far with refinement and make something that fails to produce any values. The test.check https://clojure.github.io/test.check/clojure.test.check.generators.html#var-such-that[`such-that`] that implements the refinement will throw an error if the refinement predicate cannot be resolved within a relatively small number of attempts. For example, consider trying to generate strings that happen to contain the word \"hello\":\n"
+msgstr ""
+
 #. type: Plain text
-#: en/content/guides/spec.adoc:1014
+#: en/content/guides/spec.adoc:1052
 msgid ""
-"However, it is possible to go too far with refinement and make something that fails to produce any values. The test."
-"check https://clojure.github.io/test.check/clojure.test.check.generators.html#var-such-that[`such-that`] that "
-"implements the refinement will throw an error if the refinement predicate cannot be resolved within a relatively "
-"small number of attempts. For example, consider trying to generate strings that happen to contain the word \"hello\":"
+";; hello, are you the one I'm looking for? (gen/sample (s/gen (s/and string? #(clojure.string/includes? % \"hello"
+"\"))))  ;; ExceptionInfo Couldn't satisfy such-that predicate after 100 tries."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1020
+#: en/content/guides/spec.adoc:1055
 #, no-wrap
-msgid ""
-";; hello, are you the one I'm looking for?\n"
-"(gen/sample (s/gen (s/and string? #(clojure.string/includes? % \"hello\"))))\n"
-";; ExceptionInfo Couldn't satisfy such-that predicate after 100 tries.\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1023
-msgid ""
-"Given enough time (maybe a lot of time), the generator probably would come up with a string like this, but the "
-"underlying `such-that` will make only 100 attempts to generate a value that passes the filter. This is a case where "
-"you will need to step in and provide a custom generator."
+msgid "Given enough time (maybe a lot of time), the generator probably would come up with a string like this, but the underlying `such-that` will make only 100 attempts to generate a value that passes the filter. This is a case where you will need to step in and provide a custom generator.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:1024
+#: en/content/guides/spec.adoc:1056
 #, no-wrap
 msgid "Custom Generators"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1027
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1059
 msgid ""
 "Building your own generator gives you the freedom to be either narrower and/or be more explicit about what values you "
 "want to generate. Alternately, custom generators can be used in cases where conformant values can be generated more "
@@ -2104,146 +2123,151 @@ msgid ""
 "produce will also be checked by their associated spec to guarantee they pass conformance."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1029
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1061
 msgid "There are three ways to build up custom generators - in decreasing order of preference:"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1031
-msgid "Let spec create a generator based on a predicate/spec"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1032
-msgid "Create your own generator from the tools in clojure.spec.gen.alpha"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1033
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1065
 msgid ""
-"Use test.check or other test.check compatible libraries (like https://github.com/gfredericks/test.chuck[test.chuck])"
+". Let spec create a generator based on a predicate/spec . Create your own generator from the tools in clojure.spec."
+"gen.alpha . Use test.check or other test.check compatible libraries (like https://github.com/gfredericks/test."
+"chuck[test.chuck])"
 msgstr ""
 
-#. type: delimited block =
-#: en/content/guides/spec.adoc:1037
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1070
 msgid ""
-"The last option requires a runtime dependency on test.check so the first two options are strongly preferred over "
-"using test.check directly."
+"[WARNING] ==== The last option requires a runtime dependency on test.check so the first two options are strongly "
+"preferred over using test.check directly.  ===="
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1040
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1072
 msgid "First consider a spec with a predicate to specify keywords from a particular namespace:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1046
+#. type: Plain text
+#: en/content/guides/spec.adoc:1076
+msgid "(s/def ::kws (s/and keyword? #(= (namespace %) \"my.domain\")))"
+msgstr ""
+
+#. type: Labeled list
+#: en/content/guides/spec.adoc:1076
 #, no-wrap
-msgid ""
-"(s/def ::kws (s/and keyword? #(= (namespace %) \"my.domain\")))\n"
-"(s/valid? ::kws :my.domain/name) ;; true\n"
-"(gen/sample (s/gen ::kws)) ;; unlikely we'll generate useful keywords this way\n"
+msgid "(s/valid? ::kws :my.domain/name) "
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1049
-msgid ""
-"The simplest way to start generating values for this spec is to have spec create a generator from a fixed set of "
-"options. A set is a valid predicate spec so we can create one and ask for it's generator:"
+#: en/content/guides/spec.adoc:1077
+msgid "true"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1055
+#. type: Labeled list
+#: en/content/guides/spec.adoc:1077
 #, no-wrap
-msgid ""
-"(def kw-gen (s/gen #{:my.domain/name :my.domain/occupation :my.domain/id}))\n"
-"(gen/sample kw-gen 5)\n"
-";;=> (:my.domain/occupation :my.domain/occupation :my.domain/name :my.domain/id :my.domain/name)\n"
+msgid "(gen/sample (s/gen ::kws)) "
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1058
-msgid ""
-"To redefine our spec using this custom generator, use https://clojure.github.io/clojure/branch-master/clojure.spec-"
-"api.html#clojure.spec.gen/with-gen[`with-gen`] which takes a spec and a replacement generator:"
+#: en/content/guides/spec.adoc:1078
+msgid "unlikely we'll generate useful keywords this way"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1066
+#: en/content/guides/spec.adoc:1081
+#, no-wrap
+msgid "The simplest way to start generating values for this spec is to have spec create a generator from a fixed set of options. A set is a valid predicate spec so we can create one and ask for it's generator:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1087
+msgid ""
+"(def kw-gen (s/gen #{:my.domain/name :my.domain/occupation :my.domain/id}))  (gen/sample kw-gen 5)  ;;=> (:my.domain/"
+"occupation :my.domain/occupation :my.domain/name :my.domain/id :my.domain/name)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1090
+#, no-wrap
+msgid "To redefine our spec using this custom generator, use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/with-gen[`with-gen`] which takes a spec and a replacement generator:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1095
 #, no-wrap
 msgid ""
 "(s/def ::kws (s/with-gen (s/and keyword? #(= (namespace %) \"my.domain\"))\n"
 "               #(s/gen #{:my.domain/name :my.domain/occupation :my.domain/id})))\n"
-"(s/valid? ::kws :my.domain/name)  ;; true\n"
-"(gen/sample (s/gen ::kws))\n"
-";;=> (:my.domain/occupation :my.domain/occupation :my.domain/name  ...)\n"
+msgstr ""
+
+#. type: Labeled list
+#: en/content/guides/spec.adoc:1095
+#, no-wrap
+msgid "(s/valid? ::kws :my.domain/name)  "
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1069
-msgid ""
-"Note that `with-gen` (and other places that take a custom generator) take a no-arg function that returns the "
-"generator, allowing it to be lazily realized."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1071
-msgid ""
-"One downside to this approach is we are missing what property testing is really good at: automatically generating "
-"data across a wide search space to find unexpected problems."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1073
-msgid ""
-"The clojure.spec.gen.alpha namespace has a number of functions for generator \"primitives\" as well as \"combinators"
-"\" for combining them into more complicated generators."
-msgstr ""
-
-#. type: delimited block =
-#: en/content/guides/spec.adoc:1077
-msgid ""
-"Nearly all of the functions in the clojure.spec.gen.alpha namespace are merely wrappers that dynamically load "
-"functions of the same name in test.check. You should refer to the documentation for https://clojure.github.io/test."
-"check/[test.check] for more details on how all of the clojure.spec.gen.alpha generator functions work."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1080
-msgid ""
-"In this case we want our keyword to have open names but fixed namespaces. There are many ways to accomplish this but "
-"one of the simplest is to use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/"
-"fmap[`fmap`] to build up a keyword based on generated strings:"
+#: en/content/guides/spec.adoc:1098
+msgid "true (gen/sample (s/gen ::kws))  ;;=> (:my.domain/occupation :my.domain/occupation :my.domain/name ...)"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1086
+#: en/content/guides/spec.adoc:1101
+#, no-wrap
+msgid "Note that `with-gen` (and other places that take a custom generator) take a no-arg function that returns the generator, allowing it to be lazily realized.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1103
+#, no-wrap
+msgid "One downside to this approach is we are missing what property testing is really good at: automatically generating data across a wide search space to find unexpected problems. \n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1105
+#, no-wrap
+msgid "The clojure.spec.gen.alpha namespace has a number of functions for generator \"primitives\" as well as \"combinators\" for combining them into more complicated generators. \n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1110
 #, no-wrap
 msgid ""
-"(def kw-gen-2 (gen/fmap #(keyword \"my.domain\" %) (gen/string-alphanumeric)))\n"
-"(gen/sample kw-gen-2 5)\n"
-";;=> (:my.domain/ :my.domain/ :my.domain/1 :my.domain/1O :my.domain/l9p2)\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1089
-msgid ""
-"`gen/fmap` takes a function to apply and a generator. The function will be applied to each sample produced by the "
-"generator allowing us to build one generator on another."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1091
-msgid ""
-"However, we can spot a problem in the example above - generators are often designed to return \"simpler\" values "
-"first and any string-oriented generator will often return an empty string which is not a valid keyword. We can make a "
-"slight adjustment to omit that particular value using https://clojure.github.io/clojure/branch-master/clojure.spec-"
-"api.html#clojure.spec.gen/such-that[`such-that`] which lets us specify a filtering condition:"
+"[NOTE]\n"
+"====\n"
+"Nearly all of the functions in the clojure.spec.gen.alpha namespace are merely wrappers that dynamically load functions of the same name in test.check. You should refer to the documentation for https://clojure.github.io/test.check/[test.check] for more details on how all of the clojure.spec.gen.alpha generator functions work.\n"
+"====\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1099
+#: en/content/guides/spec.adoc:1112
+#, no-wrap
+msgid "In this case we want our keyword to have open names but fixed namespaces. There are many ways to accomplish this but one of the simplest is to use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/fmap[`fmap`] to build up a keyword based on generated strings:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1118
+msgid ""
+"(def kw-gen-2 (gen/fmap #(keyword \"my.domain\" %) (gen/string-alphanumeric)))  (gen/sample kw-gen-2 5)  ;;=> (:my."
+"domain/ :my.domain/ :my.domain/1 :my.domain/1O :my.domain/l9p2)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1121
+#, no-wrap
+msgid "`gen/fmap` takes a function to apply and a generator. The function will be applied to each sample produced by the generator allowing us to build one generator on another.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1123
+#, no-wrap
+msgid "However, we can spot a problem in the example above - generators are often designed to return \"simpler\" values first and any string-oriented generator will often return an empty string which is not a valid keyword. We can make a slight adjustment to omit that particular value using https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/such-that[`such-that`] which lets us specify a filtering condition:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1131
 #, no-wrap
 msgid ""
 "(def kw-gen-3 (gen/fmap #(keyword \"my.domain\" %)\n"
@@ -2253,13 +2277,14 @@ msgid ""
 ";;=> (:my.domain/O :my.domain/b :my.domain/ZH :my.domain/31 :my.domain/U)\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1102
-msgid "Returning to our \"hello\" example, we now have the tools to make that generator:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1134
+#, no-wrap
+msgid "Returning to our \"hello\" example, we now have the tools to make that generator:\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1111
+#. type: Plain text
+#: en/content/guides/spec.adoc:1143
 #, no-wrap
 msgid ""
 "(s/def ::hello\n"
@@ -2270,49 +2295,45 @@ msgid ""
 ";;=> (\"hello\" \"ehello3\" \"eShelloO1\" \"vhello31p\" \"hello\" \"1Xhellow\" \"S5bhello\" \"aRejhellorAJ7Yj\" \"3hellowPMDOgv7\" \"UhelloIx9E\")\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1114
-msgid "Here we generate a tuple of a random prefix and random suffix strings, then insert \"hello\" bewteen them."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1146
+#, no-wrap
+msgid "Here we generate a tuple of a random prefix and random suffix strings, then insert \"hello\" between them.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:1115
+#: en/content/guides/spec.adoc:1147
 #, no-wrap
 msgid "Range Specs and Generators"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1118
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1150
 msgid ""
 "There are several cases where it's useful to spec (and generate) values in a range and spec provides helpers for "
 "these cases."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1120
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1152
 msgid ""
 "For example, in the case of a range of integer values (for example, a bowling roll), use https://clojure.github.io/"
 "clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/int-in[`int-in`] to spec a range (end is exclusive):"
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/spec.adoc:1158
+msgid "(s/def ::roll (s/int-in 0 11))  (gen/sample (s/gen ::roll))  ;;=> (1 0 0 3 1 7 10 1 5 0)"
+msgstr ""
+
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1126
+#: en/content/guides/spec.adoc:1161
 #, no-wrap
-msgid ""
-"(s/def ::roll (s/int-in 0 11))\n"
-"(gen/sample (s/gen ::roll))\n"
-";;=> (1 0 0 3 1 7 10 1 5 0)\n"
+msgid "spec also includes https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/inst-in[`inst-in`] for a range of instants:\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1129
-msgid ""
-"spec also includes https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/inst-"
-"in[`inst-in`] for a range of instants:"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1139
+#: en/content/guides/spec.adoc:1171
 #, no-wrap
 msgid ""
 "(s/def ::the-aughts (s/inst-in #inst \"2000\" #inst \"2010\"))\n"
@@ -2324,139 +2345,127 @@ msgid ""
 ";;    #inst\"2000-01-02T10:18:42.219-00:00\")\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1142
-msgid "Due to the generator implementation, it takes a few samples to get \"interesting\" so I skipped ahead a bit."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1144
-msgid ""
-"Finally, https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/double-in[`double-"
-"in`] has support for double ranges and special options for checking special double values like `NaN` (not a number), "
-"`Infinity`, and `-Infinity`."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1174
+#, no-wrap
+msgid "Due to the generator implementation, it takes a few samples to get \"interesting\" so I skipped ahead a bit.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1154
+#: en/content/guides/spec.adoc:1176
 #, no-wrap
-msgid ""
-"(s/def ::dubs (s/double-in :min -100.0 :max 100.0 :NaN? false :infinite? false))\n"
-"(s/valid? ::dubs 2.9)\n"
-";;=> true\n"
-"(s/valid? ::dubs Double/POSITIVE_INFINITY)\n"
-";;=> false\n"
-"(gen/sample (s/gen ::dubs))\n"
-";;=> (-1.0 -1.0 -1.5 1.25 -0.5 -1.0 -3.125 -1.5625 1.25 -0.390625)\n"
+msgid "Finally, https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.gen/double-in[`double-in`] has support for double ranges and special options for checking special double values like `NaN` (not a number), `Infinity`, and `-Infinity`. \n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1157
+#: en/content/guides/spec.adoc:1186
 msgid ""
-"To learn more about generators, read the test.check https://clojure.github.io/test.check/intro.html[tutorial] or "
-"https://clojure.github.io/test.check/generator-examples.html[examples]. Do keep in mind that while clojure.spec.gen."
-"alpha is a large subset of clojure.test.check.generators, not everything is included."
+"(s/def ::dubs (s/double-in :min -100.0 :max 100.0 :NaN? false :infinite? false))  (s/valid? ::dubs 2.9)  ;;=> true (s/"
+"valid? ::dubs Double/POSITIVE_INFINITY)  ;;=> false (gen/sample (s/gen ::dubs))  ;;=> (-1.0 -1.0 -1.5 1.25 -0.5 -1.0 "
+"-3.125 -1.5625 1.25 -0.390625)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1189
+#, no-wrap
+msgid "To learn more about generators, read the test.check https://clojure.github.io/test.check/intro.html[tutorial] or https://clojure.github.io/test.check/generator-examples.html[examples]. Do keep in mind that while clojure.spec.gen.alpha is a large subset of clojure.test.check.generators, not everything is included.\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:1158
+#: en/content/guides/spec.adoc:1190
 #, no-wrap
 msgid "Instrumentation and Testing"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1161
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1193
 msgid ""
 "spec provides a set of development and testing functionality in the `clojure.spec.test.alpha` namespace, which we can "
 "include with:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1165 en/content/guides/spec.adoc:1203
-#, no-wrap
-msgid "(require '[clojure.spec.test.alpha :as stest])\n"
+#. type: Plain text
+#: en/content/guides/spec.adoc:1197 en/content/guides/spec.adoc:1235
+msgid "(require '[clojure.spec.test.alpha :as stest])"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1167 en/content/about/spec.adoc:100
+#: en/content/guides/spec.adoc:1199 en/content/about/spec.adoc:100
 #, no-wrap
 msgid "Instrumentation"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1170
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1202
 msgid ""
 "Instrumentation validates that the `:args` spec is being invoked on instrumented functions and thus provides "
 "validation for external uses of a function. Let's turn on instrumentation for our previously spec'ed `ranged-rand` "
 "function:"
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/spec.adoc:1206
+msgid "(stest/instrument `ranged-rand)"
+msgstr ""
+
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1174
+#: en/content/guides/spec.adoc:1209
 #, no-wrap
-msgid "(stest/instrument `ranged-rand)\n"
+msgid "Instrument takes a fully-qualified symbol so we use `pass:[`]` here to resolve it in the context of the current namespace. If the function is invoked with args that do not conform with the `:args` spec you will see an error like this:\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1177
+#: en/content/guides/spec.adoc:1216
 msgid ""
-"Instrument takes a fully-qualified symbol so we use `pass:[`]` here to resolve it in the context of the current "
-"namespace. If the function is invoked with args that do not conform with the `:args` spec you will see an error like "
-"this:"
+"(ranged-rand 8 5)  CompilerException clojure.lang.ExceptionInfo: Call to #'spec.examples.guide/ranged-rand did not "
+"conform to spec: val: {:start 8, :end 5} fails at: [:args] predicate: (< (:start %) (:end %))  :clojure.spec.alpha/"
+"args (8 5)"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1188
+#. type: Plain text
+#: en/content/guides/spec.adoc:1220
 #, no-wrap
 msgid ""
-"(ranged-rand 8 5)\n"
-"CompilerException clojure.lang.ExceptionInfo: Call to #'spec.examples.guide/ranged-rand did not conform to spec:\n"
-"val: {:start 8, :end 5} fails at: [:args] predicate: (< (:start %) (:end %))\n"
-":clojure.spec.alpha/args  (8 5)\n"
-":clojure.spec.alpha/failure  :instrument-check-failed\n"
 " #:clojure.spec.alpha{:problems [{:path [:args], :pred (< (:start %) (:end %)), :val {:start 8, :end 5}, :via [], :in []}],\n"
 "                      :args (8 5), \n"
 "                      :failure :instrument-check-failed}\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1191
-msgid ""
-"The error fails in the second args predicate that checks `(< start end)`. Note that the `:ret` and `:fn` specs are "
-"not checked with instrumentation as validating the implementation should occur at testing time."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1223
+#, no-wrap
+msgid "The error fails in the second args predicate that checks `(< start end)`. Note that the `:ret` and `:fn` specs are not checked with instrumentation as validating the implementation should occur at testing time.\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1193
-msgid ""
-"Instrumentation can be turned off using the complementary function `unstrument`. Instrumentation is likely to be "
-"useful at both development time and during testing to discover errors in calling code. It is not recommended to use "
-"instrumentation in production due to the overhead involved with checking args specs."
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1225
+#, no-wrap
+msgid "Instrumentation can be turned off using the complementary function `unstrument`. Instrumentation is likely to be useful at both development time and during testing to discover errors in calling code. It is not recommended to use instrumentation in production due to the overhead involved with checking args specs.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:1194
+#: en/content/guides/spec.adoc:1226
 #, no-wrap
 msgid "Testing"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1197
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1229
 msgid ""
 "We mentioned earlier that `clojure.spec.test.alpha` provides tools for automatically testing functions. When "
 "functions have specs, we can use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec."
 "test/check[`check`], to automatically generate tests that check the function using the specs."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1199
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1231
 msgid ""
 "`check` will generate arguments based on the `:args` spec for a function, invoke the function, and check that the `:"
 "ret` and `:fn` specs were satisfied."
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1209
+#. type: Plain text
+#: en/content/guides/spec.adoc:1241
 #, no-wrap
 msgid ""
 "(stest/check `ranged-rand)\n"
@@ -2466,37 +2475,42 @@ msgid ""
 ";;     :result true})\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1212
-msgid ""
-"`check` also takes a number of options that can be passed to test.check to influence the test run, as well as the "
-"option to override generators for parts of the spec, by either name or path."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1214
-msgid "Imagine instead that we made an error in the ranged-rand code and swapped start and end:"
-msgstr ""
-
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1221
+#: en/content/guides/spec.adoc:1244
 #, no-wrap
-msgid ""
-"(defn ranged-rand  ;; BROKEN!\n"
-"  \"Returns random int in range start <= rand < end\"\n"
-"  [start end]\n"
-"  (+ start (long (rand (- start end)))))\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1224
-msgid ""
-"This broken function will still create random integers, just not in the expected range. Our `:fn` spec will detect "
-"the problem when checking the var:"
+msgid "`check` also takes a number of options that can be passed to test.check to influence the test run, as well as the option to override generators for parts of the spec, by either name or path.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1243
+#: en/content/guides/spec.adoc:1246
+#, no-wrap
+msgid "Imagine instead that we made an error in the ranged-rand code and swapped start and end:\n"
+msgstr ""
+
+#. type: Labeled list
+#: en/content/guides/spec.adoc:1249
+#, no-wrap
+msgid "(defn ranged-rand  "
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1250
+msgid "BROKEN!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1253
+msgid "\"Returns random int in range start <= rand < end\" [start end] (+ start (long (rand (- start end)))))"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1256
+#, no-wrap
+msgid "This broken function will still create random integers, just not in the expected range. Our `:fn` spec will detect the problem when checking the var:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1275
 #, no-wrap
 msgid ""
 "(stest/abbrev-result (first (stest/check `ranged-rand)))\n"
@@ -2517,68 +2531,64 @@ msgid ""
 ";;              :clojure.spec.alpha/failure :test-failed}}\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1246
-msgid ""
-"`check` has reported an error in the `:fn` spec. We can see the arguments passed were -3 and 0 and the return value "
-"was -5, which is out of the expected range."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1248
-msgid ""
-"To test all of the spec'ed functions in a namespace (or multiple namespaces), use https://clojure.github.io/clojure/"
-"branch-master/clojure.spec-api.html#clojure.spec.test/enumerate-namespace[`enumerate-namespace`] to generate the set "
-"of symbols naming vars in the namespace:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1278
+#, no-wrap
+msgid "`check` has reported an error in the `:fn` spec. We can see the arguments passed were -3 and 0 and the return value was -5, which is out of the expected range.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1252
+#: en/content/guides/spec.adoc:1280
 #, no-wrap
-msgid "(-> (stest/enumerate-namespace 'user) stest/check)\n"
+msgid "To test all of the spec'ed functions in a namespace (or multiple namespaces), use https://clojure.github.io/clojure/branch-master/clojure.spec-api.html#clojure.spec.test/enumerate-namespace[`enumerate-namespace`] to generate the set of symbols naming vars in the namespace:\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1255
-msgid "And you can check all of the spec'ed functions by calling `stest/check` without any arguments."
+#: en/content/guides/spec.adoc:1284
+msgid "(-> (stest/enumerate-namespace 'user) stest/check)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1287
+#, no-wrap
+msgid "And you can check all of the spec'ed functions by calling `stest/check` without any arguments.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/spec.adoc:1256
+#: en/content/guides/spec.adoc:1288
 #, no-wrap
 msgid "Combining `check` and `instrument`"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1259
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1291
 msgid ""
 "While both `instrument` (for enabling `:args` checking) and `check` (for generating tests of a function) are useful "
 "tools, they can be combined to provide even deeper levels of test coverage."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1261
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1293
 msgid ""
 "`instrument` takes a number of options for changing the behavior of instrumented functions, including support for "
 "swapping in alternate (narrower) specs, stubbing functions (by using the `:ret` spec to generate results), or "
 "replacing functions with an alternate implementation."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1263
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1295
 msgid ""
 "Consider the case where we have a low-level function that invokes a remote service and a higher-level function that "
 "calls it."
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1267
-#, no-wrap
-msgid ";; code under test\n"
+#. type: Plain text
+#: en/content/guides/spec.adoc:1299
+msgid ";; code under test"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1271
+#. type: Plain text
+#: en/content/guides/spec.adoc:1303
 #, no-wrap
 msgid ""
 "(defn invoke-service [service request]\n"
@@ -2586,8 +2596,8 @@ msgid ""
 "  )\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1275
+#. type: Plain text
+#: en/content/guides/spec.adoc:1307
 #, no-wrap
 msgid ""
 "(defn run-query [service query]\n"
@@ -2595,13 +2605,14 @@ msgid ""
 "    (or result error)))\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1278
-msgid "We can spec these functions using the following specs:"
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1310
+#, no-wrap
+msgid "We can spec these functions using the following specs:\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1287
+#. type: Plain text
+#: en/content/guides/spec.adoc:1319
 #, no-wrap
 msgid ""
 "(s/def ::query string?)\n"
@@ -2612,8 +2623,8 @@ msgid ""
 "                    :err (s/keys :req [::error])))\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1291
+#. type: Plain text
+#: en/content/guides/spec.adoc:1323
 #, no-wrap
 msgid ""
 "(s/fdef invoke-service\n"
@@ -2621,8 +2632,8 @@ msgid ""
 "  :ret ::response)\n"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/guides/spec.adoc:1295
+#. type: Plain text
+#: en/content/guides/spec.adoc:1327
 #, no-wrap
 msgid ""
 "(s/fdef run-query\n"
@@ -2630,44 +2641,35 @@ msgid ""
 "  :ret (s/or :ok ::result :err ::error))\n"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1330
+#, no-wrap
+msgid "And then we want to test the behavior of `run-query` while stubbing out `invoke-service` with `instrument` so that the remote service is not invoked:\n"
+msgstr ""
+
 #. type: Plain text
-#: en/content/guides/spec.adoc:1298
+#: en/content/guides/spec.adoc:1341
 msgid ""
-"And then we want to test the behavior of `run-query` while stubbing out `invoke-service` with `instrument` so that "
-"the remote service is not invoked:"
+"(stest/instrument `invoke-service {:stub #{`invoke-service}})  ;;=> [spec.examples.guide/invoke-service] (invoke-"
+"service nil {::query \"test\"})  ;;=> #:spec.examples.guide{:error -11} (invoke-service nil {::query \"test\"})  ;;=> "
+"#:spec.examples.guide{:result [\"kq0H4yv08pLl4QkVH8\" \"in6gH64gI0ARefv3k9Z5Fi23720gc\"]} (stest/summarize-results "
+"(stest/check `run-query))  ;;=> {:total 1, :check-passed 1}"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/spec.adoc:1309
+#: en/content/guides/spec.adoc:1344
 #, no-wrap
-msgid ""
-"(stest/instrument `invoke-service {:stub #{`invoke-service}})\n"
-";;=> [spec.examples.guide/invoke-service]\n"
-"(invoke-service nil {::query \"test\"})\n"
-";;=> #:spec.examples.guide{:error -11}\n"
-"(invoke-service nil {::query \"test\"})\n"
-";;=> #:spec.examples.guide{:result [\"kq0H4yv08pLl4QkVH8\" \"in6gH64gI0ARefv3k9Z5Fi23720gc\"]}\n"
-"(stest/summarize-results (stest/check `run-query))\n"
-";;=> {:total 1, :check-passed 1}\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/spec.adoc:1312
-msgid ""
-"The first call here instruments and stubs `invoke-service`. The second and third calls demonstrate that calls to "
-"`invoke-service` now return generated results (rather than hitting a service). Finally, we can use `check` on the "
-"higher level function to test that it behaves properly based on the generated stub results returned from `invoke-"
-"service`."
+msgid "The first call here instruments and stubs `invoke-service`. The second and third calls demonstrate that calls to `invoke-service` now return generated results (rather than hitting a service). Finally, we can use `check` on the higher level function to test that it behaves properly based on the generated stub results returned from `invoke-service`.\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/spec.adoc:1313
+#: en/content/guides/spec.adoc:1345
 #, no-wrap
 msgid "Wrapping Up"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/spec.adoc:1315
+#. type: delimited block -
+#: en/content/guides/spec.adoc:1347
 msgid ""
 "In this guide we have covered most of the features for designing and using specs and generators. We expect to add "
 "some more advanced generator techniques and help on testing in a future update."

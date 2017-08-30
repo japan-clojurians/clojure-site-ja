@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2017-08-30 08:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/transients.adoc:4
 #: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
 #: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4
 #: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
 #: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
+#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4
+#: en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
@@ -116,17 +116,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/community/swag.adoc:28
 msgid ""
-"image:http://rlv.zcache.com/clojure_t_large_logo-"
-"raf7c54b4b4ec4537afd1e5cb1824168d_vj82h_250.jpg?bg=0xffffff[Clojure T, Large "
-"Logo,link=\"http://www.zazzle.com/clojure_t_large_logo-235776431459512494?"
+"image:https://rlv.zcache.com/clojure_t_large_logo_t_shirt-"
+"raf7c54b4b4ec4537afd1e5cb1824168d_joa8u_324.jpg[Clojure T, Large Logo,link="
+"\"http://www.zazzle.com/clojure_t_large_logo-235776431459512494?"
 "rf=238716329365496646\"] Clojure T, Large Logo"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/swag.adoc:30
 msgid ""
-"image:http://rlv.zcache.com/clojure_t_small_logo-"
-"rda2f449605144baf8631399aa19d8c63_vj82h_250.jpg?bg=0xffffff[Clojure T, Small "
-"Logo,link=\"http://www.zazzle.com/clojure_t_small_logo-235264388339470561?"
+"image:https://rlv.zcache.com/clojure_t_small_logo_t_shirt-"
+"rda2f449605144baf8631399aa19d8c63_joa8u_324.jpg[Clojure T, Small Logo,link="
+"\"http://www.zazzle.com/clojure_t_small_logo-235264388339470561?"
 "rf=238716329365496646\"] Clojure T, Small Logo"
 msgstr ""
