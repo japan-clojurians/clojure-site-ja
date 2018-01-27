@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-07-05 16:14+0900\n"
+"POT-Creation-Date: 2018-01-24 20:33+0900\n"
 "PO-Revision-Date: 2017-06-01 09:26+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,36 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/stories/uhn.adoc:17 en/content/stories/ona.adoc:17 en/content/stories/cstap.adoc:33
-#: en/content/stories/empear.adoc:17
-#, no-wrap
-msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/uhn.adoc:43 en/content/stories/signal.adoc:42 en/content/stories/ona.adoc:45
-#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
-#, no-wrap
-msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/signal.adoc:26 en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
+#: en/content/stories/signal.adoc:26 en/content/stories/cstap.adoc:37 en/content/stories/ona.adoc:25
 #: en/content/stories/empear.adoc:29
 #, no-wrap
 msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/ona.adoc:21 en/content/stories/cstap.adoc:14 en/content/stories/empear.adoc:21
+#: en/content/stories/signal.adoc:42 en/content/stories/cstap.adoc:50 en/content/stories/ona.adoc:45
+#: en/content/stories/uhn.adoc:43 en/content/stories/empear.adoc:47 en/content/stories/lendup.adoc:37
 #, no-wrap
-msgid "*What product or service are you building with Clojure or ClojureScript?*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/ona.adoc:33 en/content/stories/cstap.adoc:44 en/content/stories/empear.adoc:33
-#, no-wrap
-msgid "*What about working with Clojure or ClojureScript gives you the most value?*\n"
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
 msgstr ""
 
 #. type: Title =
@@ -68,6 +49,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/stories/cstap.adoc:12
 msgid "image:/images/content/stories/cstap.png[\"cstap\",height=\"80\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:14 en/content/stories/ona.adoc:21 en/content/stories/empear.adoc:21
+#, no-wrap
+msgid "*What product or service are you building with Clojure or ClojureScript?*\n"
 msgstr ""
 
 #. type: Plain text
@@ -137,6 +124,13 @@ msgid "Mainly deployed on AWS Elastic Beanstalk."
 msgstr ""
 
 #. type: Plain text
+#: en/content/stories/cstap.adoc:33 en/content/stories/ona.adoc:17 en/content/stories/uhn.adoc:17
+#: en/content/stories/empear.adoc:17
+#, no-wrap
+msgid "*How big is the team you have using Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
 #: en/content/stories/cstap.adoc:35
 msgid ""
 "We are a team of 3, and all of us use Clojure for the server side, and ClojureScript for the frontend. All 3 of us "
@@ -160,6 +154,12 @@ msgstr ""
 msgid ""
 "https://github.com/juxt/bidi[bidi] - we cannot imagine life without it! Our app has quite a few dynamically generated "
 "URLs, and creating those without bidirectional routing would have been a nightmare."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cstap.adoc:44 en/content/stories/ona.adoc:33 en/content/stories/empear.adoc:33
+#, no-wrap
+msgid "*What about working with Clojure or ClojureScript gives you the most value?*\n"
 msgstr ""
 
 #. type: Plain text

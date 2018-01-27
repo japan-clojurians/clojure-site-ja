@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2018-01-24 20:33+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,12 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. type: Title ==
-#: en/content/reference/transients.adoc:75 en/content/guides/comparators.adoc:12 en/content/about/state.adoc:74
-#, no-wrap
-msgid "Summary"
-msgstr "まとめ"
 
 #. type: Title =
 #: en/content/guides/comparators.adoc:1
@@ -37,6 +31,12 @@ msgstr ""
 #: en/content/guides/comparators.adoc:11
 msgid "_Note: This document describes Clojure 1.7 and Java 6, but applies to most other versions as well._"
 msgstr ""
+
+#. type: Title ==
+#: en/content/guides/comparators.adoc:12 en/content/about/state.adoc:74 en/content/reference/transients.adoc:75
+#, no-wrap
+msgid "Summary"
+msgstr "まとめ"
 
 #. type: Plain text
 #: en/content/guides/comparators.adoc:18
