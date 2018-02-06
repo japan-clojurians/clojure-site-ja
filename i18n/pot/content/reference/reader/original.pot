@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/community/books.adoc:4 en/content/community/resources.adoc:4
-#: en/content/reference/reader.adoc:4
-msgid "Rich Hickey 2016-02-15"
-msgstr ""
-
-#. type: Title ===
-#: en/content/community/editing.adoc:172 en/content/reference/reader.adoc:49
-#, no-wrap
-msgid "Lists"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/faq.adoc:11
-#: en/content/about/state.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/spec.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/functional_programming.adoc:15
-#: en/content/reference/refs.adoc:15
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/sequences.adoc:15 en/content/reference/macros.adoc:15
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/protocols.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/agents.adoc:16 en/content/reference/libs.adoc:16
-#: en/content/reference/reader.adoc:13 en/content/reference/vars.adoc:16
-#: en/content/reference/metadata.adoc:15
-#: en/content/reference/multimethods.adoc:15
-#: en/content/reference/transducers.adoc:15
-#: en/content/reference/compilation.adoc:16
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
 #: en/content/reference/transients.adoc:16
-#: en/content/reference/datatypes.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:474
-#: en/content/reference/reader.adoc:81
-msgid "For example, the following map literal with namespace syntax:"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:482
-#: en/content/reference/reader.adoc:91
-msgid "is read as:"
-msgstr ""
-
-#. type: Title ===
-#: en/content/about/spec.adoc:198 en/content/reference/reader.adoc:57
-#, no-wrap
-msgid "Maps"
-msgstr ""
-
-#. type: Title ===
-#: en/content/reference/data_structures.adoc:111
-#: en/content/reference/reader.adoc:24
-#, no-wrap
-msgid "Symbols"
-msgstr ""
-
-#. type: Title ===
-#: en/content/reference/data_structures.adoc:235
-#: en/content/reference/reader.adoc:100
-#, no-wrap
-msgid "Sets"
+#: en/content/reference/transducers.adoc:39
+#: en/content/reference/reader.adoc:179
+msgid "For example:"
 msgstr ""
 
 #. type: Title =
 #: en/content/reference/reader.adoc:1
 #, no-wrap
 msgid "The Reader"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:4 en/content/community/resources.adoc:4
+#: en/content/community/books.adoc:4
+msgid "Rich Hickey 2016-02-15"
 msgstr ""
 
 #. type: Plain text
@@ -142,6 +108,13 @@ msgstr ""
 #: en/content/reference/reader.adoc:22
 #, no-wrap
 msgid "Reader forms"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:24
+#: en/content/reference/data_structures.adoc:111
+#, no-wrap
+msgid "Symbols"
 msgstr ""
 
 #. type: Plain text
@@ -237,6 +210,12 @@ msgid ""
 "x/foo` resolves to `:example/foo`."
 msgstr ""
 
+#. type: Title ==
+#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#, no-wrap
+msgid "Lists"
+msgstr ""
+
 #. type: Plain text
 #: en/content/reference/reader.adoc:52
 msgid "Lists are zero or more forms enclosed in parentheses: `(a b c)`"
@@ -251,6 +230,12 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reader.adoc:56
 msgid "Vectors are zero or more forms enclosed in square brackets: `[1 2 3]`"
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
+#, no-wrap
+msgid "Maps"
 msgstr ""
 
 #. type: Plain text
@@ -316,6 +301,12 @@ msgid ""
 "affected."
 msgstr ""
 
+#. type: Plain text
+#: en/content/reference/reader.adoc:81
+#: en/content/guides/weird_characters.adoc:474
+msgid "For example, the following map literal with namespace syntax:"
+msgstr ""
+
 #. type: delimited block -
 #: en/content/reference/reader.adoc:88
 #, no-wrap
@@ -326,6 +317,12 @@ msgid ""
 "                      :model \"YT-1300f light freighter\"}}\n"
 msgstr ""
 
+#. type: Plain text
+#: en/content/reference/reader.adoc:91
+#: en/content/guides/weird_characters.adoc:482
+msgid "is read as:"
+msgstr ""
+
 #. type: delimited block -
 #: en/content/reference/reader.adoc:98
 #, no-wrap
@@ -334,6 +331,13 @@ msgid ""
 " :person/last \"Solo\"\n"
 " :person/ship {:ship/name \"Millenium Falcon\" \n"
 "               :ship/model \"YT-1300f light freighter\"}}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:100
+#: en/content/reference/data_structures.adoc:235
+#, no-wrap
+msgid "Sets"
 msgstr ""
 
 #. type: Plain text
@@ -606,12 +610,6 @@ msgid ""
 "recursive quoting by qualifying them with unquote or unquote-splicing, in "
 "which case they will be treated as expressions and be replaced in the "
 "template by their value, or sequence of values, respectively. +"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/reader.adoc:179
-#: en/content/reference/transducers.adoc:39
-msgid "For example:"
 msgstr ""
 
 #. type: delimited block -

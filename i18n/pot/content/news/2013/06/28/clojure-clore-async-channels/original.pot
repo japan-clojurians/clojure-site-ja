@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: en/content/news/2014/08/06/transducers-are-coming.adoc:121
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
-#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
-msgid "Rich"
+#. type: Title =
+#: en/content/reference/transients.adoc:17
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
+#: en/content/about/rationale.adoc:1
+#, no-wrap
+msgid "Rationale"
 msgstr ""
 
 #. type: Title =
@@ -39,13 +40,6 @@ msgstr ""
 msgid ""
 "https://github.com/clojure/core.async[core.async] is a new contrib library "
 "for Clojure that adds support for asynchronous programming using channels."
-msgstr ""
-
-#. type: Title ==
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
-#: en/content/about/rationale.adoc:1 en/content/reference/transients.adoc:17
-#, no-wrap
-msgid "Rationale"
 msgstr ""
 
 #. type: Plain text
@@ -499,4 +493,11 @@ msgstr ""
 msgid ""
 "I hope that these async channels will help you build simpler and more robust "
 "programs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
+#: en/content/news/2014/08/06/transducers-are-coming.adoc:121
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
+msgid "Rich"
 msgstr ""

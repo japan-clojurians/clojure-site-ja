@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30
-#: en/content/about/spec.adoc:99
-msgid "Destructuring"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
-msgid "Rich Hickey"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/swag.adoc:4 en/content/community/libraries.adoc:4
-#: en/content/community/license.adoc:4 en/content/community/downloads.adoc:4
-#: en/content/community/downloads_older.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/jvm_hosted.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/features.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/rationale.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4
-#: en/content/about/functional_programming.adoc:4
-#: en/content/about/clojureclr.adoc:4 en/content/privacy.adoc:4
-#: en/content/404.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/sequences.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/atoms.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/other_functions.adoc:4
-#: en/content/reference/agents.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/metadata.adoc:4
-#: en/content/reference/multimethods.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/compilation.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
 #: en/content/reference/transients.adoc:4
-#: en/content/reference/documentation.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/search.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4
+#: en/content/reference/data_structures.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
+#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4
+#: en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/faq.adoc:11
-#: en/content/about/state.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/spec.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/functional_programming.adoc:15
-#: en/content/reference/refs.adoc:15
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/sequences.adoc:15 en/content/reference/macros.adoc:15
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/protocols.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/agents.adoc:16 en/content/reference/libs.adoc:16
-#: en/content/reference/reader.adoc:13 en/content/reference/vars.adoc:16
-#: en/content/reference/metadata.adoc:15
-#: en/content/reference/multimethods.adoc:15
-#: en/content/reference/transducers.adoc:15
-#: en/content/reference/compilation.adoc:16
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
 #: en/content/reference/transients.adoc:16
-#: en/content/reference/datatypes.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr ""
 
-#. type: Title =
-#: en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
-#: en/content/reference/sequences.adoc:1
+#. type: Title ====
+#: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513
+#: en/content/about/spec.adoc:234
 #, no-wrap
 msgid "Sequences"
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/documentation.adoc:1 en/content/about/spec.adoc:310
+#, no-wrap
+msgid "Documentation"
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
+#, no-wrap
+msgid "Maps"
 msgstr ""
 
 #. type: Plain text
@@ -101,10 +98,15 @@ msgstr ""
 msgid "Instrumentation"
 msgstr ""
 
-#. type: Title ==
-#: en/content/about/features.adoc:1 en/content/about/spec.adoc:189
-#, no-wrap
-msgid "Features"
+#. type: Plain text
+#: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
+msgid "Rich Hickey"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30
+#: en/content/about/spec.adoc:99
+msgid "Destructuring"
 msgstr ""
 
 #. type: Title =
@@ -565,6 +567,12 @@ msgid ""
 "check``."
 msgstr ""
 
+#. type: Title =
+#: en/content/about/spec.adoc:189 en/content/about/features.adoc:1
+#, no-wrap
+msgid "Features"
+msgstr ""
+
 #. type: Title ===
 #: en/content/about/spec.adoc:190
 #, no-wrap
@@ -587,12 +595,6 @@ msgid ""
 "and ``spec/or`` which combine specs in a logical way and offer deep "
 "reporting, generation and conform support and, in the case of ``spec/or``, "
 "tagged returns."
-msgstr ""
-
-#. type: Title ===
-#: en/content/about/spec.adoc:198 en/content/reference/reader.adoc:57
-#, no-wrap
-msgid "Maps"
 msgstr ""
 
 #. type: Plain text
@@ -868,12 +870,6 @@ msgstr ""
 #: en/content/about/spec.adoc:309
 #, no-wrap
 msgid "Using specs"
-msgstr ""
-
-#. type: Title =
-#: en/content/about/spec.adoc:310 en/content/reference/documentation.adoc:1
-#, no-wrap
-msgid "Documentation"
 msgstr ""
 
 #. type: Plain text

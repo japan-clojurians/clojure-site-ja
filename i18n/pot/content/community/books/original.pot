@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,16 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. type: Plain text
+#: en/content/reference/reader.adoc:4 en/content/community/resources.adoc:4
+#: en/content/community/books.adoc:4
+msgid "Rich Hickey 2016-02-15"
+msgstr ""
+
 #. type: Title =
 #: en/content/community/books.adoc:1
 #, no-wrap
 msgid "Books"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:4 en/content/community/resources.adoc:4
-#: en/content/reference/reader.adoc:4
-msgid "Rich Hickey 2016-02-15"
 msgstr ""
 
 #. type: Plain text

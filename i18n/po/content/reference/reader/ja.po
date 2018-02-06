@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: 2017-03-12 23:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,67 +17,36 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/community/books.adoc:4 en/content/community/resources.adoc:4 en/content/reference/reader.adoc:4
-msgid "Rich Hickey 2016-02-15"
-msgstr "Rich Hickey 2016-02-15"
-
-#. type: Title ===
-#: en/content/community/editing.adoc:172 en/content/reference/reader.adoc:49
-#, no-wrap
-msgid "Lists"
-msgstr "Lists (リスト)"
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/faq.adoc:11 en/content/about/state.adoc:16
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/functional_programming.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/other_libraries.adoc:16 en/content/reference/sequences.adoc:15
-#: en/content/reference/macros.adoc:15 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/special_forms.adoc:15 en/content/reference/data_structures.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/other_functions.adoc:17
-#: en/content/reference/java_interop.adoc:15 en/content/reference/agents.adoc:16 en/content/reference/libs.adoc:16
-#: en/content/reference/reader.adoc:13 en/content/reference/vars.adoc:16 en/content/reference/metadata.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/compilation.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/datatypes.adoc:16
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
+#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
+#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:474 en/content/reference/reader.adoc:81
-msgid "For example, the following map literal with namespace syntax:"
-msgstr "例として以下のネームスペース指定付きの以下のマップ:"
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:482 en/content/reference/reader.adoc:91
-msgid "is read as:"
-msgstr "は以下のように読み込まれる:"
-
-#. type: Title ===
-#: en/content/about/spec.adoc:198 en/content/reference/reader.adoc:57
-#, no-wrap
-msgid "Maps"
-msgstr "Maps (マップ)"
-
-#. type: Title ===
-#: en/content/reference/data_structures.adoc:111 en/content/reference/reader.adoc:24
-#, no-wrap
-msgid "Symbols"
-msgstr "Symbols (シンボル)"
-
-#. type: Title ===
-#: en/content/reference/data_structures.adoc:235 en/content/reference/reader.adoc:100
-#, no-wrap
-msgid "Sets"
-msgstr "Sets (セット)"
+#: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:179
+msgid "For example:"
+msgstr "例:"
 
 #. type: Title =
 #: en/content/reference/reader.adoc:1
 #, no-wrap
 msgid "The Reader"
 msgstr "Reader(リーダー)"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:4 en/content/community/resources.adoc:4 en/content/community/books.adoc:4
+msgid "Rich Hickey 2016-02-15"
+msgstr "Rich Hickey 2016-02-15"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:15
@@ -132,6 +101,12 @@ msgstr ""
 #, no-wrap
 msgid "Reader forms"
 msgstr "Reader forms (リーダーフォーム)"
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:24 en/content/reference/data_structures.adoc:111
+#, no-wrap
+msgid "Symbols"
+msgstr "Symbols (シンボル)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:27
@@ -242,6 +217,12 @@ msgstr ""
 "*** キーワードが修飾されている場合、そのネームスペースは現在のネームスペースでのエイリアスを利用して解決される。 `x` "
 "が `example` にエイリアスされたネームスペースでは、 `::x/foo` は `:example/foo` に解決される。"
 
+#. type: Title ==
+#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#, no-wrap
+msgid "Lists"
+msgstr "Lists (リスト)"
+
 #. type: Plain text
 #: en/content/reference/reader.adoc:52
 msgid "Lists are zero or more forms enclosed in parentheses: `(a b c)`"
@@ -257,6 +238,12 @@ msgstr "Vectors (ベクター)"
 #: en/content/reference/reader.adoc:56
 msgid "Vectors are zero or more forms enclosed in square brackets: `[1 2 3]`"
 msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 3]`"
+
+#. type: Title ====
+#: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
+#, no-wrap
+msgid "Maps"
+msgstr "Maps (マップ)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:60
@@ -323,6 +310,11 @@ msgstr ""
 "** バリューは影響されない。\n"
 "** ネストしたマップリテラルのキーは影響されない。"
 
+#. type: Plain text
+#: en/content/reference/reader.adoc:81 en/content/guides/weird_characters.adoc:474
+msgid "For example, the following map literal with namespace syntax:"
+msgstr "例として以下のネームスペース指定付きの以下のマップ:"
+
 #. type: delimited block -
 #: en/content/reference/reader.adoc:88
 #, no-wrap
@@ -337,6 +329,11 @@ msgstr ""
 "         :ship #:ship{:name \"Millenium Falcon\"\n"
 "                      :model \"YT-1300f light freighter\"}}\n"
 
+#. type: Plain text
+#: en/content/reference/reader.adoc:91 en/content/guides/weird_characters.adoc:482
+msgid "is read as:"
+msgstr "は以下のように読み込まれる:"
+
 #. type: delimited block -
 #: en/content/reference/reader.adoc:98
 #, no-wrap
@@ -350,6 +347,12 @@ msgstr ""
 " :person/last \"Solo\"\n"
 " :person/ship {:ship/name \"Millenium Falcon\" \n"
 "               :ship/model \"YT-1300f light freighter\"}}\n"
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235
+#, no-wrap
+msgid "Sets"
+msgstr "Sets (セット)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:103
@@ -637,11 +640,6 @@ msgstr ""
 "部では未修飾のフォームはあたかも再帰的にシンタックスクォートされたように振る舞うが、アンクォートもしくはアンクォートス"
 "プライシング修飾することでフォームを再帰的なシンタックスクォートの対象から外すことができる。その場合、フォームは式とし"
 "て扱われ、テンプレートの中でそれぞれその値、もしくは値のシークエンスで置き換えられる。"
-
-#. type: Plain text
-#: en/content/reference/reader.adoc:179 en/content/reference/transducers.adoc:39
-msgid "For example:"
-msgstr "例:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:186

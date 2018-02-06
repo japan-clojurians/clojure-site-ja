@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-01-24 20:33+0900\n"
+"POT-Creation-Date: 2018-02-07 07:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,45 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:81
+#: en/content/guides/weird_characters.adoc:474
+msgid "For example, the following map literal with namespace syntax:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:91
+#: en/content/guides/weird_characters.adoc:482
+msgid "is read as:"
+msgstr ""
 
 #. type: Title =
 #: en/content/guides/weird_characters.adoc:1
@@ -25,35 +64,6 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/weird_characters.adoc:4
 msgid "James Hughes 2017-05-27"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/faq.adoc:11
-#: en/content/about/state.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/spec.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/functional_programming.adoc:15
-#: en/content/reference/refs.adoc:15
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/sequences.adoc:15 en/content/reference/macros.adoc:15
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/protocols.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/agents.adoc:16 en/content/reference/libs.adoc:16
-#: en/content/reference/reader.adoc:13 en/content/reference/vars.adoc:16
-#: en/content/reference/metadata.adoc:15
-#: en/content/reference/multimethods.adoc:15
-#: en/content/reference/transducers.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/datatypes.adoc:16
-msgid "toc::[]"
 msgstr ""
 
 #. type: Plain text
@@ -983,12 +993,6 @@ msgid ""
 "the opening brace `{` of the map."
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:474
-#: en/content/reference/reader.adoc:81
-msgid "For example, the following map literal with namespace syntax:"
-msgstr ""
-
 #. type: delimited block -
 #: en/content/guides/weird_characters.adoc:480
 #, no-wrap
@@ -997,12 +1001,6 @@ msgid ""
 "         :last \"Solo\"\n"
 "         :ship #:ship{:name \"Millennium Falcon\"\n"
 "                      :model \"YT-1300f light freighter\"}}\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/weird_characters.adoc:482
-#: en/content/reference/reader.adoc:91
-msgid "is read as:"
 msgstr ""
 
 #. type: delimited block -
