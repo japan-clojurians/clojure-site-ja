@@ -173,10 +173,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/about/spec.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/about/clojureclr.html</loc>
         <lastmod></lastmod>
     </url>
@@ -214,6 +210,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/about/runtime_polymorphism.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/spec.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

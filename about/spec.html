@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - clojure.spec - Rationale and Overview</title>
+    <title>Clojure - clojure.spec - 論理的根拠と概要</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>clojure.spec - Rationale and Overview</h1>
+  <h1>clojure.spec - 論理的根拠と概要</h1>
 </div>
 
 <p><em></em></p>
@@ -82,147 +82,120 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_problems">Problems</a>
+<li><a href="#_問題">問題</a>
 <ul class="sectlevel2">
-<li><a href="#_docs_are_not_enough">Docs are not enough</a></li>
-<li><a href="#_map_specs_should_be_of_keysets_only">Map specs should be of keysets only</a></li>
-<li><a href="#_manual_parsing_and_error_reporting_is_not_good_enough">Manual parsing and error reporting is not good enough</a></li>
-<li><a href="#_generative_testing_and_robustness">Generative testing and robustness</a></li>
-<li><a href="#_a_standard_approach_is_needed">A standard approach is needed</a></li>
+<li><a href="#_docsでは十分ではない">docsでは十分ではない</a></li>
+<li><a href="#_マップのspecはキーセットのみで構成されるべきだ">マップのspecはキーセットのみで構成されるべきだ</a></li>
+<li><a href="#_手動でのパース処理やエラー報告は十分に良いものではない">手動でのパース処理やエラー報告は十分に良いものではない</a></li>
+<li><a href="#_生成的テストと頑健性">生成的テストと頑健性</a></li>
+<li><a href="#_標準的なアプローチが必要だ">標準的なアプローチが必要だ</a></li>
 </ul>
 </li>
-<li><a href="#_objectives">Objectives</a>
+<li><a href="#_目的">目的</a>
 <ul class="sectlevel2">
-<li><a href="#_communication">Communication</a></li>
-<li><a href="#_unify_specification_in_its_various_contexts">Unify specification in its various contexts</a></li>
-<li><a href="#_maximize_leverage_from_specification_effort">Maximize leverage from specification effort</a></li>
-<li><a href="#_minimize_intrusion">Minimize intrusion</a></li>
-<li><a href="#_decomplect_maps_keys_values">Decomplect maps/keys/values</a></li>
-<li><a href="#_enable_and_start_a_dialog_about_semantic_change_and_compatibility">Enable and start a dialog about semantic change and compatibility</a></li>
+<li><a href="#_コミュニケーション">コミュニケーション</a></li>
+<li><a href="#_あらゆるコンテキストにおける仕様記述を統一">あらゆるコンテキストにおける仕様記述を統一</a></li>
+<li><a href="#_仕様記述の労力を最大限に活用する">仕様記述の労力を最大限に活用する</a></li>
+<li><a href="#_侵入を最小化">侵入を最小化</a></li>
+<li><a href="#_マップ_キー_値を分離する">マップ、キー、値を分離する</a></li>
+<li><a href="#_意味の変更と互換性に関する対話を可能にし_開始する">意味の変更と互換性に関する対話を可能にし、開始する</a></li>
 </ul>
 </li>
-<li><a href="#_guidelines">Guidelines</a>
+<li><a href="#_ガイドライン">ガイドライン</a>
 <ul class="sectlevel2">
-<li><a href="#_mistakes_will_be_made">Mistakes will be made</a></li>
-<li><a href="#_expressivity_proof">expressivity &gt; proof</a></li>
-<li><a href="#_names_are_important">Names are important</a></li>
-<li><a href="#_global_namespaced_names_are_more_important">Global (namespaced) names are more important</a></li>
-<li><a href="#_don_t_further_add_to_overload_the_reified_namespaces_of_clojure">Don&#8217;t further add to/overload the (reified) namespaces of Clojure</a></li>
-<li><a href="#_code_is_data_not_vice_versa">Code is data (not vice versa)</a></li>
-<li><a href="#_sets_maps_are_about_membership_that_s_it">Sets (maps) are about membership, that&#8217;s it</a></li>
-<li><a href="#_informational_vs_implementational">Informational vs implementational</a></li>
+<li><a href="#_ミスは起こりうる">ミスは起こりうる</a></li>
+<li><a href="#_表現力_証明">表現力 &gt; 証明</a></li>
+<li><a href="#_名前は重要だ">名前は重要だ</a></li>
+<li><a href="#_グローバルな_ネームスペース付きの_名前はより重要だ">グローバルな(ネームスペース付きの)名前はより重要だ</a></li>
+<li><a href="#_clojureの_実体化された_ネームスペースにさらに追加し_負担をかけすぎてはならない">Clojureの(実体化された)ネームスペースにさらに追加し/負担をかけすぎてはならない</a></li>
+<li><a href="#_コードはデータだ_逆ではない">コードはデータだ(逆ではない)</a></li>
+<li><a href="#_セット_マップ_は所属関係に関するもの_それだけだ">セット(マップ)は所属関係に関するもの、それだけだ</a></li>
+<li><a href="#_情報的_vs_実装的">情報的 vs 実装的</a></li>
 <li><a href="#_k_i_s_s">K.I.S.S.</a></li>
-<li><a href="#_build_on_test_check_but_don_t_require_knowledge_of_it">Build on test.check but don&#8217;t require knowledge of it</a></li>
+<li><a href="#_test_checkの上に構築するが_その知識は要求しない">test.checkの上に構築するが、その知識は要求しない</a></li>
 </ul>
 </li>
-<li><a href="#_features">Features</a>
+<li><a href="#_特徴">特徴</a>
 <ul class="sectlevel2">
-<li><a href="#_overview">Overview</a></li>
-<li><a href="#_defining_specs">Defining specs</a></li>
-<li><a href="#_using_specs">Using specs</a></li>
+<li><a href="#_概要">概要</a></li>
+<li><a href="#_specを定義する">specを定義する</a></li>
+<li><a href="#_specを使う">specを使う</a></li>
 </ul>
 </li>
-<li><a href="#_glossary">Glossary</a>
+<li><a href="#_用語集">用語集</a>
 <ul class="sectlevel2">
-<li><a href="#_predicates">predicates</a></li>
-<li><a href="#_specs">specs</a></li>
-<li><a href="#_regex_ops">regex ops</a></li>
-<li><a href="#_conform">conform</a></li>
-<li><a href="#_explain">explain</a></li>
-<li><a href="#_paths">paths</a></li>
+<li><a href="#_predicates_述語">predicates (述語)</a></li>
+<li><a href="#_specs_仕様記述">specs (仕様記述)</a></li>
+<li><a href="#_regex_ops_正規表現演算子">regex ops (正規表現演算子)</a></li>
+<li><a href="#_conform_一致させる">conform (一致させる)</a></li>
+<li><a href="#_explain_説明する">explain (説明する)</a></li>
+<li><a href="#_paths_パス">paths (パス)</a></li>
 </ul>
 </li>
-<li><a href="#_prior_art">Prior Art</a></li>
+<li><a href="#_先行技術">先行技術</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_problems">Problems</h2>
+<h2 id="_問題">問題</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_docs_are_not_enough">Docs are not enough</h3>
+<h3 id="_docsでは十分ではない">docsでは十分ではない</h3>
 <div class="paragraph">
-<p>Clojure is a dynamic language. Among other things this means that type annotations are not required for code to run.
-While Clojure has some support for type hints, they are not an enforcement mechanism, nor comprehensive, and are
-limited to communicating information to the compiler to aid in efficient code generation.
-Clojure gets runtime checking of a richer set of types by the JVM itself.</p>
+<p>Clojureは動的言語だ。何よりこれは型アノテーションがコードの実行に必要とされないことを意味する。Clojureは型ヒントをいくらかサポートしているが、型ヒントは強制のメカニズムではなく、網羅的でもなく、効率的なコード生成を支援するためコンパイラに情報を伝えることに限定されている。ClojureはJVM自身による豊富な型に対する実行時チェックの恩恵を受けている。</p>
 </div>
 <div class="paragraph">
-<p>However it has always been a guiding principle of Clojure, widely valued and practiced by the community,
-to simply represent information as data.
-Thus important properties of Clojure systems are represented and
-conveyed by the shape and other predicative properties of the data, not captured or checked anywhere
-since the runtime types are indistinguishable heterogeneous maps and vectors.</p>
+<p>しかし、情報をデータとしてシンプルに表現することが常にコミュニティで広く評価され実践されてきたClojureの指針だった。したがって、Clojureシステムの重要なプロパティはデータの形状やその他の述語的なプロパティによって表現され伝達され、実行時の型は区別の付かない異種の型が混在するマップやベクターであるため、それ以外で捕捉されたりチェックされたりすることはない。</p>
 </div>
 <div class="paragraph">
-<p>Documentation strings can be used to communicate with human consumers,
-but they can&#8217;t be leveraged by programs or tests, i.e. they have minimal power.
-Users have turned to various libraries such as <a href="https://github.com/plumatic/schema">Schema</a>
-and <a href="https://github.com/miner/herbert">Herbert</a> to get more powerful specifications.</p>
+<p>ドキュメンテーション文字列は人間の利用者とのコミュニケーションに利用可能だが、プログラムやテストで活用することはできない、つまり最小限の力しか持っていないのだ。ユーザーはより強力な仕様記述を得るために
+<a href="https://github.com/plumatic/schema">Schema</a> や
+<a href="https://github.com/miner/herbert">Herbert</a> のような様々なライブラリを頼ってきた。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_map_specs_should_be_of_keysets_only">Map specs should be of keysets only</h3>
+<h3 id="_マップのspecはキーセットのみで構成されるべきだ">マップのspecはキーセットのみで構成されるべきだ</h3>
 <div class="paragraph">
-<p>Most systems for specifying structures conflate the specification of the key set
-(e.g. of keys in a map, fields in an object) with the specification of the values designated by those keys.
-I.e. in such approaches the schema for a map might say :a-key&#8217;s type is x-type and :b-key&#8217;s type is y-type.
-This is a major source of rigidity and redundancy.</p>
+<p>構造を記述するためのたいていのシステムではキーのセットに関する仕様(例えばマップのキーやオブジェクトのフィールドに関するもの)とそうしたキーが指し示す値に関する仕様を混同している。つまり、そうしたアプローチではあるマップに対するスキーマは:a-keyの型がx-typeで:b-keyの型がy-typeだと言うかもしれない。これは硬直性と冗長性の大きな原因だ。</p>
 </div>
 <div class="paragraph">
-<p>In Clojure we gain power by dynamically composing,
-merging and building up maps. We routinely deal with optional and partial data, data produced by unreliable
-external sources, dynamic queries etc. These maps represent various sets, subsets, intersections and unions
-of the same keys, and in general ought to have the same semantic for the same key wherever it is used. Defining
-specifications of every subset/union/intersection, and then redundantly stating the semantic of each key is both an
-antipattern and unworkable in the most dynamic cases.</p>
+<p>Clojureではマップを動的に合成し、マージし、構築することによって力を得ている。日常的に選択的なデータや部分的なデータ、信頼できない外部ソースから生み出されたデータ、動的なクエリなどを扱っている。こうしたマップは同一のキーの様々な集合や部分集合、共通部分、和集合を表し、一般に同一のキーはどこで使われても同一の意味を持つ必要がある。あらゆる部分集合/和集合/共通部分に対する仕様を定義し、そして個々のキーの意味を冗長に述べるというのは、たいていの動的なケースでアンチパターンであり上手く機能するものでもない。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_manual_parsing_and_error_reporting_is_not_good_enough">Manual parsing and error reporting is not good enough</h3>
+<h3 id="_手動でのパース処理やエラー報告は十分に良いものではない">手動でのパース処理やエラー報告は十分に良いものではない</h3>
 <div class="paragraph">
-<p>Many users, especially beginners, are frustrated and challenged by the error messages produced by
-hand-written parsing and destructuring code, especially in macros where there are two contexts of execution
-(the macro runs at compile time and its expansion at runtime, either of which could fail due to user error).
-This has led to a call for 'macro grammars', but in fact macros are just functions of data&#8594;data and any solution for
-data validation and destructuring should work as well for them as for any other functions.
-I.e. macros are an instance of the problems above.</p>
+<p>多くのユーザー、特に初心者は、とりわけ2つの実行コンテキストがあるマクロ(マクロのコンパイル時の実行と実行時の展開はどちらもユーザーエラーのために失敗しうる)において、手書きのパース処理やコードの分配束縛により生成されるエラーメッセージにフラストレーションを覚えたり困難に直面したりしている。これは「マクロ文法」の必要性につながっているが、実際にはマクロはデータ&#8594;データの関数にすぎず、データのバリデーションや分配束縛のためのあらゆる解決策はその他の関数と同様にマクロにも機能するはずだ。つまり、マクロは上記の問題の一例だといえる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_generative_testing_and_robustness">Generative testing and robustness</h3>
+<h3 id="_生成的テストと頑健性">生成的テストと頑健性</h3>
 <div class="paragraph">
-<p>Finally, in all languages, dynamic or not, tests are essential to quality.
-Too many critical properties are not captured by common type systems.
-But manual testing has a very low effectiveness/effort ratio. Property-based, generative testing, as
-implemented for Clojure in <a href="https://github.com/clojure/test.check">test.check</a>,
-has proved to be far more powerful than manually written tests.</p>
+<p>最後に、動的でもそうでなくてもすべての言語において、テストは品質に不可欠なものだ。あまりにも多くの重要なプロパティが一般的な型システムでは捕捉されない。しかし手動でのテストは労力に対する効果の割合が非常に低い。
+<a href="https://github.com/clojure/test.check">test.check</a>
+でClojure向けに実装されているような、プロパティベースの生成的テストは手書きのテストよりもずっと強力であることが分かってきた。</p>
 </div>
 <div class="paragraph">
-<p>Yet property based testing requires the
-definition of properties, which require extra effort and expertise to produce, and which,
-at the function-level, have substantial overlap with function specifications.
-Many interesting properties at the function level would already be captured by structural+predicative specs.
-Ideally, specs should integrate with generative testing and provide certain categories of generative tests 'for free'.</p>
+<p>それでも、プロパティベーストテストはプロパティの定義が必要となり、それにはそれを生み出すためのさらなる労力と熟練が必要となり、そうした定義は関数のレベルでは関数の仕様記述と大きな重複がある。関数のレベルでの多くの興味深いプロパティがすでに構造的+述語的なspecによって捕捉されているだろう。理想的には、specは生成的テストと統合し、ある種の生成的テストを「ただで」提供するべきだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_standard_approach_is_needed">A standard approach is needed</h3>
+<h3 id="_標準的なアプローチが必要だ">標準的なアプローチが必要だ</h3>
 <div class="paragraph">
-<p>In short, Clojure has no standard, expressive, powerful and integrated system for specification and testing.</p>
+<p>要するに、Clojureには仕様記述とテストのための標準的で表現力のある強力で統合されたシステムがないのだ。</p>
 </div>
 <div class="paragraph">
-<p><strong>clojure.spec</strong> aims to provide it.</p>
+<p><strong>clojure.spec</strong> はそれを提供することを目指している。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_objectives">Objectives</h2>
+<h2 id="_目的">目的</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_communication">Communication</h3>
+<h3 id="_コミュニケーション">コミュニケーション</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -231,8 +204,10 @@ Ideally, specs should integrate with generative testing and provide certain cate
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Species - appearance, form, sort, kind, equivalent to spec (ere) to look, regard<br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ -iēs abstract noun suffix</p>
+<p>Species - appearance, form, sort, kind, equivalent to spec (ere) to look,
+regard<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+
+-iēs abstract noun suffix</p>
 </div>
 <div class="paragraph">
 <p>Specify - species + -ficus -fic (make)</p>
@@ -242,200 +217,166 @@ Ideally, specs should integrate with generative testing and provide certain cate
 </table>
 </div>
 <div class="paragraph">
-<p>A specification is about how something 'looks', but is, most importantly, something that is looked at.
-Specs should be readable, composed of 'words' (predicate functions) programmers are already using,
-and integrated in documentation.</p>
+<p>仕様(specification)とはあるものがどう「見える」かに関するものだが、最も重要なのは、見られるものだ。specは、読みやすく、プログラマがすでに使っている「単語」(述語関数)で構成され、ドキュメンテーションに統合されているべきだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unify_specification_in_its_various_contexts">Unify specification in its various contexts</h3>
+<h3 id="_あらゆるコンテキストにおける仕様記述を統一">あらゆるコンテキストにおける仕様記述を統一</h3>
 <div class="paragraph">
-<p>Specs for data structures, attribute values and functions should all be the same and live in a
-globally-namespaced directory.</p>
+<p>データ構造や属性値、関数のためのspecはすべて同じであるべきであり、グローバルにネームスペースの付いたディレクトリにあるべきだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_maximize_leverage_from_specification_effort">Maximize leverage from specification effort</h3>
+<h3 id="_仕様記述の労力を最大限に活用する">仕様記述の労力を最大限に活用する</h3>
 <div class="paragraph">
-<p>Writing a spec should enable <em>automatic</em>:</p>
+<p>specを書くことで以下のことが <em>自動的</em> に可能になるべきだ:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Validation</p>
+<p>バリデーション</p>
 </li>
 <li>
-<p>Error reporting</p>
+<p>エラー報告</p>
 </li>
 <li>
-<p>Destructuring</p>
+<p>分配束縛</p>
 </li>
 <li>
-<p>Instrumentation</p>
+<p>specの組み込み(instrumentation)</p>
 </li>
 <li>
-<p>Test-data generation</p>
+<p>テストデータ生成</p>
 </li>
 <li>
-<p>Generative test generation</p>
+<p>生成的テストの生成</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_minimize_intrusion">Minimize intrusion</h3>
+<h3 id="_侵入を最小化">侵入を最小化</h3>
 <div class="paragraph">
-<p>Don&#8217;t require that people e.g. define their functions differently. Minor modifications to <code>doc</code> and <code>macroexpand</code>
-will allow independently written specs to adorn fn/macro behavior without redefinition.</p>
+<p>例えば関数を異なる方法で定義することを要求してはならない。 <code>doc</code> と <code>macroexpand</code>
+への小さな変更によって、独立して書かれたspecが再定義することなくfn/macroの振る舞いを修飾することが可能になる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_decomplect_maps_keys_values">Decomplect maps/keys/values</h3>
+<h3 id="_マップ_キー_値を分離する">マップ、キー、値を分離する</h3>
 <div class="paragraph">
-<p>Keep map (keyset) specs separate from attribute (key&#8594;value) specs. Encourage and support attribute-granularity specs
-of namespaced keyword to value-spec. Combining keys into sets (to specify maps) becomes orthogonal,
-and checking becomes possible in the fully-dynamic case, i.e. even when no map spec is present,
-attributes (key-values) can be checked.</p>
+<p>マップ(キーセット)のspecを属性(キー&#8594;値)のspecから分けておこう。ネームスペース付きのキーワードから値へのspecという、属性の粒度でのspecを推奨しサポートしよう。(マップの仕様を記述するために)キーを組み合わせてセットにすることが直交的になり、完全に動的なケースでのチェックが可能になる、つまりマップのspecが存在しない場合でさえ、属性(キー-値)はチェックできる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enable_and_start_a_dialog_about_semantic_change_and_compatibility">Enable and start a dialog about semantic change and compatibility</h3>
+<h3 id="_意味の変更と互換性に関する対話を可能にし_開始する">意味の変更と互換性に関する対話を可能にし、開始する</h3>
 <div class="paragraph">
-<p>Programmers suffer greatly when they redefine things while keeping the names the same. Yet some changes are
-compatible and some are breaking, and most tools can&#8217;t distinguish. Use constructs like set membership and
-regular expressions for which compatibility can be determined, and provide tools for compatibility checking
-(while leaving general predicate equality out of scope).</p>
+<p>プログラマは名前を同じにしたままで再定義する時に大いに苦しめられる。変更のいくらかは互換性があるが、いくらかは破壊的で、たいていのツールはそれを区別することができない。互換性が判断できるようにセットの所属関係や正規表現のような構造を利用し、(一般的な述語による等価性は除外して)互換性チェックのためのツールを提供しよう。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_guidelines">Guidelines</h2>
+<h2 id="_ガイドライン">ガイドライン</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_mistakes_will_be_made">Mistakes will be made</h3>
+<h3 id="_ミスは起こりうる">ミスは起こりうる</h3>
 <div class="paragraph">
-<p>We don&#8217;t (and couldn&#8217;t) live in a world where we can&#8217;t make mistakes. Instead, we periodically check that we haven&#8217;t.
-Amazon doesn&#8217;t send you your TV via a <code>UPS&lt;Trucks&lt;Boxes&lt;TV&gt;&gt;&gt;</code>. So occasionally you might get a microwave,
-but the supply chain isn&#8217;t burdened with correctness proof. Instead we check at the edges and run tests.</p>
+<p>私たちはミスを起こしえない世界で生きているわけではない(そうすることもできないだろう)。その代わりに、私たちは定期的にミスしていないことをチェックするのだ。Amazonは
+<code>UPS&lt;Trucks&lt;Boxes&lt;TV&gt;&gt;&gt;</code>
+経由でテレビを送ってくるわけではない。そのため時には電子レンジを受け取ることもあるかもしれないが、サプライチェーンが正確性を証明する責任を負っているわけではない。その代わりに私たちが終端でチェックしてテストするのだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_expressivity_proof">expressivity &gt; proof</h3>
+<h3 id="_表現力_証明">表現力 &gt; 証明</h3>
 <div class="paragraph">
-<p>There is no reason to limit our specifications to what we can prove, yet that is primarily what type systems do.
-There is so much more we want to communicate and verify about our systems. This goes beyond
-structural/representational types and tagging to predicates that e.g. narrow domains or detail relationships
-between inputs or between inputs and output.
-Additionally, the properties we care most about are often those of the runtime values, not some static notion.
-Thus <strong>spec</strong> is not a type system.</p>
+<p>主に型システムがしているのはそれなのだが、仕様記述を証明可能なものに制限する理由はない。システムについてコミュニケーションを取り、正しさを確かめたいことはもっとたくさんある。これは、例えば定義域を狭めたり複数の入力の間の関係や入力と出力の間の関係を詳細に述べる、構造的/表象的な型や述語に対するタグ付け以上のものだ。加えて、私たちが最も気にするプロパティは多くの場合実行時の値に関するプロパティであり、静的な概念のようなものではない。そういうわけで
+<strong>spec</strong> は型システムではない。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_names_are_important">Names are important</h3>
+<h3 id="_名前は重要だ">名前は重要だ</h3>
 <div class="paragraph">
-<p>All programs use names, even when the type systems don&#8217;t, and they capture important semantics. <code>Int x Int x Int</code>
-just isn&#8217;t good enough (is it length/width/height or height/width/depth?). So <strong>spec</strong> will not have unlabeled sequence
-components or untagged union bindings. The utility of this becomes evident when <strong>spec</strong> needs to talk to users about specs,
-e.g. in error reporting, and vice versa, e.g. when users want to override generators in specs. When all branches are named,
-you can talk about parts of specs using <em>paths</em>.</p>
+<p>あらゆるプログラムは(型システムが使わない場合でさえ)名前を使い、名前は重要な意味を捉えている。 <code>Int x Int x Int</code>
+は十分に良いものではない(長さ/幅/高さ なのか 高さ/幅/奥行き なのか?)。そのため、 <strong>spec</strong>
+にはラベルなしのシーケンス要素やタグ付けされていない和集合の束縛はない。このことの効用は、 <strong>spec</strong>
+がspecについてユーザーに何か言わければならない時、例えばエラー報告する場合、また逆に、例えばユーザーがspecのジェネレータをオーバーライドしたい場合に明らかになる。すべての分岐に名前が付いていれば、
+<em>paths</em> を使ってspecの部分について言うことができる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_global_namespaced_names_are_more_important">Global (namespaced) names are more important</h3>
+<h3 id="_グローバルな_ネームスペース付きの_名前はより重要だ">グローバルな(ネームスペース付きの)名前はより重要だ</h3>
 <div class="paragraph">
-<p>Clojure supports namespaced keywords and symbols. Note here we are just talking about namespace-qualified names,
-not Clojure namespace objects. These are tragically underutilized and convey important benefits because
-they can always co-reside in dictionaries/dbs/maps/sets without conflict. <strong>spec</strong> will allow (only) namespace-qualified
-keywords and symbols to name specs. People using namespaced keys for their informational maps
-(a practice we&#8217;d like to see grow) can register the specs for those attributes directly under those names. This
-categorically changes the self-description of maps, particularly in dynamic contexts, and encourages composition and consistency.</p>
+<p>Clojureはネームスペース付きのキーワードとシンボルをサポートしている。ここではネームスペースで修飾された名前のことを言っているのであって、Clojureのネームスペースオブジェクトのことを言っているわけではないことに注意しよう。これらは悲しいことにあまり活用されていないが、ディクショナリ/db/マップ/セットの中で衝突することなく常に共存することができるため、重要な利益をもたらす。
+<strong>spec</strong>
+はspecを名付けるのにネームスペース付きのキーワードとシンボル(だけ)を認めている。ネームスペース付きのキーを情報を持ったマップのために使う(広まってほしい習慣だ)と、マップの属性のためのspecを直接マップのキーの名前で登録することができる。このことは、とりわけ動的な状況において、マップというものの自己記述を絶対的に変えることになり、合成や一貫性を促進することになる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_don_t_further_add_to_overload_the_reified_namespaces_of_clojure">Don&#8217;t further add to/overload the (reified) namespaces of Clojure</h3>
+<h3 id="_clojureの_実体化された_ネームスペースにさらに追加し_負担をかけすぎてはならない">Clojureの(実体化された)ネームスペースにさらに追加し/負担をかけすぎてはならない</h3>
 <div class="paragraph">
-<p>Nothing will be attached to vars, metadata etc. All functions have namespaced names which can serve as keys to their
-related data (e.g. spec) that is stored elsewhere.</p>
+<p>varやメタデータなどには何も付加されない。すべての関数にはネームスペース付きの名前があり、それは別のどこかに格納された関連するデータ(例えばspec)へのキーとして働く。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_code_is_data_not_vice_versa">Code is data (not vice versa)</h3>
+<h3 id="_コードはデータだ_逆ではない">コードはデータだ(逆ではない)</h3>
 <div class="paragraph">
-<p>In Lisps (and thus Clojure), code is data. But data is not code until you define a language around it. Many DSLs in
-this space drive at a data representation for schemas. But predicative specs have an open and large vocabulary,
-and most of the useful predicates already exist and are well known as functions in the core and other namespaces,
-or can be written as simple expressions. Having to 'datafy', possibly renaming, all of these predicates adds
-little value, and has a definite cost in understanding precise semantics. <strong>spec</strong> instead leverages the fact that
-the original predicates and expressions are data in the first place and captures that data for use in communicating
-with the users in documentation and error reporting. Yes, this means that more of the
-surface area of <code>clojure.spec</code> will be macros, but specs are overwhelmingly written by people and,
-when composed, manually so.</p>
+<p>Lisp(したがってClojure)では、コードはデータだ。しかし、データはそれに関する言語を定義するまでコードではない。この領域での多くのDSLはスキーマのデータ表現に向かっている。しかし、述語的なspecには開かれた大きな語彙があり、便利な述語の多くがすでに存在し、coreやその他のネームスペースの関数としてよく知られている、もしくはシンプルな式として書くことができる。こうしたあらゆる述語を「データ化」する、あるいは名前を付け直さなければならないことによって得られる価値はほとんどなく、正確な意味を理解するのに明確なコストがある。
+<strong>spec</strong>
+ではむしろ、もともとの述語と式が最初からデータであるという事実を活用して、ドキュメンテーションやエラー報告でのユーザーとのコミュニケーションで利用するためにそうしたデータを捉えている。そう、
+<code>clojure.spec</code> の表層領域の多くはマクロになるが、specは圧倒的に人によって書かれ、組み合わせる時も手で行うということだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sets_maps_are_about_membership_that_s_it">Sets (maps) are about membership, that&#8217;s it</h3>
+<h3 id="_セット_マップ_は所属関係に関するもの_それだけだ">セット(マップ)は所属関係に関するもの、それだけだ</h3>
 <div class="paragraph">
-<p>As per above, maps defining the details of the values at their keys is a fundamental complecting of concerns that will
-not be supported. Map specs detail required/optional keys (i.e. set membership things) and keyword/attr/value
-semantics are independent. Map checking is two-phase, required key presence then key/value conformance.
-The latter can be done even when the (namespace-qualified) keys present at runtime are not in the map spec.
-This is vital for composition and dynamicity.</p>
+<p>上述の通り、キーの値についての詳細を定義したマップは、根本的な関心の絡まり(complecting)であり、支持できないものだ。マップのspecは必須/オプションのキー(つまりセットの所属関係)について詳しく述べるが、キーワード/属性/値の意味は独立している。マップのチェックは、必須のキーの存在、そしてキー/値の一致という2フェーズだ。後者は、実行時に存在する(ネームスペース修飾された)キーがマップのspecにない場合でさえ行うことができる。これは合成と動的な性質のために極めて重要なものだ。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_informational_vs_implementational">Informational vs implementational</h3>
+<h3 id="_情報的_vs_実装的">情報的 vs 実装的</h3>
 <div class="paragraph">
-<p>Invariably, people will try to use a specification system to detail implementation decisions, but they do so
-to their detriment. The best and most useful specs (and interfaces) are related to purely information aspects.
-Only information specs work over wires and across systems. We will always prioritize, and
-where there is a conflict, prefer, the information approach.</p>
+<p>いつでも、人は仕様記述システムを実装の決定について詳述するのに利用しようとするが、そうすることによって自らに損害を与えている。最も良く最も有用なspec(とインターフェース)は純粋に情報の側面に関するものだ。情報のspecだけがネットワークを越えてシステムを横断して機能する。私たちは情報のアプローチを常に優先し、対立がある場合にはそちらを好むだろう。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_k_i_s_s">K.I.S.S.</h3>
 <div class="paragraph">
-<p>There are very few bottom notions in this space and we will endeavor to stick to them.
-There are few distinct structural notions - a handful of atomic types, sequential things, sets and maps.
-Unsurprisingly, these are the Clojure data types and fundamental ops will be provided only for these. Similarly there
-are mathematical tools for talking about these - set logic for maps and regular expressions for sequences -
-that have valuable properties. We will prefer these over ad hoc solutions.</p>
+<p>この領域には基礎的な概念が非常に少ないが、私たちはそれらにこだわる努力をする。固有の構造的な概念は少ない。少数のアトミックな型、シーケンシャルなもの、セット、マップだ。驚くに当たらないことだが、これらはClojureのデータ型であり、基礎的なオペレータはこれらに対してのみ提供される。同様に、これらについて言うための数学的なツールがあり(マップに対する集合論理、シーケンスに対する正規表現)、価値のある性質を備えている。私たちはアドホックな解決策よりもこれらを好むだろう。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_on_test_check_but_don_t_require_knowledge_of_it">Build on test.check but don&#8217;t require knowledge of it</h3>
+<h3 id="_test_checkの上に構築するが_その知識は要求しない">test.checkの上に構築するが、その知識は要求しない</h3>
 <div class="paragraph">
-<p>The generative testing underpinning of <strong>spec</strong> will leverage <code>test.check</code> and not reinvent it.
-But spec users should not need to know anything about <code>test.check</code> until and unless they want to write their own
-generators or supplement <strong>spec</strong>'s generated tests with further property-based tests of their own. There should be no
-production runtime dependency on <code>test.check</code>.</p>
+<p><strong>spec</strong> を土台とした生成的テストは <code>test.check</code>
+を活用し、再発明はしない。しかし、specのユーザーは、自分自身でジェネレータを書きたかったり、さらなるプロパティベーストテストで <strong>spec</strong>
+が生成したテストを補いたかったりするのでない限り、 <code>test.check</code> について何も知る必要がないようにするべきだ。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_features">Features</h2>
+<h2 id="_特徴">特徴</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_overview">Overview</h3>
+<h3 id="_概要">概要</h3>
 <div class="sect3">
-<h4 id="_predicative_specs">Predicative specs</h4>
+<h4 id="_述語的なspec">述語的なspec</h4>
 <div class="paragraph">
-<p>The basic idea is that specs are nothing more than a logical composition of predicates. At the bottom we are talking
-about the simple boolean predicates you are used to like <code>int?</code> or <code>symbol?</code>, or expressions you build yourself
-like <code>#(&lt; 42 % 66)</code>.
-<strong>spec</strong> adds logical ops like <code>spec/and</code> and <code>spec/or</code> which combine specs in a logical way and offer deep reporting,
-generation and conform support and, in the case of <code>spec/or</code>, tagged returns.</p>
+<p>基本的なアイディアは、specは単なる述語の論理的な組み合わせにすぎないというものだ。根底では、 <code>int?</code> や <code>symbol?</code>
+、自分で組み立てた式 <code>#(&lt; 42 % 66)</code> のような、慣れたシンプルなbooleanの述語について言っているのだ。 <strong>spec</strong> は
+<code>spec/and</code> と <code>spec/or</code>
+のような論理演算子を追加しており、論理的な方法でspecを組み合わせ、深いところまでの報告、生成、conformのサポート、 <code>spec/or</code>
+のケースではタグ付きの戻り値を提供する。</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_maps">Maps</h4>
 <div class="paragraph">
-<p>Specs for map keysets provide for the specification of required and optional key sets. A spec for a map is
-produced by calling <code>keys</code> with <code>:req</code> and <code>:opt</code> keyword arguments mapping to vectors of key names.</p>
+<p>マップのキーセットのためのspecは、必須とオプションのキーのセットについての仕様記述を提供する。あるマップに対するspecは、キーの名前のベクターに対応付けた
+<code>:req</code> と <code>:opt</code> キーワード引数で <code>keys</code> を呼び出すことで生成される。</p>
 </div>
 <div class="paragraph">
-<p><code>:req</code> keys support the logical operators <code>and</code> and <code>or</code>.</p>
+<p><code>:req</code> のキーは論理演算子 <code>and</code> と <code>or</code> をサポートしている。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -443,35 +384,33 @@ produced by calling <code>keys</code> with <code>:req</code> and <code>:opt</cod
 </div>
 </div>
 <div class="paragraph">
-<p>One of the most visible differences between <strong>spec</strong> and other systems is that there is no place in that map spec for
-specifying the <em>values</em> e.g. <code>::x</code> can take. It is the (enforced) opinion of <strong>spec</strong> that the specification of values
-associated with a namespaced keyword, like <code>:my.ns/k</code>, should be registered under that keyword itself,
-and applied in any map in which that keyword appears. There are a number of advantages to this:</p>
+<p><strong>spec</strong> と他のシステムとの間で最も見た目に明らかな違いのひとつは、マップのspecに(例えば <code>::x</code> がとりうる) <em>値</em>
+について記述する場所がないことだ。これは、 <code>:my.ns/k</code>
+のようなネームスペース付きのキーワードに関連付けられた値の仕様はそのキーワード自体に登録され、そのキーワードが現れるあらゆるマップに適用されるべきだという
+<strong>spec</strong> の(強制的な)主張だ。これにはいくつもの利点がある:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>It ensures consistency for all uses of that keyword in an application where all uses should share a semantic</p>
+<p>すべての利用で意味が共有されるべきアプリケーション内で、そのキーワードのすべての利用に一貫性を保証する</p>
 </li>
 <li>
-<p>It similarly ensures consistency between a library and its consumers</p>
+<p>同様に、ライブラリとその利用者との間の一貫性を保証する</p>
 </li>
 <li>
-<p>It reduces redundancy, since otherwise many map specs would need to make matching declarations about k</p>
+<p>そうでなければ多くのマップのspecがkについて同じ宣言をする必要があるため、冗長さを減らすことになる</p>
 </li>
 <li>
-<p>Namespaced keyword specs can be checked even when no map spec declares those keys</p>
+<p>ネームスペース付きキーワードのspecはマップのspecがそのキーを宣言していない時でさえチェックされる</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>This last point is vital when dynamically building up, composing, or generating maps. Creating a spec for every map
-subset/union/intersection is unworkable. It also facilitates fail-fast detection of bad data - when it is introduced
-vs when it is consumed.</p>
+<p>この最後の点はマップを動的に構築し、合成し、生成する場合に極めて重要だ。あらゆるマップの部分集合/和集合/共通部分にspecを作るというのは上手くいかない。利用される時ではなく入ってきた時にフェイルファストで悪いデータを検知することも容易になる。</p>
 </div>
 <div class="paragraph">
-<p>Of course, many existing map-based interfaces take non-namespaced keys. To support connecting them to properly
-namespaced and reusable specs, <code>keys</code> supports <code>-un</code> variants of <code>:req</code> and <code>:opt</code></p>
+<p>もちろん、多くの既存のマップベースのインターフェースはネームスペースなしのキーをとっている。正しくネームスペースが付いて再利用可能なspecとの接続をサポートするため、
+<code>keys</code> は <code>:req</code> と <code>:opt</code> の <code>-un</code> 変種をサポートしている。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -479,45 +418,44 @@ namespaced and reusable specs, <code>keys</code> supports <code>-un</code> varia
 </div>
 </div>
 <div class="paragraph">
-<p>This specs a map that requires the unqualified keys <code>:a</code> and <code>:b</code> but validates and generates them using specs
-(when defined) named <code>:my.ns/a</code> and <code>:my.ns/b</code> respectively. Note that this cannot convey the same power
-to unqualified keywords as have namespaced keywords - the resulting maps are not self-describing.</p>
+<p>これは、非修飾のキー <code>:a</code> と <code>:b</code> を要求するが、それぞれ <code>:my.ns/a</code> と <code>:my.ns/b</code>
+という名前のspecを(定義されている場合に)利用してバリデーションと生成を行うマップを記述している。これは非修飾のキーワードがネームスペース付きキーワードが持つのと同等の力を伝えることはできないことに注意しよう。結果として得られるマップは自己記述的ではないのだ。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_sequences">Sequences</h4>
+<h4 id="_シーケンス">シーケンス</h4>
 <div class="paragraph">
-<p>Specs for sequences/vectors use a set of standard regular expression operators, with the standard semantics of
-regular expressions:</p>
+<p>シーケンス/ベクターのためのspecは、正規表現の標準的なセマンティクスで一連の標準的な正規表現演算子を利用する:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>cat</code> - a concatenation of predicates/patterns</p>
+<p><code>cat</code> - 述語/パターンの連結</p>
 </li>
 <li>
-<p><code>alt</code> - a choice of one among a set of predicates/patterns</p>
+<p><code>alt</code> - 一連の述語/パターンから1つの選択</p>
 </li>
 <li>
-<p><code>*</code> - zero or more occurrences of a predicate/pattern</p>
+<p><code>*</code> - 述語/パターンの0回以上の出現</p>
 </li>
 <li>
-<p><code>+</code> - one or more</p>
+<p><code>+</code> - 1以上</p>
 </li>
 <li>
-<p><code>?</code> - one or none</p>
+<p><code>?</code> - 1または0</p>
 </li>
 <li>
-<p><code>&amp;</code> - takes a regex op and further constrains it with one or more predicates</p>
+<p><code>&amp;</code> - 正規表現演算子をとり、1個以上の述語でさらに制約する</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These nest arbitrarily to form complex expressions.</p>
+<p>これらは任意にネストして複合的な式を形成する。</p>
 </div>
 <div class="paragraph">
-<p>Note that <code>cat</code> and <code>alt</code> require all of their components be labeled, and the return value of each is a map with
-the keys corresponding to the matched components. In this way <strong>spec</strong> regexes act as destructuring and parsing tools.</p>
+<p><code>cat</code> と <code>alt</code>
+はすべての構成要素がラベル付けされていることを要求し、それぞれ戻り値はマッチした構成要素に対応するキーのマップであることに注意しよう。このように
+<strong>spec</strong> の正規表現は分配束縛やパース処理のツールとして振る舞う。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -544,190 +482,192 @@ user=&gt; (s/conform s [42 11 13 15 {:a 1 :b 2 :c 3} 1 2 3 42 43 44 11])
 <div class="sect3">
 <h4 id="_conform_explain">conform/explain</h4>
 <div class="paragraph">
-<p>As you can see above, the basic operation for using specs is <code>conform</code>, which takes a spec and a value and
-returns the conformed value or <code>:clojure.spec.alpha/invalid</code> if the value did not conform. When the value does not conform
-you can call <code>explain</code> or <code>explain-data</code> to find out why it didn&#8217;t.</p>
+<p>上で見た通り、specを使うための基本操作は <code>conform</code> で、specと値をとって一致した値、もしくは値が一致しなかった場合には
+<code>:clojure.spec.alpha/invalid</code> を返す。値が一致しない時には <code>explain</code> または
+<code>explain-data</code> を呼び出してなぜ一致しなかったのか調べることができる。</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_defining_specs">Defining specs</h3>
+<h3 id="_specを定義する">specを定義する</h3>
 <div class="paragraph">
-<p>The primary operations for defining specs are s/def, s/and, s/or, s/keys and the regex ops. There is a <code>spec</code> function
-that can take
-a predicate function or expression, a set, or a regex op, and can also take an optional generator which would override
-the generator implied by the predicate(s).</p>
+<p>specを定義するための主要な操作はs/def, s/and, s/or, s/keysと正規表現演算子だ。
+述語関数または式、セット、もしくは正規表現演算子をとり、述語が暗示するジェネレータをオーバーライドするオプションのジェネレータをとることもできる
+<code>spec</code> 関数がある。</p>
 </div>
 <div class="paragraph">
-<p>Note however, that <code>def, and, or, keys</code> spec fns and the regex ops can all take and use predicate functions and sets directly -
-and do not need them to be wrapped by <code>spec</code>. <code>spec</code> should only be needed when you want to override a generator or to
-specify that a nested regex starts anew, vs being included in the same pattern.</p>
+<p>しかし、 <code>def, and, or, keys</code> のspec関数と正規表現演算子はいずれも述語関数とセットを直接とって使うことができ、
+<code>spec</code> でラップする必要はないことに注意しよう。 <code>spec</code>
+はジェネレータをオーバーライドしたい場合やネストした正規表現が同じパターンに含まれるのではなく新しいパターンを開始するように記述したい場合にのみ必要となるはずだ。</p>
 </div>
 <div class="sect3">
-<h4 id="_data_spec_registration">Data spec registration</h4>
+<h4 id="_データspecの登録">データspecの登録</h4>
 <div class="paragraph">
-<p>In order for a spec to be reusable by name, it has to be registered via <code>def</code>.
-<code>def</code> takes a namespace-qualified keyword/symbol and a spec/predicate expression. By convention, specs for data should
-be registered under
-keywords and attribute values should be registered under their attribute name keyword. Once registered, the name can
-be used anywhere a spec/predicate is called for in any of the <strong>spec</strong> operations.</p>
+<p>specを名前で再利用できるようにするためには、 <code>def</code> によって登録しなければならない。 <code>def</code>
+はネームスペース付きのキーワード/シンボルとspec/述語の式をとる。規約により、データのためのspecはキーワードに登録し、属性値はその属性名のキーワードに登録するべきだ。ひとたび登録すれば、specの名前はあらゆる
+<strong>spec</strong> 操作でのspec/述語が必要なあらゆる場所で利用することができる。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_function_spec_registration">Function spec registration</h4>
+<h4 id="_関数specの登録">関数specの登録</h4>
 <div class="paragraph">
-<p>A function can be fully specified via three specs - one for the args, one for the return, and one for the operation of
-the function relating the args to the return.</p>
+<p>関数は3つのspecで完全に記述することができる。引数のspec、戻り値のspec、引数を戻り値に対応付ける関数の操作のspecだ。</p>
 </div>
 <div class="paragraph">
-<p>The args spec for a fn is always going to be a regex that specs the arguments as if they were a list, i.e. the
-list one would pass to <code>apply</code> the function. In this way, a single spec can handle functions with multiple arities.</p>
+<p>関数の引数のspecは常に引数がリスト、つまり <code>apply</code>
+関数に渡すリストであるかのように記述する正規表現になる。これによって、単一のspecが複数のアリティを持つ関数を扱うことができる。</p>
 </div>
 <div class="paragraph">
-<p>The return spec is an arbitrary spec of a single value.</p>
+<p>戻り値のspecは単一の値についての任意のspecだ。</p>
 </div>
 <div class="paragraph">
-<p>The (optional) fn spec is a further specification of the relationship between the arguments and the return, i.e. the
-function of the function. It will be passed (e.g. during testing) a map containing
-<code>{:args conformed-args :ret conformed-ret}</code> and will generally contain predicates that relate those values - e.g. it
-could ensure that all keys of an input map are present in the returned map.</p>
+<p>(オプションの)関数のspecは引数と戻り値の関係、つまりその関数の機能についてのさらなる仕様記述だ。これは(例えばテスト時に) <code>{:args
+conformed-args :ret conformed-ret}</code>
+の入ったマップを受け取り、それらの値について説明する述語を一般に含むだろう。例えば入力のマップのすべてのキーが戻り値のマップに存在することを保証することができるだろう。</p>
 </div>
 <div class="paragraph">
-<p>You can fully specify all three specs of a function in a single call to <code>fdef</code>, and recall the specs via <code>fn-specs</code>.</p>
+<p>ある関数の3つすべてのspecを <code>fdef</code> 一度の呼び出しで指定することができ、それらのspecは <code>fn-specs</code>
+によって取り出すことができる。</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_specs">Using specs</h3>
+<h3 id="_specを使う">specを使う</h3>
 <div class="sect3">
-<h4 id="_documentation">Documentation</h4>
+<h4 id="_ドキュメンテーション">ドキュメンテーション</h4>
 <div class="paragraph">
-<p>Functions specs defined via <code>fdef</code> will appear when you call <code>doc</code> on the fn name. You can call <code>describe</code>
-on specs to get descriptions as forms.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_parsing_destructuring">Parsing/destructuring</h4>
-<div class="paragraph">
-<p>You can use <code>conform</code> directly in your implementations to get its destructuring/parsing/error-checking.
-<code>conform</code> can be used e.g. in macro implementations and at I/O boundaries.</p>
+<p><code>fdef</code> によって定義された関数specは関数名に対して <code>doc</code> を呼び出すと現れる。specに対して <code>describe</code>
+を呼び出すと、説明がフォームとして得られる。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_during_development">During development</h4>
+<h4 id="_パース処理_分配束縛">パース処理/分配束縛</h4>
 <div class="paragraph">
-<p>You can selectively instrument functions and namespaces with <code>instrument</code>, which swaps out
-the fn var with a wrapped version of the fn that tests the <code>:args</code> spec. <code>unstrument</code> returns a fn to its
-original version. You can generate data for interactive testing with <code>gen/sample</code>.</p>
+<p><code>conform</code> を実装の中で分配束縛/パース処理/エラーチェックのために直接使うことができる。 <code>conform</code>
+は例えばマクロの実装やI/Oの境界で利用できる。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_for_testing">For testing</h4>
+<h4 id="_開発中に">開発中に</h4>
 <div class="paragraph">
-<p>You can run a suite of spec-generative tests on an entire ns with <code>check</code>. You can get a test.check compatible generator
-for a spec by calling <code>gen</code>. There are built-in associations between many of the <code>clojure.core</code> data predicates and corresponding
-generators, and the composite ops of <strong>spec</strong> know how to build generators atop those. If you call <code>gen</code> on a spec and it is
-unable to construct a generator for some subtree, it will throw an exception that describes where. You can pass generator-returning fns to
-<code>spec</code> in order to supply generators for things spec does not know about, and you can pass an override map to <code>gen</code> in order to supply
-alternative generators for one or more subpaths of a spec.</p>
+<p><code>instrument</code> で関数とネームスペースに選択的に組み込むことができる。これは関数のvarを <code>:args</code>
+specをテストするラップされたバージョンの関数に差し替える。 <code>uninstrument</code>は関数を元のバージョンに戻す。
+<code>gen/sample</code> でインタラクティブなテストのためにデータを生成することができる。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_at_runtime">At runtime</h4>
+<h4 id="_テストのために">テストのために</h4>
 <div class="paragraph">
-<p>In addition to the destructuring use cases above, you can make calls to <code>conform</code> or <code>valid?</code> anywhere you want
-runtime checking, and can make lighter-weight internal-only specs for tests you intend to run in production.</p>
+<p><code>check</code> でネームスペース全体に対して一連のspecによる生成的テストを実行することができる。 <code>gen</code>
+を呼び出すことでtest.ckeck互換のspecのジェネレータを得ることができる。 <code>clojure.core</code>
+のデータの述語の多くと対応するジェネレータとの間には組み込みで関連があり、 <strong>spec</strong>
+の複合的な演算子はそこからどのようにジェネレータを組み立てるべきか分かっている。 specに対して <code>gen</code>
+を呼び出して一部のサブツリーについてジェネレータを組み立てることができないと、その場所を示す例外がスローされる。
+specに分からないものにジェネレータを提供するためにジェネレータを返す関数を
+<code>spec</code>　に渡すことができ、また、specの1つ以上のサブパスで代わりになるジェネレータを提供するためのオーバーライドマップを <code>gen</code>
+に渡すことができる。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_実行時に">実行時に</h4>
+<div class="paragraph">
+<p>上述の分配束縛のユースケースに加えて、 <code>conform</code> や <code>valid?</code>
+を実行時のチェックを行いたい箇所でどこでも呼び出すことができ、また、プロダクションで実行することを想定したテストのための内部利用限定の軽量なspecを作ることができる。</p>
 </div>
 <div class="paragraph">
-<p>Please see the <a href="xref/../../../guides/spec">spec Guide</a> and <a href="https://clojure.github.io/clojure/branch-master/clojure.spec-api.html">API docs</a> for more examples and usage information.</p>
+<p>さらなるサンプルと利用方法の情報は <a href="xref/../../../guides/spec">specガイド</a> と
+<a href="https://clojure.github.io/clojure/branch-master/clojure.spec-api.html">API
+docs</a> を参照。</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossary">Glossary</h2>
+<h2 id="_用語集">用語集</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_predicates">predicates</h3>
+<h3 id="_predicates_述語">predicates (述語)</h3>
 <div class="paragraph">
-<p>Many parts of the spec API call for 'predicates' or 'preds'. These arguments can be satisfied by:</p>
+<p>spec APIの多くの部分で&#8217;predicates'(述語)つまり&#8217;preds&#8217;が必要となる。こうした引数は以下のもので満たすことができる:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>predicate (boolean) fns</p>
+<p>述語(boolean)関数</p>
 </li>
 <li>
-<p>sets</p>
+<p>セット</p>
 </li>
 <li>
-<p>registered names of specs</p>
+<p>登録済みのspecの名前</p>
 </li>
 <li>
-<p>specs (the return values of <code>spec</code>, <code>and</code>, <code>or</code>, <code>keys</code>)</p>
+<p>spec(<code>cat</code>, <code>alt</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>&amp;</code> の戻り値)</p>
 </li>
 <li>
-<p>regex ops (the return values of <code>cat</code>, <code>alt</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>&amp;</code>)</p>
+<p>正規表現演算子(<code>cat</code>, <code>alt</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>&amp;</code> の戻り値)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that if you want to nest an independent regex predicate within a regex you will have to wrap it in a call to <code>spec</code>,
-else  it will be considered a nested pattern.</p>
+<p>独立した正規表現の述語を正規表現の中にネストさせたい場合には <code>spec</code>
+の呼び出しの中にラップしなければならず、そうしなければネストしたパターンとみなされることに注意しよう。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_specs">specs</h3>
+<h3 id="_specs_仕様記述">specs (仕様記述)</h3>
 <div class="paragraph">
-<p>The return values of <code>spec</code>, <code>and</code>, <code>or</code> and <code>keys</code>.</p>
+<p><code>spec</code>, <code>and</code>, <code>or</code>, <code>keys</code> の戻り値。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_regex_ops">regex ops</h3>
+<h3 id="_regex_ops_正規表現演算子">regex ops (正規表現演算子)</h3>
 <div class="paragraph">
-<p>The return values of <code>cat</code>, <code>alt</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>&amp;</code>. When nested these form a single expression.</p>
+<p><code>cat</code>, <code>alt</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>&amp;</code> の戻り値。ネストするとこれらは単一の式になる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conform">conform</h3>
+<h3 id="_conform_一致させる">conform (一致させる)</h3>
 <div class="paragraph">
-<p><code>conform</code> is the basic operation for consuming specs, and does both validation and conforming/destructuring.
-Note that conforming is 'deep' and flows through all of the spec and regex operations, map specs etc.
-Since <code>nil</code> and <code>false</code> are legitimate conformed values, conform returns the distinguished <code>:clojure.spec.alpha/invalid</code>
-when a value cannot be made to conform. <code>valid</code>? can be used instead as a fully-boolean predicate.</p>
+<p><code>conform</code>
+はspecを利用する基本的な操作で、バリデーションと一致(conform)/分配束縛の両方を行う。conformは&#8217;deep&#8217;であり、すべてのspecと正規表現演算、マップのspecなどにわたることに注意しよう。
+<code>nil</code> と <code>false</code> はconformした値として正当なものなため、値がconformできない場合には特別な
+<code>:clojure.spec.alpha/invalid</code> が返される。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_explain">explain</h3>
+<h3 id="_explain_説明する">explain (説明する)</h3>
 <div class="paragraph">
-<p>When a value fails to conform to a spec you can call <code>explain</code> or <code>explain-data</code> with the same spec+value to
-find out why. These explanations are not produced during <code>conform</code> because they might perform additional work and there
-is no reason to incur that cost for non-failing inputs or when no report is desired. An important component of
-explanations is the <em>path</em>. <code>explain</code> extends the path as it navigates through e.g. nested maps or regex patterns,
-so you get better information than just the entire or leaf value. <code>explain-data</code> will return a map of paths to problems.</p>
+<p>ある値がspecのconformに失敗する場合には、同じspec+値で <code>explain</code> または <code>explain-data</code>
+を呼び出して原因を調べることができる。こうした説明は、追加の作業をすることになるかもしれず、失敗しない入力やレポートが望ましくない場合にまでそのコストを負担する理由もないため、
+<code>conform</code> 時には生成されない。説明の重要な構成要素は <em>パス</em> だ。 <code>explain</code>
+は例えばネストしたマップや正規表現パターンを通るにつれてパスを伸ばしていくため、単なる全体もしくは葉の値よりも良い情報が得られる。
+<code>explain-data</code> は問題箇所までのパスのマップを返す。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_paths">paths</h3>
+<h3 id="_paths_パス">paths (パス)</h3>
 <div class="paragraph">
-<p>Due to the fact that all <em>branching</em> points in specs are labeled, i.e. map <code>keys</code>, choices in <code>or</code> and <code>alt</code>, and
-(possibly elided) elements of <code>cat</code>, every subexpression in a spec can be referred to via a <em>path</em> (vector of keys) naming the parts.
-These paths are used in <code>explain</code>, <code>gen</code> overrides and various error reporting.</p>
+<p>例えばマップの <code>keys</code> や <code>or</code> と <code>alt</code> の選択肢、(省略されうる) <code>cat</code> の要素のようにspecのすべての
+<em>分岐</em> 点はラベル付けされていることから、specのあらゆる部分式はその部分に名前を付ける <em>パス</em>
+(キーのベクター)によって指し示すことができる。こうしたパスは <code>explain</code> や <code>gen</code>
+のオーバーライド、様々なエラー報告に利用されている。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prior_art">Prior Art</h2>
+<h2 id="_先行技術">先行技術</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Almost nothing about spec is novel. See all the libraries mentioned above, <a href="https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/">RDF</a>,
-as well as all the work done on various
-contract systems, such as <a href="https://docs.racket-lang.org/guide/contracts.html">Racket&#8217;s contracts</a>.</p>
+<p>specにはほとんど何も新規なところはない。上で述べたライブラリや
+<a href="https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/">RDF</a>
+、また、コントラクトシステムについてなされてきた様々な業績、例えば
+<a href="https://docs.racket-lang.org/guide/contracts.html">Racketのコントラクト</a> を参照。</p>
 </div>
 <div class="paragraph">
-<p><strong>I hope you find spec useful and powerful.</strong></p>
+<p><strong>specの有用性と強力さをぜひ知ってほしい。</strong></p>
 </div>
 <div class="paragraph">
 <p>Rich Hickey</p>
