@@ -85,10 +85,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/datatypes.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/documentation.html</loc>
         <lastmod></lastmod>
     </url>
@@ -118,6 +114,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/atoms.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/datatypes.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

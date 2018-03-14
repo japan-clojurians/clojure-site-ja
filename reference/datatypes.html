@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Datatypes: deftype, defrecord and reify</title>
+    <title>Clojure - データ型: deftypeとdefrecordとreify</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Datatypes: deftype, defrecord and reify</h1>
+  <h1>データ型: deftypeとdefrecordとreify</h1>
 </div>
 
 <p><em></em></p>
@@ -82,226 +82,239 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_motivation">Motivation</a></li>
-<li><a href="#_basics">Basics</a></li>
-<li><a href="#_deftype_and_defrecord">deftype and defrecord</a></li>
-<li><a href="#_why_have_both_deftype_and_defrecord">Why have both deftype and defrecord?</a></li>
-<li><a href="#_datatypes_and_protocols_are_opinionated">Datatypes and protocols are opinionated</a></li>
+<li><a href="#_動機">動機</a></li>
+<li><a href="#_基本">基本</a></li>
+<li><a href="#_deftypeとdefrecord">deftypeとdefrecord</a></li>
+<li><a href="#_なぜdeftypeとdefrecordの両方があるのか">なぜdeftypeとdefrecordの両方があるのか?</a></li>
+<li><a href="#_データ型とプロトコルには強い主張がある">データ型とプロトコルには強い主張がある</a></li>
 <li><a href="#_reify">reify</a></li>
-<li><a href="#_java_annotation_support">Java annotation support</a></li>
+<li><a href="#_javaアノテーションサポート">Javaアノテーションサポート</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_motivation">Motivation</h2>
+<h2 id="_動機">動機</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure is written in terms of abstractions. There are abstractions for sequences, collections, callability, etc. In addition, Clojure supplies many implementations of these abstractions. The abstractions are specified by host interfaces, and the implementations by host classes. While this was sufficient for bootstrapping the language, it left Clojure without similar abstraction and low-level implementation facilities. The <a href="protocols">protocols</a> and <a href="datatypes">datatypes</a> features add powerful and flexible mechanisms for abstraction and data structure definition with no compromises vs the facilities of the host platform.</p>
+<p>Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこれらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。これは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になっていた。
+<a href="protocols">プロトコル</a> と <a href="datatypes">データ型</a>
+という機能は、強力で柔軟な抽象化とデータ構造定義のメカニズムをホストプラットフォームの機構に対して妥協することなく提供する。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basics">Basics</h2>
+<h2 id="_基本">基本</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The datatype features - <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> , <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> , provide the mechanism for defining implementations of abstractions, and in the case of reify, instances of those implementations. The abstractions themselves are defined by either <a href="protocols">protocols</a> or interfaces. A datatype provides a host type, (named in the case of deftype and defrecord, anonymous in the case of reify), with some structure (explicit fields in the case of deftype and defrecord, implicit closure in the case of reify), and optional in-type implementations of abstraction methods. They support, in a relatively clean manner, access to the highest-performance primitive representation and polymorphism mechanisms of the host. N.B. that they are not merely host-in-parens constructs. They support only a circumscribed subset of the host facilities, often with more dynamism than the host itself. The intent is that, unless interop forces one to go beyond their circumscribed scope, one need not leave Clojure to get the highest-performing data structures possible on the platform.</p>
+<p>データ型機能 -
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a>と
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a>と
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>は抽象の実装を定義するメカニズムを提供し、reifyについてはそれらの実装のインスタンスを提供する。抽象自体は
+<a href="protocols">プロトコル</a>もしくはインターフェースによって定義される。データ型はホストの型(deftypeとdefrecordについては名前付き、reifyの場合は匿名)と何らかの構造(deftypeとdefrecordについては明示的なフィールド、reifyの場合は暗黙的なクロージャー)及び任意の型の抽象メソッドの実装を提供する。これらは比較的綺麗な方法でホストの最もパフォーマンスの良いプリミティヴへのアクセスとポリモーフィズム機構をサポートする。これらはただホストを括弧の中に記述するメカニズムではなく、ホストの機能の制限されたサブセットのみをサポートしており、多くの場合ホスト自身よりも動的である点に注意する必要がある。意図としては、ホストとの連携のために制限されたスコープの外に出る必要がない限り、プラットフォーム上で最もパフォーマンスの良いデータ構造を手にするためにClojureを離れる必要はない。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deftype_and_defrecord">deftype and defrecord</h2>
+<h2 id="_deftypeとdefrecord">deftypeとdefrecord</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> dynamically generate compiled bytecode for a named class with a set of given fields, and, optionally, methods for one or more protocols and/or interfaces. They are suitable for dynamic and interactive development, need not be AOT compiled, and can be re-evaluated in the course of a single session. They are similar to defstruct in generating data structures with named fields, but differ from defstruct in that:</p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a>と
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a>は、与えられたフィールドと任意のプロトコル/インターフェースのメソッドを持つ、名前付きのクラスのコンパイル済みバイトコードを動的に生成する。これらは動的でインタラクティブな開発に向いており、AOTコンパイルを行う必要もなく、単一のセッション内で再評価を行うこともできる。名前付きのフィールドを持つデータ構造を生成する点ではdefstructと似ているが、以下の点で異なる:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>They generate a unique class, with fields corresponding to the given names.</p>
+<p>与えられた名前に対応するフィールドを持つユニークなクラスを生成する。</p>
 </li>
 <li>
-<p>the resulting class has a proper type, unlike conventions for encoding type for structs in metadata</p>
+<p>生成されたクラスは正当な型を持ち、メタデータに型をエンコードするdefstructの規約とは異なる</p>
 </li>
 <li>
-<p>because they generate a named class, it has an accessible constructor</p>
+<p>名前付きのクラスを生成するため、アクセス可能なコンストラクターを持つ</p>
 </li>
 <li>
-<p>fields can have type hints, and can be primitive</p>
+<p>フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
 <div class="ulist">
 <ul>
 <li>
-<p>note that currently a type hint of a non-primitive type will not be used to constrain the field type nor the constructor arg, but will be used to optimize its use in the class methods</p>
+<p>注:
+現在、非プリミティブな型ヒントはフィールドの型やコンストラクターの引数を制限するものではないが、クラスメソッドの利用時の最適化のために使用される</p>
 </li>
 <li>
-<p>constraining the field type and constructor arg is planned</p>
+<p>フィールドやコンストラクターの型の制限は計画されている</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>a deftype/defrecord can implement one or more protocols and/or interfaces</p>
+<p>deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる</p>
 </li>
 <li>
-<p>deftype/defrecord can be written with a special reader syntax #my.thing[1 2 3] where:</p>
+<p>deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>each element in the vector form is passed to the deftype/defrecord&#8217;s constructor un-evaluated</p>
+<p>ベクターの各要素がdeftype/defrecordのコンストラクターに評価されずに渡される</p>
 </li>
 <li>
-<p>the deftype/defrecord name must be fully qualified</p>
+<p>deftype/defrecordの名前は完全修飾されている必要がある</p>
 </li>
 <li>
-<p>only available in Clojure versions later than 1.3</p>
+<p>Clojureのバージョン1.3以降でのみ利用可能</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>when a deftype/defrecord Foo is defined a corresponding function <code>->Foo</code> is defined that passes its arguments to the constructor (versions 1.3 and later only)</p>
+<p>deftype/defrecord Fooが定義された場合、対応する引数をコンストラクターに渡す関数 <code>->Foo</code>
+が定義される(バージョン1.3以降)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a> differ in the following ways:</p>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a>と
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a>は以下のように異なる:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>deftype provides no functionality not specified by the user, other than a constructor</p>
+<p>deftypeはコンストラクター以外にはユーザーに明示されていないいかなる機能も提供しない</p>
 </li>
 <li>
-<p>defrecord provides a complete implementation of a persistent map, including:</p>
+<p>defrecordは以下を含む永続的なマップの完全な実装を提供する:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>value-based equality and hashCode</p>
+<p>値に基づく同値比較とハッシュコード</p>
 </li>
 <li>
-<p>metadata support</p>
+<p>メタデータのサポート</p>
 </li>
 <li>
-<p>associative support</p>
+<p>associativeのサポート</p>
 </li>
 <li>
-<p>keyword accessors for fields</p>
+<p>フィールドのキーワードアクセサ</p>
 </li>
 <li>
-<p>extensible fields (you can assoc keys not supplied with the defrecord definition)</p>
+<p>拡張可能なフィールド(defrecordの定義にないフィールドのキーをassocすることができる)</p>
 </li>
 <li>
-<p>etc</p>
+<p>など</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>deftype supports mutable fields, defrecord does not</p>
+<p>deftypeはミュータブルなフィールドをサポートするが、defrecordはサポートしない</p>
 </li>
 <li>
-<p>defrecord supports an additional reader form of #my.record{:a 1, :b 2} taking a map that initializes a defrecord according to:</p>
+<p>defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>the defrecord name must be fully qualified</p>
+<p>defrecord名は完全修飾されている必要がある</p>
 </li>
 <li>
-<p>the elements in the map are un-evaluated</p>
+<p>マップ内の要素は評価されない</p>
 </li>
 <li>
-<p>existing defrecord fields take the keyed values</p>
+<p>既存のdefrecordフィールドは対応するキーの値に初期化される</p>
 </li>
 <li>
-<p>defrecord fields without keyed values in the literal map are initialized to nil</p>
+<p>リテラルマップに対応するキーのないdefrecordフィールドはnilに初期化される</p>
 </li>
 <li>
-<p>additional keyed values are allowed and added to the defrecord</p>
+<p>defrecordフィールド以外のキーは許容されており、defrecordに追加される</p>
 </li>
 <li>
-<p>only available in Clojure versions later than 1.3</p>
+<p>Clojureバージョン1.3以降で利用可能</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>when a defrecord Bar is defined a corresponding function <code>map->Bar</code> is defined that takes a map and initializes a new record instance with its contents (versions 1.3 and later only)</p>
+<p>defrecord Barが定義された場合、受け取ったマップの値でインスタンスの初期化を行う <code>map->Bar</code>
+が定義される(バージョン1.3以降)</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_why_have_both_deftype_and_defrecord">Why have both deftype and defrecord?</h2>
+<h2 id="_なぜdeftypeとdefrecordの両方があるのか">なぜdeftypeとdefrecordの両方があるのか?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It ends up that classes in most OO programs fall into two distinct categories: those classes that are artifacts of the implementation/programming domain, e.g. String or collection classes, or Clojure&#8217;s reference types; and classes that represent application domain information, e.g. Employee, PurchaseOrder etc. It has always been an unfortunate characteristic of using classes for application domain information that it resulted in information being hidden behind class-specific micro-languages, e.g. even the seemingly harmless employee.getName() is a custom interface to data. Putting information in such classes is a problem, much like having every book being written in a different language would be a problem. You can no longer take a generic approach to information processing. This results in an explosion of needless specificity, and a dearth of reuse.</p>
+<p>結論としては、ほとんどのOOプログラムは明確に2つに分類される:実装/プログラミングのドメインのもの(例えばStringやコレクションのクラス、もしくはClojureの参照型)とアプリケーションドメインの情報を表現するクラス(例えば従業員、購入注文など)だ。アプリケーションドメインの情報にクラスが使用されることは常に不幸な特徴であった。クラス特有のマイクロ言語の背後に情報が隠されてしてしまうことにつながるからだ。例えば一見無害なemployee.getName()もデータに対する特別なインターフェースだ。そのようなクラスに情報を入れることは、全ての本が異なる言語で書かれていたら問題になるのと同じように問題だ。情報を処理する際に一般的なアプローチを取ることができなくなり、無用な特殊性の爆発を招き、再利用を不可能にする。</p>
 </div>
 <div class="paragraph">
-<p>This is why Clojure has always encouraged putting such information in maps, and that advice doesn&#8217;t change with datatypes. By using defrecord you get generically manipulable information, plus the added benefits of type-driven polymorphism, and the structural efficiencies of fields. OTOH, it makes no sense for a datatype that defines a collection like vector to have a default implementation of map, thus deftype is suitable for defining such programming constructs.</p>
+<p>Clojureが常に情報をマップに入れるように奨励してきたのはこれが理由で、データ型についてもこの奨励は変わらない。
+defrecordを使用することによって、一般的に操作可能な情報に加えて、型駆動のポリモーフィズムというさらなる恩恵やフィールド構造による効率性も得ることができる。その一方でベクターのようなコレクションを定義するデータ型にマップのデフォルト実装を持たせる意味はなく、deftypeはそのようなプログラミングのための構造を定義することに向いている。</p>
 </div>
 <div class="paragraph">
-<p>Overall, records will be better than structmaps for all information-bearing purposes, and you should move such structmaps to defrecord. It is unlikely much code was trying to use structmaps for programming constructs, but if so, you will find deftype much more suitable.</p>
+<p>全体として、レコードは情報を持つあらゆる目的でstructmapよりも優れており、そのようなstructmapはdefrecordに移行するべきだ。プログラミングのための構造にstructmapを使用する可能性は低いだろうが、そのような場合にはdeftypeがはるかに向いている。</p>
 </div>
 <div class="paragraph">
-<p>AOT-compiled deftype/defrecord may be suitable for some of the use cases of <strong>gen-class</strong>, where their limitations are not prohibitive. In those cases, they will have better performance than gen-class.</p>
+<p>deftype/defrecordの事前コンパイルは制約が障害にならないいくつかの <strong>gen-class</strong>
+のユースケースに適していると思われる。そのような場合はgen-classよりもパフォーマンスが良くなる。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datatypes_and_protocols_are_opinionated">Datatypes and protocols are opinionated</h2>
+<h2 id="_データ型とプロトコルには強い主張がある">データ型とプロトコルには強い主張がある</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While datatypes and protocols have well-defined relationships with host constructs, and make for a great way to expose Clojure functionality to Java programs, they are not primarily interop constructs. That is, they make no effort to completely mimic or adapt to all of the OO mechanisms of the host. In particular, they reflect the following opinions:</p>
+<p>datatypeとprotocolはホストの言語構造と明瞭な関係を持っており、Clojureの機能をJavaのプログラムに提供する良い手段ではあるものの、ホストとの連携のための言語構造ではない。つまりは、ホストの全てのOOのメカニズムを完全に真似したり適合させたりするための努力は一切していない。具体的には以下の意見を反映している:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Concrete derivation is bad</p>
+<p>具象的な派生は悪手だ</p>
 <div class="ulist">
 <ul>
 <li>
-<p>you cannot derive datatypes from concrete classes, only interfaces</p>
+<p>具象クラスからデータ型を派生させることはできず、インターフェースからのみ行える</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>You should always program to protocols or interfaces</p>
+<p>常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
 <div class="ulist">
 <ul>
 <li>
-<p>datatypes cannot expose methods not in their protocols or interfaces</p>
+<p>データ型はそのプロトコルもしくはインターフェースで定義されていないメソッドを公開することはできない</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Immutability should be the default</p>
+<p>イミュータブルがデフォルトであるべきだ</p>
 <div class="ulist">
 <ul>
 <li>
-<p>and is the only option for records</p>
+<p>レコードについては唯一の選択肢となっている</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Encapsulation of information is folly</p>
+<p>情報のカプセル化は愚かだ</p>
 <div class="ulist">
 <ul>
 <li>
-<p>fields are public, use protocols/interfaces to avoid dependencies</p>
+<p>フィールドはパブリックであり、依存関係を避けるためにプロトコルもしくはインターフェースを利用する</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Tying polymorphism to inheritance is bad</p>
+<p>ポリモーフィズムと継承を結びつけることは悪手だ</p>
 <div class="ulist">
 <ul>
 <li>
-<p>protocols free you from that</p>
+<p>プロトコルを利用することでこれを避けることができる</p>
 </li>
 </ul>
 </div>
@@ -309,7 +322,9 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>If you use datatypes and protocols you will have a clean, interface-based API to offer your Java consumers. If you are dealing with a clean, interface-based Java API, datatypes and protocols can be used to interoperate with and extend it. If you have a 'bad' Java API, you will have to use gen-class. Only in this way can the programming constructs you use to design and implement your Clojure programs be free of the incidental complexities of OO.</p>
+<p>データ型とプロトコルを利用すると、Javaの利用者にインターフェースに基づく綺麗なAPIを提供することができる。インターフェースに基づく綺麗なJava
+APIを利用している場合はデータ型とプロトコルを利用することで連携することも、拡張を行うことも可能になる。「悪い」Java
+APIがある場合は、gen-classを利用する必要がある。これがClojureプログラムを設計し、実装する際にOOがもたらす偶発的な複雑性を避ける唯一の方法だ。</p>
 </div>
 </div>
 </div>
@@ -317,53 +332,57 @@
 <h2 id="_reify">reify</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While deftype and defrecord define named types, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> defines both an anonymous type and creates an instance of that type. The use case is where you need a one-off implementation of one or more protocols or interfaces and would like to take advantage of the local context. In this respect it is use case similar to proxy, or anonymous inner classes in Java.</p>
+<p>deftypeとdefrecordは名前付きの型を定義するが、
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>
+は匿名の型を定義しその型のインスタンスを作成する。ユースケースは、一度限りの1つ以上のインターフェース/プロトコルの実装でローカルコンテキストを利用したい場合だ。この観点からはproxyやJavaの匿名内部クラスのユースケースに似ている。</p>
 </div>
 <div class="paragraph">
-<p>The method bodies of reify are lexical closures, and can refer to the surrounding local scope. <strong>reify</strong> differs from <strong>proxy</strong> in that:</p>
+<p>reifyのメソッドボディはレキシカルクロージャーで、周囲のローカルスコープを参照することができる。 <strong>reify</strong>  は以下の点で <strong>proxy</strong>
+と異なる:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Only protocols or interfaces are supported, no concrete superclass.</p>
+<p>プロトコルもしくはインターフェースのみがサポートされており、具象スーパークラスはサポートされない。</p>
 </li>
 <li>
-<p>The method bodies are true methods of the resulting class, not external fns.</p>
+<p>メソッドのボディは外部の関数ではなく、結果として得られるクラスの本物のメソッドである。</p>
 </li>
 <li>
-<p>Invocation of methods on the instance is direct, not using map lookup.</p>
+<p>インスタンスに対するメソッド呼び出しはマップのルックアップを行うことなく直接実行される。</p>
 </li>
 <li>
-<p>No support for dynamic swapping of methods in the method map.</p>
+<p>メソッドマップのメソッドの動的なスワップはサポートされていない。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The result is better performance than proxy, both in construction and invocation. <strong>reify</strong> is preferable to proxy in all cases where its constraints are not prohibitive.</p>
+<p>この結果得られるのは、構築と呼び出しどちらにおいてもproxyより優れたパフォーマンスだ。 <strong>reify</strong>
+はその制約が障害にならない限り、あらゆるケースにおいてproxyよりも推奨される。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java_annotation_support">Java annotation support</h2>
+<h2 id="_javaアノテーションサポート">Javaアノテーションサポート</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Types created with deftype, defrecord, and definterface, can emit classes that include Java annotations for Java interop. Annotations are described as meta on:</p>
+<p>deftype、defrecord、及びdefinterfaceで作成された型は、Javaとの連携のためにJavaアノテーションを含むクラスを生成することができる。アノテーションは以下に対するメタデータとして記述される:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Type name (deftype/record/interface) - class annotations</p>
+<p>型名(deftype/record/interface) - クラスアノテーション</p>
 </li>
 <li>
-<p>Field names (deftype/record) - field annotations</p>
+<p>フィールド名(deftype/record) - フィールドアノテーション</p>
 </li>
 <li>
-<p>Method names (deftype/record) - method annotations</p>
+<p>メソッド名(deftype/record) - メソッドアノテーション</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>例:</p>
 </div>
 <div class="listingblock">
 <div class="content">
