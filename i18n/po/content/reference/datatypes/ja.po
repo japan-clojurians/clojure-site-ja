@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-02-07 07:23+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2018-03-14 19:05+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -55,7 +55,7 @@ msgstr "toc::[]"
 #: en/content/reference/protocols.adoc:16 en/content/reference/datatypes.adoc:17
 #, no-wrap
 msgid "Motivation"
-msgstr ""
+msgstr "動機"
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:19 en/content/reference/datatypes.adoc:20
@@ -67,6 +67,11 @@ msgid ""
 "<<datatypes#,datatypes>> features add powerful and flexible mechanisms for abstraction and data structure definition "
 "with no compromises vs the facilities of the host platform."
 msgstr ""
+"Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこ"
+"れらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。こ"
+"れは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になってい"
+"た。 <<protocols#,プロトコル>> と <<datatypes#,データ型>> という機能は、強力で柔軟な抽象化とデータ構造定義のメカニズム"
+"をホストプラットフォームの機構に対して妥協することなく提供する。\n"
 
 #. type: Title ==
 #: en/content/reference/protocols.adoc:36 en/content/reference/datatypes.adoc:21 en/content/about/dynamic.adoc:42
@@ -77,13 +82,13 @@ msgstr "基本"
 #. type: Plain text
 #: en/content/reference/special_forms.adoc:176 en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:177
 msgid "Example:"
-msgstr ""
+msgstr "例:"
 
 #. type: Title =
 #: en/content/reference/datatypes.adoc:1
 #, no-wrap
 msgid "Datatypes: deftype, defrecord and reify"
-msgstr ""
+msgstr "データ型: deftypeとdefrecordとreify"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:24
@@ -101,12 +106,22 @@ msgid ""
 "forces one to go beyond their circumscribed scope, one need not leave Clojure to get the highest-performing data "
 "structures possible on the platform."
 msgstr ""
+"データ型機能 - http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype[deftype]と http://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/defrecord[defrecord]と http://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/reify[reify]は抽象の実装を定義するメカニズムを提供し、reifyについてはそれらの実装のインスタ"
+"ンスを提供する。抽象自体は <<protocols#,プロトコル>>もしくはインターフェースによって定義される。データ型はホストの型"
+"(deftypeとdefrecordについては名前付き、reifyの場合は匿名)と何らかの構造(deftypeとdefrecordについては明示的なフィール"
+"ド、reifyの場合は暗黙的なクロージャー)及び任意の型の抽象メソッドの実装を提供する。これらは比較的綺麗な方法でホストの最"
+"もパフォーマンスの良いプリミティヴへのアクセスとポリモーフィズム機構をサポートする。これらはただホストを括弧の中に記述"
+"するメカニズムではなく、ホストの機能の制限されたサブセットのみをサポートしており、多くの場合ホスト自身よりも動的である"
+"点に注意する必要がある。意図としては、ホストとの連携のために制限されたスコープの外に出る必要がない限り、プラットフォー"
+"ム上で最もパフォーマンスの良いデータ構造を手にするためにClojureを離れる必要はない。"
 
 #. type: Title ==
 #: en/content/reference/datatypes.adoc:25
 #, no-wrap
 msgid "deftype and defrecord"
-msgstr ""
+msgstr "deftypeとdefrecord"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:28
@@ -118,21 +133,26 @@ msgid ""
 "a single session. They are similar to defstruct in generating data structures with named fields, but differ from "
 "defstruct in that:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype[deftype]と https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/defrecord[defrecord]は、与えられたフィールドと任意のプロトコル/インター"
+"フェースのメソッドを持つ、名前付きのクラスのコンパイル済みバイトコードを動的に生成する。これらは動的でインタラクティブ"
+"な開発に向いており、AOTコンパイルを行う必要もなく、単一のセッション内で再評価を行うこともできる。名前付きのフィールド"
+"を持つデータ構造を生成する点ではdefstructと似ているが、以下の点で異なる:"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:31
 msgid "They generate a unique class, with fields corresponding to the given names."
-msgstr ""
+msgstr "与えられた名前に対応するフィールドを持つユニークなクラスを生成する。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:32
 msgid "the resulting class has a proper type, unlike conventions for encoding type for structs in metadata"
-msgstr ""
+msgstr "生成されたクラスは正当な型を持ち、メタデータに型をエンコードするdefstructの規約とは異なる"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:33
 msgid "because they generate a named class, it has an accessible constructor"
-msgstr ""
+msgstr "名前付きのクラスを生成するため、アクセス可能なコンストラクターを持つ"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:36
@@ -141,11 +161,15 @@ msgid ""
 "be used to constrain the field type nor the constructor arg, but will be used to optimize its use in the class "
 "methods ** constraining the field type and constructor arg is planned"
 msgstr ""
+"* フィールドはプリミティブ型を含む型ヒントを持つことができる\n"
+"** 注: 現在、非プリミティブな型ヒントはフィールドの型やコンストラクターの引数を制限するものではないが、クラスメソッド"
+"の利用時の最適化のために使用される\n"
+"** フィールドやコンストラクターの型の制限は計画されている"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:37
 msgid "a deftype/defrecord can implement one or more protocols and/or interfaces"
-msgstr ""
+msgstr "deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:41
@@ -154,6 +178,10 @@ msgid ""
 "form is passed to the deftype/defrecord's constructor un-evaluated ** the deftype/defrecord name must be fully "
 "qualified ** only available in Clojure versions later than 1.3"
 msgstr ""
+"* deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:\n"
+"** ベクターの各要素がdeftype/defrecordのコンストラクターに評価されずに渡される\n"
+"** deftype/defrecordの名前は完全修飾されている必要がある\n"
+"** Clojureのバージョン1.3以降でのみ利用可能"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:42
@@ -161,6 +189,8 @@ msgid ""
 "when a deftype/defrecord Foo is defined a corresponding function `pass:[->Foo]` is defined that passes its arguments "
 "to the constructor (versions 1.3 and later only)"
 msgstr ""
+"deftype/defrecord Fooが定義された場合、対応する引数をコンストラクターに渡す関数 `pass:[->Foo]` が定義される(バージョン"
+"1.3以降)"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:44
@@ -168,11 +198,13 @@ msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype[deftype] and https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/defrecord[defrecord] differ in the following ways:"
 msgstr ""
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype[deftype]と https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/defrecord[defrecord]は以下のように異なる:"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:47
 msgid "deftype provides no functionality not specified by the user, other than a constructor"
-msgstr ""
+msgstr "deftypeはコンストラクター以外にはユーザーに明示されていないいかなる機能も提供しない"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:54
@@ -181,11 +213,18 @@ msgid ""
 "metadata support ** associative support ** keyword accessors for fields ** extensible fields (you can assoc keys not "
 "supplied with the defrecord definition)  ** etc"
 msgstr ""
+"* defrecordは以下を含む永続的なマップの完全な実装を提供する:\n"
+"** 値に基づく同値比較とハッシュコード\n"
+"** メタデータのサポート\n"
+"** associativeのサポート\n"
+"** フィールドのキーワードアクセサ\n"
+"** 拡張可能なフィールド(defrecordの定義にないフィールドのキーをassocすることができる)\n"
+"** など\n"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:55
 msgid "deftype supports mutable fields, defrecord does not"
-msgstr ""
+msgstr "deftypeはミュータブルなフィールドをサポートするが、defrecordはサポートしない"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:62
@@ -196,6 +235,13 @@ msgid ""
 "nil ** additional keyed values are allowed and added to the defrecord ** only available in Clojure versions later "
 "than 1.3"
 msgstr ""
+"* defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:\n"
+"** defrecord名は完全修飾されている必要がある\n"
+"** マップ内の要素は評価されない\n"
+"** 既存のdefrecordフィールドは対応するキーの値に初期化される\n"
+"** リテラルマップに対応するキーのないdefrecordフィールドはnilに初期化される\n"
+"** defrecordフィールド以外のキーは許容されており、defrecordに追加される\n"
+"** Clojureバージョン1.3以降で利用可能\n"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:63
@@ -203,12 +249,14 @@ msgid ""
 "when a defrecord Bar is defined a corresponding function `pass:[map->Bar]` is defined that takes a map and "
 "initializes a new record instance with its contents (versions 1.3 and later only)"
 msgstr ""
+"defrecord Barが定義された場合、受け取ったマップの値でインスタンスの初期化を行う `pass:[map->Bar]` が定義される(バー"
+"ジョン1.3以降)"
 
 #. type: Title ==
 #: en/content/reference/datatypes.adoc:64
 #, no-wrap
 msgid "Why have both deftype and defrecord?"
-msgstr ""
+msgstr "なぜdeftypeとdefrecordの両方があるのか?"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:67
@@ -222,6 +270,12 @@ msgid ""
 "language would be a problem. You can no longer take a generic approach to information processing. This results in an "
 "explosion of needless specificity, and a dearth of reuse."
 msgstr ""
+"結論としては、ほとんどのOOプログラムは明確に2つに分類される:実装/プログラミングのドメインのもの(例えばStringやコレク"
+"ションのクラス、もしくはClojureの参照型)とアプリケーションドメインの情報を表現するクラス(例えば従業員、購入注文など)"
+"だ。アプリケーションドメインの情報にクラスが使用されることは常に不幸な特徴であった。クラス特有のマイクロ言語の背後に情"
+"報が隠されてしてしまうことにつながるからだ。例えば一見無害なemployee.getName()もデータに対する特別なインターフェース"
+"だ。そのようなクラスに情報を入れることは、全ての本が異なる言語で書かれていたら問題になるのと同じように問題だ。情報を処"
+"理する際に一般的なアプローチを取ることができなくなり、無用な特殊性の爆発を招き、再利用を不可能にする。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:69
@@ -232,6 +286,10 @@ msgid ""
 "collection like vector to have a default implementation of map, thus deftype is suitable for defining such "
 "programming constructs."
 msgstr ""
+"Clojureが常に情報をマップに入れるように奨励してきたのはこれが理由で、データ型についてもこの奨励は変わらない。 "
+"defrecordを使用することによって、一般的に操作可能な情報に加えて、型駆動のポリモーフィズムというさらなる恩恵やフィール"
+"ド構造による効率性も得ることができる。その一方でベクターのようなコレクションを定義するデータ型にマップのデフォルト実装"
+"を持たせる意味はなく、deftypeはそのようなプログラミングのための構造を定義することに向いている。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:71
@@ -240,6 +298,9 @@ msgid ""
 "structmaps to defrecord. It is unlikely much code was trying to use structmaps for programming constructs, but if so, "
 "you will find deftype much more suitable."
 msgstr ""
+"全体として、レコードは情報を持つあらゆる目的でstructmapよりも優れており、そのようなstructmapはdefrecordに移行するべき"
+"だ。プログラミングのための構造にstructmapを使用する可能性は低いだろうが、そのような場合にはdeftypeがはるかに向いてい"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:73
@@ -247,12 +308,14 @@ msgid ""
 "AOT-compiled deftype/defrecord may be suitable for some of the use cases of *gen-class*, where their limitations are "
 "not prohibitive. In those cases, they will have better performance than gen-class."
 msgstr ""
+"deftype/defrecordの事前コンパイルは制約が障害にならないいくつかの *gen-class* のユースケースに適していると思われる。そ"
+"のような場合はgen-classよりもパフォーマンスが良くなる。"
 
 #. type: Title ==
 #: en/content/reference/datatypes.adoc:74
 #, no-wrap
 msgid "Datatypes and protocols are opinionated"
-msgstr ""
+msgstr "データ型とプロトコルには強い主張がある"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:77
@@ -262,11 +325,16 @@ msgid ""
 "effort to completely mimic or adapt to all of the OO mechanisms of the host. In particular, they reflect the "
 "following opinions:"
 msgstr ""
+"datatypeとprotocolはホストの言語構造と明瞭な関係を持っており、Clojureの機能をJavaのプログラムに提供する良い手段ではあ"
+"るものの、ホストとの連携のための言語構造ではない。つまりは、ホストの全てのOOのメカニズムを完全に真似したり適合させたり"
+"するための努力は一切していない。具体的には以下の意見を反映している:"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:80
 msgid "Concrete derivation is bad ** you cannot derive datatypes from concrete classes, only interfaces"
 msgstr ""
+"* 具象的な派生は悪手だ\n"
+"** 具象クラスからデータ型を派生させることはできず、インターフェースからのみ行える"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:82
@@ -274,21 +342,29 @@ msgid ""
 "You should always program to protocols or interfaces ** datatypes cannot expose methods not in their protocols or "
 "interfaces"
 msgstr ""
+"* 常にプロトコルもしくはインターフェースに対してプログラムするべきだ\n"
+"** データ型はそのプロトコルもしくはインターフェースで定義されていないメソッドを公開することはできない"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:84
 msgid "Immutability should be the default ** and is the only option for records"
 msgstr ""
+"* イミュータブルがデフォルトであるべきだ\n"
+"** レコードについては唯一の選択肢となっている"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:86
 msgid "Encapsulation of information is folly ** fields are public, use protocols/interfaces to avoid dependencies"
 msgstr ""
+"* 情報のカプセル化は愚かだ\n"
+"** フィールドはパブリックであり、依存関係を避けるためにプロトコルもしくはインターフェースを利用する"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:88
 msgid "Tying polymorphism to inheritance is bad ** protocols free you from that"
 msgstr ""
+"* ポリモーフィズムと継承を結びつけることは悪手だ\n"
+"** プロトコルを利用することでこれを避けることができる"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:90
@@ -298,12 +374,16 @@ msgid ""
 "extend it. If you have a 'bad' Java API, you will have to use gen-class. Only in this way can the programming "
 "constructs you use to design and implement your Clojure programs be free of the incidental complexities of OO."
 msgstr ""
+"データ型とプロトコルを利用すると、Javaの利用者にインターフェースに基づく綺麗なAPIを提供することができる。インター"
+"フェースに基づく綺麗なJava APIを利用している場合はデータ型とプロトコルを利用することで連携することも、拡張を行うことも"
+"可能になる。「悪い」Java APIがある場合は、gen-classを利用する必要がある。これがClojureプログラムを設計し、実装する際に"
+"OOがもたらす偶発的な複雑性を避ける唯一の方法だ。"
 
 #. type: Title ==
 #: en/content/reference/datatypes.adoc:91
 #, no-wrap
 msgid "reify"
-msgstr ""
+msgstr "reify"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:94
@@ -313,6 +393,10 @@ msgid ""
 "one-off implementation of one or more protocols or interfaces and would like to take advantage of the local context. "
 "In this respect it is use case similar to proxy, or anonymous inner classes in Java."
 msgstr ""
+"deftypeとdefrecordは名前付きの型を定義するが、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"reify[reify] は匿名の型を定義しその型のインスタンスを作成する。ユースケースは、一度限りの1つ以上のインターフェース/プ"
+"ロトコルの実装でローカルコンテキストを利用したい場合だ。この観点からはproxyやJavaの匿名内部クラスのユースケースに似て"
+"いる。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:96
@@ -320,26 +404,28 @@ msgid ""
 "The method bodies of reify are lexical closures, and can refer to the surrounding local scope. *reify* differs from "
 "*proxy* in that:"
 msgstr ""
+"reifyのメソッドボディはレキシカルクロージャーで、周囲のローカルスコープを参照することができる。 *reify*  は以下の点で "
+"*proxy* と異なる:"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:99
 msgid "Only protocols or interfaces are supported, no concrete superclass."
-msgstr ""
+msgstr "プロトコルもしくはインターフェースのみがサポートされており、具象スーパークラスはサポートされない。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:100
 msgid "The method bodies are true methods of the resulting class, not external fns."
-msgstr ""
+msgstr "メソッドのボディは外部の関数ではなく、結果として得られるクラスの本物のメソッドである。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:101
 msgid "Invocation of methods on the instance is direct, not using map lookup."
-msgstr ""
+msgstr "インスタンスに対するメソッド呼び出しはマップのルックアップを行うことなく直接実行される。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:102
 msgid "No support for dynamic swapping of methods in the method map."
-msgstr ""
+msgstr "メソッドマップのメソッドの動的なスワップはサポートされていない。"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:104
@@ -347,12 +433,14 @@ msgid ""
 "The result is better performance than proxy, both in construction and invocation. *reify* is preferable to proxy in "
 "all cases where its constraints are not prohibitive."
 msgstr ""
+"この結果得られるのは、構築と呼び出しどちらにおいてもproxyより優れたパフォーマンスだ。 *reify* はその制約が障害にならな"
+"い限り、あらゆるケースにおいてproxyよりも推奨される。"
 
 #. type: Title ==
 #: en/content/reference/datatypes.adoc:105
 #, no-wrap
 msgid "Java annotation support"
-msgstr ""
+msgstr "Javaアノテーションサポート"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:108
@@ -360,21 +448,23 @@ msgid ""
 "Types created with deftype, defrecord, and definterface, can emit classes that include Java annotations for Java "
 "interop. Annotations are described as meta on:"
 msgstr ""
+"deftype、defrecord、及びdefinterfaceで作成された型は、Javaとの連携のためにJavaアノテーションを含むクラスを生成すること"
+"ができる。アノテーションは以下に対するメタデータとして記述される:"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:111
 msgid "Type name (deftype/record/interface) - class annotations"
-msgstr ""
+msgstr "型名(deftype/record/interface) - クラスアノテーション"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:112
 msgid "Field names (deftype/record) - field annotations"
-msgstr ""
+msgstr "フィールド名(deftype/record) - フィールドアノテーション"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:113
 msgid "Method names (deftype/record) - method annotations"
-msgstr ""
+msgstr "メソッド名(deftype/record) - メソッドアノテーション"
 
 #. type: delimited block -
 #: en/content/reference/datatypes.adoc:120
@@ -383,12 +473,14 @@ msgid ""
 "(import [java.lang.annotation Retention RetentionPolicy Target ElementType]\n"
 "        [javax.xml.ws WebServiceRef WebServiceRefs])\n"
 msgstr ""
+"(import [java.lang.annotation Retention RetentionPolicy Target ElementType]\n"
+"        [javax.xml.ws WebServiceRef WebServiceRefs])\n"
 
 #. type: delimited block -
 #: en/content/reference/datatypes.adoc:122
 #, no-wrap
 msgid "(definterface Foo (foo []))\n"
-msgstr ""
+msgstr "(definterface Foo (foo []))\n"
 
 #. type: delimited block -
 #: en/content/reference/datatypes.adoc:148
@@ -420,6 +512,31 @@ msgid ""
 "                         (WebServiceRef {:name \"ethel\" :mappedName \"lucy\"})]}\n"
 "       foo [this] 42))\n"
 msgstr ""
+";; annotation on type\n"
+"(deftype ^{Deprecated true\n"
+"           Retention RetentionPolicy/RUNTIME\n"
+"           javax.annotation.processing.SupportedOptions [\"foo\" \"bar\" \"baz\"]\n"
+"           javax.xml.ws.soap.Addressing {:enabled false :required true}\n"
+"           WebServiceRefs [(WebServiceRef {:name \"fred\" :type String})\n"
+"                           (WebServiceRef {:name \"ethel\" :mappedName \"lucy\"})]}\n"
+"  Bar [^int a\n"
+"       ;; on field\n"
+"       ^{:tag int\n"
+"         Deprecated true\n"
+"         Retention RetentionPolicy/RUNTIME\n"
+"         javax.annotation.processing.SupportedOptions [\"foo\" \"bar\" \"baz\"]\n"
+"         javax.xml.ws.soap.Addressing {:enabled false :required true}\n"
+"         WebServiceRefs [(WebServiceRef {:name \"fred\" :type String})\n"
+"                         (WebServiceRef {:name \"ethel\" :mappedName \"lucy\"})]}\n"
+"       b]\n"
+"  ;; on method\n"
+"  Foo (^{Deprecated true\n"
+"         Retention RetentionPolicy/RUNTIME\n"
+"         javax.annotation.processing.SupportedOptions [\"foo\" \"bar\" \"baz\"]\n"
+"         javax.xml.ws.soap.Addressing {:enabled false :required true}\n"
+"         WebServiceRefs [(WebServiceRef {:name \"fred\" :type String})\n"
+"                         (WebServiceRef {:name \"ethel\" :mappedName \"lucy\"})]}\n"
+"       foo [this] 42))\n"
 
 #. type: delimited block -
 #: en/content/reference/datatypes.adoc:152
@@ -429,3 +546,6 @@ msgid ""
 "(seq (.getAnnotations (.getField Bar \"b\")))\n"
 "(seq (.getAnnotations (.getMethod Bar \"foo\" nil)))\n"
 msgstr ""
+"(seq (.getAnnotations Bar))\n"
+"(seq (.getAnnotations (.getField Bar \"b\")))\n"
+"(seq (.getAnnotations (.getMethod Bar \"foo\" nil)))\n"
