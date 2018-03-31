@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
-"PO-Revision-Date: 2017-03-02 09:07+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"PO-Revision-Date: 2018-03-31 17:26+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -45,9 +45,10 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -291,7 +292,7 @@ msgstr ""
 #: en/content/reference/transducers.adoc:87
 #, no-wrap
 msgid "*transduce* will immediately (not lazily) reduce over *coll* with the transducer *xform* applied to the reducing function *f*, using init as the initial value if supplied or (f) otherwise. f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.\n"
-msgstr "*transduce* は *coll* を即時に (遅延評価せずに) reducing関数 *f* にトランスデューサー *xform* を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。"
+msgstr "*transduce* は *coll* を即時に (遅延評価せずに) reducing関数 *f* にトランスデューサー *xform* を適用してreduceを行う。initが与えられている場合はそれを初期値とし、それ以外の場合は(f)を初期値とする。f は(ステートフルな場合もある) reduceのコンテキストにおいて値の集約方法を指定する。\n"
 
 #. type: delimited block -
 #: en/content/reference/transducers.adoc:95
@@ -317,6 +318,12 @@ msgid ""
 msgstr ""
 "合成されたxfトランスデューサーは最終的なreducing関数fへの呼び出しとともに左から右へと呼び出される。直前の例では、入力"
 "値がフィルタ、インクリメント、合計される。"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
+#, fuzzy, no-wrap
+msgid "Nested transformations"
+msgstr "Refとトランザクション"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150

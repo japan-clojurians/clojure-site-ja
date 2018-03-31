@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:4 en/content/guides/getting_started.adoc:4
-msgid "Rich Hickey 2016-01-14"
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
 msgstr ""
 
 #. type: Title =
@@ -27,92 +50,176 @@ msgstr ""
 msgid "Getting Started"
 msgstr ""
 
-#. type: Title ==
-#: en/content/guides/getting_started.adoc:10
-#, no-wrap
-msgid "Minimal Install"
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:4
+#: en/content/news/2016/01/14/clojure-org-live.adoc:4
+msgid "Alex Miller 2016-01-14"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:13
-msgid ""
-"Clojure requires only http://java.sun.com/javase/downloads/index.jsp[Java] "
-"1.6 or greater, plus the Clojure JAR file itself."
+msgid "Welcome to Clojure!"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:15
 msgid ""
-"<<xref/../../community/downloads#,Download>> and unzip Clojure. In the "
-"directory in which you expanded clojure.zip, run:"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/getting_started.adoc:18
-#, no-wrap
-msgid "java -cp clojure-1.8.0.jar clojure.main\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/getting_started.adoc:20
-msgid "This will bring up a read-eval-print loop (REPL). From the REPL, try:"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/getting_started.adoc:25
-#, no-wrap
-msgid ""
-"user=> (+ 1 2 3)\n"
-"6\n"
-"user=> (javax.swing.JOptionPane/showMessageDialog nil \"Hello World\")\n"
+"Check out <<learn/syntax#,Learn Clojure>>, <<xref/../../community/resources#,"
+"Resources>>, or <<xref/../../community/books#,Books>> for learning the "
+"language!"
 msgstr ""
 
 #. type: Title ==
+#: en/content/guides/getting_started.adoc:16
+#, no-wrap
+msgid "Clojure installer and CLI tools"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:19
+msgid ""
+"Clojure provides <<deps_and_cli#,command line tools>> that can be used to "
+"start a Clojure repl, use Clojure and Java libraries, and start Clojure "
+"programs."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/getting_started.adoc:20
+#, no-wrap
+msgid "Installation on Mac via `brew`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:23
+msgid "Install the command line tools with brew:"
+msgstr ""
+
+#. type: delimited block -
 #: en/content/guides/getting_started.adoc:27
 #, no-wrap
-msgid "Try Clojure Online"
+msgid "brew install clojure\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:30
-msgid "http://tryclj.com/[TryClojure] provides a browser-based Clojure REPL"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/getting_started.adoc:31
 msgid ""
-"http://himera.herokuapp.com/index.html[Himera] provides a browser-based "
-"ClojureScript REPL"
-msgstr ""
-
-#. type: Title ==
-#: en/content/guides/getting_started.adoc:32
-#, no-wrap
-msgid "Clojure with Leiningen"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/getting_started.adoc:35
-msgid ""
-"https://leiningen.org/[Leiningen] is a build and project management tool "
-"written in Clojure and used pervasively throughout the Clojure community. "
-"Follow the instructions there to install Leiningen."
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/getting_started.adoc:37
-msgid "Once it's installed you can start a REPL with:"
+"If you've already installed, you can upgrade to the latest release with:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/getting_started.adoc:41
+#: en/content/guides/getting_started.adoc:34
 #, no-wrap
-msgid "lein repl\n"
+msgid "brew upgrade clojure\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/getting_started.adoc:36
+#, no-wrap
+msgid "Installation on Linux"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:43
+#: en/content/guides/getting_started.adoc:39
 msgid ""
-"Check out the <<xref/../../community/resources#,Resources>> page for "
-"tutorials and other great resources!"
+"Ensure that the following dependencies are installed: bash, curl, rlwrap, "
+"and Java."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:40
+msgid ""
+"Use the linux-install script to download and run the install, which will "
+"create /usr/local/bin/clj, /usr/local/bin/clojure, and /usr/local/lib/"
+"clojure:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/getting_started.adoc:46
+#, no-wrap
+msgid ""
+"curl -O https://download.clojure.org/install/linux-install-1.9.0.358.sh\n"
+"chmod +x linux-install-1.9.0.358.sh\n"
+"sudo ./linux-install-1.9.0.358.sh\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:49
+msgid "Platform installers (apt-get, etc) will be available in the future."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/getting_started.adoc:50
+#, no-wrap
+msgid "Installation on Windows"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:53
+msgid "Not yet available - see Leiningen or Boot instead."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/getting_started.adoc:54
+#, no-wrap
+msgid "Other ways to run Clojure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:57
+#, no-wrap
+msgid "*Local build*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:59
+msgid "Download and build the Clojure source:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/getting_started.adoc:66
+#, no-wrap
+msgid ""
+"git clone https://github.com/clojure/clojure.git\n"
+"cd clojure\n"
+"./antsetup.sh\n"
+"ant local\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:69
+msgid "Then start the REPL with the local jar:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/getting_started.adoc:73
+#, no-wrap
+msgid "java -jar clojure.jar\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:76
+#, no-wrap
+msgid "*Try Clojure online*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:78
+msgid ""
+"https://repl.it/languages/clojure[repl.it] provides a browser-based Clojure "
+"repl for interactive exploration."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:80
+#, no-wrap
+msgid "*Build tools*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/getting_started.adoc:81
+msgid ""
+"Build tools provide a range of capabilities for building, running, and "
+"deploying Clojure libraries and applications. The two most popular Clojure "
+"build tools are https://leiningen.org/[Leiningen] and http://boot-clj.com/"
+"[Boot]."
 msgstr ""

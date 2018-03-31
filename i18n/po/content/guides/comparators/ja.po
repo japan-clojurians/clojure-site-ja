@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -85,13 +85,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/comparators.adoc:42
+msgid ""
+"Write either a 3-way comparator or a boolean comparator: ** A 3-way comparator takes 2 values, _x_ and _y_, and "
+"returns a Java 32-bit _int_ that is negative if"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/comparators.adoc:48
 #, no-wrap
 msgid ""
-"Write either a 3-way comparator or a boolean comparator:\n"
-"** A 3-way comparator takes 2 values, _x_ and _y_, and returns a Java 32-bit _int_ that is negative if\n"
-"    _x_ comes before _y_, positive if _x_ comes after _y_, or 0 if they are equal. Use values -1, 0, and 1\n"
-"    if you have no reason to prefer other return values.\n"
+"_x_ comes before _y_, positive if _x_ comes after _y_, or 0 if they are equal. Use values -1, 0, and 1\n"
+"if you have no reason to prefer other return values.\n"
 "** A boolean comparator takes 2 values, _x_ and _y_, and returns true if _x_ comes before _y_, or\n"
 "    false otherwise (including if _x_ and _y_ are equal). `<` and `>` are good examples. `\\<=`\n"
 "    and `>=` are not. Performance note: your boolean comparator may be called twice to distinguish\n"

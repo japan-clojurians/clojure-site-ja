@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,7 @@ msgstr ""
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
 #: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
 #: en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 #: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
@@ -947,8 +948,8 @@ msgstr ""
 #: en/content/about/spec.adoc:336
 msgid ""
 "Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure."
-"github.io/clojure/branch-master/clojure.spec-api.html[API docs] for more "
-"examples and usage information."
+"github.io/spec.alpha/index.html[API docs] for more examples and usage "
+"information."
 msgstr ""
 
 #. type: Title ==

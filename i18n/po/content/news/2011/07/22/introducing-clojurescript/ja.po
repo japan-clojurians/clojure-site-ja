@@ -128,7 +128,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:30 en/content/about/spec.adoc:99
 msgid "Destructuring"
-msgstr ""
+msgstr "分配束縛"
 
 #. type: Plain text
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:31

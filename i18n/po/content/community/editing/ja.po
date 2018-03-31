@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,6 +26,12 @@ msgstr ""
 #: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
 msgid "''''"
 msgstr "''''"
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
+#, fuzzy, no-wrap
+msgid "Nested transformations"
+msgstr "Refとトランザクション"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150

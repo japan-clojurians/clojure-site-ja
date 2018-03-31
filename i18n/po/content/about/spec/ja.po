@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2018-03-12 22:06+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -45,9 +45,10 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -65,9 +66,13 @@ msgstr "ドキュメンテーション"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Maps"
-msgstr "マップ"
+msgstr ""
+"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
+"マップ\n"
+"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
+"Maps (マップ)"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:1199 en/content/about/spec.adoc:100
@@ -110,7 +115,10 @@ msgid ""
 "While Clojure has some support for type hints, they are not an enforcement mechanism, nor comprehensive, and are "
 "limited to communicating information to the compiler to aid in efficient code generation.  Clojure gets runtime "
 "checking of a richer set of types by the JVM itself."
-msgstr "Clojureは動的言語だ。何よりこれは型アノテーションがコードの実行に必要とされないことを意味する。Clojureは型ヒントをいくらかサポートしているが、型ヒントは強制のメカニズムではなく、網羅的でもなく、効率的なコード生成を支援するためコンパイラに情報を伝えることに限定されている。ClojureはJVM自身による豊富な型に対する実行時チェックの恩恵を受けている。"
+msgstr ""
+"Clojureは動的言語だ。何よりこれは型アノテーションがコードの実行に必要とされないことを意味する。Clojureは型ヒントをいく"
+"らかサポートしているが、型ヒントは強制のメカニズムではなく、網羅的でもなく、効率的なコード生成を支援するためコンパイラ"
+"に情報を伝えることに限定されている。ClojureはJVM自身による豊富な型に対する実行時チェックの恩恵を受けている。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:29
@@ -119,7 +127,11 @@ msgid ""
 "represent information as data.  Thus important properties of Clojure systems are represented and conveyed by the "
 "shape and other predicative properties of the data, not captured or checked anywhere since the runtime types are "
 "indistinguishable heterogeneous maps and vectors."
-msgstr "しかし、情報をデータとしてシンプルに表現することが常にコミュニティで広く評価され実践されてきたClojureの指針だった。したがって、Clojureシステムの重要なプロパティはデータの形状やその他の述語的なプロパティによって表現され伝達され、実行時の型は区別の付かない異種の型が混在するマップやベクターであるため、それ以外で捕捉されたりチェックされたりすることはない。"
+msgstr ""
+"しかし、情報をデータとしてシンプルに表現することが常にコミュニティで広く評価され実践されてきたClojureの指針だった。し"
+"たがって、Clojureシステムの重要なプロパティはデータの形状やその他の述語的なプロパティによって表現され伝達され、実行時"
+"の型は区別の付かない異種の型が混在するマップやベクターであるため、それ以外で捕捉されたりチェックされたりすることはな"
+"い。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:34
@@ -127,7 +139,10 @@ msgid ""
 "Documentation strings can be used to communicate with human consumers, but they can't be leveraged by programs or "
 "tests, i.e. they have minimal power.  Users have turned to various libraries such as https://github.com/plumatic/"
 "schema[Schema] and https://github.com/miner/herbert[Herbert] to get more powerful specifications."
-msgstr "ドキュメンテーション文字列は人間の利用者とのコミュニケーションに利用可能だが、プログラムやテストで活用することはできない、つまり最小限の力しか持っていないのだ。ユーザーはより強力な仕様記述を得るために https://github.com/plumatic/schema[Schema] や https://github.com/miner/herbert[Herbert] のような様々なライブラリを頼ってきた。"
+msgstr ""
+"ドキュメンテーション文字列は人間の利用者とのコミュニケーションに利用可能だが、プログラムやテストで活用することはできな"
+"い、つまり最小限の力しか持っていないのだ。ユーザーはより強力な仕様記述を得るために https://github.com/plumatic/"
+"schema[Schema] や https://github.com/miner/herbert[Herbert] のような様々なライブラリを頼ってきた。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:35
@@ -141,7 +156,10 @@ msgid ""
 "Most systems for specifying structures conflate the specification of the key set (e.g. of keys in a map, fields in an "
 "object) with the specification of the values designated by those keys.  I.e. in such approaches the schema for a map "
 "might say :a-key's type is x-type and :b-key's type is y-type.  This is a major source of rigidity and redundancy."
-msgstr "構造を記述するためのたいていのシステムではキーのセットに関する仕様(例えばマップのキーやオブジェクトのフィールドに関するもの)とそうしたキーが指し示す値に関する仕様を混同している。つまり、そうしたアプローチではあるマップに対するスキーマは:a-keyの型がx-typeで:b-keyの型がy-typeだと言うかもしれない。これは硬直性と冗長性の大きな原因だ。"
+msgstr ""
+"構造を記述するためのたいていのシステムではキーのセットに関する仕様(例えばマップのキーやオブジェクトのフィールドに関す"
+"るもの)とそうしたキーが指し示す値に関する仕様を混同している。つまり、そうしたアプローチではあるマップに対するスキーマ"
+"は:a-keyの型がx-typeで:b-keyの型がy-typeだと言うかもしれない。これは硬直性と冗長性の大きな原因だ。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:47
@@ -151,7 +169,12 @@ msgid ""
 "subsets, intersections and unions of the same keys, and in general ought to have the same semantic for the same key "
 "wherever it is used. Defining specifications of every subset/union/intersection, and then redundantly stating the "
 "semantic of each key is both an antipattern and unworkable in the most dynamic cases."
-msgstr "Clojureではマップを動的に合成し、マージし、構築することによって力を得ている。日常的に選択的なデータや部分的なデータ、信頼できない外部ソースから生み出されたデータ、動的なクエリなどを扱っている。こうしたマップは同一のキーの様々な集合や部分集合、共通部分、和集合を表し、一般に同一のキーはどこで使われても同一の意味を持つ必要がある。あらゆる部分集合/和集合/共通部分に対する仕様を定義し、そして個々のキーの意味を冗長に述べるというのは、たいていの動的なケースでアンチパターンであり上手く機能するものでもない。"
+msgstr ""
+"Clojureではマップを動的に合成し、マージし、構築することによって力を得ている。日常的に選択的なデータや部分的なデータ、"
+"信頼できない外部ソースから生み出されたデータ、動的なクエリなどを扱っている。こうしたマップは同一のキーの様々な集合や部"
+"分集合、共通部分、和集合を表し、一般に同一のキーはどこで使われても同一の意味を持つ必要がある。あらゆる部分集合/和集合/"
+"共通部分に対する仕様を定義し、そして個々のキーの意味を冗長に述べるというのは、たいていの動的なケースでアンチパターンで"
+"あり上手く機能するものでもない。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:48
@@ -168,7 +191,12 @@ msgid ""
 "'macro grammars', but in fact macros are just functions of data->data and any solution for data validation and "
 "destructuring should work as well for them as for any other functions.  I.e. macros are an instance of the problems "
 "above."
-msgstr "多くのユーザー、特に初心者は、とりわけ2つの実行コンテキストがあるマクロ(マクロのコンパイル時の実行と実行時の展開はどちらもユーザーエラーのために失敗しうる)において、手書きのパース処理やコードの分配束縛により生成されるエラーメッセージにフラストレーションを覚えたり困難に直面したりしている。これは「マクロ文法」の必要性につながっているが、実際にはマクロはデータ->データの関数にすぎず、データのバリデーションや分配束縛のためのあらゆる解決策はその他の関数と同様にマクロにも機能するはずだ。つまり、マクロは上記の問題の一例だといえる。"
+msgstr ""
+"多くのユーザー、特に初心者は、とりわけ2つの実行コンテキストがあるマクロ(マクロのコンパイル時の実行と実行時の展開はどち"
+"らもユーザーエラーのために失敗しうる)において、手書きのパース処理やコードの分配束縛により生成されるエラーメッセージに"
+"フラストレーションを覚えたり困難に直面したりしている。これは「マクロ文法」の必要性につながっているが、実際にはマクロは"
+"データ->データの関数にすぎず、データのバリデーションや分配束縛のためのあらゆる解決策はその他の関数と同様にマクロにも機"
+"能するはずだ。つまり、マクロは上記の問題の一例だといえる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:56
@@ -183,7 +211,11 @@ msgid ""
 "captured by common type systems.  But manual testing has a very low effectiveness/effort ratio. Property-based, "
 "generative testing, as implemented for Clojure in https://github.com/clojure/test.check[test.check], has proved to be "
 "far more powerful than manually written tests."
-msgstr "最後に、動的でもそうでなくてもすべての言語において、テストは品質に不可欠なものだ。あまりにも多くの重要なプロパティが一般的な型システムでは捕捉されない。しかし手動でのテストは労力に対する効果の割合が非常に低い。 https://github.com/clojure/test.check[test.check] でClojure向けに実装されているような、プロパティベースの生成的テストは手書きのテストよりもずっと強力であることが分かってきた。"
+msgstr ""
+"最後に、動的でもそうでなくてもすべての言語において、テストは品質に不可欠なものだ。あまりにも多くの重要なプロパティが一"
+"般的な型システムでは捕捉されない。しかし手動でのテストは労力に対する効果の割合が非常に低い。 https://github.com/"
+"clojure/test.check[test.check] でClojure向けに実装されているような、プロパティベースの生成的テストは手書きのテストより"
+"もずっと強力であることが分かってきた。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:68
@@ -192,7 +224,11 @@ msgid ""
 "produce, and which, at the function-level, have substantial overlap with function specifications.  Many interesting "
 "properties at the function level would already be captured by structural+predicative specs.  Ideally, specs should "
 "integrate with generative testing and provide certain categories of generative tests 'for free'."
-msgstr "それでも、プロパティベーストテストはプロパティの定義が必要となり、それにはそれを生み出すためのさらなる労力と熟練が必要となり、そうした定義は関数のレベルでは関数の仕様記述と大きな重複がある。関数のレベルでの多くの興味深いプロパティがすでに構造的+述語的なspecによって捕捉されているだろう。理想的には、specは生成的テストと統合し、ある種の生成的テストを「ただで」提供するべきだ。"
+msgstr ""
+"それでも、プロパティベーストテストはプロパティの定義が必要となり、それにはそれを生み出すためのさらなる労力と熟練が必要"
+"となり、そうした定義は関数のレベルでは関数の仕様記述と大きな重複がある。関数のレベルでの多くの興味深いプロパティがすで"
+"に構造的+述語的なspecによって捕捉されているだろう。理想的には、specは生成的テストと統合し、ある種の生成的テストを「た"
+"だで」提供するべきだ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:69
@@ -242,7 +278,9 @@ msgstr "Specify - species + -ficus -fic (make)"
 msgid ""
 "A specification is about how something 'looks', but is, most importantly, something that is looked at.  Specs should "
 "be readable, composed of 'words' (predicate functions) programmers are already using, and integrated in documentation."
-msgstr "仕様(specification)とはあるものがどう「見える」かに関するものだが、最も重要なのは、見られるものだ。specは、読みやすく、プログラマがすでに使っている「単語」(述語関数)で構成され、ドキュメンテーションに統合されているべきだ。"
+msgstr ""
+"仕様(specification)とはあるものがどう「見える」かに関するものだが、最も重要なのは、見られるものだ。specは、読みやす"
+"く、プログラマがすでに使っている「単語」(述語関数)で構成され、ドキュメンテーションに統合されているべきだ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:89
@@ -301,7 +339,9 @@ msgstr "侵入を最小化"
 msgid ""
 "Don't require that people e.g. define their functions differently. Minor modifications to `doc` and `macroexpand` "
 "will allow independently written specs to adorn fn/macro behavior without redefinition."
-msgstr "例えば関数を異なる方法で定義することを要求してはならない。 `doc` と `macroexpand` への小さな変更によって、独立して書かれたspecが再定義することなくfn/macroの振る舞いを修飾することが可能になる。"
+msgstr ""
+"例えば関数を異なる方法で定義することを要求してはならない。 `doc` と `macroexpand` への小さな変更によって、独立して書か"
+"れたspecが再定義することなくfn/macroの振る舞いを修飾することが可能になる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:107
@@ -316,7 +356,11 @@ msgid ""
 "of namespaced keyword to value-spec. Combining keys into sets (to specify maps) becomes orthogonal, and checking "
 "becomes possible in the fully-dynamic case, i.e. even when no map spec is present, attributes (key-values) can be "
 "checked."
-msgstr "マップ(キーセット)のspecを属性(キー->値)のspecから分けておこう。ネームスペース付きのキーワードから値へのspecという、属性の粒度でのspecを推奨しサポートしよう。(マップの仕様を記述するために)キーを組み合わせてセットにすることが直交的になり、完全に動的なケースでのチェックが可能になる、つまりマップのspecが存在しない場合でさえ、属性(キー-値)はチェックできる。"
+msgstr ""
+"マップ(キーセット)のspecを属性(キー->値)のspecから分けておこう。ネームスペース付きのキーワードから値へのspecという、属"
+"性の粒度でのspecを推奨しサポートしよう。(マップの仕様を記述するために)キーを組み合わせてセットにすることが直交的にな"
+"り、完全に動的なケースでのチェックが可能になる、つまりマップのspecが存在しない場合でさえ、属性(キー-値)はチェックでき"
+"る。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:113
@@ -354,7 +398,11 @@ msgid ""
 "We don't (and couldn't) live in a world where we can't make mistakes. Instead, we periodically check that we "
 "haven't.  Amazon doesn't send you your TV via a `UPS<Trucks<Boxes<TV>>>`. So occasionally you might get a microwave, "
 "but the supply chain isn't burdened with correctness proof. Instead we check at the edges and run tests."
-msgstr "私たちはミスを起こしえない世界で生きているわけではない(そうすることもできないだろう)。その代わりに、私たちは定期的にミスしていないことをチェックするのだ。Amazonは `UPS<Trucks<Boxes<TV>>>` 経由でテレビを送ってくるわけではない。そのため時には電子レンジを受け取ることもあるかもしれないが、サプライチェーンが正確性を証明する責任を負っているわけではない。その代わりに私たちが終端でチェックしてテストするのだ。"
+msgstr ""
+"私たちはミスを起こしえない世界で生きているわけではない(そうすることもできないだろう)。その代わりに、私たちは定期的にミ"
+"スしていないことをチェックするのだ。Amazonは `UPS<Trucks<Boxes<TV>>>` 経由でテレビを送ってくるわけではない。そのため時"
+"には電子レンジを受け取ることもあるかもしれないが、サプライチェーンが正確性を証明する責任を負っているわけではない。その"
+"代わりに私たちが終端でチェックしてテストするのだ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:125
@@ -370,7 +418,12 @@ msgid ""
 "representational types and tagging to predicates that e.g. narrow domains or detail relationships between inputs or "
 "between inputs and output.  Additionally, the properties we care most about are often those of the runtime values, "
 "not some static notion.  Thus **spec** is not a type system."
-msgstr "主に型システムがしているのはそれなのだが、仕様記述を証明可能なものに制限する理由はない。システムについてコミュニケーションを取り、正しさを確かめたいことはもっとたくさんある。これは、例えば定義域を狭めたり複数の入力の間の関係や入力と出力の間の関係を詳細に述べる、構造的/表象的な型や述語に対するタグ付け以上のものだ。加えて、私たちが最も気にするプロパティは多くの場合実行時の値に関するプロパティであり、静的な概念のようなものではない。そういうわけで **spec** は型システムではない。"
+msgstr ""
+"主に型システムがしているのはそれなのだが、仕様記述を証明可能なものに制限する理由はない。システムについてコミュニケー"
+"ションを取り、正しさを確かめたいことはもっとたくさんある。これは、例えば定義域を狭めたり複数の入力の間の関係や入力と出"
+"力の間の関係を詳細に述べる、構造的/表象的な型や述語に対するタグ付け以上のものだ。加えて、私たちが最も気にするプロパ"
+"ティは多くの場合実行時の値に関するプロパティであり、静的な概念のようなものではない。そういうわけで **spec** は型システ"
+"ムではない。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:133
@@ -386,7 +439,12 @@ msgid ""
 "sequence components or untagged union bindings. The utility of this becomes evident when **spec** needs to talk to "
 "users about specs, e.g. in error reporting, and vice versa, e.g. when users want to override generators in specs. "
 "When all branches are named, you can talk about parts of specs using __paths__."
-msgstr "あらゆるプログラムは(型システムが使わない場合でさえ)名前を使い、名前は重要な意味を捉えている。 `Int x Int x Int` は十分に良いものではない(長さ/幅/高さ なのか 高さ/幅/奥行き なのか?)。そのため、 **spec** にはラベルなしのシーケンス要素やタグ付けされていない和集合の束縛はない。このことの効用は、 **spec** がspecについてユーザーに何か言わければならない時、例えばエラー報告する場合、また逆に、例えばユーザーがspecのジェネレータをオーバーライドしたい場合に明らかになる。すべての分岐に名前が付いていれば、 __paths__ を使ってspecの部分について言うことができる。"
+msgstr ""
+"あらゆるプログラムは(型システムが使わない場合でさえ)名前を使い、名前は重要な意味を捉えている。 `Int x Int x Int` は十"
+"分に良いものではない(長さ/幅/高さ なのか 高さ/幅/奥行き なのか?)。そのため、 **spec** にはラベルなしのシーケンス要素や"
+"タグ付けされていない和集合の束縛はない。このことの効用は、 **spec** がspecについてユーザーに何か言わければならない時、"
+"例えばエラー報告する場合、また逆に、例えばユーザーがspecのジェネレータをオーバーライドしたい場合に明らかになる。すべて"
+"の分岐に名前が付いていれば、 __paths__ を使ってspecの部分について言うことができる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:140
@@ -403,7 +461,14 @@ msgid ""
 "symbols to name specs. People using namespaced keys for their informational maps (a practice we'd like to see grow) "
 "can register the specs for those attributes directly under those names. This categorically changes the self-"
 "description of maps, particularly in dynamic contexts, and encourages composition and consistency."
-msgstr "Clojureはネームスペース付きのキーワードとシンボルをサポートしている。ここではネームスペースで修飾された名前のことを言っているのであって、Clojureのネームスペースオブジェクトのことを言っているわけではないことに注意しよう。これらは悲しいことにあまり活用されていないが、ディクショナリ/db/マップ/セットの中で衝突することなく常に共存することができるため、重要な利益をもたらす。 **spec** はspecを名付けるのにネームスペース付きのキーワードとシンボル(だけ)を認めている。ネームスペース付きのキーを情報を持ったマップのために使う(広まってほしい習慣だ)と、マップの属性のためのspecを直接マップのキーの名前で登録することができる。このことは、とりわけ動的な状況において、マップというものの自己記述を絶対的に変えることになり、合成や一貫性を促進することになる。"
+msgstr ""
+"Clojureはネームスペース付きのキーワードとシンボルをサポートしている。ここではネームスペースで修飾された名前のことを"
+"言っているのであって、Clojureのネームスペースオブジェクトのことを言っているわけではないことに注意しよう。これらは悲し"
+"いことにあまり活用されていないが、ディクショナリ/db/マップ/セットの中で衝突することなく常に共存することができるため、"
+"重要な利益をもたらす。 **spec** はspecを名付けるのにネームスペース付きのキーワードとシンボル(だけ)を認めている。ネーム"
+"スペース付きのキーを情報を持ったマップのために使う(広まってほしい習慣だ)と、マップの属性のためのspecを直接マップのキー"
+"の名前で登録することができる。このことは、とりわけ動的な状況において、マップというものの自己記述を絶対的に変えることに"
+"なり、合成や一貫性を促進することになる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:148
@@ -461,7 +526,12 @@ msgid ""
 "semantics are independent. Map checking is two-phase, required key presence then key/value conformance.  The latter "
 "can be done even when the (namespace-qualified) keys present at runtime are not in the map spec.  This is vital for "
 "composition and dynamicity."
-msgstr "上述の通り、キーの値についての詳細を定義したマップは、根本的な関心の絡まり(complecting)であり、支持できないものだ。マップのspecは必須/オプションのキー(つまりセットの所属関係)について詳しく述べるが、キーワード/属性/値の意味は独立している。マップのチェックは、必須のキーの存在、そしてキー/値の一致という2フェーズだ。後者は、実行時に存在する(ネームスペース修飾された)キーがマップのspecにない場合でさえ行うことができる。これは合成と動的な性質のために極めて重要なものだ。"
+msgstr ""
+"上述の通り、キーの値についての詳細を定義したマップは、根本的な関心の絡まり(complecting)であり、支持できないものだ。"
+"マップのspecは必須/オプションのキー(つまりセットの所属関係)について詳しく述べるが、キーワード/属性/値の意味は独立して"
+"いる。マップのチェックは、必須のキーの存在、そしてキー/値の一致という2フェーズだ。後者は、実行時に存在する(ネームス"
+"ペース修飾された)キーがマップのspecにない場合でさえ行うことができる。これは合成と動的な性質のために極めて重要なもの"
+"だ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:170
@@ -476,7 +546,10 @@ msgid ""
 "detriment. The best and most useful specs (and interfaces) are related to purely information aspects.  Only "
 "information specs work over wires and across systems. We will always prioritize, and where there is a conflict, "
 "prefer, the information approach."
-msgstr "いつでも、人は仕様記述システムを実装の決定について詳述するのに利用しようとするが、そうすることによって自らに損害を与えている。最も良く最も有用なspec(とインターフェース)は純粋に情報の側面に関するものだ。情報のspecだけがネットワークを越えてシステムを横断して機能する。私たちは情報のアプローチを常に優先し、対立がある場合にはそちらを好むだろう。"
+msgstr ""
+"いつでも、人は仕様記述システムを実装の決定について詳述するのに利用しようとするが、そうすることによって自らに損害を与え"
+"ている。最も良く最も有用なspec(とインターフェース)は純粋に情報の側面に関するものだ。情報のspecだけがネットワークを越え"
+"てシステムを横断して機能する。私たちは情報のアプローチを常に優先し、対立がある場合にはそちらを好むだろう。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:176
@@ -511,7 +584,10 @@ msgid ""
 "should not need to know anything about ``test.check`` until and unless they want to write their own generators or "
 "supplement **spec**'s generated tests with further property-based tests of their own. There should be no production "
 "runtime dependency on ``test.check``."
-msgstr "**spec** を土台とした生成的テストは ``test.check`` を活用し、再発明はしない。しかし、specのユーザーは、自分自身でジェネレータを書きたかったり、さらなるプロパティベーストテストで **spec** が生成したテストを補いたかったりするのでない限り、 ``test.check`` について何も知る必要がないようにするべきだ。"
+msgstr ""
+"**spec** を土台とした生成的テストは ``test.check`` を活用し、再発明はしない。しかし、specのユーザーは、自分自身でジェ"
+"ネレータを書きたかったり、さらなるプロパティベーストテストで **spec** が生成したテストを補いたかったりするのでない限"
+"り、 ``test.check`` について何も知る必要がないようにするべきだ。"
 
 #. type: Title =
 #: en/content/about/spec.adoc:189 en/content/about/features.adoc:1
@@ -538,7 +614,11 @@ msgid ""
 "about the simple boolean predicates you are used to like ``int?`` or `symbol?`, or expressions you build yourself "
 "like `#(< 42 % 66)`.  **spec** adds logical ops like ``spec/and`` and ``spec/or`` which combine specs in a logical "
 "way and offer deep reporting, generation and conform support and, in the case of ``spec/or``, tagged returns."
-msgstr "基本的なアイディアは、specは単なる述語の論理的な組み合わせにすぎないというものだ。根底では、 ``int?`` や ``symbol?`` 、自分で組み立てた式 `#(< 42 % 66)` のような、慣れたシンプルなbooleanの述語について言っているのだ。 **spec** は ``spec/and`` と ``spec/or`` のような論理演算子を追加しており、論理的な方法でspecを組み合わせ、深いところまでの報告、生成、conformのサポート、 ``spec/or`` のケースではタグ付きの戻り値を提供する。"
+msgstr ""
+"基本的なアイディアは、specは単なる述語の論理的な組み合わせにすぎないというものだ。根底では、 ``int?`` や ``symbol?"
+"`` 、自分で組み立てた式 `#(< 42 % 66)` のような、慣れたシンプルなbooleanの述語について言っているのだ。 **spec** は "
+"``spec/and`` と ``spec/or`` のような論理演算子を追加しており、論理的な方法でspecを組み合わせ、深いところまでの報告、生"
+"成、conformのサポート、 ``spec/or`` のケースではタグ付きの戻り値を提供する。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:201
@@ -567,7 +647,11 @@ msgid ""
 "specifying the __values__ e.g. ``::x`` can take. It is the (enforced) opinion of **spec** that the specification of "
 "values associated with a namespaced keyword, like ``:my.ns/k``, should be registered under that keyword itself, and "
 "applied in any map in which that keyword appears. There are a number of advantages to this:"
-msgstr "**spec** と他のシステムとの間で最も見た目に明らかな違いのひとつは、マップのspecに(例えば ``::x`` がとりうる) __値__ について記述する場所がないことだ。これは、 ``:my.ns/k`` のようなネームスペース付きのキーワードに関連付けられた値の仕様はそのキーワード自体に登録され、そのキーワードが現れるあらゆるマップに適用されるべきだという **spec** の(強制的な)主張だ。これにはいくつもの利点がある:"
+msgstr ""
+"**spec** と他のシステムとの間で最も見た目に明らかな違いのひとつは、マップのspecに(例えば ``::x`` がとりうる) __値__ に"
+"ついて記述する場所がないことだ。これは、 ``:my.ns/k`` のようなネームスペース付きのキーワードに関連付けられた値の仕様は"
+"そのキーワード自体に登録され、そのキーワードが現れるあらゆるマップに適用されるべきだという **spec** の(強制的な)主張"
+"だ。これにはいくつもの利点がある:"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:214
@@ -595,7 +679,10 @@ msgid ""
 "This last point is vital when dynamically building up, composing, or generating maps. Creating a spec for every map "
 "subset/union/intersection is unworkable. It also facilitates fail-fast detection of bad data - when it is introduced "
 "vs when it is consumed."
-msgstr "この最後の点はマップを動的に構築し、合成し、生成する場合に極めて重要だ。あらゆるマップの部分集合/和集合/共通部分にspecを作るというのは上手くいかない。利用される時ではなく入ってきた時にフェイルファストで悪いデータを検知することも容易になる。"
+msgstr ""
+"この最後の点はマップを動的に構築し、合成し、生成する場合に極めて重要だ。あらゆるマップの部分集合/和集合/共通部分にspec"
+"を作るというのは上手くいかない。利用される時ではなく入ってきた時にフェイルファストで悪いデータを検知することも容易にな"
+"る。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:224
@@ -618,7 +705,10 @@ msgid ""
 "This specs a map that requires the unqualified keys ``:a`` and ``:b`` but validates and generates them using specs "
 "(when defined) named ``:my.ns/a`` and ``:my.ns/b`` respectively. Note that this cannot convey the same power to "
 "unqualified keywords as have namespaced keywords - the resulting maps are not self-describing."
-msgstr "これは、非修飾のキー ``:a`` と ``:b`` を要求するが、それぞれ ``:my.ns/a`` と ``:my.ns/b`` という名前のspecを(定義されている場合に)利用してバリデーションと生成を行うマップを記述している。これは非修飾のキーワードがネームスペース付きキーワードが持つのと同等の力を伝えることはできないことに注意しよう。結果として得られるマップは自己記述的ではないのだ。"
+msgstr ""
+"これは、非修飾のキー ``:a`` と ``:b`` を要求するが、それぞれ ``:my.ns/a`` と ``:my.ns/b`` という名前のspecを(定義され"
+"ている場合に)利用してバリデーションと生成を行うマップを記述している。これは非修飾のキーワードがネームスペース付きキー"
+"ワードが持つのと同等の力を伝えることはできないことに注意しよう。結果として得られるマップは自己記述的ではないのだ。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:237
@@ -667,7 +757,9 @@ msgstr "これらは任意にネストして複合的な式を形成する。"
 msgid ""
 "Note that ``cat`` and ``alt`` require all of their components be labeled, and the return value of each is a map with "
 "the keys corresponding to the matched components. In this way **spec** regexes act as destructuring and parsing tools."
-msgstr "``cat`` と ``alt`` はすべての構成要素がラベル付けされていることを要求し、それぞれ戻り値はマッチした構成要素に対応するキーのマップであることに注意しよう。このように **spec** の正規表現は分配束縛やパース処理のツールとして振る舞う。"
+msgstr ""
+"``cat`` と ``alt`` はすべての構成要素がラベル付けされていることを要求し、それぞれ戻り値はマッチした構成要素に対応する"
+"キーのマップであることに注意しよう。このように **spec** の正規表現は分配束縛やパース処理のツールとして振る舞う。"
 
 #. type: delimited block -
 #: en/content/about/spec.adoc:269
@@ -721,7 +813,10 @@ msgid ""
 "As you can see above, the basic operation for using specs is ``conform``, which takes a spec and a value and returns "
 "the conformed value or ``:clojure.spec.alpha/invalid`` if the value did not conform. When the value does not conform "
 "you can call ``explain`` or ``explain-data`` to find out why it didn't."
-msgstr "上で見た通り、specを使うための基本操作は ``conform`` で、specと値をとって一致した値、もしくは値が一致しなかった場合には ``:clojure.spec.alpha/invalid`` を返す。値が一致しない時には ``explain`` または ``explain-data`` を呼び出してなぜ一致しなかったのか調べることができる。"
+msgstr ""
+"上で見た通り、specを使うための基本操作は ``conform`` で、specと値をとって一致した値、もしくは値が一致しなかった場合に"
+"は ``:clojure.spec.alpha/invalid`` を返す。値が一致しない時には ``explain`` または ``explain-data`` を呼び出してなぜ一"
+"致しなかったのか調べることができる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:276
@@ -735,7 +830,10 @@ msgid ""
 "The primary operations for defining specs are s/def, s/and, s/or, s/keys and the regex ops. There is a ``spec`` "
 "function that can take a predicate function or expression, a set, or a regex op, and can also take an optional "
 "generator which would override the generator implied by the predicate(s)."
-msgstr "specを定義するための主要な操作はs/def, s/and, s/or, s/keysと正規表現演算子だ。 述語関数または式、セット、もしくは正規表現演算子をとり、述語が暗示するジェネレータをオーバーライドするオプションのジェネレータをとることもできる ``spec`` 関数がある。"
+msgstr ""
+"specを定義するための主要な操作はs/def, s/and, s/or, s/keysと正規表現演算子だ。 述語関数または式、セット、もしくは正規"
+"表現演算子をとり、述語が暗示するジェネレータをオーバーライドするオプションのジェネレータをとることもできる ``spec`` 関"
+"数がある。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:285
@@ -743,7 +841,10 @@ msgid ""
 "Note however, that ``def, and, or, keys`` spec fns and the regex ops can all take and use predicate functions and "
 "sets directly - and do not need them to be wrapped by ``spec``. ``spec`` should only be needed when you want to "
 "override a generator or to specify that a nested regex starts anew, vs being included in the same pattern."
-msgstr "しかし、 ``def, and, or, keys`` のspec関数と正規表現演算子はいずれも述語関数とセットを直接とって使うことができ、 ``spec`` でラップする必要はないことに注意しよう。 ``spec`` はジェネレータをオーバーライドしたい場合やネストした正規表現が同じパターンに含まれるのではなく新しいパターンを開始するように記述したい場合にのみ必要となるはずだ。"
+msgstr ""
+"しかし、 ``def, and, or, keys`` のspec関数と正規表現演算子はいずれも述語関数とセットを直接とって使うことができ、 "
+"``spec`` でラップする必要はないことに注意しよう。 ``spec`` はジェネレータをオーバーライドしたい場合やネストした正規表"
+"現が同じパターンに含まれるのではなく新しいパターンを開始するように記述したい場合にのみ必要となるはずだ。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:286
@@ -758,7 +859,11 @@ msgid ""
 "keyword/symbol and a spec/predicate expression. By convention, specs for data should be registered under keywords and "
 "attribute values should be registered under their attribute name keyword. Once registered, the name can be used "
 "anywhere a spec/predicate is called for in any of the **spec** operations."
-msgstr "specを名前で再利用できるようにするためには、 ``def`` によって登録しなければならない。 ``def`` はネームスペース付きのキーワード/シンボルとspec/述語の式をとる。規約により、データのためのspecはキーワードに登録し、属性値はその属性名のキーワードに登録するべきだ。ひとたび登録すれば、specの名前はあらゆる **spec** 操作でのspec/述語が必要なあらゆる場所で利用することができる。"
+msgstr ""
+"specを名前で再利用できるようにするためには、 ``def`` によって登録しなければならない。 ``def`` はネームスペース付きの"
+"キーワード/シンボルとspec/述語の式をとる。規約により、データのためのspecはキーワードに登録し、属性値はその属性名のキー"
+"ワードに登録するべきだ。ひとたび登録すれば、specの名前はあらゆる **spec** 操作でのspec/述語が必要なあらゆる場所で利用"
+"することができる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:293
@@ -771,14 +876,17 @@ msgstr "関数specの登録"
 msgid ""
 "A function can be fully specified via three specs - one for the args, one for the return, and one for the operation "
 "of the function relating the args to the return."
-msgstr "関数は3つのspecで完全に記述することができる。引数のspec、戻り値のspec、引数を戻り値に対応付ける関数の操作のspecだ。"
+msgstr ""
+"関数は3つのspecで完全に記述することができる。引数のspec、戻り値のspec、引数を戻り値に対応付ける関数の操作のspecだ。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:299
 msgid ""
 "The args spec for a fn is always going to be a regex that specs the arguments as if they were a list, i.e. the list "
 "one would pass to ``apply`` the function. In this way, a single spec can handle functions with multiple arities."
-msgstr "関数の引数のspecは常に引数がリスト、つまり ``apply`` 関数に渡すリストであるかのように記述する正規表現になる。これによって、単一のspecが複数のアリティを持つ関数を扱うことができる。"
+msgstr ""
+"関数の引数のspecは常に引数がリスト、つまり ``apply`` 関数に渡すリストであるかのように記述する正規表現になる。これに"
+"よって、単一のspecが複数のアリティを持つ関数を扱うことができる。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:301
@@ -792,14 +900,19 @@ msgid ""
 "function of the function. It will be passed (e.g. during testing) a map containing ``{:args conformed-args :ret "
 "conformed-ret}`` and will generally contain predicates that relate those values - e.g. it could ensure that all keys "
 "of an input map are present in the returned map."
-msgstr "(オプションの)関数のspecは引数と戻り値の関係、つまりその関数の機能についてのさらなる仕様記述だ。これは(例えばテスト時に) ``{:args conformed-args :ret conformed-ret}`` の入ったマップを受け取り、それらの値について説明する述語を一般に含むだろう。例えば入力のマップのすべてのキーが戻り値のマップに存在することを保証することができるだろう。"
+msgstr ""
+"(オプションの)関数のspecは引数と戻り値の関係、つまりその関数の機能についてのさらなる仕様記述だ。これは(例えばテスト時"
+"に) ``{:args conformed-args :ret conformed-ret}`` の入ったマップを受け取り、それらの値について説明する述語を一般に含む"
+"だろう。例えば入力のマップのすべてのキーが戻り値のマップに存在することを保証することができるだろう。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:308
 msgid ""
 "You can fully specify all three specs of a function in a single call to ``fdef``, and recall the specs via ``fn-"
 "specs``."
-msgstr "ある関数の3つすべてのspecを ``fdef`` 一度の呼び出しで指定することができ、それらのspecは ``fn-specs`` によって取り出すことができる。"
+msgstr ""
+"ある関数の3つすべてのspecを ``fdef`` 一度の呼び出しで指定することができ、それらのspecは ``fn-specs`` によって取り出す"
+"ことができる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:309
@@ -812,7 +925,9 @@ msgstr "specを使う"
 msgid ""
 "Functions specs defined via ``fdef`` will appear when you call ``doc`` on the fn name. You can call ``describe`` on "
 "specs to get descriptions as forms."
-msgstr "``fdef`` によって定義された関数specは関数名に対して ``doc`` を呼び出すと現れる。specに対して ``describe`` を呼び出すと、説明がフォームとして得られる。"
+msgstr ""
+"``fdef`` によって定義された関数specは関数名に対して ``doc`` を呼び出すと現れる。specに対して ``describe`` を呼び出す"
+"と、説明がフォームとして得られる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:314
@@ -825,7 +940,9 @@ msgstr "パース処理/分配束縛"
 msgid ""
 "You can use ``conform`` directly in your implementations to get its destructuring/parsing/error-checking.  "
 "``conform`` can be used e.g. in macro implementations and at I/O boundaries."
-msgstr "``conform`` を実装の中で分配束縛/パース処理/エラーチェックのために直接使うことができる。 ``conform`` は例えばマクロの実装やI/Oの境界で利用できる。"
+msgstr ""
+"``conform`` を実装の中で分配束縛/パース処理/エラーチェックのために直接使うことができる。 ``conform`` は例えばマクロの"
+"実装やI/Oの境界で利用できる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:318
@@ -839,7 +956,10 @@ msgid ""
 "You can selectively instrument functions and namespaces with ``instrument``, which swaps out the fn var with a "
 "wrapped version of the fn that tests the ``:args`` spec. ``unstrument`` returns a fn to its original version. You can "
 "generate data for interactive testing with ``gen/sample``."
-msgstr "``instrument`` で関数とネームスペースに選択的に組み込むことができる。これは関数のvarを ``:args`` specをテストするラップされたバージョンの関数に差し替える。 ``uninstrument``は関数を元のバージョンに戻す。 ``gen/sample`` でインタラクティブなテストのためにデータを生成することができる。"
+msgstr ""
+"``instrument`` で関数とネームスペースに選択的に組み込むことができる。これは関数のvarを ``:args`` specをテストするラッ"
+"プされたバージョンの関数に差し替える。 ``uninstrument``は関数を元のバージョンに戻す。 ``gen/sample`` でインタラクティ"
+"ブなテストのためにデータを生成することができる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:323
@@ -857,7 +977,14 @@ msgid ""
 "that describes where. You can pass generator-returning fns to ``spec`` in order to supply generators for things spec "
 "does not know about, and you can pass an override map to ``gen`` in order to supply alternative generators for one or "
 "more subpaths of a spec."
-msgstr "``check`` でネームスペース全体に対して一連のspecによる生成的テストを実行することができる。 ``gen`` を呼び出すことでtest.ckeck互換のspecのジェネレータを得ることができる。 ``clojure.core`` のデータの述語の多くと対応するジェネレータとの間には組み込みで関連があり、 **spec** の複合的な演算子はそこからどのようにジェネレータを組み立てるべきか分かっている。 specに対して ``gen`` を呼び出して一部のサブツリーについてジェネレータを組み立てることができないと、その場所を示す例外がスローされる。 specに分からないものにジェネレータを提供するためにジェネレータを返す関数を ``spec``　に渡すことができ、また、specの1つ以上のサブパスで代わりになるジェネレータを提供するためのオーバーライドマップを ``gen`` に渡すことができる。"
+msgstr ""
+"``check`` でネームスペース全体に対して一連のspecによる生成的テストを実行することができる。 ``gen`` を呼び出すことで"
+"test.ckeck互換のspecのジェネレータを得ることができる。 ``clojure.core`` のデータの述語の多くと対応するジェネレータとの"
+"間には組み込みで関連があり、 **spec** の複合的な演算子はそこからどのようにジェネレータを組み立てるべきか分かってい"
+"る。 specに対して ``gen`` を呼び出して一部のサブツリーについてジェネレータを組み立てることができないと、その場所を示す"
+"例外がスローされる。 specに分からないものにジェネレータを提供するためにジェネレータを返す関数を ``spec``　に渡すことが"
+"でき、また、specの1つ以上のサブパスで代わりになるジェネレータを提供するためのオーバーライドマップを ``gen`` に渡すこと"
+"ができる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:331
@@ -870,14 +997,22 @@ msgstr "実行時に"
 msgid ""
 "In addition to the destructuring use cases above, you can make calls to ``conform`` or ``valid?`` anywhere you want "
 "runtime checking, and can make lighter-weight internal-only specs for tests you intend to run in production."
-msgstr "上述の分配束縛のユースケースに加えて、 ``conform`` や ``valid?`` を実行時のチェックを行いたい箇所でどこでも呼び出すことができ、また、プロダクションで実行することを想定したテストのための内部利用限定の軽量なspecを作ることができる。"
+msgstr ""
+"上述の分配束縛のユースケースに加えて、 ``conform`` や ``valid?`` を実行時のチェックを行いたい箇所でどこでも呼び出すこ"
+"とができ、また、プロダクションで実行することを想定したテストのための内部利用限定の軽量なspecを作ることができる。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:336
+#, fuzzy
+#| msgid ""
+#| "Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/clojure/branch-master/"
+#| "clojure.spec-api.html[API docs] for more examples and usage information."
 msgid ""
-"Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/clojure/branch-master/clojure."
-"spec-api.html[API docs] for more examples and usage information."
-msgstr "さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/clojure/branch-master/clojure.spec-api.html[API docs] を参照。"
+"Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/spec.alpha/index.html[API "
+"docs] for more examples and usage information."
+msgstr ""
+"さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/clojure/"
+"branch-master/clojure.spec-api.html[API docs] を参照。"
 
 #. type: Title ==
 #: en/content/about/spec.adoc:337
@@ -894,7 +1029,8 @@ msgstr "predicates (述語)"
 #. type: Plain text
 #: en/content/about/spec.adoc:340
 msgid "Many parts of the spec API call for 'predicates' or 'preds'. These arguments can be satisfied by:"
-msgstr "spec APIの多くの部分で'predicates'(述語)つまり'preds'が必要となる。こうした引数は以下のもので満たすことができる:"
+msgstr ""
+"spec APIの多くの部分で'predicates'(述語)つまり'preds'が必要となる。こうした引数は以下のもので満たすことができる:"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:342
@@ -926,7 +1062,9 @@ msgstr "正規表現演算子(``cat``, ``alt``, ``*``, ``+``, ``?``, ``&`` の�
 msgid ""
 "Note that if you want to nest an independent regex predicate within a regex you will have to wrap it in a call to "
 "``spec``, else it will be considered a nested pattern."
-msgstr "独立した正規表現の述語を正規表現の中にネストさせたい場合には ``spec`` の呼び出しの中にラップしなければならず、そうしなければネストしたパターンとみなされることに注意しよう。"
+msgstr ""
+"独立した正規表現の述語を正規表現の中にネストさせたい場合には ``spec`` の呼び出しの中にラップしなければならず、そうしな"
+"ければネストしたパターンとみなされることに注意しよう。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:350
@@ -963,7 +1101,10 @@ msgid ""
 "that conforming is 'deep' and flows through all of the spec and regex operations, map specs etc.  Since ``nil`` and "
 "``false`` are legitimate conformed values, conform returns the distinguished ``:clojure.spec.alpha/invalid`` when a "
 "value cannot be made to conform. ``valid``? can be used instead as a fully-boolean predicate."
-msgstr "``conform`` はspecを利用する基本的な操作で、バリデーションと一致(conform)/分配束縛の両方を行う。conformは'deep'であり、すべてのspecと正規表現演算、マップのspecなどにわたることに注意しよう。 ``nil`` と ``false`` はconformした値として正当なものなため、値がconformできない場合には特別な ``:clojure.spec.alpha/invalid`` が返される。"
+msgstr ""
+"``conform`` はspecを利用する基本的な操作で、バリデーションと一致(conform)/分配束縛の両方を行う。conformは'deep'であ"
+"り、すべてのspecと正規表現演算、マップのspecなどにわたることに注意しよう。 ``nil`` と ``false`` はconformした値として"
+"正当なものなため、値がconformできない場合には特別な ``:clojure.spec.alpha/invalid`` が返される。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:362
@@ -980,7 +1121,12 @@ msgid ""
 "explanations is the __path__. ``explain`` extends the path as it navigates through e.g. nested maps or regex "
 "patterns, so you get better information than just the entire or leaf value. ``explain-data`` will return a map of "
 "paths to problems."
-msgstr "ある値がspecのconformに失敗する場合には、同じspec+値で ``explain`` または ``explain-data`` を呼び出して原因を調べることができる。こうした説明は、追加の作業をすることになるかもしれず、失敗しない入力やレポートが望ましくない場合にまでそのコストを負担する理由もないため、 ``conform`` 時には生成されない。説明の重要な構成要素は __パス__ だ。 ``explain`` は例えばネストしたマップや正規表現パターンを通るにつれてパスを伸ばしていくため、単なる全体もしくは葉の値よりも良い情報が得られる。 ``explain-data`` は問題箇所までのパスのマップを返す。"
+msgstr ""
+"ある値がspecのconformに失敗する場合には、同じspec+値で ``explain`` または ``explain-data`` を呼び出して原因を調べるこ"
+"とができる。こうした説明は、追加の作業をすることになるかもしれず、失敗しない入力やレポートが望ましくない場合にまでその"
+"コストを負担する理由もないため、 ``conform`` 時には生成されない。説明の重要な構成要素は __パス__ だ。 ``explain`` は例"
+"えばネストしたマップや正規表現パターンを通るにつれてパスを伸ばしていくため、単なる全体もしくは葉の値よりも良い情報が得"
+"られる。 ``explain-data`` は問題箇所までのパスのマップを返す。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:369
@@ -994,7 +1140,10 @@ msgid ""
 "Due to the fact that all __branching__ points in specs are labeled, i.e. map ``keys``, choices in ``or`` and ``alt``, "
 "and (possibly elided) elements of ``cat``, every subexpression in a spec can be referred to via a __path__ (vector of "
 "keys) naming the parts.  These paths are used in ``explain``, ``gen`` overrides and various error reporting."
-msgstr "例えばマップの ``keys`` や ``or`` と ``alt`` の選択肢、(省略されうる) ``cat`` の要素のようにspecのすべての __分岐__ 点はラベル付けされていることから、specのあらゆる部分式はその部分に名前を付ける __パス__ (キーのベクター)によって指し示すことができる。こうしたパスは ``explain`` や ``gen`` のオーバーライド、様々なエラー報告に利用されている。"
+msgstr ""
+"例えばマップの ``keys`` や ``or`` と ``alt`` の選択肢、(省略されうる) ``cat`` の要素のようにspecのすべての __分岐__ 点"
+"はラベル付けされていることから、specのあらゆる部分式はその部分に名前を付ける __パス__ (キーのベクター)によって指し示す"
+"ことができる。こうしたパスは ``explain`` や ``gen`` のオーバーライド、様々なエラー報告に利用されている。"
 
 #. type: Title ==
 #: en/content/about/spec.adoc:374
@@ -1008,7 +1157,10 @@ msgid ""
 "Almost nothing about spec is novel. See all the libraries mentioned above, https://www.w3.org/TR/2014/REC-rdf11-"
 "concepts-20140225/[RDF], as well as all the work done on various contract systems, such as https://docs.racket-lang."
 "org/guide/contracts.html[Racket's contracts]."
-msgstr "specにはほとんど何も新規なところはない。上で述べたライブラリや https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/[RDF] 、また、コントラクトシステムについてなされてきた様々な業績、例えば https://docs.racket-lang.org/guide/contracts.html[Racketのコントラクト] を参照。"
+msgstr ""
+"specにはほとんど何も新規なところはない。上で述べたライブラリや https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/"
+"[RDF] 、また、コントラクトシステムについてなされてきた様々な業績、例えば https://docs.racket-lang.org/guide/contracts."
+"html[Racketのコントラクト] を参照。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:380

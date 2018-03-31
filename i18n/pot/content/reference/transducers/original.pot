@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,7 @@ msgstr ""
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
 #: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
 #: en/content/guides/reader_conditionals.adoc:10
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 #: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
@@ -303,6 +304,13 @@ msgid ""
 "The composed xf transducer will be invoked left-to-right with a final call "
 "to the reducing function f. In the last example, input values will be "
 "filtered, then incremented, and finally summed."
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/reference/transducers.adoc:99
+#: en/content/community/editing.adoc:150
+#, no-wrap
+msgid "Nested transformations"
 msgstr ""
 
 #. type: Target for macro image

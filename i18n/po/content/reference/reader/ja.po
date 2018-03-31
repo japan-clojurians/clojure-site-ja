@@ -241,9 +241,13 @@ msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Maps"
-msgstr "Maps (マップ)"
+msgstr ""
+"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
+"マップ\n"
+"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
+"Maps (マップ)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:60

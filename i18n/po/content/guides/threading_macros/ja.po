@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -326,8 +326,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/threading_macros.adoc:203
 msgid ""
-"If `a-map` lacks the key `:foo`, the entire expression will evaluate to `nil` rather than raising an exception. In "
-"fact, this behavior is so useful that it is common to see `+++some->+++` used when threading is not required:"
+"If `a-map` lacks the key `:counter`, the entire expression will evaluate to `nil` rather than raising an exception. "
+"In fact, this behavior is so useful that it is common to see `+++some->+++` used when threading is not required:"
 msgstr ""
 
 #. type: delimited block -

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2017-04-02 16:44+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -45,9 +45,10 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -340,17 +341,29 @@ msgstr "メッセージパッシングとアクター"
 
 #. type: Plain text
 #: en/content/about/state.adoc:63
+#, fuzzy
+#| msgid ""
+#| "There are other ways to model identity and state, one of the more popular of which is the message-passing https://"
+#| "en.wikipedia.org/wiki/Actor_model[actor model], best exemplified by the quite impressive https://en.wikipedia.org/"
+#| "wiki/Erlang_%28programming_language%29[Erlang]. In an actor model, state is encapsulated in an actor (identity) "
+#| "and can only be affected/seen via the passing of messages (values). In an asynchronous system like Erlang's, "
+#| "reading some aspect of an actor's state requires sending a request message, waiting for a response, and the actor "
+#| "sending a response. It is important to understand that _the actor model was designed to address the problems of "
+#| "*distributed* programs_. And the problems of distributed programs are much harder - there are multiple worlds "
+#| "(address spaces), direct observation is not possible, interaction occurs over possibly unreliable channels, etc. "
+#| "The actor model supports transparent distribution. If you write all of your code this way, you are not bound to "
+#| "the actual location of the other actors, allowing a system to be spread over multiple processes/machines without "
+#| "changing the code."
 msgid ""
 "There are other ways to model identity and state, one of the more popular of which is the message-passing https://en."
-"wikipedia.org/wiki/Actor_model[actor model], best exemplified by the quite impressive https://en.wikipedia.org/wiki/"
-"Erlang_%28programming_language%29[Erlang]. In an actor model, state is encapsulated in an actor (identity) and can "
-"only be affected/seen via the passing of messages (values). In an asynchronous system like Erlang's, reading some "
-"aspect of an actor's state requires sending a request message, waiting for a response, and the actor sending a "
-"response. It is important to understand that _the actor model was designed to address the problems of *distributed* "
-"programs_. And the problems of distributed programs are much harder - there are multiple worlds (address spaces), "
-"direct observation is not possible, interaction occurs over possibly unreliable channels, etc. The actor model "
-"supports transparent distribution. If you write all of your code this way, you are not bound to the actual location "
-"of the other actors, allowing a system to be spread over multiple processes/machines without changing the code."
+"wikipedia.org/wiki/Actor_model[actor model]. In an actor model, state is encapsulated in an actor (identity) and can "
+"only be affected/seen via the passing of messages (values). In an asynchronous system, reading some aspect of an "
+"actor's state requires sending a request message, waiting for a response, and the actor sending a response. It is "
+"important to understand that _the actor model was designed to address the problems of *distributed* programs_. And "
+"the problems of distributed programs are much harder - there are multiple worlds (address spaces), direct observation "
+"is not possible, interaction occurs over possibly unreliable channels, etc. The actor model supports transparent "
+"distribution. If you write all of your code this way, you are not bound to the actual location of the other actors, "
+"allowing a system to be spread over multiple processes/machines without changing the code."
 msgstr ""
 "アイデンティティと状態をモデリングする方法は他にもあり、人気のある方法のひとつがメッセージパッシングの https://en."
 "wikipedia.org/wiki/Actor_model[アクターモデル] で、 https://en.wikipedia.org/wiki/Erlang_%28programming_language"
@@ -365,8 +378,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/about/state.adoc:65
-msgid ""
-"I chose not to use the Erlang-style actor model for same-process state management in Clojure for several reasons:"
+#, fuzzy
+#| msgid ""
+#| "I chose not to use the Erlang-style actor model for same-process state management in Clojure for several reasons:"
+msgid "I chose not to use the actor model for same-process state management in Clojure for several reasons:"
 msgstr "私はいくつかの理由からErlang式のアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:"
 
 #. type: Plain text

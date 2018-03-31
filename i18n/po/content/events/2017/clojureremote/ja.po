@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2018-03-31 17:24+0900\n"
 "PO-Revision-Date: 2017-03-09 15:46+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -64,6 +64,13 @@ msgstr ""
 #: en/content/events/2017/clojureremote.adoc:24
 msgid "Cheers, + Ryan Neufeld at Clojure Remote + https://twitter.com/clojureremote"
 msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/events/2017/clojureremote.adoc:25
+#, fuzzy, no-wrap
+#| msgid "Clojure CLR"
+msgid "Clojure Remote logo"
+msgstr "Clojure CLR"
 
 #. type: Target for macro image
 #: en/content/events/2017/clojureremote.adoc:25
