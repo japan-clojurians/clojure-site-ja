@@ -97,9 +97,15 @@
 <h2 id="_動機">動機</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこれらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。これは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になっていた。
-<a href="protocols">プロトコル</a> と <a href="datatypes">データ型</a>
-という機能は、強力で柔軟な抽象化とデータ構造定義のメカニズムをホストプラットフォームの機構に対して妥協することなく提供する。</p>
+<p>Clojure is written in terms of abstractions. There are abstractions for
+sequences, collections, callability, etc. In addition, Clojure supplies many
+implementations of these abstractions. The abstractions are specified by
+host interfaces, and the implementations by host classes. While this was
+sufficient for bootstrapping the language, it left Clojure without similar
+abstraction and low-level implementation facilities. The
+<a href="protocols">protocols</a> and <a href="datatypes">datatypes</a> features add powerful
+and flexible mechanisms for abstraction and data structure definition with
+no compromises vs the facilities of the host platform.</p>
 </div>
 </div>
 </div>
@@ -134,7 +140,7 @@
 <p>名前付きのクラスを生成するため、アクセス可能なコンストラクターを持つ</p>
 </li>
 <li>
-<p>フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
+<p>* フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
 <div class="ulist">
 <ul>
 <li>
@@ -151,7 +157,7 @@
 <p>deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる</p>
 </li>
 <li>
-<p>deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
+<p>* deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -182,26 +188,13 @@
 <p>deftypeはコンストラクター以外にはユーザーに明示されていないいかなる機能も提供しない</p>
 </li>
 <li>
-<p>defrecordは以下を含む永続的なマップの完全な実装を提供する:</p>
+<p>defrecord provides a complete implementation of a persistent map, including:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>値に基づく同値比較とハッシュコード</p>
-</li>
-<li>
-<p>メタデータのサポート</p>
-</li>
-<li>
-<p>associativeのサポート</p>
-</li>
-<li>
-<p>フィールドのキーワードアクセサ</p>
-</li>
-<li>
-<p>拡張可能なフィールド(defrecordの定義にないフィールドのキーをassocすることができる)</p>
-</li>
-<li>
-<p>など</p>
+<p>value-based equality and hashCode <strong> metadata support </strong> associative
+support <strong> keyword accessors for fields </strong> extensible fields (you can assoc
+keys not supplied with the defrecord definition)  ** etc</p>
 </li>
 </ul>
 </div>
@@ -210,7 +203,7 @@
 <p>deftypeはミュータブルなフィールドをサポートするが、defrecordはサポートしない</p>
 </li>
 <li>
-<p>defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
+<p>* defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -270,7 +263,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 <div class="ulist">
 <ul>
 <li>
-<p>具象的な派生は悪手だ</p>
+<p>* 具象的な派生は悪手だ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -280,7 +273,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
+<p>* 常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -290,7 +283,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>イミュータブルがデフォルトであるべきだ</p>
+<p>* イミュータブルがデフォルトであるべきだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -300,7 +293,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>情報のカプセル化は愚かだ</p>
+<p>* 情報のカプセル化は愚かだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -310,7 +303,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>ポリモーフィズムと継承を結びつけることは悪手だ</p>
+<p>* ポリモーフィズムと継承を結びつけることは悪手だ</p>
 <div class="ulist">
 <ul>
 <li>

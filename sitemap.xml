@@ -13,10 +13,6 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/community/editing.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/community/downloads.html</loc>
         <lastmod></lastmod>
     </url>
@@ -26,6 +22,14 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/privacy.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2018/01/05/git-deps.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2017/12/08/clojure19.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -62,6 +66,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/news/2011/07/22/introducing-clojurescript.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/deps_and_cli.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

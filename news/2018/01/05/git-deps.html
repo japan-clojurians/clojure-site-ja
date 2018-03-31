@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Git Deps for Clojure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale.html">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api.html">API</a></li>
+              <li><a href="../../../../community/downloads.html">リリース</a></li>
+              <li><a href="../../../../guides/guides.html">ガイド</a></li>
+              <li><a href="../../../../community/resources.html">コミュニティ</a></li>
+              <li><a href="../../../../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Git Deps for Clojure</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div class="paragraph">
+<p>Clojure was designed to empower developers by enabling them to leverage existing libraries. When Clojure was first released, this manifest itself in strong interop support for Java. Eventually tooling (Leiningen et al) arose around procuring Java libs from the Maven ecosystem, and Clojure, its contribs, and the community also adopted the Maven approach to <em>delivering</em> libraries via artifacts hosted in well known repositories like Maven Central and Clojars.</p>
+</div>
+<div class="paragraph">
+<p>There were many benefits to this, but, like most things in programming, there were attendant costs. Artifact based releases predate the widespread adoption of content-based addressing systems like Git. Without content-based addressing, they depend on conventions of release naming and weak notions like semantic versioning. They also reflect the nature of languages like Java and C that require a build step prior to execution. Most Clojure libraries do not.</p>
+</div>
+<div class="paragraph">
+<p>The modern reality of Clojure development is that (mostly) we use Git, we use centralized Git repos like Github, Bitbucket et al, and code is executable. Producing and consuming artifacts creates a lot of unnecessary friction between creating code and using it. Let&#8217;s get rid of it when not needed!</p>
+</div>
+<div class="paragraph">
+<p>Today we&#8217;re happy to announce the availability of git deps support in Clojure tools. It leverages the fact that tools.deps does not use the Maven dependency resolver but instead resolves dependencies on its own. This decouples dependency resolution and classpath creation from any single library publishing/procurement mechanism. Git repos become a source of libraries directly.</p>
+</div>
+<div class="paragraph">
+<p>You can now specify git coordinates (in addition to mvn and local) in deps.edn:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {org.clojure/data.csv {:git/url "https://github.com/clojure/data.csv.git"
+                        :sha "e5beccad0bafdb8e78f19cba481d4ecef5fabf36"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The tools support (available as a library in tools.gitlibs) will:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>securely log into the git repository host and clone the repo (if needed)</p>
+</li>
+<li>
+<p>checkout and cache (per library+sha) the specified working tree (if needed)</p>
+</li>
+<li>
+<p>resolve transitive deps and incorporate the cached directory into the classpath</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course, not every commit is stable, so one can designate stable points using tags.</p>
+</div>
+<div class="paragraph">
+<p>This greatly reduces the ceremony and tooling required to share and consume libraries, facilitates parallel development of sibling libraries, testing, speculative forks etc. and fosters a greater connection to source truth while preserving the secure centralized hosting, stable repeatability and caching one gets from e.g. Maven.</p>
+</div>
+<div class="paragraph">
+<p>I am hopeful this git support will usher in a new level of agility for Clojure development. Many thanks to Alex Miller for his tireless efforts to convert these ideas into a working system.</p>
+</div>
+<div class="paragraph">
+<p>For more information see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="xref/../../../../../guides/getting_started">Getting Started</a> - to install or update the Clojure tools</p>
+</li>
+<li>
+<p><a href="xref/../../../../../guides/deps_and_cli">Deps and CLI Guide</a> - on how to use the Clojure tools</p>
+</li>
+<li>
+<p><a href="xref/../../../../../reference/deps_and_cli">Deps and CLI Reference</a> - complete reference info</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=oyLBGkS5ICk">Spec-ulation</a> keynote - on growth versus breakage</p>
+</li>
+</ul>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

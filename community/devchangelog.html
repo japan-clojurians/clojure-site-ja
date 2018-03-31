@@ -85,8 +85,240 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_release_1_10">Release 1.10</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_10_0_alpha4_feb_9_2018">1.10.0-alpha4 (Feb 9, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fix 0-arity bug for read+string</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha3_feb_8_2018">1.10.0-alpha3 (Feb 8, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>prepl - programmatic REPL</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha2_jan_19_2018">1.10.0-alpha2 (Jan 19, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2313">CLJ-2313</a> - Fix for string capture mode</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha1_jan_18_2018">1.10.0-alpha1 (Jan 18, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Add string capture mode to LineNumberingPushbackReader</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_release_1_9">Release 1.9</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_pz_kzg_k2ac_acvolkxydwaj_1_9_0_rc2_a_nov_27_2017"><a href="https://groups.google.com/d/msg/clojure/Pz_Kzg-k2Ac/ACVoLkXYDwAJ">1.9.0-RC2</a> (Nov 27, 2017)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>There is a new Maven profile and Ant target in the build to build an executable Clojure jar with deps included (and test.check). This can be useful for doing dev on Clojure itself or for just cloning the repo and doing a quick build to get something runnable.</p>
+</li>
+<li>
+<p>The readme.txt has been updated to include information about how to create and run a local jar.</p>
+</li>
+<li>
+<p>Stopped publishing the clojure-VERSION.zip file as part of the release.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_twclahnezis_onwssxfsbaaj_1_9_0_rc1_a_nov_7_2017"><a href="https://groups.google.com/d/msg/clojure/tWcLAhnEzIs/OnwSSXFsBAAJ">1.9.0-RC1</a> (Nov 7, 2017)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Same as 1.9.0-beta4</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_x_a6b_ligvq_i_bdodilagaj_1_9_0_beta4_a_oct_31_2017"><a href="https://groups.google.com/d/msg/clojure/X_A6B_LiGvQ/I-bDODILAgAJ">1.9.0-beta4</a> (Oct 31, 2017)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2259">CLJ-2259</a> - Remove unnecessary bigdec? predicate added in 1.9</p>
+</li>
+<li>
+<p>Bumped spec.alpha dependency to 0.1.143</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_jksa9asmfm4_uqf1m6enaqaj_1_9_0_beta3_a_oct_25_2017"><a href="https://groups.google.com/d/msg/clojure/jKsa9asMFm4/Uqf1m6ENAQAJ">1.9.0-beta3</a> (Oct 25, 2017)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2254">CLJ-2254</a> - add System property clojure.spec.skip-macros (default=false) that can be used to turn off spec checking in macros</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_hjqygzeoj8s_ih0pogtqagaj_1_9_0_beta2_a_oct_6_2017"><a href="https://groups.google.com/d/msg/clojure/hJqYgzEOJ8s/IH0pogtQAgAJ">1.9.0-beta2</a> (Oct 6, 2017)</h3>
+<div class="paragraph">
+<p>1.9.0-beta2 includes the following changes since 1.9.0-beta1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-700">CLJ-700</a> - (fix) <code>contains?</code>, <code>get</code>, and <code>find</code> broken for transient collections</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2247">CLJ-2247</a> - (regression) restore and doc last match semantics of {min,max}-key</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2239">CLJ-2239</a> - (regression) fix Guava javadoc location</p>
+</li>
+<li>
+<p>Updated dep to spec.alpha 0.1.134 - see <a href="https://github.com/clojure/spec.alpha/blob/master/CHANGES.md">changes</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_uete1k9c7xe_5p5bje2taqaj_1_9_0_beta1_a_sep_18_2017"><a href="https://groups.google.com/d/msg/clojure/UEtE1K9C7XE/5p5BJe2tAQAJ">1.9.0-beta1</a> (Sep 18, 2017)</h3>
+<div class="paragraph">
+<p>1.9.0-beta1 includes the following changes since 1.9.0-alpha20:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://dev.clojure.org/jira/browse/CLJ-2077">CLJ-2077</a> - Clojure can&#8217;t be loaded from the boot classpath under java 9</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_groups_google_com_d_msg_clojure_ib2caorbmnm_a0f66ec1daaj_1_9_0_alpha20_a_sep_7_2017"><a href="https://groups.google.com/d/msg/clojure/IB2CaORBMnM/a0f66eC1DAAJ">1.9.0-alpha20</a> (Sep 7, 2017)</h3>
+<div class="paragraph">
+<p>1.9.0-alpha20 includes the following changes since 1.9.0-alpha19:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1074">CLJ-1074</a> - (new) add new ## reader macro for symbolic values, and read/print support for double vals ##Inf, ##-Inf, ##NaN</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1454">CLJ-1454</a> - (new) add swap-vals! and reset-vals! that return both old and new values</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2184">CLJ-2184</a> - (errors) propagate meta in doto forms to improve error reporting</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2210">CLJ-2210</a> - (perf) cache class derivation in compiler to improve compiler performance</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2070">CLJ-2070</a> - (perf) clojure.core/delay - improve performance</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1917">CLJ-1917</a> - (perf) reducing seq over string should call String/length outside of loop</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1901">CLJ-1901</a> - (perf) amap - should call alength only once</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-99">CLJ-99</a>   - (perf) min-key and max-key - evaluate k on each arg at most once</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2188">CLJ-2188</a> - (perf) slurp - mark return type as String</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2108">CLJ-2108</a> - (startup time) delay loading of spec and core specs (still more to do on this)</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2204">CLJ-2204</a> - (security) disable serialization of proxy classes to avoid potential issue when deserializing</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2048">CLJ-2048</a> - (fix) specify type to avoid ClassCastException when stack trace is elided by JVM</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1887">CLJ-1887</a> - (fix) IPersistentVector.length() - implement missing method</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1841">CLJ-1841</a> - (fix) bean - iterator was broken</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1714">CLJ-1714</a> - (fix) using a class in a type hint shouldn&#8217;t load the class</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1398">CLJ-1398</a> - (fix) clojure.java.javadoc/javadoc - update doc urls</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1371">CLJ-1371</a> - (fix) Numbers.divide(Object, Object) - add checks for NaN</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1358">CLJ-1358</a> - (fix) doc - does not expand special cases properly (try, catch)</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1705">CLJ-1705</a> - (fix) vector-of - fix NullPointerException if given unrecognized type</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2170">CLJ-2170</a> - (doc) fix improperly located docstrings</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2156">CLJ-2156</a> - (doc) clojure.java.io/copy - doc char[] support</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2051">CLJ-2051</a> - (doc) clojure.instant/validated docstring - fix typo</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2104">CLJ-2104</a> - (doc) clojure.pprint docstring - fix typo</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2028">CLJ-2028</a> - (doc) filter, filterv, remove, take-while - fix docstrings</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1873">CLJ-1873</a> - (doc) require, <strong>data-readers</strong> - add .cljc files to docstrings</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1159">CLJ-1159</a> - (doc) clojure.java.io/delete-file - improve docstring</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-2039">CLJ-2039</a> - (doc) deftype - fix typo in docstring</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1918">CLJ-1918</a> - (doc) await - improve docstring re shutdown-agents</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1837">CLJ-1837</a> - (doc) index-of, last-index-of - clarify docstrings</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1826">CLJ-1826</a> - (doc) drop-last - fix docstring</p>
+</li>
+<li>
+<p><a href="https://dev.clojure.org/jira/browse/CLJ-1859">CLJ-1859</a> - (doc) zero?, pos?, neg? - fix docstrings</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="__a_href_https_groups_google_com_d_msg_clojure_oy2o_akfj2u_w6_c0hpoaqaj_1_9_0_alpha19_a_aug_24_2017"><a href="https://groups.google.com/d/msg/clojure/oy2O_akFJ2U/w6-C0hPoAQAJ">1.9.0-alpha19</a> (Aug 24, 2017)</h3>
 <div class="ulist">

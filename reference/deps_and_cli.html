@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Deps and CLI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../guides/guides.html">ガイド</a></li>
+              <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Deps and CLI</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_rationale">Rationale</a></li>
+<li><a href="#_building_classpaths_with_tools_deps_alpha">Building classpaths with tools.deps.alpha</a>
+<ul class="sectlevel2">
+<li><a href="#_resolve_deps">resolve-deps</a></li>
+<li><a href="#_make_classpath">make-classpath</a></li>
+</ul>
+</li>
+<li><a href="#_command_line_tools">Command line tools</a>
+<ul class="sectlevel2">
+<li><a href="#_directories">Directories</a></li>
+<li><a href="#_deps_edn">deps.edn</a></li>
+<li><a href="#_dependencies">Dependencies</a></li>
+<li><a href="#_paths">Paths</a></li>
+<li><a href="#_aliases">Aliases</a></li>
+<li><a href="#_procurers">Procurers</a></li>
+<li><a href="#_usage">Usage</a></li>
+<li><a href="#_classpath_construction">Classpath construction</a></li>
+<li><a href="#_classpath_caching">Classpath caching</a></li>
+</ul>
+</li>
+<li><a href="#_installers">Installers</a></li>
+<li><a href="#_glossary">Glossary</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rationale">Rationale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure "endeavors to be a general-purpose language suitable in those areas where Java is suitable" (from <a href="xref/../../about/rationale">Rationale</a>). To effectively target the JVM platform, Clojure needs to provide ready access to Java libraries, ideally in a way suited for dynamic development. In practice, this means meeting the JVM platform in two places:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the classpath used when invoking JVM processes (and/or URLClassLoaders)</p>
+</li>
+<li>
+<p>transitive dependency download and resolution from providers like Maven</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure build tools have traditionally taken the approach of wrapping the Maven ecosystem to gain access to Java libraries. However, they have also forced this approach on Clojure code as well, requiring a focus on artifacts that must be built and deployed (which Clojure does not require). This approach has created friction for Clojure developers, making it hard to e.g. work with libs not yet publishing artifacts, work on speculative changes w/o artifacts or across multiple libs, or give control to a 3rd party to manage shared dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Clojure provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/clojure/tools.deps.alpha">tools.deps.alpha</a> - a library providing a functional API for resolving dependency graphs and building classpaths that can utilize both Maven and other providers of code or artifacts</p>
+</li>
+<li>
+<p>Command line tools (<code>clojure</code> and <code>clj</code>) that enable users to make use of this capability at the terminal to declare dependencies, assemble classpaths, and launch Clojure programs</p>
+</li>
+<li>
+<p>System-specific installers for downloading the tools, improving the "Getting Started" experience</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_classpaths_with_tools_deps_alpha">Building classpaths with tools.deps.alpha</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The JVM classpath consists of a series of roots, either directory paths or the path to a jar file. Classes (and Clojure files) map via package or namespace to a path relative to a classpath root. For example, the <code>java.lang.String</code> class can be found at path <code>java/lang/String.class</code> and the <code>clojure.set</code> Clojure namespace may be found at paths <code>clojure/set.class</code> (for AOT), <code>clojure/set.clj</code>, or <code>clojure/set.cljc</code>. When the JVM needs to load one of these files it searches each root for the relative path and loads it when found.</p>
+</div>
+<div class="paragraph">
+<p>We divide the process of building a classpath into two primary operations: <code>resolve-deps</code> and <code>make-classpath</code>. Below is a high-level view of this process:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="/images/content/guides/deps/deps.svg"><img src="/images/content/guides/deps/deps.svg" alt="Dep Tools"></a>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_resolve_deps">resolve-deps</h3>
+<div class="paragraph">
+<p><strong><code>(resolve-deps deps args-map)</code></strong></p>
+</div>
+<div class="paragraph">
+<p><code>resolve-deps</code> takes an initial map of required dependencies and a map of args that modify the resolution process. It builds a full graph of transitive dependencies, resolves any version differences, and flattens that graph to a full list of dependencies required in the classpath.</p>
+</div>
+<div class="paragraph">
+<p>The deps are a map of library to coordinate. The library is (in Maven terms) the groupId and artifactId, which are sufficient to locate the desired project. The coordinate is used to describe a particular version that is being requested from a particular provider (like Maven).</p>
+</div>
+<div class="paragraph">
+<p>For example, this deps map specifies a (Maven-based) dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{org.clojure/core.cache {:mvn/version "0.6.5"}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>resolve-deps</code> expands these dependencies to include all transitive dependencies, cut cycles, resolve version differences, download required artifacts from the provider, and produce a <strong>lib map</strong> of the flattened set of all needed dependencies and where to find their artifacts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{org.clojure/core.cache        {:mvn/version "0.6.5",
+                                :deps/manifest :mvn,
+                                :paths [".../core.cache-0.6.5.jar"]}
+ org.clojure/data.priority-map {:mvn/version "0.0.7",
+                                :deps/manifest :mvn,
+                                :dependents [org.clojure/core.cache],
+                                :paths [".../data.priority-map-0.0.7.jar"]}
+ ... }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The lib map lists all libraries, their selected coordinates, the <code>:paths</code> on disk, and a list of dependents that caused it to be included. Here you can see that <code>data.priority-map</code> was included as a dependency of core.cache.</p>
+</div>
+<div class="paragraph">
+<p>The second <code>args-map</code> is a map of optional modifications to the standard expansion to account for common use cases: adding extra dependencies, overriding deps, and default deps. These can be used separately or together, or not at all:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:extra-deps { ... }
+ :override-deps { ... }
+ :default-deps { ... }}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>:extra-deps</code> is the most common modification - it allows you to optionally add extra dependencies to the base dependency set. The value is a map of library to coordinate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:extra-deps {criterium/criterium {:mvn/version "0.4.4"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>:override-deps</code> overrides the coordinate version chosen by the version resolution to force a particular version instead. This also takes a map of library to coordinate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:override-deps {org.clojure/clojure {:mvn/version "1.9.0"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>:default-deps</code> provides a set of default coordinate versions to use if no coordinate is specified. The default deps can be used across a set of shared projects to act as a dependency management system:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:default-deps {org.clojure/core.cache {:mvn/version "0.6.4"}}}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_make_classpath">make-classpath</h3>
+<div class="paragraph">
+<p><strong><code>(make-classpath lib-map paths args-map)</code></strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>make-classpath</code> step takes the lib map (the result of <code>resolve-deps</code>), the internal source paths of the project <code>["src"]</code>, an args-map of optional modifications, and produces a classpath string for use in the JVM.</p>
+</div>
+<div class="paragraph">
+<p>The args-map includes support for modifications to be applied while making the classpath: adding extra paths, and overriding the location of libraries specified in the lib map. These modifications can be used separately or together or not at all in a map like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:extra-paths [ ... ]
+ :classpath-overrides { ... }}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>:extra-paths</code> is used to include source paths in addition to your standard source paths, for example to include directories of test source:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:extra-paths ["test" "resources"]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>:classpath-overrides</code> specify a location to pull a dependency that overrides the path found during dependency resolution, for example to replace a dependency with a local debug version. Many of these use cases are ones where you would be tempted to prepend the classpath to "override" something else.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:classpath-overrides
+ {org.clojure/clojure "/my/clojure/target"}}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_line_tools">Command line tools</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_directories">Directories</h3>
+<div class="paragraph">
+<p>The tools rely on several directories and optionally on several environment variables.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installation directory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created during installation</p>
+</li>
+<li>
+<p>Contents:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>bin/clojure</code> - main tool</p>
+</li>
+<li>
+<p><code>bin/clj</code> - wrapper for interactive repl use (uses <code>rlwrap</code>)</p>
+</li>
+<li>
+<p><code>deps.edn</code> - install level deps.edn file, with some default deps (Clojure, etc) and provider config</p>
+</li>
+<li>
+<p><code>example-deps.edn</code> - commented example that gets copied to <code>&lt;config_dir&gt;/deps.edn</code></p>
+</li>
+<li>
+<p><code>libexec/clojure-tools-X.Y.Z.jar</code> - uberjar invoked by <code>clojure</code> to construct classpaths</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Config directory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Holds a deps.edn file that persists across tool upgrades and affects all projects</p>
+</li>
+<li>
+<p>Locations used in this order:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>$CLJ_CONFIG</code> is set, then use <code>$CLJ_CONFIG</code> (explicit override)</p>
+</li>
+<li>
+<p>If <code>$XDG_CONFIG_HOME</code> is set, then use <code>$XDG_CONFIG_HOME/clojure</code> (Freedesktop conventions)</p>
+</li>
+<li>
+<p>Else use <code>$HOME/.clojure</code> (most common)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Contents:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deps.edn</code> - user deps file, defines default Clojure version and provider defaults</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cache directory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Lazily created when <code>clojure</code> is invoked without a local <code>deps.edn</code> file. Locations used in this order:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>$CLJ_CACHE</code> is set, then use <code>$CLJ_CACHE</code> (explicit override)</p>
+</li>
+<li>
+<p>If <code>$XDG_CACHE_HOME</code> is set, then use <code>$XDG_CACHE_HOME/clojure</code> (Freedesktop conventions)</p>
+</li>
+<li>
+<p>Else use <code>config_dir/.cpcache</code> (most common)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Project directory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The current directory</p>
+</li>
+<li>
+<p>Contents:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deps.edn</code> - optional project deps</p>
+</li>
+<li>
+<p><code>.cpcache</code> - project cache directory, same as the user-level cache directory, created if there is a <code>deps.edn</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deps_edn">deps.edn</h3>
+<div class="paragraph">
+<p>The configuration file format (in "deps.edn" files) is an edn map with top-level keys for <code>:deps</code>, <code>:paths</code>, and <code>:aliases</code>, plus provider-specific keys for configuring dependency sources.</p>
+</div>
+<div class="paragraph">
+<p>After installation, deps.edn configuration files can be found in (up to) three locations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>installation directory - created only at install time</p>
+</li>
+<li>
+<p>config directory (often ~/.clojure) - modified to change cross-project (or no-project) defaults</p>
+</li>
+<li>
+<p>the local directory - per-project settings</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>deps.edn</code> files in each of these locations (if they exist) are merged to form one combined dependency configuration. The merge is done in the order above install/config/local, last one wins. The operation is essentially <code>merge-with merge</code>, except for the <code>:paths</code> key, where only the last one found is used (they are not combined).</p>
+</div>
+<div class="paragraph">
+<p>You can use the  <code>-Sverbose</code> option to see all of the actual directory locations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dependencies">Dependencies</h3>
+<div class="paragraph">
+<p>Dependencies are declared in deps.edn with a top level key <code>:deps</code> - a map from library to coordinate. Libraries are symbols of the form &lt;groupID&gt;/&lt;artifactId&gt; or simply &lt;id&gt; if the group and artifact ID are the same.</p>
+</div>
+<div class="paragraph">
+<p>Coordinates can take several forms depending on the coordinate type:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maven coordinate: <code>{:mvn/version "1.2.3"}</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Other optional keys: <code>:classifier</code>, <code>:extension</code>, <code>:exclusions</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Local project coordinate: <code>{:local/root "/path/to/project"}</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Optional key <code>:deps/manifest</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Specifies the project manifest type</p>
+</li>
+<li>
+<p>Default is to auto-detect the project type (such as <code>:deps</code>, <code>:lein</code>, <code>:pom</code>)</p>
+</li>
+<li>
+<p>Currently only <code>:deps</code> is supported</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Local jar: <code>{:local/root "/path/to/file.jar"}</code></p>
+</li>
+<li>
+<p>Git coordinate: <code>{:git/url "https://github.com/user/project.git", :sha "sha", :tag "tag"}</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>:git/url</code> can be one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>https - secure anonymous access to public repos</p>
+</li>
+<li>
+<p>ssh or user@host form urls (including GitHub) - ssh-based access (see Git configuration section)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>:sha</code> attribute should indicate the full commit sha</p>
+</li>
+<li>
+<p>The <code>:tag</code> attribute is optional but can be used to indicate the semantics of the sha</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {org.clojure/tools.reader {:mvn/version "1.1.1"}
+  github-sally/awesome {:git/url "https://github.com/sally/awesome.git", :sha "123abcd549214b5cba04002b6875bdf59f9d88b6"}
+  ;; ... add more here
+ }}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_paths">Paths</h3>
+<div class="paragraph">
+<p>Paths are declared in a top level key <code>:paths</code> and is a vector of string paths (typically relative to the project root). These source paths will be included on the classpath.</p>
+</div>
+<div class="paragraph">
+<p>While dependency sets are merged across all of the configuration files, only the last paths found in one of the config files is used, prior ones are ignored.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:paths ["src"]}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aliases">Aliases</h3>
+<div class="paragraph">
+<p>Aliases are defined in the <code>:aliases</code> section of the config file. The Clojure tool supports several kinds of aliases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>-R - <code>resolve-deps</code> aliases are modifications applied during <code>resolve-deps</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowed keys in these aliases are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:extra-deps</code> - a deps map from lib to coordinate of deps to add to the deps</p>
+</li>
+<li>
+<p><code>:override-deps</code> - a deps map from lib to coordinate of override versions to use</p>
+</li>
+<li>
+<p><code>:default-deps</code> - a deps map from lib to coordinate of versions to use if none is found</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If multiple -R alias maps are activated, all of these are merge-with merged</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>-C - <code>make-classpath</code> aliases are modifications applied during <code>make-classpath</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowed keys in these aliases are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:extra-paths</code> - a collection of string paths to add to <code>:paths</code></p>
+</li>
+<li>
+<p><code>:classpath-overrides</code> - a map of lib to string path to replace the location of the lib</p>
+</li>
+<li>
+<p>If multiple -C alias maps are activated, <code>:extra-paths</code> concatenate and <code>:classpath-overrides</code> merge-with merge</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>-O - JVM option aliases</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowed keys in these aliases are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:jvm-opts</code> - a collection of string JVM options</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If multiple -O alias maps are activated, <code>:jvm-opts</code> concatenate</p>
+</li>
+<li>
+<p>If -J JVM options are also specified on the command line, they are concatenated after the alias options</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>-M - clojure.main option aliases</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allowed keys in these aliases are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:main-opts</code> - a collection of clojure.main options</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If multiple -M alias maps are activated, only the last one will be used</p>
+</li>
+<li>
+<p>If command line clojure.main arguments are supplied on the command line, they are concatenated after the last main alias map</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>-A - applies across all alias types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>These aliases support ALL alias keys above and all will be applied</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So given a deps.edn like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:paths ["src"]
+ :deps {}
+ :aliases
+ {:1.7 {:override-deps {org.clojure/clojure {:mvn/version "1.7.0"}}}
+  :bench {:extra-deps {criterium/criterium {:mvn/version "0.4.4"}}}
+  :test {:extra-paths ["test"]}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can activate all three aliases to create a classpath that switches to an older Clojure version, adds the benchmarking library, and includes the test directory in the classpath to see how it changes the classpath:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>clj -R:1.7:bench -C:test -Spath</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use -A to include all types of aliases or define aliases that cross multiple alias types:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>clj -A:1.7:bench:test -Spath</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_procurers">Procurers</h3>
+<div class="paragraph">
+<p>Coordinates are interpreted by procurers, which know how to determine dependencies for a library and download artifacts. tools.deps.alpha is designed to support an extensible set of procurers that can expand over time. Currently the available procurers are: <code>mvn</code>,  <code>local</code>, and <code>git</code>.</p>
+</div>
+<div class="paragraph">
+<p>The procurer to use is determined by examining the attributes of the coordinate and using the first attribute qualifier that&#8217;s found (ignoring the reserved qualifier "deps"). For example, a Maven coordinate contains a <code>:mvn/version</code> attribute and a local coordinate contains a <code>:local/root</code> attribute.</p>
+</div>
+<div class="paragraph">
+<p>Procurers may also have configuration attributes stored at the root of the configuration map under the same qualifier. The <code>mvn</code> procurer will look for <code>:mvn/repos</code>. The installation deps.edn configures the default Maven repos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:mvn/repos
+ {"central" {:url "https://repo1.maven.org/maven2/"}
+  "clojars" {:url "https://clojars.org/repo"}}}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maven_private_s3_repos">Maven private S3 repos</h4>
+<div class="paragraph">
+<p>The tools also provide support for connecting to private S3 Maven repositories (thanks to the <a href="https://github.com/s3-wagon-private/s3-wagon-private">s3-wagon-private</a> and <a href="https://github.com/spring-projects/aws-maven">aws-maven</a> projects).</p>
+</div>
+<div class="paragraph">
+<p>Add a <code>:mvn/repos</code> that includes the s3 repository root:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {my.library {:mvn/version "0.1.2"}}
+ :mvn/repos
+ {"my-private-repo" {:url "s3://my-bucket/maven/releases"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Specify your AWS S3 credentials using one of these mechanisms:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set the environment variables <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code>.</p>
+</li>
+<li>
+<p>Create a default profile in the AWS credentials file <code>~/.aws/credentials</code> (older <code>~/.aws/config</code> also supported).</p>
+</li>
+<li>
+<p>Create a named profile in the AWS credentials file and set the environment variable <code>AWS_PROFILE</code> with its name.</p>
+</li>
+<li>
+<p>Amazon ECS container and instance profile credentials should also work, but have not been tested.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more information, most of the advice in <a href="http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html">this AWS document</a> describes how credentials are located. Note however that the Java system properties options will NOT work with the command line tools (but would work if using the tools.deps.alpha library directly).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_configuration">Git configuration</h4>
+<div class="paragraph">
+<p>The supported git url protocols are https and ssh. https repos will be accessed anonymously and require no additional authentication information. This approach is recommended for public repos.</p>
+</div>
+<div class="paragraph">
+<p>ssh repos may be either public or private. Access to a git repo via ssh requires an ssh keypair. The private key of this keypair may or may not have a passphrase. ssh authentication works by connecting to the local ssh agent (ssh-agent on *nix or Pageant via PuTTY on Windows).
+The ssh-agent must have a registered identity for the key being used to access the Git repository.
+To check whether you have registered identities, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ ssh-add -l
+2048 SHA256:S2SMY1YRTRFg3sqsMy1eTve4ag78XEzhbzzdVxZroDk /Users/me/.ssh/id_rsa (RSA)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>which should return one or more registered identities, typically the one at <code>~/.ssh/id_rsa</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more information on creating keys and using the ssh-agent to manage your ssh identities, GitHub provides excellent info:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" class="bare">https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a></p>
+</li>
+<li>
+<p><a href="https://help.github.com/articles/working-with-ssh-key-passphrases/" class="bare">https://help.github.com/articles/working-with-ssh-key-passphrases/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Note: user/password authentication is not supported for any protocol.</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage">Usage</h3>
+<div class="paragraph">
+<p>Usage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clojure [dep-opt*] [init-opt*] [main-opt] [arg*]</code></p>
+</li>
+<li>
+<p><code>clj     [dep-opt*] [init-opt*] [main-opt] [arg*]</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The clojure tool is a runner for Clojure. clj is a wrapper for interactive repl use. These tools ultimately construct and invoke a command-line of the form:</p>
+</div>
+<div class="paragraph">
+<p><code>java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]</code></p>
+</div>
+<div class="paragraph">
+<p>The dep-opts are used to build the java-opts and classpath:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>-Jopt           Pass opt through in java_opts, ex: -J-Xmx512m
+-Ralias...      Concatenated resolve-deps aliases, ex: -R:bench:1.9
+-Calias...      Concatenated make-classpath aliases, ex: -C:dev
+-Oalias...      Concatenated jvm option aliases, ex: -O:mem
+-Malias...      Concatenated clojure.main option aliases, ex: -M:myapp
+-Aalias...      Concatenated aliases of any type
+-Sdeps DEPS     Deps data to use as the final deps file
+-Spath          Compute classpath and echo to stdout only
+-Scp CP         Do NOT compute or cache classpath, use this one instead
+-Srepro         Ignore the ~/.clojure/deps.edn config file
+-Sforce         Force recomputation of the classpath (don't use the cache)
+-Spom           Generate (or update an existing) pom.xml with deps and paths
+-Stree          Print dependency tree
+-Sresolve-tags  Resolve git coordinate tags to shas and update deps.edn
+-Sverbose       Print important path info to console
+-Sdescribe     Print environment and command parsing info as data</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>init-opt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>-i, --init path     Load a file or resource
+-e, --eval string   Eval exprs in string; print non-nil values</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>main-opt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>-m, --main ns-name  Call the -main function from namespace w/args
+-r, --repl          Run a repl
+path                Run a script from a file or resource
+-                   Run a script from standard input
+-h, -?, --help      Print this help message and exit</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_classpath_construction">Classpath construction</h3>
+<div class="paragraph">
+<p>The following process is used to construct the classpath for invoking clojure.main:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Compute the deps map</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Read the deps.edn configuration file in the following locations:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Install directory (unless -Srepro)</p>
+</li>
+<li>
+<p>Config directory (if it exists and unless -Srepro)</p>
+</li>
+<li>
+<p>Current directory (if it exists)</p>
+</li>
+<li>
+<p>-Sdeps data (if it exists)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Combine the deps.edn maps in that order with <code>merge-with merge</code> (except for :paths where last wins)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Compute the resolve-deps args</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-R</code> specifies one or more aliases, find each alias in the deps map <code>:aliases</code></p>
+</li>
+<li>
+<p><code>merge-with</code> <code>merge</code> the alias maps - the result is the resolve-args map</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Invoke <code>resolve-deps</code> with deps map and resolve-args map</p>
+</li>
+<li>
+<p>Compute the classpath-overrides map</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>-C</code> specifies one or more aliases, find each alias in the deps map <code>:aliases</code></p>
+</li>
+<li>
+<p><code>merge</code> the classpath-override alias maps</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Invoke <code>make-classpath</code> with the libs map returned by <code>resolve-deps</code>, the paths, and the classpath-args map</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_classpath_caching">Classpath caching</h3>
+<div class="paragraph">
+<p>Classpath files are cached in the current directory under <code>.cpcache/</code>. File are of two forms:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>.cpcache/&lt;hash&gt;.libs</code> - a <code>::lib-map</code> in the <a href="https://github.com/clojure/tools.deps.alpha/blob/master/src/main/clojure/clojure/tools/deps/alpha/specs.clj">specs</a>, the output of running <code>resolve-deps</code></p>
+</li>
+<li>
+<p><code>.cpcache/&lt;hash&gt;.cp</code> - a classpath string, the output of <code>make-classpath</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>where the <code>&lt;hash&gt;</code> is based on the config file paths, the resolve-aliases, and the classpath aliases.</p>
+</div>
+<div class="paragraph">
+<p>The cached classpath file is used when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It exists</p>
+</li>
+<li>
+<p>It is newer than all <code>deps.edn</code> files</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installers">Installers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For tools installation, see the instructions in the <a href="xref/../../guides/getting_started">Getting Started</a> guide.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossary">Glossary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Library</strong></p>
+</div>
+<div class="paragraph">
+<p>An independently-developed chunk of code residing in a directory hierarchy under a root.  We will narrow to those libraries that can be globally named, e.g. <code>my.namespace/my-lib</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Artifact</strong></p>
+</div>
+<div class="paragraph">
+<p>A snapshot of a library, captured at a point in time, possibly subjected to some build process, labeled with a version, containing some manifest documenting its dependencies, and packaged in e.g. a jar.</p>
+</div>
+<div class="paragraph">
+<p><strong>Coordinate</strong></p>
+</div>
+<div class="paragraph">
+<p>A particular version of a library chosen for use, with information sufficient to obtain and use the library.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dependency</strong></p>
+</div>
+<div class="paragraph">
+<p>An expression, at the project/library level, that the declaring library needs the declared library in order to provide some of its functions. Must at least specify library name, might also specify version and other attrs. Actual (functional) dependencies are more fine-grained.</p>
+</div>
+<div class="paragraph">
+<p>Dependency types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>maven artifacts</p>
+</li>
+<li>
+<p>unversioned libraries - a file location identifying a jar or directory root</p>
+</li>
+<li>
+<p>git coordinates</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Classpath (and roots/paths)</strong></p>
+</div>
+<div class="paragraph">
+<p>An ordered list of local 'places' (filesystem directories and/or jars) that will form root paths for searches of requires/imports at runtime, supplied as an argument to Java which controls the semantics. We discourage order-dependence in the classpath, which implies something is duplicated (and thus likely broken).</p>
+</div>
+<div class="paragraph">
+<p><strong>Expansion</strong></p>
+</div>
+<div class="paragraph">
+<p>Given a set of root dependencies, a full walk of the transitive dependencies.</p>
+</div>
+<div class="paragraph">
+<p><strong>Resolution</strong></p>
+</div>
+<div class="paragraph">
+<p>Given a collection of root dependencies and additional modifications, creates a fully-expanded dependency tree, then produces a mapping from each library mentioned to a single version to be used that would satisfy all dependents, as well as the local path. We will also include those dependents for each entry. Conflicts arise only if libraries depend on different major versions of a library.</p>
+</div>
+<div class="paragraph">
+<p><strong>Classpath creation</strong></p>
+</div>
+<div class="paragraph">
+<p>Creates a classpath from a resolved lib-map and optional extra local lib paths. Current plan for lib-map does not provide for control over resulting order.</p>
+</div>
+<div class="paragraph">
+<p><strong>Version</strong></p>
+</div>
+<div class="paragraph">
+<p>A human numbering system whose interpretation is determined by convention. Usually x.y.z. Must protect against 'semver' interpretation, which allows libraries to break users while keeping the name the same. Ascending by convention - higher numbers are 'later', vague compatibility with lower/earlier.</p>
+</div>
+<div class="paragraph">
+<p><strong>Version difference</strong></p>
+</div>
+<div class="paragraph">
+<p>This occurs when the dependency expansion contains the same library with more than one "version" specified but where there is a relative ordering (either by number or by SHA etc). Version differences can be resolved by choosing the "later" or "newest" version when that relationship can be established.</p>
+</div>
+<div class="paragraph">
+<p><strong>Version conflict</strong></p>
+</div>
+<div class="paragraph">
+<p>A version conflict occurs when the dependency expansion contains the same library with more than one "version" such that the best choice cannot be automatically chosen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>semver version breakage (major version changed)</p>
+</li>
+<li>
+<p>github shas that do not contain any common root or ancestry (two shas on different branches or unrelated repos, for example)</p>
+</li>
+<li>
+<p>versions that cross different repos or repo types such that no relative relationship can be established</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Maven Repo</strong></p>
+</div>
+<div class="paragraph">
+<p>A repository of library artifacts - e.g. Maven central or Clojars</p>
+</div>
+<div class="paragraph">
+<p><strong>Requires and imports</strong></p>
+</div>
+<div class="paragraph">
+<p>Mentions in source code of library (sub)components that must be in the classpath in order to succeed. namespace and package/class names are transformed into path components.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

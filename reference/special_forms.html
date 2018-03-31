@@ -82,22 +82,22 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#def">(<em>def</em> symbol init?)</a></li>
-<li><a href="#if">(<em>if</em> test then else?)</a></li>
-<li><a href="#do">(<em>do</em> exprs*)</a></li>
-<li><a href="#let">(<em>let</em> [bindings* ] exprs*)</a></li>
-<li><a href="#quote">(<em>quote</em> form)</a></li>
-<li><a href="#var">(<em>var</em> symbol)</a></li>
-<li><a href="#fn">(<em>fn</em> name? [params* ] exprs*)</a></li>
-<li><a href="#__em_fn_em_name_params_exprs">(<em>fn</em> name? ([params* ] exprs*)+)</a></li>
-<li><a href="#__em_fn_em_name_params_condition_map_exprs">(<em>fn</em> name? [params* ] condition-map? exprs*)</a></li>
-<li><a href="#__em_fn_em_name_params_condition_map_exprs_2">(<em>fn</em> name? ([params* ] condition-map? exprs*)+)</a></li>
-<li><a href="#loop">(<em>loop</em> [bindings* ] exprs*)</a></li>
-<li><a href="#recur">(<em>recur</em> exprs*)</a></li>
-<li><a href="#throw">(<em>throw</em> expr)</a></li>
-<li><a href="#try">(<em>try</em> expr* catch-clause* finally-clause?)</a></li>
-<li><a href="#monitor-enter">(<em>monitor-enter</em> x)</a></li>
-<li><a href="#monitor-exit">(<em>monitor-exit</em> x)</a></li>
+<li><a href="#def">(<code>def</code> <em>symbol</em> <em>doc-string</em>? <em>init</em>?)</a></li>
+<li><a href="#if">(<code>if</code> <em>test</em> <em>then</em> <em>else</em>?)</a></li>
+<li><a href="#do">(<code>do</code> <em>expr</em>*)</a></li>
+<li><a href="#let">(<code>let</code> [ <em>binding</em>* ] <em>expr</em>*)</a></li>
+<li><a href="#quote">(<code>quote</code> <em>form</em>)</a></li>
+<li><a href="#var">(<code>var</code> <em>symbol</em>)</a></li>
+<li><a href="#fn">(<code>fn</code> <em>name</em>? [<em>params</em>* ] <em>expr</em>*)</a></li>
+<li><a href="#__code_fn_code_em_name_em_em_params_em_em_expr_em">(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</a></li>
+<li><a href="#__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</a></li>
+<li><a href="#__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</a></li>
+<li><a href="#loop">(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</a></li>
+<li><a href="#recur">(<code>recur</code> <em>expr</em>*)</a></li>
+<li><a href="#throw">(<code>throw</code> <em>expr</em>)</a></li>
+<li><a href="#try">(<code>try</code> <em>expr</em>* <em>catch-clause</em>* <em>finally-clause</em>?)</a></li>
+<li><a href="#monitor-enter">(<code>monitor-enter</code> <em>expr</em>)</a></li>
+<li><a href="#monitor-exit">(<code>monitor-exit</code> <em>expr</em>)</a></li>
 <li><a href="#_other_special_forms">Other Special Forms</a></li>
 <li><a href="#binding-forms">Binding Forms (Destructuring)</a>
 <ul class="sectlevel2">
@@ -108,39 +108,45 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Special forms have evaluation rules that differ from standard Clojure evaluation rules and are understood directly by the Clojure compiler.</p>
+</div>
+<div class="paragraph">
+<p>Headings for the special forms informally describe the special form grammar using regular expression syntax: ? (optional), * (0 or more), and + (1 or more). Non-terminals are denoted by <em>italics</em>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="def">(<em>def</em> symbol init?)</h2>
+<h2 id="def">(<code>def</code> <em>symbol</em> <em>doc-string</em>? <em>init</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Creates and interns or locates a global var with the name of symbol and a namespace of the value of the current namespace (<em><strong>*ns*</strong></em>). If init is supplied, it is evaluated, and the root binding of the var is set to the resulting value. If init is not supplied, the root binding of the var is unaffected. <em><strong>def</strong></em> always applies to the root binding, even if the var is thread-bound at the point where <em><strong>def</strong></em> is called. <em><strong>def</strong></em> yields the var itself <em>(not its value)</em>. Throws an exception if symbol is already in the namespace and not mapped to an interned var. Since 1.3, <em><strong>def</strong></em> has allowed an optional doc-string: (<em>def</em> symbol doc-string? init?).</p>
+<p>Creates and interns or locates a global <a href="https://clojure.org/reference/vars">var</a> with the name of <em>symbol</em> and a namespace of the value of the current namespace (<code>*ns*</code>). If <em>init</em> is supplied, it is evaluated, and the root binding of the var is set to the resulting value. If <em>init</em> is not supplied, the root binding of the var is unaffected. <code>def</code> always applies to the root binding, even if the var is thread-bound at the point where <code>def</code> is called. <code>def</code> yields the var itself (not its value). Throws an exception if <em>symbol</em> is already in the namespace and not mapped to an interned var. Support for <em>doc-string</em> was added in Clojure 1.3.</p>
 </div>
 <div class="paragraph">
-<p>Any metadata on the symbol will be evaluated, and become metadata on the var itself. There are several metadata keys that have special interpretation:</p>
+<p>Any metadata on the <em>symbol</em> will be evaluated, and become metadata on the var itself. There are several metadata keys that have special interpretation:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><em><strong>:private</strong></em></p>
+<p><code>:private</code></p>
 <div class="paragraph">
-<p>a boolean indicating the access control for the var. If this key is not present, the default access is public (e.g. as if :private false).</p>
+<p>a boolean indicating the access control for the var. If this key is not present, the default access is public (e.g. as if <code>:private false</code>).</p>
 </div>
 </li>
 <li>
-<p><em><strong>:doc</strong></em></p>
+<p><code>:doc</code></p>
 <div class="paragraph">
 <p>a string containing short (1-3 line) documentation for the var contents</p>
 </div>
 </li>
 <li>
-<p><em><strong>:test</strong></em></p>
+<p><code>:test</code></p>
 <div class="paragraph">
-<p>a fn of no args that uses assert to check various operations. The var itself will be accessible during evaluation of a literal fn in the metadata map.</p>
+<p>a fn of no args that uses <code>assert</code> to check various operations. The var itself will be accessible during evaluation of a literal fn in the metadata map.</p>
 </div>
 </li>
 <li>
-<p><em><strong>:tag</strong></em></p>
+<p><code>:tag</code></p>
 <div class="paragraph">
 <p>a symbol naming a class or a Class object that indicates the Java type of the object in the var, or its return value if the object is a fn.</p>
 </div>
@@ -153,27 +159,27 @@
 <div class="ulist">
 <ul>
 <li>
-<p><em><strong>:file</strong></em> string</p>
+<p><code>:file</code> string</p>
 </li>
 <li>
-<p><em><strong>:line</strong></em> int</p>
+<p><code>:line</code> int</p>
 </li>
 <li>
-<p><em><strong>:name</strong></em> simple symbol</p>
+<p><code>:name</code> simple symbol</p>
 </li>
 <li>
-<p><em><strong>:ns</strong></em> namespace in which var is interned</p>
+<p><code>:ns</code> namespace in which var is interned</p>
 </li>
 <li>
-<p><em><strong>:macro</strong></em> true if var names a macro</p>
+<p><code>:macro</code> <code>true</code> if var names a macro</p>
 </li>
 <li>
-<p><em><strong>:arglists</strong></em> a list of vector(s) of argument forms, as were supplied to defn</p>
+<p><code>:arglists</code> a list of vector(s) of argument forms, as were supplied to <code>defn</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The var metadata can be used for application-specific purposes as well. Consider using namespace-qualified keys (e.g. :myns/foo) to avoid clashes.</p>
+<p>The var metadata can be used for application-specific purposes as well. Consider using namespace-qualified keys (e.g. <code>:myns/foo</code>) to avoid clashes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -200,37 +206,37 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>Many macros expand into <em><strong>def</strong></em> (e.g. <em><strong>defn</strong></em>, <em><strong>defmacro</strong></em>), and thus also convey metadata for the resulting var from the symbol used as the name.</p>
+<p>Many macros expand into <code>def</code> (e.g. <code>defn</code>, <code>defmacro</code>), and thus also convey metadata for the resulting var from the <em>symbol</em> used as the name.</p>
 </div>
 <div class="paragraph">
-<p>Using def to modify the root value of a var at other than the top level is usually an indication that you are using the var as a mutable global, and is considered bad style. Consider either using binding to provide a thread-local value for the var, or putting a ref or agent in the var and using transactions or actions for mutation.</p>
+<p>Using <code>def</code> to modify the root value of a var at other than the top level is usually an indication that you are using the var as a mutable global, and is considered bad style. Consider either using binding to provide a thread-local value for the var, or putting a <a href="https://clojure.org/reference/refs">ref</a> or <a href="https://clojure.org/reference/agents">agent</a> in the var and using transactions or actions for mutation.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="if">(<em>if</em> test then else?)</h2>
+<h2 id="if">(<code>if</code> <em>test</em> <em>then</em> <em>else</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Evaluates test. If not the singular values <strong>nil</strong> or <strong>false</strong>, evaluates and yields then, otherwise, evaluates and yields else. If else is not supplied it defaults to <strong>nil</strong>. All of the other conditionals in Clojure are based upon the same logic, that is, <strong>nil</strong> and <strong>false</strong> constitute logical falsity, and everything else constitutes logical truth, and those meanings apply throughout. <em><strong>if</strong></em> performs conditional tests of boolean Java method return values without conversion to Boolean. Note that <em><strong>if</strong></em> does not test for arbitrary values of java.lang.Boolean, only the singular value <strong>false</strong> (Java&#8217;s Boolean.FALSE), so if you are creating your own boxed Booleans make sure to use Boolean/valueOf and not the Boolean constructors.</p>
+<p>Evaluates <em>test</em>. If not the singular values <code>nil</code> or <code>false</code>, evaluates and yields <em>then</em>, otherwise, evaluates and yields <em>else</em>. If <em>else</em> is not supplied it defaults to <code>nil</code>. All of the other conditionals in Clojure are based upon the same logic, that is, <code>nil</code> and <code>false</code> constitute logical falsity, and everything else constitutes logical truth, and those meanings apply throughout. <code>if</code> performs conditional tests of boolean Java method return values without conversion to Boolean. Note that <code>if</code> does not test for arbitrary values of java.lang.Boolean, only the singular value <code>false</code> (Java&#8217;s <code>Boolean.FALSE</code>), so if you are creating your own boxed Booleans make sure to use <code>Boolean/valueOf</code> and not the Boolean constructors.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="do">(<em>do</em> exprs*)</h2>
+<h2 id="do">(<code>do</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Evaluates the expressions in order and returns the value of the last. If no expressions are supplied, returns nil.</p>
+<p>Evaluates the expressions <em>expr</em>s in order and returns the value of the last. If no expressions are supplied, returns <code>nil</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="let">(<em>let</em> [bindings* ] exprs*)</h2>
+<h2 id="let">(<code>let</code> [ <em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>binding &#8658; binding-form init-expr</p>
+<p><em>binding</em> &#8658; <em>binding-form</em> <em>init-expr</em></p>
 </div>
 <div class="paragraph">
-<p>Evaluates the exprs in a lexical context in which the symbols in the binding-forms are bound to their respective init-exprs or parts therein. The bindings are sequential, so each binding can see the prior bindings. The exprs are contained in an implicit do. If a binding symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the binding. The simplest binding-form is a symbol, which is bound to the entire init-expr:</p>
+<p>Evaluates the expressions <em>expr</em>s in a lexical context in which the symbols in the <em>binding-form</em>s are bound to their respective <em>init-expr</em>s or parts therein. The bindings are sequential, so each <em>binding</em> can see the prior bindings. The <em>expr</em>s are contained in an implicit <code>do</code>. If a <em>binding</em> symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the <em>binding</em>. The simplest <em>binding-form</em> is a symbol, which is bound to the entire <em>init-expr</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -244,15 +250,15 @@ user=&gt; (meta #'mymax)
 <p>See <a href="special_forms#binding-forms">Binding Forms</a> for more information about binding forms.</p>
 </div>
 <div class="paragraph">
-<p><strong>Locals created with let are not variables. Once created their values never change!</strong></p>
+<p><strong>Locals created with <code>let</code> are not variables. Once created their values never change!</strong></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="quote">(<em>quote</em> form)</h2>
+<h2 id="quote">(<code>quote</code> <em>form</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Yields the unevaluated form.</p>
+<p>Yields the unevaluated <em>form</em>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -261,41 +267,41 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>Note there is no attempt made to call the function a. The return value is a list of 3 symbols.</p>
+<p>Note there is no attempt made to call the function <code>a</code>. The return value is a list of 3 symbols.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="var">(<em>var</em> symbol)</h2>
+<h2 id="var">(<code>var</code> <em>symbol</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The symbol must resolve to a var, and the Var object itself <em>(not its value)</em> is returned. The reader macro #'x expands to (var x).</p>
+<p>The <em>symbol</em> must resolve to a var, and the Var object itself <em>(not its value)</em> is returned. The reader macro <code>#'x</code> expands to <code>(var x)</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="fn">(<em>fn</em> name? [params* ] exprs*)</h2>
+<h2 id="fn">(<code>fn</code> <em>name</em>? [<em>params</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="__em_fn_em_name_params_exprs">(<em>fn</em> name? ([params* ] exprs*)+)</h2>
+<h2 id="__code_fn_code_em_name_em_em_params_em_em_expr_em">(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>params &#8658; positional-params* , or positional-params* &amp; rest-param<br>
-positional-param &#8658; binding-form<br>
-rest-param &#8658; binding-form<br>
-name &#8658; symbol</p>
+<p><em>params</em> &#8658; <em>positional-param</em>* , or <em>positional-param</em>* &amp; <em>rest-param</em><br>
+<em>positional-param</em> &#8658; <em>binding-form</em><br>
+<em>rest-param</em> &#8658; <em>binding-form</em><br>
+<em>name</em> &#8658; <em>symbol</em></p>
 </div>
 <div class="paragraph">
-<p>Defines a function (fn). Fns are first-class objects that implement the IFn interface. The IFn interface defines an invoke() function that is overloaded with arity ranging from 0-20. A single fn object can implement one or more invoke methods, and thus be overloaded on arity. One and only one overload can itself be variadic, by specifying the ampersand followed by a single rest-param. Such a variadic entry point, when called with arguments that exceed the positional params, will find them in a seq contained in the rest param. If the supplied args do not exceed the positional params, the rest param will be nil.</p>
+<p>Defines a function (fn). Fns are first-class objects that implement the <a href="https://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html">IFn interface</a>. The <code>IFn</code> interface defines an <code>invoke()</code> function that is overloaded with arity ranging from 0-20. A single fn object can implement one or more invoke methods, and thus be overloaded on arity. One and only one overload can itself be variadic, by specifying the ampersand followed by a single <em>rest-param</em>. Such a variadic entry point, when called with arguments that exceed the positional params, will find them in a seq contained in the rest param. If the supplied args do not exceed the positional params, the rest param will be nil.</p>
 </div>
 <div class="paragraph">
 <p>The first form defines a fn with a single invoke method. The second defines a fn with one or more overloaded invoke methods. The arities of the overloads must be distinct. In either case, the result of the expression is a single fn object.</p>
 </div>
 <div class="paragraph">
-<p>The exprs are compiled in an environment in which the params are bound to the actual arguments. The exprs are enclosed in an implicit do. If a name symbol is provided, it is bound within the function definition to the function object itself, allowing for self-calling, even in anonymous functions. If a param symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the binding.</p>
+<p>The expressions <em>expr</em>s are compiled in an environment in which the <em>params</em> are bound to the actual arguments. The <em>expr</em>s are enclosed in an implicit <code>do</code>. If a name <em>symbol</em> is provided, it is bound within the function definition to the function object itself, allowing for self-calling, even in anonymous functions. If a <em>param</em> symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the binding.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -309,19 +315,19 @@ name &#8658; symbol</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that named fns such as mult are normally defined with defn, which expands into something such as the above.</p>
+<p>Note that named fns such as <code>mult</code> are normally defined with <code>defn</code>, which expands into something such as the above.</p>
 </div>
 <div class="paragraph">
-<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of params <em>including the rest param, if present</em>. See recur.</p>
+<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of <em>param</em>s <em>including the rest param, if present</em>. See <a href="special_forms#recur"><code>recur</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>fns implement the Java Callable, Runnable and Comparator interfaces.</p>
+<p>fns implement the Java <code>Callable</code>, <code>Runnable</code> and <code>Comparator</code> interfaces.</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Since 1.1</em></strong></p>
 </div>
 <div class="paragraph">
-<p>Functions support specifying runtime pre- and postconditions.</p>
+<p>Functions support specifying runtime pre- and post-conditions.</p>
 </div>
 <div class="paragraph">
 <p>The syntax for function definitions becomes the following:</p>
@@ -329,32 +335,34 @@ name &#8658; symbol</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__em_fn_em_name_params_condition_map_exprs">(<em>fn</em> name? [params* ] condition-map? exprs*)</h2>
+<h2 id="__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="__em_fn_em_name_params_condition_map_exprs_2">(<em>fn</em> name? ([params* ] condition-map? exprs*)+)</h2>
+<h2 id="__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The syntax extension also applies to defn and other macros which expand to fn forms.</p>
+<p>The syntax extension also applies to <code>defn</code> and other macros which expand to <code>fn</code> forms.</p>
 </div>
 <div class="paragraph">
 <p>Note: If the sole form following the parameter vector is a map, it is treated as the function body, and not the condition map.</p>
 </div>
 <div class="paragraph">
-<p>The condition-map parameter may be used to specify pre- and postconditions for a function. It is of the following form:</p>
+<p>The <em>condition-map</em> parameter may be used to specify pre- and post-conditions for a function. It is of the following form:</p>
 </div>
-<div class="paragraph">
-<p>{:pre [pre-expr*]<br>
-:post [post-expr*]}</p>
+<div class="listingblock">
+<div class="content">
+<pre>{:pre [pre-expr*]
+ :post [post-expr*]}</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>where either key is optional. The condition map may also be provided as metadata of the arglist.</p>
 </div>
 <div class="paragraph">
-<p><strong>pre-expr</strong> and <strong>post-expr</strong> are boolean expressions that may refer to the parameters of the function. In addition, <strong>%</strong> may be used in a post-expr to refer to the function&#8217;s return value. If any of the conditions evaluate to false and <strong>*assert*</strong> is true, an assertion failure exception is thrown.</p>
+<p><em>pre-expr</em> and <em>post-expr</em> are boolean expressions that may refer to the parameters of the function. In addition, <code>%</code> may be used in a <em>post-expr</em> to refer to the function&#8217;s return value. If any of the conditions evaluate to <code>false</code> and <code>*assert*</code> is true, an assertion failure exception is thrown.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -373,21 +381,21 @@ name &#8658; symbol</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="loop">(<em>loop</em> [bindings* ] exprs*)</h2>
+<h2 id="loop">(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>loop is exactly like let, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See recur.</p>
+<p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur"><code>recur</code></a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="recur">(<em>recur</em> exprs*)</h2>
+<h2 id="recur">(<code>recur</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Evaluates the exprs in order, then, in parallel, rebinds the bindings of the recursion point to the values of the exprs. If the recursion point was a fn method, then it rebinds the params. If the recursion point was a loop, then it rebinds the loop bindings. Execution then jumps back to the recursion point. The recur expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of rest args - a single seq (or null) should be passed. recur in other than a tail position is an error.</p>
+<p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
 </div>
 <div class="paragraph">
-<p>Note that recur is the only non-stack-consuming looping construct in Clojure. There is no tail-call optimization and the use of self-calls for looping of unknown bounds is discouraged. recur is functional and its use in tail-position is verified by the compiler.</p>
+<p>Note that <code>recur</code> is the only non-stack-consuming looping construct in Clojure. There is no tail-call optimization and the use of self-calls for looping of unknown bounds is discouraged. <code>recur</code> is functional and its use in tail-position is verified by the compiler.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -402,36 +410,36 @@ name &#8658; symbol</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="throw">(<em>throw</em> expr)</h2>
+<h2 id="throw">(<code>throw</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The expr is evaluated and thrown, therefore it should yield an instance of some derivee of Throwable.</p>
+<p>The <em>expr</em> is evaluated and thrown, therefore it should yield an instance of some derivee of <code>Throwable</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="try">(<em>try</em> expr* catch-clause* finally-clause?)</h2>
+<h2 id="try">(<code>try</code> <em>expr</em>* <em>catch-clause</em>* <em>finally-clause</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>catch-clause &#8594; (<em>catch</em> classname name expr*)<br>
-finally-clause &#8594; (<em>finally</em> expr*)</p>
+<p><em>catch-clause</em> &#8594; (catch <em>classname</em> <em>name</em> <em>expr</em>*)<br>
+<em>finally-clause</em> &#8594; (finally <em>expr</em>*)</p>
 </div>
 <div class="paragraph">
-<p>The exprs are evaluated and, if no exceptions occur, the value of the last is returned. If an exception occurs and catch clauses are provided, each is examined in turn and the first for which the thrown exception is an instance of the named class is considered a matching catch clause. If there is a matching catch clause, its exprs are evaluated in a context in which name is bound to the thrown exception, and the value of the last is the return value of the function. If there is no matching catch clause, the exception propagates out of the function. Before returning, normally or abnormally, any finally exprs will be evaluated for their side effects.</p>
+<p>The <em>expr</em>s are evaluated and, if no exceptions occur, the value of the last expression is returned. If an exception occurs and <em>catch-clause</em>s are provided, each is examined in turn and the first for which the thrown exception is an instance of the <em>classname</em> is considered a matching <em>catch-clause</em>. If there is a matching <em>catch-clause</em>, its <em>expr</em>s are evaluated in a context in which <em>name</em> is bound to the thrown exception, and the value of the last is the return value of the function. If there is no matching <em>catch-clause</em>, the exception propagates out of the function. Before returning, normally or abnormally, any <em>finally-clause</em> <em>expr</em>s will be evaluated for their side effects.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="monitor-enter">(<em>monitor-enter</em> x)</h2>
+<h2 id="monitor-enter">(<code>monitor-enter</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="monitor-exit">(<em>monitor-exit</em> x)</h2>
+<h2 id="monitor-exit">(<code>monitor-exit</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These are synchronization primitives that should be avoided in user code. Use the <em><strong>locking</strong></em> macro.</p>
+<p>These are synchronization primitives that should be avoided in user code. Use the <code>locking</code> macro.</p>
 </div>
 </div>
 </div>
@@ -453,15 +461,15 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <h2 id="binding-forms">Binding Forms (Destructuring)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure supports abstract structural binding, often called destructuring, in let binding lists, fn parameter lists, and any macro that expands into a let or fn. The basic idea is that a binding-form can be a data structure literal containing symbols that get bound to the respective parts of the init-expr. The binding is abstract in that a vector literal can bind to anything that is sequential, while a map literal can bind to anything that is associative.</p>
+<p>Clojure supports abstract structural binding, often called destructuring, in let binding lists, fn parameter lists, and any macro that expands into a <code>let</code> or <code>fn</code>. A <em>binding-form</em> can be a data structure literal containing symbols that get bound to the respective parts of the <em>init-expr</em>. The binding is abstract in that a vector literal can bind to anything that is sequential, while a map literal can bind to anything that is associative.</p>
 </div>
 <div class="sect2">
 <h3 id="_vector_binding_destructuring">Vector binding destructuring</h3>
 <div class="paragraph">
-<p>Vector binding-exprs allow you to bind names to parts of <em>sequential</em> things (not just vectors), like vectors, lists, seqs, strings, arrays, and anything that supports nth. The basic sequential form is a vector of binding-forms, which will be bound to successive elements from the init-expr, looked up via nth. In addition, and optionally, &amp; followed by a binding-forms will cause that binding-form to be bound to the remainder of the sequence, i.e. that part not yet bound, looked up via <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext">nthnext</a> .</p>
+<p>Vector <em>binding-expr</em>s allow you to bind names to parts of <em>sequential</em> things (not just vectors), like vectors, lists, seqs, strings, arrays, and anything that supports <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth"><code>nth</code></a>. The basic sequential form is a vector of <em>binding-form</em>s, which will be bound to successive elements from the <em>init-expr</em>, looked up via <code>nth</code>. In addition, and optionally, <code>&amp;</code> followed by a <em>binding-form</em> will cause that <em>binding-form</em> to be bound to the remainder of the sequence, i.e. that part not yet bound, looked up via <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext"><code>nthnext</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>Finally, also optional, :as followed by a symbol will cause that symbol to be bound to the entire init-expr:</p>
+<p>Finally, also optional, <code>:as</code> followed by a symbol will cause that symbol to be bound to the entire <em>init-expr</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -497,7 +505,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <div class="sect2">
 <h3 id="_map_binding_destructuring">Map binding destructuring</h3>
 <div class="paragraph">
-<p>Map binding-forms allow you to bind names to parts of <em>associative</em> things (not just maps), like maps, vectors, string and arrays (the latter three have integer keys). It consists of a map of binding-form-key pairs, each symbol being bound to the value in the init-expr at the key. In addition, and optionally, an <em><strong>:as</strong></em> key in the binding form followed by a symbol will cause that symbol to be bound to the entire init-expr. Also optionally, an <em><strong>:or</strong></em> key in the binding form followed by another map may be used to supply default values for some or all of the keys if they are not found in the init-expr:</p>
+<p>Map <em>binding-form</em>s allow you to bind names to parts of associative things, like maps, vectors, strings, and arrays (the latter three have integer keys). It consists of a map of <em>binding-form-key</em> pairs, each symbol being bound to the value in the <em>init-expr</em> at the key. In addition, and optionally, an <code>:as</code> key in the binding form followed by a symbol will cause that symbol to be bound to the entire <em>init-expr</em>. Also optionally, an <code>:or</code> key in the binding form followed by another map may be used to supply default values for some or all of the keys if they are not found in the <em>init-expr</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -508,7 +516,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="paragraph">
-<p>It is often the case that you will want to bind same-named symbols to the map keys. The <em><strong>:keys</strong></em> directive allows you to avoid the redundancy:</p>
+<p>It is often the case that you will want to bind same-named symbols to the map keys. The <code>:keys</code> directive allows you to avoid the redundancy:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -536,7 +544,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="paragraph">
-<p>In the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the <em><strong>:keys</strong></em> directive:</p>
+<p>In the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the <code>:keys</code> directive:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -548,7 +556,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="paragraph">
-<p>There are similar <em><strong>:strs</strong></em> and <em><strong>:syms</strong></em> directives for matching string and symbol keys, the latter also allowing prefixed symbol keys since Clojure 1.6.</p>
+<p>There are similar <code>:strs</code> and <code>:syms</code> directives for matching string and symbol keys, the latter also allowing prefixed symbol keys since Clojure 1.6.</p>
 </div>
 <div class="paragraph">
 <p>Clojure 1.9 adds support for directly destructuring many keys (or symbols) that share the same namespace using the following destructuring key forms:</p>
@@ -563,7 +571,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <p>keys elements should not specify a namespace</p>
 </li>
 <li>
-<p>keys elements also define new local symbols, as with :keys</p>
+<p>keys elements also define new local symbols, as with <code>:keys</code></p>
 </li>
 </ul>
 </div>
@@ -576,7 +584,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <p>syms elements should not specify a namespace</p>
 </li>
 <li>
-<p>syms elements also define new local symbols, as with :syms</p>
+<p>syms elements also define new local symbols, as with <code>:syms</code></p>
 </li>
 </ul>
 </div>
@@ -600,8 +608,8 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{j :j, k :k, i :i, [r s &amp; t :as v] :ivec, :or {i 12 j 13}}
-      {:j 15 :k 16 :ivec [22 23 24 25]}]
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [m {:j 15 :k 16 :ivec [22 23 24 25]}
+      {j :j, k :k, i :i, [r s &amp; t :as v] :ivec, :or {i 12 j 13}} m]
   [i j k r s t v])
 
 -&gt; [12 15 16 22 23 (24 25) [22 23 24 25]]</code></pre>

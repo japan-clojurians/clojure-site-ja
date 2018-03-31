@@ -360,7 +360,7 @@ Process an existing array: <a href="https://clojure.github.io/clojure/clojure.co
 <h2 id="typehints">Type Hints</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are metadata tags placed on symbols or expressions that are consumed by the compiler. They can be placed on function parameters, let-bound names, var names (when defined), and expressions:</p>
+<p>Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are <a href="metadata#_metadata_reader_macros">metadata tags</a> placed on symbols or expressions that are consumed by the compiler. They can be placed on function parameters, let-bound names, var names (when defined), and expressions:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -580,6 +580,20 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 100000</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Functions have limited support for primitive arguments and return type: type hints for <code>long</code> and <code>double</code> (only these) generate primitive-typed overloads. Note that this capability is restricted to functions of arity no greater than 4.</p>
+</div>
+<div class="paragraph">
+<p>Thus a function defined as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn foo ^long [^long n])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>both takes and returns values of primitive type <code>long</code> (invocations with a boxed argument and indeed any object result in a cast and delegation to the primitive-typed overload).</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -596,7 +610,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 <div class="ulist">
 <ul>
 <li>
-<p>All arguments are passed to Clojure fns as objects, so there&#8217;s no point to putting non-array primitive type hints on fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.</p>
+<p>All arguments are passed to Clojure fns as objects, so there&#8217;s no point to putting arbitrary primitive type hints on fn args (excepting primitive array type hints, and long and double as noted). Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.</p>
 </li>
 <li>
 <p>(let [foo (int bar)] &#8230;&#8203;) is the correct way to get a primitive local. Do not use ^Integer etc.</p>

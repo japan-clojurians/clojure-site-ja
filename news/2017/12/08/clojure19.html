@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojure 1.9 is now available</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale.html">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api.html">API</a></li>
+              <li><a href="../../../../community/downloads.html">リリース</a></li>
+              <li><a href="../../../../guides/guides.html">ガイド</a></li>
+              <li><a href="../../../../community/resources.html">コミュニティ</a></li>
+              <li><a href="../../../../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Clojure 1.9 is now available</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure 1.9 is now available!</p>
+</div>
+<div class="paragraph">
+<p>Clojure 1.9 introduces two major new features: integration with spec and command line tools.</p>
+</div>
+<div class="paragraph">
+<p>spec (<a href="xref/../../../../../about/spec">rationale</a>, <a href="xref/../../../../../guides/spec">guide</a>) is a library for describing the structure of data and functions with support for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Validation</p>
+</li>
+<li>
+<p>Error reporting</p>
+</li>
+<li>
+<p>Destructuring</p>
+</li>
+<li>
+<p>Instrumentation</p>
+</li>
+<li>
+<p>Test-data generation</p>
+</li>
+<li>
+<p>Generative test generation</p>
+</li>
+<li>
+<p>Documentation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure integrates spec via two new libraries (still in alpha):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/clojure/spec.alpha">spec.alpha</a> - spec implementation</p>
+</li>
+<li>
+<p><a href="https://github.com/clojure/core.specs.alpha">core.specs.alpha</a> - specifications for Clojure itself</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This modularization facilitates refinement of spec separate from the Clojure release cycle.</p>
+</div>
+<div class="paragraph">
+<p>The command line tools (<a href="xref/../../../../../guides/getting_started">getting started</a>, <a href="xref/../../../../../guides/deps_and_cli">guide</a>, <a href="xref/../../../../../reference/deps_and_cli">reference</a>) provide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quick and easy install</p>
+</li>
+<li>
+<p>Clojure REPL and runner</p>
+</li>
+<li>
+<p>Use of Maven and local dependencies</p>
+</li>
+<li>
+<p>A functional API for classpath management (<a href="https://github.com/clojure/tools.deps.alpha">tools.deps.alpha</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The installer is available for Mac developers in brew, for Linux users in a script, and for more platforms in the future.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see the <a href="https://github.com/clojure/clojure/blob/master/changes.md">complete list of all changes</a> in Clojure 1.9 for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors">Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to all of the community members who contributed to Clojure 1.9 (first time contributors in bold):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Adam Clements</strong></p>
+</li>
+<li>
+<p>Andy Fingerhut</p>
+</li>
+<li>
+<p>Brandon Bloom</p>
+</li>
+<li>
+<p><strong>Cameron Desautels</strong></p>
+</li>
+<li>
+<p><strong>Chad Taylor</strong></p>
+</li>
+<li>
+<p>Chris Houser</p>
+</li>
+<li>
+<p><strong>David Bürgin</strong></p>
+</li>
+<li>
+<p><strong>Eli Lindsey</strong></p>
+</li>
+<li>
+<p><strong>Gerrit Jansen Van Vuuren</strong></p>
+</li>
+<li>
+<p>Ghadi Shayban</p>
+</li>
+<li>
+<p><strong>Greg Leppert</strong></p>
+</li>
+<li>
+<p><strong>Jason Whitlark</strong></p>
+</li>
+<li>
+<p><strong>Johan Mena</strong></p>
+</li>
+<li>
+<p>Jozef Wagner</p>
+</li>
+<li>
+<p><strong>Lee Yen-Chin</strong></p>
+</li>
+<li>
+<p><strong>Matthew Boston</strong></p>
+</li>
+<li>
+<p>Michael Blume</p>
+</li>
+<li>
+<p>Michał Marczyk</p>
+</li>
+<li>
+<p>Nicola Mometto</p>
+</li>
+<li>
+<p><strong>Ruslan Al-Fakikh</strong></p>
+</li>
+<li>
+<p><strong>Steffen Dienst</strong></p>
+</li>
+<li>
+<p>Steve Miner</p>
+</li>
+<li>
+<p><strong>Yegor Timoshenko</strong></p>
+</li>
+<li>
+<p><strong>Zhuang XiaoDan</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

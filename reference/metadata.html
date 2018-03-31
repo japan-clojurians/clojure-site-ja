@@ -135,15 +135,29 @@ metadata.</p>
 (<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata
 to the expression following it:</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided
-map.  <strong> Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code>
-<code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.
-</strong> Equivalent to <code>^{:dynamic true} obj</code>
-<code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.  <strong>
+map.  ** Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code></p>
+</li>
+<li>
+<p><code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Equivalent to <code>^{:dynamic true} obj</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.  <strong>
 Equivalent to <code>^{:tag java.lang.String} obj</code> </strong> Used to hint an objects type
 to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type
 Hints</a> for more information and a complete list of special type hints.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>It is possible to add multiple pieces of metadata by chaining the metadata
