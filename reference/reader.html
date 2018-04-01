@@ -88,7 +88,7 @@
 <li><a href="#_literals_リテラル">Literals (リテラル)</a></li>
 <li><a href="#_lists_リスト">Lists (リスト)</a></li>
 <li><a href="#_vectors_ベクター">Vectors (ベクター)</a></li>
-<li><a href="#_maps">Maps</a></li>
+<li><a href="#_maps_マップ">Maps (マップ)</a></li>
 <li><a href="#_sets_セット">Sets (セット)</a></li>
 <li><a href="#_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降">deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</a></li>
 </ul>
@@ -105,7 +105,11 @@
 </ul>
 </li>
 <li><a href="#_extensible_data_notation_edn_拡張可能なデータ記法">extensible data notation (edn) (拡張可能なデータ記法)</a></li>
-<li><a href="#tagged_literals">Tagged Literals (タグ付きリテラル)</a></li>
+<li><a href="#tagged_literals">Tagged Literals (タグ付きリテラル)</a>
+<ul class="sectlevel2">
+<li><a href="#_built_in_tagged_literals">Built-in tagged literals</a></li>
+</ul>
+</li>
 <li><a href="#_reader_conditionals_リーダーコンディショナル">Reader Conditionals (リーダーコンディショナル)</a></li>
 </ul>
 </div>
@@ -240,7 +244,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </div>
 </div>
 <div class="sect2">
-<h3 id="_maps">Maps</h3>
+<h3 id="_maps_マップ">Maps (マップ)</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -538,6 +542,50 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A">*default-data-reader-fn*</a>
 で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 *default-data-reader-fn*
 がnilの場合(デフォルト)RuntimeExceptionが発生する。</p>
+</div>
+<div class="sect2">
+<h3 id="_built_in_tagged_literals">Built-in tagged literals</h3>
+<div class="paragraph">
+<p>Clojure 1.4 introduced the <em>instant</em> and <em>UUID</em> tagged literals. Instants
+have the format <code>#inst "yyyy-mm-ddThh:mm:ss.fff+hh:mm"</code>.  NOTE: Some of the
+elements of this format are optional. See the code for details.  The default
+reader will parse the supplied string into a <code>java.util.Date</code> by
+default. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(def instant #inst "2018-03-28T10:48:00.000")
+(= java.util.Date (class instant))
+;=&gt; true</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since pass[<strong>data-readers</strong>] is a dynamic var that can be bound, you can
+replace the default reader with a different one. For example,
+<code>clojure.instant/read-instant-calendar</code> will parse the literal into a
+<code>java.util.Calendar</code>, while <code>clojure.instant/read-instant-timestamp</code> will
+parse it into a <code>java.util.Timestamp</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(binding [*data-readers* {'inst read-instant-calendar}]
+  (= java.util.Calendar (class (read-string instant))))
+;=&gt; true
+
+(binding [*data-readers* {'inst read-instant-timestamp}]
+  (= java.util.Timestamp (class (read-string instant))))
+;=&gt; true</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>#uuid</code> tagged literal will be parsed into a <code>java.util.UUID</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(= java.util.UUID (class (read-string "#uuid \"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\"")))
+;=&gt; true</pre>
+</div>
+</div>
 </div>
 </div>
 </div>

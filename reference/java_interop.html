@@ -402,7 +402,11 @@ user=&gt; (time (reduce + (map len2 (repeat 1000000 "asdf"))))
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn hinted
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn hinted-single ^String [])
+
+-&gt; #user/hinted-single
+
+(defn hinted
   (^String [])
   (^Integer [a])
   (^java.util.List [a &amp; args]))
