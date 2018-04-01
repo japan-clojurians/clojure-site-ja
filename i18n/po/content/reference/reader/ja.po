@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
 "PO-Revision-Date: 2017-03-12 23:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,17 +18,26 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
 #: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16 en/content/guides/learn/syntax.adoc:14
+#: en/content/guides/learn/flow.adoc:14 en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16 en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14 en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14 en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16 en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -145,8 +154,8 @@ msgstr ""
 "':' で開始、もしくは終了する文字はClojureによって予約されている。シンボルには一つ、もしくは連続しない':'を含むことがで"
 "きる。"
 
-#. type: Title ===
-#: en/content/reference/reader.adoc:31
+#. type: Title ==
+#: en/content/reference/reader.adoc:31 en/content/guides/learn/syntax.adoc:15
 #, no-wrap
 msgid "Literals"
 msgstr "Literals (リテラル)"
@@ -219,6 +228,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#: en/content/guides/learn/sequential_colls.adoc:102
 #, no-wrap
 msgid "Lists"
 msgstr "Lists (リスト)"
@@ -228,8 +238,8 @@ msgstr "Lists (リスト)"
 msgid "Lists are zero or more forms enclosed in parentheses: `(a b c)`"
 msgstr "Listは0個以上の丸括弧で括られたフォーム: `(a b c)`"
 
-#. type: Title ===
-#: en/content/reference/reader.adoc:53
+#. type: Title ==
+#: en/content/reference/reader.adoc:53 en/content/guides/learn/sequential_colls.adoc:19
 #, no-wrap
 msgid "Vectors"
 msgstr "Vectors (ベクター)"
@@ -240,13 +250,9 @@ msgid "Vectors are zero or more forms enclosed in square brackets: `[1 2 3]`"
 msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 3]`"
 
 #. type: Title ====
-#: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
-#, fuzzy, no-wrap
+#: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 msgid "Maps"
 msgstr ""
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
-"マップ\n"
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
 "Maps (マップ)"
 
 #. type: Plain text
@@ -354,6 +360,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235
+#: en/content/guides/learn/hashed_colls.adoc:19
 #, no-wrap
 msgid "Sets"
 msgstr "Sets (セット)"
@@ -758,14 +765,75 @@ msgstr ""
 "%2A[pass:[*default-data-reader-fn*]] で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 pass:[*default-"
 "data-reader-fn*] がnilの場合(デフォルト)RuntimeExceptionが発生する。"
 
-#. type: Title ==
+#. type: Title ===
 #: en/content/reference/reader.adoc:212
+msgid "Built-in tagged literals"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:217
+msgid ""
+"Clojure 1.4 introduced the _instant_ and _UUID_ tagged literals. Instants have the format `#inst \"yyyy-mm-ddThh:mm:"
+"ss.fff+hh:mm\"`.  NOTE: Some of the elements of this format are optional. See the code for details.  The default "
+"reader will parse the supplied string into a `java.util.Date` by default. For example:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/reader.adoc:222
+#, no-wrap
+msgid ""
+"(def instant #inst \"2018-03-28T10:48:00.000\")\n"
+"(= java.util.Date (class instant))\n"
+";=> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:225
+msgid ""
+"Since pass[*data-readers*] is a dynamic var that can be bound, you can replace the default reader with a different "
+"one. For example, `clojure.instant/read-instant-calendar` will parse the literal into a `java.util.Calendar`, while "
+"`clojure.instant/read-instant-timestamp` will parse it into a `java.util.Timestamp`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/reader.adoc:229
+#, no-wrap
+msgid ""
+"(binding [*data-readers* {'inst read-instant-calendar}]\n"
+"  (= java.util.Calendar (class (read-string instant))))\n"
+";=> true\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/reader.adoc:233
+#, no-wrap
+msgid ""
+"(binding [*data-readers* {'inst read-instant-timestamp}]\n"
+"  (= java.util.Timestamp (class (read-string instant))))\n"
+";=> true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:236
+msgid "The `#uuid` tagged literal will be parsed into a `java.util.UUID`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/reader.adoc:240
+#, no-wrap
+msgid ""
+"(= java.util.UUID (class (read-string \"#uuid \\\"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\\\"\")))\n"
+";=> true\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:242
 #, no-wrap
 msgid "Reader Conditionals"
 msgstr "Reader Conditionals (リーダーコンディショナル)"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:215
+#: en/content/reference/reader.adoc:245
 msgid ""
 "Clojure 1.7 introduced a new extension (.cljc) for portable files that can be loaded by multiple Clojure platforms. "
 "The primary mechanism for managing platform-specific code is to isolate that code into a minimal set of namespaces, "
@@ -776,7 +844,7 @@ msgstr ""
 "ペースに隔離し、それらのプラットフォーム毎のバージョン(.clj/.class or.cljs)を用意することだ。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:217
+#: en/content/reference/reader.adoc:247
 msgid ""
 "In cases where is not feasible to isolate the varying parts of the code, or where the code is mostly portable with "
 "only small platform-specific parts, 1.7 also introduced _reader conditionals_, which are supported only in cljc files "
@@ -787,7 +855,7 @@ msgstr ""
 "コンディショナル_ は控えめに、必要な時だけ使うことが推奨される。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:219
+#: en/content/reference/reader.adoc:249
 msgid ""
 "Reader conditionals are a new reader dispatch form starting with `pass:[#?]` or `pass:[#?@]`. Both consist of a "
 "series of alternating features and expressions, similar to `cond`. Every Clojure platform has a well-known \"platform "
@@ -805,14 +873,14 @@ msgstr ""
 "合、フォームは一切読み込まれない(リーダーコンディショナルが最初から存在しないのと同等)。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:221
+#: en/content/reference/reader.adoc:251
 msgid ""
 "The following example will read as Double/NaN in Clojure, js/NaN in ClojureScript, and nil in any other platform:"
 msgstr ""
 "以下の例はClojureでは Double/NaN ClojureScript では js/NaN、それ以外のプラットフォームではnilとして読み込まれる。"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:227
+#: en/content/reference/reader.adoc:257
 #, no-wrap
 msgid ""
 "#?(:clj     Double/NaN\n"
@@ -824,7 +892,7 @@ msgstr ""
 "   :default nil)\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:230
+#: en/content/reference/reader.adoc:260
 msgid ""
 "The syntax for `pass:[#?@]` is exactly the same but the expression is expected to return a collection that can be "
 "spliced into the surrounding context, similar to unquote-splicing in syntax quote. Use of reader conditional splicing "
@@ -835,7 +903,7 @@ msgstr ""
 "発生する。例:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:237
+#: en/content/reference/reader.adoc:267
 #, no-wrap
 msgid ""
 "[1 2 #?@(:clj [3 4] :cljs [5 6])]\n"
@@ -849,7 +917,7 @@ msgstr ""
 ";; anywhere else => [1 2]\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:240
+#: en/content/reference/reader.adoc:270
 msgid ""
 "The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] and https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/read-string[read-string] functions optionally take a map of options as a "
@@ -862,7 +930,7 @@ msgstr ""
 "る:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:246
+#: en/content/reference/reader.adoc:276
 #, no-wrap
 msgid ""
 "  :read-cond - :allow to process reader conditionals, or\n"
@@ -874,12 +942,12 @@ msgstr ""
 "  :features - 有効なフィーチャーキーワードのパーシスタントセット。\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:249
+#: en/content/reference/reader.adoc:279
 msgid "An example of how to test ClojureScript reader conditionals from Clojure:"
 msgstr "ClojureScriptのリーダーコンデショナルをClojureからテストする例:"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:257
+#: en/content/reference/reader.adoc:287
 #, no-wrap
 msgid ""
 "(read-string\n"
@@ -895,7 +963,7 @@ msgstr ""
 ";; :works!\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:260
+#: en/content/reference/reader.adoc:290
 msgid ""
 "However, note that the Clojure reader will _always_ inject the platform feature :clj as well. For platform-agnostic "
 "reading, see https://github.com/clojure/tools.reader[tools.reader]."
@@ -904,7 +972,7 @@ msgstr ""
 "に依存しない読み込みに関しては https://github.com/clojure/tools.reader[tools.reader]を参照。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:262
+#: en/content/reference/reader.adoc:292
 msgid ""
 "If the reader is invoked with `{:read-cond :preserve}`, the reader conditional and non-executed branches will be "
 "preserved, as data, in the returned form. The reader-conditional will be returned as a type that supports keyword "
@@ -917,7 +985,7 @@ msgstr ""
 "る型として返される。"
 
 #. type: delimited block -
-#: en/content/reference/reader.adoc:269
+#: en/content/reference/reader.adoc:299
 #, no-wrap
 msgid ""
 "(read-string\n"
@@ -931,7 +999,7 @@ msgstr ""
 ";; [1 2 #?@(:clj [3 4] :cljs [5 6])]\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:272
+#: en/content/reference/reader.adoc:302
 msgid ""
 "The following functions can also be used as predicates or constructors for these types: + https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/reader-conditional%3F[reader-conditional?] https://clojure.github.io/"

@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14
+#: en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16
+#: en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/higher_order_functions.adoc:1
+#: en/content/guides/higher_order_functions.adoc:23
+#, no-wrap
+msgid "Higher Order Functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:4
+msgid "Michael Zavarella 2017-09-15"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/higher_order_functions.adoc:12
+#, no-wrap
+msgid "First Class Functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:17
+msgid ""
+"In functional programming, functions are first class citizens.  This means "
+"functions can be treated as values.  They can be assigned as values, passed "
+"into functions, and returned from functions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:22
+msgid ""
+"It's common to see function definitions in Clojure using `defn` like `(defn "
+"foo ...)`.  However, this is just syntactic sugar for `(def foo (fn ...))` "
+"`fn` returns a function object.  `defn` returns a var which points to a "
+"function object."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:26
+msgid "A higher order function is a function that either:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:28
+msgid "Takes one or more functions as arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:29
+msgid "Returns a function as its result"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:31
+msgid "This is an important concept in functional programming in any language."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:35
+msgid ""
+"Higher order functions allow us to _compose_ functions.  This means we can "
+"write small functions and combine them to create larger functions.  Like "
+"putting a bunch of small LEGO bricks together to build a house."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:37
+msgid "Let's move away from theory a bit and look at an example."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/higher_order_functions.adoc:38
+#, no-wrap
+msgid "Functions as Arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:41
+msgid "Let's look at two functions"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:47
+#, no-wrap
+msgid ""
+"(defn double-+\n"
+"    [a b]\n"
+"    (* 2 (+ a b)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:54
+#, no-wrap
+msgid ""
+"(defn double-*\n"
+"    [a b]\n"
+"    (* 2 (* a b)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:59
+msgid ""
+"These functions share a common pattern.  They only differ in name and the "
+"function used in the computation of `a` and `b`.  In general, the pattern "
+"looks like this."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:65
+#, no-wrap
+msgid ""
+"(defn double-<f>\n"
+"    [a b]\n"
+"    (* 2 (f a b)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:68
+msgid ""
+"We can generalize our `double-` function by passing `f` in as an argument."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:74
+#, no-wrap
+msgid ""
+"(defn double-op\n"
+"    [f a b]\n"
+"    (* 2 (f a b)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:77
+msgid ""
+"We can use this to express the concept of doubling the result of an "
+"operation rather than having to write functions that perform specific "
+"doubled operations individually."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/higher_order_functions.adoc:78
+#, no-wrap
+msgid "Function Literals"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:83
+msgid ""
+"An anonymous function is a function without a name.  In Clojure these can be "
+"defined in two ways, `fn` and the literal `#(...)`.  Creating a function "
+"with `defn` immediately binds it to a name, `fn` just creates a function."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:88
+msgid ""
+"Lets go back to the example of the bands.  We wrote a function called `rock-"
+"band?` to determine whether or not our band was a rock band.  This is a one-"
+"off operation, we're not going to use it anywhere else in our code.  We can "
+"save ourselves some keystrokes by using an anonymous function."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:95
+#, no-wrap
+msgid ""
+"(def rock-bands\n"
+"    (filter\n"
+"        (fn [band] (= :rock (:genre band)))\n"
+"        bands))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:98
+msgid ""
+"Even more concisely, using the function literal, we can define `rock-bands` "
+"like so."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:102
+#, no-wrap
+msgid "(def rock-bands (filter #(= :rock (:genre %)) bands))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:105
+msgid ""
+"The function literal supports multiple arguments via `%`, `%n`, and `%&`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:109
+#, no-wrap
+msgid "#(println %1 %2 %3)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:114
+msgid ""
+"If you're writing an anonymous function, the literal syntax is nice because "
+"it's so compact.  However, beyond a few arguments, the syntax can become "
+"difficult to read.  In that case, using `fn` may be more appropriate."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/higher_order_functions.adoc:115
+#, no-wrap
+msgid "Functions Returning Functions and Closures"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:120
+msgid ""
+"Our first function will be called `adder`.  It will take a number, `x`, as "
+"it's only argument and return a function.  The function returned by `adder` "
+"will also take a single number, `a`, as it's argument and return `x + a`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:125
+#, no-wrap
+msgid ""
+"(defn adder [x]\n"
+"  (fn [a] (+ x a)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:127
+#, no-wrap
+msgid "(def add-five (adder 5))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:130
+#, no-wrap
+msgid ""
+"(add-five 100)\n"
+";; => 105\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:135
+msgid ""
+"The returned function form `adder` is a closure.  This means, it can access "
+"all of the variables that were in scope when the function was created.  `add-"
+"five` has access to `x` even though it is outside of the `adder` function "
+"definition."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/higher_order_functions.adoc:136
+#, no-wrap
+msgid "Filter"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:140
+msgid ""
+"Filtering is a common operation in computer programming.  Take this set of "
+"animals"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:150
+#, no-wrap
+msgid ""
+"(def pets [\n"
+"    {:name \"Fluffykins\" :type :cat}\n"
+"    {:name \"Sparky\" :type :dog}\n"
+"    {:name \"Tibby\" :type :dog}\n"
+"    {:name \"Al\" :type :fish}\n"
+"    {:name \"Victor\" :type :bear}\n"
+"])\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:154
+msgid ""
+"We want to filter out the non-dog animals because we're writing enterprise "
+"grade software.  First, let's look at a normal for loop."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:166
+#, no-wrap
+msgid ""
+"(defn loop-dogs [pets]\n"
+"    (loop [pets pets\n"
+"           dogs []]\n"
+"        (if (first pets)\n"
+"            (recur (rest pets)\n"
+"                   (if (= :dog (:type (first pets)))\n"
+"                       (conj dogs (first pets))\n"
+"                       dogs))\n"
+"            dogs)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:170
+msgid ""
+"This code works fine, but it's bulky and confusing.  We can simplify this "
+"using `filter`, a higher order function."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:175
+#, no-wrap
+msgid ""
+"(defn filter-dogs [pets]\n"
+"    (filter #(= :dog (:type %)) pets))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:179
+msgid ""
+"The solution using `filter` is much clearer and allows us to show intent "
+"rather than just give commands.  We can break this into even smaller pieces "
+"by breaking the filtering function out into a separate `var`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:183
+#, no-wrap
+msgid "(defn dog? [pet] (= :dog (:type pet)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:185
+#, no-wrap
+msgid "(defn filter-dogs [pets] (filter dog? pets))\n"
+msgstr ""

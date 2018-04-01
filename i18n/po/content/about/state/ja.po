@@ -378,11 +378,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/about/state.adoc:65
-#, fuzzy
-#| msgid ""
-#| "I chose not to use the Erlang-style actor model for same-process state management in Clojure for several reasons:"
 msgid "I chose not to use the actor model for same-process state management in Clojure for several reasons:"
-msgstr "私はいくつかの理由からErlang式のアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:"
+msgstr "私はいくつかの理由からアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:"
 
 #. type: Plain text
 #: en/content/about/state.adoc:68

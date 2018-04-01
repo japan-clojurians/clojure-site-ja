@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
 #: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
 #: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
 #: en/content/reference/transients.adoc:16
 #: en/content/reference/compilation.adoc:16
@@ -34,8 +35,14 @@ msgstr ""
 #: en/content/reference/data_structures.adoc:16
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
 #: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
 #: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
 #: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
 #: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
 #: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
@@ -45,7 +52,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:1
-#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:126
+#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
@@ -299,8 +306,9 @@ msgid ""
 "        (net/send-start-query conn token (replace-vars query)))))\n"
 msgstr ""
 
-#. type: Title ==
+#. type: Title ===
 #: en/content/guides/reader_conditionals.adoc:120
+#: en/content/guides/learn/flow.adoc:285
 #, no-wrap
 msgid "Exception handling"
 msgstr ""

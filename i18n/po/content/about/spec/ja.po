@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
 "PO-Revision-Date: 2018-03-12 22:06+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -37,18 +37,22 @@ msgstr "Rich Hickey 2015-01-01"
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
 #: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
 #: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
 #: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16 en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
 msgstr "toc::[]"
 
@@ -58,37 +62,60 @@ msgstr "toc::[]"
 msgid "Sequences"
 msgstr "シーケンス"
 
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:418 en/content/about/spec.adoc:337
+#, no-wrap
+msgid "Glossary"
+msgstr "用語集"
+
 #. type: Title ====
-#: en/content/reference/documentation.adoc:1 en/content/about/spec.adoc:310
+#: en/content/reference/documentation.adoc:1 en/content/news/2017/12/08/clojure19.adoc:21 en/content/about/spec.adoc:310
 #, no-wrap
 msgid "Documentation"
 msgstr "ドキュメンテーション"
 
 #. type: Title ====
-#: en/content/reference/reader.adoc:57 en/content/about/spec.adoc:198
-#, fuzzy, no-wrap
+#: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 msgid "Maps"
 msgstr ""
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
-"マップ\n"
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
 "Maps (マップ)"
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1199 en/content/about/spec.adoc:100
+#: en/content/guides/spec.adoc:1199 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
 #, no-wrap
 msgid "Instrumentation"
 msgstr "specの組み込み(instrumentation)"
 
 #. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:15 en/content/about/spec.adoc:97
+msgid "Validation"
+msgstr "バリデーション"
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:16 en/content/about/spec.adoc:98
+msgid "Error reporting"
+msgstr "エラー報告"
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:17 en/content/news/2011/07/22/introducing-clojurescript.adoc:30
+#: en/content/about/spec.adoc:99
+msgid "Destructuring"
+msgstr "分配束縛"
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:19 en/content/about/spec.adoc:101
+msgid "Test-data generation"
+msgstr "テストデータ生成"
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:20 en/content/about/spec.adoc:102
+msgid "Generative test generation"
+msgstr "生成的テストの生成"
+
+#. type: Plain text
 #: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
 msgid "Rich Hickey"
 msgstr "Rich Hickey"
-
-#. type: Plain text
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30 en/content/about/spec.adoc:99
-msgid "Destructuring"
-msgstr "分配束縛"
 
 #. type: Title =
 #: en/content/about/spec.adoc:1
@@ -307,26 +334,6 @@ msgstr "仕様記述の労力を最大限に活用する"
 #: en/content/about/spec.adoc:95
 msgid "Writing a spec should enable __automatic__:"
 msgstr "specを書くことで以下のことが __自動的__ に可能になるべきだ:"
-
-#. type: Plain text
-#: en/content/about/spec.adoc:97
-msgid "Validation"
-msgstr "バリデーション"
-
-#. type: Plain text
-#: en/content/about/spec.adoc:98
-msgid "Error reporting"
-msgstr "エラー報告"
-
-#. type: Plain text
-#: en/content/about/spec.adoc:101
-msgid "Test-data generation"
-msgstr "テストデータ生成"
-
-#. type: Plain text
-#: en/content/about/spec.adoc:102
-msgid "Generative test generation"
-msgstr "生成的テストの生成"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:103
@@ -1003,22 +1010,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/about/spec.adoc:336
-#, fuzzy
-#| msgid ""
-#| "Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/clojure/branch-master/"
-#| "clojure.spec-api.html[API docs] for more examples and usage information."
 msgid ""
 "Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/spec.alpha/index.html[API "
 "docs] for more examples and usage information."
 msgstr ""
-"さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/clojure/"
-"branch-master/clojure.spec-api.html[API docs] を参照。"
-
-#. type: Title ==
-#: en/content/about/spec.adoc:337
-#, no-wrap
-msgid "Glossary"
-msgstr "用語集"
+"さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/spec.alpha/index.html"
+"[API docs] を参照。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:338

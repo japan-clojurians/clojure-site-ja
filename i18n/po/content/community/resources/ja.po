@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -75,10 +75,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:18
-#, fuzzy
-#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
 msgid "https://clojureverse.org[Clojureverse]"
-msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgstr ""
 
 #. type: Plain text
 #: en/content/community/resources.adoc:19
@@ -403,33 +401,38 @@ msgstr ""
 msgid "https://atom.io[Atom] with https://atom.io/packages/nrepl[nrepl]"
 msgstr ""
 
-#. type: Title ==
+#. type: Plain text
 #: en/content/community/resources.adoc:95
+msgid "https://code.visualstudio.com[Visual Studio Code] with https://github.com/avli/clojureVSCode[clojureVSCode]"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/resources.adoc:96 en/content/community/training.adoc:52
 #, no-wrap
 msgid "Conferences"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/resources.adoc:98
+#: en/content/community/resources.adoc:99
 msgid "http://clojure-conj.org/[Clojure/conj] (usually in November)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/resources.adoc:99
+#: en/content/community/resources.adoc:100
 msgid "http://www.clojurewest.org/[Clojure/west] (usually in March)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/resources.adoc:100
+#: en/content/community/resources.adoc:101
 msgid "http://euroclojure.com[EuroClojure] (usually mid-year)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/resources.adoc:101
+#: en/content/community/resources.adoc:102
 msgid "http://www.clojurebridge.org/[ClojureBridge] - beginner workshops for women"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/resources.adoc:101
+#: en/content/community/resources.adoc:102
 msgid "http://lanyrd.com/search/?context=future&q=clojure&type=conference[Clojure events]"
 msgstr ""

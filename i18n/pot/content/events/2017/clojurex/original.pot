@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title =
+#: en/content/events/2018/clojurex.adoc:1
 #: en/content/events/2017/clojurex.adoc:1
 #, no-wrap
 msgid "ClojureX"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:22
+#: en/content/events/2017/clojurex.adoc:22
+msgid "Thank you + London Clojurians + https://twitter.com/ldnclj"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/events/2018/clojurex.adoc:23
+#: en/content/events/2017/clojurex.adoc:23
+#, no-wrap
+msgid "London Clojurians logo"
 msgstr ""
 
 #. type: Plain text
@@ -55,17 +69,6 @@ msgid ""
 "We hope you will https://skillsmatter.com/conferences/8783-clojure-"
 "exchange-2017[join us] and meet hundreds of people from the London "
 "Clojurians community and many other like-minded people from around the world."
-msgstr ""
-
-#. type: Plain text
-#: en/content/events/2017/clojurex.adoc:22
-msgid "Thank you + London Clojurians + https://twitter.com/ldnclj"
-msgstr ""
-
-#. type: Positional ($1) AttributeList argument for macro 'image'
-#: en/content/events/2017/clojurex.adoc:23
-#, no-wrap
-msgid "London Clojurians logo"
 msgstr ""
 
 #. type: Target for macro image

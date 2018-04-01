@@ -1,0 +1,216 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16 en/content/guides/learn/syntax.adoc:14
+#: en/content/guides/learn/flow.adoc:14 en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16 en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14 en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14 en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16 en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr "toc::[]"
+
+#. type: Title ===
+#: en/content/community/libraries.adoc:18 en/content/guides/repl/launching_a_basic_repl.adoc:42
+#, no-wrap
+msgid "Leiningen"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/getting_started.adoc:73 en/content/guides/repl/launching_a_basic_repl.adoc:110
+#, fuzzy, no-wrap
+#| msgid "java -cp clojure.jar clojure.main\n"
+msgid "java -jar clojure.jar\n"
+msgstr "java -cp clojure.jar clojure.main\n"
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4 en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4 en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/repl/launching_a_basic_repl.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Launching a Basic REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:18
+msgid "Use any of the following methods to start a basic Clojure REPL in a terminal window:"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/launching_a_basic_repl.adoc:19
+#, no-wrap
+msgid "Using the CLI tools"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:22
+msgid ""
+"The easiest way to start a Clojure REPL is with using the `clj` command of the Clojure <<xref/../../deps_and_cli#, "
+"CLI tools>>:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:26
+#, no-wrap
+msgid "clj ## run this command in a terminal window\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:29 en/content/guides/repl/launching_a_basic_repl.adoc:52
+#: en/content/guides/repl/launching_a_basic_repl.adoc:82 en/content/guides/repl/launching_a_basic_repl.adoc:113
+msgid "You should see output like the following:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:34 en/content/guides/repl/launching_a_basic_repl.adoc:118
+#, no-wrap
+msgid ""
+"Clojure 1.9.0\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:37
+msgid "See <<xref/../../getting_started#,Getting Started>> to learn how to install the Clojure CLI."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:39
+msgid "You can exit the REPL by typing `Ctrl+D` (pressing the `Ctrl` and `D` keys at the same time)."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/launching_a_basic_repl.adoc:40
+#, no-wrap
+msgid "Using a project management tool"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:45
+msgid "If you have installed https://leiningen.org/[Leiningen], you can use it to launch a REPL:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:49
+#, no-wrap
+msgid "lein repl\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:65
+#, no-wrap
+msgid ""
+"nREPL server started on port 64411 on host 127.0.0.1 - nrepl://127.0.0.1:64411\n"
+"REPL-y 0.3.7, nREPL 0.2.12\n"
+"Clojure 1.8.0\n"
+"Java HotSpot(TM) 64-Bit Server VM 1.8.0_05-b13\n"
+"    Docs: (doc function-name-here)\n"
+"          (find-doc \"part-of-name-here\")\n"
+"  Source: (source function-name-here)\n"
+" Javadoc: (javadoc java-object-or-class-here)\n"
+"    Exit: Control+D or (exit) or (quit)\n"
+" Results: Stored in vars *1, *2, *3, an exception in *e\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:67 en/content/about/dynamic.adoc:30
+#, no-wrap
+msgid "user=>\n"
+msgstr "user=>\n"
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:71
+#, no-wrap
+msgid ""
+"If you run `lein repl` from inside a Leiningen project directory, the library dependencies\n"
+" and source code of the project will be available at the REPL.\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/repl/launching_a_basic_repl.adoc:72
+#, no-wrap
+msgid "Boot"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:75
+msgid "If you have installed http://boot-clj.com/[Boot], you can use it to launch a REPL:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:79
+#, no-wrap
+msgid "boot repl\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:100
+#, no-wrap
+msgid ""
+"nREPL server started on port 50109 on host 127.0.0.1 - nrepl://127.0.0.1:50109\n"
+"REPL-y 0.3.7, nREPL 0.2.12\n"
+"Clojure 1.9.0\n"
+"Java HotSpot(TM) 64-Bit Server VM 1.8.0_05-b13\n"
+"        Exit: Control+D or (exit) or (quit)\n"
+"    Commands: (user/help)\n"
+"        Docs: (doc function-name-here)\n"
+"              (find-doc \"part-of-name-here\")\n"
+"Find by Name: (find-name \"part-of-name-here\")\n"
+"      Source: (source function-name-here)\n"
+"     Javadoc: (javadoc java-object-or-class-here)\n"
+"    Examples from clojuredocs.org: [clojuredocs or cdoc]\n"
+"              (user/clojuredocs name-here)\n"
+"              (user/clojuredocs \"ns-here\" \"name-here\")\n"
+"boot.user=>\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/launching_a_basic_repl.adoc:102
+#, no-wrap
+msgid "Using Java and the Clojure JAR"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/launching_a_basic_repl.adoc:106
+#, no-wrap
+msgid ""
+"If you have <<xref/../../getting_started#_other_ways_to_run_clojure,downloaded and built Clojure>>,\n"
+" you can use Java to launch a Clojure REPL:\n"
+msgstr ""

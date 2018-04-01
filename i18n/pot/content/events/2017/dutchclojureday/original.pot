@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title =
+#: en/content/events/2018/dutchclojureday.adoc:1
 #: en/content/events/2017/dutchclojureday.adoc:1
 #, no-wrap
 msgid "Dutch Clojure Day"
 msgstr ""
 
 #. type: Plain text
-#: en/content/events/2017/dutchclojureday.adoc:4
-msgid "Dutch Clojure Day 2017-03-25"
-msgstr ""
-
-#. type: Plain text
+#: en/content/events/2018/dutchclojureday.adoc:12
 #: en/content/events/2017/dutchclojureday.adoc:11
 #: en/content/events/2016/dutch_clojure_days.adoc:11
 msgid ""
 "The Annual Gathering of Clojure Enthusiasts and Practitioners in the "
 "Netherlands!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/dutchclojureday.adoc:4
+msgid "Dutch Clojure Day 2017-03-25"
 msgstr ""

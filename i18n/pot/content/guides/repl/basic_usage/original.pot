@@ -1,0 +1,610 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14
+#: en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16
+#: en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/deps_and_cli.adoc:17
+#: en/content/guides/repl/basic_usage.adoc:17
+#, no-wrap
+msgid "Evaluating Clojure expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/repl/basic_usage.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Basic Usage"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:21
+msgid ""
+"Having started the REPL (as described <<launching_a_basic_repl#,in the "
+"previous chapter>>), you can now evaluate Clojure expressions by simply "
+"typing them into the REPL and pressing ENTER:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:34
+#, no-wrap
+msgid ""
+"user=> (+ 2 3)\n"
+"5\n"
+"user=> (defn factorial [n]\n"
+"(if (= n 0)\n"
+"  1\n"
+"  (* n (factorial (dec n)))))\n"
+"#'user/factorial\n"
+"user=> (factorial 10)\n"
+"3628800\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:39
+#, no-wrap
+msgid ""
+"Under each expression, we see the _result_ of evaluating the expression.\n"
+" This is what a REPL does: for each expression that we submit to it, the REPL **R**eads it,\n"
+" **E**valuates it, then **P**rints the result, all of this in a **L**oop.\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:44
+msgid ""
+"If you are in the process of learning Clojure, take some time to experiment "
+"at the REPL.  The rapid feedback loop it provides makes for a very effective "
+"learning environment."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:50
+#, no-wrap
+msgid ""
+"Although the above examples are very basic, you can run full-featured Clojure programs\n"
+" in this way. Clojure was designed so that its REPL environment provides the full power of the language:\n"
+" you could actually run any existing Clojure program simply by pasting the content of the source files\n"
+" in the right order into the REPL.\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:54
+#, no-wrap
+msgid "**TIP: using an editor next to your REPL**\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:59
+#, no-wrap
+msgid ""
+"Editing Clojure code inside the terminal window can get tedious; when that is the case,\n"
+" one simple trick is to write the code in a text editor of your choosing that has a syntax-aware\n"
+" Clojure mode, and copy and paste code from the editor to the REPL terminal window. Here's an\n"
+" example of what this looks like (the editor used is https://atom.io/packages/language-clojure/[Atom]):\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:61
+msgid ""
+"image:/images/content/guides/repl/editor-cli-repl.gif[\"Editor next to CLI "
+"REPL\"]"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:66
+msgid ""
+"In the _<<enhancing_your_repl_workflow#,Enhancing your REPL workflow>>_ "
+"chapter of this guide, we will see more ergonomic configurations for using "
+"the REPL.  However, this minimalist setup is sufficient for the scope of "
+"this tutorial, and is important for mastering the fundamentals."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/basic_usage.adoc:69
+#, no-wrap
+msgid "The 2 flavors of printing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:72
+msgid "Consider the following evaluation:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:78
+#, no-wrap
+msgid ""
+"user=> (println \"Hello World\")\n"
+"Hello World\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:82
+#, no-wrap
+msgid ""
+"This is strange: unlike the previous examples, it looks like evaluating the `(println \"Hello World\")` expression\n"
+" yielded 2 results: `Hello World` and `nil`.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:86
+#, no-wrap
+msgid ""
+"This is because the https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println[println]\n"
+" function _prints_ its argument to the standard output but _returns_ nil.\n"
+" Therefore, the 2 lines we see under our expression are very different in nature:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:88
+msgid ""
+"`Hello World` is a _side effect_ of evaluating the expression (printing to "
+"standard output): the printing was done by our code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:89
+msgid ""
+"`nil` is the _result_ of evaluating the expression: the printing was done by "
+"the REPL."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/basic_usage.adoc:90
+#, no-wrap
+msgid "Calling Clojure libs from the REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:98
+#, no-wrap
+msgid ""
+"So far, we have only called code that we had defined manually at the REPL (for instance our `factorial` function defined above).\n"
+"But the REPL also lets you use pre-existing Clojure code, i.e Clojure <<xref/../../../reference/libs#,libs>>.footnote:[\n"
+"Note that what we call a Clojure <<xref/../../../reference/libs#,lib>> is not necessarily a https://en.wikipedia.org/wiki/Library_(computing)[library]:\n"
+"it can also be a source code file in your current project.]\n"
+"Given a Clojure lib with namespace `my.name.space`, you can evaluate `(https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require] '[my.name.space])`\n"
+" to make that lib's code loaded and available in the REPL.\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/repl/basic_usage.adoc:99
+#, no-wrap
+msgid "Example: using clojure.string"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:104
+#, no-wrap
+msgid ""
+"For example, `https://clojure.github.io/clojure/clojure.string-api.html[clojure.string]`\n"
+" is a lib bundled with Clojure for manipulating text.\n"
+" Let's require `clojure.string` and call its `clojure.string/upper-case` function:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:111
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.string])\n"
+"nil\n"
+"user=> (clojure.string/upper-case \"clojure\")\n"
+"\"CLOJURE\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:116
+#, no-wrap
+msgid ""
+"`https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require]` also lets use\n"
+" define an _alias_ for the `clojure.string` namespace, by adding an `:as` clause. This enables us to\n"
+" refer to names defined in the `clojure.string` namespace more concisely:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:123
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.string :as str])\n"
+"nil\n"
+"user=> (str/upper-case \"clojure\")\n"
+"\"CLOJURE\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:126
+msgid ""
+"Finally, if we're _very_ lazy and don't want to type an alias at all, we can "
+"add a `:refer` clause:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:133
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.string :refer [upper-case]])\n"
+"nil\n"
+"user=> (upper-case \"clojure\")\n"
+"\"CLOJURE\"\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/basic_usage.adoc:135
+#, no-wrap
+msgid "Looking up documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:139
+#, no-wrap
+msgid ""
+"The REPL can also be used for looking up API documentation, using the `https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl]` lib.\n"
+" Evaluate the following expression at the REPL:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:144
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.repl :refer :all])\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:147
+msgid ""
+"This expression makes all the names defined in the `clojure.repl` namespace "
+"available in the REPL."
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/basic_usage.adoc:148
+#, no-wrap
+msgid "doc"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:150
+msgid ""
+"You can print the API documentation of a given Var by evaluating `(https://"
+"clojuredocs.org/clojure.repl/doc[doc] MY-VAR-NAME)`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:154
+#, no-wrap
+msgid "user=> (doc nil?)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:160
+#, no-wrap
+msgid ""
+"clojure.core/nil?\n"
+"([x])\n"
+"  Returns true if x is nil, false otherwise.\n"
+"nil\n"
+"user=> (doc clojure.string/upper-case)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:165
+#, no-wrap
+msgid ""
+"clojure.string/upper-case\n"
+"([s])\n"
+"  Converts string to all upper-case.\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/basic_usage.adoc:167
+#, no-wrap
+msgid "source"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:169
+msgid ""
+"You can also view the source code that was used to define a Var using "
+"`https://clojuredocs.org/clojure.repl/source[source]`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:180
+#, no-wrap
+msgid ""
+"user=> (source some?)\n"
+"(defn some?\n"
+"  \"Returns true if x is not nil, false otherwise.\"\n"
+"  {:tag Boolean\n"
+"   :added \"1.6\"\n"
+"   :static true}\n"
+"  [x] (not (nil? x)))\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/basic_usage.adoc:182
+#, no-wrap
+msgid "dir"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:185
+#, no-wrap
+msgid ""
+"You can use `https://clojuredocs.org/clojure.repl/dir[dir]` to list the names of all the Vars defined a given namespace.\n"
+" Let's do this with the `clojure.string` namespace:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:211
+#, no-wrap
+msgid ""
+"user=> (dir clojure.string)\n"
+"blank?\n"
+"capitalize\n"
+"ends-with?\n"
+"escape\n"
+"includes?\n"
+"index-of\n"
+"join\n"
+"last-index-of\n"
+"lower-case\n"
+"re-quote-replacement\n"
+"replace\n"
+"replace-first\n"
+"reverse\n"
+"split\n"
+"split-lines\n"
+"starts-with?\n"
+"trim\n"
+"trim-newline\n"
+"triml\n"
+"trimr\n"
+"upper-case\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:214
+msgid ""
+"As another example, let's use `dir` to see what's available in `clojure."
+"repl` itself:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:232
+#, no-wrap
+msgid ""
+"user=> (dir clojure.repl)\n"
+"apropos\n"
+"demunge\n"
+"dir\n"
+"dir-fn\n"
+"doc\n"
+"find-doc\n"
+"pst\n"
+"root-cause\n"
+"set-break-handler!\n"
+"source\n"
+"source-fn\n"
+"stack-element-str\n"
+"thread-stopper\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:235
+msgid ""
+"We recognize the `doc`, `source` and `dir` operations we've used so far."
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/basic_usage.adoc:236
+#, no-wrap
+msgid "apropos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:240
+#, no-wrap
+msgid ""
+"If you don't exactly remember the name of some Var, you can search for it\n"
+" using `https://clojuredocs.org/clojure.repl/apropos[apropos]`:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:245
+#, no-wrap
+msgid ""
+"user=> (apropos \"index\")\n"
+"(clojure.core/indexed? clojure.core/keep-indexed clojure.core/map-indexed clojure.string/index-of clojure.string/last-index-of)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:250
+#, no-wrap
+msgid ""
+"`https://clojuredocs.org/clojure.repl/apropos[apropos]` only searches Var names; you can search docstrings\n"
+" (the text that is printed by `https://clojuredocs.org/clojure.repl/doc[doc]`) using\n"
+" `https://clojuredocs.org/clojure.repl/find-doc[find-doc]`:\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/basic_usage.adoc:251
+#, no-wrap
+msgid "find-doc"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:255
+#, no-wrap
+msgid "user=> (find-doc \"indexed\")\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:263
+#, no-wrap
+msgid ""
+"clojure.core/contains?\n"
+"([coll key])\n"
+" Returns true if key is present in the given collection, otherwise\n"
+" returns false.  Note that for numerically indexed collections like\n"
+" vectors and Java arrays, this tests if the numeric key is within the\n"
+" range of indexes. 'contains?' operates constant or logarithmic time;\n"
+" it will not perform a linear search for a value.  See also 'some'.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:267
+#, no-wrap
+msgid ""
+"clojure.core/indexed?\n"
+"([coll])\n"
+" Return true if coll implements Indexed, indicating efficient lookup by index\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:274
+#, no-wrap
+msgid ""
+"clojure.core/keep-indexed\n"
+"([f] [f coll])\n"
+" Returns a lazy sequence of the non-nil results of (f index item). Note,\n"
+" this means false return values will be included.  f must be free of\n"
+" side-effects.  Returns a stateful transducer when no collection is\n"
+" provided.\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:283
+#, no-wrap
+msgid ""
+"clojure.core/map-indexed\n"
+"([f] [f coll])\n"
+" Returns a lazy sequence consisting of the result of applying f to 0\n"
+" and the first item of coll, followed by applying f to 1 and the second\n"
+" item in coll, etc, until coll is exhausted. Thus function f should\n"
+" accept 2 arguments, index and item. Returns a stateful transducer when\n"
+" no collection is provided.\n"
+"nil\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:288
+#, no-wrap
+msgid "**Documentation is available only for libs that have been required.**\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/basic_usage.adoc:292
+msgid ""
+"For instance, if you have not required the `clojure.set` namespace, you "
+"won't be able to search documentation for `clojure.set/union`. This is "
+"illustrated by this example REPL session:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:304
+#, no-wrap
+msgid ""
+"clj\n"
+"Clojure 1.9.0\n"
+"user=> (doc clojure.set/union)\n"
+"nil                             ;; no doc found\n"
+"user=> (apropos \"union\")\n"
+"()\n"
+"user=> (require '[clojure.set]) ;; now we're requiring clojure.set\n"
+"nil\n"
+"user=> (doc clojure.set/union)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:312
+#, no-wrap
+msgid ""
+"clojure.set/union\n"
+"([] [s1] [s1 s2] [s1 s2 & sets])\n"
+"  Return a set that is the union of the input sets\n"
+"nil\n"
+"user=> (apropos \"union\")\n"
+"(clojure.set/union)\n"
+"user=>\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/basic_usage.adoc:314
+#, no-wrap
+msgid "====\n"
+msgstr ""

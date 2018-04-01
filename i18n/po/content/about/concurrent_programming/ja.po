@@ -88,13 +88,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:20
-#, fuzzy
-#| msgid ""
-#| "Most of this is covered in more detail in the https://www.youtube.com/watch?v=dGVqrGmwOAw[concurrency screencast]."
 msgid ""
 "Most of this is covered in more detail in the https://www.youtube.com/watch?v=nDAfZK8m5_8[concurrency screencast]."
 msgstr ""
-"これについてより詳しくは https://www.youtube.com/watch?v=dGVqrGmwOAw[concurrency screencast] でカバーされている。"
+"これについてより詳しくは https://www.youtube.com/watch?v=nDAfZK8m5_8[concurrency screencast] でカバーされている。"
 
 #. type: Plain text
 #: en/content/about/concurrent_programming.adoc:22

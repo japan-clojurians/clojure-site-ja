@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ===
-#: en/content/community/start_group.adoc:23 en/content/guides/guides.adoc:24
+#: en/content/community/start_group.adoc:23 en/content/guides/guides.adoc:25
 #, no-wrap
 msgid "Tools"
 msgstr ""
@@ -51,57 +51,62 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:14
+msgid "<<repl/introduction#,Programming at the REPL>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/guides.adoc:15
 msgid "<<faq#,FAQ>>"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/guides.adoc:15
+#: en/content/guides/guides.adoc:16
 #, no-wrap
 msgid "Language"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:18
+#: en/content/guides/guides.adoc:19
 msgid "<<spec#,spec>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:19
+#: en/content/guides/guides.adoc:20
 msgid "<<weird_characters#,Reading Clojure Characters>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:20
+#: en/content/guides/guides.adoc:21
 msgid "<<destructuring#,Destructuring>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:21
+#: en/content/guides/guides.adoc:22
 msgid "<<threading_macros#,Threading Macros>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:22
+#: en/content/guides/guides.adoc:23
 msgid "<<comparators#,Comparators>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:23
+#: en/content/guides/guides.adoc:24
 msgid "<<reader_conditionals#,Reader Conditionals>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:27
+#: en/content/guides/guides.adoc:28
 msgid "<<deps_and_cli#,Deps and CLI>>"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/guides.adoc:28
+#: en/content/guides/guides.adoc:29
 #, no-wrap
 msgid "Libraries"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/guides.adoc:30
+#: en/content/guides/guides.adoc:31
 msgid "<<core_async_go#,Go Block Best Practices>>"
 msgstr ""

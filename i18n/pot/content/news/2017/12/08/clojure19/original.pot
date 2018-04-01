@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ====
+#: en/content/reference/documentation.adoc:1
+#: en/content/news/2017/12/08/clojure19.adoc:21 en/content/about/spec.adoc:310
+#, no-wrap
+msgid "Documentation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/spec.adoc:1199
+#: en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
+#, no-wrap
+msgid "Instrumentation"
+msgstr ""
+
+#. type: Title =
+#: en/content/news/2017/12/08/clojure19.adoc:1
+#, no-wrap
+msgid "Clojure 1.9 is now available"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:4
+msgid "Alex Miller 2017-12-08"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:9
+msgid "Clojure 1.9 is now available!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:11
+msgid ""
+"Clojure 1.9 introduces two major new features: integration with spec and "
+"command line tools."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:13
+msgid ""
+"spec (<<xref/../../../../../about/spec#,rationale>>, <<xref/../../../../../"
+"guides/spec#,guide>>) is a library for describing the structure of data and "
+"functions with support for:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:15 en/content/about/spec.adoc:97
+msgid "Validation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:16 en/content/about/spec.adoc:98
+msgid "Error reporting"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:17
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30
+#: en/content/about/spec.adoc:99
+msgid "Destructuring"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:19 en/content/about/spec.adoc:101
+msgid "Test-data generation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:20 en/content/about/spec.adoc:102
+msgid "Generative test generation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:23
+msgid "Clojure integrates spec via two new libraries (still in alpha):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:25
+msgid "https://github.com/clojure/spec.alpha[spec.alpha] - spec implementation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:26
+msgid ""
+"https://github.com/clojure/core.specs.alpha[core.specs.alpha] - "
+"specifications for Clojure itself"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:28
+msgid ""
+"This modularization facilitates refinement of spec separate from the Clojure "
+"release cycle."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:30
+msgid ""
+"The command line tools (<<xref/../../../../../guides/getting_started#,"
+"getting started>>, <<xref/../../../../../guides/deps_and_cli#,guide>>, "
+"<<xref/../../../../../reference/deps_and_cli#,reference>>) provide:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:32
+msgid "Quick and easy install"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:33
+msgid "Clojure REPL and runner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:34
+msgid "Use of Maven and local dependencies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:35
+msgid ""
+"A functional API for classpath management (https://github.com/clojure/tools."
+"deps.alpha[tools.deps.alpha])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:37
+msgid ""
+"The installer is available for Mac developers in brew, for Linux users in a "
+"script, and for more platforms in the future."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:39
+msgid ""
+"For more information, see the https://github.com/clojure/clojure/blob/master/"
+"changes.md[complete list of all changes] in Clojure 1.9 for more details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:41
+#: en/content/news/2016/01/19/clojure18.adoc:17
+msgid "## Contributors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:43
+msgid ""
+"Thanks to all of the community members who contributed to Clojure 1.9 (first "
+"time contributors in bold):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:45
+#, no-wrap
+msgid "*Adam Clements*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:46
+#: en/content/news/2016/01/19/clojure18.adoc:27
+#, no-wrap
+msgid "Andy Fingerhut\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:47
+#, no-wrap
+msgid "Brandon Bloom\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:48
+#, no-wrap
+msgid "*Cameron Desautels*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:49
+#, no-wrap
+msgid "*Chad Taylor*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:50
+#, no-wrap
+msgid "Chris Houser\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:51
+#, no-wrap
+msgid "*David Bürgin*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:52
+#, no-wrap
+msgid "*Eli Lindsey*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:53
+#, no-wrap
+msgid "*Gerrit Jansen Van Vuuren*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:54
+#: en/content/news/2016/01/19/clojure18.adoc:35
+#, no-wrap
+msgid "Ghadi Shayban\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:55
+#, no-wrap
+msgid "*Greg Leppert*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:56
+#, no-wrap
+msgid "*Jason Whitlark*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:57
+#, no-wrap
+msgid "*Johan Mena*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:58
+#: en/content/news/2016/01/19/clojure18.adoc:41
+#, no-wrap
+msgid "Jozef Wagner\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:59
+#, no-wrap
+msgid "*Lee Yen-Chin*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:60
+#, no-wrap
+msgid "*Matthew Boston*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:61
+#: en/content/news/2016/01/19/clojure18.adoc:45
+#, no-wrap
+msgid "Michael Blume\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:62
+#, no-wrap
+msgid "Michał Marczyk\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:63
+#: en/content/news/2016/01/19/clojure18.adoc:47
+#, no-wrap
+msgid "Nicola Mometto\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:64
+#, no-wrap
+msgid "*Ruslan Al-Fakikh*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:65
+#, no-wrap
+msgid "*Steffen Dienst*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:66
+#: en/content/news/2016/01/19/clojure18.adoc:55
+#, no-wrap
+msgid "Steve Miner\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:67
+#, no-wrap
+msgid "*Yegor Timoshenko*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:67
+#, no-wrap
+msgid "*Zhuang XiaoDan*\n"
+msgstr ""

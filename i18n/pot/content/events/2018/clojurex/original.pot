@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2018/clojurex.adoc:1
+#: en/content/events/2017/clojurex.adoc:1
+#, no-wrap
+msgid "ClojureX"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:4
+msgid "London Clojurians 2018-12-03"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:12
+msgid ""
+"The eighth edition of Clojure eXchange (ClojureX) annual conference takes "
+"place in London, UK on the 3rd & 4th December 2018."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:14
+msgid ""
+"Its a two-day fun-packed conference that attracts speakers from around the "
+"world along with local developers in the community sharing their experiences."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:16
+msgid ""
+"Help make our conference amazing and diverse by https://skillsmatter.com/"
+"conferences/10459-clojure-exchange-2018#get_involved[submitting to our Call "
+"For Papers] and take a look at the video's from previous conferences."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:18
+msgid ""
+"We hope you will https://skillsmatter.com/conferences/10459-clojure-"
+"exchange-2018[join us] and meet hundreds of people from the London "
+"Clojurians community and many other like-minded people from around the world."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:22
+#: en/content/events/2017/clojurex.adoc:22
+msgid "Thank you + London Clojurians + https://twitter.com/ldnclj"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/events/2018/clojurex.adoc:23
+#: en/content/events/2017/clojurex.adoc:23
+#, no-wrap
+msgid "London Clojurians logo"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/events/2018/clojurex.adoc:23
+#, no-wrap
+msgid "https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png"
+msgstr ""

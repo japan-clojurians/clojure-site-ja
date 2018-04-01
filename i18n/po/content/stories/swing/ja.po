@@ -1,0 +1,285 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:11 en/content/stories/swing.adoc:11
+#, no-wrap
+msgid "**How long have you been working with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:15 en/content/stories/swing.adoc:17
+#, no-wrap
+msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:19 en/content/stories/swing.adoc:25
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:27 en/content/stories/swing.adoc:34
+#, no-wrap
+msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:31 en/content/stories/swing.adoc:90
+#, no-wrap
+msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:35 en/content/stories/swing.adoc:97
+#, no-wrap
+msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:39 en/content/stories/swing.adoc:117
+#, no-wrap
+msgid "**What is your stack?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:43 en/content/stories/swing.adoc:104
+#, no-wrap
+msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/swing.adoc:1
+#, fuzzy, no-wrap
+#| msgid "eduction"
+msgid "Swing Education"
+msgstr "eduction"
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:4
+msgid "Alex Miller 2018-01-24"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:9
+msgid "image:/images/content/stories/swing-logo.png[\"Swing Education\",height=\"55\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:15
+msgid ""
+"http://www.swingeducation.com/[Swing Education] has been working with Clojure and Clojurescript since being founded "
+"in early 2015.  Personally I've been working with Clojure since late 2013."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:23
+msgid ""
+"Our current engineering team currently consist of three full-time engineers.  Our codebase is essentially 100% "
+"Clojure.  We are actively hiring for Q1 2018 and hope to grow the team to five engineers and one person that is more "
+"designer/UI-UX-focused but will still likely end up working with Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:32
+msgid ""
+"Our primary product is an online marketplace for schools to issue requests for subsitute teachers.  We help schools "
+"access more subs and try to automate via software tedious work associated with managing a pool of substitute teachers "
+"(recruiting, screening, payroll, etc.).  Our network provides subs with a wider range of work opportunities to gain "
+"experience and build their professional network."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:38
+msgid ""
+"Strictly speaking perhaps not a library, but regardless https://www.datomic.com/[Datomic] has been extremely "
+"enjoyable to work with. A small subset of the highlights:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:40
+msgid "Being able to treat the database as a value has made most of our code"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:43
+msgid ""
+"extremely deterministic and removes many different classes of potential errors due to \"oh this value changed during "
+"execution\" since the db value is consistent."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:44
+msgid "d/transact returns the resulting db value after transacting which"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:46
+msgid "removes issues that traditionally occur with reads after writes with read-replicas."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:47
+msgid "tx-data being represented as simple vectors and maps allows us to"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:50
+msgid ""
+"compose transactions elegantly and makes it much easier to programatically generate code that either creates or "
+"modifies multiple entities at once."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:51
+msgid "The transaction listener queue is an elegant way to listen for data"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:56
+msgid ""
+"changes that require notifications to get triggered without tight coupling to the point at which the transaction was "
+"executed.  If our notification process needs to shut-down or restart, we can use d/tx-log to walk through the log "
+"again (lazily no less!) from our last known notification point."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:57
+msgid "d/as-of and d/since have been used to help time-travel to"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:61
+msgid ""
+"understand what a user was seeing at a particular time or what the system saw when it was executing.  Both bugs and "
+"correct behavior have been confirmed this way in production when used in combination with code that expects the "
+"database as an argument."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:62
+msgid "Transaction metadata allows us to easily record who did what when"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:65
+msgid ""
+"how and why and then both query against as well as use the corresponding tx-log entities as arguments for d/as-of and "
+"d/since to understand what happened in the system."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:66
+msgid "Testing and developer setup is massively simplified with"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:68
+msgid ""
+"speculative transactions via d/with and the in-memory database allowing us to not have an external process to manage "
+"or setup."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:69
+msgid "Database filtering via d/filter provides an elegant way to re-use"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:74
+msgid ""
+"queries. For instance, we have queries that report on total activity on our system, and then re-use the exact same "
+"query but with a database filter applied to a breakdown by geographical region or scoped by time (requested created "
+"within past 7 days, past month, etc). +"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:81
+msgid ""
+"Note that this is somewhat less efficient than writing a separate function to do the aggregation on a per-region "
+"level during a single pass, but for us the total dataset is still fairly small so the CPU processing time is "
+"irrelevant.  It is more important to us to be able to flexibly filter out data from the query and can't beat the ease "
+"of implementation ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:82
+msgid "Lazy iteration via d/datoms and d/index-range based off of a db"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:84
+msgid ""
+"value! Most of our data processing operates on one small subset of data at a time or merely requires minimial "
+"aggregation state. +"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:88
+msgid ""
+"Doing this via a traditional SQL based system is difficult since while you can write Clojure functions to generate a "
+"lazy sequence of LIMIT/OFFSET calls your view of the world isn't consistent."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:95
+msgid ""
+"The most valuable property to us is that there is only one programming language that is used everywhere and allows us "
+"to share code between the database (either via jars loaded onto the transactor classpath or via transaction "
+"functions), web server, and client."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:102
+msgid ""
+"Probably host inter-op.  The ability to leverage existing libaries in both ecosystems via interop if necessary allows "
+"Clojure/Script to piggyback off of these huge ecosystems while providing additional value on top."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:111
+msgid ""
+"Clojure allows us to develop code more quickly via REPL-driven development.  The resulting code is typically less bug-"
+"prone because everything is immutable and functions are re-entrant, and also makes testing much easier.  The "
+"facilities provided for reducing boilerplate via macros and emphasis on data allow for better re-use and results in "
+"less code duplication and higher order programming."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:115
+msgid ""
+"Our code has been fairly easy to maintain because of the emphasis on simplicity and stability from both the core "
+"language and the wider Clojure open-source community."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:122
+msgid ""
+"On the server side, we use Datomic with DynamoDB as the underlying storage.  Our web servers run http://www.http-kit."
+"org/[http-kit].  We use https://github.com/weavejester/compojure[Compojure] for routing and https://github.com/"
+"ptaoussanis/sente[Sente] for real-time communication."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:126
+msgid ""
+"On the client side, we use https://github.com/tonsky/datascript[DataScript] and https://github.com/reagent-project/"
+"reagent[Reagent] for web clients, and also have a mobile app implemented in https://clojurescript.org[ClojureScript] "
+"on top of https://facebook.github.io/react-native/[React Native] for iOS."
+msgstr ""

@@ -1,0 +1,1191 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16 en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr "toc::[]"
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
+#, no-wrap
+msgid "Deps and CLI"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:4
+msgid "Alex Miller 2017-11-30"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/deps_and_cli.adoc:14 en/content/reference/transients.adoc:17
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10 en/content/about/rationale.adoc:1
+#, no-wrap
+msgid "Rationale"
+msgstr "論理的根拠"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:17
+msgid ""
+"Clojure \"endeavors to be a general-purpose language suitable in those areas where Java is suitable\" (from "
+"<<xref/../../about/rationale#,Rationale>>). To effectively target the JVM platform, Clojure needs to provide ready "
+"access to Java libraries, ideally in a way suited for dynamic development. In practice, this means meeting the JVM "
+"platform in two places:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:19
+msgid "the classpath used when invoking JVM processes (and/or URLClassLoaders)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:20
+msgid "transitive dependency download and resolution from providers like Maven"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:22
+msgid ""
+"Clojure build tools have traditionally taken the approach of wrapping the Maven ecosystem to gain access to Java "
+"libraries. However, they have also forced this approach on Clojure code as well, requiring a focus on artifacts that "
+"must be built and deployed (which Clojure does not require). This approach has created friction for Clojure "
+"developers, making it hard to e.g. work with libs not yet publishing artifacts, work on speculative changes w/o "
+"artifacts or across multiple libs, or give control to a 3rd party to manage shared dependencies."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:24
+#, fuzzy
+#| msgid "Clojure programming"
+msgid "Clojure provides:"
+msgstr "Clojureプログラミング"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:26
+msgid ""
+"https://github.com/clojure/tools.deps.alpha[tools.deps.alpha] - a library providing a functional API for resolving "
+"dependency graphs and building classpaths that can utilize both Maven and other providers of code or artifacts"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:27
+msgid ""
+"Command line tools (`clojure` and `clj`) that enable users to make use of this capability at the terminal to declare "
+"dependencies, assemble classpaths, and launch Clojure programs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:28
+msgid "System-specific installers for downloading the tools, improving the \"Getting Started\" experience"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:29
+#, no-wrap
+msgid "Building classpaths with tools.deps.alpha"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:32
+msgid ""
+"The JVM classpath consists of a series of roots, either directory paths or the path to a jar file. Classes (and "
+"Clojure files) map via package or namespace to a path relative to a classpath root. For example, the `java.lang."
+"String` class can be found at path `java/lang/String.class` and the `clojure.set` Clojure namespace may be found at "
+"paths `clojure/set.class` (for AOT), `clojure/set.clj`, or `clojure/set.cljc`. When the JVM needs to load one of "
+"these files it searches each root for the relative path and loads it when found."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:34
+msgid ""
+"We divide the process of building a classpath into two primary operations: `resolve-deps` and `make-classpath`. Below "
+"is a high-level view of this process:"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/reference/deps_and_cli.adoc:36
+#, no-wrap
+msgid "Dep Tools"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/reference/deps_and_cli.adoc:36
+#, fuzzy, no-wrap
+#| msgid "/images/content/reference/transducers/xf.png"
+msgid "/images/content/guides/deps/deps.svg"
+msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:38
+#, no-wrap
+msgid "resolve-deps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:41
+#, no-wrap
+msgid "**`(resolve-deps deps args-map)`**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:43
+msgid ""
+"`resolve-deps` takes an initial map of required dependencies and a map of args that modify the resolution process. It "
+"builds a full graph of transitive dependencies, resolves any version differences, and flattens that graph to a full "
+"list of dependencies required in the classpath."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:45
+msgid ""
+"The deps are a map of library to coordinate. The library is (in Maven terms) the groupId and artifactId, which are "
+"sufficient to locate the desired project. The coordinate is used to describe a particular version that is being "
+"requested from a particular provider (like Maven)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:47
+msgid "For example, this deps map specifies a (Maven-based) dependency:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:51
+#, no-wrap
+msgid "{org.clojure/core.cache {:mvn/version \"0.6.5\"}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:54
+msgid ""
+"`resolve-deps` expands these dependencies to include all transitive dependencies, cut cycles, resolve version "
+"differences, download required artifacts from the provider, and produce a *lib map* of the flattened set of all "
+"needed dependencies and where to find their artifacts:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:65
+#, no-wrap
+msgid ""
+"{org.clojure/core.cache        {:mvn/version \"0.6.5\",\n"
+"                                :deps/manifest :mvn,\n"
+"                                :paths [\".../core.cache-0.6.5.jar\"]}\n"
+" org.clojure/data.priority-map {:mvn/version \"0.0.7\",\n"
+"                                :deps/manifest :mvn,\n"
+"                                :dependents [org.clojure/core.cache],\n"
+"                                :paths [\".../data.priority-map-0.0.7.jar\"]} \n"
+" ... }\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:68
+msgid ""
+"The lib map lists all libraries, their selected coordinates, the `:paths` on disk, and a list of dependents that "
+"caused it to be included. Here you can see that `data.priority-map` was included as a dependency of core.cache."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:70
+msgid ""
+"The second `args-map` is a map of optional modifications to the standard expansion to account for common use cases: "
+"adding extra dependencies, overriding deps, and default deps. These can be used separately or together, or not at all:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:76
+#, no-wrap
+msgid ""
+"{:extra-deps { ... }\n"
+" :override-deps { ... }\n"
+" :default-deps { ... }}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:79
+msgid ""
+"`:extra-deps` is the most common modification - it allows you to optionally add extra dependencies to the base "
+"dependency set. The value is a map of library to coordinate:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:83
+#, no-wrap
+msgid "{:extra-deps {criterium/criterium {:mvn/version \"0.4.4\"}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:86
+msgid ""
+"`:override-deps` overrides the coordinate version chosen by the version resolution to force a particular version "
+"instead. This also takes a map of library to coordinate:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:90
+#, no-wrap
+msgid "{:override-deps {org.clojure/clojure {:mvn/version \"1.9.0\"}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:93
+msgid ""
+"`:default-deps` provides a set of default coordinate versions to use if no coordinate is specified. The default deps "
+"can be used across a set of shared projects to act as a dependency management system:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:97
+#, no-wrap
+msgid "{:default-deps {org.clojure/core.cache {:mvn/version \"0.6.4\"}}}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:99
+#, no-wrap
+msgid "make-classpath"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:102
+#, no-wrap
+msgid "**`(make-classpath lib-map paths args-map)`**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:104
+msgid ""
+"The `make-classpath` step takes the lib map (the result of `resolve-deps`), the internal source paths of the project "
+"`[\"src\"]`, an args-map of optional modifications, and produces a classpath string for use in the JVM."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:106
+msgid ""
+"The args-map includes support for modifications to be applied while making the classpath: adding extra paths, and "
+"overriding the location of libraries specified in the lib map. These modifications can be used separately or together "
+"or not at all in a map like this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:111
+#, no-wrap
+msgid ""
+"{:extra-paths [ ... ]\n"
+" :classpath-overrides { ... }}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:114
+msgid ""
+"`:extra-paths` is used to include source paths in addition to your standard source paths, for example to include "
+"directories of test source:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:118
+#, no-wrap
+msgid "{:extra-paths [\"test\" \"resources\"]}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:121
+msgid ""
+"`:classpath-overrides` specify a location to pull a dependency that overrides the path found during dependency "
+"resolution, for example to replace a dependency with a local debug version. Many of these use cases are ones where "
+"you would be tempted to prepend the classpath to \"override\" something else."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:126
+#, no-wrap
+msgid ""
+"{:classpath-overrides \n"
+" {org.clojure/clojure \"/my/clojure/target\"}}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:128
+#, no-wrap
+msgid "Command line tools"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:130
+#, fuzzy, no-wrap
+#| msgid "Vectors"
+msgid "Directories"
+msgstr "Vectors (ベクター)"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:133
+msgid "The tools rely on several directories and optionally on several environment variables."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:142
+msgid ""
+"Installation directory ** Created during installation ** Contents: *** `bin/clojure` - main tool *** `bin/clj` - "
+"wrapper for interactive repl use (uses `rlwrap`)  *** `deps.edn` - install level deps.edn file, with some default "
+"deps (Clojure, etc) and provider config *** `example-deps.edn` - commented example that gets copied to `<config_dir>/"
+"deps.edn` *** `libexec/clojure-tools-X.Y.Z.jar` - uberjar invoked by `clojure` to construct classpaths"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:150
+msgid ""
+"Config directory ** Holds a deps.edn file that persists across tool upgrades and affects all projects ** Locations "
+"used in this order: *** If `$CLJ_CONFIG` is set, then use `$CLJ_CONFIG` (explicit override)  *** If `"
+"$XDG_CONFIG_HOME` is set, then use `$XDG_CONFIG_HOME/clojure` (Freedesktop conventions)  *** Else use `$HOME/."
+"clojure` (most common)  ** Contents: *** `deps.edn` - user deps file, defines default Clojure version and provider "
+"defaults"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:155
+msgid ""
+"Cache directory ** Lazily created when `clojure` is invoked without a local `deps.edn` file. Locations used in this "
+"order: *** If `$CLJ_CACHE` is set, then use `$CLJ_CACHE` (explicit override)  *** If `$XDG_CACHE_HOME` is set, then "
+"use `$XDG_CACHE_HOME/clojure` (Freedesktop conventions)  *** Else use `config_dir/.cpcache` (most common)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:160
+msgid ""
+"Project directory ** The current directory ** Contents: *** `deps.edn` - optional project deps *** `.cpcache` - "
+"project cache directory, same as the user-level cache directory, created if there is a `deps.edn`"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:161
+#, no-wrap
+msgid "deps.edn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:164
+msgid ""
+"The configuration file format (in \"deps.edn\" files) is an edn map with top-level keys for `:deps`, `:paths`, and `:"
+"aliases`, plus provider-specific keys for configuring dependency sources."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:166
+msgid "After installation, deps.edn configuration files can be found in (up to) three locations:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:168
+msgid "installation directory - created only at install time"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:169
+msgid "config directory (often ~/.clojure) - modified to change cross-project (or no-project) defaults"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:170
+msgid "the local directory - per-project settings"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:172
+msgid ""
+"The `deps.edn` files in each of these locations (if they exist) are merged to form one combined dependency "
+"configuration. The merge is done in the order above install/config/local, last one wins. The operation is essentially "
+"`merge-with merge`, except for the `:paths` key, where only the last one found is used (they are not combined)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:174
+msgid "You can use the `-Sverbose` option to see all of the actual directory locations."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:175
+#, no-wrap
+msgid "Dependencies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:178
+msgid ""
+"Dependencies are declared in deps.edn with a top level key `:deps` - a map from library to coordinate. Libraries are "
+"symbols of the form <groupID>/<artifactId> or simply <id> if the group and artifact ID are the same."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:180
+msgid "Coordinates can take several forms depending on the coordinate type:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:183
+msgid "Maven coordinate: `{:mvn/version \"1.2.3\"}` ** Other optional keys: `:classifier`, `:extension`, `:exclusions`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:188
+msgid ""
+"Local project coordinate: `{:local/root \"/path/to/project\"}` ** Optional key `:deps/manifest` *** Specifies the "
+"project manifest type *** Default is to auto-detect the project type (such as `:deps`, `:lein`, `:pom`)  *** "
+"Currently only `:deps` is supported"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:189
+msgid "Local jar: `{:local/root \"/path/to/file.jar\"}`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:195
+msgid ""
+"Git coordinate: `{:git/url \"https://github.com/user/project.git\", :sha \"sha\", :tag \"tag\"}` ** The `:git/url` "
+"can be one of the following: *** https - secure anonymous access to public repos *** ssh or user@host form urls "
+"(including GitHub) - ssh-based access (see Git configuration section)  ** The `:sha` attribute should indicate the "
+"full commit sha ** The `:tag` attribute is optional but can be used to indicate the semantics of the sha"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:203
+#, no-wrap
+msgid ""
+"{:deps\n"
+" {org.clojure/tools.reader {:mvn/version \"1.1.1\"}\n"
+"  github-sally/awesome {:git/url \"https://github.com/sally/awesome.git\", :sha \"123abcd549214b5cba04002b6875bdf59f9d88b6\"}\n"
+"  ;; ... add more here\n"
+" }}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:205
+#, fuzzy, no-wrap
+#| msgid "paths"
+msgid "Paths"
+msgstr "paths (パス)"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:208
+msgid ""
+"Paths are declared in a top level key `:paths` and is a vector of string paths (typically relative to the project "
+"root). These source paths will be included on the classpath."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:210
+msgid ""
+"While dependency sets are merged across all of the configuration files, only the last paths found in one of the "
+"config files is used, prior ones are ignored."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:214
+#, no-wrap
+msgid "{:paths [\"src\"]}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:216 en/content/reference/java_interop.adoc:271
+#, no-wrap
+msgid "Aliases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:219
+msgid ""
+"Aliases are defined in the `:aliases` section of the config file. The Clojure tool supports several kinds of aliases:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:226
+msgid ""
+"-R - `resolve-deps` aliases are modifications applied during `resolve-deps` ** Allowed keys in these aliases are: *** "
+"`:extra-deps` - a deps map from lib to coordinate of deps to add to the deps *** `:override-deps` - a deps map from "
+"lib to coordinate of override versions to use *** `:default-deps` - a deps map from lib to coordinate of versions to "
+"use if none is found ** If multiple -R alias maps are activated, all of these are merge-with merged"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:231
+msgid ""
+"-C - `make-classpath` aliases are modifications applied during `make-classpath` ** Allowed keys in these aliases are: "
+"*** `:extra-paths` - a collection of string paths to add to `:paths` *** `:classpath-overrides` - a map of lib to "
+"string path to replace the location of the lib *** If multiple -C alias maps are activated, `:extra-paths` "
+"concatenate and `:classpath-overrides` merge-with merge"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:236
+msgid ""
+"-O - JVM option aliases ** Allowed keys in these aliases are: *** `:jvm-opts` - a collection of string JVM options ** "
+"If multiple -O alias maps are activated, `:jvm-opts` concatenate ** If -J JVM options are also specified on the "
+"command line, they are concatenated after the alias options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:241
+msgid ""
+"-M - clojure.main option aliases ** Allowed keys in these aliases are: *** `:main-opts` - a collection of clojure."
+"main options ** If multiple -M alias maps are activated, only the last one will be used ** If command line clojure."
+"main arguments are supplied on the command line, they are concatenated after the last main alias map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:243
+msgid "-A - applies across all alias types ** These aliases support ALL alias keys above and all will be applied"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:245
+msgid "So given a deps.edn like:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:254
+#, no-wrap
+msgid ""
+"{:paths [\"src\"]\n"
+" :deps {}\n"
+" :aliases\n"
+" {:1.7 {:override-deps {org.clojure/clojure {:mvn/version \"1.7.0\"}}}\n"
+"  :bench {:extra-deps {criterium/criterium {:mvn/version \"0.4.4\"}}}\n"
+"  :test {:extra-paths [\"test\"]}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:257
+msgid ""
+"You can activate all three aliases to create a classpath that switches to an older Clojure version, adds the "
+"benchmarking library, and includes the test directory in the classpath to see how it changes the classpath:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:261
+#, no-wrap
+msgid "clj -R:1.7:bench -C:test -Spath\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:264
+msgid "You can use -A to include all types of aliases or define aliases that cross multiple alias types:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:268
+#, no-wrap
+msgid "clj -A:1.7:bench:test -Spath\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:270
+#, no-wrap
+msgid "Procurers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:273
+msgid ""
+"Coordinates are interpreted by procurers, which know how to determine dependencies for a library and download "
+"artifacts. tools.deps.alpha is designed to support an extensible set of procurers that can expand over time. "
+"Currently the available procurers are: `mvn`, `local`, and `git`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:275
+msgid ""
+"The procurer to use is determined by examining the attributes of the coordinate and using the first attribute "
+"qualifier that's found (ignoring the reserved qualifier \"deps\"). For example, a Maven coordinate contains a `:mvn/"
+"version` attribute and a local coordinate contains a `:local/root` attribute."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:277
+msgid ""
+"Procurers may also have configuration attributes stored at the root of the configuration map under the same "
+"qualifier. The `mvn` procurer will look for `:mvn/repos`. The installation deps.edn configures the default Maven "
+"repos:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:283
+#, no-wrap
+msgid ""
+"{:mvn/repos\n"
+" {\"central\" {:url \"https://repo1.maven.org/maven2/\"}\n"
+"  \"clojars\" {:url \"https://clojars.org/repo\"}}}\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/deps_and_cli.adoc:285
+#, no-wrap
+msgid "Maven private S3 repos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:288
+msgid ""
+"The tools also provide support for connecting to private S3 Maven repositories (thanks to the https://github.com/s3-"
+"wagon-private/s3-wagon-private[s3-wagon-private] and https://github.com/spring-projects/aws-maven[aws-maven] "
+"projects)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:290
+msgid "Add a `:mvn/repos` that includes the s3 repository root:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:297
+#, no-wrap
+msgid ""
+"{:deps\n"
+" {my.library {:mvn/version \"0.1.2\"}}\n"
+" :mvn/repos\n"
+" {\"my-private-repo\" {:url \"s3://my-bucket/maven/releases\"}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:300
+msgid "Specify your AWS S3 credentials using one of these mechanisms:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:302
+msgid "Set the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:303
+msgid ""
+"Create a default profile in the AWS credentials file `~/.aws/credentials` (older `~/.aws/config` also supported)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:304
+msgid "Create a named profile in the AWS credentials file and set the environment variable `AWS_PROFILE` with its name."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:305
+msgid "Amazon ECS container and instance profile credentials should also work, but have not been tested."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:307
+msgid ""
+"For more information, most of the advice in http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials."
+"html[this AWS document] describes how credentials are located. Note however that the Java system properties options "
+"will NOT work with the command line tools (but would work if using the tools.deps.alpha library directly)."
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/deps_and_cli.adoc:308
+#, no-wrap
+msgid "Git configuration"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:311
+msgid ""
+"The supported git url protocols are https and ssh. https repos will be accessed anonymously and require no additional "
+"authentication information. This approach is recommended for public repos."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:315
+msgid ""
+"ssh repos may be either public or private. Access to a git repo via ssh requires an ssh keypair. The private key of "
+"this keypair may or may not have a passphrase. ssh authentication works by connecting to the local ssh agent (ssh-"
+"agent on *nix or Pageant via PuTTY on Windows).  The ssh-agent must have a registered identity for the key being used "
+"to access the Git repository.  To check whether you have registered identities, use:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:320
+#, no-wrap
+msgid ""
+"$ ssh-add -l\n"
+"2048 SHA256:S2SMY1YRTRFg3sqsMy1eTve4ag78XEzhbzzdVxZroDk /Users/me/.ssh/id_rsa (RSA)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:323
+msgid "which should return one or more registered identities, typically the one at `~/.ssh/id_rsa`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:325
+msgid ""
+"For more information on creating keys and using the ssh-agent to manage your ssh identities, GitHub provides "
+"excellent info:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:327
+msgid "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:328
+msgid "https://help.github.com/articles/working-with-ssh-key-passphrases/"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:330
+msgid "_Note: user/password authentication is not supported for any protocol._"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:331
+#, no-wrap
+msgid "Usage"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:334
+msgid "Usage:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:336
+#, fuzzy
+#| msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+msgid "`clojure [dep-opt*] [init-opt*] [main-opt] [arg*]`"
+msgstr "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:337
+#, no-wrap
+msgid "`clj     [dep-opt*] [init-opt*] [main-opt] [arg*]`\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:339
+msgid ""
+"The clojure tool is a runner for Clojure. clj is a wrapper for interactive repl use. These tools ultimately construct "
+"and invoke a command-line of the form:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:341
+#, fuzzy
+#| msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+msgid "`java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]`"
+msgstr "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:343
+msgid "The dep-opts are used to build the java-opts and classpath:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:361
+#, no-wrap
+msgid ""
+"-Jopt           Pass opt through in java_opts, ex: -J-Xmx512m\n"
+"-Ralias...      Concatenated resolve-deps aliases, ex: -R:bench:1.9\n"
+"-Calias...      Concatenated make-classpath aliases, ex: -C:dev\n"
+"-Oalias...      Concatenated jvm option aliases, ex: -O:mem\n"
+"-Malias...      Concatenated clojure.main option aliases, ex: -M:myapp\n"
+"-Aalias...      Concatenated aliases of any type\n"
+"-Sdeps DEPS     Deps data to use as the final deps file\n"
+"-Spath          Compute classpath and echo to stdout only\n"
+"-Scp CP         Do NOT compute or cache classpath, use this one instead\n"
+"-Srepro         Ignore the ~/.clojure/deps.edn config file\n"
+"-Sforce         Force recomputation of the classpath (don't use the cache)\n"
+"-Spom           Generate (or update an existing) pom.xml with deps and paths\n"
+"-Stree          Print dependency tree\n"
+"-Sresolve-tags  Resolve git coordinate tags to shas and update deps.edn\n"
+"-Sverbose       Print important path info to console\n"
+"-Sdescribe     Print environment and command parsing info as data\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:364
+msgid "init-opt:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:368
+#, fuzzy, no-wrap
+#| msgid ""
+#| "init options:\n"
+#| "-i, --init path Load a file or resource\n"
+#| "-e, --eval string Evaluate expressions in string; print non-nil values\n"
+msgid ""
+"-i, --init path     Load a file or resource\n"
+"-e, --eval string   Eval exprs in string; print non-nil values\n"
+msgstr ""
+"init options:\n"
+"-i, --init path Load a file or resource\n"
+"-e, --eval string Evaluate expressions in string; print non-nil values\n"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:371
+msgid "main-opt:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:378
+#, fuzzy, no-wrap
+#| msgid ""
+#| "main options:\n"
+#| "-r, --repl Run a repl\n"
+#| "path Run a script from a file or resource\n"
+#| "- Run a script from standard input\n"
+#| "-m, --main A namespace to find a -main function for execution\n"
+#| "-h, -?, --help Print this help message and exit\n"
+msgid ""
+"-m, --main ns-name  Call the -main function from namespace w/args\n"
+"-r, --repl          Run a repl\n"
+"path                Run a script from a file or resource\n"
+"-                   Run a script from standard input\n"
+"-h, -?, --help      Print this help message and exit\n"
+msgstr ""
+"main options:\n"
+"-r, --repl Run a repl\n"
+"path Run a script from a file or resource\n"
+"- Run a script from standard input\n"
+"-m, --main A namespace to find a -main function for execution\n"
+"-h, -?, --help Print this help message and exit\n"
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:380
+#, no-wrap
+msgid "Classpath construction"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:383
+msgid "The following process is used to construct the classpath for invoking clojure.main:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:391
+msgid ""
+"Compute the deps map ** Read the deps.edn configuration file in the following locations: *** Install directory "
+"(unless -Srepro)  *** Config directory (if it exists and unless -Srepro)  *** Current directory (if it exists)  *** -"
+"Sdeps data (if it exists)  ** Combine the deps.edn maps in that order with `merge-with merge` (except for :paths "
+"where last wins)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:394
+msgid ""
+"Compute the resolve-deps args ** If `-R` specifies one or more aliases, find each alias in the deps map `:aliases` ** "
+"`merge-with` `merge` the alias maps - the result is the resolve-args map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:395
+msgid "Invoke `resolve-deps` with deps map and resolve-args map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:398
+msgid ""
+"Compute the classpath-overrides map ** If `-C` specifies one or more aliases, find each alias in the deps map `:"
+"aliases` ** `merge` the classpath-override alias maps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:399
+msgid "Invoke `make-classpath` with the libs map returned by `resolve-deps`, the paths, and the classpath-args map"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/deps_and_cli.adoc:400
+#, no-wrap
+msgid "Classpath caching"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:403
+msgid "Classpath files are cached in the current directory under `.cpcache/`. File are of two forms:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:405
+msgid ""
+"`.cpcache/<hash>.libs` - a `::lib-map` in the https://github.com/clojure/tools.deps.alpha/blob/master/src/main/"
+"clojure/clojure/tools/deps/alpha/specs.clj[specs], the output of running `resolve-deps`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:406
+msgid "`.cpcache/<hash>.cp` - a classpath string, the output of `make-classpath`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:408
+msgid "where the `<hash>` is based on the config file paths, the resolve-aliases, and the classpath aliases."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:410
+msgid "The cached classpath file is used when:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:412
+msgid "It exists"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:413
+msgid "It is newer than all `deps.edn` files"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:414
+#, no-wrap
+msgid "Installers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:417
+msgid ""
+"For tools installation, see the instructions in the <<xref/../../guides/getting_started#,Getting Started>> guide."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:418 en/content/about/spec.adoc:337
+#, no-wrap
+msgid "Glossary"
+msgstr "用語集"
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:421
+#, no-wrap
+msgid "**Library**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:423
+msgid ""
+"An independently-developed chunk of code residing in a directory hierarchy under a root.  We will narrow to those "
+"libraries that can be globally named, e.g. `my.namespace/my-lib`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:425
+#, no-wrap
+msgid "**Artifact**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:427
+msgid ""
+"A snapshot of a library, captured at a point in time, possibly subjected to some build process, labeled with a "
+"version, containing some manifest documenting its dependencies, and packaged in e.g. a jar."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:429
+#, no-wrap
+msgid "**Coordinate**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:431
+msgid "A particular version of a library chosen for use, with information sufficient to obtain and use the library."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:433
+#, no-wrap
+msgid "**Dependency**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:435
+msgid ""
+"An expression, at the project/library level, that the declaring library needs the declared library in order to "
+"provide some of its functions. Must at least specify library name, might also specify version and other attrs. Actual "
+"(functional) dependencies are more fine-grained."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:437
+msgid "Dependency types:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:439
+msgid "maven artifacts"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:440
+msgid "unversioned libraries - a file location identifying a jar or directory root"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:441
+msgid "git coordinates"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:443
+#, no-wrap
+msgid "**Classpath (and roots/paths)**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:445
+msgid ""
+"An ordered list of local 'places' (filesystem directories and/or jars) that will form root paths for searches of "
+"requires/imports at runtime, supplied as an argument to Java which controls the semantics. We discourage order-"
+"dependence in the classpath, which implies something is duplicated (and thus likely broken)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:447
+#, no-wrap
+msgid "**Expansion**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:449
+msgid "Given a set of root dependencies, a full walk of the transitive dependencies."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:451
+#, no-wrap
+msgid "**Resolution**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:453
+msgid ""
+"Given a collection of root dependencies and additional modifications, creates a fully-expanded dependency tree, then "
+"produces a mapping from each library mentioned to a single version to be used that would satisfy all dependents, as "
+"well as the local path. We will also include those dependents for each entry. Conflicts arise only if libraries "
+"depend on different major versions of a library."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:455
+#, no-wrap
+msgid "**Classpath creation**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:457
+msgid ""
+"Creates a classpath from a resolved lib-map and optional extra local lib paths. Current plan for lib-map does not "
+"provide for control over resulting order."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:459
+#, no-wrap
+msgid "**Version**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:461
+msgid ""
+"A human numbering system whose interpretation is determined by convention. Usually x.y.z. Must protect against "
+"'semver' interpretation, which allows libraries to break users while keeping the name the same. Ascending by "
+"convention - higher numbers are 'later', vague compatibility with lower/earlier."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:463
+#, no-wrap
+msgid "**Version difference**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:465
+msgid ""
+"This occurs when the dependency expansion contains the same library with more than one \"version\" specified but "
+"where there is a relative ordering (either by number or by SHA etc). Version differences can be resolved by choosing "
+"the \"later\" or \"newest\" version when that relationship can be established."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:467
+#, no-wrap
+msgid "**Version conflict**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:469
+msgid ""
+"A version conflict occurs when the dependency expansion contains the same library with more than one \"version\" such "
+"that the best choice cannot be automatically chosen:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:471
+msgid "semver version breakage (major version changed)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:472
+msgid ""
+"github shas that do not contain any common root or ancestry (two shas on different branches or unrelated repos, for "
+"example)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:473
+msgid "versions that cross different repos or repo types such that no relative relationship can be established"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:475
+#, no-wrap
+msgid "**Maven Repo**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:477
+msgid "A repository of library artifacts - e.g. Maven central or Clojars"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:479
+#, no-wrap
+msgid "**Requires and imports**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:480
+msgid ""
+"Mentions in source code of library (sub)components that must be in the classpath in order to succeed. namespace and "
+"package/class names are transformed into path components."
+msgstr ""

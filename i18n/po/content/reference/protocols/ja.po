@@ -65,7 +65,6 @@ msgstr "動機"
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:19 en/content/reference/datatypes.adoc:20
-#, fuzzy
 msgid ""
 "Clojure is written in terms of abstractions. There are abstractions for sequences, collections, callability, etc. In "
 "addition, Clojure supplies many implementations of these abstractions. The abstractions are specified by host "
@@ -74,13 +73,6 @@ msgid ""
 "<<datatypes#,datatypes>> features add powerful and flexible mechanisms for abstraction and data structure definition "
 "with no compromises vs the facilities of the host platform."
 msgstr ""
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
-"Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこ"
-"れらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。こ"
-"れは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になってい"
-"た。 <<protocols#,プロトコル>> と <<datatypes#,データ型>> という機能は、強力で柔軟な抽象化とデータ構造定義のメカニズム"
-"をホストプラットフォームの機構に対して妥協することなく提供する。\n"
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
 "Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこ"
 "れらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。こ"
 "れは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になってい"

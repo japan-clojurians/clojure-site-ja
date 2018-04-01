@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
 #: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
 #: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
 #: en/content/reference/transients.adoc:16
 #: en/content/reference/compilation.adoc:16
@@ -34,14 +35,34 @@ msgstr ""
 #: en/content/reference/data_structures.adoc:16
 #: en/content/reference/repl_and_main.adoc:16
 #: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
 #: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
 #: en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11
 #: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14
+#: en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16
+#: en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16
 #: en/content/about/functional_programming.adoc:15
 msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
+#, no-wrap
+msgid "Deps and CLI"
 msgstr ""
 
 #. type: Plain text
@@ -336,10 +357,10 @@ msgstr ""
 msgid ""
 "Intermediate sequences and cached values - as the transformation happens in "
 "a single pass, you remove all intermediate sequence and cached value "
-"creation - again, helps memory and time. The combination of the the prior "
-"item and this one will start to win big as the size of the input collection "
-"or number of transformations goes up (but for small numbers of either, "
-"chunked sequences can be surprisingly fast and will compete)."
+"creation - again, helps memory and time. The combination of the prior item "
+"and this one will start to win big as the size of the input collection or "
+"number of transformations goes up (but for small numbers of either, chunked "
+"sequences can be surprisingly fast and will compete)."
 msgstr ""
 
 #. type: Plain text
@@ -722,12 +743,6 @@ msgid ""
 "private` for values) is a convenience for a developer to indicate which "
 "parts of an API should be considered public for use vs part of the "
 "implementation."
-msgstr ""
-
-#. type: Title ==
-#: en/content/guides/faq.adoc:203
-#, no-wrap
-msgid "Deps and CLI"
 msgstr ""
 
 #. type: Plain text

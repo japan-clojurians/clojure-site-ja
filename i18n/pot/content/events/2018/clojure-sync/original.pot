@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2018/clojure-sync.adoc:1
+#, no-wrap
+msgid "Clojure SYNC "
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojure-sync.adoc:4
+msgid "clojureSYNC 2018-02-15"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojure-sync.adoc:12
+msgid ""
+"It’s a synchronous event, in a syncretist city with syncopated music, about "
+"an async language. On February 15th and 16th, 2018, two hundred Clojurists "
+"from around the world, like yourselves, will come to the heart of New "
+"Orleans to enjoy talks about humanity, business, and code through the lens "
+"of Clojure and Functional Programming."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojure-sync.adoc:13
+msgid ""
+"The topics are different from what we’re used to at other conferences. If "
+"Strange Loop is about the confluence of industry and academia, Clojure SYNC "
+"is about the connections between our skills, our work, and the history of "
+"technology. If you like the PurelyFunctional.tv Newsletter, you’ll love the "
+"talks at Clojure SYNC. An explicit goal of the conference is to broaden our "
+"perspectives on the history of computing and how it fits into the history of "
+"humanity."
+msgstr ""

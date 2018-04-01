@@ -1,0 +1,769 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14
+#: en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16
+#: en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Data Visualization"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:21
+#, no-wrap
+msgid ""
+"Each time we evaluate an expression, the REPL shows us a textual representation of the result:\n"
+" that's the _Print_ part of _Read-Eval-Print-Loop_. Most of the time, this textual representation\n"
+" is clear enough for the programmer, but sometimes it becomes difficult to read -\n"
+" especially when dealing with big or deeply nested data structures.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:23
+msgid ""
+"Fortunately, the REPL provides sharper tools for data visualization, which "
+"we will describe in this chapter."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:24
+#, no-wrap
+msgid "Pretty-printing using `clojure.pprint`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:27
+msgid ""
+"As an example, consider the following code, which computes a summary of the "
+"arithmetic properties of some numbers:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:48
+#, no-wrap
+msgid ""
+"user=> (defn number-summary\n"
+"  \"Computes a summary of the arithmetic properties of a number, as a data structure.\"\n"
+"  [n]\n"
+"  (let [proper-divisors (into (sorted-set)\n"
+"                          (filter\n"
+"                            (fn [d]\n"
+"                              (zero? (rem n d)))\n"
+"                            (range 1 n)))\n"
+"        divisors-sum (apply + proper-divisors)]\n"
+"    {:n n\n"
+"     :proper-divisors proper-divisors\n"
+"     :even? (even? n)\n"
+"     :prime? (= proper-divisors #{1})\n"
+"     :perfect-number? (= divisors-sum n)}))\n"
+"#'user/number-summary\n"
+"user=> (mapv number-summary [5 6 7 12 28 42])\n"
+"[{:n 5, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 7, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true} {:n 42, :proper-divisors #{1 2 3 6 7 14 21}, :even? true, :prime? false, :perfect-number? false}]\n"
+"user=>\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:55
+#, no-wrap
+msgid ""
+"For now, you don't need to understand the code of the `number-summary` function defined above:\n"
+" we're just using it as a pretext to synthetize some hairy data structures. Real-world Clojure programming\n"
+" for a specific domain will provide you with many examples of such hairy data structures.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:58
+msgid ""
+"As we can see, the result of our last expression is condensed on a single "
+"line, which makes it hard to read:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:63
+#, no-wrap
+msgid ""
+"user=> (mapv number-summary [5 6 7 12 28 42])\n"
+"[{:n 5, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 7, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true} {:n 42, :proper-divisors #{1 2 3 6 7 14 21}, :even? true, :prime? false, :perfect-number? false}]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:67
+#, no-wrap
+msgid ""
+"We can use the `https://clojure.github.io/clojure/clojure.pprint-api.html[clojure.pprint]` lib\n"
+" to print the result in a more 'visual' format:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:104
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.pprint :as pp])\n"
+"nil\n"
+"user=> (pp/pprint (mapv number-summary [5 6 7 12 28 42]))\n"
+"[{:n 5,\n"
+"  :proper-divisors #{1},\n"
+"  :even? false,\n"
+"  :prime? true,\n"
+"  :perfect-number? false}\n"
+" {:n 6,\n"
+"  :proper-divisors #{1 2 3},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? true}\n"
+" {:n 7,\n"
+"  :proper-divisors #{1},\n"
+"  :even? false,\n"
+"  :prime? true,\n"
+"  :perfect-number? false}\n"
+" {:n 12,\n"
+"  :proper-divisors #{1 2 3 4 6},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? false}\n"
+" {:n 28,\n"
+"  :proper-divisors #{1 2 4 7 14},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? true}\n"
+" {:n 42,\n"
+"  :proper-divisors #{1 2 3 6 7 14 21},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? false}]\n"
+"nil\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:109
+#, no-wrap
+msgid "**TIP: Using an editor for syntax-highlighting the results**\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:112
+#, no-wrap
+msgid ""
+"If you want your pretty-printed result to be displayed with more visual contrast,\n"
+" you can also copy it to your editor buffer (the editor used below is https://www.gnu.org/software/emacs/[Emacs]):\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:114
+msgid ""
+"image:/images/content/guides/repl/repl-copy-pprint-editor.gif[\"Copying "
+"pretty-printed result to editor\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:118
+#, no-wrap
+msgid ""
+"Needing to pretty-print the last REPL result is so common that `clojure.pprint` has a function for that:\n"
+" https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/pp[clojure.pprint/pp]\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:135
+#, no-wrap
+msgid ""
+"user=> (mapv number-summary [12 28])\n"
+"[{:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]\n"
+"user=> (pp/pp)\n"
+"[{:n 12,\n"
+"  :proper-divisors #{1 2 3 4 6},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? false}\n"
+" {:n 28,\n"
+"  :proper-divisors #{1 2 4 7 14},\n"
+"  :even? true,\n"
+"  :prime? false,\n"
+"  :perfect-number? true}]\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:140
+msgid ""
+"Finally, for a result which is a sequence of maps (like the above), you can "
+"use https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/"
+"print-table[clojure.pprint/print-table] to print it as a table:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:144
+#, no-wrap
+msgid "user=> (pp/print-table (mapv number-summary [6 12 28]))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:151
+#, no-wrap
+msgid ""
+"| :n | :proper-divisors | :even? | :prime? | :perfect-number? |\n"
+"|----+------------------+--------+---------+------------------|\n"
+"|  6 |         #{1 2 3} |   true |   false |             true |\n"
+"| 12 |     #{1 2 3 4 6} |   true |   false |            false |\n"
+"| 28 |    #{1 2 4 7 14} |   true |   false |             true |\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:153
+#, no-wrap
+msgid "Truncating REPL output"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:157
+msgid ""
+"When an expression evaluates to a large or deeply nested data structure, "
+"reading REPL output can become difficult."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:160
+msgid ""
+"When a structure is too deeply nested, you can truncate the output by "
+"setting the `https://clojuredocs.org/clojure.core/\\*print-level\\*[\\*print-"
+"level*]` Var:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:167
+#, no-wrap
+msgid ""
+"user=> (set! *print-level* 3)\n"
+"3\n"
+"user=> {:a {:b [{:c {:d {:e 42}}}]}} ;; a deeply nested data structure\n"
+"{:a {:b [#]}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:170
+msgid ""
+"You can undo this setting by evaluating `(set! https://clojuredocs.org/"
+"clojure.core/\\*print-level\\*[\\*print-level*] nil)`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:173
+msgid ""
+"Likewise, when a data structure contains long collections, you can limit the "
+"number of displayed item by setting the `https://clojuredocs.org/clojure."
+"core/\\*print-length\\*[\\*print-length*]` Var:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:180
+#, no-wrap
+msgid ""
+"user=> (set! *print-length* 3)\n"
+"3\n"
+"user=> (repeat 100 (vec (range 100))) ;; a data structure containing looooong collections.\n"
+"([0 1 2 ...] [0 1 2 ...] [0 1 2 ...] ...)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:184
+msgid ""
+"Like the above, evaluate `(set! https://clojuredocs.org/clojure.core/"
+"\\*print-length\\*[\\*print-length*] nil)` to undo this setting."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:187
+msgid ""
+"`https://clojuredocs.org/clojure.core/\\*print-level\\*[\\*print-level*]` "
+"and `https://clojuredocs.org/clojure.core/\\*print-length\\*[\\*print-"
+"length*]` affect both ordinary REPL printing and pretty-pretting."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:188
+#, no-wrap
+msgid "Accessing recent results: `*1`, `*2`, `*3`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:192
+#, no-wrap
+msgid ""
+"In the REPL, the last evaluated result can be retrieved by evaluating `*1`; the one\n"
+" before that is saved in `*2`, and the one before that in `*3`:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:219
+#, no-wrap
+msgid ""
+"user=> (mapv number-summary [6 12 28])\n"
+"[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]\n"
+"user=> (pp/pprint *1) ;; using *1 instead of re-typing the pevious expression (or its result)\n"
+"[{:n 6,\n"
+" :proper-divisors #{1 2 3},\n"
+" :even? true,\n"
+" :prime? false,\n"
+" :perfect-number? true}\n"
+"{:n 12,\n"
+" :proper-divisors #{1 2 3 4 6},\n"
+" :even? true,\n"
+" :prime? false,\n"
+" :perfect-number? false}\n"
+"{:n 28,\n"
+" :proper-divisors #{1 2 4 7 14},\n"
+" :even? true,\n"
+" :prime? false,\n"
+" :perfect-number? true}]\n"
+"nil\n"
+"user=> *1 ;; now *1 has changed to become nil (because pp/pprint returns nil)\n"
+"nil\n"
+"user=> *3 ;; ... which now means that our initial result is in *3:\n"
+"[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]\n"
+"user=>\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:224
+#, no-wrap
+msgid "**TIP: saving a result by `def`-ining it**\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:228
+#, no-wrap
+msgid ""
+"If you want to keep a result around for longer than 3 evaluations, you can simply\n"
+" evaluate\n"
+" `(def <some-name> *1)`:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:242
+#, no-wrap
+msgid ""
+"user=> (mapv number-summary [6 12 28])\n"
+"[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false ; ...\n"
+"user=> (def my-summarized-numbers *1) ;; saving the result\n"
+"#'user/my-summarized-numbers\n"
+"user=> my-summarized-numbers\n"
+"[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false ; ...\n"
+"user=> (count my-summarized-numbers)\n"
+"3\n"
+"user=> (first my-summarized-numbers)\n"
+"{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, ; ...\n"
+"user=> (pp/print-table my-summarized-numbers)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:250
+#, no-wrap
+msgid ""
+"| :n | :proper-divisors | :even? | :prime? | :perfect-number? |\n"
+"|----+------------------+--------+---------+------------------|\n"
+"|  6 |         #{1 2 3} |   true |   false |             true |\n"
+"| 12 |     #{1 2 3 4 6} |   true |   false |            false |\n"
+"| 28 |    #{1 2 4 7 14} |   true |   false |             true |\n"
+"nil\n"
+"user=>\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:254
+#, no-wrap
+msgid "Investigating Exceptions"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:259
+#, no-wrap
+msgid ""
+"Some expressions won't return a result when you evaluate them, but throw an https://en.wikipedia.org/wiki/Exception_handling[Exception]\n"
+" instead. Throwing an Exception is your program saying to you: \"something went wrong\n"
+" when evaluating the expression, and I don't know how to deal with it, so I gave up.\"\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:261
+msgid ""
+"For instance, an Exception will be thrown if you divide a number by zero:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:267
+#, no-wrap
+msgid ""
+"user=> (/ 1 0)\n"
+"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:271
+#, no-wrap
+msgid ""
+"By default, the REPL prints a one-line summary of the Exception: its type, its message, and the source code location\n"
+" where the Exception was thrown:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:276
+#, no-wrap
+msgid ""
+"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
+"^------type-------- ^--message----  ^location where the Exception was thrown\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:279
+msgid ""
+"This can be enough in many cases, but there is more information available."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:283
+#, no-wrap
+msgid ""
+"First, you can visualize the _stacktrace_ of the Exception - that is, the chain\n"
+" of function calls which led to the faulty instruction. The stacktrace can be printed\n"
+" using https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst[clojure.repl/pst]:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:301
+#, no-wrap
+msgid ""
+"user=> (pst *e)\n"
+"ArithmeticException Divide by zero\n"
+"\tclojure.lang.Numbers.divide (Numbers.java:163)\n"
+"\tclojure.lang.Numbers.divide (Numbers.java:3833)\n"
+"\tuser/eval15 (NO_SOURCE_FILE:3)\n"
+"\tuser/eval15 (NO_SOURCE_FILE:3)\n"
+"\tclojure.lang.Compiler.eval (Compiler.java:7062)\n"
+"\tclojure.lang.Compiler.eval (Compiler.java:7025)\n"
+"\tclojure.core/eval (core.clj:3206)\n"
+"\tclojure.core/eval (core.clj:3202)\n"
+"\tclojure.main/repl/read-eval-print--8572/fn--8575 (main.clj:243)\n"
+"\tclojure.main/repl/read-eval-print--8572 (main.clj:243)\n"
+"\tclojure.main/repl/fn--8581 (main.clj:261)\n"
+"\tclojure.main/repl (main.clj:261)\n"
+"nil\n"
+msgstr ""
+
+#. type: delimited block =
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:306
+#, no-wrap
+msgid "**TIP:** the last thrown Exception can be obtained by evaluating `*e`.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:309
+msgid ""
+"Finally, just evaluating the Exception at the REPL can provide a useful "
+"visualization:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:340
+#, no-wrap
+msgid ""
+"user=> *e\n"
+"#error {\n"
+" :cause \"Divide by zero\"\n"
+" :via\n"
+" [{:type java.lang.ArithmeticException\n"
+"   :message \"Divide by zero\"\n"
+"   :at [clojure.lang.Numbers divide \"Numbers.java\" 163]}]\n"
+" :trace\n"
+" [[clojure.lang.Numbers divide \"Numbers.java\" 163]\n"
+"  [clojure.lang.Numbers divide \"Numbers.java\" 3833]\n"
+"  [user$eval15 invokeStatic \"NO_SOURCE_FILE\" 3]\n"
+"  [user$eval15 invoke \"NO_SOURCE_FILE\" 3]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7062]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7025]\n"
+"  [clojure.core$eval invokeStatic \"core.clj\" 3206]\n"
+"  [clojure.core$eval invoke \"core.clj\" 3202]\n"
+"  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke \"main.clj\" 243]\n"
+"  [clojure.main$repl$read_eval_print__8572 invoke \"main.clj\" 243]\n"
+"  [clojure.main$repl$fn__8581 invoke \"main.clj\" 261]\n"
+"  [clojure.main$repl invokeStatic \"main.clj\" 261]\n"
+"  [clojure.main$repl_opt invokeStatic \"main.clj\" 325]\n"
+"  [clojure.main$main invokeStatic \"main.clj\" 424]\n"
+"  [clojure.main$main doInvoke \"main.clj\" 387]\n"
+"  [clojure.lang.RestFn invoke \"RestFn.java\" 397]\n"
+"  [clojure.lang.AFn applyToHelper \"AFn.java\" 152]\n"
+"  [clojure.lang.RestFn applyTo \"RestFn.java\" 132]\n"
+"  [clojure.lang.Var applyTo \"Var.java\" 702]\n"
+"  [clojure.main main \"main.java\" 37]]}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:345
+#, no-wrap
+msgid ""
+"In this simplistic example, displaying all this information may be more than what is\n"
+" needed to diagnose the issue; but this visualization becomes more helpful for 'real-world'\n"
+" Exceptions, which tend to have the following charateristics in Clojure programs:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:347
+#, no-wrap
+msgid "**Exceptions convey data:** in Clojure programs, it's common to attach additional data\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:349
+#, no-wrap
+msgid ""
+"to an Exception (not just a human-readable error message): this is done by creating the Exception via\n"
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ex-info[clojure.core/ex-info].\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:350
+#, no-wrap
+msgid "**Exceptions are chained:** an Exception can be annotated with an optional _cause_, which is another\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:351
+#, no-wrap
+msgid "(lower-level) Exception.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:353
+msgid "Here's an example program which demonstrates these sort of Exceptions."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:369
+#, no-wrap
+msgid ""
+"(defn divide-verbose\n"
+"  \"Divides two numbers `x` and `y`, but throws more informative Exceptions when it goes wrong.\n"
+"  Returns a (double-precision) floating-point number.\"\n"
+"  [x y]\n"
+"  (try\n"
+"    (double (/ x y))\n"
+"    (catch Throwable cause\n"
+"      (throw\n"
+"        (ex-info\n"
+"          (str \"Failed to divide \" (pr-str x) \" by \" (pr-str y))\n"
+"          {:numerator x\n"
+"           :denominator y}\n"
+"          cause)))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:383
+#, no-wrap
+msgid ""
+"(defn average\n"
+"  \"Computes the average of a collection of numbers.\"\n"
+"  [numbers]\n"
+"  (try\n"
+"    (let [sum (apply + numbers)\n"
+"          cardinality (count numbers)]\n"
+"      (divide-verbose sum cardinality))\n"
+"    (catch Throwable cause\n"
+"      (throw\n"
+"        (ex-info\n"
+"          \"Failed to compute the average of numbers\"\n"
+"          {:numbers numbers}\n"
+"          cause)))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:388
+msgid ""
+"We don't know it yet, but our `average` function fails when applied to an "
+"empty collection of numbers.  However, visualizing the Exception makes it "
+"easy to diagnose. In the below REPL session, we can see that we calling our "
+"function with an empty vector of numbers led to dividing zero by zero:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:432
+#, no-wrap
+msgid ""
+"user=> (average [])\n"
+"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
+"user=> *e  ;; notice the `:data` key inside the chain of Exceptions represented in `:via`\n"
+"#error {\n"
+" :cause \"Divide by zero\"\n"
+" :via\n"
+" [{:type clojure.lang.ExceptionInfo\n"
+"   :message \"Failed to compute the average of numbers\"\n"
+"   :data {:numbers []}                                      ;; <-- HERE\n"
+"   :at [clojure.core$ex_info invokeStatic \"core.clj\" 4739]}\n"
+"  {:type clojure.lang.ExceptionInfo\n"
+"   :message \"Failed to divide 0 by 0\"\n"
+"   :data {:numerator 0, :denominator 0}                     ;; <-- HERE\n"
+"   :at [clojure.core$ex_info invokeStatic \"core.clj\" 4739]}\n"
+"  {:type java.lang.ArithmeticException\n"
+"   :message \"Divide by zero\"\n"
+"   :at [clojure.lang.Numbers divide \"Numbers.java\" 163]}]\n"
+" :trace\n"
+" [[clojure.lang.Numbers divide \"Numbers.java\" 163]\n"
+"  [user$divide_verbose invokeStatic \"NO_SOURCE_FILE\" 11]\n"
+"  [user$divide_verbose invoke \"NO_SOURCE_FILE\" 6]\n"
+"  [user$average invokeStatic \"NO_SOURCE_FILE\" 25]\n"
+"  [user$average invoke \"NO_SOURCE_FILE\" 19]\n"
+"  [user$eval155 invokeStatic \"NO_SOURCE_FILE\" 32]\n"
+"  [user$eval155 invoke \"NO_SOURCE_FILE\" 32]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7062]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7025]\n"
+"  [clojure.core$eval invokeStatic \"core.clj\" 3206]\n"
+"  [clojure.core$eval invoke \"core.clj\" 3202]\n"
+"  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke \"main.clj\" 243]\n"
+"  [clojure.main$repl$read_eval_print__8572 invoke \"main.clj\" 243]\n"
+"  [clojure.main$repl$fn__8581 invoke \"main.clj\" 261]\n"
+"  [clojure.main$repl invokeStatic \"main.clj\" 261]\n"
+"  [clojure.main$repl_opt invokeStatic \"main.clj\" 325]\n"
+"  [clojure.main$main invokeStatic \"main.clj\" 424]\n"
+"  [clojure.main$main doInvoke \"main.clj\" 387]\n"
+"  [clojure.lang.RestFn invoke \"RestFn.java\" 397]\n"
+"  [clojure.lang.AFn applyToHelper \"AFn.java\" 152]\n"
+"  [clojure.lang.RestFn applyTo \"RestFn.java\" 132]\n"
+"  [clojure.lang.Var applyTo \"Var.java\" 702]\n"
+"  [clojure.main main \"main.java\" 37]]}\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:434
+#, no-wrap
+msgid "Graphical and web-based visualizations"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:439
+#, no-wrap
+msgid ""
+"Finally, the REPL being a full-featured programming environment, it is not limited\n"
+" to text-based visualizations. Here are some handy \"graphical\" visualization tools bundled\n"
+" Clojure:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:443
+msgid ""
+"https://clojure.github.io/clojure/clojure.java.javadoc-api.html[clojure.java."
+"javadoc] lets you view the https://en.wikipedia.org/wiki/Javadoc[Javadoc] of "
+"a class or object.  Here is how to view the Javadoc for a Java https://docs."
+"oracle.com/javase/8/docs/api/java/util/regex/Pattern.html[regex Pattern]:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:452
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.java.javadoc :as jdoc])\n"
+"nil\n"
+"user=> (jdoc/javadoc #\"a+\") ;; opens the Javadoc page for java.util.Pattern in a Web browser\n"
+"true\n"
+"user=> (jdoc/javadoc java.util.regex.Pattern) ;; equivalent to the above\n"
+"true\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:456
+msgid ""
+"https://clojure.github.io/clojure/clojure.inspector-api.html[clojure."
+"inspector] lets you open GUI-based visualizations of data, for instance:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:463
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.inspector :as insp])\n"
+"nil\n"
+"user=> (insp/inspect-table (mapv number-summary [2 5 6 28 42]))\n"
+"#object[javax.swing.JFrame 0x26425897 \"javax.swing.JFrame[frame1,0,23,400x600,layout=java.awt.BorderLayout,title=Clojure Inspector,resizable,normal,defaultCloseOperation=HIDE_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,22,400x578,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]\"]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:466
+msgid ""
+"image:/images/content/guides/repl/clj-inspect-table.png[\"clojure.inspector "
+"table viz\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:468
+msgid ""
+"Finally, https://clojure.github.io/clojure/clojure.java.browse-api."
+"html#clojure.java.browse/browse-url[clojure.java.browse/browse-url] lets you "
+"open any URL in a Web browser, which can be handy for specific needs."
+msgstr ""

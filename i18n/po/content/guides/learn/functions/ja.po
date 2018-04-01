@@ -1,0 +1,966 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16 en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr "toc::[]"
+
+#. type: Title ==
+#: en/content/reference/java_interop.adoc:1 en/content/guides/learn/functions.adoc:268
+#, no-wrap
+msgid "Java Interop"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
+#: en/content/guides/learn/sequential_colls.adoc:4 en/content/guides/learn/functions.adoc:4
+msgid "Alex Miller 2017-09-02"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/syntax.adoc:341 en/content/guides/learn/functions.adoc:299
+#, no-wrap
+msgid "Test your knowledge"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/learn/functions.adoc:1
+#, no-wrap
+msgid "Learn Clojure - Functions"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/functions.adoc:17
+#, fuzzy, no-wrap
+#| msgid "Related functions"
+msgid "Creating Functions"
+msgstr "関連する関数"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:20
+msgid ""
+"Clojure is a functional language. Functions are first-class and can be passed-to or returned-from other functions. "
+"Most Clojure code consists primarily of pure functions (no side effects), so invoking with the same inputs yields the "
+"same output."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:22
+msgid "`defn` defines a named function:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:28
+#, no-wrap
+msgid ""
+";;    name   params         body\n"
+";;    -----  ------  -------------------\n"
+"(defn greet  [name]  (str \"Hello, \" name) )\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:31
+msgid ""
+"This function has a single parameter `name`, however you may include any number of arguments in the params vector."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:33
+msgid "Invoke a function with the name of the function in \"function position\" (the first element of a list):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:38
+#, no-wrap
+msgid ""
+"user=> (greet \"students\")\n"
+"\"Hello, students\"\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:40
+#, fuzzy, no-wrap
+#| msgid "Related functions"
+msgid "Multi-arity functions"
+msgstr "関連する関数"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:43
+msgid ""
+"Functions can be defined to take different numbers of arguments (different \"arity\"). Different arities must all be "
+"defined in the same `defn` - using `defn` more than once will replace the previous function."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:45
+msgid "Each arity is a list `([args*] body*)`. One arity can invoke another."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:51
+#, no-wrap
+msgid ""
+"(defn messenger\n"
+"  ([]     (messenger \"Hello world!\"))\n"
+"  ([msg]  (println msg)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:54
+msgid ""
+"This function declares two arities (0 arguments and 1 argument). The 0-argument arity calls the 1-argument arity with "
+"a default value to print. We invoke these functions by passing the appropriate number of arguments:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:60
+#, no-wrap
+msgid ""
+"user=> (messenger)\n"
+"Hello world!\n"
+"nil\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:64
+#, no-wrap
+msgid ""
+"user=> (messenger \"Hello class!\")\n"
+"Hello class!\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:66
+#, fuzzy, no-wrap
+#| msgid "Related functions"
+msgid "Variadic functions"
+msgstr "関連する関数"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:69
+msgid ""
+"Functions may also define a variable number of arguments - this is known as a \"variadic\" function. The variable "
+"arguments must occur at the end of the argument list. They will be collected in a sequence for use by the function."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:71
+msgid "The beginning of the variable arguments is marked with `&`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:76
+#, no-wrap
+msgid ""
+"(defn hello [greeting & who]\n"
+"  (println greeting who))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:79
+msgid ""
+"This function takes an argument `greeting` and a variable number of arguments (0 or more) that will be collected in a "
+"list named `who`. We can see this by invoking it with 3 arguments:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:84
+#, no-wrap
+msgid ""
+"user=> (hello \"Hello\" \"world\" \"class\")\n"
+"Hello (world class)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:87
+msgid "You can see that when `println` prints `who`, it is printed as a list of two elements that were collected."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:88
+#, fuzzy, no-wrap
+#| msgid "Anonymous function literal (#())"
+msgid "Anonymous Functions"
+msgstr "無名関数リテラル (#())"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:91
+msgid "An anonymous function can be created with `fn`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:97
+#, no-wrap
+msgid ""
+";;    params         body\n"
+";;   ---------  -----------------\n"
+"(fn  [message]  (println message) )\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:100
+msgid ""
+"Because the anonymous function has no name, it cannot be referred to later. Rather, the anonymous function is "
+"typically created at the point it is passed to another function."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:102
+msgid "Or it's possible to immediately invoke it (this is not a common usage):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:108
+#, no-wrap
+msgid ""
+";;     operation (function)             argument\n"
+";; --------------------------------  --------------\n"
+"(  (fn [message] (println message))  \"Hello world!\" )\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:110
+#, no-wrap
+msgid ";; Hello world!\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:113
+msgid ""
+"Here we defined the anonymous function in the function position of a larger expression that immediately invokes the "
+"expression with the argument."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:115
+msgid ""
+"Many languages have both statements, which imperatively do something and do not return a value, and expressions which "
+"do. Clojure has **only** expressions that return a value. We'll see later that this includes even flow control "
+"expressions like `if`."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:116
+#, no-wrap
+msgid "`defn` vs `fn`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:119
+msgid ""
+"It might be useful to think of `defn` as a contraction of `def` and `fn`. The `fn` defines the function and the `def` "
+"binds it to a name. These are equivalent:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:123
+#, no-wrap
+msgid "(defn greet [name] (str \"Hello, \" name))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:125
+#, no-wrap
+msgid "(def greet (fn [name] (str \"Hello, \" name)))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:127
+#, fuzzy, no-wrap
+#| msgid "Anonymous function literal (#())"
+msgid "Anonymous function syntax"
+msgstr "無名関数リテラル (#())"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:130
+msgid ""
+"There is a shorter form for the `fn` anonymous function syntax implemented in the Clojure reader: `#()`. This syntax "
+"omits the parameter list and names parameters based on their position."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:132
+msgid "`%` is used for a single argument"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:133
+msgid "`%1`, `%2`, `%3`, etc are used for multiple arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:134
+msgid "`%&` is used for any remaining (variadic) arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:136
+msgid "Nested anonymous functions would create an ambiguity as the parameters are not named, so nesting is not allowed."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:141
+#, no-wrap
+msgid ""
+";; Equivalent to: (fn [x] (+ 6 x))\n"
+"#(+ 6 %)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:144
+#, no-wrap
+msgid ""
+";; Equivalent to: (fn [x y] (+ x y))\n"
+"#(+ %1 %2)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:147
+#, no-wrap
+msgid ""
+";; Equivalent to: (fn [x y & zs] (println x y zs))\n"
+"#(println %1 %2 %&)\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:149
+#, no-wrap
+msgid "Gotcha"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:152
+msgid ""
+"One common need is an anonymous function that takes an element and wraps it in a vector. You might try writing that "
+"as:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:157
+#, no-wrap
+msgid ""
+";; DO NOT DO THIS\n"
+"#([%])\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:160
+msgid "This anonymous function expands to the equivalent:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:164
+#, no-wrap
+msgid "(fn [x] ([x]))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:167
+msgid ""
+"This form will wrap in a vector **and** try to invoke the vector with no arguments (the extra pair of parentheses). "
+"Instead:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:172
+#, no-wrap
+msgid ""
+";; Instead do this:\n"
+"#(vector %)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:175
+#, no-wrap
+msgid ""
+";; or this:\n"
+"(fn [x] [x])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:178
+#, no-wrap
+msgid ""
+";; or most simply just the vector function itself:\n"
+"vector\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/functions.adoc:180
+#, no-wrap
+msgid "Applying Functions"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:182
+#, no-wrap
+msgid "`apply`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:185
+msgid ""
+"The `apply` function invokes a function with 0 or more fixed arguments, and draws the rest of the needed arguments "
+"from a final sequence. The final argument *must* be a sequence."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:192
+#, no-wrap
+msgid ""
+"(apply f '(1 2 3 4))    ;; same as  (f 1 2 3 4)\n"
+"(apply f 1 '(2 3 4))    ;; same as  (f 1 2 3 4)\n"
+"(apply f 1 2 '(3 4))    ;; same as  (f 1 2 3 4)\n"
+"(apply f 1 2 3 '(4))    ;; same as  (f 1 2 3 4)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:195
+msgid ""
+"All 4 of these calls are equivalent to `(f 1 2 3 4)`. `apply` is useful when arguments are handed to you as a "
+"sequence but you must invoke the function with the values in the sequence."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:197
+msgid "For example, you can use `apply` to avoid writing this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:202
+#, no-wrap
+msgid ""
+"(defn plot [shape coords]   ;; coords is [x y]\n"
+"  (plotxy shape (first coords) (second coords)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:205
+msgid "Instead you can simply write:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:210
+#, no-wrap
+msgid ""
+"(defn plot [shape coords]\n"
+"  (apply plotxy shape coords))\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/functions.adoc:212
+#, no-wrap
+msgid "Locals and Closures"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:214
+#, no-wrap
+msgid "`let`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:217
+msgid ""
+"`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested inside "
+"the surrounding context. Names defined in a let take precedence over the names in the outer context."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:223
+#, no-wrap
+msgid ""
+";;      bindings     name is defined here\n"
+";;    ------------  ----------------------\n"
+"(let  [name value]  (code that uses name))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:226
+msgid "Each `let` can define 0 or more bindings and can have 0 or more expressions in the body."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:232
+#, no-wrap
+msgid ""
+"(let [x 1\n"
+"      y 2]\n"
+"  (+ x y))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:235
+msgid ""
+"This `let` expression creates two local bindings for `x` and `y`. The expression `(+ x y)` is in the lexical scope of "
+"the `let` and resolves x to 1 and y to 2. Outside the `let` expression, x and y will have no continued meaning, "
+"unless they were already bound to a value."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:245
+#, no-wrap
+msgid ""
+"(defn messenger [msg]\n"
+"  (let [a 7\n"
+"        b 5\n"
+"        c (clojure.string/capitalize msg)]\n"
+"    (println a b c)\n"
+"  ) ;; end of let scope\n"
+") ;; end of function\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:248
+msgid ""
+"The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only has "
+"meanining within the `messenger` function."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:250
+msgid ""
+"Within that function scope, the `let` creates a new scope to define `a`, `b`, and `c`. If we tried to use `a` after "
+"the let expression, the compiler would report an error."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:251
+#, no-wrap
+msgid "Closures"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:254
+msgid ""
+"The `fn` special form creates a \"closure\". It \"closes over\" the surrounding lexical scope (like `msg`, `a`, `b`, "
+"or `c` above) and captures their values beyond the lexical scope."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:259
+#, no-wrap
+msgid ""
+"(defn messenger-builder [greeting]\n"
+"  (fn [who] (println greeting who))) ; closes over greeting\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:262
+#, no-wrap
+msgid ""
+";; greeting provided here, then goes out of scope\n"
+"(def hello-er (messenger-builder \"Hello\"))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:266
+#, no-wrap
+msgid ""
+";; greeting value still available because hello-er is a closure\n"
+"(hello-er \"world!\")\n"
+";; Hello world!\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:270
+#, no-wrap
+msgid "Invoking Java code"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:273
+msgid "Below is a summary of calling conventions for calling into Java from Clojure:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:283
+msgid ""
+"|=== | Task | Java | Clojure | |Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | |Instance method| `rnd."
+"next()` | `(.nextInt rnd)` | |Instance field| `object.field` | `(.-field object)` | |Static method| `Math.sqrt(25)` | "
+"`(Math/sqrt 25)` | |Static field| `Math.PI` | `Math/PI` | |==="
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/functions.adoc:284
+#, no-wrap
+msgid "Java Methods vs Functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:287
+msgid "Java methods are not Clojure functions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:288
+msgid "Can't store them or pass them as arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:289
+msgid "Can wrap them in functions when necessary"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:294
+#, no-wrap
+msgid ""
+";; make a function to invoke .length on arg\n"
+"(fn [obj] (.length obj))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:297
+#, no-wrap
+msgid ""
+";; same thing\n"
+"#(.length %)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:303
+msgid ""
+"Define a function `greet` that takes not arguments and prints \"Hello\". Replace the ___ with the implementation: "
+"`(defn greet [] ___)`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:305
+msgid "Redefine `greet` using `def`, first with the `fn` special form and then with the `#()` reader macro."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:309
+#, no-wrap
+msgid ""
+";; using fn\n"
+"(def greet __)   \n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:312
+#, no-wrap
+msgid ""
+";; using #()\n"
+"(def greet __)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:315
+msgid "Define a function `greeting` which:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:317
+msgid "Given no arguments, returns \"Hello, World!\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:318
+msgid "Given one argument x, returns \"Hello, *x*!\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:319
+msgid "Given two arguments x and y, returns \"*x*, *y*!\""
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:323
+#, no-wrap
+msgid ""
+";; Hint use the str function to concatenate strings\n"
+"(doc str)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:325
+#, no-wrap
+msgid "(defn greeting ___)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:330
+#, no-wrap
+msgid ""
+";; For testing \n"
+"(assert (= \"Hello, World!\" (greeting)))\n"
+"(assert (= \"Hello, Clojure!\" (greeting \"Clojure\")))\n"
+"(assert (= \"Good morning, Clojure!\" (greeting \"Good morning\" \"Clojure\")))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:333
+msgid "Define a function `do-nothing` which takes a single argument `x` and returns it, unchanged."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:336
+#, no-wrap
+msgid "(defn do-nothing [x] ___)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:338
+msgid ""
+"In Clojure, this is the `identity` function. By itself, identity is not very useful, but it is sometimes necessary "
+"when working with higher-order functions."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:341
+#, no-wrap
+msgid "(source identity)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:344
+msgid ""
+"Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the keyword `:"
+"thing`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:347
+#, no-wrap
+msgid "(defn always-thing [__] ___)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:350
+msgid ""
+"Define a function `make-thingy` which takes a single argument `x`. It should return another function, which takes any "
+"number of arguments and always returns x."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:353
+#, no-wrap
+msgid "(defn make-thingy [x] ___)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:360
+#, no-wrap
+msgid ""
+";; Tests\n"
+"(let [n (rand-int Integer/MAX_VALUE)\n"
+"      f (make-thingy n)]\n"
+"  (assert (= n (f)))\n"
+"  (assert (= n (f :foo)))\n"
+"  (assert (= n (apply f :foo (range)))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:362
+msgid "In Clojure, this is the `constantly` function."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:365
+#, no-wrap
+msgid "(source constantly)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:368
+msgid "Define a function `triplicate` which takes another function and calls it three times, without any arguments."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:371
+#, no-wrap
+msgid "(defn triplicate [f] ___)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:374
+msgid ""
+"Define a function `opposite` which takes a single argument `f`. It should return another function which takes any "
+"number of arguments, applies `f` on them, and then calls `not` on the result. The `not` function in Clojure does "
+"logical negation."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:378
+#, no-wrap
+msgid ""
+"(defn opposite [f]\n"
+"  (fn [& args] ___))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:380
+msgid "In Clojure, this is the complement function."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:391
+#, no-wrap
+msgid ""
+"(defn complement\n"
+"  \"Takes a fn f and returns a fn that takes the same arguments as f,\n"
+"  has the same effects, if any, and returns the opposite truth value.\"\n"
+"  [f] \n"
+"  (fn \n"
+"    ([] (not (f)))\n"
+"    ([x] (not (f x)))\n"
+"    ([x y] (not (f x y)))\n"
+"    ([x y & zs] (not (apply f x y zs)))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:394
+msgid ""
+"Define a function `triplicate2` which takes another function and any number of arguments, then calls that function "
+"three times on those arguments. Re-use the function you defined in the earlier triplicate exercise."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:398
+#, no-wrap
+msgid ""
+"(defn triplicate2 [f & args]\n"
+"  (triplicate ___))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:401
+msgid ""
+"Using the http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html[java.lang.Math] class (`Math/pow`, `Math/cos`, "
+"`Math/sin`, `Math/PI`), demonstrate the following mathematical facts:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:402
+msgid "The cosine of pi is -1"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:403
+msgid "For some x, sin(x)^2 + cos(x)^2 = 1"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:405
+msgid ""
+"Define a function that takes an HTTP URL as a string, fetches that URL from the web, and returns the content as a "
+"string."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:407
+msgid ""
+"Hint: Using the http://docs.oracle.com/javase/8/docs/api/java/net/URL.html[java.net.URL] class and its `openStream` "
+"method. Then use the Clojure `slurp` function to get the content as a string."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:411 en/content/guides/learn/functions.adoc:419
+#, no-wrap
+msgid ""
+"(defn http-get [url]\n"
+"  ___)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:413
+#, no-wrap
+msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:415
+msgid ""
+"In fact, the Clojure `slurp` function interprets its argument as a URL first before trying it as a file name. Write a "
+"simplified http-get:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:422
+msgid "Define a function `one-less-arg` that takes two arguments:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:423
+#, fuzzy
+#| msgid "eduction"
+msgid "`f`, a function"
+msgstr "eduction"
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:424
+msgid "`x`, a value"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:426
+msgid "and returns another function which calls `f` on `x` plus any additional arguments. +"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:430
+#, no-wrap
+msgid ""
+"(defn one-less-arg [f x]\n"
+"  (fn [& args] ___))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:432
+msgid "In Clojure, the `partial` function is a more general version of this."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:434
+msgid ""
+"Define a function `two-fns` which takes two functions as arguments, `f` and `g`. It returns another function which "
+"takes one argument, calls `g` on it, then calls `f` on the result, and returns that."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/functions.adoc:436
+msgid "That is, your function returns the composition of `f` and `g`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/functions.adoc:440
+#, no-wrap
+msgid ""
+"(defn two-fns [f g]\n"
+"  ___)\n"
+msgstr ""

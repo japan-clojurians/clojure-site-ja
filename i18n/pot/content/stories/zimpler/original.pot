@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:16 en/content/stories/collbox.adoc:14
+#: en/content/stories/zimpler.adoc:14 en/content/stories/uhn.adoc:13
+#: en/content/stories/signal.adoc:14 en/content/stories/ona.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
+#: en/content/stories/zimpler.adoc:38 en/content/stories/uhn.adoc:71
+#: en/content/stories/lendup.adoc:33 en/content/stories/kidblog.adoc:25
+#: en/content/stories/signal.adoc:38 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
+#, no-wrap
+msgid "*What is your stack?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:18 en/content/stories/zimpler.adoc:22
+#: en/content/stories/signal.adoc:22
+#, no-wrap
+msgid "*What product or service are you building?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:26 en/content/stories/zimpler.adoc:30
+#: en/content/stories/uhn.adoc:49 en/content/stories/signal.adoc:30
+#, no-wrap
+msgid "*What about working with Clojure and ClojureScript gives you the most value?*\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/zimpler.adoc:1
+#, no-wrap
+msgid "Zimpler"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:4
+msgid "Alex Miller 2017-11-15"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:10
+msgid "image:/images/content/stories/zimpler.png[\"Zimpler\",height=\"80\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:12
+msgid ""
+"This story is about https://www.zimpler.com/[Zimpler] and their use of "
+"Clojure and ClojureScript,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:16
+msgid ""
+"We started working with ClojureScript in 2015 and Clojure from 2016. Today "
+"we see it as our main language moving forward."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:18
+#, no-wrap
+msgid "*How big is the team you have using Clojure and ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:20
+msgid ""
+"Today we are 12 people working in Clojure/ClojureScript but we are "
+"constantly looking to grow the team further."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:24
+msgid ""
+"Zimpler is a payment solution. All user facing part of the product, such as "
+"the checkout is written in ClojureScript. Most of the future applications "
+"will be written in Clojure/ClojureScript."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:26 en/content/stories/signal.adoc:26
+#: en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
+#: en/content/stories/empear.adoc:29
+#, no-wrap
+msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:28
+msgid ""
+"For ClojureScript, https://reagent-project.github.io/[Reagent] and https://"
+"github.com/Day8/re-frame[re-frame] are just really nice to work with, "
+"enabling to express complex logic in a very simple way. On the backend side, "
+"https://www.hugsql.org/[HugSQL] is also a very neat library allowing us to "
+"write SQL queries without adding unnecessary layers of complexity."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:32
+msgid ""
+"Namespaces and immutability by default makes everything more explicit and "
+"allows us to understand where everything is coming from. This in turns "
+"allows us to collaborate more easily and iterate faster. Also thanks to the "
+"seamless interop with Java and JavaScript, we have access to a large "
+"ecosystem of well tested libraries, making Clojure(Script) a safe bet."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:34 en/content/stories/lendup.adoc:29
+#: en/content/stories/signal.adoc:34 en/content/stories/empear.adoc:37
+#, no-wrap
+msgid "*What is your favorite feature of Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:36
+msgid ""
+"The focus on values and a REPL driven development makes for a very "
+"interactive experience that many of us enjoy."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:40
+msgid ""
+"In the front-end, reagent + re-frame for all our apps. In the backend, we "
+"have a large Ruby codebase and a growing number of Clojure projects, with a "
+"bit of Haskell (gasp!) here and there."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:42 en/content/stories/uhn.adoc:43
+#: en/content/stories/lendup.adoc:37 en/content/stories/signal.adoc:42
+#: en/content/stories/ona.adoc:45 en/content/stories/cstap.adoc:50
+#: en/content/stories/empear.adoc:47
+#, no-wrap
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:43
+msgid ""
+"Besides the technological benefits discussed above, we also really like "
+"being a part of the Clojure community where we feel that we share a lot of "
+"common values. As a result of this we have had the fortune to be able to "
+"help out supporting both conferences such as http://euroclojure.org/"
+"[EuroClojure] and also local communities like https://www.meetup.com/got-"
+"lambda/[Got.lambda] in Gothenburg and http://clojurebridge-berlin.org/"
+"[ClojureBridge in Berlin]."
+msgstr ""

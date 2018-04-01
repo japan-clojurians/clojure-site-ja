@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,7 @@ msgid "Metadata"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/namespaces.adoc:1 en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:126
+#: en/content/reference/namespaces.adoc:1 en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
@@ -34,6 +34,12 @@ msgstr "ネームスペース"
 #, no-wrap
 msgid "Atoms"
 msgstr "Atom (アトム)"
+
+#. type: Plain text
+#: en/content/news/2017/12/08/clojure19.adoc:17 en/content/news/2011/07/22/introducing-clojurescript.adoc:30
+#: en/content/about/spec.adoc:99
+msgid "Destructuring"
+msgstr "分配束縛"
 
 #. type: Title =
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:1
@@ -124,11 +130,6 @@ msgstr ""
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:29
 msgid "Functions: `fn`, `defn`, multiple-arities, variadics"
 msgstr ""
-
-#. type: Plain text
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:30 en/content/about/spec.adoc:99
-msgid "Destructuring"
-msgstr "分配束縛"
 
 #. type: Plain text
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:31

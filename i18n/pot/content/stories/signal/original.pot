@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,25 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/stories/rts.adoc:16 en/content/stories/collbox.adoc:14
-#: en/content/stories/uhn.adoc:13 en/content/stories/signal.adoc:14
-#: en/content/stories/ona.adoc:13
+#: en/content/stories/zimpler.adoc:14 en/content/stories/uhn.adoc:13
+#: en/content/stories/signal.adoc:14 en/content/stories/ona.adoc:13
 #, no-wrap
 msgid "*How long have you been working with Clojure and ClojureScript?*\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
-#: en/content/stories/uhn.adoc:71 en/content/stories/lendup.adoc:33
-#: en/content/stories/kidblog.adoc:25 en/content/stories/signal.adoc:38
-#: en/content/stories/ona.adoc:39 en/content/stories/empear.adoc:43
+#: en/content/stories/zimpler.adoc:38 en/content/stories/uhn.adoc:71
+#: en/content/stories/lendup.adoc:33 en/content/stories/kidblog.adoc:25
+#: en/content/stories/signal.adoc:38 en/content/stories/ona.adoc:39
+#: en/content/stories/empear.adoc:43
 #, no-wrap
 msgid "*What is your stack?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/collbox.adoc:18 en/content/stories/signal.adoc:22
+#: en/content/stories/collbox.adoc:18 en/content/stories/zimpler.adoc:22
+#: en/content/stories/signal.adoc:22
 #, no-wrap
 msgid "*What product or service are you building?*\n"
 msgstr ""
@@ -47,25 +49,34 @@ msgid "*How big is your team?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/collbox.adoc:26 en/content/stories/uhn.adoc:49
-#: en/content/stories/signal.adoc:30
+#: en/content/stories/collbox.adoc:26 en/content/stories/zimpler.adoc:30
+#: en/content/stories/uhn.adoc:49 en/content/stories/signal.adoc:30
 #, no-wrap
 msgid "*What about working with Clojure and ClojureScript gives you the most value?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/uhn.adoc:43 en/content/stories/lendup.adoc:37
-#: en/content/stories/signal.adoc:42 en/content/stories/ona.adoc:45
-#: en/content/stories/cstap.adoc:50 en/content/stories/empear.adoc:47
+#: en/content/stories/zimpler.adoc:26 en/content/stories/signal.adoc:26
+#: en/content/stories/ona.adoc:25 en/content/stories/cstap.adoc:37
+#: en/content/stories/empear.adoc:29
 #, no-wrap
-msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/lendup.adoc:29 en/content/stories/signal.adoc:34
-#: en/content/stories/empear.adoc:37
+#: en/content/stories/zimpler.adoc:34 en/content/stories/lendup.adoc:29
+#: en/content/stories/signal.adoc:34 en/content/stories/empear.adoc:37
 #, no-wrap
 msgid "*What is your favorite feature of Clojure or ClojureScript?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/zimpler.adoc:42 en/content/stories/uhn.adoc:43
+#: en/content/stories/lendup.adoc:37 en/content/stories/signal.adoc:42
+#: en/content/stories/ona.adoc:45 en/content/stories/cstap.adoc:50
+#: en/content/stories/empear.adoc:47
+#, no-wrap
+msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
 msgstr ""
 
 #. type: Title =
@@ -113,13 +124,6 @@ msgid ""
 "written in Clojure. We also extensively use Clojure for some of our internal "
 "APIs. Over the last year we've been using Clojurescript to build a new "
 "product for search and retrieval of legal data on large scale."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/signal.adoc:26 en/content/stories/ona.adoc:25
-#: en/content/stories/cstap.adoc:37 en/content/stories/empear.adoc:29
-#, no-wrap
-msgid "*What Clojure or ClojureScript library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text

@@ -1,0 +1,715 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/reader_conditionals.adoc:120
+#: en/content/guides/learn/flow.adoc:285
+#, no-wrap
+msgid "Exception handling"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/hashed_colls.adoc:4
+#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
+#: en/content/guides/learn/sequential_colls.adoc:4
+#: en/content/guides/learn/functions.adoc:4
+msgid "Alex Miller 2017-09-02"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/learn/flow.adoc:1
+#, no-wrap
+msgid "Learn Clojure - Flow Control"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:15
+#, no-wrap
+msgid "Statements vs. Expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:18
+msgid "In Java, expressions return values, whereas statements do not."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:29
+#, no-wrap
+msgid ""
+"// \"if\" is a statement because it doesn't return a value:\n"
+"String s;\n"
+"if (x > 10) {\n"
+"    s = \"greater\";\n"
+"} else {\n"
+"    s = \"greater or equal\";\n"
+"}\n"
+"obj.someMethod(s);\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:32
+#, no-wrap
+msgid ""
+"// Ternary operator is an expression; it returns a value:\n"
+"obj.someMethod(x > 10 ? \"greater\" : \"greater or equal\");\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:34
+msgid ""
+"In Clojure, however, everything is an expression! _Everything_ returns a "
+"value, and a block of multiple expressions returns the last value. "
+"Expressions that exclusively perform side-effects return `nil`."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:35
+#, no-wrap
+msgid "Flow Control Expressions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:38
+msgid "Accordingly, flow control operators are expressions, too!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:40
+msgid ""
+"Flow control operators are composable, so we can use them anywhere. This "
+"leads to less duplicate code, as well as fewer intermediate variables."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:42
+msgid ""
+"Flow control operators are also extensible via macros, which allow the "
+"compiler to be extended by user code. We won't be discussing macros today, "
+"but you can read more about them at <<xref/../../../reference/macros#,"
+"Macros>>, https://aphyr.com/posts/305-clojure-from-the-ground-up-"
+"macros[Clojure from the Ground Up], or http://www.braveclojure.com/writing-"
+"macros/[Clojure for the Brave and True], among many other places."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:43
+#, no-wrap
+msgid "`if`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:46
+msgid ""
+"`if` is the most important conditional expression - it consists of a "
+"condition, a \"then\", and an \"else\". `if` will only evaluate the branch "
+"selected by the conditional."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:51
+#, no-wrap
+msgid ""
+"user=> (str \"2 is \" (if (even? 2) \"even\" \"odd\"))\n"
+"2 is even\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:54
+#, no-wrap
+msgid ""
+"user=> (if (true? false) \"impossible!\") ;; else is optional\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:56
+#, no-wrap
+msgid "Truth"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:59
+msgid ""
+"In Clojure, all values are logically true or false. The only \"false\" "
+"values are `false` and `nil` - all other values are logically true."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:74
+#, no-wrap
+msgid ""
+"user=> (if true :truthy :falsey)\n"
+":truthy\n"
+"user=> (if (Object.) :truthy :falsey) ; objects are true\n"
+":truthy\n"
+"user=> (if [] :truthy :falsey) ; empty collections are true\n"
+":truthy\n"
+"user=> (if 0 :truthy :falsey) ; zero is true\n"
+":truthy\n"
+"(if false :truthy :falsey)\n"
+":falsey\n"
+"(if nil :truthy :falsey)\n"
+":falsey\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:76
+#, no-wrap
+msgid "`if` and `do`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:79
+msgid ""
+"The `if` only takes a single expression for the \"then\" and \"else\". Use "
+"`do` to create larger blocks that are a single expression."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:81
+msgid ""
+"Note that the only reason to do this is if your bodies have side effects! "
+"(Why?)"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:89
+#, no-wrap
+msgid ""
+"(if (even? 5)\n"
+"  (do (println \"even\")\n"
+"      true)\n"
+"  (do (println \"odd\")\n"
+"      false))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:92
+#, no-wrap
+msgid "`when`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:95
+msgid ""
+"`when` is an `if` with only a `then` branch. It checks a condition and then "
+"evaluates any number of statements as a body (so no `do` is required). The "
+"value of the last expression is returned. If the condition is false, nil is "
+"returned."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:97
+msgid "`when` communicates to a reader that there is no \"else\" branch.\t"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:102
+#, no-wrap
+msgid ""
+"(when (neg? x)\n"
+"  (throw (RuntimeException. (str \"x must be positive: \" x))))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:104
+#, no-wrap
+msgid "`cond`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:107
+msgid ""
+"`cond` is a series of tests and expressions. Each test is evaluated in order "
+"and the expression is evaluated and returned for the first true test."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:114
+#, no-wrap
+msgid ""
+"(let [x 5]\n"
+"  (cond\n"
+"    (< x 2) \"x is less than 2\"\n"
+"    (< x 10) \"x is less than 10\"))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:116
+#, no-wrap
+msgid "`cond` and `else`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:119
+msgid ""
+"If no test is satisfied, nil is returned. A common idiom is to use a final "
+"test of `:else`. Keywords (like `:else`) always evaluate to true so this "
+"will always be selected as a default."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:127
+#, no-wrap
+msgid ""
+"(let [x 11]\n"
+"  (cond\n"
+"    (< x 2)  \"x is less than 2\"\n"
+"    (< x 10) \"x is less than 10\"\n"
+"    :else  \"x is greater than or equal to 10\"))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:129
+#, no-wrap
+msgid "`case`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:132
+msgid ""
+"`case` compares an argument to a series of values to find a match. This is "
+"done in constant (not linear) time! However, each value must be a compile-"
+"time literal (numbers, strings, keywords, etc)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:134
+msgid "Unlike `cond`, `case` will throw an exception if no value matches."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:142
+#, no-wrap
+msgid ""
+"user=> (defn foo [x]\n"
+"         (case x\n"
+"           5 \"x is 5\"\n"
+"           10 \"x is 10\"))\n"
+"#'user/foo\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:145
+#, no-wrap
+msgid ""
+"user=> (foo 10)\n"
+"x is 10\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:148
+#, no-wrap
+msgid ""
+"user=> (foo 11)\n"
+"IllegalArgumentException No matching clause: 11\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:150
+#, no-wrap
+msgid "`case` with `else`-expression"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:153
+msgid ""
+"`case` can have a final trailing expression that will be evaluated if no "
+"test matches."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:162
+#, no-wrap
+msgid ""
+"user=> (defn foo [x]\n"
+"         (case x\n"
+"           5 \"x is 5\"\n"
+"           10 \"x is 10\"\n"
+"           \"x isn't 5 or 10\"))\n"
+"#'user/foo\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:165
+#, no-wrap
+msgid ""
+"user=> (foo 11)\n"
+"x isn't 5 or 10\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:167
+#, no-wrap
+msgid "Iteration for Side Effects"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:169
+#, no-wrap
+msgid "`dotimes`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:172
+msgid "Evaluate expression _n_ times"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:173 en/content/guides/learn/flow.adoc:189
+#: en/content/guides/learn/flow.adoc:205
+msgid "Returns `nil`"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:182
+#, no-wrap
+msgid ""
+"user=> (dotimes [i 3]\n"
+"         (println i))\n"
+"0\n"
+"1\n"
+"2\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:184
+#, no-wrap
+msgid "`doseq`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:187
+msgid "Iterates over a sequence"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:188
+msgid "If a lazy sequence, forces evaluation"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:198
+#, no-wrap
+msgid ""
+"user=> (doseq [n (range 3)]\n"
+"         (println n))\n"
+"0\n"
+"1\n"
+"2\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:200
+#, no-wrap
+msgid "`doseq` with multiple bindings"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:203
+msgid "Similar to nested `foreach` loops"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:204
+msgid "Processes all permutations of sequence content"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:218
+#, no-wrap
+msgid ""
+"user=> (doseq [letter [:a :b]\n"
+"               number (range 3)] ; list of 0, 1, 2\n"
+"         (prn [letter number]))\n"
+"[:a 0]\n"
+"[:a 1]\n"
+"[:a 2]\n"
+"[:b 0]\n"
+"[:b 1]\n"
+"[:b 2]\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:220
+#, no-wrap
+msgid "Clojure's `for`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:223
+msgid "List comprehension, *not* a for-loop"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:224
+msgid "Generator function for sequence permutation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:225
+msgid "Bindings behave like `doseq`"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:232
+#, no-wrap
+msgid ""
+"user=> (for [letter [:a :b]\n"
+"             number (range 3)] ; list of 0, 1, 2\n"
+"         [letter number])\n"
+"([:a 0] [:a 1] [:a 2] [:b 0] [:b 1] [:b 2])\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:235
+#, no-wrap
+msgid "Recursion"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:237
+#, no-wrap
+msgid "Recursion and Iteration"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:240
+msgid "Clojure provides recur and the sequence abstraction"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:242
+msgid ""
+"`recur` is \"classic\" recursion ** Consumers don't control it, considered a "
+"lower-level facility"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:244
+msgid ""
+"Sequences represent iteration as values ** Consumers can partially iterate"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:246
+msgid ""
+"Reducers represent iteration as function composition ** Added in Clojure "
+"1.5, not covered here"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:247
+#, no-wrap
+msgid "`loop` and `recur`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:252
+msgid ""
+"Functional looping construct ** `loop` defines bindings ** `recur` re-"
+"executes `loop` with new bindings"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:253
+msgid "Prefer higher-order library functions instead"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:260
+#, no-wrap
+msgid ""
+"(loop [i 0]\n"
+"  (if (< i 10)\n"
+"    (recur (inc i))\n"
+"    i))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:262
+#, no-wrap
+msgid "`defn` and `recur`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:265
+msgid "Function arguments are implicit `loop` bindings"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:272
+#, no-wrap
+msgid ""
+"(defn increase [i]\n"
+"  (if (< i 10)\n"
+"    (recur (inc i))\n"
+"    i))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:274
+#, no-wrap
+msgid "`recur` for recursion"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:278
+msgid "`recur` must be in \"tail position\" ** The last expression in a branch"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:281
+msgid ""
+"`recur` must provide values for all bound symbols by position ** Loop "
+"bindings ** defn/fn arguments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:282
+msgid "Recursion via `recur` does not consume stack"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:283
+#, no-wrap
+msgid "Exceptions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:288
+msgid "`try`/`catch`/`finally` as in Java"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:297
+#, no-wrap
+msgid ""
+"(try\n"
+"  (/ 2 1)\n"
+"  (catch ArithmeticException e\n"
+"    \"divide by zero\")\n"
+"  (finally\n"
+"    (println \"cleanup\")))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:299
+#, no-wrap
+msgid "Throwing exceptions"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:306
+#, no-wrap
+msgid ""
+"(try\n"
+"  (throw (Exception. \"something went wrong\"))\n"
+"  (catch Exception e (.getMessage e)))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:308
+#, no-wrap
+msgid "Exceptions with Clojure data"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:311
+msgid "`ex-info` takes a message and a map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:313
+msgid ""
+"`ex-data` gets the map back out ** Or `nil` if not created with `ex-info`"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:320
+#, no-wrap
+msgid ""
+"(try\n"
+"  (throw (ex-info \"There was a problem\" {:detail 42}))\n"
+"  (catch Exception e\n"
+"    (prn (:detail (ex-data e)))))\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/flow.adoc:322
+#, no-wrap
+msgid "`with-open`"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:331
+#, no-wrap
+msgid ""
+"(let [f (clojure.java.io/writer \"/tmp/new\")]\n"
+"  (try\n"
+"    (.write f \"some text\")\n"
+"    (finally\n"
+"      (.close f))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/flow.adoc:335
+#, no-wrap
+msgid ""
+";; Can be written:\n"
+"(with-open [f (clojure.java.io/writer \"/tmp/new\")]\n"
+"  (.write f \"some text\"))\n"
+msgstr ""

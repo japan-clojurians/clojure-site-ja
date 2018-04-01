@@ -286,10 +286,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/special_forms.adoc:107
-#, fuzzy, no-wrap
-#| msgid "*Locals created with https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let[let] are not variables. Once created their values never change!*\n"
 msgid "*Locals created with `let` are not variables. Once created their values never change!*\n"
-msgstr "*https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let[let] で作られるローカルなものは変数ではない。一度作られるとその値は決して変化しない!*\n"
+msgstr "* `let` で作られるローカルなものは変数ではない。一度作られるとその値は決して変化しない!*\n"
 
 #. type: Title ==
 #: en/content/reference/special_forms.adoc:109

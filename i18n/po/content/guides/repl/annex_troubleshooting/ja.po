@@ -1,0 +1,210 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
+#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11 en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16 en/content/guides/learn/syntax.adoc:14
+#: en/content/guides/learn/flow.adoc:14 en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16 en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14 en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14 en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16 en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr "toc::[]"
+
+#. type: Title =
+#: en/content/guides/repl/annex_troubleshooting.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Troubleshooting"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4 en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4 en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:17
+msgid "This section lists common issues when using the REPL, and how to diagnose them:"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/annex_troubleshooting.adoc:18
+#, no-wrap
+msgid "Calling a Var that has not been defined"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:21 en/content/guides/repl/annex_troubleshooting.adoc:38
+#: en/content/guides/repl/annex_troubleshooting.adoc:54 en/content/guides/repl/annex_troubleshooting.adoc:74
+#, no-wrap
+msgid "**Symptoms:**\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/annex_troubleshooting.adoc:25
+#, no-wrap
+msgid ""
+"user=> my-nonexistent-name\n"
+"CompilerException java.lang.RuntimeException: Unable to resolve symbol: my-nonexistent-name in this context, compiling:(NO_SOURCE_PATH:0:0)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:28 en/content/guides/repl/annex_troubleshooting.adoc:45
+#: en/content/guides/repl/annex_troubleshooting.adoc:64
+#, no-wrap
+msgid "**Explanations:**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:30
+msgid ""
+"Maybe you made a typo in the Var name, e.g you should have written `my-non-existent-name` instead of `my-nonexistent-"
+"name`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:32
+msgid ""
+"Maybe you forgot to define `my-nonexistent-name` in the REPL (using e.g `def` or `defn`): this could happen if you "
+"wrote a `(def my-nonexistent-name ...)` in your code file but forgot to evaluate it in the REPL."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:34
+msgid ""
+"Maybe you defined `my-non-existent-name`, but in another namespace.  You should either write `myapp.ns23/my-non-"
+"existent-name` or switch to namespace `myapp.ns23/my-non-existent-name`."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/annex_troubleshooting.adoc:35
+#, no-wrap
+msgid "Using a missing namespace alias"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/annex_troubleshooting.adoc:42
+#, no-wrap
+msgid ""
+"user=> ns3/foo-bar\n"
+"CompilerException java.lang.RuntimeException: No such namespace: ns3, compiling:(NO_SOURCE_PATH:0:0)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:47
+msgid "Maybe you made a typo in the namespace alias, e.g you should have written `n3/foo-bar` instead of `ns3/foo-bar`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:49
+msgid ""
+"Maybe you have never defined the `ns3` alias in the current namespace: you can fix that by evaluating `(require "
+"'[myapp.ns3 :as ns3])`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:50
+msgid "Maybe you have defined the `ns3` alias, but in a different namespace that the one your REPL is in at the moment."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/annex_troubleshooting.adoc:51
+#, no-wrap
+msgid "Referring to a namespace that has not been loaded"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/annex_troubleshooting.adoc:61
+#, no-wrap
+msgid ""
+"$ clj\n"
+"Clojure 1.9.0\n"
+"user=> clojure.set/union\n"
+"CompilerException java.lang.ClassNotFoundException: clojure.set, compiling:(NO_SOURCE_PATH:0:0)\n"
+"user=>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:70
+msgid ""
+"You are using a namespace that has yet not been created in the REPL.  Note that the error message "
+"('`ClassNotFoundException`') is particularly confusing in this case: the reason is that the Clojure compiler, having "
+"found no loaded namespace named `clojure.set`, is trying to interpret clojure.set as a Java class. The solution is to "
+"make sure the clojure.set lib <<navigating_namespaces#how-to-make-sure-a-lib-is-loaded,has been loaded>>."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/annex_troubleshooting.adoc:71
+#, no-wrap
+msgid "Trying to require a namespace that does not exist"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/annex_troubleshooting.adoc:78
+#, no-wrap
+msgid ""
+"user=> (require '[a.b.c])\n"
+"FileNotFoundException Could not locate a/b/c__init.class or a/b/c.clj on classpath.  clojure.lang.RT.load (RT.java:463)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:83
+#, no-wrap
+msgid ""
+"**Explanations:** Clojure did not find any existing namespace named `a.b.c`, then searched the classpath \n"
+"for a <<xref/../../../reference/libs#,lib>> that would define it, eventualling failing with the above Exception.\n"
+"The cause may vary:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:85
+msgid "maybe you just made a typo in the namespace name"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:88
+msgid ""
+"maybe you forgot to add the lib to your classpath, which is usually done by adding it to the configuration of your "
+"project's dependencies (e.g in the `deps.edn` or `project.clj` file), and sometimes (depending on the project "
+"management tool) running an installation command (e.g `lein deps`)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:90
+msgid ""
+"maybe you did add the library to the classpath, but that was after you started the REPL: in this case, you should re-"
+"start the REPL."
+msgstr ""

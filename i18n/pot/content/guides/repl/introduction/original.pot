@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/higher_order_functions.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11
+#: en/content/guides/repl/annex_troubleshooting.adoc:14
+#: en/content/guides/repl/navigating_namespaces.adoc:16
+#: en/content/guides/repl/introduction.adoc:14
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:16
+#: en/content/guides/repl/launching_a_basic_repl.adoc:16
+#: en/content/guides/repl/basic_usage.adoc:16
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16
+#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
+#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
+#: en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/repl/introduction.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Introduction"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:17
+#, no-wrap
+msgid ""
+"This guide is for developers who have at least a <<xref/../../learn/syntax#,basic understanding>> of Clojure,\n"
+" and want to become more proficient at using the Clojure REPL.\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/introduction.adoc:18
+#, no-wrap
+msgid "What is a REPL?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:24
+msgid ""
+"A Clojure _REPL_ (standing for _Read-Eval-Print Loop_) is a programming "
+"environment which enables the programmer to interact with a running Clojure "
+"program and modify it, by evaluating one code expression at a time."
+msgstr ""
+
+#. type: Block title
+#: en/content/guides/repl/introduction.adoc:25
+#, no-wrap
+msgid "A Clojure REPL in a terminal window"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/guides/repl/introduction.adoc:26
+#, no-wrap
+msgid "A Clojure REPL in a terminal"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/guides/repl/introduction.adoc:26
+#, no-wrap
+msgid "/images/content/guides/repl/show-terminal-repl.gif"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:29
+msgid "{nbsp}"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/guides/repl/introduction.adoc:30
+#: en/content/guides/repl/introduction.adoc:31
+#, no-wrap
+msgid "An editor-integrated Clojure REPL"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/guides/repl/introduction.adoc:31
+#, no-wrap
+msgid "/images/content/guides/repl/show-editor-repl.gif"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/introduction.adoc:34
+#, no-wrap
+msgid "Why use a REPL?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:42
+msgid ""
+"The Clojure REPL gives the programmer an interactive development "
+"experience.  When developing new functionality, it enables her to build "
+"programs first by performing small tasks manually, as if she _were_ the "
+"computer, then gradually make them more and more automated, until the "
+"desired functionality is fully programmed. When debugging, the REPL makes "
+"the execution of her programs feel _tangible:_ it enables the programmer to "
+"rapidly reproduce the problem, observe its symptoms closely, then improvise "
+"experiments to rapidly narrow down the cause of the bug and iterate towards "
+"a fix."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:47
+msgid ""
+"Many Clojure programmers consider the REPL, and the tight feedback loop it "
+"provides, to be the most compelling reason to use Clojure. This does not "
+"mean that the language features of Clojure, such as immutable data "
+"structures, are not valuable: the Clojure REPL gets most of its leverage "
+"_because_ of these features, in particular because Clojure was designed with "
+"interactive development in mind."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:50
+msgid ""
+"In Clojure, a programmer will typically use the REPL for a wide spectrum of "
+"programming tasks, when in another language she would turn to other sorts of "
+"tools. Such tasks include:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:52
+msgid "launching local development environments,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:53
+msgid "running automated test suites,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:54
+msgid "one-off database queries and interventions,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:55
+msgid "debugging,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:56
+msgid "orchestrating remote machines,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:57
+msgid "getting familiar with libraries and APIs,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:58
+msgid "...and many forms of exploration."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:62
+msgid ""
+"Fundamentally, the reason programmers use the REPL for all these tasks is "
+"always the same: because they want a mix of automation and improvisation "
+"that can be provided neither by fully manual tools (such as dashboard, "
+"consoles, etc.)  nor by fully automated ones (such as scripts), while "
+"keeping their workflow focused in one full-featured programming environment."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/introduction.adoc:63
+#, no-wrap
+msgid "What this guide will cover"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:67
+msgid ""
+"This guide will start by getting you started with a Clojure REPL, then "
+"gradually move to more and more advanced ways of using Clojure REPLs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:69
+msgid ""
+"Depending on your needs, you may not need to read the entirety of this guide:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:73
+msgid ""
+"If you are **_just starting to learn Clojure_**, the first 2 chapters "
+"<<launching_a_basic_repl#, Launching a basic Clojure REPL>> and "
+"<<basic_usage#, Basic Usage>> are enough to get you started with a "
+"productive learning environment."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:76
+msgid ""
+"As soon as you start **_developing non-trivial programs_** (such as a hobby "
+"web app), you will need the ideas presented in at least the next 2 chapters: "
+"<<data_visualization_at_the_repl#,Data visualization at the REPL>> and "
+"<<navigating_namespaces#,Navigating namespaces>>."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:77
+msgid "For **_working on Clojure projects at a professional level_**,"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:78
+msgid ""
+"<<enhancing_your_repl_workflow#,Enhancing your REPL workflow>> is a must."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/introduction.adoc:79
+msgid ""
+"First, we'll learn how to <<launching_a_basic_repl#, launch a basic Clojure "
+"REPL>>."
+msgstr ""

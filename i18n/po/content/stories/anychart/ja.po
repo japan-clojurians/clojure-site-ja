@@ -1,0 +1,190 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/stories/anychart.adoc:1
+#, no-wrap
+msgid "AnyChart"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:4
+msgid "Alex Miller 2018-03-16"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:9
+msgid "image:/images/content/stories/anychart.png[\"AnyChart\",height=\"125\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:11 en/content/stories/swing.adoc:11
+#, no-wrap
+msgid "**How long have you been working with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:13
+msgid ""
+"https://www.anychart.com/[AnyChart] started in 2003 as a provider of Flash-"
+"based solutions for interactive data visualization. Then, in several years, "
+"we moved to JavaScript HTML5 as a more promising technology. Not having "
+"stopped further developing, AnyChart started working with Clojure in early "
+"2014 and with ClojureScript in 2015, and we are glad to say they've been "
+"among the technologies fueling our global leadership in data visualization "
+"tools for all these years."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:15 en/content/stories/swing.adoc:17
+#, no-wrap
+msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:17
+msgid ""
+"Currently, two of our developers code in Clojure on a regular basis. Now "
+"that our team is growing, the number of Clojure programmers is expected to "
+"increase."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:19 en/content/stories/swing.adoc:25
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:21
+msgid ""
+"AnyChart is a lightweight and robust https://www.anychart.com[JavaScript "
+"charting library] with great, detailed https://docs.anychart.com[chart "
+"documentation] and https://api.anychart.com[JS API reference], as well as "
+"enterprise-grade https://www.anychart.com/support[support]. Our component "
+"smoothly runs on any platform and finely works with any database. The source "
+"code of AnyChart is https://www.anychart.com/blog/2017/02/28/anychart-"
+"javascript-charting-libraries-7-13-0-released-source-code-opened/[open], so "
+"anyone can download and modify it, which gives a great flexibility. "
+"Thousands of out-of-the-box chart code samples in our https://playground."
+"anychart.com[playground], https://www.anychart.com/technical-integrations/"
+"[plugins and integrations] for all major stacks, and ready-to-use https://"
+"www.anychart.com/solutions/[HTML5 dashboards as business solutions] allow "
+"industry-standard data visualizations to be deployed literally in minutes."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:23
+msgid ""
+"Our goal has been to create a universal engine for data visualization in "
+"order to let anyone easily make any charts and dashboards from any data, and "
+"to ensure their great look and feel in any web projects regardless of the "
+"platform and the browser. And we are happy to be on the right track, "
+"currently being trusted to power data visualization for thousands of our "
+"https://www.anychart.com/company/customers/[customers], from startups to "
+"over 70% of the Fortune 1000 companies. By the way, we are proud to have "
+"been named the https://www.anychart.com/blog/2018/02/06/best-javascript-"
+"technology-anychart-js-charts-library-devies-award/[best in JavaScript "
+"technologies] and received a prestigious 2018 DEVIES award earlier this year."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:25
+msgid ""
+"Clojure and ClojureScript are essential parts of our projects such as "
+"AnyChart JS API reference, documentation, playground, https://docs.anychart."
+"com/Common_Settings/Server-side_Rendering[export server]. Without Clojure, "
+"they wouldn’t be as awesome as they are now."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:27 en/content/stories/swing.adoc:34
+#, no-wrap
+msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:29
+msgid ""
+"We employ https://reagent-project.github.io/[Reagent] and https://github.com/"
+"Day8/re-frame[re-frame], and think that they are amazing ClojureScript "
+"libraries which make complex things easy and enjoyable. In addition to that, "
+"we use Component, Hiccup, Selmer, Enlive and Yesql on the server side."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:31 en/content/stories/swing.adoc:90
+#, no-wrap
+msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:33
+msgid ""
+"Clojure itself is a value for us. We take delight in its syntax, the ability "
+"to write HTML code by means of the language itself, work with streams, and "
+"write macros. Edn format and immutability in Clojure also should be noted "
+"here as they are good for data presentation and its better understanding."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:35 en/content/stories/swing.adoc:97
+#, no-wrap
+msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:37
+msgid ""
+"Our favorite feature of Clojure is that it is thought-out to the smallest "
+"detail as a functional language. So we take great pleasure in using it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:39 en/content/stories/swing.adoc:117
+#, no-wrap
+msgid "**What is your stack?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:41
+msgid ""
+"We use a lot of different technologies. Our main product, the AnyChart "
+"library for interactive data visualization, is written in JavaScript. Most "
+"of our projects are built on Clojure on the backend and ClojureScript or "
+"JavaScript on the frontend. We also have services written in Python, PHP, "
+"and NodeJS."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:43 en/content/stories/swing.adoc:104
+#, no-wrap
+msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/anychart.adoc:44
+msgid ""
+"Clojure and ClojureScript together make our product better and its "
+"development process faster and more convenient. And the fact that we are "
+"dealing with the Java platform here allows us to use a large number of "
+"various libraries, which is very helpful. Clojure implementation definitely "
+"contributes to the continuing growth of our company and its leadership in "
+"the segment of cross-platform interactive data visualization solutions. And "
+"it is a great joy for us to be a part of the Clojure community."
+msgstr ""

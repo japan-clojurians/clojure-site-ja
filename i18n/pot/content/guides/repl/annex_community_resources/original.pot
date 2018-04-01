@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/repl/annex_community_resources.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Community resources about the REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:16
+msgid ""
+"Here is a list of useful REPL-related resources by the Clojure community:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:19
+msgid ""
+"https://lambdaisland.com/guides/clojure-repls[The Ultimate Guide to Clojure "
+"REPLs] on Lambda Island: this tutorial notably explores the wide variety of "
+"Clojure REPLs and related technology."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:21
+msgid ""
+"https://vimeo.com/223309989[Stuart Halloway on REPL Driven Development]: a "
+"talk which reflects on the added value of REPLs compared to shells, and "
+"provides guidelines for using the Clojure REPL."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:23
+msgid ""
+"https://clojureverse.org/t/share-the-nitty-gritty-details-of-your-clojure-"
+"workflow/1208[Share the nitty-gritty details of your Clojure workflow]: a "
+"ClojureVerse discussion where community members describe their development "
+"configurations and how they use it them in details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:25
+msgid ""
+"https://vvvvalvalval.github.io/posts/what-makes-a-good-repl.html[What makes "
+"a good REPL?]: this blog post provides a general reflection on the benefits "
+"of REPLs, and the programming language features which enable them."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:27
+msgid ""
+"https://vimeo.com/230220635[REPL-Based Development Demo]: a video showing "
+"how the REPL is used for development on an example project."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:28
+msgid ""
+"The https://gist.github.com/daveray/1441520[Seesaw REPL Tutorial] teaches "
+"you to build Graphical User Interfaces at the Clojure REPL."
+msgstr ""

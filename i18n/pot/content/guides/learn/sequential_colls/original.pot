@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
+#: en/content/reference/sequences.adoc:15
+#: en/content/reference/deps_and_cli.adoc:13
+#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
+#: en/content/reference/transients.adoc:16
+#: en/content/reference/compilation.adoc:16
+#: en/content/reference/other_libraries.adoc:16
+#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
+#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
+#: en/content/reference/reader.adoc:13
+#: en/content/reference/special_forms.adoc:15
+#: en/content/reference/namespaces.adoc:15
+#: en/content/reference/java_interop.adoc:15
+#: en/content/reference/other_functions.adoc:17
+#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
+#: en/content/reference/data_structures.adoc:16
+#: en/content/reference/repl_and_main.adoc:16
+#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
+#: en/content/guides/deps_and_cli.adoc:11
+#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
+#: en/content/guides/getting_started.adoc:11
+#: en/content/guides/reader_conditionals.adoc:10
+#: en/content/guides/learn/hashed_colls.adoc:16
+#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
+#: en/content/guides/learn/sequential_colls.adoc:16
+#: en/content/guides/learn/functions.adoc:16
+#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
+#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
+#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
+#: en/content/about/functional_programming.adoc:15
+msgid "toc::[]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#: en/content/guides/learn/sequential_colls.adoc:102
+#, no-wrap
+msgid "Lists"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/reader.adoc:53
+#: en/content/guides/learn/sequential_colls.adoc:19
+#, no-wrap
+msgid "Vectors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/hashed_colls.adoc:4
+#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
+#: en/content/guides/learn/sequential_colls.adoc:4
+#: en/content/guides/learn/functions.adoc:4
+msgid "Alex Miller 2017-09-02"
+msgstr ""
+
+#. type: Title =
+#: en/content/guides/learn/sequential_colls.adoc:1
+#, no-wrap
+msgid "Learn Clojure - Sequential Collections"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:18
+msgid ""
+"Clojure collections \"collect\" values into compound values. There are four "
+"key Clojure collection types: vectors, lists, sets, and maps. Of those four "
+"collection types, vectors and lists are ordered."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:22
+msgid ""
+"Vectors are an indexed, sequential data structure. Vectors are represented "
+"with `[ ]` like this:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:26
+#, no-wrap
+msgid "[1 2 3]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:28
+#, no-wrap
+msgid "Indexed access"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:31
+msgid ""
+"\"Indexed\" means that elements of a vector can be retrieved by index. In "
+"Clojure (as in Java), indexes start at 0, not 1. Use the `get` function to "
+"retrieve an element at an index:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:38
+#, no-wrap
+msgid ""
+"user=> (get [\"abc\" false 99] 0)\n"
+"\"abc\"\n"
+"user=> (get [\"abc\" false 99] 1)\n"
+"false\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:41
+msgid "Calling get with an invalid index returns `nil`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:46
+#, no-wrap
+msgid ""
+"user=> (get [\"abc\" false 99] 14)\n"
+"nil\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:48
+#, no-wrap
+msgid "`count`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:51
+msgid "All Clojure collections can be counted:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:56
+#, no-wrap
+msgid ""
+"user=> (count [1 2 3])\n"
+"3\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:58
+#: en/content/guides/learn/sequential_colls.adoc:106
+#, no-wrap
+msgid "Constructing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:61
+msgid ""
+"In addition to the literal `[ ]` syntax, Clojure vectors can be created with "
+"the `vector` function:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:66
+#, no-wrap
+msgid ""
+"user=> (vector 1 2 3)\n"
+"[1 2 3]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:68
+#: en/content/guides/learn/sequential_colls.adoc:125
+#, no-wrap
+msgid "Adding elements"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:71
+msgid ""
+"Elements are added to a vector with `conj` (short for conjoin). Elements are "
+"always added to a vector at the end:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:76
+#, no-wrap
+msgid ""
+"user=> (conj [1 2 3] 4 5 6)\n"
+"[1 2 3 4 5 6]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:78
+#, no-wrap
+msgid "Immutability"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:81
+msgid ""
+"Clojure collections share important properties of simple values like strings "
+"and numbers, such as immutability and equality comparison by value."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:83
+msgid "For example, lets create a vector and modify it with `conj`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:90
+#, no-wrap
+msgid ""
+"user=> (def v [1 2 3])\n"
+"#'user/v\n"
+"user=> (conj v 4 5 6)\n"
+"[1 2 3 4 5 6]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:93
+msgid ""
+"Here `conj` returned a new vector but if we examine the original vector, we "
+"see it's unchanged:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:98
+#, no-wrap
+msgid ""
+"user=> v\n"
+"[1 2 3]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:101
+msgid ""
+"Any function that \"changes\" a collection returns a new instance. Your "
+"program will need to remember or pass along the changed instance to take "
+"advantage of it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:105
+msgid ""
+"Lists are sequential linked lists that add new elements at the head of the "
+"list, instead of at the tail like vectors."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:109
+msgid ""
+"Because lists are evaluated by invoking the first element as a function, we "
+"must quote a list to prevent evaluation:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:113
+#, no-wrap
+msgid "(def cards '(10 :ace :jack 9))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:116
+msgid "Lists are not indexed so they must be walked using `first` and `rest`."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:123
+#, no-wrap
+msgid ""
+"user=> (first cards)\n"
+"10\n"
+"user=> (rest cards)\n"
+"'(:ace :jack 9)\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:128
+msgid ""
+"`conj` can be used to add elements to a list just as with vectors. However, "
+"`conj` always adds elements where it can be done in constant time for the "
+"data structure. In the case of lists, elements are added at the front:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:133
+#, no-wrap
+msgid ""
+"user=> (conj cards :queen)\n"
+"(:queen 10 :ace :jack 9)\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/sequential_colls.adoc:135
+#, no-wrap
+msgid "Stack access"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/sequential_colls.adoc:138
+msgid "Lists can also be used as a stack with peek and pop:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/sequential_colls.adoc:147
+#, no-wrap
+msgid ""
+"user=> (def stack '(:a :b))\n"
+"#'user/stack\n"
+"user=> (peek stack)\n"
+":a\n"
+"user=> (pop stack)\n"
+"(:b)\n"
+msgstr ""

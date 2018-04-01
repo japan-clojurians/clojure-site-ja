@@ -1,0 +1,146 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2018 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title ===
+#: en/content/community/resources.adoc:96 en/content/community/training.adoc:52
+#, no-wrap
+msgid "Conferences"
+msgstr ""
+
+#. type: Title =
+#: en/content/community/training.adoc:1
+#, no-wrap
+msgid "Training"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:4
+msgid "Timothy Pratley 2018-03-06"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/training.adoc:9
+#, fuzzy, no-wrap
+#| msgid "For testing"
+msgid "For teams"
+msgstr "テストのために"
+
+#. type: Plain text
+#: en/content/community/training.adoc:13
+msgid ""
+"Adding Clojure to your company's capabilities? Give your employees a head start! Here is list of companies and "
+"individuals that offer Clojure training courses."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:28
+msgid ""
+"|=== | Company | Location | Courses | Link | contact | Cognitect | North America | All levels | https://cognitect.com/"
+"services.html | sales@cognitect.com + +1 919.283.2748 | BraveAndTrue | North America | All levels | https://www."
+"braveclojure.com/training | daniel@braveclojure.com | Nilenso | India | Enterprise Clojure | https://nilenso.com | "
+"hello@nilenso.com + tel:+918040937123 | Starweaver | Global | Clojure in a Nutshell | https://www.starweaver.com | "
+"USA: +1-646-883-1460 + UK: +44 20 3289 3277 + helpdesk@starweaver.com | Peter Taoussanis | Europe | Enterprise "
+"Clojure | https://www.taoensso.com | ptaoussanis@taoensso.com | Adam Bard | North America | Clojure Training | http://"
+"clojuretraining.ca | learnclojure@adambard.com |==="
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/training.adoc:30
+#, no-wrap
+msgid "For individuals"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:34
+msgid "Looking for a curated ciriculum to jump start your learning? Several courses are offered."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/training.adoc:35
+#, no-wrap
+msgid "Online courses"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:44
+msgid ""
+"|=== | Link | Short description | https://lambdaisland.com | A series of video tutorial about web development using "
+"ClojureScript and Clojure | https://purelyfunctional.tv | Our mission is to help people thrive with Functional "
+"Programming | https://www.udemy.com/learning-clojure | Will teach you how to write Clojure code and structure Clojure "
+"products |==="
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/training.adoc:45
+#, fuzzy, no-wrap
+#| msgid "Clojure programming"
+msgid "ClojureBridge"
+msgstr "Clojureプログラミング"
+
+#. type: Plain text
+#: en/content/community/training.adoc:51
+msgid ""
+"http://www.clojurebridge.org[ClojureBridge] aims to increase diversity within the Clojure community by offering free, "
+"beginner-friendly Clojure programming workshops for underrepresented groups in tech.  ClojureBridge holds free "
+"training events for women and minorities.  Typically these are 1 day events hosted by one or more sponsors."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:55
+msgid "For conferences and upcoming events, check the upcoming <<events,Events>> list."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/training.adoc:56
+#, no-wrap
+msgid "Resources for trainers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:59
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/cognitect/clojure-lab"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/training.adoc:60
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/braveclojure/training"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/training.adoc:61
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/timothypratley/enterprise-clojure-training"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Title ==
+#: en/content/community/training.adoc:62
+#, no-wrap
+msgid "Maintenance"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/training.adoc:66
+msgid ""
+"If you would like to be added or removed from this list, please contact __alex.miller@cognitect.com__ or submit a "
+"pull request."
+msgstr ""
