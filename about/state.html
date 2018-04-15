@@ -193,20 +193,12 @@ immutability(イミュータブルであることを好め)というよく言わ
 <h2 id="actors">メッセージパッシングとアクター</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are other ways to model identity and state, one of the more popular of
-which is the message-passing <a href="https://en.wikipedia.org/wiki/Actor_model">actor
-model</a>. In an actor model, state is encapsulated in an actor (identity) and
-can only be affected/seen via the passing of messages (values). In an
-asynchronous system, reading some aspect of an actor&#8217;s state requires
-sending a request message, waiting for a response, and the actor sending a
-response. It is important to understand that <em>the actor model was designed
-to address the problems of <strong>distributed</strong> programs</em>. And the problems of
-distributed programs are much harder - there are multiple worlds (address
-spaces), direct observation is not possible, interaction occurs over
-possibly unreliable channels, etc. The actor model supports transparent
-distribution. If you write all of your code this way, you are not bound to
-the actual location of the other actors, allowing a system to be spread over
-multiple processes/machines without changing the code.</p>
+<p>アイデンティティと状態をモデリングする方法は他にもあり、人気のある方法のひとつがメッセージパッシングの
+<a href="https://en.wikipedia.org/wiki/Actor_model">アクターモデル</a>
+だ。アクターモデルでは、状態はアクター(アイデンティティ)にカプセル化され、メッセージ(値)を渡すことによってのみ影響を与えたり見たりすることができる。非同期的なシステムでは、あるアクターの状態のある面を読み取るには、リクエストメッセージを送り、レスポンスを待ち、そのアクターがレスポンスを送る必要がある。
+<em>アクターモデルは <strong>分散</strong> プログラムの問題に対処するために設計された</em>
+ということを理解しておくのは重要なことだ。そして、分散プログラムの問題はずっと難しい――複数の世界(アドレス空間)があり、直接的な観察は可能ではなく、信頼できないかもしれないチャネルを通して相互作用が行われる、など。アクターモデルは透過的な分散(transparent
+distribution)をサポートしている。すべてのコードをこのように書けば、他のアクターの実際の場所に縛られることはなくなり、コードを変更することなくシステムを複数のプロセス/マシンに拡大することが可能になる。</p>
 </div>
 <div class="paragraph">
 <p>私はいくつかの理由からアクターモデルをClojureでの同一プロセスでの状態管理には利用しないことを選んだ:</p>
