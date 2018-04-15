@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:18+0900\n"
-"PO-Revision-Date: 2018-04-04 00:34+0900\n"
+"PO-Revision-Date: 2018-04-15 14:33+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -62,21 +62,24 @@ msgstr "Clojureへようこそ!"
 msgid ""
 "Check out <<learn/syntax#,Learn Clojure>>, <<xref/../../community/resources#,Resources>>, or <<xref/../../community/"
 "books#,Books>> for learning the language!"
-msgstr "言語そのものについては <<learn/syntax#,Learn Clojure>>、 <<xref/../../community/resources#,Resources>>、  <<xref/../../community/books#,Books>> を見て学習しよう!"
+msgstr ""
+"言語そのものについては <<learn/syntax#,Learn Clojure>>、 <<xref/../../community/resources#,Resources>>、  "
+"<<xref/../../community/books#,Books>> を見て学習しよう!"
 
 #. type: Title ==
 #: en/content/guides/getting_started.adoc:16
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Clojure installer and CLI tools"
 msgstr "ClojureインストーラとCLIツール"
-
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:19
 msgid ""
 "Clojure provides <<deps_and_cli#,command line tools>> that can be used to start a Clojure repl, use Clojure and Java "
 "libraries, and start Clojure programs."
-msgstr "ClojureはClojure replを起動したり、ClojureやJavaのライブラリを利用したり、Clojureプログラムを起動したりするための <<deps_and_cli#,コマンドラインツール>> を提供している。"
+msgstr ""
+"ClojureはClojure replを起動したり、ClojureやJavaのライブラリを利用したり、Clojureプログラムを起動したりするための "
+"<<deps_and_cli#,コマンドラインツール>> を提供している。"
 
 #. type: Title ===
 #: en/content/guides/getting_started.adoc:20
@@ -122,7 +125,9 @@ msgstr "次の依存がインストールされていることを確認する: b
 msgid ""
 "Use the linux-install script to download and run the install, which will create /usr/local/bin/clj, /usr/local/bin/"
 "clojure, and /usr/local/lib/clojure:"
-msgstr "linux-installスクリプトを利用してダウンロードとインストール実行すると、 /usr/local/bin/clj、 /usr/local/bin/clojure、 及び /usr/local/lib/clojureが作成される:"
+msgstr ""
+"linux-installスクリプトを利用してダウンロードとインストール実行すると、 /usr/local/bin/clj、 /usr/local/bin/clojure、 "
+"及び /usr/local/lib/clojureが作成される:"
 
 #. type: delimited block -
 #: en/content/guides/getting_started.adoc:46
@@ -166,11 +171,12 @@ msgstr "*ローカルビルド*\n"
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:59
-msgid "Download and build the Clojure source:"
-msgstr "Clojureのソースをダウンロードし、ビルドする:"
+msgid "Download and build Clojure from source:"
+msgstr "ソースをダウンロードし、Clojureをビルドする:"
 
 #. type: delimited block -
 #: en/content/guides/getting_started.adoc:66
+#, no-wrap
 msgid ""
 "git clone https://github.com/clojure/clojure.git\n"
 "cd clojure\n"
@@ -188,8 +194,8 @@ msgid "Then start the REPL with the local jar:"
 msgstr "そしてローカルjarでREPLを起動する:"
 
 #. type: delimited block -
-#: en/content/guides/getting_started.adoc:73
-#, fuzzy, no-wrap
+#: en/content/guides/getting_started.adoc:73 en/content/guides/repl/launching_a_basic_repl.adoc:110
+#, no-wrap
 msgid "java -jar clojure.jar\n"
 msgstr "java -jar clojure.jar\n"
 
@@ -202,7 +208,9 @@ msgstr "*オンラインでClojureを試す*\n"
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:78
 msgid "https://repl.it/languages/clojure[repl.it] provides a browser-based Clojure repl for interactive exploration."
-msgstr "https://repl.it/languages/clojure[repl.it] はインタラクティブな探索のためのブラウザベースのClojure replを提供している。"
+msgstr ""
+"https://repl.it/languages/clojure[repl.it] はインタラクティブな探索のためのブラウザベースのClojure replを提供してい"
+"る。"
 
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:80
@@ -215,4 +223,6 @@ msgstr "*ビルドツール*\n"
 msgid ""
 "Build tools provide a range of capabilities for building, running, and deploying Clojure libraries and applications. "
 "The two most popular Clojure build tools are https://leiningen.org/[Leiningen] and http://boot-clj.com/[Boot]."
-msgstr "ビルドツールはClojureライブラリやアプリケーションのビルド、実行、デプロイのための幅広い機能を提供する。最も広く使われているのは https://leiningen.org/[Leiningen] と http://boot-clj.com/[Boot]だ。"
+msgstr ""
+"ビルドツールはClojureライブラリやアプリケーションのビルド、実行、デプロイのための幅広い機能を提供する。最も広く使われ"
+"ているのは https://leiningen.org/[Leiningen] と http://boot-clj.com/[Boot]だ。"
