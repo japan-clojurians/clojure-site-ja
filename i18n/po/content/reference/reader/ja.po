@@ -251,9 +251,9 @@ msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
+#, no-wrap
 msgid "Maps"
-msgstr ""
-"Maps (マップ)"
+msgstr "Maps (マップ)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:60
@@ -767,6 +767,7 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:212
+#, no-wrap
 msgid "Built-in tagged literals"
 msgstr ""
 

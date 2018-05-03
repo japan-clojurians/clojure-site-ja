@@ -49,10 +49,9 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/getting_started.adoc:73 en/content/guides/repl/launching_a_basic_repl.adoc:110
-#, fuzzy, no-wrap
-#| msgid "java -cp clojure.jar clojure.main\n"
+#, no-wrap
 msgid "java -jar clojure.jar\n"
-msgstr "java -cp clojure.jar clojure.main\n"
+msgstr "java -jar clojure.jar\n"
 
 #. type: Plain text
 #: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4

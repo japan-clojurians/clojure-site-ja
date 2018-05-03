@@ -19,7 +19,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/getting_started.adoc:4 en/content/news/2016/01/14/clojure-org-live.adoc:4
 msgid "Alex Miller 2016-01-14"
-msgstr ""
+msgstr "Alex Miller 2016-01-14"
 
 #. type: Title =
 #: en/content/news/2016/01/14/clojure-org-live.adoc:1
