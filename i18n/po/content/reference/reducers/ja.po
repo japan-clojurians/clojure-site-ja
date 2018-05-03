@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2018-03-31 17:27+0900\n"
+"PO-Revision-Date: 2018-05-04 06:05+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -158,7 +158,7 @@ msgid ""
 "When init is not provided, f is invoked with no arguments to produce an identity value ** _Note: f may be invoked "
 "multiple times to provide the identity value_"
 msgstr ""
-"* init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。\n"
+"init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。\n"
 "** _注: 初期値を作り出すために f が複数呼び出される場合がある。_"
 
 #. type: Plain text
@@ -182,7 +182,7 @@ msgid ""
 msgstr ""
 "*(r/fold reducef coll)*\n"
 "*(r/fold combinef reducef coll)*\n"
-"*(r/fold n combinef reducef coll)**\n"
+"*(r/fold n combinef reducef coll)*\n"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:50
