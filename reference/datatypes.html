@@ -134,7 +134,7 @@
 <p>名前付きのクラスを生成するため、アクセス可能なコンストラクターを持つ</p>
 </li>
 <li>
-<p>* フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
+<p>フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
 <div class="ulist">
 <ul>
 <li>
@@ -151,7 +151,7 @@
 <p>deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる</p>
 </li>
 <li>
-<p>* deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
+<p>deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -182,13 +182,26 @@
 <p>deftypeはコンストラクター以外にはユーザーに明示されていないいかなる機能も提供しない</p>
 </li>
 <li>
-<p>defrecord provides a complete implementation of a persistent map, including:</p>
+<p>defrecordは以下を含む永続的なマップの完全な実装を提供する:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>value-based equality and hashCode <strong> metadata support </strong> associative
-support <strong> keyword accessors for fields </strong> extensible fields (you can assoc
-keys not supplied with the defrecord definition)  ** etc</p>
+<p>値に基づく同値比較とhashCode</p>
+</li>
+<li>
+<p>メタデータのサポート</p>
+</li>
+<li>
+<p>associativeのサポート</p>
+</li>
+<li>
+<p>フィールドのキーワードアクセサ</p>
+</li>
+<li>
+<p>拡張可能なフィールド(defrecordの定義にないフィールドのキーをassocすることができる)</p>
+</li>
+<li>
+<p>など</p>
 </li>
 </ul>
 </div>
@@ -197,7 +210,7 @@ keys not supplied with the defrecord definition)  ** etc</p>
 <p>deftypeはミュータブルなフィールドをサポートするが、defrecordはサポートしない</p>
 </li>
 <li>
-<p>* defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
+<p>defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -257,7 +270,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 <div class="ulist">
 <ul>
 <li>
-<p>* 具象的な派生は悪手だ</p>
+<p>具象的な派生は悪手だ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -267,7 +280,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>* 常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
+<p>常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -277,7 +290,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>* イミュータブルがデフォルトであるべきだ</p>
+<p>イミュータブルがデフォルトであるべきだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -287,7 +300,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>* 情報のカプセル化は愚かだ</p>
+<p>情報のカプセル化は愚かだ</p>
 <div class="ulist">
 <ul>
 <li>
@@ -297,7 +310,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </li>
 <li>
-<p>* ポリモーフィズムと継承を結びつけることは悪手だ</p>
+<p>ポリモーフィズムと継承を結びつけることは悪手だ</p>
 <div class="ulist">
 <ul>
 <li>

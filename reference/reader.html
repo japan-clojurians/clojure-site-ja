@@ -198,7 +198,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <p>Booleans (ブーリアンリテラル) - <code>true</code> と <code>false</code></p>
 </li>
 <li>
-<p>* Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる:</p>
+<p>Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -274,7 +274,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <div class="ulist">
 <ul>
 <li>
-<p>* キー</p>
+<p>キー</p>
 <div class="ulist">
 <ul>
 <li>
@@ -291,7 +291,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </div>
 </li>
 <li>
-<p>* バリュー</p>
+<p>バリュー</p>
 <div class="ulist">
 <ul>
 <li>
@@ -344,11 +344,13 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <code>#my.klass_or_type_or_record[:a :b :c]</code><br></p>
 </li>
 <li>
-<p>ベクターの中の要素は*評価されずに*各コンストラクタに渡される。defrecordのインスタンスはマップを代わりに受け取る似たようなフォームを使用して作成することができる:
+<p>ベクターの中の要素は <strong>評価されずに</strong>
+各コンストラクタに渡される。defrecordのインスタンスはマップを代わりに受け取る似たようなフォームを使用して作成することができる:
 <code>my.record{:a 1, :b 2}</code><br></p>
 </li>
 <li>
-<p>キーを付与されたバリューは*評価されずに*defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果のdefrecordインスタンスに追加される。</p>
+<p>キーを付与されたバリューは <strong>評価されずに</strong>
+defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果のdefrecordインスタンスに追加される。</p>
 </li>
 </ul>
 </div>
