@@ -76,9 +76,9 @@ msgstr "ドキュメンテーション"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
+#, no-wrap
 msgid "Maps"
-msgstr ""
-"Maps (マップ)"
+msgstr "Maps (マップ)"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:1199 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
@@ -1014,8 +1014,8 @@ msgid ""
 "Please see the <<xref/../../../guides/spec#,spec Guide>> and https://clojure.github.io/spec.alpha/index.html[API "
 "docs] for more examples and usage information."
 msgstr ""
-"さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/spec.alpha/index.html"
-"[API docs] を参照。"
+"さらなるサンプルと利用方法の情報は <<xref/../../../guides/spec#,specガイド>> と https://clojure.github.io/spec.alpha/"
+"index.html[API docs] を参照。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:338

@@ -39,13 +39,9 @@ msgstr "toc::[]"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Maps"
-msgstr ""
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
-"マップ\n"
-"#-#-#-#-#  ja.po (clojure-site-ja 0.0.1)  #-#-#-#-#\n"
-"Maps (マップ)"
+msgstr "Maps (マップ)"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235

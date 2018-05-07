@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:18+0900\n"
-"PO-Revision-Date: 2017-03-12 23:00+0900\n"
+"PO-Revision-Date: 2018-05-04 05:42+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -216,7 +216,7 @@ msgid ""
 "qualified, the namespace will be resolved using aliases in the current namespace. In a namespace where `x` is aliased "
 "to `example`, `::x/foo` resolves to `:example/foo`."
 msgstr ""
-"* Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる: \n"
+"Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる: \n"
 "** コロン(:) で始まらなければならない(例：:fred)。\n"
 "** '.'を含めたりクラスの名前に使用したりできない。\n"
 "** シンボルと同様にネームスペースを含むことができる。 `:person/name` \n"
@@ -251,9 +251,9 @@ msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
+#, no-wrap
 msgid "Maps"
-msgstr ""
-"Maps (マップ)"
+msgstr "Maps (マップ)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:60
@@ -305,18 +305,18 @@ msgid ""
 "read. This allows for the specification of keywords or symbols without namespaces as keys in a map literal with "
 "namespace syntax.  ** Keys that are not symbols or keywords are not affected."
 msgstr ""
-"* キー\n"
-" ** ネームスペースの指定がないキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
-" ** ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
+"キー\n"
+"** ネームスペースの指定がないキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
+"** ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
 "`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースの指定があるマップの中で、ネームス"
 "ペースの指定がないキーワード、シンボルを使用することが可能になる。\n"
-" ** キーワード、シンボルでないキーは影響を受けない。"
+"** キーワード、シンボルでないキーは影響を受けない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:79
 msgid "Values ** Values are not affected.  ** Nested map literal keys are not affected."
 msgstr ""
-"* バリュー\n"
+"バリュー\n"
 "** バリューは影響されない。\n"
 "** ネストしたマップリテラルのキーは影響されない。"
 
@@ -391,8 +391,8 @@ msgid ""
 "The elements in the vector part are passed *unevaluated* to the relevant constructor. defrecord instances can also be "
 "created with a similar form that takes a map instead: `#my.record{:a 1, :b 2}` +"
 msgstr ""
-"ベクターの中の要素は*評価されずに*各コンストラクタに渡される。defrecordのインスタンスはマップを代わりに受け取る似たよ"
-"うなフォームを使用して作成することができる: `my.record{:a 1, :b 2}` +"
+"ベクターの中の要素は *評価されずに* 各コンストラクタに渡される。defrecordのインスタンスはマップを代わりに受け取る似た"
+"ようなフォームを使用して作成することができる: `my.record{:a 1, :b 2}` +"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:109
@@ -401,9 +401,9 @@ msgid ""
 "without corresponding entries in the literal map are assigned nil as their value. Any extra keyed values in the map "
 "literal are added to the resulting defrecord instance."
 msgstr ""
-"キーを付与されたバリューは*評価されずに*defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがな"
-"いdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果のdefrecord"
-"インスタンスに追加される。"
+"キーを付与されたバリューは *評価されずに* defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーが"
+"ないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果の"
+"defrecordインスタンスに追加される。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:111
@@ -767,6 +767,7 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:212
+#, no-wrap
 msgid "Built-in tagged literals"
 msgstr ""
 

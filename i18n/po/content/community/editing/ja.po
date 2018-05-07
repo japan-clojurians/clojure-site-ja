@@ -29,9 +29,9 @@ msgstr "''''"
 
 #. type: Positional ($1) AttributeList argument for macro 'image'
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Nested transformations"
-msgstr "Refとトランザクション"
+msgstr "ネストした変換"
 
 #. type: Target for macro image
 #: en/content/reference/transducers.adoc:99 en/content/community/editing.adoc:150
