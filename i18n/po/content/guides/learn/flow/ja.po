@@ -47,7 +47,7 @@ msgstr ""
 #: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
 #: en/content/guides/learn/sequential_colls.adoc:4 en/content/guides/learn/functions.adoc:4
 msgid "Alex Miller 2017-09-02"
-msgstr ""
+msgstr "Alex Miller 2017-09-02"
 
 #. type: Title =
 #: en/content/guides/learn/flow.adoc:1

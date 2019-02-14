@@ -50,7 +50,7 @@ msgstr "''''"
 #: en/content/reference/evaluation.adoc:1 en/content/guides/learn/syntax.adoc:59
 #, no-wrap
 msgid "Evaluation"
-msgstr "Evaluation(評価)"
+msgstr "評価"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:15

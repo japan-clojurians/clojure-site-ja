@@ -158,7 +158,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:31 en/content/guides/learn/syntax.adoc:15
 #, no-wrap
 msgid "Literals"
-msgstr "Literals (リテラル)"
+msgstr "リテラル"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:34

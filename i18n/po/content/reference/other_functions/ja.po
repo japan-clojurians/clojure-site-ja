@@ -112,7 +112,7 @@ msgstr ""
 #: en/content/reference/other_functions.adoc:37 en/content/guides/learn/syntax.adoc:310
 #, no-wrap
 msgid "Printing"
-msgstr ""
+msgstr "印字"
 
 #. type: Plain text
 #: en/content/reference/other_functions.adoc:40
