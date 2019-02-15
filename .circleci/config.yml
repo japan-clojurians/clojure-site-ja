@@ -1,0 +1,85 @@
+version: 2
+
+docker_env:
+  test_config: &test_config
+    docker:
+      - image: ubuntu:bionic
+    working_directory: ~/repo
+    shell: /bin/bash --login
+    environtment:
+      - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+
+  deploy_config: &deploy_config
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/repo
+    shell: /bin/bash --login
+    environtment:
+      - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+
+keys:
+  dep_cache_key: &dep_cache_key
+    deps-{{ .Branch }}-{{ .Revision }}
+  jbake_key: &jbake_key
+    jbake-{{ .Branch }}-{{ .Revision }}
+
+jobs:
+  test:
+    <<: *test_config
+    steps:
+      - run: mkdir -p /tmp/circleci-artifacts
+      - run: apt-get update; apt-get install -y git make po4a python3-pip
+      - checkout
+#      - restore_cache:
+#          key: *dep_cache_key
+      - run:
+          name: install redpen
+          command: if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.9.0/redpen-1.9.0.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.9.0 ~/redpen; fi
+      - run: pip3 install --user -r python-packages.txt
+#      - save_cache:
+#          paths:
+#            - ~/.pyenv/versions/3.5.1
+#            - ~/redpen
+#            - ~/perl5
+#            - local
+#          key: *dep_cache_key
+      - run:
+          name: test
+          command: |
+            make test -e REDPEN_CMD=~/redpen/bin/redpen
+            mkdir /tmp/circleci-artifacts/translation-result
+            mv ./ja /tmp/circleci-artifacts/translation-result
+      - store_artifacts:
+          path: /tmp/circleci-artifacts
+      - save_cache:
+          paths: ~/repo
+          key: repo-{{ .Branch }}-{{ .Revision }}
+
+  deploy:
+    <<: *deploy_config
+    steps:
+      - restore_cache:
+          key: repo-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: *jbake_key
+      - run:
+          name: 
+          command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
+      - save_cache:
+          paths: ~/jbake
+          key: *jbake_key
+      - run:
+          name: deployment
+          command: make publish -e JBAKE_CMD=~/jbake/bin/jbake
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+#          filters:
+#            branches:
+#              only: master
