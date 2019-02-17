@@ -11,7 +11,7 @@ docker_env:
 
   deploy_config: &deploy_config
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/python:3.5.6-stretch
     working_directory: ~/repo
     shell: /bin/bash --login
     environtment:
@@ -28,14 +28,13 @@ jobs:
     <<: *test_config
     steps:
       - run: mkdir -p /tmp/circleci-artifacts
-      - run: apt-get update; apt-get install -y git make po4a python3-pip
+      - run: apt-get update; apt-get install -y git make po4a openjdk-8-jdk
       - checkout
 #      - restore_cache:
 #          key: *dep_cache_key
       - run:
           name: install redpen
           command: if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.9.0/redpen-1.9.0.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.9.0 ~/redpen; fi
-      - run: pip3 install --user -r python-packages.txt
 #      - save_cache:
 #          paths:
 #            - ~/.pyenv/versions/3.5.1
@@ -62,6 +61,7 @@ jobs:
           key: repo-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: *jbake_key
+      - run: pip install --user -r python-packages.txt
       - run:
           name: 
           command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
