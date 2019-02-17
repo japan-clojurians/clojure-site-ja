@@ -1,17 +1,9 @@
 version: 2
 
 docker_env:
-  test_config: &test_config
+  container_config: &container_config
     docker:
       - image: ubuntu:bionic
-    working_directory: ~/repo
-    shell: /bin/bash --login
-    environtment:
-      - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
-
-  deploy_config: &deploy_config
-    docker:
-      - image: circleci/python:3.5.6-stretch
     working_directory: ~/repo
     shell: /bin/bash --login
     environtment:
@@ -27,7 +19,7 @@ keys:
 
 jobs:
   test:
-    <<: *test_config
+    <<: *container_config
     steps:
       - run: mkdir -p /tmp/circleci-artifacts
       - run: apt-get update; apt-get install -y git make po4a openjdk-8-jdk
@@ -54,22 +46,23 @@ jobs:
           key: *repo_cache_key
 
   deploy:
-    <<: *deploy_config
+    <<: *container_config
     steps:
       - restore_cache:
           key: *repo_cache_key
       - restore_cache:
           key: *jbake_cache_key
-      - run: pip install --user -r python-packages.txt
+      - run: apt-get update; apt-get install -y git make unzip po4a openjdk-8-jdk python3-pip python3-dev
+      - run: pip3 install -r python-packages.txt
       - run:
-          name:
+          name: install jbake
           command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
       - save_cache:
           paths: ~/jbake
           key: *jbake_cache_key
       - run:
           name: deployment
-          command: make publish -e JBAKE_CMD=~/jbake/bin/jbake
+          command: make publish -e JBAKE_CMD=~/jbake/bin/jbake 2>/dev/null
 
 workflows:
   version: 2
