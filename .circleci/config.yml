@@ -18,10 +18,12 @@ docker_env:
       - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
 
 keys:
-  dep_cache_key: &dep_cache_key
-    deps-{{ .Branch }}-{{ .Revision }}
-  jbake_key: &jbake_key
-    jbake-{{ .Branch }}-{{ .Revision }}
+  test_cache_key: &test_cache_key
+    test-{{ .Branch }}
+  jbake_cache_key: &jbake_cache_key
+    jbake-{{ .Branch }}
+  repo_cache_key: &repo_cache_key
+    repo-{{ .Branch }}-{{ .Revision }}
 
 jobs:
   test:
@@ -30,18 +32,15 @@ jobs:
       - run: mkdir -p /tmp/circleci-artifacts
       - run: apt-get update; apt-get install -y git make po4a openjdk-8-jdk
       - checkout
-#      - restore_cache:
-#          key: *dep_cache_key
+      - restore_cache:
+          key: *test_cache_key
       - run:
           name: install redpen
           command: if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.9.0/redpen-1.9.0.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.9.0 ~/redpen; fi
-#      - save_cache:
-#          paths:
-#            - ~/.pyenv/versions/3.5.1
-#            - ~/redpen
-#            - ~/perl5
-#            - local
-#          key: *dep_cache_key
+      - save_cache:
+          paths:
+            - ~/redpen
+          key: *test_cache_key
       - run:
           name: test
           command: |
@@ -52,22 +51,22 @@ jobs:
           path: /tmp/circleci-artifacts
       - save_cache:
           paths: ~/repo
-          key: repo-{{ .Branch }}-{{ .Revision }}
+          key: *repo_cache_key
 
   deploy:
     <<: *deploy_config
     steps:
       - restore_cache:
-          key: repo-{{ .Branch }}-{{ .Revision }}
+          key: *repo_cache_key
       - restore_cache:
-          key: *jbake_key
+          key: *jbake_cache_key
       - run: pip install --user -r python-packages.txt
       - run:
           name: 
           command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.5.0-SNAPSHOT-bin.zip && unzip -o jbake.zip && mv jbake-2.5.0-SNAPSHOT ~/jbake; fi
       - save_cache:
           paths: ~/jbake
-          key: *jbake_key
+          key: *jbake_cache_key
       - run:
           name: deployment
           command: make publish -e JBAKE_CMD=~/jbake/bin/jbake
