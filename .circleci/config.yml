@@ -48,11 +48,11 @@ jobs:
   deploy:
     <<: *container_config
     steps:
+      - run: apt-get update; apt-get install -y git make unzip ca-certificates po4a openjdk-8-jdk python3-pip python3-dev
       - restore_cache:
           key: *repo_cache_key
       - restore_cache:
           key: *jbake_cache_key
-      - run: apt-get update; apt-get install -y git make unzip po4a openjdk-8-jdk python3-pip python3-dev
       - run: pip3 install -r python-packages.txt
       - run:
           name: install jbake
