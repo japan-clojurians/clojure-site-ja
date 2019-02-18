@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Reader(リーダー)</title>
+    <title>Clojure - リーダー(reader)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Reader(リーダー)</h1>
+  <h1>リーダー(reader)</h1>
 </div>
 
 <p><em></em></p>
@@ -82,35 +82,35 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_reader_forms_リーダーフォーム">Reader forms (リーダーフォーム)</a>
+<li><a href="#_リーダーフォーム_reader_form">リーダーフォーム(reader form)</a>
 <ul class="sectlevel2">
-<li><a href="#_symbols_シンボル">Symbols (シンボル)</a></li>
+<li><a href="#_シンボル">シンボル</a></li>
 <li><a href="#_リテラル">リテラル</a></li>
-<li><a href="#_lists_リスト">Lists (リスト)</a></li>
-<li><a href="#_vectors_ベクター">Vectors (ベクター)</a></li>
-<li><a href="#_maps_マップ">Maps (マップ)</a></li>
-<li><a href="#_sets_セット">Sets (セット)</a></li>
+<li><a href="#_リスト">リスト</a></li>
+<li><a href="#_ベクター">ベクター</a></li>
+<li><a href="#_マップ">マップ</a></li>
+<li><a href="#_セット">セット</a></li>
 <li><a href="#_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降">deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</a></li>
 </ul>
 </li>
-<li><a href="#macrochars">Macro characters (マクロキャラクター)</a>
+<li><a href="#macrochars">マクロ文字</a>
 <ul class="sectlevel2">
-<li><a href="#_quote_クォート">Quote (') (クォート)</a></li>
-<li><a href="#_character_文字">Character (\) (文字)</a></li>
-<li><a href="#_comment_コメント">Comment (;) (コメント)</a></li>
+<li><a href="#_クォート">クォート(')</a></li>
+<li><a href="#_文字">文字 (\)</a></li>
+<li><a href="#_コメント">コメント (;)</a></li>
 <li><a href="#_deref">Deref (@)</a></li>
-<li><a href="#_metadata_メタデータ">Metadata (^) (メタデータ)</a></li>
-<li><a href="#_dispatch_ディスパッチ">Dispatch (#) (ディスパッチ)</a></li>
-<li><a href="#syntax-quote">Syntax-quote (シンタックスクォート) (`, バッククォートである点について注意), Unquote (アンクォート)(~) 及び Unquote-splicing (アンクォートスプライシング) (~@)</a></li>
+<li><a href="#_メタデータ">メタデータ (^)</a></li>
+<li><a href="#_ディスパッチ">ディスパッチ (#)</a></li>
+<li><a href="#syntax-quote">シンタックスクォート (`, バッククォートである点について注意), (アンクォート) (~), (アンクォートスプライシング) (~@)</a></li>
 </ul>
 </li>
 <li><a href="#_extensible_data_notation_edn_拡張可能なデータ記法">extensible data notation (edn) (拡張可能なデータ記法)</a></li>
-<li><a href="#tagged_literals">Tagged Literals (タグ付きリテラル)</a>
+<li><a href="#tagged_literals">タグ付きリテラル(tagged literal)</a>
 <ul class="sectlevel2">
 <li><a href="#_built_in_tagged_literals">Built-in tagged literals</a></li>
 </ul>
 </li>
-<li><a href="#_reader_conditionals_リーダーコンディショナル">Reader Conditionals (リーダーコンディショナル)</a></li>
+<li><a href="#_リーダーコンディショナル_reader_conditional">リーダーコンディショナル(reader conditional)</a></li>
 </ul>
 </div>
 <div class="paragraph">
@@ -135,10 +135,10 @@ Lisp)とその他のプログラミング言語の間の重要な差だ。- Cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reader_forms_リーダーフォーム">Reader forms (リーダーフォーム)</h2>
+<h2 id="_リーダーフォーム_reader_form">リーダーフォーム(reader form)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_symbols_シンボル">Symbols (シンボル)</h3>
+<h3 id="_シンボル">シンボル</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -164,15 +164,14 @@ Lisp)とその他のプログラミング言語の間の重要な差だ。- Cloj
 <div class="ulist">
 <ul>
 <li>
-<p>Strings (文字列リテラル) - "ダブルクォート"
-で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字がサポートされている。</p>
+<p>文字列 - "ダブルクォート" で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字がサポートされている。</p>
 </li>
 <li>
-<p>Numbers (数字リテラル) - 一般的に Java と同様に表記される。</p>
+<p>数値 - 一般的に Java と同様に表記される。</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Integer (整数)は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には
+<p>整数は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には
 clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して表記することができる。(参照:
 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)">Long.parseLong()</a>)。
 例えば <code>2r101010</code>、<code>8r52</code>、<code>36r16</code>,<code>42</code> は全て同じLongになる。</p>
@@ -187,18 +186,18 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </div>
 </li>
 <li>
-<p>Characters (文字リテラル) - 先頭にバックスラッシュが付いている：<code>\c</code>、 <code>\newline</code>、<code>\space</code>、 <code>\tab</code>、
-<code>\formfeed</code>、 <code>\backspace</code>、 <code>\return</code> はそれぞれの文字を意味する。ユニコード文字はJavaと同じく <code>\uNNNN</code>
-と表記される。8進数は <code>\oNNN</code> と表記される。</p>
+<p>文字 - 先頭にバックスラッシュが付いている：<code>\c</code>、 <code>\newline</code>、<code>\space</code>、 <code>\tab</code>、 <code>\formfeed</code>、
+<code>\backspace</code>、 <code>\return</code> はそれぞれの文字を意味する。ユニコード文字はJavaと同じく <code>\uNNNN</code> と表記される。8進数は
+<code>\oNNN</code> と表記される。</p>
 </li>
 <li>
 <p><code>nil</code> は&#8217;何もない、もしくは値がない&#8217;ことを意味する - Javaのnullを表現し、論理的なテストではfalseになる。</p>
 </li>
 <li>
-<p>Booleans (ブーリアンリテラル) - <code>true</code> と <code>false</code></p>
+<p>ブーリアン - <code>true</code> と <code>false</code></p>
 </li>
 <li>
-<p>Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる:</p>
+<p>キーワード - キーワードはシンボルと似ているが、以下の点で異なる:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -232,19 +231,19 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </div>
 </div>
 <div class="sect2">
-<h3 id="_lists_リスト">Lists (リスト)</h3>
+<h3 id="_リスト">リスト</h3>
 <div class="paragraph">
-<p>Listは0個以上の丸括弧で括られたフォーム: <code>(a b c)</code></p>
+<p>リストは0個以上の丸括弧で括られたフォーム: <code>(a b c)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vectors_ベクター">Vectors (ベクター)</h3>
+<h3 id="_ベクター">ベクター</h3>
 <div class="paragraph">
 <p>ベクターは0個以上の角括弧で括られたフォーム: <code>[1 2 3]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_maps_マップ">Maps (マップ)</h3>
+<h3 id="_マップ">マップ</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -330,7 +329,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sets_セット">Sets (セット)</h3>
+<h3 id="_セット">セット</h3>
 <div class="paragraph">
 <p>セットは0個以上の、先頭に <code>#</code> を持つ波括弧で括られたフォーム： <code>#{:a :b :c}</code></p>
 </div>
@@ -358,20 +357,20 @@ defrecordのフィールドに割り当てられる。マップリテラルに�
 </div>
 </div>
 <div class="sect1">
-<h2 id="macrochars">Macro characters (マクロキャラクター)</h2>
+<h2 id="macrochars">マクロ文字</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>リーダーの挙動はリーダー自身に組み込まれている定義とリードテーブルによる拡張システムの組み合わせで決定される。read
 tableのエントリーはマクロキャラクターと呼ばれる特定の文字に対応する、リーダーマクロと呼ばれるる読み込みの動作のマッピングを定義する。特別な指定がない限り、マクロキャラクターはユーザーシンボルに含めることはできない</p>
 </div>
 <div class="sect2">
-<h3 id="_quote_クォート">Quote (') (クォート)</h3>
+<h3 id="_クォート">クォート(')</h3>
 <div class="paragraph">
 <p><code>'form</code> &#8658; <code>(quote form)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_character_文字">Character (\) (文字)</h3>
+<h3 id="_文字">文字 (\)</h3>
 <div class="paragraph">
 <p>上記のように文字リテラルを生成する。文字リテラルの例: <code>\a \b \c</code></p>
 </div>
@@ -385,7 +384,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_comment_コメント">Comment (;) (コメント)</h3>
+<h3 id="_コメント">コメント (;)</h3>
 <div class="paragraph">
 <p>単一行コメント。セミコロンから行末までをreaderに無視させる効果がある。</p>
 </div>
@@ -397,7 +396,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_metadata_メタデータ">Metadata (^) (メタデータ)</h3>
+<h3 id="_メタデータ">メタデータ (^)</h3>
 <div class="paragraph">
 <p>メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>
@@ -420,7 +419,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dispatch_ディスパッチ">Dispatch (#) (ディスパッチ)</h3>
+<h3 id="_ディスパッチ">ディスパッチ (#)</h3>
 <div class="paragraph">
 <p>ディスパッチマクロはリーダーに、後に続く文字でインデックスされた別のテーブルに定義されているリーダーマクロを使用させる。</p>
 </div>
@@ -465,7 +464,7 @@ java.util.regex.Patternタイプになる。正規表現のエスケープ文字
 </div>
 </div>
 <div class="sect2">
-<h3 id="syntax-quote">Syntax-quote (シンタックスクォート) (`, バッククォートである点について注意), Unquote (アンクォート)(~) 及び Unquote-splicing (アンクォートスプライシング) (~@)</h3>
+<h3 id="syntax-quote">シンタックスクォート (`, バッククォートである点について注意), (アンクォート) (~), (アンクォートスプライシング) (~@)</h3>
 <div class="paragraph">
 <p>シンボル、リスト、ベクター、セット、マップ以外のフォームについては `xと&#8217;xは同等。</p>
 </div>
@@ -505,7 +504,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="sect1">
-<h2 id="tagged_literals">Tagged Literals (タグ付きリテラル)</h2>
+<h2 id="tagged_literals">タグ付きリテラル(tagged literal)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>タグ付きリテラルはednのClojureによる実装
@@ -592,7 +591,7 @@ parse it into a <code>java.util.Timestamp</code>:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reader_conditionals_リーダーコンディショナル">Reader Conditionals (リーダーコンディショナル)</h2>
+<h2 id="_リーダーコンディショナル_reader_conditional">リーダーコンディショナル(reader conditional)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure 1.7 で複数のClojureプラットフォームの間でロードできるポータブルなファイルのための新しい拡張子
