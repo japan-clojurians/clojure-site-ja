@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2019-02-18 19:57+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -42,13 +42,13 @@ msgstr "toc::[]"
 #: en/content/guides/learn/sequential_colls.adoc:102
 #, no-wrap
 msgid "Lists"
-msgstr "Lists (リスト)"
+msgstr "リスト"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:53 en/content/guides/learn/sequential_colls.adoc:19
 #, no-wrap
 msgid "Vectors"
-msgstr "Vectors (ベクター)"
+msgstr "ベクター"
 
 #. type: Plain text
 #: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
@@ -60,7 +60,7 @@ msgstr "Alex Miller 2017-09-02"
 #: en/content/guides/learn/sequential_colls.adoc:1
 #, no-wrap
 msgid "Learn Clojure - Sequential Collections"
-msgstr ""
+msgstr "Clojureを学ぼう - シーケンシャルなコレクション"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:18
@@ -68,24 +68,26 @@ msgid ""
 "Clojure collections \"collect\" values into compound values. There are four key Clojure collection types: vectors, "
 "lists, sets, and maps. Of those four collection types, vectors and lists are ordered."
 msgstr ""
+"Clojureのコレクション(collection)は値を複合的な値に「集める」(collect)。Clojureのコレクション型には重要なものが4種類あ"
+"る: ベクター、リスト、セット、マップだ。4種類のコレクション型のうち、ベクターとリストは順序付き(ordered)だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:22
 msgid "Vectors are an indexed, sequential data structure. Vectors are represented with `[ ]` like this:"
 msgstr ""
+"ベクターはインデックス付き(indexed)でシーケンシャル(sequential)なデータ型だ。ベクターはこのように `[ ]` で表される:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:26
-#, fuzzy, no-wrap
-#| msgid "#foo/bar [1 2 3]\n"
+#, no-wrap
 msgid "[1 2 3]\n"
-msgstr "#foo/bar [1 2 3]\n"
+msgstr "[1 2 3]\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:28
 #, no-wrap
 msgid "Indexed access"
-msgstr ""
+msgstr "インデックスアクセス"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:31
@@ -93,6 +95,8 @@ msgid ""
 "\"Indexed\" means that elements of a vector can be retrieved by index. In Clojure (as in Java), indexes start at 0, "
 "not 1. Use the `get` function to retrieve an element at an index:"
 msgstr ""
+"「インデックス付き」(indexed)とは、ベクターの要素がインデックスで取得できることを意味する。Clojureでは(Javaと同様に)イ"
+"ンデックスは1ではなく0から始まる。要素をインデックスで取得するには `get` を使う:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:38
@@ -103,11 +107,15 @@ msgid ""
 "user=> (get [\"abc\" false 99] 1)\n"
 "false\n"
 msgstr ""
+"user=> (get [\"abc\" false 99] 0)\n"
+"\"abc\"\n"
+"user=> (get [\"abc\" false 99] 1)\n"
+"false\n"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:41
 msgid "Calling get with an invalid index returns `nil`:"
-msgstr ""
+msgstr "無効なインデックスでgetを呼び出すと `nil` が返ってくる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:46
@@ -116,17 +124,19 @@ msgid ""
 "user=> (get [\"abc\" false 99] 14)\n"
 "nil\n"
 msgstr ""
+"user=> (get [\"abc\" false 99] 14)\n"
+"nil\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:48
 #, no-wrap
 msgid "`count`"
-msgstr ""
+msgstr "`count`"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:51
 msgid "All Clojure collections can be counted:"
-msgstr ""
+msgstr "すべてのClojureコレクションは数えられる(counted):"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:56
@@ -135,18 +145,19 @@ msgid ""
 "user=> (count [1 2 3])\n"
 "3\n"
 msgstr ""
+"user=> (count [1 2 3])\n"
+"3\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:58 en/content/guides/learn/sequential_colls.adoc:106
-#, fuzzy, no-wrap
-#| msgid "Destructuring"
+#, no-wrap
 msgid "Constructing"
-msgstr "分配束縛"
+msgstr "構築する"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:61
 msgid "In addition to the literal `[ ]` syntax, Clojure vectors can be created with the `vector` function:"
-msgstr ""
+msgstr "リテラルの `[ ]` というシンタックスに加えて、Clojureのベクターは `vector` 関数で作ることもできる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:66
@@ -155,19 +166,20 @@ msgid ""
 "user=> (vector 1 2 3)\n"
 "[1 2 3]\n"
 msgstr ""
+"user=> (vector 1 2 3)\n"
+"[1 2 3]\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:68 en/content/guides/learn/sequential_colls.adoc:125
-#, fuzzy, no-wrap
-#| msgid "During development"
+#, no-wrap
 msgid "Adding elements"
-msgstr "開発中に"
+msgstr "要素を追加する"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:71
 msgid ""
 "Elements are added to a vector with `conj` (short for conjoin). Elements are always added to a vector at the end:"
-msgstr ""
+msgstr "要素は `conj` (conjoinの略)を使うことでベクターに追加される。要素は常にベクターの最後に追加される:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:76
@@ -176,12 +188,14 @@ msgid ""
 "user=> (conj [1 2 3] 4 5 6)\n"
 "[1 2 3 4 5 6]\n"
 msgstr ""
+"user=> (conj [1 2 3] 4 5 6)\n"
+"[1 2 3 4 5 6]\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:78
 #, no-wrap
 msgid "Immutability"
-msgstr ""
+msgstr "イミュータビリティ(不変性)"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:81
@@ -189,11 +203,13 @@ msgid ""
 "Clojure collections share important properties of simple values like strings and numbers, such as immutability and "
 "equality comparison by value."
 msgstr ""
+"Clojureコレクションは、イミュータビリティや値による等価性比較といった、文字列や数値などの単純な値と共通して重要な性質"
+"を備えている。"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:83
 msgid "For example, lets create a vector and modify it with `conj`."
-msgstr ""
+msgstr "例えば、ベクターを作って `conj` で変更してみよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:90
@@ -204,20 +220,25 @@ msgid ""
 "user=> (conj v 4 5 6)\n"
 "[1 2 3 4 5 6]\n"
 msgstr ""
+"user=> (def v [1 2 3])\n"
+"#'user/v\n"
+"user=> (conj v 4 5 6)\n"
+"[1 2 3 4 5 6]\n"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:93
 msgid "Here `conj` returned a new vector but if we examine the original vector, we see it's unchanged:"
-msgstr ""
+msgstr "ここで `conj` は新しいベクターを返すが、もとのベクターを調べてみると変化していないことが分かる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:98
-#, fuzzy, no-wrap
-#| msgid "#foo/bar [1 2 3]\n"
+#, no-wrap
 msgid ""
 "user=> v\n"
 "[1 2 3]\n"
-msgstr "#foo/bar [1 2 3]\n"
+msgstr ""
+"user=> v\n"
+"[1 2 3]\n"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:101
@@ -225,29 +246,34 @@ msgid ""
 "Any function that \"changes\" a collection returns a new instance. Your program will need to remember or pass along "
 "the changed instance to take advantage of it."
 msgstr ""
+"コレクションを「変更」するあらゆる関数は新しいインスタンスを返す。これを上手く利用するにはプログラムが変更されたインス"
+"タンスを覚えておいたり持ち回ったりする必要があるだろう。"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:105
 msgid ""
 "Lists are sequential linked lists that add new elements at the head of the list, instead of at the tail like vectors."
 msgstr ""
+"リストはシーケンシャル(sequential)な連結リストであり、ベクターのように末尾ではなくリストの先頭に新しい要素を追加する。"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:109
 msgid ""
 "Because lists are evaluated by invoking the first element as a function, we must quote a list to prevent evaluation:"
 msgstr ""
+"リストは最初の要素を関数として呼び出すことで評価されるので、評価を避けるためにはリストをクォート(quote)しなければなら"
+"ない:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:113
 #, no-wrap
 msgid "(def cards '(10 :ace :jack 9))\n"
-msgstr ""
+msgstr "(def cards '(10 :ace :jack 9))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:116
 msgid "Lists are not indexed so they must be walked using `first` and `rest`."
-msgstr ""
+msgstr "リストはインデックス付き(indexed)ではないので `first` と `rest` でたどらなければならない。"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:123
@@ -258,6 +284,10 @@ msgid ""
 "user=> (rest cards)\n"
 "'(:ace :jack 9)\n"
 msgstr ""
+"user=> (first cards)\n"
+"10\n"
+"user=> (rest cards)\n"
+"'(:ace :jack 9)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:128
@@ -265,6 +295,8 @@ msgid ""
 "`conj` can be used to add elements to a list just as with vectors. However, `conj` always adds elements where it can "
 "be done in constant time for the data structure. In the case of lists, elements are added at the front:"
 msgstr ""
+"`conj` はベクターと同様にリストに要素を追加するのに利用することができる。しかし、 `conj` は常にそのデータ構造で定数時"
+"間で要素追加可能な場所に要素を追加する。リストの場合には要素は前に追加される:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:133
@@ -273,17 +305,19 @@ msgid ""
 "user=> (conj cards :queen)\n"
 "(:queen 10 :ace :jack 9)\n"
 msgstr ""
+"user=> (conj cards :queen)\n"
+"(:queen 10 :ace :jack 9)\n"
 
 #. type: Title ===
 #: en/content/guides/learn/sequential_colls.adoc:135
 #, no-wrap
 msgid "Stack access"
-msgstr ""
+msgstr "スタックアクセス"
 
 #. type: Plain text
 #: en/content/guides/learn/sequential_colls.adoc:138
 msgid "Lists can also be used as a stack with peek and pop:"
-msgstr ""
+msgstr "リストはpeekとpopでスタックとして使うこともできる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/sequential_colls.adoc:147
@@ -296,3 +330,9 @@ msgid ""
 "user=> (pop stack)\n"
 "(:b)\n"
 msgstr ""
+"user=> (def stack '(:a :b))\n"
+"#'user/stack\n"
+"user=> (peek stack)\n"
+":a\n"
+"user=> (pop stack)\n"
+"(:b)\n"

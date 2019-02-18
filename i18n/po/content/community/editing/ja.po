@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-03-31 17:24+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2019-02-18 19:56+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -43,7 +43,7 @@ msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
 #, no-wrap
 msgid "Lists"
-msgstr "Lists (リスト)"
+msgstr "リスト"
 
 #. type: Title =
 #: en/content/community/editing.adoc:1

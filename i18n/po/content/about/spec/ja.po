@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2018-03-12 22:06+0900\n"
+"PO-Revision-Date: 2019-02-18 20:10+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -78,7 +78,7 @@ msgstr "ドキュメンテーション"
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 #, no-wrap
 msgid "Maps"
-msgstr "Maps (マップ)"
+msgstr "マップ"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:1199 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100

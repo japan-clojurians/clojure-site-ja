@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:18+0900\n"
-"PO-Revision-Date: 2018-05-04 05:42+0900\n"
+"PO-Revision-Date: 2019-02-18 20:22+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -50,7 +50,7 @@ msgstr "例:"
 #: en/content/reference/reader.adoc:1
 #, no-wrap
 msgid "The Reader"
-msgstr "Reader(リーダー)"
+msgstr "リーダー(reader)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:4 en/content/community/resources.adoc:4 en/content/community/books.adoc:4
@@ -109,13 +109,13 @@ msgstr ""
 #: en/content/reference/reader.adoc:22
 #, no-wrap
 msgid "Reader forms"
-msgstr "Reader forms (リーダーフォーム)"
+msgstr "リーダーフォーム(reader form)"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:24 en/content/reference/data_structures.adoc:111
 #, no-wrap
 msgid "Symbols"
-msgstr "Symbols (シンボル)"
+msgstr "シンボル"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:27
@@ -164,8 +164,8 @@ msgstr "リテラル"
 #: en/content/reference/reader.adoc:34
 msgid "Strings - Enclosed in \"double quotes\". May span multiple lines. Standard Java escape characters are supported."
 msgstr ""
-"Strings (文字列リテラル) - \"ダブルクォート\" で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字が"
-"サポートされている。"
+"文字列 - \"ダブルクォート\" で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字がサポートされてい"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:38
@@ -177,11 +177,11 @@ msgid ""
 "the same Long.  ** Floating point numbers are read as Doubles; with M suffix they are read as BigDecimals.  ** Ratios "
 "are supported, e.g. `22/7`."
 msgstr ""
-"Numbers (数字リテラル) - 一般的に Java と同様に表記される。\n"
-"** Integer (整数)は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang."
-"BigIntとして読み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して"
-"表記することができる。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,"
-"%20int)[Long.parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。\n"
+"数値 - 一般的に Java と同様に表記される。\n"
+"** 整数は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang.BigIntとして読"
+"み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して表記することが"
+"できる。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)[Long."
+"parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。\n"
 "** 浮動少数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。\n"
 "** 分数もサポートされている。 (例： `22/7`)"
 
@@ -192,9 +192,9 @@ msgid ""
 "\\return` yield the corresponding characters. Unicode characters are represented with `\\uNNNN` as in Java. Octals "
 "are represented with `\\oNNN`."
 msgstr ""
-"Characters (文字リテラル) - 先頭にバックスラッシュが付いている：`\\c`、 `\\newline`、`\\space`、 `\\tab`、 `"
-"\\formfeed`、 `\\backspace`、 `\\return` はそれぞれの文字を意味する。ユニコード文字はJavaと同じく `\\uNNNN` と表記され"
-"る。8進数は `\\oNNN` と表記される。"
+"文字 - 先頭にバックスラッシュが付いている：`\\c`、 `\\newline`、`\\space`、 `\\tab`、 `\\formfeed`、 `\\backspace`、 `"
+"\\return` はそれぞれの文字を意味する。ユニコード文字はJavaと同じく `\\uNNNN` と表記される。8進数は `\\oNNN` と表記され"
+"る。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:40
@@ -204,7 +204,7 @@ msgstr "`nil` は'何もない、もしくは値がない'ことを意味する 
 #. type: Plain text
 #: en/content/reference/reader.adoc:41
 msgid "Booleans - `true` and `false`"
-msgstr "Booleans (ブーリアンリテラル) - `true` と `false`"
+msgstr "ブーリアン - `true` と `false`"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:48
@@ -216,7 +216,7 @@ msgid ""
 "qualified, the namespace will be resolved using aliases in the current namespace. In a namespace where `x` is aliased "
 "to `example`, `::x/foo` resolves to `:example/foo`."
 msgstr ""
-"Keywords (キーワード) - キーワードはシンボルと似ているが、以下の点で異なる: \n"
+"キーワード - キーワードはシンボルと似ているが、以下の点で異なる: \n"
 "** コロン(:) で始まらなければならない(例：:fred)。\n"
 "** '.'を含めたりクラスの名前に使用したりできない。\n"
 "** シンボルと同様にネームスペースを含むことができる。 `:person/name` \n"
@@ -231,18 +231,18 @@ msgstr ""
 #: en/content/guides/learn/sequential_colls.adoc:102
 #, no-wrap
 msgid "Lists"
-msgstr "Lists (リスト)"
+msgstr "リスト"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:52
 msgid "Lists are zero or more forms enclosed in parentheses: `(a b c)`"
-msgstr "Listは0個以上の丸括弧で括られたフォーム: `(a b c)`"
+msgstr "リストは0個以上の丸括弧で括られたフォーム: `(a b c)`"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:53 en/content/guides/learn/sequential_colls.adoc:19
 #, no-wrap
 msgid "Vectors"
-msgstr "Vectors (ベクター)"
+msgstr "ベクター"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:56
@@ -253,7 +253,7 @@ msgstr "ベクターは0個以上の角括弧で括られたフォーム: `[1 2 
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 #, no-wrap
 msgid "Maps"
-msgstr "Maps (マップ)"
+msgstr "マップ"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:60
@@ -363,7 +363,7 @@ msgstr ""
 #: en/content/guides/learn/hashed_colls.adoc:19
 #, no-wrap
 msgid "Sets"
-msgstr "Sets (セット)"
+msgstr "セット"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:103
@@ -409,7 +409,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:111
 #, no-wrap
 msgid "Macro characters"
-msgstr "Macro characters (マクロキャラクター)"
+msgstr "マクロ文字"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:114
@@ -426,7 +426,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:115
 #, no-wrap
 msgid "Quote (')"
-msgstr "Quote (') (クォート)"
+msgstr "クォート(')"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:118
@@ -437,7 +437,7 @@ msgstr "`'form` => `(quote form)`"
 #: en/content/reference/reader.adoc:119
 #, no-wrap
 msgid "Character (\\)"
-msgstr "Character (\\) (文字)"
+msgstr "文字 (\\)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:122
@@ -466,7 +466,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:127
 #, no-wrap
 msgid "Comment (;)"
-msgstr "Comment (;) (コメント)"
+msgstr "コメント (;)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:130
@@ -488,7 +488,7 @@ msgstr "`@form => (deref form)`"
 #: en/content/reference/reader.adoc:135
 #, no-wrap
 msgid "Metadata (^)"
-msgstr "Metadata (^) (メタデータ)"
+msgstr "メタデータ (^)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:139
@@ -539,7 +539,7 @@ msgstr "メタデータはチェインすることができる。その場合、
 #: en/content/reference/reader.adoc:150
 #, no-wrap
 msgid "Dispatch (pass:[#])"
-msgstr "Dispatch (pass:[#]) (ディスパッチ)"
+msgstr "ディスパッチ (pass:[#])"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:153
@@ -618,7 +618,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:170
 #, no-wrap
 msgid "Syntax-quote (`, note, the \"backquote\" character), Unquote (~) and Unquote-splicing (~@)"
-msgstr "Syntax-quote (シンタックスクォート) (`, バッククォートである点について注意), Unquote (アンクォート)(~) 及び Unquote-splicing (アンクォートスプライシング) (~@)"
+msgstr "シンタックスクォート (`, バッククォートである点について注意), (アンクォート) (~), (アンクォートスプライシング) (~@)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:173
@@ -692,7 +692,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:194
 #, no-wrap
 msgid "Tagged Literals"
-msgstr "Tagged Literals (タグ付きリテラル)"
+msgstr "タグ付きリテラル(tagged literal)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:196
@@ -831,7 +831,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:242
 #, no-wrap
 msgid "Reader Conditionals"
-msgstr "Reader Conditionals (リーダーコンディショナル)"
+msgstr "リーダーコンディショナル(reader conditional)"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:245

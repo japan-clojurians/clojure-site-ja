@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2019-02-18 20:11+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -41,14 +41,14 @@ msgstr "toc::[]"
 #: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 #, no-wrap
 msgid "Maps"
-msgstr "Maps (マップ)"
+msgstr "マップ"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235
 #: en/content/guides/learn/hashed_colls.adoc:19
 #, no-wrap
 msgid "Sets"
-msgstr "Sets (セット)"
+msgstr "セット"
 
 #. type: Title =
 #: en/content/guides/learn/hashed_colls.adoc:1
@@ -162,10 +162,9 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/guides/learn/hashed_colls.adoc:68
-#, fuzzy, no-wrap
-#| msgid "into"
+#, no-wrap
 msgid "`into`"
-msgstr "into"
+msgstr "`into`"
 
 #. type: Plain text
 #: en/content/guides/learn/hashed_colls.adoc:71
@@ -599,10 +598,9 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/guides/learn/hashed_colls.adoc:288
-#, fuzzy, no-wrap
-#| msgid "Efficient eager application of a multi-step transformation"
+#, no-wrap
 msgid "Representing application domain information"
-msgstr "効率の良い、積極的な複数ステップの変換の適用"
+msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/hashed_colls.adoc:291
