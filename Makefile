@@ -61,6 +61,6 @@ preview:
 publish: build
 	git config --global user.name circle-ci
 	ghp-import -n -m "[ci skip] update site :books:" -b gh-pages $(BUILD_DIR)/output
-	git push origin gh-pages
+	yes | git push origin gh-pages
 	@echo
 	@echo "Published."
