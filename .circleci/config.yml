@@ -48,10 +48,11 @@ jobs:
   deploy:
     <<: *container_config
     steps:
+      - run: apt-get update; apt-get install -y git make unzip ca-certificates po4a openjdk-8-jdk python3-pip python3-dev
+      - run: make -p ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "13:b1:55:43:8c:4d:eb:0a:c2:43:34:85:a6:8f:ff:11"
-      - run: apt-get update; apt-get install -y git make unzip ca-certificates po4a openjdk-8-jdk python3-pip python3-dev
       - restore_cache:
           key: *repo_cache_key
       - restore_cache:
