@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2019-02-18 15:06+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -41,7 +41,7 @@ msgstr "toc::[]"
 #: en/content/reference/java_interop.adoc:1 en/content/guides/learn/functions.adoc:268
 #, no-wrap
 msgid "Java Interop"
-msgstr ""
+msgstr "Javaとの相互運用"
 
 #. type: Plain text
 #: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
@@ -59,14 +59,13 @@ msgstr "知識をテストしよう"
 #: en/content/guides/learn/functions.adoc:1
 #, no-wrap
 msgid "Learn Clojure - Functions"
-msgstr ""
+msgstr "Clojureを学ぼう - 関数"
 
 #. type: Title ==
 #: en/content/guides/learn/functions.adoc:17
-#, fuzzy, no-wrap
-#| msgid "Related functions"
+#, no-wrap
 msgid "Creating Functions"
-msgstr "関連する関数"
+msgstr "関数を作る"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:20
@@ -75,11 +74,13 @@ msgid ""
 "Most Clojure code consists primarily of pure functions (no side effects), so invoking with the same inputs yields the "
 "same output."
 msgstr ""
+"Clojureは関数型言語だ。関数はファーストクラスであり、他の関数に渡したり他の関数から返したりすることができる。多くの"
+"Clojureコードは主に(副作用のない)純粋関数で構成されているので、同じ入力で呼び出すと同じ出力が得られる。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:22
 msgid "`defn` defines a named function:"
-msgstr ""
+msgstr "`defn` は名前付きの関数を定義する:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:28
@@ -89,17 +90,20 @@ msgid ""
 ";;    -----  ------  -------------------\n"
 "(defn greet  [name]  (str \"Hello, \" name) )\n"
 msgstr ""
+";;    名前   引数           本体\n"
+";;    -----  ------  -------------------\n"
+"(defn greet  [name]  (str \"Hello, \" name) )\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:31
 msgid ""
 "This function has a single parameter `name`, however you may include any number of arguments in the params vector."
-msgstr ""
+msgstr "この関数は単一の引数 `name` を持つが、引数のベクターには任意個の引数を含めることができる。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:33
 msgid "Invoke a function with the name of the function in \"function position\" (the first element of a list):"
-msgstr ""
+msgstr "関数名を「関数位置」(リストの最初の要素)に置いて関数を呼び出してみよう:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:38
@@ -108,13 +112,14 @@ msgid ""
 "user=> (greet \"students\")\n"
 "\"Hello, students\"\n"
 msgstr ""
+"user=> (greet \"students\")\n"
+"\"Hello, students\"\n"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:40
-#, fuzzy, no-wrap
-#| msgid "Related functions"
+#, no-wrap
 msgid "Multi-arity functions"
-msgstr "関連する関数"
+msgstr "マルチアリティ関数"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:43
@@ -122,11 +127,13 @@ msgid ""
 "Functions can be defined to take different numbers of arguments (different \"arity\"). Different arities must all be "
 "defined in the same `defn` - using `defn` more than once will replace the previous function."
 msgstr ""
+"関数は異なる個数の引数(異なる「アリティ」(arity))をとるように定義することができる。異なるアリティはすべて同じ `defn` "
+"の中に定義されなければならない―― `defn` を複数回使うと以前の関数を置き換えてしまう。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:45
 msgid "Each arity is a list `([args*] body*)`. One arity can invoke another."
-msgstr ""
+msgstr "個々のアリティは `([args*] body*)` というリストだ。あるアリティが別のアリティを呼び出すことができる。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:51
@@ -136,6 +143,9 @@ msgid ""
 "  ([]     (messenger \"Hello world!\"))\n"
 "  ([msg]  (println msg)))\n"
 msgstr ""
+"(defn messenger\n"
+"  ([]     (messenger \"Hello world!\"))\n"
+"  ([msg]  (println msg)))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:54
@@ -143,6 +153,8 @@ msgid ""
 "This function declares two arities (0 arguments and 1 argument). The 0-argument arity calls the 1-argument arity with "
 "a default value to print. We invoke these functions by passing the appropriate number of arguments:"
 msgstr ""
+"この関数は2つのアリティ(0引数と1引数)を宣言している。0引数のアリティは1引数のアリティをデフォルト値で呼び出して出力す"
+"る。この関数を適切な個数の引数を渡して呼び出す:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:60
@@ -152,6 +164,9 @@ msgid ""
 "Hello world!\n"
 "nil\n"
 msgstr ""
+"user=> (messenger)\n"
+"Hello world!\n"
+"nil\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:64
@@ -161,13 +176,15 @@ msgid ""
 "Hello class!\n"
 "nil\n"
 msgstr ""
+"user=> (messenger \"Hello class!\")\n"
+"Hello class!\n"
+"nil\n"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:66
-#, fuzzy, no-wrap
-#| msgid "Related functions"
+#, no-wrap
 msgid "Variadic functions"
-msgstr "関連する関数"
+msgstr "可変長引数関数"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:69
@@ -175,11 +192,13 @@ msgid ""
 "Functions may also define a variable number of arguments - this is known as a \"variadic\" function. The variable "
 "arguments must occur at the end of the argument list. They will be collected in a sequence for use by the function."
 msgstr ""
+"関数は可変個の引数を定義することもできる――これは「可変長引数」関数として知られている。可変の引数は引数リストの末尾にな"
+"ければならない。この引数はシーケンスにまとめられており、関数から使うことができる。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:71
 msgid "The beginning of the variable arguments is marked with `&`."
-msgstr ""
+msgstr "可変の引数の始まりは `&` で示される。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:76
@@ -188,6 +207,8 @@ msgid ""
 "(defn hello [greeting & who]\n"
 "  (println greeting who))\n"
 msgstr ""
+"(defn hello [greeting & who]\n"
+"  (println greeting who))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:79
@@ -195,6 +216,8 @@ msgid ""
 "This function takes an argument `greeting` and a variable number of arguments (0 or more) that will be collected in a "
 "list named `who`. We can see this by invoking it with 3 arguments:"
 msgstr ""
+"この関数は引数 `greeting` とリストにまとめられる `who` という名前の可変個の引数(0個以上)をとる。このことは3引数で呼び"
+"出してみると分かる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:84
@@ -203,23 +226,24 @@ msgid ""
 "user=> (hello \"Hello\" \"world\" \"class\")\n"
 "Hello (world class)\n"
 msgstr ""
+"user=> (hello \"Hello\" \"world\" \"class\")\n"
+"Hello (world class)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:87
 msgid "You can see that when `println` prints `who`, it is printed as a list of two elements that were collected."
-msgstr ""
+msgstr "`println` が `who` を出力すると、まとめられた2要素のリストとして出力されることが分かる。"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:88
-#, fuzzy, no-wrap
-#| msgid "Anonymous function literal (#())"
+#, no-wrap
 msgid "Anonymous Functions"
-msgstr "無名関数リテラル (#())"
+msgstr "無名関数"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:91
 msgid "An anonymous function can be created with `fn`:"
-msgstr ""
+msgstr "無名関数は `fn` で作ることができる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:97
@@ -229,6 +253,9 @@ msgid ""
 ";;   ---------  -----------------\n"
 "(fn  [message]  (println message) )\n"
 msgstr ""
+";;    引数           本体\n"
+";;   ---------  -----------------\n"
+"(fn  [message]  (println message) )\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:100
@@ -236,11 +263,12 @@ msgid ""
 "Because the anonymous function has no name, it cannot be referred to later. Rather, the anonymous function is "
 "typically created at the point it is passed to another function."
 msgstr ""
+"無名関数には名前がないので、あとで参照することはできない。むしろ、無名関数は別の関数に渡す時点で作るのが典型的だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:102
 msgid "Or it's possible to immediately invoke it (this is not a common usage):"
-msgstr ""
+msgstr "もしくは直ちに呼び出すことも可能だ(一般的な利用方法ではないが)。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:108
@@ -250,19 +278,22 @@ msgid ""
 ";; --------------------------------  --------------\n"
 "(  (fn [message] (println message))  \"Hello world!\" )\n"
 msgstr ""
+";;     操作 (関数)                      引数\n"
+";; --------------------------------  --------------\n"
+"(  (fn [message] (println message))  \"Hello world!\" )\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:110
 #, no-wrap
 msgid ";; Hello world!\n"
-msgstr ""
+msgstr ";; Hello world!\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:113
 msgid ""
 "Here we defined the anonymous function in the function position of a larger expression that immediately invokes the "
 "expression with the argument."
-msgstr ""
+msgstr "ここではより大きな式の関数位置で無名関数を定義したが、その式は直ちに無名関数の式を引数で呼び出している。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:115
@@ -271,12 +302,14 @@ msgid ""
 "do. Clojure has **only** expressions that return a value. We'll see later that this includes even flow control "
 "expressions like `if`."
 msgstr ""
+"多くの言語には文と式の両方があり、文は命令的に何かを行い値は返さないが、式は値を返す。Clojureには値を返す **式** だけ"
+"がある。 `if` のようなフロー制御の式でさえこれに含まれることはあとで見よう。"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:116
 #, no-wrap
 msgid "`defn` vs `fn`"
-msgstr ""
+msgstr "`defn` vs `fn`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:119
@@ -284,25 +317,26 @@ msgid ""
 "It might be useful to think of `defn` as a contraction of `def` and `fn`. The `fn` defines the function and the `def` "
 "binds it to a name. These are equivalent:"
 msgstr ""
+"`defn` は `def` と `fn` を縮約したものだと考えると便利かもしれない。 `fn` が関数を定義し、 `def` が関数を名前に束縛す"
+"る。これらは等価だ:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:123
 #, no-wrap
 msgid "(defn greet [name] (str \"Hello, \" name))\n"
-msgstr ""
+msgstr "(defn greet [name] (str \"Hello, \" name))\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:125
 #, no-wrap
 msgid "(def greet (fn [name] (str \"Hello, \" name)))\n"
-msgstr ""
+msgstr "(def greet (fn [name] (str \"Hello, \" name)))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:127
-#, fuzzy, no-wrap
-#| msgid "Anonymous function literal (#())"
+#, no-wrap
 msgid "Anonymous function syntax"
-msgstr "無名関数リテラル (#())"
+msgstr "無名関数のシンタックス"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:130
@@ -310,26 +344,28 @@ msgid ""
 "There is a shorter form for the `fn` anonymous function syntax implemented in the Clojure reader: `#()`. This syntax "
 "omits the parameter list and names parameters based on their position."
 msgstr ""
+"Clojureのリーダーに実装された `fn` による無名関数のより短い形式がある: `#()` 。このシンタックスは引数リストを省略し、"
+"位置に基づいて引数を指定する。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:132
 msgid "`%` is used for a single argument"
-msgstr ""
+msgstr "`%` は単一の引数に使う"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:133
 msgid "`%1`, `%2`, `%3`, etc are used for multiple arguments"
-msgstr ""
+msgstr "`%1`, `%2`, `%3` などは複数の引数に使う"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:134
 msgid "`%&` is used for any remaining (variadic) arguments"
-msgstr ""
+msgstr "`%&` は任意の残りの(可変長)引数に使う"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:136
 msgid "Nested anonymous functions would create an ambiguity as the parameters are not named, so nesting is not allowed."
-msgstr ""
+msgstr "ネストした無名関数では引数が名付けられていないことで曖昧さが生じるため、ネストすることは認められていない。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:141
@@ -338,6 +374,8 @@ msgid ""
 ";; Equivalent to: (fn [x] (+ 6 x))\n"
 "#(+ 6 %)\n"
 msgstr ""
+";; これと等価: (fn [x] (+ 6 x))\n"
+"#(+ 6 %)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:144
@@ -346,6 +384,8 @@ msgid ""
 ";; Equivalent to: (fn [x y] (+ x y))\n"
 "#(+ %1 %2)\n"
 msgstr ""
+";; これと等価: (fn [x y] (+ x y))\n"
+"#(+ %1 %2)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:147
@@ -354,19 +394,21 @@ msgid ""
 ";; Equivalent to: (fn [x y & zs] (println x y zs))\n"
 "#(println %1 %2 %&)\n"
 msgstr ""
+";; これと等価: (fn [x y & zs] (println x y zs))\n"
+"#(println %1 %2 %&)\n"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:149
 #, no-wrap
 msgid "Gotcha"
-msgstr ""
+msgstr "落とし穴"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:152
 msgid ""
 "One common need is an anonymous function that takes an element and wraps it in a vector. You might try writing that "
 "as:"
-msgstr ""
+msgstr "要素をとってベクターに包む無名関数が必要になることは一般的だ。このように書こうとするかもしれない:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:157
@@ -375,17 +417,19 @@ msgid ""
 ";; DO NOT DO THIS\n"
 "#([%])\n"
 msgstr ""
+";; こうしてはならない\n"
+"#([%])\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:160
 msgid "This anonymous function expands to the equivalent:"
-msgstr ""
+msgstr "この無名関数はこれと等価に展開される:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:164
 #, no-wrap
 msgid "(fn [x] ([x]))\n"
-msgstr ""
+msgstr "(fn [x] ([x]))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:167
@@ -393,6 +437,7 @@ msgid ""
 "This form will wrap in a vector **and** try to invoke the vector with no arguments (the extra pair of parentheses). "
 "Instead:"
 msgstr ""
+"このフォームはベクターで包んで **さらに** そのベクターを引数なしで呼び出そうとする(追加の丸括弧の組)。そうではなくて:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:172
@@ -401,6 +446,8 @@ msgid ""
 ";; Instead do this:\n"
 "#(vector %)\n"
 msgstr ""
+";; 代わりにこうする:\n"
+"#(vector %)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:175
@@ -409,6 +456,8 @@ msgid ""
 ";; or this:\n"
 "(fn [x] [x])\n"
 msgstr ""
+";; もしくはこうだ:\n"
+"(fn [x] [x])\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:178
@@ -417,18 +466,20 @@ msgid ""
 ";; or most simply just the vector function itself:\n"
 "vector\n"
 msgstr ""
+";; もしくは最もシンプルなのは単に vector 関数そのものを使うことだ:\n"
+"vector\n"
 
 #. type: Title ==
 #: en/content/guides/learn/functions.adoc:180
 #, no-wrap
 msgid "Applying Functions"
-msgstr ""
+msgstr "関数を適用する"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:182
 #, no-wrap
 msgid "`apply`"
-msgstr ""
+msgstr "`apply`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:185
@@ -436,6 +487,8 @@ msgid ""
 "The `apply` function invokes a function with 0 or more fixed arguments, and draws the rest of the needed arguments "
 "from a final sequence. The final argument *must* be a sequence."
 msgstr ""
+"`apply` 関数は関数を0個以上の固定の引数で呼び出し、残りの必要な引数を最後のシーケンスから取り出す。最後の引数は *必ず"
+"* シーケンスでなければならない。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:192
@@ -446,6 +499,10 @@ msgid ""
 "(apply f 1 2 '(3 4))    ;; same as  (f 1 2 3 4)\n"
 "(apply f 1 2 3 '(4))    ;; same as  (f 1 2 3 4)\n"
 msgstr ""
+"(apply f '(1 2 3 4))    ;; (f 1 2 3 4) と同じ\n"
+"(apply f 1 '(2 3 4))    ;; (f 1 2 3 4) と同じ\n"
+"(apply f 1 2 '(3 4))    ;; (f 1 2 3 4) と同じ\n"
+"(apply f 1 2 3 '(4))    ;; (f 1 2 3 4) と同じ\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:195
@@ -453,11 +510,13 @@ msgid ""
 "All 4 of these calls are equivalent to `(f 1 2 3 4)`. `apply` is useful when arguments are handed to you as a "
 "sequence but you must invoke the function with the values in the sequence."
 msgstr ""
+"これら4つの呼び出しはすべて `(f 1 2 3 4)` と等価だ。 `apply` は引数がシーケンスとして渡されてきたがそのシーケンス内の"
+"値で関数を呼び出さなければならない場合に便利だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:197
 msgid "For example, you can use `apply` to avoid writing this:"
-msgstr ""
+msgstr "例えば、こう書くのを避けるために `apply` を使うことができる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:202
@@ -466,11 +525,13 @@ msgid ""
 "(defn plot [shape coords]   ;; coords is [x y]\n"
 "  (plotxy shape (first coords) (second coords)))\n"
 msgstr ""
+"(defn plot [shape coords]   ;; coords は [x y]\n"
+"  (plotxy shape (first coords) (second coords)))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:205
 msgid "Instead you can simply write:"
-msgstr ""
+msgstr "代わりにシンプルに書くことができる:"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:210
@@ -479,18 +540,20 @@ msgid ""
 "(defn plot [shape coords]\n"
 "  (apply plotxy shape coords))\n"
 msgstr ""
+"(defn plot [shape coords]\n"
+"  (apply plotxy shape coords))\n"
 
 #. type: Title ==
 #: en/content/guides/learn/functions.adoc:212
 #, no-wrap
 msgid "Locals and Closures"
-msgstr ""
+msgstr "ローカル変数とクロージャ"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:214
 #, no-wrap
 msgid "`let`"
-msgstr ""
+msgstr "`let`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:217
@@ -498,6 +561,8 @@ msgid ""
 "`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested inside "
 "the surrounding context. Names defined in a let take precedence over the names in the outer context."
 msgstr ""
+"`let` は「レキシカルスコープ」でシンボルを値に束縛する。レキシカルスコープは名前のための新たなコンテキストを作り、それ"
+"は周囲のコンテキストの内側にネストされる。letで定義された名前は外側のコンテキストにおける名前に優先する。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:223
@@ -507,11 +572,14 @@ msgid ""
 ";;    ------------  ----------------------\n"
 "(let  [name value]  (code that uses name))\n"
 msgstr ""
+";;      束縛     　　　名前はここで定義されている\n"
+";;    ------------  ----------------------\n"
+"(let  [name value]  (code that uses name))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:226
 msgid "Each `let` can define 0 or more bindings and can have 0 or more expressions in the body."
-msgstr ""
+msgstr "個々の `let` は0個以上の束縛を定義し、本体に0個以上の式を持つことができる。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:232
@@ -521,6 +589,9 @@ msgid ""
 "      y 2]\n"
 "  (+ x y))\n"
 msgstr ""
+"(let [x 1\n"
+"      y 2]\n"
+"  (+ x y))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:235
@@ -529,6 +600,8 @@ msgid ""
 "the `let` and resolves x to 1 and y to 2. Outside the `let` expression, x and y will have no continued meaning, "
 "unless they were already bound to a value."
 msgstr ""
+"この `let` 式は `x` と `y` の2つのローカル束縛を作っている。式 `(+ x y)` は `let` のレキシカルスコープ内にあり、xが１"
+"に、yが2に解決される。 `let` 式の外側では、xとyはすでに値に束縛されていない限り継続して意味を持つことはない。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:245
@@ -542,6 +615,13 @@ msgid ""
 "  ) ;; end of let scope\n"
 ") ;; end of function\n"
 msgstr ""
+"(defn messenger [msg]\n"
+"  (let [a 7\n"
+"        b 5\n"
+"        c (clojure.string/capitalize msg)]\n"
+"    (println a b c)\n"
+"  ) ;; let のスコープの終わり\n"
+") ;; 関数の終わり\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:248
@@ -549,6 +629,8 @@ msgid ""
 "The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only has "
 "meanining within the `messenger` function."
 msgstr ""
+"messenger関数は `msg` 引数をとる。ここで `defn` もまた `msg` のレキシカルスコープを作っている―― `messenger` 関数の範囲"
+"内でだけ意味がある。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:250
@@ -556,12 +638,14 @@ msgid ""
 "Within that function scope, the `let` creates a new scope to define `a`, `b`, and `c`. If we tried to use `a` after "
 "the let expression, the compiler would report an error."
 msgstr ""
+"この関数のスコープの範囲内に `let` は `a`, `b`, `c` を定義する新たなスコープを作っている。let式のあとで `a` を使おうと"
+"すれば、コンパイラがエラーを報告するだろう。"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:251
 #, no-wrap
 msgid "Closures"
-msgstr ""
+msgstr "クロージャ"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:254
@@ -569,6 +653,8 @@ msgid ""
 "The `fn` special form creates a \"closure\". It \"closes over\" the surrounding lexical scope (like `msg`, `a`, `b`, "
 "or `c` above) and captures their values beyond the lexical scope."
 msgstr ""
+"`fn` 特殊形式は「クロージャ」(closure)を作る。クロージャは周囲のレキシカルスコープ(上の `msg`, `a`, `b`, `c` など)を"
+"「閉じ込め」(close over)て、その値をレキシカルスコープを超えて捕捉する。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:259
@@ -577,6 +663,8 @@ msgid ""
 "(defn messenger-builder [greeting]\n"
 "  (fn [who] (println greeting who))) ; closes over greeting\n"
 msgstr ""
+"(defn messenger-builder [greeting]\n"
+"  (fn [who] (println greeting who))) ; greeting を閉じ込める\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:262
@@ -585,6 +673,8 @@ msgid ""
 ";; greeting provided here, then goes out of scope\n"
 "(def hello-er (messenger-builder \"Hello\"))\n"
 msgstr ""
+";; greeting はここで与えられて、スコープを外れる\n"
+"(def hello-er (messenger-builder \"Hello\"))\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:266
@@ -594,17 +684,20 @@ msgid ""
 "(hello-er \"world!\")\n"
 ";; Hello world!\n"
 msgstr ""
+";; hello-er がクロージャなので greeting の値は引き続き得られる\n"
+"(hello-er \"world!\")\n"
+";; Hello world!\n"
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:270
 #, no-wrap
 msgid "Invoking Java code"
-msgstr ""
+msgstr "Javaコードを呼び出す"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:273
 msgid "Below is a summary of calling conventions for calling into Java from Clojure:"
-msgstr ""
+msgstr "以下はClojureからJavaを呼び出すための呼び出し規約(calling conventions)のまとめだ:"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:283
@@ -613,27 +706,30 @@ msgid ""
 "next()` | `(.nextInt rnd)` | |Instance field| `object.field` | `(.-field object)` | |Static method| `Math.sqrt(25)` | "
 "`(Math/sqrt 25)` | |Static field| `Math.PI` | `Math/PI` | |==="
 msgstr ""
+"|=== | タスク | Java | Clojure | |インスタンス化| `new Widget(\"foo\")` | `(Widget. \"foo\")` | |インスタンスメソッ"
+"ド| `rnd.next()` | `(.nextInt rnd)` | |インスタンスフィールド| `object.field` | `(.-field object)` | |staticメソッド| "
+"`Math.sqrt(25)` | `(Math/sqrt 25)` | |staticフィールド| `Math.PI` | `Math/PI` | |==="
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:284
 #, no-wrap
 msgid "Java Methods vs Functions"
-msgstr ""
+msgstr "Javaメソッド vs 関数"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:287
 msgid "Java methods are not Clojure functions"
-msgstr ""
+msgstr "JavaのメソッドはClojureの関数ではない"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:288
 msgid "Can't store them or pass them as arguments"
-msgstr ""
+msgstr "保持したり引数として渡したりすることはできない"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:289
 msgid "Can wrap them in functions when necessary"
-msgstr ""
+msgstr "必要な場合に関数にラップすることができる"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:294
@@ -642,6 +738,8 @@ msgid ""
 ";; make a function to invoke .length on arg\n"
 "(fn [obj] (.length obj))\n"
 msgstr ""
+";; 引数に対して .length を呼び出すための関数を作る\n"
+"(fn [obj] (.length obj))\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:297
@@ -650,18 +748,20 @@ msgid ""
 ";; same thing\n"
 "#(.length %)\n"
 msgstr ""
+";; 同じこと\n"
+"#(.length %)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:303
 msgid ""
 "Define a function `greet` that takes not arguments and prints \"Hello\". Replace the ___ with the implementation: "
 "`(defn greet [] ___)`"
-msgstr ""
+msgstr "引数をとらず「Hello」と出力する関数 `greet` を定義しよう。 ___ を実装で置き換えよう: `(defn greet [] ___)`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:305
 msgid "Redefine `greet` using `def`, first with the `fn` special form and then with the `#()` reader macro."
-msgstr ""
+msgstr "`greet` を最初は `fn` 特殊形式、次は `#()` リーダーマクロとともに `def` を使って再定義しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:309
@@ -670,6 +770,8 @@ msgid ""
 ";; using fn\n"
 "(def greet __)   \n"
 msgstr ""
+";; fn を使う\n"
+"(def greet __)   \n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:312
@@ -678,26 +780,28 @@ msgid ""
 ";; using #()\n"
 "(def greet __)\n"
 msgstr ""
+";; #() を使う\n"
+"(def greet __)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:315
 msgid "Define a function `greeting` which:"
-msgstr ""
+msgstr "次のような関数 `greeting` を定義しよう:"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:317
 msgid "Given no arguments, returns \"Hello, World!\""
-msgstr ""
+msgstr "引数を与えられなければ\"Hello, World!\"を返す"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:318
 msgid "Given one argument x, returns \"Hello, *x*!\""
-msgstr ""
+msgstr "1つの引数xを与えられると\"Hello, *x*!\"を返す"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:319
 msgid "Given two arguments x and y, returns \"*x*, *y*!\""
-msgstr ""
+msgstr "2つの引数xとyを与えられると\"*x*, *y*!\"を返す"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:323
@@ -706,12 +810,14 @@ msgid ""
 ";; Hint use the str function to concatenate strings\n"
 "(doc str)\n"
 msgstr ""
+";; ヒント 文字列を結合するのに str 関数を使う\n"
+"(doc str)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:325
 #, no-wrap
 msgid "(defn greeting ___)\n"
-msgstr ""
+msgstr "(defn greeting ___)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:330
@@ -722,17 +828,21 @@ msgid ""
 "(assert (= \"Hello, Clojure!\" (greeting \"Clojure\")))\n"
 "(assert (= \"Good morning, Clojure!\" (greeting \"Good morning\" \"Clojure\")))\n"
 msgstr ""
+";; テスト用 \n"
+"(assert (= \"Hello, World!\" (greeting)))\n"
+"(assert (= \"Hello, Clojure!\" (greeting \"Clojure\")))\n"
+"(assert (= \"Good morning, Clojure!\" (greeting \"Good morning\" \"Clojure\")))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:333
 msgid "Define a function `do-nothing` which takes a single argument `x` and returns it, unchanged."
-msgstr ""
+msgstr "単一の引数 `x` をとってそのまま返す関数 `do-nothing` を定義しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:336
 #, no-wrap
 msgid "(defn do-nothing [x] ___)\n"
-msgstr ""
+msgstr "(defn do-nothing [x] ___)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:338
@@ -740,25 +850,27 @@ msgid ""
 "In Clojure, this is the `identity` function. By itself, identity is not very useful, but it is sometimes necessary "
 "when working with higher-order functions."
 msgstr ""
+"Clojureでは、これは `identity` 関数だ。それ自体ではidentityはあまり役に立たないが、高階関数を扱う際に必要になることが"
+"ある。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:341
 #, no-wrap
 msgid "(source identity)\n"
-msgstr ""
+msgstr "(source identity)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:344
 msgid ""
 "Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the keyword `:"
 "thing`."
-msgstr ""
+msgstr "任意個の引数をとり、すべて無視してキーワード `:thing` を返す関数 `always-thing` を定義しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:347
 #, no-wrap
 msgid "(defn always-thing [__] ___)\n"
-msgstr ""
+msgstr "(defn always-thing [__] ___)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:350
@@ -766,12 +878,14 @@ msgid ""
 "Define a function `make-thingy` which takes a single argument `x`. It should return another function, which takes any "
 "number of arguments and always returns x."
 msgstr ""
+"単一の引数 `x` をとる関数 `make-thingy` を定義しよう。この関数は、任意個の引数をとって常にxを返すような別の関数を返す"
+"必要がある。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:353
 #, no-wrap
 msgid "(defn make-thingy [x] ___)\n"
-msgstr ""
+msgstr "(defn make-thingy [x] ___)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:360
@@ -784,28 +898,34 @@ msgid ""
 "  (assert (= n (f :foo)))\n"
 "  (assert (= n (apply f :foo (range)))))\n"
 msgstr ""
+";; テスト\n"
+"(let [n (rand-int Integer/MAX_VALUE)\n"
+"      f (make-thingy n)]\n"
+"  (assert (= n (f)))\n"
+"  (assert (= n (f :foo)))\n"
+"  (assert (= n (apply f :foo (range)))))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:362
 msgid "In Clojure, this is the `constantly` function."
-msgstr ""
+msgstr "Clojureでは、これは `constantly` 関数だ。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:365
 #, no-wrap
 msgid "(source constantly)\n"
-msgstr ""
+msgstr "(source constantly)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:368
 msgid "Define a function `triplicate` which takes another function and calls it three times, without any arguments."
-msgstr ""
+msgstr "別の関数をとって引数なしで3回呼び出す関数 `triplicate` を定義しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:371
 #, no-wrap
 msgid "(defn triplicate [f] ___)\n"
-msgstr ""
+msgstr "(defn triplicate [f] ___)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:374
@@ -814,6 +934,8 @@ msgid ""
 "number of arguments, applies `f` on them, and then calls `not` on the result. The `not` function in Clojure does "
 "logical negation."
 msgstr ""
+"単一の引数 `f` をとる関数 `opposite` を定義しよう。この関数は、任意個の引数をとって `f` を適用して結果に `not` を呼び"
+"出すような別の関数を返す必要がある。Clojureの `not` 関数は論理否定をする。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:378
@@ -822,11 +944,13 @@ msgid ""
 "(defn opposite [f]\n"
 "  (fn [& args] ___))\n"
 msgstr ""
+"(defn opposite [f]\n"
+"  (fn [& args] ___))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:380
 msgid "In Clojure, this is the complement function."
-msgstr ""
+msgstr "Clojureでは、これはcomplement関数だ。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:391
@@ -842,6 +966,15 @@ msgid ""
 "    ([x y] (not (f x y)))\n"
 "    ([x y & zs] (not (apply f x y zs)))))\n"
 msgstr ""
+"(defn complement\n"
+"  \"Takes a fn f and returns a fn that takes the same arguments as f,\n"
+"  has the same effects, if any, and returns the opposite truth value.\"\n"
+"  [f] \n"
+"  (fn \n"
+"    ([] (not (f)))\n"
+"    ([x] (not (f x)))\n"
+"    ([x y] (not (f x y)))\n"
+"    ([x y & zs] (not (apply f x y zs)))))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:394
@@ -849,6 +982,8 @@ msgid ""
 "Define a function `triplicate2` which takes another function and any number of arguments, then calls that function "
 "three times on those arguments. Re-use the function you defined in the earlier triplicate exercise."
 msgstr ""
+"別の関数と任意個の引数をとり、その関数を引数に3回適用する関数 `triplicate2` を定義しよう。前にtriplicateの問題で定義し"
+"た関数を再利用しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:398
@@ -857,6 +992,8 @@ msgid ""
 "(defn triplicate2 [f & args]\n"
 "  (triplicate ___))\n"
 msgstr ""
+"(defn triplicate2 [f & args]\n"
+"  (triplicate ___))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:401
@@ -864,23 +1001,25 @@ msgid ""
 "Using the http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html[java.lang.Math] class (`Math/pow`, `Math/cos`, "
 "`Math/sin`, `Math/PI`), demonstrate the following mathematical facts:"
 msgstr ""
+"http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html[java.lang.Math] クラス(`Math/pow`, `Math/cos`, `Math/"
+"sin`, `Math/PI`)を使って、次の数学的な事実を示そう:"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:402
 msgid "The cosine of pi is -1"
-msgstr ""
+msgstr "piのコサインは-1"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:403
 msgid "For some x, sin(x)^2 + cos(x)^2 = 1"
-msgstr ""
+msgstr "あるxについて sin(x)^2 + cos(x)^2 = 1"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:405
 msgid ""
 "Define a function that takes an HTTP URL as a string, fetches that URL from the web, and returns the content as a "
 "string."
-msgstr ""
+msgstr "HTTP URLを文字列としてとり、WebからそのURLで取得した内容を文字列として返す関数を定義しよう。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:407
@@ -888,6 +1027,8 @@ msgid ""
 "Hint: Using the http://docs.oracle.com/javase/8/docs/api/java/net/URL.html[java.net.URL] class and its `openStream` "
 "method. Then use the Clojure `slurp` function to get the content as a string."
 msgstr ""
+"ヒント: http://docs.oracle.com/javase/8/docs/api/java/net/URL.html[java.net.URL] クラスとその `openStream` を使う。そ"
+"して内容を文字列として得るためにClojureの `slurp` 関数を使う。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:411 en/content/guides/learn/functions.adoc:419
@@ -896,12 +1037,14 @@ msgid ""
 "(defn http-get [url]\n"
 "  ___)\n"
 msgstr ""
+"(defn http-get [url]\n"
+"  ___)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:413
 #, no-wrap
 msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
-msgstr ""
+msgstr "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:415
@@ -909,28 +1052,28 @@ msgid ""
 "In fact, the Clojure `slurp` function interprets its argument as a URL first before trying it as a file name. Write a "
 "simplified http-get:"
 msgstr ""
+"実は、Clojureの `slurp` 関数は引数をファイル名として解釈しようとする前に先にURLとして解釈する。単純化したhttp-getを書"
+"こう:"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:422
 msgid "Define a function `one-less-arg` that takes two arguments:"
-msgstr ""
+msgstr "2つの引数をとる関数 `one-less-arg` を定義しよう:"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:423
-#, fuzzy
-#| msgid "eduction"
 msgid "`f`, a function"
-msgstr "eduction"
+msgstr "`f`, 関数"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:424
 msgid "`x`, a value"
-msgstr ""
+msgstr "`x`, 値"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:426
 msgid "and returns another function which calls `f` on `x` plus any additional arguments. +"
-msgstr ""
+msgstr "そして `x` と追加の引数に対して `f` を呼び出すような別の関数を返す。 +"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:430
@@ -939,11 +1082,13 @@ msgid ""
 "(defn one-less-arg [f x]\n"
 "  (fn [& args] ___))\n"
 msgstr ""
+"(defn one-less-arg [f x]\n"
+"  (fn [& args] ___))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:432
 msgid "In Clojure, the `partial` function is a more general version of this."
-msgstr ""
+msgstr "Clojureでは、 `partial` 関数がこれをより一般化したものだ。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:434
@@ -951,11 +1096,13 @@ msgid ""
 "Define a function `two-fns` which takes two functions as arguments, `f` and `g`. It returns another function which "
 "takes one argument, calls `g` on it, then calls `f` on the result, and returns that."
 msgstr ""
+"2つの関数 `f` と `g` を引数としてとる関数 `two-fns` を定義しよう。この関数は、1つの引数をとって `g` を呼び出してからそ"
+"の結果に `f` を呼び出した結果を返すような別の関数を返す。"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:436
 msgid "That is, your function returns the composition of `f` and `g`."
-msgstr ""
+msgstr "つまり、その関数は `f` と `g` の合成を返す。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:440
@@ -964,3 +1111,5 @@ msgid ""
 "(defn two-fns [f g]\n"
 "  ___)\n"
 msgstr ""
+"(defn two-fns [f g]\n"
+"  ___)\n"

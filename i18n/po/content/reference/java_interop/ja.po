@@ -62,7 +62,7 @@ msgstr ""
 #: en/content/reference/java_interop.adoc:1 en/content/guides/learn/functions.adoc:268
 #, no-wrap
 msgid "Java Interop"
-msgstr ""
+msgstr "Javaとの相互運用"
 
 #. type: Plain text
 #: en/content/reference/java_interop.adoc:4
