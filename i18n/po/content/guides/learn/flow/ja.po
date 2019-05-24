@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2019-05-24 15:50+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -41,7 +41,7 @@ msgstr "toc::[]"
 #: en/content/guides/reader_conditionals.adoc:120 en/content/guides/learn/flow.adoc:285
 #, no-wrap
 msgid "Exception handling"
-msgstr ""
+msgstr "例外処理"
 
 #. type: Plain text
 #: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
@@ -53,18 +53,18 @@ msgstr "Alex Miller 2017-09-02"
 #: en/content/guides/learn/flow.adoc:1
 #, no-wrap
 msgid "Learn Clojure - Flow Control"
-msgstr ""
+msgstr "Clojureを学ぼう - フロー制御"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:15
 #, no-wrap
 msgid "Statements vs. Expressions"
-msgstr ""
+msgstr "文 vs. 式"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:18
 msgid "In Java, expressions return values, whereas statements do not."
-msgstr ""
+msgstr "Javaでは、式は値を返すが、文は値を返さない。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:29
@@ -79,6 +79,14 @@ msgid ""
 "}\n"
 "obj.someMethod(s);\n"
 msgstr ""
+"// \"if\"は値を返さないので文だ:\n"
+"String s;\n"
+"if (x > 10) {\n"
+"    s = \"greater\";\n"
+"} else {\n"
+"    s = \"greater or equal\";\n"
+"}\n"
+"obj.someMethod(s);\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:32
@@ -87,31 +95,33 @@ msgid ""
 "// Ternary operator is an expression; it returns a value:\n"
 "obj.someMethod(x > 10 ? \"greater\" : \"greater or equal\");\n"
 msgstr ""
+"// 三項演算子は式だ。なぜなら値を返すからだ。:\n"
+"obj.someMethod(x > 10 ? \"greater\" : \"greater or equal\");\n"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:34
 msgid ""
 "In Clojure, however, everything is an expression! _Everything_ returns a value, and a block of multiple expressions "
 "returns the last value. Expressions that exclusively perform side-effects return `nil`."
-msgstr ""
+msgstr "しかしClojureでは、あらゆるものが式なのだ! _あらゆるもの_ が値を返し、複数の式のブロックは最後の値を返す。副作用のみを実行する式は `nil` を返す。"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:35
 #, no-wrap
 msgid "Flow Control Expressions"
-msgstr ""
+msgstr "フロー制御式"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:38
 msgid "Accordingly, flow control operators are expressions, too!"
-msgstr ""
+msgstr "したがって、フロー制御のオペレータもまた式なのだ!"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:40
 msgid ""
 "Flow control operators are composable, so we can use them anywhere. This leads to less duplicate code, as well as "
 "fewer intermediate variables."
-msgstr ""
+msgstr "フロー制御のオペレータは組み合わせ可能なので、どこでも使うことができる。これにより、重複コードが減り、中間変数が少なくなる。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:42
@@ -121,19 +131,21 @@ msgid ""
 "aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from the Ground Up], or http://www.braveclojure.com/"
 "writing-macros/[Clojure for the Brave and True], among many other places."
 msgstr ""
+"フロー制御のオペレータはマクロによって拡張することもできる。マクロはユーザのコードによってコンパイラを拡張することを可能にする。今日はマクロについて議論しないが、詳しくは <<xref/../../../reference/macros#,Macros>>, https://\"\n"
+"\"aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from the Ground Up], or http://www.braveclojure.com/\" ほか多くの場所で読むことができる。"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:43
 #, no-wrap
 msgid "`if`"
-msgstr ""
+msgstr "`if`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:46
 msgid ""
 "`if` is the most important conditional expression - it consists of a condition, a \"then\", and an \"else\". `if` "
 "will only evaluate the branch selected by the conditional."
-msgstr ""
+msgstr "`if` は最も重要な制御式であり、条件と\"then\"と\"else\"で構成されている。 `if` は条件によって選ばれた分岐だけを評価する。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:51
@@ -142,6 +154,8 @@ msgid ""
 "user=> (str \"2 is \" (if (even? 2) \"even\" \"odd\"))\n"
 "2 is even\n"
 msgstr ""
+"user=> (str \"2 is \" (if (even? 2) \"even\" \"odd\"))\n"
+"2 is even\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:54
@@ -150,19 +164,21 @@ msgid ""
 "user=> (if (true? false) \"impossible!\") ;; else is optional\n"
 "nil\n"
 msgstr ""
+"user=> (if (true? false) \"impossible!\") ;; else is optional\n"
+"nil\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:56
 #, no-wrap
 msgid "Truth"
-msgstr ""
+msgstr "真"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:59
 msgid ""
 "In Clojure, all values are logically true or false. The only \"false\" values are `false` and `nil` - all other "
 "values are logically true."
-msgstr ""
+msgstr "Clojureでは、すべての値は論理的に真または偽のどちらかだ。 `false` と `nil` の値だけが「偽」であり、その他のすべての値は論理的に真だ。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:74
@@ -186,19 +202,19 @@ msgstr ""
 #: en/content/guides/learn/flow.adoc:76
 #, no-wrap
 msgid "`if` and `do`"
-msgstr ""
+msgstr "`if` と `do`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:79
 msgid ""
 "The `if` only takes a single expression for the \"then\" and \"else\". Use `do` to create larger blocks that are a "
 "single expression."
-msgstr ""
+msgstr "`if` は\"then\"と\"else\"に単一の式しかとらない。単一の式よりも大きなブロックを作るには `do` を使おう。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:81
 msgid "Note that the only reason to do this is if your bodies have side effects! (Why?)"
-msgstr ""
+msgstr "このようにする唯一の理由は本体部が副作用を持つからであることに注意しよう! (なぜか分かるだろうか?)"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:89
@@ -210,12 +226,17 @@ msgid ""
 "  (do (println \"odd\")\n"
 "      false))\n"
 msgstr ""
+"(if (even? 5)\n"
+"  (do (println \"even\")\n"
+"      true)\n"
+"  (do (println \"odd\")\n"
+"      false))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:92
 #, no-wrap
 msgid "`when`"
-msgstr ""
+msgstr "`when`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:95
@@ -223,12 +244,12 @@ msgid ""
 "`when` is an `if` with only a `then` branch. It checks a condition and then evaluates any number of statements as a "
 "body (so no `do` is required). The value of the last expression is returned. If the condition is false, nil is "
 "returned."
-msgstr ""
+msgstr "`when` は `then` の分岐だけを持つ `if` だ。条件をチェックし、本体部として任意個の文を評価する(なので `do` は必要ない)。 最後の式の値が返る。条件が偽の場合、 nilが返る。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:97
 msgid "`when` communicates to a reader that there is no \"else\" branch.\t"
-msgstr ""
+msgstr "`when` は読み手に\"else\"の分岐がないことを伝える。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:102
@@ -237,19 +258,21 @@ msgid ""
 "(when (neg? x)\n"
 "  (throw (RuntimeException. (str \"x must be positive: \" x))))\n"
 msgstr ""
+"(when (neg? x)\n"
+"  (throw (RuntimeException. (str \"x must be positive: \" x))))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:104
 #, no-wrap
 msgid "`cond`"
-msgstr ""
+msgstr "`cond`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:107
 msgid ""
 "`cond` is a series of tests and expressions. Each test is evaluated in order and the expression is evaluated and "
 "returned for the first true test."
-msgstr ""
+msgstr "`cond` はテストと式が並んだものだ。個々のテストは順に評価され、最初に真になるテストに対応する式が評価されて返る。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:114
@@ -260,19 +283,23 @@ msgid ""
 "    (< x 2) \"x is less than 2\"\n"
 "    (< x 10) \"x is less than 10\"))\n"
 msgstr ""
+"(let [x 5]\n"
+"  (cond\n"
+"    (< x 2) \"x is less than 2\"\n"
+"    (< x 10) \"x is less than 10\"))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:116
 #, no-wrap
 msgid "`cond` and `else`"
-msgstr ""
+msgstr "`cond` と `else`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:119
 msgid ""
 "If no test is satisfied, nil is returned. A common idiom is to use a final test of `:else`. Keywords (like `:else`) "
 "always evaluate to true so this will always be selected as a default."
-msgstr ""
+msgstr "いずれのテストも満たさない場合、nilが返る。最後のテストに `:else` を使うのが一般的なイディオムだ。 `:else` のようなキーワードは常に真と評価されるため、これが常にデフォルトとして選ばれる。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:127
@@ -284,24 +311,29 @@ msgid ""
 "    (< x 10) \"x is less than 10\"\n"
 "    :else  \"x is greater than or equal to 10\"))\n"
 msgstr ""
+"(let [x 11]\n"
+"  (cond\n"
+"    (< x 2)  \"x is less than 2\"\n"
+"    (< x 10) \"x is less than 10\"\n"
+"    :else  \"x is greater than or equal to 10\"))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:129
 #, no-wrap
 msgid "`case`"
-msgstr ""
+msgstr "`case`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:132
 msgid ""
 "`case` compares an argument to a series of values to find a match. This is done in constant (not linear) time! "
 "However, each value must be a compile-time literal (numbers, strings, keywords, etc)."
-msgstr ""
+msgstr "`case` は引数を一連の値と比較し一致するものを探す。これは(線形ではなく)定数時間で終わる! しかし、個々の値はコンパイル時リテラル(数値、文字列、キーワードなど)でなければならない。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:134
 msgid "Unlike `cond`, `case` will throw an exception if no value matches."
-msgstr ""
+msgstr "`cond`, `case` と違い、いずれの値にも一致しないと例外をスローする。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:142
@@ -313,6 +345,11 @@ msgid ""
 "           10 \"x is 10\"))\n"
 "#'user/foo\n"
 msgstr ""
+"user=> (defn foo [x]\n"
+"         (case x\n"
+"           5 \"x is 5\"\n"
+"           10 \"x is 10\"))\n"
+"#'user/foo\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:145
@@ -321,6 +358,8 @@ msgid ""
 "user=> (foo 10)\n"
 "x is 10\n"
 msgstr ""
+"user=> (foo 10)\n"
+"x is 10\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:148
@@ -329,17 +368,19 @@ msgid ""
 "user=> (foo 11)\n"
 "IllegalArgumentException No matching clause: 11\n"
 msgstr ""
+"user=> (foo 11)\n"
+"IllegalArgumentException No matching clause: 11\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:150
 #, no-wrap
 msgid "`case` with `else`-expression"
-msgstr ""
+msgstr "`else` 式付きの `case`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:153
 msgid "`case` can have a final trailing expression that will be evaluated if no test matches."
-msgstr ""
+msgstr "`case` は最後にひとつの式を持つことができ、いずれのテストも満たさない場合に評価される。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:162
@@ -352,6 +393,12 @@ msgid ""
 "           \"x isn't 5 or 10\"))\n"
 "#'user/foo\n"
 msgstr ""
+"user=> (defn foo [x]\n"
+"         (case x\n"
+"           5 \"x is 5\"\n"
+"           10 \"x is 10\"\n"
+"           \"x isn't 5 or 10\"))\n"
+"#'user/foo\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:165
@@ -360,28 +407,30 @@ msgid ""
 "user=> (foo 11)\n"
 "x isn't 5 or 10\n"
 msgstr ""
+"user=> (foo 11)\n"
+"x isn't 5 or 10\n"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:167
 #, no-wrap
 msgid "Iteration for Side Effects"
-msgstr ""
+msgstr "副作用のための繰り返し"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:169
 #, no-wrap
 msgid "`dotimes`"
-msgstr ""
+msgstr "`dotimes`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:172
 msgid "Evaluate expression _n_ times"
-msgstr ""
+msgstr "式を _n_ 回評価する"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:173 en/content/guides/learn/flow.adoc:189 en/content/guides/learn/flow.adoc:205
 msgid "Returns `nil`"
-msgstr ""
+msgstr "`nil` を返す"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:182
@@ -394,22 +443,28 @@ msgid ""
 "2\n"
 "nil\n"
 msgstr ""
+"user=> (dotimes [i 3]\n"
+"         (println i))\n"
+"0\n"
+"1\n"
+"2\n"
+"nil\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:184
 #, no-wrap
 msgid "`doseq`"
-msgstr ""
+msgstr "`doseq`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:187
 msgid "Iterates over a sequence"
-msgstr ""
+msgstr "シーケンスに対して繰り返す"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:188
 msgid "If a lazy sequence, forces evaluation"
-msgstr ""
+msgstr "遅延シーケンスの場合、評価を強制する"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:198
@@ -422,22 +477,28 @@ msgid ""
 "2\n"
 "nil\n"
 msgstr ""
+"user=> (doseq [n (range 3)]\n"
+"         (println n))\n"
+"0\n"
+"1\n"
+"2\n"
+"nil\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:200
 #, no-wrap
 msgid "`doseq` with multiple bindings"
-msgstr ""
+msgstr "複数の束縛を持った `doseq`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:203
 msgid "Similar to nested `foreach` loops"
-msgstr ""
+msgstr "ネストした `foreach` のループに似ている"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:204
 msgid "Processes all permutations of sequence content"
-msgstr ""
+msgstr "シーケンスの中身のすべての順列を処理する"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:218
@@ -454,28 +515,37 @@ msgid ""
 "[:b 2]\n"
 "nil\n"
 msgstr ""
+"user=> (doseq [letter [:a :b]\n"
+"               number (range 3)] ; list of 0, 1, 2\n"
+"         (prn [letter number]))\n"
+"[:a 0]\n"
+"[:a 1]\n"
+"[:a 2]\n"
+"[:b 0]\n"
+"[:b 1]\n"
+"[:b 2]\n"
+"nil\n"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:220
-#, fuzzy, no-wrap
-#| msgid "Clojure CLR"
+#, no-wrap
 msgid "Clojure's `for`"
-msgstr "Clojure CLR"
+msgstr "Clojureの `for`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:223
 msgid "List comprehension, *not* a for-loop"
-msgstr ""
+msgstr "forループ *ではなく* リスト内包表記"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:224
 msgid "Generator function for sequence permutation"
-msgstr ""
+msgstr "シーケンスを順に取り出すためのジェネレータ関数"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:225
 msgid "Bindings behave like `doseq`"
-msgstr ""
+msgstr "束縛は `doseq` と同じように振る舞う"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:232
@@ -486,56 +556,67 @@ msgid ""
 "         [letter number])\n"
 "([:a 0] [:a 1] [:a 2] [:b 0] [:b 1] [:b 2])\n"
 msgstr ""
+"user=> (for [letter [:a :b]\n"
+"             number (range 3)] ; list of 0, 1, 2\n"
+"         [letter number])\n"
+"([:a 0] [:a 1] [:a 2] [:b 0] [:b 1] [:b 2])\n"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:235
-#, fuzzy, no-wrap
-#| msgid "Recursive Looping"
+#, no-wrap
 msgid "Recursion"
-msgstr "再帰的なループ"
+msgstr "再帰"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:237
-#, fuzzy, no-wrap
-#| msgid "Refs and Transactions"
+#, no-wrap
 msgid "Recursion and Iteration"
-msgstr "Refとトランザクション"
+msgstr "再帰と繰り返し"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:240
 msgid "Clojure provides recur and the sequence abstraction"
-msgstr ""
+msgstr "Clojureはrecurとシーケンス抽象を提供している"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:242
 msgid "`recur` is \"classic\" recursion ** Consumers don't control it, considered a lower-level facility"
 msgstr ""
+"`recur` は「古典的な」再帰だ\n"
+"** 利用者がコントロールできず、低レベルな機能と考えられる"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:244
 msgid "Sequences represent iteration as values ** Consumers can partially iterate"
 msgstr ""
+"シーケンスは繰り返しを値として表現する\n"
+"** 利用者が部分的に繰り返すことができる"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:246
 msgid "Reducers represent iteration as function composition ** Added in Clojure 1.5, not covered here"
 msgstr ""
+"reducerは繰り返しを関数合成として表現する\n"
+"** Clojure 1.5で追加されたが、ここでは扱わない"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:247
 #, no-wrap
 msgid "`loop` and `recur`"
-msgstr ""
+msgstr "`loop` と `recur`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:252
 msgid "Functional looping construct ** `loop` defines bindings ** `recur` re-executes `loop` with new bindings"
 msgstr ""
+"関数型のループ構文\n"
+"** `loop` は束縛を定義する\n"
+"** `recur` は新しい束縛で `loop` を再実行する"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:253
 msgid "Prefer higher-order library functions instead"
-msgstr ""
+msgstr "むしろライブラリの高階関数を使うようにしよう"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:260
@@ -546,69 +627,72 @@ msgid ""
 "    (recur (inc i))\n"
 "    i))\n"
 msgstr ""
+"(loop [i 0]\n"
+"  (if (< i 10)\n"
+"    (recur (inc i))\n"
+"    i))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:262
-#, fuzzy, no-wrap
-#| msgid "deftype and defrecord"
+#, no-wrap
 msgid "`defn` and `recur`"
-msgstr "deftypeとdefrecord"
+msgstr "`defn` と `recur`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:265
 msgid "Function arguments are implicit `loop` bindings"
-msgstr ""
+msgstr "関数の引数は暗黙的な `loop` の束縛だ"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:272
-#, fuzzy, no-wrap
-#| msgid ""
-#| "(defn fib [n]\n"
-#| "  (if (<= n 1)\n"
-#| "    n\n"
-#| "    (+ (fib (dec n)) (fib (- n 2)))))\n"
+#, no-wrap
 msgid ""
 "(defn increase [i]\n"
 "  (if (< i 10)\n"
 "    (recur (inc i))\n"
 "    i))\n"
 msgstr ""
-"(defn fib [n]\n"
-"  (if (<= n 1)\n"
-"    n\n"
-"    (+ (fib (dec n)) (fib (- n 2)))))\n"
+"(defn increase [i]\n"
+"  (if (< i 10)\n"
+"    (recur (inc i))\n"
+"    i))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:274
 #, no-wrap
 msgid "`recur` for recursion"
-msgstr ""
+msgstr "再帰のための `recur`"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:278
 msgid "`recur` must be in \"tail position\" ** The last expression in a branch"
 msgstr ""
+"`recur` は「末尾位置」になければならない\n"
+"** 分岐の最後の式"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:281
 msgid "`recur` must provide values for all bound symbols by position ** Loop bindings ** defn/fn arguments"
 msgstr ""
+"`recur` はすべての束縛シンボルに対応する値を与えなければならない\n"
+"** loopの束縛\n"
+"** defn/fnの引数"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:282
 msgid "Recursion via `recur` does not consume stack"
-msgstr ""
+msgstr "`recur` による再帰はスタックを消費しない"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:283
 #, no-wrap
 msgid "Exceptions"
-msgstr ""
+msgstr "例外"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:288
 msgid "`try`/`catch`/`finally` as in Java"
-msgstr ""
+msgstr "Java と同じような `try`/`catch`/`finally`"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:297
@@ -621,12 +705,18 @@ msgid ""
 "  (finally\n"
 "    (println \"cleanup\")))\n"
 msgstr ""
+"(try\n"
+"  (/ 2 1)\n"
+"  (catch ArithmeticException e\n"
+"    \"divide by zero\")\n"
+"  (finally\n"
+"    (println \"cleanup\")))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:299
 #, no-wrap
 msgid "Throwing exceptions"
-msgstr ""
+msgstr "例外をスローする"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:306
@@ -636,22 +726,27 @@ msgid ""
 "  (throw (Exception. \"something went wrong\"))\n"
 "  (catch Exception e (.getMessage e)))\n"
 msgstr ""
+"(try\n"
+"  (throw (Exception. \"something went wrong\"))\n"
+"  (catch Exception e (.getMessage e)))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:308
 #, no-wrap
 msgid "Exceptions with Clojure data"
-msgstr ""
+msgstr "Clojureのデータを持った例外"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:311
 msgid "`ex-info` takes a message and a map"
-msgstr ""
+msgstr "`ex-info` はメッセージとマップをとる"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:313
 msgid "`ex-data` gets the map back out ** Or `nil` if not created with `ex-info`"
 msgstr ""
+"`ex-data` はそのマップを取り出す\n"
+"** もしくは `ex-info` で作られたものでなければ `nil`"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:320
@@ -662,12 +757,16 @@ msgid ""
 "  (catch Exception e\n"
 "    (prn (:detail (ex-data e)))))\n"
 msgstr ""
+"(try\n"
+"  (throw (ex-info \"There was a problem\" {:detail 42}))\n"
+"  (catch Exception e\n"
+"    (prn (:detail (ex-data e)))))\n"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:322
 #, no-wrap
 msgid "`with-open`"
-msgstr ""
+msgstr "`with-open`"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:331
@@ -679,6 +778,11 @@ msgid ""
 "    (finally\n"
 "      (.close f))))\n"
 msgstr ""
+"(let [f (clojure.java.io/writer \"/tmp/new\")]\n"
+"  (try\n"
+"    (.write f \"some text\")\n"
+"    (finally\n"
+"      (.close f))))\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:335
@@ -688,3 +792,6 @@ msgid ""
 "(with-open [f (clojure.java.io/writer \"/tmp/new\")]\n"
 "  (.write f \"some text\"))\n"
 msgstr ""
+";; このように書ける:\n"
+"(with-open [f (clojure.java.io/writer \"/tmp/new\")]\n"
+"  (.write f \"some text\"))\n"
