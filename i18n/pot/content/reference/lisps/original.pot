@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/transients.adoc:4
 #: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
 #: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4
 #: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
 #: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
+#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4
+#: en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
@@ -53,116 +53,116 @@ msgid "Differences with other Lisps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:14
+#: en/content/reference/lisps.adoc:16
 msgid ""
 "This information is provided for programmers familiar with Common Lisp or "
 "Scheme."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:16
+#: en/content/reference/lisps.adoc:18
 msgid "Clojure is case sensitive"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:17
+#: en/content/reference/lisps.adoc:19
 msgid "Clojure is a Lisp-1"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:18
+#: en/content/reference/lisps.adoc:20
 msgid "() is not the same as nil"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:19
+#: en/content/reference/lisps.adoc:21
 msgid "The reader is side-effect free"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:20
+#: en/content/reference/lisps.adoc:22
 msgid "Keywords are not Symbols"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:21
+#: en/content/reference/lisps.adoc:23
 msgid "Symbols are not storage locations (see Var)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:22
+#: en/content/reference/lisps.adoc:24
 msgid "_**nil**_ is not a Symbol"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:23
+#: en/content/reference/lisps.adoc:25
 msgid "t is not syntax, use _**true**_"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:24
+#: en/content/reference/lisps.adoc:26
 msgid "The read table is currently not accessible to user programs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:25
+#: en/content/reference/lisps.adoc:27
 msgid "_**let**_ binds sequentially"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:26
+#: en/content/reference/lisps.adoc:28
 msgid "_**do**_ is not a looping construct"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:27
+#: en/content/reference/lisps.adoc:29
 msgid "There is no tail-call optimization, use _**recur**_."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:28
+#: en/content/reference/lisps.adoc:30
 msgid "syntax-quote does symbol resolution, so `x is not the same as 'x."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:29
+#: en/content/reference/lisps.adoc:31
 msgid "` has auto-gensyms."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:30
+#: en/content/reference/lisps.adoc:32
 msgid "~ is unquote ',' is whitespace"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:31
+#: en/content/reference/lisps.adoc:33
 msgid "There is reader syntax for maps, vectors, and sets"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:32
+#: en/content/reference/lisps.adoc:34
 msgid ""
 "_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not "
 "concrete cons cells"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:33
+#: en/content/reference/lisps.adoc:35
 msgid "Most data structures are immutable"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:34
+#: en/content/reference/lisps.adoc:36
 msgid "lambda is _**fn**_, and supports overloading by arity"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:35
+#: en/content/reference/lisps.adoc:37
 msgid "_**pass:[=]**_ is the equality predicate"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:36
+#: en/content/reference/lisps.adoc:38
 msgid ""
 "Global Vars can be dynamically rebound (if declared dynamic) without "
 "interfering with lexical local bindings. No special declarations are "
@@ -172,7 +172,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:37
+#: en/content/reference/lisps.adoc:39
 msgid ""
 "No letrec, labels or flet - use (fn name [args]...) for self-reference, "
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
@@ -180,28 +180,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:38
+#: en/content/reference/lisps.adoc:40
 msgid ""
 "In Clojure _**nil**_ means 'nothing'. It signifies the absence of a value, "
 "of any type, and is not specific to lists or sequences."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:39
+#: en/content/reference/lisps.adoc:41
 msgid ""
 "Empty collections are distinct from _**nil**_. Clojure does not equate "
 "_**nil**_ and '()."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:40
+#: en/content/reference/lisps.adoc:42
 msgid ""
 "_**false**_ means one of the two possible boolean values, the other being "
 "_**true**_"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:41
+#: en/content/reference/lisps.adoc:43
 msgid ""
 "There is more to collections than lists. You can have instances of empty "
 "collections, some of which have literal support ([], {}, and ()). Thus there "
@@ -209,13 +209,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:42
+#: en/content/reference/lisps.adoc:44
 msgid ""
 "Coming from Scheme, _**nil**_ may map most closely to your notion of #f."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:43
+#: en/content/reference/lisps.adoc:45
 msgid ""
 "A big difference in Clojure, is sequences. Sequences are not specific "
 "collections, esp. they are not necessarily concrete lists. When you ask an "
@@ -227,7 +227,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:44
+#: en/content/reference/lisps.adoc:46
 msgid ""
 "Some of the sequence functions correspond to functions from Scheme and CL "
 "that there manipulated only pairs/conses ('lists') and returned sentinel "
@@ -240,17 +240,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:45
+#: en/content/reference/lisps.adoc:47
 msgid ""
 "It helps to distinguish collections/data-structures and seqs/iteration. In "
 "both CL and Scheme they are conflated, in Clojure they are separate."
 msgstr ""
 
-#. type: Plain text
-#: en/content/reference/lisps.adoc:59
+#. type: Table
+#: en/content/reference/lisps.adoc:61
 #, no-wrap
 msgid ""
-"|===\n"
 "|   | Clojure | Common Lisp | Scheme | Java |\n"
 "| Has nil? | nil - means 'nothing' | nil - means false or empty list | - | null |\n"
 "| Has true? | true | - | #t | true (primitive) |\n"
@@ -262,5 +261,4 @@ msgid ""
 "| Host null: | nil | NA | NA | NA |\n"
 "| Host true: | true (boxed) | NA | NA | NA |\n"
 "| Host false: | false (boxed) | NA | NA | NA |\n"
-"|===\n"
 msgstr ""

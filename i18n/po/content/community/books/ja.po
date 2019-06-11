@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -37,240 +37,169 @@ msgstr ""
 msgid "_Listed in order of descending release date of newest edition._"
 msgstr ""
 
-#. type: Plain text
-#: en/content/community/books.adoc:14 en/content/community/books.adoc:175 en/content/community/companies.adoc:14
-#: en/content/community/companies.adoc:15
-msgid "|==="
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:19
+#. type: Table
+#: en/content/community/books.adoc:175
+#, no-wrap
 msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51Bvd25CstL._SL160.jpg[Programming Clojure 3rd edition,link=\"http://a."
-"co/bSxW6A6\"] | http://a.co/bSxW6A6[Programming Clojure 3rd edition] + by Alex Miller, Stuart Halloway, Aaron Bedra + "
-"Feb 21, 2018"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:24
-msgid ""
-"| image::https://s3.amazonaws.com/titlepages.leanpub.com/elementsofclojure/small[Elements of Clojure,link=\"https://"
-"leanpub.com/elementsofclojure\"] | https://leanpub.com/elementsofclojure[Elements of Clojure] + by Zachary Tellman + "
-"Sep 27, 2017"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:29
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/41k50H6VpaL._SL160.jpg[ClojureScript Unraveled,link=\"http://a.co/"
-"cDfN4n4\"] | http://a.co/cDfN4n4[Quick Clojure: Effective Functional Programming] + by Mark McDonnell + Aug 23, 2017"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:34
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/518xLvhHZ1L._SL160.jpg[Web Development with Clojure,link=\"http://a.co/"
-"c2gI4l2\"] | http://a.co/c2gI4l2[Web Development with Clojure] + by Dmitri Sotnikov + Aug 23, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:39
-msgid ""
-"| image::https://s3.amazonaws.com/titlepages.leanpub.com/clojurescript-unraveled/small[ClojureScript Unraveled,link="
-"\"https://leanpub.com/clojurescript-unraveled\"] | https://leanpub.com/clojurescript-unraveled[ClojureScript "
-"Unraveled] + by Andrey Antukh, Alejandro Gómez + Jul 25, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:44
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51EwRiXh4ZL._SL160.jpg[Learning ClojureScript, link=\"http://a."
-"co/2X3MJn2\"] | http://a.co/2X3MJn2[Learning ClojureScript] + by W. David Jarvis, Rafik Naccache, Allen Rohner + Jun "
-"30, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:49
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51iq-PKIZ8L._SL160.jpg[Professional Clojure, link=\"http://a.co/"
-"bSHZ7X3\"] | http://a.co/bSHZ7X3[Professional Clojure] + by Jeremy Anderson, Michael Gaare, Justin Holguín, Nick "
-"Bailey, and Timothy Pratley + Jun 7, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:54
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/61TJZjnjO0L._SL160.jpg[Mastering Clojure, link=\"http://a.co/bTLhJ2d"
-"\"] | http://a.co/bTLhJ2d[Mastering Clojure] + by Akhil Wali + Mar 28, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:59
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/61p47dd81cL._SL160.jpg[Clojure for Java Developers, link=\"http://a."
-"co/029aVrm\"] | http://a.co/029aVrm[Clojure for Java Developers] + by Eduardo Diaz + Feb 23, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:64
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51ofF2ckdkL._SL160.jpg[Clojure for Finance, link=\"http://a.co/fbHnhEM"
-"\"] | http://a.co/fbHnhEM[Clojure for Finance] + by Timothy Washington + Jan 11, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:69
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51QWOEjmtIL._SL160.jpg[Clojure In Action, link=\"http://a.co/a4hDbTn"
-"\"] | http://a.co/a4hDbTn[Clojure In Action] + by Amit Rathore + Jan 1, 2016"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:74
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/6112vbQYDLL._SL160.jpg[Clojure for the Brave and True,link=\"http://a."
-"co/bsviqV7\"] | http://a.co/bsviqV7[Clojure for the Brave and True] + by Daniel Higginbotham + Oct 23, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:79
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51aMgNS%2BK7L._SL160.jpg[Clojure Recipes,link=\"http://a.co/clSHVQi\"] "
-"| http://a.co/clSHVQi[Clojure Recipes] + by Julian Gamble + Oct 23, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:84
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/41iH5aTHB3L._SL160.jpg[Clojure Applied,link=\"http://a.co/1HL2XPF\"] | "
-"http://a.co/1HL2XPF[Clojure Applied: From Practice to Practitioner] + by Ben Vandgrift, Alex Miller + Sept 6, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:89
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51ki-47i6bL._SL160.jpg[Clojure for Data Science,link=\"http://a.co/"
-"idtKjhS\"] | http://a.co/idtKjhS[Clojure for Data Science] + by Henry Garner + Sept 3, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:94
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51Nym1wJXVL._SL160.jpg[Clojure High Performance Programming,link="
-"\"http://a.co/7adcmsl\"] | http://a.co/7adcmsl[Clojure High Performance Programming] + by Shantanu Kumar + Sept 1, "
-"2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:99
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/515vh5czqnL._SL160.jpg[Clojure Data Structures and Algorithms,link="
-"\"http://a.co/g7JAFAS\"] | http://a.co/g7JAFAS[Clojure Data Structures and Algorithms] + by Rafik Naccache + Aug 19, "
-"2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:104
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/5122uV93jfL._SL160.jpg[Living Clojure,link=\"http://a.co/1m2Zt4p\"] | "
-"http://a.co/1m2Zt4p[Living Clojure] + by Carin Meier + Apr 30, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:109
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51l1oGz9N7L._SL160.jpg[Clojure Reactive Programming,link=\"http://a.co/"
-"fhyaFka\"] | http://a.co/fhyaFka[Clojure Reactive Programming] + by Leonardo Borges + Mar 24, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:114
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51XnilmUaIL._SL160.jpg[Clojure Web Development Essentials,link="
-"\"http://a.co/2FlRxd5\"] | http://a.co/2FlRxd5[Clojure Web Development Essentials] + by Ryan Baldwin + Feb 16, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:119
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51-B3kElSiL._SL160.jpg[Clojure Data Analysis Cookbook, link=\"http://a."
-"co/gIwPEkt\"] | http://a.co/gIwPEkt[Clojure Data Analysis Cookbook] + by Eric Rochester + Jan 22, 2015"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:124
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51nhUEYSLhL._SL160.jpg[Mastering Clojure Macros,link=\"http://a."
-"co/4VjjiQJ\"] | http://a.co/4VjjiQJ[Mastering Clojure Macros] + by Colin Jones + Sept 5, 2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:129
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/518RxlXpXsL._SL160.jpg[The Joy of Clojure,link=\"http://a.co/evdNcOs"
-"\"] | http://a.co/evdNcOs[The Joy of Clojure] + by Michael Fogus, Chris Houser + Jun 13, 2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:134
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51gyxyvmX3L._SL160.jpg[Mastering Clojure Data Analysis,link=\"http://a."
-"co/bYwhMwH\"] | http://a.co/bYwhMwH[Mastering Clojure Data Analysis] + by Eric Rochester + May 26, 2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:139
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51Af%2B5qKOeL._SL160.jpg[Clojure for Machine Learning,link=\"http://a."
-"co/7PRmDOK\"] | http://a.co/7PRmDOK[Clojure for Machine Learning] + by Akhil Wali + Apr 24, 2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:144
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51NPZu-5PiL._SL160.jpg[Clojure Cookbook, link=\"http://a.co/1K6SZSI\"] "
-"| http://a.co/1K6SZSI[Clojure Cookbook] + by Luke VanderHart and Ryan Neufeld + Mar 24, 2014"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:149
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/515hwMhZELL._SL160.jpg[Clojure for Domain-specific Languages,link="
-"\"http://a.co/3rwXJkx\"] | http://a.co/3rwXJkx[Clojure for Domain-specific Languages] + by Ryan Kelker + Dec 18, 2013"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:154
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51i1Cn-IqdL._SL160.jpg[Functional Programming Patterns in Scala and "
-"Clojure,link=\"http://a.co/2J3jvLX\"] | http://a.co/2J3jvLX[Functional Programming Patterns in Scala and Clojure] + "
-"by Michael Bevilacqua-Linn + Nov 2, 2013"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:159
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51KgF%2B-38WL._SL160.jpg[ClojureScript: Up and Running,link=\"http://a."
-"co/74IUDUu\"] | http://a.co/74IUDUu[ClojureScript: Up and Running] + by Stuart Sierra, Luke VanderHart + Nov 10, 2012"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:164
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/41sY2b6MKiL._SL160.jpg[Clojure Programming,link=\"http://a.co/jiaX8tX"
-"\"] | http://a.co/jiaX8tX[Clojure Programming] + by Chas Emerick, Brian Carper, Christophe Grand + Apr 22, 2012"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:169
-msgid ""
-"| image::http://clojure-buch.de/cover.jpg[Clojure,link=\"http://clojure-buch.de/\",width=130] | http://clojure-buch."
-"de/[Clojure] + by Stefan Kamphausen, Tim Oliver Kaiser + Sep 20, 2010"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/books.adoc:174
-msgid ""
-"| image::http://ecx.images-amazon.com/images/I/51dWGdAPwUL._SL160.jpg[Practical Clojure, link=\"http://a.co/"
-"fWbYqs5\"] | http://a.co/fWbYqs5[Practical Clojure] + by Luke VanderHart, Stuart Sierra + Jun 1, 2010"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51Bvd25CstL._SL160.jpg[Programming Clojure 3rd edition,link=\"http://a.co/bSxW6A6\"]\n"
+"| http://a.co/bSxW6A6[Programming Clojure 3rd edition] +\n"
+"by Alex Miller, Stuart Halloway, Aaron Bedra +\n"
+"Feb 21, 2018\n"
+"\n"
+"| image::https://s3.amazonaws.com/titlepages.leanpub.com/elementsofclojure/small[Elements of Clojure,link=\"https://leanpub.com/elementsofclojure\"]\n"
+"| https://leanpub.com/elementsofclojure[Elements of Clojure] +\n"
+"by Zachary Tellman +\n"
+"Sep 27, 2017\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/41k50H6VpaL._SL160.jpg[ClojureScript Unraveled,link=\"http://a.co/cDfN4n4\"]\n"
+"| http://a.co/cDfN4n4[Quick Clojure: Effective Functional Programming] +\n"
+"by Mark McDonnell +\n"
+"Aug 23, 2017\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/518xLvhHZ1L._SL160.jpg[Web Development with Clojure,link=\"http://a.co/c2gI4l2\"]\n"
+"| http://a.co/c2gI4l2[Web Development with Clojure] +\n"
+"by Dmitri Sotnikov +\n"
+"Aug 23, 2016\n"
+"\n"
+"| image::https://s3.amazonaws.com/titlepages.leanpub.com/clojurescript-unraveled/small[ClojureScript Unraveled,link=\"https://leanpub.com/clojurescript-unraveled\"]\n"
+"| https://leanpub.com/clojurescript-unraveled[ClojureScript Unraveled] +\n"
+"by Andrey Antukh, Alejandro Gómez +\n"
+"Jul 25, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51EwRiXh4ZL._SL160.jpg[Learning ClojureScript, link=\"http://a.co/2X3MJn2\"]\n"
+"| http://a.co/2X3MJn2[Learning ClojureScript] +\n"
+"by W. David Jarvis, Rafik Naccache, Allen Rohner +\n"
+"Jun 30, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51iq-PKIZ8L._SL160.jpg[Professional Clojure, link=\"http://a.co/bSHZ7X3\"]\n"
+"| http://a.co/bSHZ7X3[Professional Clojure] +\n"
+"by Jeremy Anderson, Michael Gaare, Justin Holguín, Nick Bailey, and Timothy Pratley +\n"
+"Jun 7, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/61TJZjnjO0L._SL160.jpg[Mastering Clojure, link=\"http://a.co/bTLhJ2d\"]\n"
+"| http://a.co/bTLhJ2d[Mastering Clojure] +\n"
+"by Akhil Wali +\n"
+"Mar 28, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/61p47dd81cL._SL160.jpg[Clojure for Java Developers, link=\"http://a.co/029aVrm\"]\n"
+"| http://a.co/029aVrm[Clojure for Java Developers] +\n"
+"by Eduardo Diaz +\n"
+"Feb 23, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51ofF2ckdkL._SL160.jpg[Clojure for Finance, link=\"http://a.co/fbHnhEM\"]\n"
+"| http://a.co/fbHnhEM[Clojure for Finance] +\n"
+"by Timothy Washington +\n"
+"Jan 11, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51QWOEjmtIL._SL160.jpg[Clojure In Action, link=\"http://a.co/a4hDbTn\"]\n"
+"| http://a.co/a4hDbTn[Clojure In Action] +\n"
+"by Amit Rathore +\n"
+"Jan 1, 2016\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/6112vbQYDLL._SL160.jpg[Clojure for the Brave and True,link=\"http://a.co/bsviqV7\"]\n"
+"| http://a.co/bsviqV7[Clojure for the Brave and True] +\n"
+"by Daniel Higginbotham +\n"
+"Oct 23, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51aMgNS%2BK7L._SL160.jpg[Clojure Recipes,link=\"http://a.co/clSHVQi\"]\n"
+"| http://a.co/clSHVQi[Clojure Recipes] +\n"
+"by Julian Gamble +\n"
+"Oct 23, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/41iH5aTHB3L._SL160.jpg[Clojure Applied,link=\"http://a.co/1HL2XPF\"]\n"
+"| http://a.co/1HL2XPF[Clojure Applied: From Practice to Practitioner] +\n"
+"by Ben Vandgrift, Alex Miller +\n"
+"Sept 6, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51ki-47i6bL._SL160.jpg[Clojure for Data Science,link=\"http://a.co/idtKjhS\"]\n"
+"| http://a.co/idtKjhS[Clojure for Data Science] +\n"
+"by Henry Garner +\n"
+"Sept 3, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51Nym1wJXVL._SL160.jpg[Clojure High Performance Programming,link=\"http://a.co/7adcmsl\"]\n"
+"| http://a.co/7adcmsl[Clojure High Performance Programming] +\n"
+"by Shantanu Kumar +\n"
+"Sept 1, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/515vh5czqnL._SL160.jpg[Clojure Data Structures and Algorithms,link=\"http://a.co/g7JAFAS\"]\n"
+"| http://a.co/g7JAFAS[Clojure Data Structures and Algorithms] +\n"
+"by Rafik Naccache +\n"
+"Aug 19, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/5122uV93jfL._SL160.jpg[Living Clojure,link=\"http://a.co/1m2Zt4p\"]\n"
+"| http://a.co/1m2Zt4p[Living Clojure] +\n"
+"by Carin Meier +\n"
+"Apr 30, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51l1oGz9N7L._SL160.jpg[Clojure Reactive Programming,link=\"http://a.co/fhyaFka\"]\n"
+"| http://a.co/fhyaFka[Clojure Reactive Programming] +\n"
+"by Leonardo Borges +\n"
+"Mar 24, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51XnilmUaIL._SL160.jpg[Clojure Web Development Essentials,link=\"http://a.co/2FlRxd5\"]\n"
+"| http://a.co/2FlRxd5[Clojure Web Development Essentials] +\n"
+"by Ryan Baldwin +\n"
+"Feb 16, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51-B3kElSiL._SL160.jpg[Clojure Data Analysis Cookbook, link=\"http://a.co/gIwPEkt\"]\n"
+"| http://a.co/gIwPEkt[Clojure Data Analysis Cookbook] +\n"
+"by Eric Rochester +\n"
+"Jan 22, 2015\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51nhUEYSLhL._SL160.jpg[Mastering Clojure Macros,link=\"http://a.co/4VjjiQJ\"]\n"
+"| http://a.co/4VjjiQJ[Mastering Clojure Macros] +\n"
+"by Colin Jones +\n"
+"Sept 5, 2014\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/518RxlXpXsL._SL160.jpg[The Joy of Clojure,link=\"http://a.co/evdNcOs\"]\n"
+"| http://a.co/evdNcOs[The Joy of Clojure] +\n"
+"by Michael Fogus, Chris Houser +\n"
+"Jun 13, 2014\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51gyxyvmX3L._SL160.jpg[Mastering Clojure Data Analysis,link=\"http://a.co/bYwhMwH\"]\n"
+"| http://a.co/bYwhMwH[Mastering Clojure Data Analysis] +\n"
+"by Eric Rochester +\n"
+"May 26, 2014\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51Af%2B5qKOeL._SL160.jpg[Clojure for Machine Learning,link=\"http://a.co/7PRmDOK\"]\n"
+"| http://a.co/7PRmDOK[Clojure for Machine Learning] +\n"
+"by Akhil Wali +\n"
+"Apr 24, 2014\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51NPZu-5PiL._SL160.jpg[Clojure Cookbook, link=\"http://a.co/1K6SZSI\"]\n"
+"| http://a.co/1K6SZSI[Clojure Cookbook] +\n"
+"by Luke VanderHart and Ryan Neufeld +\n"
+"Mar 24, 2014\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/515hwMhZELL._SL160.jpg[Clojure for Domain-specific Languages,link=\"http://a.co/3rwXJkx\"]\n"
+"| http://a.co/3rwXJkx[Clojure for Domain-specific Languages] +\n"
+"by Ryan Kelker +\n"
+"Dec 18, 2013\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51i1Cn-IqdL._SL160.jpg[Functional Programming Patterns in Scala and Clojure,link=\"http://a.co/2J3jvLX\"]\n"
+"| http://a.co/2J3jvLX[Functional Programming Patterns in Scala and Clojure] +\n"
+"by Michael Bevilacqua-Linn +\n"
+"Nov 2, 2013\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51KgF%2B-38WL._SL160.jpg[ClojureScript: Up and Running,link=\"http://a.co/74IUDUu\"]\n"
+"| http://a.co/74IUDUu[ClojureScript: Up and Running] +\n"
+"by Stuart Sierra, Luke VanderHart +\n"
+"Nov 10, 2012\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/41sY2b6MKiL._SL160.jpg[Clojure Programming,link=\"http://a.co/jiaX8tX\"]\n"
+"| http://a.co/jiaX8tX[Clojure Programming] +\n"
+"by Chas Emerick, Brian Carper, Christophe Grand +\n"
+"Apr 22, 2012\n"
+"\n"
+"| image::http://clojure-buch.de/cover.jpg[Clojure,link=\"http://clojure-buch.de/\",width=130]\n"
+"| http://clojure-buch.de/[Clojure] +\n"
+"by Stefan Kamphausen, Tim Oliver Kaiser +\n"
+"Sep 20, 2010\n"
+"\n"
+"| image::http://ecx.images-amazon.com/images/I/51dWGdAPwUL._SL160.jpg[Practical Clojure, link=\"http://a.co/fWbYqs5\"]\n"
+"| http://a.co/fWbYqs5[Practical Clojure] +\n"
+"by Luke VanderHart, Stuart Sierra +\n"
+"Jun 1, 2010\n"
+"\n"
 msgstr ""

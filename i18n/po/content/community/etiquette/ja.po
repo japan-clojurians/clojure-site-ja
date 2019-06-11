@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: 2018-04-02 07:15+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -101,11 +101,28 @@ msgid "Leave people out of it"
 msgstr ""
 
 #. type: Plain text
+#: en/content/community/etiquette.adoc:29
+msgid "Avoid rhetorical devices:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/etiquette.adoc:30
+msgid "Superfluous or opinion-laden adjectives"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/etiquette.adoc:31
+msgid "Claims to speak for the community, or that everyone agrees with you."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/etiquette.adoc:32
+msgid "Threats of what will happen unless things go your way"
+msgstr ""
+
+#. type: Plain text
 #: en/content/community/etiquette.adoc:33
-msgid ""
-"Avoid rhetorical devices: ** Superfluous or opinion-laden adjectives ** Claims to speak for the community, or that "
-"everyone agrees with you.  ** Threats of what will happen unless things go your way ** Any flavor of 'the sky is "
-"falling'"
+msgid "Any flavor of 'the sky is falling'"
 msgstr ""
 
 #. type: Plain text

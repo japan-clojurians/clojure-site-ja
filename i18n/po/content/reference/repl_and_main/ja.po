@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
-"PO-Revision-Date: 2018-05-04 05:48+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 02:31+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -34,22 +34,6 @@ msgstr ""
 #: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:64 en/content/reference/refs.adoc:73 en/content/reference/namespaces.adoc:24
@@ -102,42 +86,79 @@ msgid "With no options or args, runs an interactive Read-Eval-Print Loop"
 msgstr "オプションと引数の指定がない場合、インタラクティブな REPL (Read-Eval-Print Loop) を実行する"
 
 #. type: Plain text
+#: en/content/reference/repl_and_main.adoc:27
+msgid "init options:"
+msgstr "initオプション:"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:28
+msgid "-i, --init path Load a file or resource"
+msgstr "-i, --init パス ファイル、もしくはリソースをロードする"
+
+#. type: Plain text
 #: en/content/reference/repl_and_main.adoc:29
-msgid ""
-"init options: ** -i, --init path Load a file or resource ** -e, --eval string Evaluate expressions in string; print "
-"non-nil values"
-msgstr ""
-"initオプション:\n"
-"** -i, --init パス ファイル、もしくはリソースをロードする\n"
-"** -e, --eval 文字列 文字列中の式を評価する; 非nilな値をプリントする"
+msgid "-e, --eval string Evaluate expressions in string; print non-nil values"
+msgstr "-e, --eval 文字列 文字列中の式を評価する; 非nilな値をプリントする"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:30
+msgid "main options:"
+msgstr "mainオプション:"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:31
+msgid "-r, --repl Run a repl"
+msgstr "-r, --repl replを実行する"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:32
+msgid "path Run a script from a file or resource"
+msgstr "path ファイル、もしくはリソースからスクリプトを実行する"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:33
+msgid "- Run a script from standard input"
+msgstr "- 標準入力からスクリプトを実行する"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:34
+msgid "-m, --main A namespace to find a -main function for execution"
+msgstr "-m, --main 実行対象の-main関数を見つけるためのネームスペース"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:35
-msgid ""
-"main options: ** -r, --repl Run a repl ** path Run a script from a file or resource ** - Run a script from standard "
-"input ** -m, --main A namespace to find a -main function for execution ** -h, -?, --help Print this help message and "
-"exit"
-msgstr ""
-"mainオプション:\n"
-"** -r, --repl replを実行する\n"
-"** path ファイル、もしくはリソースからスクリプトを実行する\n"
-"** - 標準入力からスクリプトを実行する\n"
-"** -m, --main 実行対象の -main 関数を含むネームスペース\n"
-"** -h, -?, --help このメッセージをプリントし終了する"
+msgid "-h, -?, --help Print this help message and exit"
+msgstr "-h, -?, --help このメッセージをプリントして終了する"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:36
+msgid "operation:"
+msgstr "操作:"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:37
+msgid "Establishes thread-local bindings for commonly set!-able vars"
+msgstr "一般的に利用されるset!操作が可能なvarに対してスレッドローカルな束縛を行う"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:38
+msgid "Enters the user namespace"
+msgstr "userネームスペースに切り替える"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:39
+msgid "Binds \\*command-line-args* to a seq of strings containing command line args that appear after any main option"
+msgstr "\\*command-line-args* を、mainオプションの後に指定されたコマンドライン引数を含む文字列シーケンスに束縛する"
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:40
+msgid "Runs all init options in order"
+msgstr "全てのinitオプションを順に実行する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:41
-msgid ""
-"operation: ** Establishes thread-local bindings for commonly set!-able vars ** Enters the user namespace ** Binds "
-"\\*command-line-args* to a seq of strings containing command line args that appear after any main option ** Runs all "
-"init options in order ** Runs a repl or script if requested"
-msgstr ""
-"操作:\n"
-"** 一般的に利用される set! 操作が可能な var に対してスレッドローカルな束縛を行う\n"
-"** userネームスペースに切り替える\n"
-"** *command-line-args* を、mainオプションの後に指定されたコマンドライン引数を含む文字列シーケンスに束縛する\n"
-"** 全てのinitオプションを順に実行する\n"
-"** repl、もしくは指定があればスクリプトを実行する"
+msgid "Runs a repl or script if requested"
+msgstr "repl、もしくは指定があればスクリプトを実行する"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:45

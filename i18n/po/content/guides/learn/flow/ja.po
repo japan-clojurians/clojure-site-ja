@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2019-05-27 21:19+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 01:04+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -15,27 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
-#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/learn/hashed_colls.adoc:16
-#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
-#: en/content/guides/learn/sequential_colls.adoc:16 en/content/guides/learn/functions.adoc:16
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16
-#: en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Title ===
 #: en/content/guides/reader_conditionals.adoc:120 en/content/guides/learn/flow.adoc:285
@@ -103,7 +82,9 @@ msgstr ""
 msgid ""
 "In Clojure, however, everything is an expression! _Everything_ returns a value, and a block of multiple expressions "
 "returns the last value. Expressions that exclusively perform side-effects return `nil`."
-msgstr "しかしClojureでは、あらゆるものが式なのだ! _あらゆるもの_ が値を返し、複数の式のブロックは最後の値を返す。副作用のみを実行する式は `nil` を返す。"
+msgstr ""
+"しかしClojureでは、あらゆるものが式なのだ! _あらゆるもの_ が値を返し、複数の式のブロックは最後の値を返す。副作用のみを"
+"実行する式は `nil` を返す。"
 
 #. type: Title ==
 #: en/content/guides/learn/flow.adoc:35
@@ -121,7 +102,9 @@ msgstr "したがって、フロー制御のオペレータもまた式なのだ
 msgid ""
 "Flow control operators are composable, so we can use them anywhere. This leads to less duplicate code, as well as "
 "fewer intermediate variables."
-msgstr "フロー制御のオペレータは組み合わせ可能なので、どこでも使うことができる。これにより、重複コードが減り、中間変数が少なくなる。"
+msgstr ""
+"フロー制御のオペレータは組み合わせ可能なので、どこでも使うことができる。これにより、重複コードが減り、中間変数が少なく"
+"なる。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:42
@@ -130,7 +113,11 @@ msgid ""
 "be discussing macros today, but you can read more about them at <<xref/../../../reference/macros#,Macros>>, https://"
 "aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from the Ground Up], or http://www.braveclojure.com/"
 "writing-macros/[Clojure for the Brave and True], among many other places."
-msgstr "フロー制御のオペレータはマクロによって拡張することもできる。マクロはユーザのコードによってコンパイラを拡張することを可能にする。今日はマクロについて議論しないが、詳しくは <<xref/../../../reference/macros#,マクロ>> 、 https://aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from the Ground Up] 、 http://www.braveclojure.com/writing-macros/[Clojure for the Brave and True] ほか多くの場所で読むことができる。"
+msgstr ""
+"フロー制御のオペレータはマクロによって拡張することもできる。マクロはユーザのコードによってコンパイラを拡張することを可"
+"能にする。今日はマクロについて議論しないが、詳しくは <<xref/../../../reference/macros#,マクロ>> 、 https://aphyr.com/"
+"posts/305-clojure-from-the-ground-up-macros[Clojure from the Ground Up] 、 http://www.braveclojure.com/writing-macros/"
+"[Clojure for the Brave and True] ほか多くの場所で読むことができる。"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:43
@@ -143,7 +130,9 @@ msgstr "`if`"
 msgid ""
 "`if` is the most important conditional expression - it consists of a condition, a \"then\", and an \"else\". `if` "
 "will only evaluate the branch selected by the conditional."
-msgstr "`if` は最も重要な制御式であり、条件と\"then\"と\"else\"で構成されている。 `if` は条件によって選ばれた分岐だけを評価する。"
+msgstr ""
+"`if` は最も重要な制御式であり、条件と\"then\"と\"else\"で構成されている。 `if` は条件によって選ばれた分岐だけを評価す"
+"る。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:51
@@ -176,7 +165,9 @@ msgstr "真"
 msgid ""
 "In Clojure, all values are logically true or false. The only \"false\" values are `false` and `nil` - all other "
 "values are logically true."
-msgstr "Clojureでは、すべての値は論理的に真または偽のどちらかだ。 `false` と `nil` の値だけが「偽」であり、その他のすべての値は論理的に真だ。"
+msgstr ""
+"Clojureでは、すべての値は論理的に真または偽のどちらかだ。 `false` と `nil` の値だけが「偽」であり、その他のすべての値"
+"は論理的に真だ。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:74
@@ -254,7 +245,9 @@ msgid ""
 "`when` is an `if` with only a `then` branch. It checks a condition and then evaluates any number of statements as a "
 "body (so no `do` is required). The value of the last expression is returned. If the condition is false, nil is "
 "returned."
-msgstr "`when` は `then` の分岐だけを持つ `if` だ。条件をチェックし、本体部として任意個の文を評価する(なので `do` は必要ない)。 最後の式の値が返る。条件が偽の場合、 nilが返る。"
+msgstr ""
+"`when` は `then` の分岐だけを持つ `if` だ。条件をチェックし、本体部として任意個の文を評価する(なので `do` は必要な"
+"い)。 最後の式の値が返る。条件が偽の場合、 nilが返る。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:97
@@ -282,7 +275,8 @@ msgstr "`cond`"
 msgid ""
 "`cond` is a series of tests and expressions. Each test is evaluated in order and the expression is evaluated and "
 "returned for the first true test."
-msgstr "`cond` はテストと式が並んだものだ。個々のテストは順に評価され、最初に真になるテストに対応する式が評価されて返る。"
+msgstr ""
+"`cond` はテストと式が並んだものだ。個々のテストは順に評価され、最初に真になるテストに対応する式が評価されて返る。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:114
@@ -309,7 +303,9 @@ msgstr "`cond` と `else`"
 msgid ""
 "If no test is satisfied, nil is returned. A common idiom is to use a final test of `:else`. Keywords (like `:else`) "
 "always evaluate to true so this will always be selected as a default."
-msgstr "いずれのテストも満たさない場合、nilが返る。最後のテストに `:else` を使うのが一般的なイディオムだ。 `:else` のようなキーワードは常に真と評価されるため、これが常にデフォルトとして選ばれる。"
+msgstr ""
+"いずれのテストも満たさない場合、nilが返る。最後のテストに `:else` を使うのが一般的なイディオムだ。 `:else` のような"
+"キーワードは常に真と評価されるため、これが常にデフォルトとして選ばれる。"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:127
@@ -338,7 +334,9 @@ msgstr "`case`"
 msgid ""
 "`case` compares an argument to a series of values to find a match. This is done in constant (not linear) time! "
 "However, each value must be a compile-time literal (numbers, strings, keywords, etc)."
-msgstr "`case` は引数を一連の値と比較し一致するものを探す。これは(線形ではなく)定数時間で終わる! しかし、個々の値はコンパイル時リテラル(数値、文字列、キーワードなど)でなければならない。"
+msgstr ""
+"`case` は引数を一連の値と比較し一致するものを探す。これは(線形ではなく)定数時間で終わる! しかし、個々の値はコンパイル"
+"時リテラル(数値、文字列、キーワードなど)でなければならない。"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:134
@@ -589,25 +587,34 @@ msgid "Clojure provides recur and the sequence abstraction"
 msgstr "Clojureはrecurとシーケンス抽象を提供している"
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:241
+msgid "`recur` is \"classic\" recursion"
+msgstr "`recur` は「古典的な」再帰だ"
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:242
-msgid "`recur` is \"classic\" recursion ** Consumers don't control it, considered a lower-level facility"
-msgstr ""
-"`recur` は「古典的な」再帰だ\n"
-"** 利用者がコントロールできず、低レベルな機能と考えられる"
+msgid "Consumers don't control it, considered a lower-level facility"
+msgstr "利用者がコントロールできず、低レベルな機能と考えられる"
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:243
+msgid "Sequences represent iteration as values"
+msgstr "シーケンスは繰り返しを値として表現する"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:244
-msgid "Sequences represent iteration as values ** Consumers can partially iterate"
-msgstr ""
-"シーケンスは繰り返しを値として表現する\n"
-"** 利用者が部分的に繰り返すことができる"
+msgid "Consumers can partially iterate"
+msgstr "利用者が部分的に繰り返すことができる"
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:245
+msgid "Reducers represent iteration as function composition"
+msgstr "reducerは繰り返しを関数合成として表現する"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:246
-msgid "Reducers represent iteration as function composition ** Added in Clojure 1.5, not covered here"
-msgstr ""
-"reducerは繰り返しを関数合成として表現する\n"
-"** Clojure 1.5で追加されたが、ここでは扱わない"
+msgid "Added in Clojure 1.5, not covered here"
+msgstr "Clojure 1.5で追加されたが、ここでは扱わない"
 
 #. type: Title ===
 #: en/content/guides/learn/flow.adoc:247
@@ -616,12 +623,19 @@ msgid "`loop` and `recur`"
 msgstr "`loop` と `recur`"
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:250
+msgid "Functional looping construct"
+msgstr "関数型のループ構文"
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:251
+msgid "`loop` defines bindings"
+msgstr "`loop` は束縛を定義する"
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:252
-msgid "Functional looping construct ** `loop` defines bindings ** `recur` re-executes `loop` with new bindings"
-msgstr ""
-"関数型のループ構文\n"
-"** `loop` は束縛を定義する\n"
-"** `recur` は新しい束縛で `loop` を再実行する"
+msgid "`recur` re-executes `loop` with new bindings"
+msgstr "`recur` は新たな束縛で `loop` を再実行する"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:253
@@ -674,19 +688,29 @@ msgid "`recur` for recursion"
 msgstr "再帰のための `recur`"
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:277
+msgid "`recur` must be in \"tail position\""
+msgstr "`recur` は「末尾位置」になければならない式"
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:278
-msgid "`recur` must be in \"tail position\" ** The last expression in a branch"
-msgstr ""
-"`recur` は「末尾位置」になければならない\n"
-"** 分岐の最後の式"
+msgid "The last expression in a branch"
+msgstr "分岐の最後の式"
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:279
+msgid "`recur` must provide values for all bound symbols by position"
+msgstr "`recur` はすべての束縛シンボルに対応する値を与えなければならない数"
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:280
+msgid "Loop bindings"
+msgstr "loopの束縛"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:281
-msgid "`recur` must provide values for all bound symbols by position ** Loop bindings ** defn/fn arguments"
-msgstr ""
-"`recur` はすべての束縛シンボルに対応する値を与えなければならない\n"
-"** loopの束縛\n"
-"** defn/fnの引数"
+msgid "defn/fn arguments"
+msgstr "defn/fnの引数"
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:282
@@ -752,11 +776,14 @@ msgid "`ex-info` takes a message and a map"
 msgstr "`ex-info` はメッセージとマップをとる"
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:312
+msgid "`ex-data` gets the map back out"
+msgstr "`ex-data` はそのマップを取り出す"
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:313
-msgid "`ex-data` gets the map back out ** Or `nil` if not created with `ex-info`"
-msgstr ""
-"`ex-data` はそのマップを取り出す\n"
-"** もしくは `ex-info` で作られたものでなければ `nil`"
+msgid "Or `nil` if not created with `ex-info`"
+msgstr "もしくは `ex-info` で作られたものでなければ `nil`"
 
 #. type: delimited block -
 #: en/content/guides/learn/flow.adoc:320

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2018-05-04 06:05+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 02:16+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -17,39 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
-#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
-#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
-#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
-
-#. type: Plain text
-#: en/content/reference/special_forms.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/metadata.adoc:15 en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15 en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16 en/content/reference/protocols.adoc:15
-#: en/content/reference/reducers.adoc:15 en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16 en/content/reference/namespaces.adoc:15
-#: en/content/reference/libs.adoc:16 en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15 en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Title =
 #: en/content/reference/reducers.adoc:1
@@ -153,13 +137,14 @@ msgid "Map colls are reduced with reduce-kv"
 msgstr "マップのコレクションは reduce-kv でreduceされる"
 
 #. type: Plain text
+#: en/content/reference/reducers.adoc:40
+msgid "When init is not provided, f is invoked with no arguments to produce an identity value"
+msgstr "init が与えられていない場合、 初期値を作り出すためにfが引数なしで呼び出される"
+
+#. type: Plain text
 #: en/content/reference/reducers.adoc:41
-msgid ""
-"When init is not provided, f is invoked with no arguments to produce an identity value ** _Note: f may be invoked "
-"multiple times to provide the identity value_"
-msgstr ""
-"init が与えられていない場合、 初期値を作り出すために f が引数なしで呼び出される。\n"
-"** _注: 初期値を作り出すために f が複数呼び出される場合がある。_"
+msgid "_Note: f may be invoked multiple times to provide the identity value_"
+msgstr "_注意: 初期値を作り出すためにfが複数呼び出される場合がある_"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:43
