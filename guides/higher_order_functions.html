@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Higher Order Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Higher Order Functions</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_first_class_functions">First Class Functions</a></li>
+<li><a href="#_higher_order_functions">Higher Order Functions</a>
+<ul class="sectlevel2">
+<li><a href="#_functions_as_arguments">Functions as Arguments</a></li>
+</ul>
+</li>
+<li><a href="#_function_literals">Function Literals</a>
+<ul class="sectlevel2">
+<li><a href="#_functions_returning_functions_and_closures">Functions Returning Functions and Closures</a></li>
+<li><a href="#_filter">Filter</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_first_class_functions">First Class Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In functional programming, functions are first class citizens.
+This means functions can be treated as values.
+They can be assigned as values, passed into functions, and returned from functions.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s common to see function definitions in Clojure using <code>defn</code> like <code>(defn foo &#8230;&#8203;)</code>.
+However, this is just syntactic sugar for <code>(def foo (fn &#8230;&#8203;))</code>
+<code>fn</code> returns a function object.
+<code>defn</code> returns a var which points to a function object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_higher_order_functions">Higher Order Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A higher order function is a function that either:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Takes one or more functions as arguments</p>
+</li>
+<li>
+<p>Returns a function as its result</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is an important concept in functional programming in any language.</p>
+</div>
+<div class="paragraph">
+<p>Higher order functions allow us to <em>compose</em> functions.
+This means we can write small functions and combine them to create larger functions.
+Like putting a bunch of small LEGO bricks together to build a house.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s move away from theory a bit and look at an example.</p>
+</div>
+<div class="sect2">
+<h3 id="_functions_as_arguments">Functions as Arguments</h3>
+<div class="paragraph">
+<p>Let&#8217;s look at two functions</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn double-+
+    [a b]
+    (* 2 (+ a b)))</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn double-*
+    [a b]
+    (* 2 (* a b)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These functions share a common pattern.
+They only differ in name and the function used in the computation of <code>a</code> and <code>b</code>.
+In general, the pattern looks like this.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn double-&lt;f&gt;
+    [a b]
+    (* 2 (f a b)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can generalize our <code>double-</code> function by passing <code>f</code> in as an argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn double-op
+    [f a b]
+    (* 2 (f a b)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can use this to express the concept of doubling the result of an operation rather than having to write functions that perform specific doubled operations individually.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_function_literals">Function Literals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An anonymous function is a function without a name.
+In Clojure these can be defined in two ways, <code>fn</code> and the literal <code>#(&#8230;&#8203;)</code>.
+Creating a function with <code>defn</code> immediately binds it to a name, <code>fn</code> just creates a function.</p>
+</div>
+<div class="paragraph">
+<p>Lets go back to the example of the bands.
+We wrote a function called <code>rock-band?</code> to determine whether or not our band was a rock band.
+This is a one-off operation, we&#8217;re not going to use it anywhere else in our code.
+We can save ourselves some keystrokes by using an anonymous function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def rock-bands
+    (filter
+        (fn [band] (= :rock (:genre band)))
+        bands))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Even more concisely, using the function literal, we can define <code>rock-bands</code> like so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def rock-bands (filter #(= :rock (:genre %)) bands))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The function literal supports multiple arguments via <code>%</code>, <code>%n</code>, and <code>%&amp;</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">#(println %1 %2 %3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re writing an anonymous function, the literal syntax is nice because it&#8217;s so compact.
+However, beyond a few arguments, the syntax can become difficult to read.
+In that case, using <code>fn</code> may be more appropriate.</p>
+</div>
+<div class="sect2">
+<h3 id="_functions_returning_functions_and_closures">Functions Returning Functions and Closures</h3>
+<div class="paragraph">
+<p>Our first function will be called <code>adder</code>.
+It will take a number, <code>x</code>, as it&#8217;s only argument and return a function.
+The function returned by <code>adder</code> will also take a single number, <code>a</code>, as it&#8217;s argument and return <code>x + a</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn adder [x]
+  (fn [a] (+ x a)))
+
+(def add-five (adder 5))
+
+(add-five 100)
+;; =&gt; 105</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The returned function form <code>adder</code> is a closure.
+This means, it can access all of the variables that were in scope when the function was created.
+<code>add-five</code> has access to <code>x</code> even though it is outside of the <code>adder</code> function definition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_filter">Filter</h3>
+<div class="paragraph">
+<p>Filtering is a common operation in computer programming.
+Take this set of animals</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def pets [
+    {:name "Fluffykins" :type :cat}
+    {:name "Sparky" :type :dog}
+    {:name "Tibby" :type :dog}
+    {:name "Al" :type :fish}
+    {:name "Victor" :type :bear}
+])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We want to filter out the non-dog animals because we&#8217;re writing enterprise grade software.
+First, let&#8217;s look at a normal for loop.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn loop-dogs [pets]
+    (loop [pets pets
+           dogs []]
+        (if (first pets)
+            (recur (rest pets)
+                   (if (= :dog (:type (first pets)))
+                       (conj dogs (first pets))
+                       dogs))
+            dogs)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code works fine, but it&#8217;s bulky and confusing.
+We can simplify this using <code>filter</code>, a higher order function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn filter-dogs [pets]
+    (filter #(= :dog (:type %)) pets))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The solution using <code>filter</code> is much clearer and allows us to show intent rather than just give commands.
+We can break this into even smaller pieces by breaking the filtering function out into a separate <code>var</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn dog? [pet] (= :dog (:type pet)))
+
+(defn filter-dogs [pets] (filter dog? pets))</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

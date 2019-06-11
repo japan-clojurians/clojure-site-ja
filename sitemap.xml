@@ -101,6 +101,10 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/reference/other_libraries.html</loc>
         <lastmod></lastmod>
     </url>
@@ -142,10 +146,6 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -226,6 +226,54 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/about/state.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/higher_order_functions.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/deps_and_cli.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/weird_characters.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/core_async_go.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/spec.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/faq.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/comparators.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/threading_macros.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/reader_conditionals.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/destructuring.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/guides.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
         <lastmod></lastmod>
     </url>
 </urlset>

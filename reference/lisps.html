@@ -49,9 +49,9 @@
             <li><a href="../about/rationale.html">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
             <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
               <li><a href="../guides/guides.html">ガイド</a></li>
-              <li><a href="../community/resources.html">コミュニティ</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
               <li><a href="../news/news.html">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -203,63 +203,63 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil があるか</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil - 「無」を意味する</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil - falseまたは空リストを意味する</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has nil?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means 'nothing'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil - means false or empty list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true があるか</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has true?</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#t</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true (プリミティヴ)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true (primitive)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false があるか</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has false?</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#f</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false (プリイティヴ)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (primitive)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">条件分岐の際の区別:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil と false/ それ以外</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nil/非nil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#f/非#f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conditionals distinguish:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil or false/ everything else</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nil/non-nil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#f/non-#f</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false/true</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">リスト/シーケンスライブラリが個別の具体的な型を扱うか</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">扱わない - seqによるコレクションの実装の抽象化</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">扱う - コンス と ベクター</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">扱う - ペア</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">扱わない - イテレーターによるコレクション実装の抽象化</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List/sequence library manipulates distinguished concrete type(s)?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - seq abstraction with many collection implementations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - cons and vector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - pair</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - Iterator abstraction with many collection implementations</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">シングルトンの空リスト値があるか</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ない - 具体的なコレクション型ごとに空のコレクションの値が存在しうる</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Singleton empty-list value?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No - can have distinct empty values of concrete collection types</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">シーケンスの終端の戻り値:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>seq</strong> がnilを返す論理シーケンス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End-of-sequence returns:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a logical sequence for which <strong>seq</strong> returns nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">'()</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の null:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host null:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
@@ -267,7 +267,7 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の true:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host true:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true (boxed)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
@@ -275,7 +275,7 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ホスト環境の false:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Host false:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false (boxed)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>

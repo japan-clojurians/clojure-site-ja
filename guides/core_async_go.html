@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Go Block Best Practices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Go Block Best Practices</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div class="sect1">
+<h2 id="_general_advice">General advice</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s very tempting to do the following to send a message without waiting for a
+reply:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(go (&gt;! c 42))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Although go blocks are cheap, they aren&#8217;t completely free. Thus it&#8217;s recommended
+to use</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(async/put! c 42)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>go</code> just ends up calling <code>put!</code> eventually anyway, so there really isn&#8217;t a
+downside.</p>
+</div>
+<div class="paragraph">
+<p>Also, if the code is being called inside a callback and you want to respect
+back-pressure, it&#8217;s fairly easy to use a recursive function along with <code>put!</code>
+to respect back-pressure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn http-call
+  "Makes an async call to a web browser"
+  [url callback] ...)
+
+
+(def urls [url1 url2 url3])
+
+(defn load-urls
+  "Spools the results of loading several urls onto a channel.
+   does this without creating temporary channels or go blocks"
+  [urls out-c]
+  (http-call
+    (first urls)
+    (fn [response]
+      (put! out-c response (fn [_] (load-urls (next urls) out-c))))))
+
+(load-urls urls)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example we have some nice clean interop code that allows us to
+start working with channels in our app, without creating tons of
+channels or gos only to dispose of them shortly after they&#8217;re created.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unsupported_constructs_and_other_limitations_in_go_blocks">Unsupported constructs and other limitations in go blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The go macro stops translating at function creation boundaries. This
+means the following code will fail to compile, or may just throw a
+runtime error stating that <code>&lt;!</code> was used outside of a go block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(go (let [my-fn (fn [] (&lt;! c))] (my-fn)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is one thing to remember since many Clojure constructs create
+functions inside macros. The following are examples of code that will
+not work as one would expect:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(go (map &lt;! some-chan))
+(go (for [x xs]
+      (&lt;! x)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, other Clojure constructs, such as <code>doseq</code> do not allocate
+closures internally:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">; This works just fine
+(go (doseq [c cs]
+      (println (&lt;! c)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unfortunately, currently there isn&#8217;t a good way to know if a given
+macro will work as expected inside a go block unless one either looks
+at the source, or tests the code generated by the macro.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_is_this">Why is this?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The best explanation for "why does go block translation stop at
+function creation?" basically comes down to a question of
+types. Examine the following snippet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(map str [1 2 3])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can easily see that this produces a <code>seq</code> of strings since the
+output type of <code>str</code> is a string. So what is the return type of
+<code>async/&lt;!</code>? In the context of a go block it is an object taken from a
+channel. But the go block has to translate that to a parking call to
+<code>async/put!</code>. The return type of <code>async/&lt;!</code> should really be thought
+of as something akin to <code>Async&lt;Object&gt;</code> or <code>Promise&lt;Object&gt;</code>. Thus the
+result of <code>(map async/&lt;! chans)</code> is something like "a seq of pending
+channel operations" which makes no sense at all.</p>
+</div>
+<div class="paragraph">
+<p>In short, the go macro can&#8217;t do these operations without some serious
+work. Other languages such as
+<a href="https://github.com/trifork/erjang">Erjang</a>, allow for such constructs
+via translating all code in the entire JVM. This is something we&#8217;d
+like to avoid in core.async, as it complicates things and causes the
+logic of one library to infect the code of an entire JVM. So we&#8217;re
+left with the practical compromise, translation stops when it sees a
+<code>(fn [] &#8230;&#8203;)</code>.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

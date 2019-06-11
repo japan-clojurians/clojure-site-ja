@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - spec Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>spec Guide</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_getting_started">Getting started</a></li>
+<li><a href="#_predicates">Predicates</a></li>
+<li><a href="#_registry">Registry</a></li>
+<li><a href="#_composing_predicates">Composing predicates</a></li>
+<li><a href="#_explain">Explain</a></li>
+<li><a href="#_entity_maps">Entity Maps</a></li>
+<li><a href="#_multi_spec">multi-spec</a></li>
+<li><a href="#_collections">Collections</a></li>
+<li><a href="#_sequences">Sequences</a></li>
+<li><a href="#_using_spec_for_validation">Using spec for validation</a></li>
+<li><a href="#_spec_ing_functions">Spec&#8217;ing functions</a></li>
+<li><a href="#_higher_order_functions">Higher order functions</a></li>
+<li><a href="#_macros">Macros</a></li>
+<li><a href="#_a_game_of_cards">A game of cards</a></li>
+<li><a href="#_generators">Generators</a>
+<ul class="sectlevel2">
+<li><a href="#_project_setup">Project Setup</a></li>
+<li><a href="#_sampling_generators">Sampling Generators</a></li>
+<li><a href="#_exercise">Exercise</a></li>
+<li><a href="#_using_code_s_and_code_generators">Using <code>s/and</code> Generators</a></li>
+<li><a href="#_custom_generators">Custom Generators</a></li>
+<li><a href="#_range_specs_and_generators">Range Specs and Generators</a></li>
+</ul>
+</li>
+<li><a href="#_instrumentation_and_testing">Instrumentation and Testing</a>
+<ul class="sectlevel2">
+<li><a href="#_instrumentation">Instrumentation</a></li>
+<li><a href="#_testing">Testing</a></li>
+<li><a href="#_combining_code_check_code_and_code_instrument_code">Combining <code>check</code> and <code>instrument</code></a></li>
+</ul>
+</li>
+<li><a href="#_wrapping_up">Wrapping Up</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started">Getting started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="xref/../../../about/spec">spec</a> library specifies the structure of data, validates or destructures it, and can generate data based on the spec.</p>
+</div>
+<div class="paragraph">
+<p>To use spec, declare a dependency on Clojure 1.9:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">[org.clojure/clojure "1.9.0"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To start working with spec, require the <code>clojure.spec.alpha</code> namespace at the REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.spec.alpha :as s])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or include spec in your namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns my.ns
+  (:require [clojure.spec.alpha :as s]))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_predicates">Predicates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each spec describes a set of allowed values. There are several ways to build specs and all of them can be composed to build more sophisticated specs.</p>
+</div>
+<div class="paragraph">
+<p>Any existing Clojure function that takes a single argument and returns a truthy value is a valid predicate spec. We can check whether a particular data value conforms to a spec using <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/conform"><code>conform</code></a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/conform even? 1000)
+;;=&gt; 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>conform</code> function takes something that can be a spec and a data value. Here we are passing a predicate which is implicitly converted into a spec. The return value is "conformed". Here, the conformed value is the same as the original value - we&#8217;ll see later where that starts to deviate. If the value does not conform to the spec, the special value <code>:clojure.spec.alpha/invalid</code> is returned.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t want to use the conformed value or check for <code>:clojure.spec.alpha/invalid</code>, the helper <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/valid?"><code>valid?</code></a> can be used instead to return a boolean.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? even? 10)
+;;=&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that again <code>valid?</code> implicitly converts the predicate function into a spec. The spec library allows you to leverage all of the functions you already have - there is no special dictionary of predicates. Some more examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? nil? nil)  ;; true
+(s/valid? string? "abc")  ;; true
+
+(s/valid? #(&gt; % 5) 10) ;; true
+(s/valid? #(&gt; % 5) 0) ;; false
+
+(import java.util.Date)
+(s/valid? inst? (Date.))  ;; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sets can also be used as predicates that match one or more literal values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? #{:club :diamond :heart :spade} :club) ;; true
+(s/valid? #{:club :diamond :heart :spade} 42) ;; false
+
+(s/valid? #{42} 42) ;; true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registry">Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Until now, we&#8217;ve been using specs directly. However, spec provides a central registry for globally declaring reusable specs. The registry associates a namespaced keyword with a specification. The use of namespaces ensures that we can define reusable non-conflicting specs across libraries or applications.</p>
+</div>
+<div class="paragraph">
+<p>Specs are registered using <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/def"><code>def</code></a>. It&#8217;s up to you to register the specification in a namespace that makes sense (typically a namespace you control).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::date inst?)
+(s/def ::suit #{:club :diamond :heart :spade})</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A registered spec identifier can be used in place of a spec definition in the operations we&#8217;ve seen so far - <code>conform</code> and <code>valid?</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? ::date (Date.))
+;;=&gt; true
+(s/conform ::suit :club)
+;;=&gt; :club</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will see later that registered specs can (and should) be used anywhere we compose specs.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Spec Names</div>
+<div class="paragraph">
+<p>In this guide we will often use auto-resolved keywords like <code>::date</code>. The Clojure reader resolves these to a fully-qualified keyword using the current namespace. You may also see some cases where a fully-qualified keyword like <code>:animal/dog</code> is used to name a spec.</p>
+</div>
+<div class="paragraph">
+<p>Generally, Clojure code should use keyword namespaces that are sufficiently unique such that they will not conflict with other spec users. If you are writing a library for public use, spec namespaces should include the project name, url, or organization such that you will not conflict. Within a private organization, you may be able to use shorter names - the important thing is that they are sufficiently unique to avoid conflicts.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Once a spec has been added to the registry, <code>doc</code> knows how to find it and print it as well:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(doc ::date)
+-------------------------
+:user/date
+Spec
+  inst?
+
+(doc ::suit)
+-------------------------
+:user/suit
+Spec
+  #{:spade :heart :diamond :club}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_composing_predicates">Composing predicates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The simplest way to compose specs is with <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/and"><code>and</code></a> and <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/or"><code>or</code></a>. Let&#8217;s create a spec that combines several predicates into a composite spec with <code>s/and</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::big-even (s/and int? even? #(&gt; % 1000)))
+(s/valid? ::big-even :foo) ;; false
+(s/valid? ::big-even 10) ;; false
+(s/valid? ::big-even 100000) ;; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can also use <code>s/or</code> to specify two alternatives:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::name-or-id (s/or :name string?
+                          :id   int?))
+(s/valid? ::name-or-id "abc") ;; true
+(s/valid? ::name-or-id 100) ;; true
+(s/valid? ::name-or-id :foo) ;; false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This <code>or</code> spec is the first case we&#8217;ve seen that involves a choice during validity checking. Each choice is annotated with a tag (here, between <code>:name</code> and <code>:id</code>) and those tags give the branches names that can be used to understand or enrich the data returned from <code>conform</code> and other spec functions.</p>
+</div>
+<div class="paragraph">
+<p>When an <code>or</code> is conformed, it returns a vector with the tag name and conformed value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/conform ::name-or-id "abc")
+;;=&gt; [:name "abc"]
+(s/conform ::name-or-id 100)
+;;=&gt; [:id 100]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Many predicates that check an instance&#8217;s type do not allow <code>nil</code> as a valid value (<code>string?</code>, <code>number?</code>, <code>keyword?</code>, etc). To include <code>nil</code> as a valid value, use the provided function <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/nilable"><code>nilable</code></a> to make a spec:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? string? nil)
+;;=&gt; false
+(s/valid? (s/nilable string?) nil)
+;;=&gt; true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explain">Explain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain"><code>explain</code></a> is another high-level operation in spec that can be used to report (to <code>*out*</code>) why a value does not conform to a spec. Let&#8217;s see what explain says about some non-conforming examples we&#8217;ve seen so far.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/explain ::suit 42)
+;; val: 42 fails spec: ::suit predicate: #{:spade :heart :diamond :club}
+(s/explain ::big-even 5)
+;; val: 5 fails spec: ::big-even predicate: even?
+(s/explain ::name-or-id :foo)
+;; val: :foo fails spec: ::name-or-id at: [:name] predicate: string?
+;; val: :foo fails spec: ::name-or-id at: [:id] predicate: int?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s examine the output of the final example more closely. First note that there are two errors being reported - spec will evaluate all possible alternatives and report errors on every path. The parts of each error are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>val - the value in the user&#8217;s input that does not match</p>
+</li>
+<li>
+<p>spec - the spec that was being evaluated</p>
+</li>
+<li>
+<p>at - a path (a vector of keywords) indicating the location within the spec where the error occurred - the tags in the path correspond to any tagged part in a spec (the alternatives in an <code>or</code> or <code>alt</code>, the parts of a <code>cat</code>, the keys in a map, etc)</p>
+</li>
+<li>
+<p>predicate - the actual predicate that was not satisfied by val</p>
+</li>
+<li>
+<p>in - the key path through a nested data val to the failing value. In this example, the top-level value is the one that is failing so this is essentially an empty path and is omitted.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the first reported error we can see that the value <code>:foo</code> did not satisfy the predicate <code>string?</code> at the path <code>:name</code> in the spec <code>::name-or-id</code>. The second reported error is similar but fails on the <code>:id</code> path instead. The actual value is a keyword so neither is a match.</p>
+</div>
+<div class="paragraph">
+<p>In addition to <code>explain</code>, you can use <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-str"><code>explain-str</code></a> to receive the error messages as a string or  <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-data"><code>explain-data</code></a> to receive the errors as data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/explain-data ::name-or-id :foo)
+;;=&gt; #:clojure.spec.alpha{
+;;     :problems ({:path [:name],
+;;                 :pred string?,
+;;                 :val :foo,
+;;                 :via [:spec.examples.guide/name-or-id],
+;;                 :in []}
+;;                {:path [:id],
+;;                 :pred int?,
+;;                 :val :foo,
+;;                 :via [:spec.examples.guide/name-or-id],
+;;                 :in []})}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This result also demonstrates the new namespace map literal syntax added in Clojure 1.9. Maps may be prefixed with <code>#:</code> or <code>#::</code> (for autoresolve) to specify a default namespace for all keys in the map. In this example, this is equivalent to <code>{:clojure.spec.alpha/problems &#8230;&#8203;}</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entity_maps">Entity Maps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure programs rely heavily on passing around maps of data. A common approach in other libraries is to describe each entity type, combining both the keys it contains and the structure of their values. Rather than define attribute (key+value) specifications in the scope of the entity (the map), specs assign meaning to individual attributes,
+then collect them into maps using set semantics (on the keys). This approach allows us to start assigning (and sharing)
+semantics at the attribute level across our libraries and applications.</p>
+</div>
+<div class="paragraph">
+<p>For example, most Ring middleware functions modify the request or response map with unqualified keys. However, each middleware could instead use namespaced keys with registered semantics for those keys. The keys could then be checked for conformance, creating a system with greater opportunities for collaboration and consistency.</p>
+</div>
+<div class="paragraph">
+<p>Entity maps in spec are defined with <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys"><code>keys</code></a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def email-regex #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$")
+(s/def ::email-type (s/and string? #(re-matches email-regex %)))
+
+(s/def ::acctid int?)
+(s/def ::first-name string?)
+(s/def ::last-name string?)
+(s/def ::email ::email-type)
+
+(s/def ::person (s/keys :req [::first-name ::last-name ::email]
+                        :opt [::phone]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This registers a <code>::person</code> spec with the required keys <code>::first-name</code>, <code>::last-name</code>, and <code>::email</code>, with optional key <code>::phone</code>. The map spec never specifies the value spec for the attributes, only what attributes are required or optional.</p>
+</div>
+<div class="paragraph">
+<p>When conformance is checked on a map, it does two things - checking that the required attributes are included, and checking that every registered key has a conforming value. We&#8217;ll see later where optional attributes can be useful. Also note that ALL attributes are checked via <code>keys</code>, not just those listed in the <code>:req</code> and <code>:opt</code> keys. Thus a bare <code>(s/keys)</code> is valid and will check all attributes of a map without checking which keys are required or optional.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/valid? ::person
+  {::first-name "Elon"
+   ::last-name "Musk"
+   ::email "elon@example.com"})
+;;=&gt; true
+
+;; Fails required key check
+(s/explain ::person
+  {::first-name "Elon"})
+;; val: #:my.domain{:first-name "Elon"} fails spec: :my.domain/person
+;;  predicate: (contains? % :my.domain/last-name)
+;; val: #:my.domain{:first-name "Elon"} fails spec: :my.domain/person
+;;  predicate: (contains? % :my.domain/email)
+
+
+;; Fails attribute conformance
+(s/explain ::person
+  {::first-name "Elon"
+   ::last-name "Musk"
+   ::email "n/a"})
+;; In: [:my.domain/email] val: "n/a" fails spec: :my.domain/email-type
+;;   at: [:my.domain/email] predicate: (re-matches email-regex %)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a moment to examine the explain error output on that final example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>in - the path within the data to the failing value (here, a key in the person instance)</p>
+</li>
+<li>
+<p>val - the failing value, here <code>"n/a"</code></p>
+</li>
+<li>
+<p>spec - the spec that failed, here <code>:my.domain/email</code></p>
+</li>
+<li>
+<p>at - the path in the spec where the failing value is located</p>
+</li>
+<li>
+<p>predicate - the predicate that failed, here <code>(re-matches email-regex %)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Much existing Clojure code does not use maps with namespaced keys and so <code>keys</code> can also specify <code>:req-un</code> and <code>:opt-un</code> for required and optional unqualified keys. These variants specify namespaced keys used to find their specification, but the map only checks for the unqualified version of the keys.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s consider a person map that uses unqualified keys but checks conformance against the namespaced specs we registered earlier:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def :unq/person
+  (s/keys :req-un [::first-name ::last-name ::email]
+          :opt-un [::phone]))
+
+(s/conform :unq/person
+  {:first-name "Elon"
+   :last-name "Musk"
+   :email "elon@example.com"})
+;;=&gt; {:first-name "Elon", :last-name "Musk", :email "elon@example.com"}
+
+(s/explain :unq/person
+  {:first-name "Elon"
+   :last-name "Musk"
+   :email "n/a"})
+;; In: [:email] val: "n/a" fails spec: :my.domain/email-type at: [:email]
+;;   predicate: (re-matches email-regex %)
+
+(s/explain :unq/person
+  {:first-name "Elon"})
+;; val: {:first-name "Elon"} fails spec: :unq/person
+;;  predicate: (contains? % :last-name)
+;; val: {:first-name "Elon"} fails spec: :unq/person
+;;  predicate: (contains? % :email)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unqualified keys can also be used to validate record attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defrecord Person [first-name last-name email phone])
+
+(s/explain :unq/person
+           (-&gt;Person "Elon" nil nil nil))
+;; In: [:last-name] val: nil fails spec: :my.domain/last-name at: [:last-name] predicate: string?
+;; In: [:email] val: nil fails spec: :my.domain/email-type at: [:email] predicate: string?
+
+(s/conform :unq/person
+  (-&gt;Person "Elon" "Musk" "elon@example.com" nil))
+;;=&gt; #my.domain.Person{:first-name "Elon", :last-name "Musk",
+;;=&gt;                   :email "elon@example.com", :phone nil}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One common occurrence in Clojure is the use of "keyword args" where keyword keys and values are passed in a sequential data structure as options. Spec provides special support for this pattern with the regex op <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys*"><code>keys*</code></a>. <code>keys*</code> has the same syntax and semantics as <code>keys</code> but can be embedded inside a sequential regex structure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::port number?)
+(s/def ::host string?)
+(s/def ::id keyword?)
+(s/def ::server (s/keys* :req [::id ::host] :opt [::port]))
+(s/conform ::server [::id :s1 ::host "example.com" ::port 5555])
+;;=&gt; {:my.domain/id :s1, :my.domain/host "example.com", :my.domain/port 5555}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sometimes it will be convenient to declare entity maps in parts, either because there are different sources for requirements on an entity map or because there is a common set of keys and variant-specific parts. The <code>s/merge</code> spec can be used to combine multiple <code>s/keys</code> specs into a single spec that combines their requirements. For example consider two <code>keys</code> specs that define common animal attributes and some dog-specific ones. The dog entity itself can be described as a <code>merge</code> of those two attribute sets:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def :animal/kind string?)
+(s/def :animal/says string?)
+(s/def :animal/common (s/keys :req [:animal/kind :animal/says]))
+(s/def :dog/tail? boolean?)
+(s/def :dog/breed string?)
+(s/def :animal/dog (s/merge :animal/common
+                            (s/keys :req [:dog/tail? :dog/breed])))
+(s/valid? :animal/dog
+  {:animal/kind "dog"
+   :animal/says "woof"
+   :dog/tail? true
+   :dog/breed "retriever"})
+;;=&gt; true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multi_spec">multi-spec</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One common occurrence in Clojure is to use maps as tagged entities and a special field that indicates the "type" of the map where type indicates a potentially open set of types, often with shared attributes across the types.</p>
+</div>
+<div class="paragraph">
+<p>As previously discussed, the attributes for all types are well-specified using attributes stored in the registry by namespaced keyword. Attributes shared across entity types automatically gain shared semantics. However, we also want to be able to specify the required keys per entity type and for that spec provides <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/multi-spec"><code>multi-spec</code></a> which leverages a multimethod to provide for the specification of an open set of entity types based on a type tag.</p>
+</div>
+<div class="paragraph">
+<p>For example, imagine an API that received event objects which shared some common fields but also had type-specific shapes. First we would register the event attributes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def :event/type keyword?)
+(s/def :event/timestamp int?)
+(s/def :search/url string?)
+(s/def :error/message string?)
+(s/def :error/code int?)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We then need a multimethod that defines a dispatch function for choosing the selector (here our <code>:event/type</code> field) and returns the appropriate spec based on the value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defmulti event-type :event/type)
+(defmethod event-type :event/search [_]
+  (s/keys :req [:event/type :event/timestamp :search/url]))
+(defmethod event-type :event/error [_]
+  (s/keys :req [:event/type :event/timestamp :error/message :error/code]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The methods should ignore their argument and return the spec for the specified type. Here we&#8217;ve fully spec&#8217;ed two possible events - a "search" event and an "error" event.</p>
+</div>
+<div class="paragraph">
+<p>And then finally we are ready to declare our <code>multi-spec</code> and try it out.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def :event/event (s/multi-spec event-type :event/type))
+
+(s/valid? :event/event
+  {:event/type :event/search
+   :event/timestamp 1463970123000
+   :search/url "https://clojure.org"})
+;=&gt; true
+(s/valid? :event/event
+  {:event/type :event/error
+   :event/timestamp 1463970123000
+   :error/message "Invalid host"
+   :error/code 500})
+;=&gt; true
+(s/explain :event/event
+  {:event/type :event/restart})
+;; val: #:event{:type :event/restart} fails spec: :event/event
+;;   at: [:event/restart] predicate: my.domain/event-type,  no method
+(s/explain :event/event
+  {:event/type :event/search
+   :search/url 200})
+;; val: {:event/type :event/search, :search/url 200} fails spec: :event/event
+;;   at: [:event/search] predicate: [(contains? % :event/timestamp)]
+;; In: [:search/url] val: 200 fails spec: :search/url
+;;   at: [:event/search :search/url] predicate: string?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a moment to examine the explain error output on that final example. There were two different kinds of failures detected. The first failure is due to the missing required <code>:event/timestamp</code> key in the event. The second is from the invalid <code>:search/url</code> value (a number instead of a string). We see the same parts as prior explain errors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>in - the path within the data to the failing value. This is omitted on the first error as it&#8217;s at the root value but is the key in the map on the second error.</p>
+</li>
+<li>
+<p>val - the failing value, either the full map or the individual key in the map</p>
+</li>
+<li>
+<p>spec - the actual spec that failed</p>
+</li>
+<li>
+<p>at - the path in the spec where the failing value occurred</p>
+</li>
+<li>
+<p>predicate - the actual predicate that failed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>multi-spec</code> approach allows us to create an <strong>open</strong> system for spec validation, just like multimethods and protocols. New event types can be added later by just extending the <code>event-type</code> multimethod.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collections">Collections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A few helpers are provided for other special collection cases - <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/coll-of"><code>coll-of</code></a>, <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/tuple"><code>tuple</code></a>, and  <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/map-of"><code>map-of</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>For the special case of a homogenous collection of arbitrary size, you can use <code>coll-of</code> to specify a collection of elements satisfying a predicate.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/conform (s/coll-of keyword?) [:a :b :c])
+;;=&gt; [:a :b :c]
+(s/conform (s/coll-of number?) #{5 10 2})
+;;=&gt; #{2 5 10}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally, <code>coll-of</code> can be passed a number of keyword arg options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:kind</code> - a predicate or spec that the incoming collection must satisfy, such as <code>vector?</code></p>
+</li>
+<li>
+<p><code>:count</code> - specifies exact expected count</p>
+</li>
+<li>
+<p><code>:min-count</code>, <code>:max-count</code> - checks that collection has <code>(&lt;= min-count count max-count)</code></p>
+</li>
+<li>
+<p><code>:distinct</code> - checks that all elements are distinct</p>
+</li>
+<li>
+<p><code>:into</code> - one of [], (), {}, or #{} for output conformed value. If <code>:into</code> is not specified, the input collection type will be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Following is an example utilizing some of these options to spec a vector containing three distinct numbers conformed as a set and some of the errors for different kinds of invalid values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::vnum3 (s/coll-of number? :kind vector? :count 3 :distinct true :into #{}))
+(s/conform ::vnum3 [1 2 3])
+;;=&gt; #{1 2 3}
+(s/explain ::vnum3 #{1 2 3})   ;; not a vector
+;; val: #{1 3 2} fails spec: ::vnum3 predicate: clojure.core/vector?
+(s/explain ::vnum3 [1 1 1])    ;; not distinct
+;; val: [1 1 1] fails spec: ::vnum3 predicate: distinct?
+(s/explain ::vnum3 [1 2 :a])   ;; not a number
+;; In: [2] val: :a fails spec: ::vnum3 predicate: number?</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Both <code>coll-of</code> and <code>map-of</code> will conform all of their elements, which may make them unsuitable for large collections. In that case, consider <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every"><code>every</code></a> or for maps  <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every-kv"><code>every-kv</code></a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>While <code>coll-of</code> is good for homogenous collections of any size, another case is a fixed-size positional collection with fields of known type at different positions. For that we have <code>tuple</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::point (s/tuple double? double? double?))
+(s/conform ::point [1.5 2.5 -0.5])
+=&gt; [1.5 2.5 -0.5]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case of a "point" structure with x/y/z values we actually had a choice of three possible specs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Regular expression - <code>(s/cat :x double? :y double? :z double?)</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows for matching nested structure (not needed here)</p>
+</li>
+<li>
+<p>Conforms to map with named keys based on the <code>cat</code> tags</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Collection - <code>(s/coll-of double?)</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Designed for arbitrary size homogenous collections</p>
+</li>
+<li>
+<p>Conforms to a vector of the values</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tuple - <code>(s/tuple double? double? double?)</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Designed for fixed size with known positional "fields"</p>
+</li>
+<li>
+<p>Conforms to a vector of the values</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this example, <code>coll-of</code> will match other (invalid) values as well (like <code>[1.0]</code> or <code>[1.0 2.0 3.0 4.0])</code>, so it is not a suitable choice - we want fixed fields. The choice between a regular expression and tuple here is to some degree a matter of taste, possibly informed by whether you expect either the tagged return values or error output to be better with one or the other.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the support for information maps via <code>keys</code>, spec also provides <code>map-of</code> for maps with homogenous key and value predicates.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::scores (s/map-of string? int?))
+(s/conform ::scores {"Sally" 1000, "Joe" 500})
+;=&gt; {"Sally" 1000, "Joe" 500}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default <code>map-of</code> will validate but not conform keys because conformed keys might create key duplicates that would cause entries in the map to be overridden. If conformed keys are desired, pass the option `:conform-keys true'.</p>
+</div>
+<div class="paragraph">
+<p>You can also use the various count-related options on <code>map-of</code> that you have with <code>coll-of</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sequences">Sequences</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes sequential data is used to encode additional structure (typically new syntax, often used in macros). spec provides the standard <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> operators to describe the structure of a sequential data value:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/cat"><code>cat</code></a> - concatenation of predicates/patterns</p>
+</li>
+<li>
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/alt"><code>alt</code></a> - choice among alternative predicates/patterns</p>
+</li>
+<li>
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/*"><code>*</code></a> - 0 or more of a predicate/pattern</p>
+</li>
+<li>
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%2B"><code>+</code></a> - 1 or more of a predicate/pattern</p>
+</li>
+<li>
+<p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%3F"><code>?</code></a> - 0 or 1 of a predicate/pattern</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Like <code>or</code>, both <code>cat</code> and <code>alt</code> tag their "parts" - these tags are then used in the conformed value to identify what was matched, to report errors, and more.</p>
+</div>
+<div class="paragraph">
+<p>Consider an ingredient represented by a vector containing a quantity (number) and a unit (keyword). The spec for this data uses <code>cat</code> to specify the right components in the right order. Like predicates, regex operators are implicitly converted to specs when passed to functions like <code>conform</code>, <code>valid?</code>, etc.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::ingredient (s/cat :quantity number? :unit keyword?))
+(s/conform ::ingredient [2 :teaspoon])
+;;=&gt; {:quantity 2, :unit :teaspoon}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The data is conformed as a map with the tags as keys. We can use <code>explain</code> to examine non-conforming data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; pass string for unit instead of keyword
+(s/explain ::ingredient [11 "peaches"])
+;; In: [1] val: \"peaches\" fails spec: ::ingredient at: [:unit] predicate: keyword?
+
+;; leave out the unit
+(s/explain ::ingredient [2])
+;; val: () fails spec: ::ingredient at: [:unit] predicate: keyword?,  Insufficient input</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s now see the various occurrence operators <code>*</code>, <code>+</code>, and <code>?</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::seq-of-keywords (s/* keyword?))
+(s/conform ::seq-of-keywords [:a :b :c])
+;;=&gt; [:a :b :c]
+(s/explain ::seq-of-keywords [10 20])
+;; In: [0] val: 10 fails spec: :spec.examples.guide/seq-of-keywords predicate: keyword?
+
+(s/def ::odds-then-maybe-even (s/cat :odds (s/+ odd?)
+                                     :even (s/? even?)))
+(s/conform ::odds-then-maybe-even [1 3 5 100])
+;;=&gt; {:odds [1 3 5], :even 100}
+(s/conform ::odds-then-maybe-even [1])
+;;=&gt; {:odds [1]}
+(s/explain ::odds-then-maybe-even [100])
+;; In: [0] val: 100 fails spec: ::odds-then-maybe-even at: [:odds] predicate: odd?
+
+;; opts are alternating keywords and booleans
+(s/def ::opts (s/* (s/cat :opt keyword? :val boolean?)))
+(s/conform ::opts [:silent? false :verbose true])
+;;=&gt; [{:opt :silent?, :val false} {:opt :verbose, :val true}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, we can use <code>alt</code> to specify alternatives within the sequential data. Like <code>cat</code>, <code>alt</code> requires you to tag each alternative but the conformed data is a vector of tag and value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::config (s/*
+                  (s/cat :prop string?
+                         :val  (s/alt :s string? :b boolean?))))
+(s/conform ::config ["-server" "foo" "-verbose" true "-user" "joe"])
+;;=&gt; [{:prop "-server", :val [:s "foo"]}
+;;    {:prop "-verbose", :val [:b true]}
+;;    {:prop "-user", :val [:s "joe"]}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you need a description of a specification, use <code>describe</code> to retrieve one. Let&#8217;s try it on some of the specifications we&#8217;ve already defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/describe ::seq-of-keywords)
+;;=&gt; (* keyword?)
+(s/describe ::odds-then-maybe-even)
+;;=&gt; (cat :odds (+ odd?) :even (? even?))
+(s/describe ::opts)
+;;=&gt; (* (cat :opt keyword? :val boolean?))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Spec also defines one additional regex operator, <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/&amp;"><code>&amp;</code></a>, which takes a regex operator and constrains it with one or more additional predicates. This can be used to create regular expressions with additional constraints that would otherwise require custom predicates. For example, consider wanting to match only sequences with an even number of strings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::even-strings (s/&amp; (s/* string?) #(even? (count %))))
+(s/valid? ::even-strings ["a"])  ;; false
+(s/valid? ::even-strings ["a" "b"])  ;; true
+(s/valid? ::even-strings ["a" "b" "c"])  ;; false
+(s/valid? ::even-strings ["a" "b" "c" "d"])  ;; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When regex ops are combined, they describe a single sequence. If you need to spec a nested sequential collection,
+you must use an explicit call to <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/spec"><code>spec</code></a>
+to start a new nested regex context. For example to describe a sequence like <code>[:names ["a" "b"] :nums [1 2 3]]</code>,
+you need nested regular expressions to describe the inner sequential data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::nested
+  (s/cat :names-kw #{:names}
+         :names (s/spec (s/* string?))
+         :nums-kw #{:nums}
+         :nums (s/spec (s/* number?))))
+(s/conform ::nested [:names ["a" "b"] :nums [1 2 3]])
+;;=&gt; {:names-kw :names, :names ["a" "b"], :nums-kw :nums, :nums [1 2 3]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the specs were removed this spec would instead match a sequence like <code>[:names "a" "b" :nums 1 2 3]</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::unnested
+  (s/cat :names-kw #{:names}
+         :names (s/* string?)
+         :nums-kw #{:nums}
+         :nums (s/* number?)))
+(s/conform ::unnested [:names "a" "b" :nums 1 2 3])
+;;=&gt; {:names-kw :names, :names ["a" "b"], :nums-kw :nums, :nums [1 2 3]}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_spec_for_validation">Using spec for validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now is a good time to step back and think about how spec can be used for runtime data validation.</p>
+</div>
+<div class="paragraph">
+<p>One way to use spec is to explicitly call <code>valid?</code> to verify input data passed to a function. You can, for example, use the existing pre- and post-condition support built into <code>defn</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn person-name
+  [person]
+  {:pre [(s/valid? ::person person)]
+   :post [(s/valid? string? %)]}
+  (str (::first-name person) " " (::last-name person)))
+
+(person-name 42)
+;;=&gt; java.lang.AssertionError: Assert failed: (s/valid? :my.domain/person person)
+
+(person-name {::first-name "Elon" ::last-name "Musk" ::email "elon@example.com"})
+;; Elon Musk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the function is invoked with something that isn&#8217;t valid <code>::person</code> data, the pre-condition fails. Similarly, if there was a bug in our code and the output was not a string, the post-condition would fail.</p>
+</div>
+<div class="paragraph">
+<p>Another option is to use <code>s/assert</code> within your code to assert that a value satisfies a spec. On success the value is returned and on failure an assertion error is thrown. By default assertion checking is off - this can be changed at the REPL with <code>s/check-asserts</code> or on startup by setting the system property <code>clojure.spec.check-asserts=true</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn person-name
+  [person]
+  (let [p (s/assert ::person person)]
+    (str (::first-name p) " " (::last-name p))))
+
+(s/check-asserts true)
+(person-name 100)
+;; CompilerException clojure.lang.ExceptionInfo: Spec assertion failed
+;; val: 100 fails predicate: map?
+;; :clojure.spec.alpha/failure  :assertion-failed
+;; #:clojure.spec.alpha{:problems [{:path [], :pred map?, :val 100, :via [], :in []}],
+;;                      :failure :assertion-failed}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A deeper level of integration is to call conform and use the return value to destructure the input. This will be particularly useful for complex inputs with alternate options.</p>
+</div>
+<div class="paragraph">
+<p>Here we conform using the config specification defined above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn- set-config [prop val]
+  ;; dummy fn
+  (println "set" prop val))
+
+(defn configure [input]
+  (let [parsed (s/conform ::config input)]
+    (if (= parsed ::s/invalid)
+      (throw (ex-info "Invalid input" (s/explain-data ::config input)))
+      (for [{prop :prop [_ val] :val} parsed]
+        (set-config (subs prop 1) val)))))
+
+(configure ["-server" "foo" "-verbose" true "-user" "joe"])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here configure calls <code>conform</code> to destructure the config input. The result is either the special <code>::s/invalid</code> value or a destructured form of the result:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">[{:prop "-server", :val [:s "foo"]}
+ {:prop "-verbose", :val [:b true]}
+ {:prop "-user", :val [:s "joe"]}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the success case, the parsed input is transformed into the desired shape for further processing. In the error case, we call <code>explain-data</code> to generate error message data. The explain data contains information about what expression failed to conform, the path to that expression in the specification, and the predicate it was attempting to match.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spec_ing_functions">Spec&#8217;ing functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pre- and post-condition example in the previous section hinted at an interesting question - how do we define the input and output specifications for a function or macro?</p>
+</div>
+<div class="paragraph">
+<p>Spec has explicit support for this using <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fdef"><code>fdef</code></a>, which defines specifications for a function - the arguments and/or the return value spec, and optionally a function that can specify a relationship between args and return.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s consider a <code>ranged-rand</code> function that produces a random number in a range:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn ranged-rand
+  "Returns random int in range start &lt;= rand &lt; end"
+  [start end]
+  (+ start (long (rand (- end start)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can then provide a specification for that function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/fdef ranged-rand
+  :args (s/and (s/cat :start int? :end int?)
+               #(&lt; (:start %) (:end %)))
+  :ret int?
+  :fn (s/and #(&gt;= (:ret %) (-&gt; % :args :start))
+             #(&lt; (:ret %) (-&gt; % :args :end))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function spec demonstrates a number of features. First the <code>:args</code> is a compound spec that describes the function arguments. This spec is invoked with the args in a list, as if they were passed to <code>(apply fn (arg-list))</code>. Because the args are sequential and the args are positional fields, they are almost always described using a regex op, like <code>cat</code>, <code>alt</code>, or <code>*</code>.</p>
+</div>
+<div class="paragraph">
+<p>The second <code>:args</code> predicate takes as input the conformed result of the first predicate and verifies that start &lt; end. The <code>:ret</code> spec indicates the return is also an integer. Finally, the <code>:fn</code> spec checks that the return value is &gt;= start and &lt; end.</p>
+</div>
+<div class="paragraph">
+<p>Once a spec has been created for a function, the <code>doc</code> for the function will also include it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(doc ranged-rand)
+-------------------------
+user/ranged-rand
+([start end])
+  Returns random int in range start &lt;= rand &lt; end
+Spec
+  args: (and (cat :start int? :end int?) (&lt; (:start %) (:end %)))
+  ret: int?
+  fn: (and (&gt;= (:ret %) (-&gt; % :args :start)) (&lt; (:ret %) (-&gt; % :args :end)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll see later how we can use a function spec for development and testing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_higher_order_functions">Higher order functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Higher order functions are common in Clojure and spec provides <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fspec"><code>fspec</code></a> to support spec&#8217;ing them.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider the <code>adder</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn adder [x] #(+ x %))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>adder</code> returns a function that adds x. We can declare a function spec for <code>adder</code> using <code>fspec</code> for the return value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/fdef adder
+  :args (s/cat :x number?)
+  :ret (s/fspec :args (s/cat :y number?)
+                :ret number?)
+  :fn #(= (-&gt; % :args :x) ((:ret %) 0)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>:ret</code> spec uses <code>fspec</code> to declare that the returning function takes and returns a number. Even more interesting, the <code>:fn</code> spec can state a general property that relates the <code>:args</code> (where we know x) and the result we get from invoking the function returned from <code>adder</code>, namely that adding 0 to it should return x.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_macros">Macros</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As macros are functions that take code and produce code, they can also be spec&#8217;ed like functions. One special consideration however is that you must keep in mind that you are receiving code as data, not evaluated arguments, and that you are most commonly producing new code as data, so often it&#8217;s not helpful to spec the :ret value of a macro (as it&#8217;s just code).</p>
+</div>
+<div class="paragraph">
+<p>For example, we could spec the <code>clojure.core/declare</code> macro like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/fdef clojure.core/declare
+    :args (s/cat :names (s/* simple-symbol?))
+    :ret any?)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Clojure macroexpander will look for and conform :args specs registered for macros at macro expansion time (not runtime!). If an error is detected, <code>explain</code> will be invoked to explain the error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(declare 100)
+;; ExceptionInfo: Call to clojure.core/declare did not conform to spec:
+;; In: [0] val: 100 fails at: [:args :names] predicate: simple-symbol?
+;; :clojure.spec.alpha/args  (100)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because macros are always checked during macro expansion, you do not need to call instrument for macro specs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_game_of_cards">A game of cards</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here&#8217;s a bigger set of specs to model a game of cards:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def suit? #{:club :diamond :heart :spade})
+(def rank? (into #{:jack :queen :king :ace} (range 2 11)))
+(def deck (for [suit suit? rank rank?] [rank suit]))
+
+(s/def ::card (s/tuple rank? suit?))
+(s/def ::hand (s/* ::card))
+
+(s/def ::name string?)
+(s/def ::score int?)
+(s/def ::player (s/keys :req [::name ::score ::hand]))
+
+(s/def ::players (s/* ::player))
+(s/def ::deck (s/* ::card))
+(s/def ::game (s/keys :req [::players ::deck]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can validate a piece of this data against the schema:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def kenny
+  {::name "Kenny Rogers"
+   ::score 100
+   ::hand []})
+(s/valid? ::player kenny)
+;;=&gt; true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or look at the errors we&#8217;ll get from some bad data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/explain ::game
+  {::deck deck
+   ::players [{::name "Kenny Rogers"
+               ::score 100
+               ::hand [[2 :banana]]}]})
+;; In: [::players 0 ::hand 0 1] val: :banana fails spec: ::card at: [::players ::hand 1] predicate: suit?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The error indicates the key path in the data structure down to the invalid value, the non-matching value, the spec part it&#8217;s trying to match, the path in that spec, and the predicate that failed.</p>
+</div>
+<div class="paragraph">
+<p>If we have a function <code>deal</code> that doles out some cards to the players we can spec that function to verify the arg and return value are both suitable data values. We can also specify a <code>:fn</code> spec to verify that the count of cards in the game before the deal equals the count of cards after the deal.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn total-cards [{:keys [::deck ::players] :as game}]
+  (apply + (count deck)
+    (map #(-&gt; % ::hand count) players)))
+
+(defn deal [game] .... )
+
+(s/fdef deal
+  :args (s/cat :game ::game)
+  :ret ::game
+  :fn #(= (total-cards (-&gt; % :args :game))
+          (total-cards (-&gt; % :ret))))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generators">Generators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A key design constraint of spec is that all specs are also designed to act as generators of sample data that conforms to the spec (a critical requirement for property-based testing).</p>
+</div>
+<div class="sect2">
+<h3 id="_project_setup">Project Setup</h3>
+<div class="paragraph">
+<p>spec generators rely on the Clojure property testing library <a href="https://github.com/clojure/test.check">test.check</a>. However, this dependency is dynamically loaded and you can use the parts of spec other than <code>gen</code>, <code>exercise</code>, and testing without declaring test.check as a runtime dependency. When you wish to use these parts of spec (typically during testing), you will need to declare a dev dependency on test.check.</p>
+</div>
+<div class="paragraph">
+<p>In Leiningen add this to project.clj:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">:profiles {:dev {:dependencies [[org.clojure/test.check "0.9.0"]]}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Leiningen the dev profile dependencies are included during testing but not published as a dependency or included in uber jars.</p>
+</div>
+<div class="paragraph">
+<p>In Boot, add your dependency with test scope in your build.boot file (this is also possible in Leiningen but the approach above is preferred):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(set-env!
+ :dependencies '[[org.clojure/test.check "0.9.0" :scope "test"]])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Maven, declare your dependency as a test scope dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;project&gt;
+  ...
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.clojure&lt;/groupId&gt;
+      &lt;artifactId&gt;test.check&lt;/artifactId&gt;
+      &lt;version&gt;0.9.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependency&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In your code you also need to include the <code>clojure.spec.gen.alpha</code> namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.spec.gen.alpha :as gen])</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampling_generators">Sampling Generators</h3>
+<div class="paragraph">
+<p>The <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen"><code>gen</code></a> function can be used to obtain the generator for any spec.</p>
+</div>
+<div class="paragraph">
+<p>Once you have obtained a generator with <code>gen</code>, there are several ways to use it. You can generate a single sample value with <a href="https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/generate"><code>generate</code></a> or a series of samples with <a href="https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/sample"><code>sample</code></a>. Let&#8217;s see some basic examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(gen/generate (s/gen int?))
+;;=&gt; -959
+(gen/generate (s/gen nil?))
+;;=&gt; nil
+(gen/sample (s/gen string?))
+;;=&gt; ("" "" "" "" "8" "W" "" "G74SmCm" "K9sL9" "82vC")
+(gen/sample (s/gen #{:club :diamond :heart :spade}))
+;;=&gt; (:heart :diamond :heart :heart :heart :diamond :spade :spade :spade :club)
+
+(gen/sample (s/gen (s/cat :k keyword? :ns (s/+ number?))))
+;;=&gt; ((:D -2.0)
+;;=&gt;  (:q4/c 0.75 -1)
+;;=&gt;  (:*!3/? 0)
+;;=&gt;  (:+k_?.p*K.*o!d/*V -3)
+;;=&gt;  (:i -1 -1 0.5 -0.5 -4)
+;;=&gt;  (:?!/! 0.515625 -15 -8 0.5 0 0.75)
+;;=&gt;  (:vv_z2.A??!377.+z1*gR.D9+G.l9+.t9/L34p -1.4375 -29 0.75 -1.25)
+;;=&gt;  (:-.!pm8bS_+.Z2qB5cd.p.JI0?_2m.S8l.a_Xtu/+OM_34* -2.3125)
+;;=&gt;  (:Ci 6.0 -30 -3 1.0)
+;;=&gt;  (:s?cw*8.t+G.OS.xh_z2!.cF-b!PAQ_.E98H4_4lSo/?_m0T*7i 4.4375 -3.5 6.0 108 0.33203125 2 8 -0.517578125 -4))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What about generating a random player in our card game?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(gen/generate (s/gen ::player))
+;;=&gt; {:spec.examples.guide/name "sAt8r6t",
+;;    :spec.examples.guide/score 233843,
+;;    :spec.examples.guide/hand ([8 :spade] [5 :heart] [9 :club] [3 :heart])}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What about generating a whole game?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(gen/generate (s/gen ::game))
+;; it works! but the output is really long, so not including it here</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So we can now start with a spec, extract a generator, and generate some data. All generated data will conform to the spec we used as a generator. For specs that have a conformed value different than the original value (anything using s/or, s/cat, s/alt, etc) it can be useful to see a set of generated samples plus the result of conforming that sample data.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercise">Exercise</h3>
+<div class="paragraph">
+<p>For this we have <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise"><code>exercise</code></a>, which returns pairs of generated and conformed values for a spec. <code>exercise</code> by default produces 10 samples (like <code>sample</code>) but you can pass both functions a number indicating the number of samples to produce.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/exercise (s/cat :k keyword? :ns (s/+ number?)) 5)
+;;=&gt;
+;;([(:y -2.0) {:k :y, :ns [-2.0]}]
+;; [(:_/? -1.0 0.5) {:k :_/?, :ns [-1.0 0.5]}]
+;; [(:-B 0 3.0) {:k :-B, :ns [0 3.0]}]
+;; [(:-!.gD*/W+ -3 3.0 3.75) {:k :-!.gD*/W+, :ns [-3 3.0 3.75]}]
+;; [(:_Y*+._?q-H/-3* 0 1.25 1.5) {:k :_Y*+._?q-H/-3*, :ns [0 1.25 1.5]}])
+
+(s/exercise (s/or :k keyword? :s string? :n number?) 5)
+;;=&gt; ([:H [:k :H]]
+;;    [:ka [:k :ka]]
+;;    [-1 [:n -1]]
+;;    ["" [:s ""]]
+;;    [-3.0 [:n -3.0]])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For spec&#8217;ed functions we also have <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise-fn"><code>exercise-fn</code></a>, which generates sample args, invokes the spec&#8217;ed function and returns the args and the return value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/exercise-fn `ranged-rand)
+=&gt;
+([(-2 -1)   -2]
+ [(-3 3)     0]
+ [(0 1)      0]
+ [(-8 -7)   -8]
+ [(3 13)     7]
+ [(-1 0)    -1]
+ [(-69 99) -41]
+ [(-19 -1)  -5]
+ [(-1 1)    -1]
+ [(0 65)     7])</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_code_s_and_code_generators">Using <code>s/and</code> Generators</h3>
+<div class="paragraph">
+<p>All of the generators we&#8217;ve seen worked fine but there are a number of cases where they will need some additional help. One common case is when the predicate implicitly presumes values of a particular type but the spec does not specify them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(gen/generate (s/gen even?))
+;; CompilerException java.lang.Exception: Unable to construct gen at: [] for: clojure.core$even_QMARK_@188fc6fd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case spec was not able to find a generator for the <code>even?</code> predicate. Most of the primitive generators in spec are mapped to the common type predicates (strings, numbers, keywords, etc).</p>
+</div>
+<div class="paragraph">
+<p>However, spec is designed to support this case via <code>and</code> - the first predicate will determine the generator and subsequent branches will act as filters by applying the predicate to the produced values (using test.check&#8217;s <code>such-that</code>).</p>
+</div>
+<div class="paragraph">
+<p>If we modify our predicate to use an <code>and</code> and a predicate with a mapped generator, the <code>even?</code> can be used as a filter for generated values instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(gen/generate (s/gen (s/and int? even?)))
+;;=&gt; -15161796</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can use many predicates to further refine the generated values. For example, say we only wanted to generate numbers that were positive multiples of 3:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn divisible-by [n] #(zero? (mod % n)))
+
+(gen/sample (s/gen (s/and int?
+                     #(&gt; % 0)
+                     (divisible-by 3))))
+;;=&gt; (3 9 1524 3 1836 6 3 3 927 15027)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, it is possible to go too far with refinement and make something that fails to produce any values. The test.check <a href="https://clojure.github.io/test.check/clojure.test.check.generators.html#var-such-that"><code>such-that</code></a> that implements the refinement will throw an error if the refinement predicate cannot be resolved within a relatively small number of attempts. For example, consider trying to generate strings that happen to contain the word "hello":</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; hello, are you the one I'm looking for?
+(gen/sample (s/gen (s/and string? #(clojure.string/includes? % "hello"))))
+;; ExceptionInfo Couldn't satisfy such-that predicate after 100 tries.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Given enough time (maybe a lot of time), the generator probably would come up with a string like this, but the underlying <code>such-that</code> will make only 100 attempts to generate a value that passes the filter. This is a case where you will need to step in and provide a custom generator.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_generators">Custom Generators</h3>
+<div class="paragraph">
+<p>Building your own generator gives you the freedom to be either narrower and/or be more explicit about what values you want to generate. Alternately, custom generators can be used in cases where conformant values can be generated more efficiently than using a base predicate plus filtering. Spec does not trust custom generators and any values they produce will also be checked by their associated spec to guarantee they pass conformance.</p>
+</div>
+<div class="paragraph">
+<p>There are three ways to build up custom generators - in decreasing order of preference:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let spec create a generator based on a predicate/spec</p>
+</li>
+<li>
+<p>Create your own generator from the tools in clojure.spec.gen.alpha</p>
+</li>
+<li>
+<p>Use test.check or other test.check compatible libraries (like <a href="https://github.com/gfredericks/test.chuck">test.chuck</a>)</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The last option requires a runtime dependency on test.check so the first two options are strongly preferred over using test.check directly.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First consider a spec with a predicate to specify keywords from a particular namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::kws (s/and keyword? #(= (namespace %) "my.domain")))
+(s/valid? ::kws :my.domain/name) ;; true
+(gen/sample (s/gen ::kws)) ;; unlikely we'll generate useful keywords this way</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The simplest way to start generating values for this spec is to have spec create a generator from a fixed set of options. A set is a valid predicate spec so we can create one and ask for it&#8217;s generator:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def kw-gen (s/gen #{:my.domain/name :my.domain/occupation :my.domain/id}))
+(gen/sample kw-gen 5)
+;;=&gt; (:my.domain/occupation :my.domain/occupation :my.domain/name :my.domain/id :my.domain/name)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To redefine our spec using this custom generator, use <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/with-gen"><code>with-gen</code></a> which takes a spec and a replacement generator:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::kws (s/with-gen (s/and keyword? #(= (namespace %) "my.domain"))
+               #(s/gen #{:my.domain/name :my.domain/occupation :my.domain/id})))
+(s/valid? ::kws :my.domain/name)  ;; true
+(gen/sample (s/gen ::kws))
+;;=&gt; (:my.domain/occupation :my.domain/occupation :my.domain/name  ...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that <code>with-gen</code> (and other places that take a custom generator) take a no-arg function that returns the generator, allowing it to be lazily realized.</p>
+</div>
+<div class="paragraph">
+<p>One downside to this approach is we are missing what property testing is really good at: automatically generating data across a wide search space to find unexpected problems.</p>
+</div>
+<div class="paragraph">
+<p>The clojure.spec.gen.alpha namespace has a number of functions for generator "primitives" as well as "combinators" for combining them into more complicated generators.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Nearly all of the functions in the clojure.spec.gen.alpha namespace are merely wrappers that dynamically load functions of the same name in test.check. You should refer to the documentation for <a href="https://clojure.github.io/test.check/">test.check</a> for more details on how all of the clojure.spec.gen.alpha generator functions work.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In this case we want our keyword to have open names but fixed namespaces. There are many ways to accomplish this but one of the simplest is to use <a href="https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/fmap"><code>fmap</code></a> to build up a keyword based on generated strings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def kw-gen-2 (gen/fmap #(keyword "my.domain" %) (gen/string-alphanumeric)))
+(gen/sample kw-gen-2 5)
+;;=&gt; (:my.domain/ :my.domain/ :my.domain/1 :my.domain/1O :my.domain/l9p2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>gen/fmap</code> takes a function to apply and a generator. The function will be applied to each sample produced by the generator allowing us to build one generator on another.</p>
+</div>
+<div class="paragraph">
+<p>However, we can spot a problem in the example above - generators are often designed to return "simpler" values first and any string-oriented generator will often return an empty string which is not a valid keyword. We can make a slight adjustment to omit that particular value using <a href="https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/such-that"><code>such-that</code></a> which lets us specify a filtering condition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def kw-gen-3 (gen/fmap #(keyword "my.domain" %)
+               (gen/such-that #(not= % "")
+                 (gen/string-alphanumeric))))
+(gen/sample kw-gen-3 5)
+;;=&gt; (:my.domain/O :my.domain/b :my.domain/ZH :my.domain/31 :my.domain/U)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Returning to our "hello" example, we now have the tools to make that generator:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::hello
+  (s/with-gen #(clojure.string/includes? % "hello")
+    #(gen/fmap (fn [[s1 s2]] (str s1 "hello" s2))
+      (gen/tuple (gen/string-alphanumeric) (gen/string-alphanumeric)))))
+(gen/sample (s/gen ::hello))
+;;=&gt; ("hello" "ehello3" "eShelloO1" "vhello31p" "hello" "1Xhellow" "S5bhello" "aRejhellorAJ7Yj" "3hellowPMDOgv7" "UhelloIx9E")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we generate a tuple of a random prefix and random suffix strings, then insert "hello" between them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_range_specs_and_generators">Range Specs and Generators</h3>
+<div class="paragraph">
+<p>There are several cases where it&#8217;s useful to spec (and generate) values in a range and spec provides helpers for these cases.</p>
+</div>
+<div class="paragraph">
+<p>For example, in the case of a range of integer values (for example, a bowling roll), use <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/int-in"><code>int-in</code></a> to spec a range (end is exclusive):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::roll (s/int-in 0 11))
+(gen/sample (s/gen ::roll))
+;;=&gt; (1 0 0 3 1 7 10 1 5 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>spec also includes <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/inst-in"><code>inst-in</code></a> for a range of instants:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::the-aughts (s/inst-in #inst "2000" #inst "2010"))
+(drop 50 (gen/sample (s/gen ::the-aughts) 55))
+;;=&gt; (#inst"2005-03-03T08:40:05.393-00:00"
+;;    #inst"2008-06-13T01:56:02.424-00:00"
+;;    #inst"2000-01-01T00:00:00.610-00:00"
+;;    #inst"2006-09-13T09:44:40.245-00:00"
+;;    #inst"2000-01-02T10:18:42.219-00:00")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Due to the generator implementation, it takes a few samples to get "interesting" so I skipped ahead a bit.</p>
+</div>
+<div class="paragraph">
+<p>Finally, <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/double-in"><code>double-in</code></a> has support for double ranges and special options for checking special double values like <code>NaN</code> (not a number), <code>Infinity</code>, and <code>-Infinity</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::dubs (s/double-in :min -100.0 :max 100.0 :NaN? false :infinite? false))
+(s/valid? ::dubs 2.9)
+;;=&gt; true
+(s/valid? ::dubs Double/POSITIVE_INFINITY)
+;;=&gt; false
+(gen/sample (s/gen ::dubs))
+;;=&gt; (-1.0 -1.0 -1.5 1.25 -0.5 -1.0 -3.125 -1.5625 1.25 -0.390625)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To learn more about generators, read the test.check <a href="https://clojure.github.io/test.check/intro.html">tutorial</a> or <a href="https://clojure.github.io/test.check/generator-examples.html">examples</a>. Do keep in mind that while clojure.spec.gen.alpha is a large subset of clojure.test.check.generators, not everything is included.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instrumentation_and_testing">Instrumentation and Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>spec provides a set of development and testing functionality in the <code>clojure.spec.test.alpha</code> namespace, which we can include with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.spec.test.alpha :as stest])</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instrumentation">Instrumentation</h3>
+<div class="paragraph">
+<p>Instrumentation validates that the <code>:args</code> spec is being invoked on instrumented functions and thus provides validation for external uses of a function. Let&#8217;s turn on instrumentation for our previously spec&#8217;ed <code>ranged-rand</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(stest/instrument `ranged-rand)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instrument takes a fully-qualified symbol so we use <code>`</code> here to resolve it in the context of the current namespace. If the function is invoked with args that do not conform with the <code>:args</code> spec you will see an error like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ranged-rand 8 5)
+CompilerException clojure.lang.ExceptionInfo: Call to #'spec.examples.guide/ranged-rand did not conform to spec:
+val: {:start 8, :end 5} fails at: [:args] predicate: (&lt; (:start %) (:end %))
+:clojure.spec.alpha/args  (8 5)
+:clojure.spec.alpha/failure  :instrument-check-failed
+ #:clojure.spec.alpha{:problems [{:path [:args], :pred (&lt; (:start %) (:end %)), :val {:start 8, :end 5}, :via [], :in []}],
+                      :args (8 5),
+                      :failure :instrument-check-failed}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The error fails in the second args predicate that checks <code>(&lt; start end)</code>. Note that the <code>:ret</code> and <code>:fn</code> specs are not checked with instrumentation as validating the implementation should occur at testing time.</p>
+</div>
+<div class="paragraph">
+<p>Instrumentation can be turned off using the complementary function <code>unstrument</code>. Instrumentation is likely to be useful at both development time and during testing to discover errors in calling code. It is not recommended to use instrumentation in production due to the overhead involved with checking args specs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing">Testing</h3>
+<div class="paragraph">
+<p>We mentioned earlier that <code>clojure.spec.test.alpha</code> provides tools for automatically testing functions. When functions have specs, we can use <a href="https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/check"><code>check</code></a>, to automatically generate tests that check the function using the specs.</p>
+</div>
+<div class="paragraph">
+<p><code>check</code> will generate arguments based on the <code>:args</code> spec for a function, invoke the function, and check that the <code>:ret</code> and <code>:fn</code> specs were satisfied.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.spec.test.alpha :as stest])
+
+(stest/check `ranged-rand)
+;;=&gt; ({:spec #object[clojure.spec.alpha$fspec_impl$reify__13728 ...],
+;;     :clojure.spec.test.check/ret {:result true, :num-tests 1000, :seed 1466805740290},
+;;     :sym spec.examples.guide/ranged-rand,
+;;     :result true})</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A keen observer will notice that <code>ranged-rand</code> contains a subtle bug. If the difference between start
+and end is very large (larger than is representable by <code>Long/MAX_VALUE</code>), then <code>ranged-rand</code> will
+produce an IntegerOverflowException. If you run <code>check</code> several times you will eventually
+cause this case to occur.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>check</code> also takes a number of options that can be passed to test.check to influence the test run, as well as the option to override generators for parts of the spec, by either name or path.</p>
+</div>
+<div class="paragraph">
+<p>Imagine instead that we made an error in the ranged-rand code and swapped start and end:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn ranged-rand  ;; BROKEN!
+  "Returns random int in range start &lt;= rand &lt; end"
+  [start end]
+  (+ start (long (rand (- start end)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This broken function will still create random integers, just not in the expected range. Our <code>:fn</code> spec will detect the problem when checking the var:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(stest/abbrev-result (first (stest/check `ranged-rand)))
+;;=&gt; ({:spec (fspec
+;;            :args (and (cat :start int? :end int?) (fn* [p1__3468#] (&lt; (:start p1__3468#) (:end p1__3468#))))
+;;            :ret int?
+;;            :fn (and
+;;                  (fn* [p1__3469#] (&gt;= (:ret p1__3469#) (-&gt; p1__3469# :args :start)))
+;;                  (fn* [p1__3470#] (&lt; (:ret p1__3470#) (-&gt; p1__3470# :args :end))))),
+;;     :sym spec.examples.guide/ranged-rand,
+;;     :result {:clojure.spec.alpha/problems [{:path [:fn],
+;;                                             :pred (&gt;= (:ret %) (-&gt; % :args :start)),
+;;                                             :val {:args {:start -3, :end 0}, :ret -5},
+;;                                             :via [],
+;;                                             :in []}],
+;;              :clojure.spec.test.alpha/args (-3 0),
+;;              :clojure.spec.test.alpha/val {:args {:start -3, :end 0}, :ret -5},
+;;              :clojure.spec.alpha/failure :test-failed}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>check</code> has reported an error in the <code>:fn</code> spec. We can see the arguments passed were -3 and 0 and the return value was -5, which is out of the expected range.</p>
+</div>
+<div class="paragraph">
+<p>To test all of the spec&#8217;ed functions in a namespace (or multiple namespaces), use <a href="https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/enumerate-namespace"><code>enumerate-namespace</code></a> to generate the set of symbols naming vars in the namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(-&gt; (stest/enumerate-namespace 'user) stest/check)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And you can check all of the spec&#8217;ed functions by calling <code>stest/check</code> without any arguments.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_combining_code_check_code_and_code_instrument_code">Combining <code>check</code> and <code>instrument</code></h3>
+<div class="paragraph">
+<p>While both <code>instrument</code> (for enabling <code>:args</code> checking) and <code>check</code> (for generating tests of a function) are useful tools, they can be combined to provide even deeper levels of test coverage.</p>
+</div>
+<div class="paragraph">
+<p><code>instrument</code> takes a number of options for changing the behavior of instrumented functions, including support for swapping in alternate (narrower) specs, stubbing functions (by using the <code>:ret</code> spec to generate results), or replacing functions with an alternate implementation.</p>
+</div>
+<div class="paragraph">
+<p>Consider the case where we have a low-level function that invokes a remote service and a higher-level function that calls it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; code under test
+
+(defn invoke-service [service request]
+  ;; invokes remote service
+  )
+
+(defn run-query [service query]
+  (let [{::keys [result error]} (invoke-service service {::query query})]
+    (or result error)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can spec these functions using the following specs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(s/def ::query string?)
+(s/def ::request (s/keys :req [::query]))
+(s/def ::result (s/coll-of string? :gen-max 3))
+(s/def ::error int?)
+(s/def ::response (s/or :ok (s/keys :req [::result])
+                    :err (s/keys :req [::error])))
+
+(s/fdef invoke-service
+  :args (s/cat :service any? :request ::request)
+  :ret ::response)
+
+(s/fdef run-query
+  :args (s/cat :service any? :query string?)
+  :ret (s/or :ok ::result :err ::error))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then we want to test the behavior of <code>run-query</code> while stubbing out <code>invoke-service</code> with <code>instrument</code> so that the remote service is not invoked:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(stest/instrument `invoke-service {:stub #{`invoke-service}})
+;;=&gt; [spec.examples.guide/invoke-service]
+(invoke-service nil {::query "test"})
+;;=&gt; #:spec.examples.guide{:error -11}
+(invoke-service nil {::query "test"})
+;;=&gt; #:spec.examples.guide{:result ["kq0H4yv08pLl4QkVH8" "in6gH64gI0ARefv3k9Z5Fi23720gc"]}
+(stest/summarize-results (stest/check `run-query))
+;;=&gt; {:total 1, :check-passed 1}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first call here instruments and stubs <code>invoke-service</code>. The second and third calls demonstrate that calls to <code>invoke-service</code> now return generated results (rather than hitting a service). Finally, we can use <code>check</code> on the higher level function to test that it behaves properly based on the generated stub results returned from <code>invoke-service</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wrapping_up">Wrapping Up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this guide we have covered most of the features for designing and using specs and generators. We expect to add some more advanced generator techniques and help on testing in a future update.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

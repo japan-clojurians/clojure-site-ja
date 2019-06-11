@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Threading Macros Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Threading Macros Guide</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Threading macros, also known as arrow macros, convert nested function calls into a linear flow of function calls, improving readability.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thread-first">The thread-first macro (->)</h3>
+<div class="paragraph">
+<p>In idiomatic Clojure, pure functions transform immutable data structures into a
+desired output format. Consider a function that applies two transformations to a
+map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn transform [person]
+   (update (assoc person :hair-color :gray) :age inc))
+
+(transform {:name "Socrates", :age 39})
+;; =&gt; {:name "Socrates", :age 40, :hair-color :gray}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>transform</code> is an example of a common pattern: it takes a value and applies multiple
+transformations with each step in the pipeline taking the result of the
+previous step as its input. It is often possible to improve code of this type
+by rewriting it to use the thread-first macro <code>-></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn transform* [person]
+   (-&gt; person
+      (assoc :hair-color :gray)
+      (update :age inc)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Taking an initial value as its first argument, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->"><code>-></code></a>
+threads it through one
+or more expressions.</p>
+</div>
+<div class="paragraph">
+<p><em>Note: The word "thread" in this context (meaning passing a value through a pipeline of functions) is unrelated to the concept of concurrent threads of execution.</em></p>
+</div>
+<div class="paragraph">
+<p>Starting with the second form, the macro inserts the first value as its first
+argument. This is repeated at each subsequent step with the result of the
+previous computation inserted as the first argument of the next form.
+What looks like a function call with two arguments is in fact a call with three
+arguments, as the threaded value is inserted just after the function name. It may
+be helpful to mark the insertion point with three commas for illustration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn transform* [person]
+   (-&gt; person
+      (assoc ,,, :hair-color :gray)
+      (update ,,, :age inc)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Though not often seen in practice, this visual aid is valid Clojure syntax,
+as commas are whitespace in Clojure.</p>
+</div>
+<div class="paragraph">
+<p>Semantically, <code>transform*</code> is equivalent to <code>transform</code>: the arrow macro expands
+at compile time into the original code. In each case, the return value of the
+function is the result of the last computation, the call to <code>update</code>. The re-written
+function reads like a description of the transformation: "Take a person, increase their age,
+give them gray hair, and return the result". Of course in the context of immutable
+values, no actual mutation takes place. Instead, the function simply
+returns a new value with updated attributes.</p>
+</div>
+<div class="paragraph">
+<p>Syntactically, the threading macro also allows the reader to read the functions in
+left to right order of application, rather than reading from the innermost expression out.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thread-last">thread-last (->>) and thread-as (as->) macros</h3>
+<div class="paragraph">
+<p>The <code>-></code> macro follows a purely syntactic transformation rule: for each
+expression, insert the threaded value between the function name and the
+first argument. Note that the threading expressions are function calls
+of the form <code>(f arg1 arg2 &#8230;&#8203;)</code>. A bare symbol or keyword
+without parentheses is interpreted as a simple function
+invocation with a single argument. This allows for a succinct chain of
+unary functions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(-&gt; person :hair-color name clojure.string/upper-case)
+
+;; equivalent to
+
+(-&gt; person (:hair-color) (name) (clojure.string/upper-case))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, <code>-></code> is not universally applicable, as we do not always
+want to insert the threaded argument in the initial position.
+Consider a function that computes the sum of the squares of all odd
+positive integers below ten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn calculate []
+   (reduce + (map #(* % %) (filter odd? (range 10)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Like <code>transform</code>, <code>calculate</code> is a pipeline of transformations, but
+unlike the former, the threaded value appears in each function call in
+the final position in the argument list. Instead of the thread-first macro we need to use the thread-last macro <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->>"><code>->></code></a> instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn calculate* []
+   (-&gt;&gt; (range 10)
+        (filter odd? ,,,)
+        (map #(* % %) ,,,)
+        (reduce + ,,,)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, though usually omitted, three commas mark the place where the argument
+will be inserted. As you can see, in forms threaded using <code>->></code> the
+threaded value is inserted at the end rather than the beginning of the argument
+list.</p>
+</div>
+<div class="paragraph">
+<p>Thread-first and thread-last are used in different circumstances. Which one is
+appropriate depends on the signature of the transformation functions. Ultimately
+you&#8217;ll need to consult the documentation of the functions used, but there are a
+few rules of thumb:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>By convention, core functions that operate on sequences expect
+the sequence as their last argument. Accordingly, pipelines containing <code>map</code>,
+<code>filter</code>, <code>remove</code>, <code>reduce</code>, <code>into</code>, etc usually call for the <code>->></code> macro.</p>
+</li>
+<li>
+<p>Core functions that operate on data structures, on the other hand,
+expect the value they work on as their first argument. These include
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc"><code>assoc</code></a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/update"><code>update</code></a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc"><code>dissoc</code></a>,
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get"><code>get</code></a> and their
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in"><code>-in</code></a> variants.
+Pipelines that transform maps using these functions often require the <code>-></code> macro.</p>
+</li>
+<li>
+<p>When calling methods through <a href="xref/../../reference/java_interop">Java interop</a>, the Java object is passed in as the
+first argument. In such cases, <code>-></code> is useful, for example, to check a
+string for a prefix:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(-&gt; a-string clojure.string/lower-case (.startsWith "prefix"))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note also the more specialized interop macros
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/.."><code>..</code></a>
+and
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto"><code>doto</code></a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally, there are cases where neither <code>-></code> nor <code>->></code> are
+applicable. A pipeline may consist of function calls with varying insertion
+points. In these cases, you&#8217;ll need to use <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/as->"><code>as-></code></a>, the more flexible
+alternative. <code>as-></code> expects two fixed arguments and a variable number of
+expressions. As with <code>-></code>, the first argument is a value to be threaded
+through the following forms. The second argument is the name of a binding. In
+each of the subsequent forms, the bound name can be used for the prior expression&#8217;s result.
+This allows a value to thread into any argument position, not just first or last.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(as-&gt; [:foo :bar] v
+  (map name v)
+  (first v)
+  (.substring v 1))
+
+;; =&gt; "oo"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_some_some_and_cond">some->, some->> and cond-></h3>
+<div id="some" class="paragraph">
+<p>Two of Clojure&#8217;s more specialized threading macros, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->"><code>some-></code></a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->>"><code>some->></code></a>, are used most commonly when interfacing with Java
+methods. <code>some-></code> resembles <code>-></code> in that it threads a value through
+a number of expressions. However, it also short-circuits execution when an
+expression evaluates as <code>nil</code> at any point in the chain. One common problem with
+arrow macros in the context of <a href="xref/../../reference/java_interop">Java interop</a> is that Java methods do not expect
+to be passed <code>nil</code> (<code>null</code>). One way to avoid a <code>NullPointerException</code> in these
+cases is to add an explict guard:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(when-let [counter (:counter a-map)]
+  (inc (Long/parseLong counter)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>some-></code> achieves the same effect more succinctly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(some-&gt; a-map :counter Long/parseLong inc)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If <code>a-map</code> lacks the key <code>:counter</code>, the entire expression will evaluate to <code>nil</code>
+rather than raising an exception. In fact, this behavior is so useful that it is
+common to see <code>some-></code> used when threading is not required:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(some-&gt; (compute) Long/parseLong)
+
+;; equivalent to
+
+(when-let [a-str (compute)]
+  (Long/parseLong a-str))</code></pre>
+</div>
+</div>
+<div id="cond" class="paragraph">
+<p>Like <code>-></code>, the macro <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond->"><code>cond-></code></a> takes an initial value, but unlike the
+former, it interprets its argument list as a series of <code>test, expr</code> pairs. <code>cond-></code>
+threads a value through the expressions but skips those with failing tests. For
+each pair, <code>test</code> is evaluated. If the result is truthy, the expression is
+evaluated with the threaded value inserted as its first argument; otherwise
+evaluation proceeds with the next <code>test, expr</code> pair. Note that unlike its
+relatives, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->"><code>some-></code></a> or <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond"><code>cond</code></a>, <code>cond-></code> never short-circuits
+evaluation, even if a test evaluates to <code>false</code> or <code>nil</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn describe-number [n]
+  (cond-&gt; []
+    (odd? n) (conj "odd")
+    (even? n) (conj "even")
+    (zero? n) (conj "zero")
+    (pos? n) (conj "positive")))
+
+(describe-number 3) ;; =&gt; ["odd" "positive"]
+(describe-number 4) ;; =&gt; ["even" "positive"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>cond->></code> inserts the threaded value as the last argument of each form but
+works analogously otherwise.</p>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

@@ -49,9 +49,9 @@
             <li><a href="../about/rationale.html">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
             <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
               <li><a href="../guides/guides.html">ガイド</a></li>
-              <li><a href="../community/resources.html">コミュニティ</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
               <li><a href="../news/news.html">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -107,43 +107,21 @@
 <p>libの名前は通常ふたつ以上のピリオドで区切られたシンボルである。</p>
 </li>
 <li>
-<p>lib は Java のリソースとして、 lib の名前から導出されたクラスパスに対して相対的なパスに格納される:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>パスは文字列</p>
+<p>A lib&#8217;s container is a Java resource whose classpath-relative path is
+derived from the lib name: <strong> The path is a string </strong> Periods in the lib
+name are replaced by slashes in the path <strong> Hyphens in the lib name are
+replaced by underscores in the path </strong> The path may end with ".class",
+".clj", or ".cljc" (see <a href="libs#order">Lib load order</a> below)</p>
 </li>
 <li>
-<p>lib名のピリオドはパスではスラッシュで置換される</p>
-</li>
-<li>
-<p>lib名のハイフンはパスではアンダースコアで置換される</p>
-</li>
-<li>
-<p>パスの拡張子には ".class"、 ".clj"、 もしくは ".cljc" を使用することが出来る。(以下の <a href="libs#order">Lib
-load order</a> を参照)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>libは以下を行う "ns" フォームで始まる:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>libと同じ名前のClojureネームスペースの作成</p>
-</li>
-<li>
-<p>Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係の宣言</p>
-</li>
-</ul>
-</div>
+<p>A lib begins with an "ns" form that <strong> creates the Clojure namespace that
+shares its name, and </strong> declares its dependencies on Java classes, Clojure&#8217;s
+core facilities, and/or other libs,</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojureは "ns"
-に対する呼び出しが例外無しで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は使用可能であることを保証する。</p>
+<p>Clojureは"ns"に対する呼び出しが例外なしで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は使用可能であることを保証する。</p>
 </div>
 </div>
 </div>

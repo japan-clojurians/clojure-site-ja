@@ -49,9 +49,9 @@
             <li><a href="../about/rationale.html">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
             <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
               <li><a href="../guides/guides.html">ガイド</a></li>
-              <li><a href="../community/resources.html">コミュニティ</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
               <li><a href="../news/news.html">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -134,37 +134,19 @@
 <p>名前付きのクラスを生成するため、アクセス可能なコンストラクターを持つ</p>
 </li>
 <li>
-<p>フィールドはプリミティブ型を含む型ヒントを持つことができる</p>
-<div class="ulist">
-<ul>
-<li>
-<p>注:
-現在、非プリミティブな型ヒントはフィールドの型やコンストラクターの引数を制限するものではないが、クラスメソッドの利用時の最適化のために使用される</p>
-</li>
-<li>
-<p>フィールドやコンストラクターの型の制限は計画されている</p>
-</li>
-</ul>
-</div>
+<p>fields can have type hints, and can be primitive <strong> note that currently a
+type hint of a non-primitive type will not be used to constrain the field
+type nor the constructor arg, but will be used to optimize its use in the
+class methods </strong> constraining the field type and constructor arg is planned</p>
 </li>
 <li>
 <p>deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる</p>
 </li>
 <li>
-<p>deftype/defrecordは特別なリーダーシンタックス #my.thing[1 2 3] で記述することができる:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ベクターの各要素がdeftype/defrecordのコンストラクターに評価されずに渡される</p>
-</li>
-<li>
-<p>deftype/defrecordの名前は完全修飾されている必要がある</p>
-</li>
-<li>
-<p>Clojureのバージョン1.3以降でのみ利用可能</p>
-</li>
-</ul>
-</div>
+<p>deftype/defrecord can be written with a special reader syntax #my.thing[1 2
+3] where: <strong> each element in the vector form is passed to the
+deftype/defrecord&#8217;s constructor un-evaluated </strong> the deftype/defrecord name
+must be fully qualified ** only available in Clojure versions later than 1.3</p>
 </li>
 <li>
 <p>deftype/defrecord Fooが定義された場合、対応する引数をコンストラクターに渡す関数 <code>->Foo</code>
@@ -182,26 +164,13 @@
 <p>deftypeはコンストラクター以外にはユーザーに明示されていないいかなる機能も提供しない</p>
 </li>
 <li>
-<p>defrecordは以下を含む永続的なマップの完全な実装を提供する:</p>
+<p>defrecord provides a complete implementation of a persistent map, including:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>値に基づく同値比較とhashCode</p>
-</li>
-<li>
-<p>メタデータのサポート</p>
-</li>
-<li>
-<p>associativeのサポート</p>
-</li>
-<li>
-<p>フィールドのキーワードアクセサ</p>
-</li>
-<li>
-<p>拡張可能なフィールド(defrecordの定義にないフィールドのキーをassocすることができる)</p>
-</li>
-<li>
-<p>など</p>
+<p>value-based equality and hashCode <strong> metadata support </strong> associative
+support <strong> keyword accessors for fields </strong> extensible fields (you can assoc
+keys not supplied with the defrecord definition)  ** etc</p>
 </li>
 </ul>
 </div>
@@ -210,29 +179,13 @@
 <p>deftypeはミュータブルなフィールドをサポートするが、defrecordはサポートしない</p>
 </li>
 <li>
-<p>defrecordは加えて初期値のマップを受け取る#my.record{:a 1, :b 2}のリーダーフォームをサポートする:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>defrecord名は完全修飾されている必要がある</p>
-</li>
-<li>
-<p>マップ内の要素は評価されない</p>
-</li>
-<li>
-<p>既存のdefrecordフィールドは対応するキーの値に初期化される</p>
-</li>
-<li>
-<p>リテラルマップに対応するキーのないdefrecordフィールドはnilに初期化される</p>
-</li>
-<li>
-<p>defrecordフィールド以外のキーは許容されており、defrecordに追加される</p>
-</li>
-<li>
-<p>Clojureバージョン1.3以降で利用可能</p>
-</li>
-</ul>
-</div>
+<p>defrecord supports an additional reader form of #my.record{:a 1, :b 2}
+taking a map that initializes a defrecord according to: <strong> the defrecord
+name must be fully qualified </strong> the elements in the map are un-evaluated <strong>
+existing defrecord fields take the keyed values </strong> defrecord fields without
+keyed values in the literal map are initialized to nil <strong> additional keyed
+values are allowed and added to the defrecord </strong> only available in Clojure
+versions later than 1.3</p>
 </li>
 <li>
 <p>defrecord Barが定義された場合、受け取ったマップの値でインスタンスの初期化を行う <code>map->Bar</code>
@@ -270,54 +223,22 @@ defrecordを使用することによって、一般的に操作可能な情報�
 <div class="ulist">
 <ul>
 <li>
-<p>具象的な派生は悪手だ</p>
-<div class="ulist">
-<ul>
-<li>
-<p>具象クラスからデータ型を派生させることはできず、インターフェースからのみ行える</p>
-</li>
-</ul>
-</div>
+<p>Concrete derivation is bad ** you cannot derive datatypes from concrete
+classes, only interfaces</p>
 </li>
 <li>
-<p>常にプロトコルもしくはインターフェースに対してプログラムするべきだ</p>
-<div class="ulist">
-<ul>
-<li>
-<p>データ型はそのプロトコルもしくはインターフェースで定義されていないメソッドを公開することはできない</p>
-</li>
-</ul>
-</div>
+<p>You should always program to protocols or interfaces ** datatypes cannot
+expose methods not in their protocols or interfaces</p>
 </li>
 <li>
-<p>イミュータブルがデフォルトであるべきだ</p>
-<div class="ulist">
-<ul>
-<li>
-<p>レコードについては唯一の選択肢となっている</p>
-</li>
-</ul>
-</div>
+<p>Immutability should be the default ** and is the only option for records</p>
 </li>
 <li>
-<p>情報のカプセル化は愚かだ</p>
-<div class="ulist">
-<ul>
-<li>
-<p>フィールドはパブリックであり、依存関係を避けるためにプロトコルもしくはインターフェースを利用する</p>
-</li>
-</ul>
-</div>
+<p>Encapsulation of information is folly ** fields are public, use
+protocols/interfaces to avoid dependencies</p>
 </li>
 <li>
-<p>ポリモーフィズムと継承を結びつけることは悪手だ</p>
-<div class="ulist">
-<ul>
-<li>
-<p>プロトコルを利用することでこれを避けることができる</p>
-</li>
-</ul>
-</div>
+<p>Tying polymorphism to inheritance is bad ** protocols free you from that</p>
 </li>
 </ul>
 </div>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Destructuring in Clojure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Destructuring in Clojure</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_destructuring">What is Destructuring?</a></li>
+<li><a href="#_sequential_destructuring">Sequential Destructuring</a></li>
+<li><a href="#_associative_destructuring">Associative Destructuring</a>
+<ul class="sectlevel2">
+<li><a href="#_keyword_arguments">Keyword arguments</a></li>
+<li><a href="#_namespaced_keywords">Namespaced keywords</a></li>
+</ul>
+</li>
+<li><a href="#_where_to_destructure">Where to destructure</a></li>
+<li><a href="#_macros">Macros</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_destructuring">What is Destructuring?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Destructuring is a way to concisely bind names to the values inside a data structure. Destructuring allows us to write more concise and readable code.</p>
+</div>
+<div class="paragraph">
+<p>Consider the following example of extracting and naming values in a vector.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def my-line [[5 10] [10 20]])
+
+(let [p1 (first my-line)
+      p2 (second my-line)
+      x1 (first p1)
+      y1 (second p1)
+      x2 (first p2)
+      y2 (second p2)]
+  (println "Line from (" x1 "," y1 ") to (" x2 ", " y2 ")"))
+;= "Line from ( 5 , 10 ) to ( 10 , 20 )"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is perfectly valid, but the code extracting and naming the values in the vector obscures our intent. Destructuring allows us to more concisely extract and name important parts of complex data structures to make our code cleaner.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;= Using the same vector as above
+(let [[p1 p2] my-line
+      [x1 y1] p1
+      [x2 y2] p2]
+ (println "Line from (" x1 "," y1 ") to (" x2 ", " y2 ")"))
+;= "Line from ( 5 , 10 ) to ( 10 , 20 )"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rather than explictly binding each variable, we describe the bindings based on their sequential order. That&#8217;s a pretty weird statement, "describe the bindings," so let&#8217;s look at it again.</p>
+</div>
+<div class="paragraph">
+<p>We have a data structure <code>my-line</code> that looks like this, <code>[[5 10] [10 20]]</code>. In our destructuring form we will create a vector containing two elements, <code>p1</code> and <code>p2</code>, each of which are vectors themselves. This will bind the vector <code>[5 10]</code> to the symbol <code>p1</code> and the vector <code>[10 20]</code> to the symbol <code>p2</code>. Since we want to work with the elements of <code>p1</code> and <code>p2</code> rather than the structures themselves, we destructure <code>p1</code> and <code>p2</code> within the same let statement. The vector <code>p1</code> looks like this, <code>[5 10]</code>, so to destructure it, we create a vector containing two elements, <code>x1</code> and <code>y1</code>. This binds <code>5</code> to the symbol <code>x1</code> and <code>10</code> to the symbol <code>y1</code>. The same is repeated for <code>p2</code> binding <code>10</code> to <code>x2</code> and <code>20</code> to <code>y2</code>. At this point, we now have everything we need to work with our data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sequential_destructuring">Sequential Destructuring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure destructuring is broken up into two categories, sequential destructuring and associative destructuring. Sequential destructuring represents a sequential data structure as a Clojure vector within a let binding.</p>
+</div>
+<div class="paragraph">
+<p>This type of destructuring can be used on any kind of data structure that can be traversed in linear time, including lists, vectors, and anything that can produce a sequence.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def my-vector [1 2 3])
+(def my-list '(1 2 3))
+(def my-string "abc")
+
+;= It should come as no surprise that this will print out 1 2 3
+(let [[x y z] my-vector]
+  (println x y z))
+;= 1 2 3
+
+;= We can also use a similar technique to destructure a list
+(let [[x y z] my-list]
+  (println x y z))
+;= 1 2 3
+
+;= For strings, the elements are destructured by character.
+(let [[x y z] my-string]
+  (println x y z)
+  (map type [x y z]))
+;= a b c
+;= (java.lang.Character java.lang.Character java.lang.Character)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The key to sequential destructuring is that you bind the values one-by-one to the symbols in the vector. For instance the vector <code>[x y z]</code> will match each element one-by-one with the list <code>'(1 2 3)</code>.</p>
+</div>
+<div class="paragraph">
+<p>In some cases, the collection you are destructuring isn&#8217;t the exact same size as the destructuring bindings. If the vector is too small, the extra symbols will be bound to nil.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def small-list '(1 2 3))
+(let [[a b c d e f g] small-list]
+  (println a b c d e f g))
+;= 1 2 3 nil nil nil nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the other hand, if the collection is too large, the extra values are simply ignored.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def large-list '(1 2 3 4 5 6 7 8 9 10))
+(let [[a b c] large-list]
+  (println a b c))
+;= 1 2 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Destructuring gives you total control over the elements that you choose to bind (or not) and how you bind them.</p>
+</div>
+<div class="paragraph">
+<p>Many times, you don&#8217;t need access to <em>every</em> element in a collection, only certain ones.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def names ["Michael" "Amber" "Aaron" "Nick" "Earl" "Joe"])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Say you want to print the first element on one line and the remainder on another line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[item1 item2 item3 item4 item5 item6] names]
+  (println item1)
+  (println item2 item3 item4 item5 item6))
+;= Michael
+;= Amber Aaron Nick Earl Joe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This binding works but even using destructuring it&#8217;s pretty clunky. Instead we can use <code>&amp;</code> to combine the tail elements into a sequence.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[item1 &amp; remaining] names]
+  (println item1)
+  (apply println remaining))
+;= Michael
+;= Amber Aaron Nick Earl Joe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can ignore bindings that you don&#8217;t intend on using by binding them to any symbol of your choosing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[item1 _ item3 _ item5 _] names]
+  (println "Odd names:" item1 item3 item5))
+;= Odd names: Michael Aaron Earl</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The convention for this is to use an underscore like above.</p>
+</div>
+<div class="paragraph">
+<p>You can use <code>:as all</code> to bind the entire vector to the symbol <code>all</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[item1 :as all] names]
+  (println "The first name from" all "is" item1))
+;= The first name from [Michael Amber Aaron Nick Earl Joe] is Michael</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s stop for a bit and look a little further into the types of <code>:as</code> and <code>&amp;</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def numbers [1 2 3 4 5])
+(let [[x &amp; remaining :as all] numbers]
+  (apply prn [remaining all]))
+;= (2 3 4 5) [1 2 3 4 5]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here <code>remaining</code> is bound to a sequence containing the remaining elements of the <code>numbers</code> vector while <code>all</code> has been bound to the original <code>vector</code>. What happens when we destructure a string instead?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def word "Clojure")
+(let [[x &amp; remaining :as all] word]
+  (apply prn [x remaining all]))
+;= \C (\l \o \j \u \r \e) "Clojure"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here <code>all</code> is bound to the original structure (String, vector, list, whatever it may be) and <code>x</code> is bound to the character <code>\C</code>, and <code>remaining</code> is the remaining list of characters.</p>
+</div>
+<div class="paragraph">
+<p>You can combine any or all of these techniques at the same time at your discretion.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def fruits ["apple" "orange" "strawberry" "peach" "pear" "lemon"])
+(let [[item1 _ item3 &amp; remaining :as all-fruits] fruits]
+  (println "The first and third fruits are" item1 "and" item3)
+  (println "These were taken from" all-fruits)
+  (println "The fruits after them are" remaining))
+;= The first and third fruits are apple and strawberry
+;= These were taken from [apple orange strawberry peach pear lemon]
+;= The fruits after them are (peach pear lemon)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Destructuring can also be nested to get access to arbitrary levels of sequential structure. Let&#8217;s go back to our vector from the very beginning, <code>my-line</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def my-line [[5 10] [10 20]])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This vector is comprised of nested vectors that we can access directly.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[[x1 y1][x2 y2]] my-line]
+  (println "Line from (" x1 "," y1 ") to (" x2 ", " y2 ")"))
+;= "Line from ( 5 , 10 ) to ( 10 , 20 )"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you have nested vectors, you can use <code>:as</code> or <code>&amp;</code> at any level as well.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [[[a b :as group1] [c d :as group2]] my-line]
+  (println a b group1)
+  (println c d group2))
+;= 5 10 [5 10]
+;= 10 20 [10 20]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_associative_destructuring">Associative Destructuring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Associative destructuring is similar to sequential destructuring, but applied instead to associative (key-value) structures (including maps, records, vectors, etc). The associative bindings are concerned with concisely extracting values of the map by key.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s first consider an example that extracts values from a map without destructuring:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def client {:name "Super Co."
+             :location "Philadelphia"
+             :description "The worldwide leader in plastic tableware."})
+
+(let [name (:name client)
+      location (:location client)
+      description (:description client)]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that each line of the let binding is essentially the same - it extracts a value from the map by the name of the key, then binds it to a local with the same name.</p>
+</div>
+<div class="paragraph">
+<p>Below is a first example of doing the same thing with associative destructuring:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{name :name
+       location :location
+       description :description} client]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The destructuring form is now a map rather than a vector, and instead of a symbol on the left side of the let, we have a map. The keys of the map are the symbols we want to bind in the let. The values of the destructuring map are the keys we will look up in the associative value. Here they are keywords (the most common case), but they could be any key value - numbers, strings, symbols, etc.</p>
+</div>
+<div class="paragraph">
+<p>Similar to sequential destructuring, if you try to bind a key that is not present in the map, the binding value will be nil.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{category :category} client]
+  (println category))
+;= nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Associative destructuring, however, also allows you to supply a default value if the key is not present in the associative value with the <code>:or</code> key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{category :category, :or {category "Category not found"}} client]
+  (println category))
+;= Category not found</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value for <code>:or</code> is a map where the bound symbol (here <code>category</code>) is bound to the expression <code>"Category not found"</code>. When category is not found in <code>client</code>, it is instead found in the <code>:or</code> map and bound to that value instead.</p>
+</div>
+<div class="paragraph">
+<p>In sequential destructuring, you generally bind unneeded values with an <code>_</code>. Since associative destructuring doesn&#8217;t require traversing the entire structure, you can simply omit any keys you don&#8217;t plan on using from the destructuring form.</p>
+</div>
+<div class="paragraph">
+<p>If you need access to the entire map, you can use the <code>:as</code> key to bind the entire incoming value, just as in sequential destructuring.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{name :name :as all} client]
+  (println "The name from" all "is" name))
+;= The name from {:name Super Co., :location Philadelphia, :description The world wide leader in plastic table-ware.} is Super Co.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>:as</code> and <code>:or</code> keywords can be combined in a single destructuring.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def my-map {:a "A" :b "B" :c 3 :d 4})
+(let [{a :a, x :x, :or {x "Not found!"}, :as all} my-map]
+  (println "I got" a "from" all)
+  (println "Where is x?" x))
+;= I got A from {:a "A" :b "B" :c 3 :d 4}
+;= Where is x? Not found!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You might have noticed that our original example still contains redundant information (the local binding name and the key name) in the associative destructuring form. The <code>:keys</code> key can be used to further remove the duplication:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [{:keys [name location description]} client]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example is exactly the same as the prior version - it binds <code>name</code> to <code>(:name client)</code>, <code>location</code> to <code>(:location client)</code>, and <code>description</code> to <code>(:description client)</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>:keys</code> key is for associative values with keyword keys, but there are also <code>:strs</code> and <code>:syms</code> for string and symbol keys respectively. In all of these cases the vector contains symbols which are the local binding names.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def string-keys {"first-name" "Joe" "last-name" "Smith"})
+
+(let [{:strs [first-name last-name]} string-keys]
+  (println first-name last-name))
+;= Joe Smith
+
+(def symbol-keys {'first-name "Jane" 'last-name "Doe"})
+
+(let [{:syms [first-name last-name]} symbol-keys]
+  (println first-name last-name))
+;= Jane Doe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Associative destructuring can be nested and combined with sequential destructuring as needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def multiplayer-game-state
+  {:joe {:class "Ranger"
+         :weapon "Longbow"
+         :score 100}
+   :jane {:class "Knight"
+          :weapon "Greatsword"
+          :score 140}
+   :ryan {:class "Wizard"
+          :weapon "Mystic Staff"
+          :score 150}})
+
+(let [{{:keys [class weapon]} :joe} multiplayer-game-state]
+  (println "Joe is a" class "wielding a" weapon))
+;= Joe is a Ranger wielding a Longbow</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keyword_arguments">Keyword arguments</h3>
+<div class="paragraph">
+<p>One special case is using associative destructuring for keyword-arg parsing. Consider a function that takes options <code>:debug</code> and <code>:verbose</code>. These could be specified in an options map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn configure [val options]
+  (let [{:keys [debug verbose] :or {debug false, verbose false}} options]
+    (println "val =" val " debug =" debug " verbose =" verbose)))
+
+(configure 12 {:debug true})
+;;val = 12  debug = true  verbose = false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, it would be nicer to type if we could pass those optional arguments as just additional "keyword" arguments like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(configure 12 :debug true)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To support this style of invocation, associative destructuring also works with lists or sequences of key-value pairs for keyword argument parsing. The sequence comes from the rest arg of a variadic function but is destructured not with sequential destructuring, but with associative destructuring (so a sequence destructured as if it were the key-value pairs in a map):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn configure [val &amp; {:keys [debug verbose]
+                        :or {debug false, verbose false}}]
+  (println "val =" val " debug =" debug " verbose =" verbose))
+
+(configure 10)
+;;val = 10  debug = false  verbose = false
+
+(configure 5 :debug true)
+;;val = 5  debug = true  verbose = false
+
+;; Note that any order is ok for the kwargs
+(configure 12 :verbose true :debug true)
+;;val = 12  debug = true  verbose = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The use of keyword arguments has fallen in and out of fashion in the Clojure community over the years. They are now mostly used when presenting interfaces that people are expected to type at the REPL or the outermost layers of an API. In general, inner layers of the code find it easier to pass options as an explicit map.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_namespaced_keywords">Namespaced keywords</h3>
+<div class="paragraph">
+<p>If the keys in your map are namespaced keywords, you can also use destructuring with it, even though local binding symbols are not allowed to have namespaces. Destructuring a namespaced key will bind a value to the local name part of the key and drop the namespace.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def human {:person/name "Franklin"
+            :person/age 25
+            :hobby/hobbies "running"})
+(let [{:keys [person/name person/age hobby/hobbies]} human]
+  (println name "is" age "and likes" hobbies))
+;= Franklin is 25 and likes running</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can even destructure using auto-resolved keywords, which will again be bound to only the name part of the key:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[person :as p])
+
+(let [person {::p/name "Franklin", ::p/age 25}
+      {:keys [::p/name ::p/age]} person]
+  (println name "is" age))
+
+;= Franklin is 25</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creating and destructuring maps with auto-resolved keywords allow us to write code using a namespace alias (here <code>p</code>) that is defined by a <code>require</code> in the current namespace, giving us a means of namespace indirection that can be changed at a single place in the code.</p>
+</div>
+<div class="paragraph">
+<p>All symbols bound in the context of destructuring can be further destructured - this allows destructuring to be used in a nested fashion for both sequential and associative destructuring. It is less obvious, but this also extends to the symbol defined after <code>&amp;</code>.</p>
+</div>
+<div class="paragraph">
+<p>This example destructures the <code>&amp;</code> seq in place to decode the rest of the arguments as options (note that we are thus destructuring the two arguments sequentially and the rest associatively):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn f-with-options
+  [a b &amp; {:keys [opt1]}]
+  (println "Got" a b opt1))
+
+(f-with-options 1 2 :opt1 true)
+;= Got 1 2 true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_to_destructure">Where to destructure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can utilize destructuring anywhere that there is an explicit or implicit let binding.</p>
+</div>
+<div class="paragraph">
+<p>One of the most common places to see destructuring is in pulling apart the arguments passed to a function.</p>
+</div>
+<div class="paragraph">
+<p>Here we have the standard let x equal this, let y equal that, etc&#8230;&#8203; Again, this is perfectly valid code, it&#8217;s just verbose.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn print-coordinates-1 [point]
+  (let [x (first point)
+        y (second point)
+        z (last point)]
+    (println "x:" x ", y:" y ", z:" z)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Any time we see code that is using <code>first</code>, <code>second</code>, <code>nth</code>, or <code>get</code> to pull apart a data structure, it&#8217;s likely that destructuring can clean that up - we can start by rewriting the <code>let</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn print-coordinates-2 [point]
+  (let [[x y z] point]
+    (println "x:" x ", y:" y ", z:" z)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When defining a function in clojure, destructuring can be applied on the incoming parameters, just like in a let:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn print-coordinates-3 [[x y z]]
+  (println "x:" x ", y:" y ", z:" z))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We have replaced several lines of code that pulled apart the incoming point data with a concise statement about the structure of that data that also binds the data to local values.</p>
+</div>
+<div class="paragraph">
+<p>For a more realistic example, let&#8217;s create a map containing some basic contact information for the infamous John Smith.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def john-smith {:f-name "John"
+                 :l-name "Smith"
+                 :phone "555-555-5555"
+                 :company "Functional Industries"
+                 :title "Sith Lord of Git"})</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now that we have John&#8217;s personal information we need to access the values within this map.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn print-contact-info [{:keys [f-name l-name phone company title]}]
+  (println f-name l-name "is the" title "at" company)
+  (println "You can reach him at" phone))
+
+(print-contact-info john-smith)
+;= John Smith is the Sith Lord of Git at Functional Industries
+;= You can reach him at 555-555-5555</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function will associatively destructure the input using the <code>:keys</code> shortcut and then print out the contact information that we provided.</p>
+</div>
+<div class="paragraph">
+<p>But what about when we want to send John a nice letter?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def john-smith {:f-name "John"
+                 :l-name "Smith"
+                 :phone "555-555-5555"
+                 :address {:street "452 Lisp Ln."
+                           :city "Macroville"
+                           :state "Kentucky"
+                           :zip "81321"}
+                 :hobbies ["running" "hiking" "basketball"]
+                 :company "Functional Industries"
+                 :title "Sith Lord of Git"})</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We have an address in there now, but we needed to nest a map into our original structure in order to accomplish this.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn print-contact-info
+  [{:keys [f-name l-name phone company title]
+    {:keys [street city state zip]} :address
+    [fav-hobby second-hobby] :hobbies}]
+  (println f-name l-name "is the" title "at" company)
+  (println "You can reach him at" phone)
+  (println "He lives at" street city state zip)
+  (println "Maybe you can write to him about" fav-hobby "or" second-hobby))
+
+(print-contact-info john-smith)
+;= John Smith is the Sith Lord of Git at Functional Industries
+;= You can reach him at 555-555-5555
+;= He lives at 452 Lisp Ln. Macroville Kentucky 81321
+;= Maybe you can write to him about running or hiking</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_macros">Macros</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Macro writers may find the need to write a macro that incorporates destructuring. The most common way to do so is to produce a call to something that already does destructuring (like <code>let</code>, <code>loop</code>, <code>fn</code>, etc). Some examples of this in <code>clojure.core</code> include <code>if-let</code>, <code>when-let</code>, <code>when-some</code>, etc.</p>
+</div>
+<div class="paragraph">
+<p>However, in rare cases you might want to instead resolve the destructuring yourself in a macro. In this case, use the (undocumented) <code>clojure.core/destructure</code> function, which implements the destructuring logic and is what <code>let</code> and <code>loop</code> actually invoke. The <code>destructure</code> function is designed to be invoked in a macro and expects to take a form and return a form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(destructure '[[x &amp; remaining :as all] numbers])
+;= [vec__1 numbers
+;=  x (clojure.core/nth vec__1 0 nil)
+;=  remaining (clojure.core/nthnext vec__1 1)
+;=  all vec__1]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result was formatted here to give it a little more clarity. This example should also give you some insight into how destructuring works under the hood.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

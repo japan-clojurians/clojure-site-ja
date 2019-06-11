@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Deps and CLI Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Deps and CLI Guide</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_running_a_repl_and_using_libraries">Running a REPL and using libraries</a></li>
+<li><a href="#_writing_a_program">Writing a program</a></li>
+<li><a href="#_using_local_libraries">Using local libraries</a></li>
+<li><a href="#_using_git_libraries">Using git libraries</a></li>
+<li><a href="#_other_examples">Other examples</a>
+<ul class="sectlevel2">
+<li><a href="#extra_paths">Include a test source directory</a></li>
+<li><a href="#extra_deps">Add an optional dependency</a></li>
+<li><a href="#override_deps">Override a dependency</a></li>
+<li><a href="#local_jar">Include a local jar on disk</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure provides command line tools for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Running an interactive REPL (Read-Eval-Print Loop)</p>
+</li>
+<li>
+<p>Running Clojure programs</p>
+</li>
+<li>
+<p>Evaluating Clojure expressions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In all the above scenarios you might want to use other Clojure and Java libraries (dependencies or 'deps'). These may be libraries you are writing locally, projects in git (e.g. on GitHub) or, commonly, libraries available in the Maven ecosystem and hosted by central repositories like Maven Central or Clojars.</p>
+</div>
+<div class="paragraph">
+<p>In all cases, using a library involves:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>specifying which library you want to use, providing its name and other aspects like version</p>
+</li>
+<li>
+<p>getting it (once) from the git or maven repositories to your local machine</p>
+</li>
+<li>
+<p>making it available on the JVM classpath so Clojure can find it while your REPL or program is running</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Clojure tools specify a syntax and file (deps.edn) for (a), given which they&#8217;ll handle (b) and (c) automatically.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="getting_started">Getting Started</a> for details on how to install the tools. Here we will demonstrate how to get started. See <a href="xref/../../reference/deps_and_cli">Deps and CLI</a> for a complete reference.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_a_repl_and_using_libraries">Running a REPL and using libraries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you download and install the tools, you can start a REPL by running the <code>clj</code> tool:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj
+Clojure 1.9.0
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once in the REPL you can type Clojure expressions and press enter to evaluate them.</p>
+</div>
+<div class="paragraph">
+<p>There are many Clojure and Java libraries available that provide access to practically any functionality you might need. For example, consider the commonly used Clojure library <a href="https://github.com/clj-time/clj-time">clj-time</a> for working with dates and times.</p>
+</div>
+<div class="paragraph">
+<p>To work with this library, you need to declare it as a dependency so the tool can ensure it has been downloaded and add it to the classpath. The readme in most projects shows the name and version, such as <code>[clj-time "0.14.2"]</code>. Create a <code>deps.edn</code> file to declare the dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {clj-time {:mvn/version "0.14.2"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Restart the REPL with the <code>clj</code> tool:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">$ clj
+Downloading: clj-time/clj-time/0.14.2/clj-time-0.14.2.pom from https://clojars.org/repo/
+Downloading: clj-time/clj-time/0.14.2/clj-time-0.14.2.jar from https://clojars.org/repo/
+Clojure 1.9.0
+user=&gt; (require '[clj-time.core :as t])
+nil
+user=&gt; (str (t/now))
+"2017-12-06T19:36:56.159Z"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will see messages about a library being downloaded the first time you use a dependency. Once the file is downloaded, it will be reused in the future. You can use the same process to add other libraries to your <code>deps.edn</code> file and explore Clojure or Java libraries.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_writing_a_program">Writing a program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Soon you will want to build and save your own code that makes use of these libraries. Create a directory <code>hello-world</code> and change to that directory. Copy the <code>deps.edn</code> file into this directory. By default, the <code>clj</code> tool will look for source files in the <code>src</code> directory, so create the <code>src</code> directory and declare your program at <code>src/hello.clj</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns hello
+  (:require [clj-time.core :as t]
+            [clj-time.format :as f]))
+
+(defn time-str
+  "Returns a string representation of a datetime in the local time zone."
+  [dt]
+  (f/unparse
+    (f/with-zone (f/formatter "hh:mm aa") (t/default-time-zone))
+    dt))
+
+(defn -main []
+  (println "Hello world, the time is" (time-str (t/now))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This program has a static entry point named <code>-main</code> that is suitable for external invocation. The <code>clj</code> tool acts as a Clojure program launcher with the <code>-m</code> option, which specifies the namespace to run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -m hello
+Hello world, the time is 02:04 PM</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_local_libraries">Using local libraries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You might decide to move part of this application into a library. The <code>clj</code> tool uses local coordinates to support projects that exist only on your local disk. Let&#8217;s extract the clj-time parts of this application out into a library in a parallel directory time-lib. The final structure will look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>├── time-lib
+│   ├── deps.edn
+│   └── src
+│       └── hello_time.clj
+└── hello-world
+    ├── deps.edn
+    └── src
+        └── hello.clj</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Under time-lib, use a copy of the deps.edn file you already have, and create a file <code>src/hello_time.clj</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns hello-time
+  (:require [clj-time.core :as t]
+            [clj-time.format :as f]))
+
+(defn now
+  "Returns the current datetime"
+  []
+  (t/now))
+
+(defn time-str
+  "Returns a string representation of a datetime in the local time zone."
+  [dt]
+  (f/unparse
+    (f/with-zone (f/formatter "hh:mm aa") (t/default-time-zone))
+    dt))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Update the application at <code>hello-world/src/hello.clj</code> to use your library instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns hello
+  (:require [hello-time :as ht]))
+
+(defn -main []
+  (println "Hello world, the time is" (ht/time-str (ht/now))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Modify <code>hello-world/deps.edn</code> to use a local coordinate that refers to the root directory of the time-lib library (make sure to update the path for your machine):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {time-lib {:local/root "/path/to/time-lib"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then test everything from the hello-world directory by running the application:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -m hello
+Hello world, the time is 02:07 PM</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_git_libraries">Using git libraries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It would be great to share that library with others. You can accomplish this by pushing the project to a public or private git repository and letting others use it with a git dependency coordinate.</p>
+</div>
+<div class="paragraph">
+<p>First, create a git library for the time-lib:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">cd time-lib
+git init
+git add deps.edn src
+git commit -m 'init'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then go to a public git repository host (like GitHub) and follow the instructions for creating and publishing this git repository.</p>
+</div>
+<div class="paragraph">
+<p>Finally, modify your app to use the git dependency instead. You&#8217;ll need to gather the following information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>repository url - in GitHub, use the HTTPS url, like <code><a href="https://github.com/yourname/time-lib.git" class="bare">https://github.com/yourname/time-lib.git</a></code></p>
+</li>
+<li>
+<p>sha - indicate which version of the git library you want to use. You can run <code>git rev-parse HEAD</code> to get the sha of the current repo</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Update the <code>hello-world/deps.edn</code> to use a git coordinate instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {github-yourname/time-lib
+  {:git/url "https://github.com/yourname/time-lib" :sha "04d2744549214b5cba04002b6875bdf59f9d88b6"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that we&#8217;ve altered the library name. When artifacts are deployed in a Maven repository, it&#8217;s a best practice to use a groupId (the first part of the name) that is something you control (usually via DNS or trademark). In the case where you have neither, you can instead combine the name of a site that establishes identities (like GitHub) with your identity on that site, here <code>github-yourname</code>.</p>
+</div>
+<div class="paragraph">
+<p>Now you can run the app again, making use of the (shared) git repository library. The first time you run it you&#8217;ll see extra messages on the console when <code>clj</code> downloads and caches the repository and the commit working tree:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -m hello
+Cloning: https://github.com/yourname/time-lib
+Checking out: https://github.com/yourname/time-lib at 04d2744
+Hello world, the time is 02:10 PM</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now your friends can use <code>time-lib</code> too!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_examples">Other examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As your program gets more involved you might need to create variations on the standard classpath. The Clojure tools supports classpath modifications using aliases, which are parts of the deps file that are only used when the corresponding alias is supplied. Some of the things you can do are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="deps_and_cli#extra_paths">Include a test source directory</a></p>
+</li>
+<li>
+<p><a href="deps_and_cli#extra_deps">Add an optional dependency</a></p>
+</li>
+<li>
+<p><a href="deps_and_cli#override_deps">Override a dependency version</a></p>
+</li>
+<li>
+<p><a href="deps_and_cli#local_jar">Use a local jar on disk</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="extra_paths">Include a test source directory</h3>
+<div class="paragraph">
+<p>Typically, the project classpath includes only the project source, not its test source by default. You can add extra paths as modifications to the primary classpath in the make-classpath step of the classpath construction. To do so, add an alias <code>:test</code> that includes the extra relative source path <code>"test"</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {org.clojure/core.async {:mvn/version "0.3.465"}}
+
+ :aliases
+ {:test {:extra-paths ["test"]}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Apply that classpath modification and examine the modified classpath by invoking <code>clj -C:test -Spath</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -C:test -Spath
+src:
+test:
+/Users/me/.m2/repository/org/clojure/clojure/1.9.0/clojure-1.9.0.jar:
+/Users/me/.m2/repository/org/clojure/tools.analyzer/0.6.9/tools.analyzer-0.6.9.jar:
+... same as before</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the test dir is now included in the classpath.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extra_deps">Add an optional dependency</h3>
+<div class="paragraph">
+<p>Aliases in the <code>deps.edn</code> file can also be used to add optional dependencies that affect the classpath:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:aliases
+ {:bench {:extra-deps {criterium {:mvn/version "0.4.4"}}}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the <code>:bench</code> alias is used to add an extra dependency, namely the criterium benchmarking library.</p>
+</div>
+<div class="paragraph">
+<p>You can add this dependency to your classpath by adding the <code>:bench</code> alias to modify the dependency resolution: <code>clj -R:bench</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="override_deps">Override a dependency</h3>
+<div class="paragraph">
+<p>You can use multiple aliases in combination. For example this <code>deps.edn</code> file defines two aliases - <code>:old-async</code> to force the use of an older core.async version and <code>:bench</code> to add an extra dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {org.clojure/core.async {:mvn/version "0.3.465"}}
+
+ :aliases
+ {:old-async {:override-deps {org.clojure/core.async {:mvn/version "0.3.426"}}}
+  :bench {:extra-deps {criterium {:mvn/version "0.4.4"}}}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Activate both aliases as follows: <code>clj -R:bench:old-async</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="local_jar">Include a local jar on disk</h3>
+<div class="paragraph">
+<p>Occasionally you may need to refer directly to a jar on disk that is not present in a Maven repository, such as a database driver jar.</p>
+</div>
+<div class="paragraph">
+<p>Specify local jar dependencies with a local coordinate that points directly to a jar file instead of a directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {db/driver {:local/root "/path/to/db/driver.jar"}}}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

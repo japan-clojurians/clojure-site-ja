@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Reader Conditionals Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api.html">API</a></li>
+              <li><a href="../community/downloads.html">リリース</a></li> -->
+              <li><a href="../guides/guides.html">ガイド</a></li>
+            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
+              <li><a href="../news/news.html">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Reader Conditionals Guide</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_host_interop">Host interop</a></li>
+<li><a href="#_namespaces">Namespaces</a></li>
+<li><a href="#_exception_handling">Exception handling</a></li>
+<li><a href="#_splicing">Splicing</a></li>
+<li><a href="#_file_organisation">File organisation</a></li>
+<li><a href="#_cljx">cljx</a></li>
+<li><a href="#_backwards_compatibility">Backwards compatibility</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reader conditionals are a feature added in Clojure 1.7. They are designed to allow different dialects of Clojure to share common code that is mostly platform independent, but contains some platform dependent code. If you are writing code across multiple platforms that is mostly independent you should separate <code>.clj</code> and <code>.cljs</code> files instead.</p>
+</div>
+<div class="paragraph">
+<p>Reader conditionals are integrated into the Clojure reader, and don&#8217;t require any extra tooling beyond Clojure 1.7 or greater. To use reader conditionals, all you need is for your file to have a <code>.cljc</code> extension and to use Clojure 1.7 or ClojureScript 0.0-3196 or higher. Reader conditionals are expressions, and can be manipulated like ordinary Clojure expressions. For more technical details, see the reference page on <a href="xref/../../reference/reader">the reader</a>.</p>
+</div>
+<div class="paragraph">
+<p>There are two types of reader conditionals, standard and splicing. The standard reader conditional behaves similarly to a traditional <code>cond</code>. The syntax for usage is <code>#?</code> and looks like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">#?(:clj  (Clojure expression)
+   :cljs (ClojureScript expression)
+   :cljr (Clojure CLR expression)
+   :default (fallthrough expression))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The platform tags <code>:clj</code>, etc are a fixed set of tags hard-coded into each platform. The <code>:default</code> tag is a well-known tag to catch and provide an expression if no platform tag matches. If no tags match and <code>:default</code> is not provided, the reader conditional will read nothing (not nil, but as if nothing was read from the stream at all).</p>
+</div>
+<div class="paragraph">
+<p>The syntax for a splicing reader conditional is <code>#?@</code>. It is used to splice lists into the containing form. So the Clojure reader would read this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn build-list []
+  (list #?@(:clj  [5 6 7 8]
+            :cljs [1 2 3 4])))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>as this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn build-list []
+  (list 5 6 7 8))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One important thing to note is that in Clojure 1.7 a splicing conditional reader cannot be used to splice in multiple top level forms. In concrete terms, this means you can&#8217;t do this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; Don't do this!, will throw an error
+#?@(:clj
+    [(defn clj-fn1 [] :abc)
+     (defn clj-fn2 [] :cde)])
+;; CompilerException java.lang.RuntimeException: Reader conditional splicing not allowed at the top level.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead you&#8217;d need to do wrap each function individually:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">#?(:clj (defn clj-fn1 [] :abc))
+#?(:clj (defn clj-fn2 [] :cde))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or use a <code>do</code> to wrap all of the top level functions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">#?(:clj
+    (do (defn clj-fn1 [] :abc)
+        (defn clj-fn2 [] :cde)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s go through some examples of places you might want to use these new reader conditionals.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_host_interop">Host interop</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Host interop is one of the biggest pain points solved by reader conditionals. You may have a Clojure file that is almost pure Clojure, but needs to call out to the host environment for one function. <a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/src/route_ccrs/manufacturing_methods.cljc#L8-L10">This</a> is a classic example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn str-&gt;int [s]
+  #?(:clj  (java.lang.Integer/parseInt s)
+     :cljs (js/parseInt s)))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_namespaces">Namespaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Namespaces are the other big pain point for sharing code between Clojure and ClojureScript. ClojureScript has different syntax for <a href="https://clojurescript.org/about/differences#_macros">requiring macros</a> than Clojure. To use macros that work in both Clojure and ClojureScript in a <code>.cljc</code> file, you&#8217;ll need reader conditionals in the namespace declaration.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example from a <a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/test/route_ccrs/schema/ids/part_no_test.cljc">test</a> in <a href="https://github.com/lymingtonprecision/route-ccrs">route-ccrs</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns route-ccrs.schema.ids.part-no-test
+  (:require #?(:clj  [clojure.test :refer :all]
+               :cljs [cljs.test :refer-macros [is]])
+            #?(:cljs [cljs.test.check :refer [quick-check]])
+            #?(:clj  [clojure.test.check.properties :as prop]
+               :cljs [cljs.test.check.properties :as prop
+                       :include-macros true])
+            [schema.core :as schema :refer [check]]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is another example, we want to be able to use the <code>rethinkdb.query</code> namespace in Clojure and ClojureScript. However we can&#8217;t load the required <code>rethinkdb.net</code> in ClojureScript as it uses Java sockets to communicate with the database. Instead we use a reader conditional so the namespace is only required when read by Clojure programs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns rethinkdb.query
+  (:require [clojure.walk :refer [postwalk postwalk-replace]]
+            #?(:clj [rethinkdb.net :as net])))
+
+;; snip...
+
+#?(:clj (defn run [query conn]
+      (let [token (get-token conn)]
+        (net/send-start-query conn token (replace-vars query)))))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exception_handling">Exception handling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Exception handling is another area that benefits from reader conditionals. ClojureScript supports <code>(catch :default)</code> to catch everything, however you will often still want to handle host specific exceptions. Here&#8217;s an <a href="https://github.com/runexec/lemon-disc/blob/c24c6638f1d476a0f5470387e52a2b702117c4a9/src/lemon_disc/core.cljc#L65-L72">example</a> from <a href="https://github.com/runexec/lemon-disc">lemon-disc</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn message-container-test [f]
+  (fn [mc]
+      (passed?
+        (let [failed* (failed mc)]
+          (try
+            (let [x (:data mc)]
+              (if (f x) mc failed*))
+            (catch #?(:clj Exception :cljs js/Object) _ failed*))))))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_splicing">Splicing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The splicing reader conditional is not as widely used as the standard one. For an example on its usage, let&#8217;s look at the <a href="https://github.com/clojure/clojure-clr/blob/544e9354e121e10a656702222d47c8398468fb02/Clojure/Clojure.Tests/clojure/test_clojure/reader.cljc#L672-L677">tests</a> for reader conditionals in the ClojureCLR reader. What might not be obvious at first glance is that the vectors inside the splicing reader conditional are being wrapped by a surrounding vector.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(deftest reader-conditionals
+     ;; snip
+     (testing "splicing"
+              (is (= [] [#?@(:clj [])]))
+              (is (= [:a] [#?@(:clj [:a])]))
+              (is (= [:a :b] [#?@(:clj [:a :b])]))
+              (is (= [:a :b :c] [#?@(:clj [:a :b :c])]))
+              (is (= [:a :b :c] [#?@(:clj [:a :b :c])]))))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_organisation">File organisation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There isn&#8217;t a clear community consensus yet around where to put <code>.cljc</code> files. Two options are to have a single <code>src</code> directory with <code>.clj</code>, <code>.cljs</code>, and <code>.cljc</code> files, or to have separate <code>src/clj</code>, <code>src/cljc</code>, and <code>src/cljs</code> directories.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cljx">cljx</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before reader conditionals were introduced, the same goal of sharing code between platforms was solved by a Leiningen plugin called <a href="https://github.com/lynaghk/cljx">cljx</a>. cljx processes files with the <code>.cljx</code> extension and outputs multiple platform specific files to a generated sources directory. These were then read as normal Clojure or ClojureScript files by the Clojure <a href="xref/../../reference/reader">reader</a>. This worked well, but required another piece of tooling to run. cljx was deprecated on June 13 2015 in favour of reader conditionals.</p>
+</div>
+<div class="paragraph">
+<p>Sente previously used cljx for sharing code between Clojure and ClojureScript. I&#8217;ve rewritten the <a href="https://github.com/ptaoussanis/sente/blob/v1.4.1/src/taoensso/sente.cljx">main</a> namespace to use reader conditionals. Notice that we&#8217;ve used the splicing reader conditional to splice the vector into the parent <code>:require</code>. Notice also that some of the requires are duplicated between <code>:clj</code> and <code>:cljs</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns taoensso.sente
+  (:require
+    #?@(:clj  [[clojure.string :as str]
+               [clojure.core.async :as async]
+               [taoensso.encore :as enc]
+               [taoensso.timbre :as timbre]
+               [taoensso.sente.interfaces :as interfaces]]
+        :cljs [[clojure.string :as str]
+               [cljs.core.async :as async]
+               [taoensso.encore :as enc]
+               [taoensso.sente.interfaces :as interfaces]]))
+  #?(:cljs (:require-macros
+             [cljs.core.async.macros :as asyncm :refer (go go-loop)]
+             [taoensso.encore :as enc :refer (have? have have-in)])))</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns taoensso.sente
+  #+clj
+  (:require
+   [clojure.string     :as str]
+   [clojure.core.async :as async)]
+   [taoensso.encore    :as enc]
+   [taoensso.timbre    :as timbre]
+   [taoensso.sente.interfaces :as interfaces])
+
+  #+cljs
+  (:require
+   [clojure.string  :as str]
+   [cljs.core.async :as async]
+   [taoensso.encore :as enc]
+   [taoensso.sente.interfaces :as interfaces])
+
+  #+cljs
+  (:require-macros
+   [cljs.core.async.macros :as asyncm :refer (go go-loop)]
+   [taoensso.encore        :as enc    :refer (have? have have-in)]))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backwards_compatibility">Backwards compatibility</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the time of writing, there is no way to use <code>.cljc</code> files in versions of Clojure less than 1.7, nor is there any porting mechanism to preprocess <code>.cljc</code> files to output <code>.clj</code> and <code>.cljs</code> files like cljx does. For that reason library maintainers may need to wait for a while until they can safely drop support for older versions of Clojure and adopt reader conditionals.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>
