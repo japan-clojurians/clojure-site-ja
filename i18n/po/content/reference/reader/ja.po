@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:18+0900\n"
-"PO-Revision-Date: 2019-02-18 20:22+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 02:31+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -15,31 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/deps_and_cli.adoc:13 en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16 en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16 en/content/reference/macros.adoc:15
-#: en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/deps_and_cli.adoc:11
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11 en/content/guides/getting_started.adoc:11
-#: en/content/guides/higher_order_functions.adoc:11 en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/learn/hashed_colls.adoc:16 en/content/guides/learn/syntax.adoc:14
-#: en/content/guides/learn/flow.adoc:14 en/content/guides/learn/sequential_colls.adoc:16
-#: en/content/guides/learn/functions.adoc:16 en/content/guides/destructuring.adoc:11
-#: en/content/guides/repl/annex_troubleshooting.adoc:14 en/content/guides/repl/navigating_namespaces.adoc:16
-#: en/content/guides/repl/introduction.adoc:14 en/content/guides/repl/data_visualization_at_the_repl.adoc:16
-#: en/content/guides/repl/launching_a_basic_repl.adoc:16 en/content/guides/repl/basic_usage.adoc:16
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:16 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16 en/content/about/rationale.adoc:13
-#: en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:179
@@ -168,22 +143,32 @@ msgstr ""
 "る。"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:38
+#: en/content/reference/reader.adoc:35
+msgid "Numbers - generally represented as per Java"
+msgstr "数値 - 一般的に Java と同様に表記される"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:36
 msgid ""
-"Numbers - generally represented as per Java ** Integers can be indefinitely long and will be read as Longs when in "
-"range and clojure.lang.BigInts otherwise. Integers with an N suffix are always read as BigInts. When possible, they "
-"can be specified in any base with radix from 2 to 36 (see http://docs.oracle.com/javase/7/docs/api/java/lang/Long."
-"html#parseLong(java.lang.String,%20int)[Long.parseLong()]); for example `2r101010`, `8r52`, `36r16`, and `42` are all "
-"the same Long.  ** Floating point numbers are read as Doubles; with M suffix they are read as BigDecimals.  ** Ratios "
-"are supported, e.g. `22/7`."
+"Integers can be indefinitely long and will be read as Longs when in range and clojure.lang.BigInts otherwise. "
+"Integers with an N suffix are always read as BigInts. When possible, they can be specified in any base with radix "
+"from 2 to 36 (see http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)"
+"[Long.parseLong()]); for example `2r101010`, `8r52`, `36r16`, and `42` are all the same Long."
 msgstr ""
-"数値 - 一般的に Java と同様に表記される。\n"
-"** 整数は長さの制限がなく、longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang.BigIntとして読"
-"み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して表記することが"
-"できる。(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)[Long."
-"parseLong()])。 例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。\n"
-"** 浮動少数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。\n"
-"** 分数もサポートされている。 (例： `22/7`)"
+"整数は長さの制限がなく、Longの範囲内にある時はLongとして読み込まれ、それ以外の場合には clojrue.lang.BigIntとして読み込"
+"まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して表記することができ"
+"る(参照: http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)[Long."
+"parseLong()])。例えば `2r101010`、`8r52`、`36r16`,`42` は全て同じLongになる。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:37
+msgid "Floating point numbers are read as Doubles; with M suffix they are read as BigDecimals."
+msgstr "浮動小数点数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:38
+msgid "Ratios are supported, e.g. `22/7`."
+msgstr "分数もサポートされている(例: `22/7`)。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:39
@@ -207,24 +192,47 @@ msgid "Booleans - `true` and `false`"
 msgstr "ブーリアン - `true` と `false`"
 
 #. type: Plain text
+#: en/content/reference/reader.adoc:42
+msgid "Keywords - Keywords are like symbols, except:"
+msgstr "キーワード - キーワードはシンボルと似ているが、以下の点で異なる:"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:43
+msgid "They can and must begin with a colon, e.g. :fred."
+msgstr "コロン(:) で始まらなければならない(例：:fred)。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:44
+msgid "They cannot contain '.' or name classes."
+msgstr "'.'を含めたりクラスの名前に使用したりできない。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:45
+msgid "Like symbols, they can contain a namespace, `:person/name`"
+msgstr "シンボルと同様にネームスペースを含むことができる。 `:person/name`"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:46
+msgid "A keyword that begins with two colons is auto-resolved in the current namespace to a qualified keyword:"
+msgstr "コロン2つで始まるキーワードは現在のネームスペースにおいて修飾されたキーワードに自動的に解決される:"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:47
+msgid ""
+"If the keyword is unqualified, the namespace will be the current namespace. In `user`, `::rect` is read as `:user/"
+"rect`."
+msgstr ""
+"キーワードが修飾されていない場合、そのネームスペースは現在のネームスペースになる。 `user` では `::rect` は `user/"
+"rect` として読み込まれる。"
+
+#. type: Plain text
 #: en/content/reference/reader.adoc:48
 msgid ""
-"Keywords - Keywords are like symbols, except: ** They can and must begin with a colon, e.g. :fred.  ** They cannot "
-"contain '.' or name classes.  ** Like symbols, they can contain a namespace, `:person/name` ** A keyword that begins "
-"with two colons is auto-resolved in the current namespace to a qualified keyword: *** If the keyword is unqualified, "
-"the namespace will be the current namespace. In `user`, `::rect` is read as `:user/rect`.  *** If the keyword is "
-"qualified, the namespace will be resolved using aliases in the current namespace. In a namespace where `x` is aliased "
-"to `example`, `::x/foo` resolves to `:example/foo`."
+"If the keyword is qualified, the namespace will be resolved using aliases in the current namespace. In a namespace "
+"where `x` is aliased to `example`, `::x/foo` resolves to `:example/foo`."
 msgstr ""
-"キーワード - キーワードはシンボルと似ているが、以下の点で異なる: \n"
-"** コロン(:) で始まらなければならない(例：:fred)。\n"
-"** '.'を含めたりクラスの名前に使用したりできない。\n"
-"** シンボルと同様にネームスペースを含むことができる。 `:person/name` \n"
-"** コロン2つで始まるキーワードは現在のネームスペースにおいて修飾されたキーワードに自動的に解決される: \n"
-"*** キーワードが修飾されていない場合、そのネームスペースは現在のネームスペースになる。 `user` では `::rect` は `user/"
-"rect` として読み込まれる。\n"
-"*** キーワードが修飾されている場合、そのネームスペースは現在のネームスペースでのエイリアスを利用して解決される。 `x` "
-"が `example` にエイリアスされたネームスペースでは、 `::x/foo` は `:example/foo` に解決される。"
+"キーワードが修飾されている場合、そのネームスペースは現在のネームスペースでのエイリアスを利用して解決される。 `x` が "
+"`example` にエイリアスされたネームスペースでは、 `::x/foo` は `:example/foo` に解決される。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
@@ -279,7 +287,7 @@ msgstr "ネームスペース付きマップ記法"
 #. type: Plain text
 #: en/content/reference/reader.adoc:67
 msgid "_Added in Clojure 1.9_"
-msgstr ""
+msgstr "_Clojure 1.9で追加された_"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:69
@@ -298,27 +306,45 @@ msgid "A map literal with namespace syntax is read with the following difference
 msgstr "ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:76
+#: en/content/reference/reader.adoc:73
+msgid "Keys"
+msgstr "キー"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:74
+msgid "Keys that are keywords or symbols without a namespace are read with the default namespace."
+msgstr "ネームスペースなしのキーワードもしくはシンボルであるキーはデフォルトのネームスペースで読み込まれる。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:75
 msgid ""
-"Keys ** Keys that are keywords or symbols without a namespace are read with the default namespace.  ** Keys that are "
-"keywords or symbols with a namespace are not affected *except* for the special namespace `_`, which is removed during "
-"read. This allows for the specification of keywords or symbols without namespaces as keys in a map literal with "
-"namespace syntax.  ** Keys that are not symbols or keywords are not affected."
+"Keys that are keywords or symbols with a namespace are not affected *except* for the special namespace `_`, which is "
+"removed during read. This allows for the specification of keywords or symbols without namespaces as keys in a map "
+"literal with namespace syntax."
 msgstr ""
-"キー\n"
-"** ネームスペースの指定がないキーもしくはシンボルはデフォルトのネームスペースで読み込まれる。\n"
-"** ネームスペースの指定があるシンボルもしくはキーワードは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
-"`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースの指定があるマップの中で、ネームス"
-"ペースの指定がないキーワード、シンボルを使用することが可能になる。\n"
-"** キーワード、シンボルでないキーは影響を受けない。"
+"ネームスペースのあるシンボルもしくはキーワードであるキーは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
+"`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースシンタックスのあるマップリテラルの中"
+"で、ネームスペースなしのキーワードやシンボルをキーとして指定することが可能になる。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:76
+msgid "Keys that are not symbols or keywords are not affected."
+msgstr "キーワードもしくはシンボル以外のキーは影響を受けない。"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:77
+msgid "Values"
+msgstr "値"
+
+#. type: Plain text
+#: en/content/reference/reader.adoc:78
+msgid "Values are not affected."
+msgstr "値は影響を受けない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:79
-msgid "Values ** Values are not affected.  ** Nested map literal keys are not affected."
-msgstr ""
-"バリュー\n"
-"** バリューは影響されない。\n"
-"** ネストしたマップリテラルのキーは影響されない。"
+msgid "Nested map literal keys are not affected."
+msgstr "ネストしたマップリテラルのキーは影響を受けない。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:81 en/content/guides/weird_characters.adoc:474
@@ -769,7 +795,7 @@ msgstr ""
 #: en/content/reference/reader.adoc:212
 #, no-wrap
 msgid "Built-in tagged literals"
-msgstr ""
+msgstr "組み込みのタグ付きリテラル"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:217
@@ -778,6 +804,9 @@ msgid ""
 "ss.fff+hh:mm\"`.  NOTE: Some of the elements of this format are optional. See the code for details.  The default "
 "reader will parse the supplied string into a `java.util.Date` by default. For example:"
 msgstr ""
+"Clojure 1.4では _instant_ と _UUID_ のタグ付きリテラルが導入された。instantは `#inst \"yyyy-mm-ddThh:mm:ss.fff+hh:mm"
+"\"` という形式をとる。 注意: この形式の一部の要素は省略可能だ。詳細はコードを参照。デフォルトのリーダーは与えられた文"
+"字列をパースしてデフォルトでは `java.util.Date` にする。例えば:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:222
@@ -787,6 +816,9 @@ msgid ""
 "(= java.util.Date (class instant))\n"
 ";=> true\n"
 msgstr ""
+"(def instant #inst \"2018-03-28T10:48:00.000\")\n"
+"(= java.util.Date (class instant))\n"
+";=> true\n"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:225
@@ -795,6 +827,9 @@ msgid ""
 "one. For example, `clojure.instant/read-instant-calendar` will parse the literal into a `java.util.Calendar`, while "
 "`clojure.instant/read-instant-timestamp` will parse it into a `java.util.Timestamp`:"
 msgstr ""
+"pass[*data-readers*] は束縛可能な動的Varなので、デフォルトのリーダーを別のものに置き換えることができる。例えば "
+"`clojure.instant/read-instant-calendar` はリテラルをパースして `java.util.Calendar` にするが、 `clojure.instant/read-"
+"instant-timestamp` はリテラルをパースして `java.util.Timestamp` にする:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:229
@@ -804,6 +839,9 @@ msgid ""
 "  (= java.util.Calendar (class (read-string instant))))\n"
 ";=> true\n"
 msgstr ""
+"(binding [*data-readers* {'inst read-instant-calendar}]\n"
+"  (= java.util.Calendar (class (read-string instant))))\n"
+";=> true\n"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:233
@@ -813,11 +851,14 @@ msgid ""
 "  (= java.util.Timestamp (class (read-string instant))))\n"
 ";=> true\n"
 msgstr ""
+"(binding [*data-readers* {'inst read-instant-timestamp}]\n"
+"  (= java.util.Timestamp (class (read-string instant))))\n"
+";=> true\n"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:236
 msgid "The `#uuid` tagged literal will be parsed into a `java.util.UUID`:"
-msgstr ""
+msgstr "`#uuid` タグ付きリテラルはパースされて `java.util.UUID` になる:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:240
@@ -826,6 +867,8 @@ msgid ""
 "(= java.util.UUID (class (read-string \"#uuid \\\"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\\\"\")))\n"
 ";=> true\n"
 msgstr ""
+"(= java.util.UUID (class (read-string \"#uuid \\\"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\\\"\")))\n"
+";=> true\n"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:242

@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
-"PO-Revision-Date: 2016-07-11 18:19+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 01:44+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -34,22 +34,6 @@ msgstr ""
 #: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/libs.adoc:63
@@ -95,29 +79,46 @@ msgid "A lib name is a symbol that will typically contain two or more parts sepa
 msgstr "libの名前は通常ふたつ以上のピリオドで区切られたシンボルである。"
 
 #. type: Plain text
+#: en/content/reference/libs.adoc:25
+msgid "A lib's container is a Java resource whose classpath-relative path is derived from the lib name:"
+msgstr "libはJavaのリソースとして、libの名前から導出されたクラスパスに対して相対的なパスに格納される:"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:26
+msgid "The path is a string"
+msgstr "パスは文字列"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:27
+msgid "Periods in the lib name are replaced by slashes in the path"
+msgstr "lib名のピリオドはパスではスラッシュで置換される"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:28
+msgid "Hyphens in the lib name are replaced by underscores in the path"
+msgstr "lib名のハイフンはパスではアンダースコアで置換される"
+
+#. type: Plain text
 #: en/content/reference/libs.adoc:29
-msgid ""
-"A lib's container is a Java resource whose classpath-relative path is derived from the lib name: ** The path is a "
-"string ** Periods in the lib name are replaced by slashes in the path ** Hyphens in the lib name are replaced by "
-"underscores in the path ** The path may end with \".class\", \".clj\", or \".cljc\" (see <<libs#order,Lib load "
-"order>> below)"
+msgid "The path may end with \".class\", \".clj\", or \".cljc\" (see <<libs#order,Lib load order>> below)"
 msgstr ""
-"lib は Java のリソースとして、 lib の名前から導出されたクラスパスに対して相対的なパスに格納される:\n"
-"** パスは文字列\n"
-"** lib名のピリオドはパスではスラッシュで置換される\n"
-"** lib名のハイフンはパスではアンダースコアで置換される\n"
-"** パスの拡張子には \".class\"、 \".clj\"、 もしくは \".cljc\" を使用することが出来る。(以下の <<libs#order,Lib load "
-"order>> を参照)"
+"パスの拡張子には\".class\"、 \".clj\"、 もしくは \".cljc\"を使用することができる(以下の <<libs#order,Lib load order>> "
+"を参照)"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:30
+msgid "A lib begins with an \"ns\" form that"
+msgstr "libは以下を行う\"ns\"フォームで始まる:"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:31
+msgid "creates the Clojure namespace that shares its name, and"
+msgstr "libと同じ名前のClojureネームスペースを作成する"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:32
-msgid ""
-"A lib begins with an \"ns\" form that ** creates the Clojure namespace that shares its name, and ** declares its "
-"dependencies on Java classes, Clojure's core facilities, and/or other libs,"
-msgstr ""
-"libは以下を行う \"ns\" フォームで始まる:\n"
-"** libと同じ名前のClojureネームスペースの作成\n"
-"** Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係の宣言"
+msgid "declares its dependencies on Java classes, Clojure's core facilities, and/or other libs,"
+msgstr "Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係を宣言する"
 
 #. type: Plain text
 #: en/content/reference/libs.adoc:34
@@ -125,8 +126,8 @@ msgid ""
 "Clojure ensures that if the call to \"ns\" completes without throwing an exception, the declared dependencies have "
 "been satisfied and the capabilities they provide are available."
 msgstr ""
-"Clojureは \"ns\" に対する呼び出しが例外無しで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は"
-"使用可能であることを保証する。"
+"Clojureは\"ns\"に対する呼び出しが例外なしで完了した場合、宣言された依存関係は満たされており、それらが提供する機能は使"
+"用可能であることを保証する。"
 
 #. type: Title ==
 #: en/content/reference/libs.adoc:35

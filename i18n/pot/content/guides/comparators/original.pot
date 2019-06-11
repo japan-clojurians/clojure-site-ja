@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,37 +97,53 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/comparators.adoc:41
+msgid "Write either a 3-way comparator or a boolean comparator:"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/comparators.adoc:42
 msgid ""
-"Write either a 3-way comparator or a boolean comparator: ** A 3-way "
-"comparator takes 2 values, _x_ and _y_, and returns a Java 32-bit _int_ that "
-"is negative if"
+"A 3-way comparator takes 2 values, _x_ and _y_, and returns a Java 32-bit "
+"_int_ that is negative if"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/comparators.adoc:44
+msgid ""
+"_x_ comes before _y_, positive if _x_ comes after _y_, or 0 if they are "
+"equal. Use values -1, 0, and 1 if you have no reason to prefer other return "
+"values."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/comparators.adoc:45
+msgid ""
+"A boolean comparator takes 2 values, _x_ and _y_, and returns true if _x_ "
+"comes before _y_, or"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/comparators.adoc:48
-#, no-wrap
 msgid ""
-"_x_ comes before _y_, positive if _x_ comes after _y_, or 0 if they are equal. Use values -1, 0, and 1\n"
-"if you have no reason to prefer other return values.\n"
-"** A boolean comparator takes 2 values, _x_ and _y_, and returns true if _x_ comes before _y_, or\n"
-"    false otherwise (including if _x_ and _y_ are equal). `<` and `>` are good examples. `\\<=`\n"
-"    and `>=` are not. Performance note: your boolean comparator may be called twice to distinguish\n"
-"    between the \"comes after\" or \"equals\" cases.\n"
+"false otherwise (including if _x_ and _y_ are equal). `<` and `>` are good "
+"examples. `\\<=` and `>=` are not. Performance note: your boolean comparator "
+"may be called twice to distinguish between the \"comes after\" or \"equals\" "
+"cases."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/comparators.adoc:49
-#, no-wrap
-msgid "Reverse the sort by reversing the order that you give the arguments to an existing comparator.\n"
+msgid ""
+"Reverse the sort by reversing the order that you give the arguments to an "
+"existing comparator."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/comparators.adoc:51
-#, no-wrap
 msgid ""
-"Compare equal-length Clojure vectors containing \"sort keys\" in order to do a multi-field comparison\n"
-"between values.\n"
+"Compare equal-length Clojure vectors containing \"sort keys\" in order to do "
+"a multi-field comparison between values."
 msgstr ""
 
 #. type: Plain text

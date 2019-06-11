@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
-"PO-Revision-Date: 2019-05-17 15:29+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"PO-Revision-Date: 2019-06-12 01:45+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
-#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
-#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
-#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -42,112 +42,112 @@ msgid "Differences with other Lisps"
 msgstr "他のLispとの違い"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:14
+#: en/content/reference/lisps.adoc:16
 msgid "This information is provided for programmers familiar with Common Lisp or Scheme."
 msgstr "この情報はCommon LispやSchemeを知っているプログラマーのために提供されている。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:16
+#: en/content/reference/lisps.adoc:18
 msgid "Clojure is case sensitive"
 msgstr "Clojureは大文字と小文字の違いを気にする"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:17
+#: en/content/reference/lisps.adoc:19
 msgid "Clojure is a Lisp-1"
 msgstr "ClojureはLisp-1である"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:18
+#: en/content/reference/lisps.adoc:20
 msgid "() is not the same as nil"
 msgstr "()はnilとは異なる"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:19
+#: en/content/reference/lisps.adoc:21
 msgid "The reader is side-effect free"
 msgstr "readerは副作用を起こさない"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:20
+#: en/content/reference/lisps.adoc:22
 msgid "Keywords are not Symbols"
 msgstr "キーワードはシンボルではない"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:21
+#: en/content/reference/lisps.adoc:23
 msgid "Symbols are not storage locations (see Var)"
 msgstr "シンボルはストレージではない (Varを参照)"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:22
+#: en/content/reference/lisps.adoc:24
 msgid "_**nil**_ is not a Symbol"
 msgstr "_**nil**_ はシンボルではない"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:23
+#: en/content/reference/lisps.adoc:25
 msgid "t is not syntax, use _**true**_"
 msgstr "t はシンタックスに含まれない。 _**true**_ を使用する"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:24
+#: en/content/reference/lisps.adoc:26
 msgid "The read table is currently not accessible to user programs"
 msgstr "現在、ユーザープログラムがリードテーブルにアクセスすることはできない"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:25
+#: en/content/reference/lisps.adoc:27
 msgid "_**let**_ binds sequentially"
 msgstr "_**let**_ は逐次的に束縛を行う"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:26
+#: en/content/reference/lisps.adoc:28
 msgid "_**do**_ is not a looping construct"
 msgstr "_**do**_ はループ構造ではない"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:27
+#: en/content/reference/lisps.adoc:29
 msgid "There is no tail-call optimization, use _**recur**_."
 msgstr "末尾呼び出し最適化はない。 _**recur**_ を使用する。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:28
+#: en/content/reference/lisps.adoc:30
 msgid "syntax-quote does symbol resolution, so `x is not the same as 'x."
 msgstr "シンタックスクォートはシンボルの解決を行うため、 `x は 'x と異なる。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:29
+#: en/content/reference/lisps.adoc:31
 msgid "` has auto-gensyms."
 msgstr "` は自動的にgensymを行う。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:30
+#: en/content/reference/lisps.adoc:32
 msgid "~ is unquote ',' is whitespace"
 msgstr "~ はアンクォートで、 ',' は空白である"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:31
+#: en/content/reference/lisps.adoc:33
 msgid "There is reader syntax for maps, vectors, and sets"
 msgstr "マップ、ベクター、セットに対してリーダーのシンタックスが定義されている"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:32
+#: en/content/reference/lisps.adoc:34
 msgid "_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not concrete cons cells"
 msgstr "_**cons**_, _**first**_ 及び _**rest**_ は具体的なコンスセルに対してではなく、シーケンス抽象を操作する。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:33
+#: en/content/reference/lisps.adoc:35
 msgid "Most data structures are immutable"
 msgstr "ほとんどのデータ構造はイミュータブルである。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:34
+#: en/content/reference/lisps.adoc:36
 msgid "lambda is _**fn**_, and supports overloading by arity"
 msgstr "ラムダは _**fn**_ であり、アリティによるオーバーロードをサポートしている。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:35
+#: en/content/reference/lisps.adoc:37
 msgid "_**pass:[=]**_ is the equality predicate"
 msgstr "_**pass:[=]**_ は等価性を示す述語である"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:36
+#: en/content/reference/lisps.adoc:38
 msgid ""
 "Global Vars can be dynamically rebound (if declared dynamic) without interfering with lexical local bindings. No "
 "special declarations are necessary to distinguish between dynamic and lexical bindings. Since Clojure is a Lisp-1, "
@@ -158,7 +158,7 @@ msgstr ""
 "ルな関数は動的に再束縛することができる。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:37
+#: en/content/reference/lisps.adoc:39
 msgid ""
 "No letrec, labels or flet - use (fn name [args]...) for self-reference, https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/letfn[letfn] for mutual reference."
@@ -167,7 +167,7 @@ msgstr ""
 "io/clojure/clojure.core-api.html#clojure.core/letfn[letfn] を使用する。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:38
+#: en/content/reference/lisps.adoc:40
 msgid ""
 "In Clojure _**nil**_ means 'nothing'. It signifies the absence of a value, of any type, and is not specific to lists "
 "or sequences."
@@ -176,17 +176,17 @@ msgstr ""
 "はない。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:39
+#: en/content/reference/lisps.adoc:41
 msgid "Empty collections are distinct from _**nil**_. Clojure does not equate _**nil**_ and '()."
 msgstr "空のコレクションは _**nil**_ とは明確に異なる。Clojureは _**nil**_ と '() を同値として扱わない。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:40
+#: en/content/reference/lisps.adoc:42
 msgid "_**false**_ means one of the two possible boolean values, the other being _**true**_"
 msgstr "_**false**_ はboolean型でとりうる２つの値のうちのひとつを示し、もうひとつの値は _**true**_ である。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:41
+#: en/content/reference/lisps.adoc:43
 msgid ""
 "There is more to collections than lists. You can have instances of empty collections, some of which have literal "
 "support ([], {}, and ()). Thus there can be no sentinel empty collection value."
@@ -195,12 +195,12 @@ msgstr ""
 "いる ([]、 {}、 及び ())。よって、空のコレクションを示すセンチネルな値は存在しない。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:42
+#: en/content/reference/lisps.adoc:44
 msgid "Coming from Scheme, _**nil**_ may map most closely to your notion of #f."
 msgstr "Schemeから来た場合、 _**nil**_ は#fの概念に最も似ているかもしれない。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:43
+#: en/content/reference/lisps.adoc:45
 msgid ""
 "A big difference in Clojure, is sequences. Sequences are not specific collections, esp. they are not necessarily "
 "concrete lists. When you ask an empty collection for a sequence of its elements (by calling *seq*) it returns "
@@ -215,7 +215,7 @@ msgstr ""
 "_lazy_ な(遅延評価される)ものにすることが可能になる。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:44
+#: en/content/reference/lisps.adoc:46
 msgid ""
 "Some of the sequence functions correspond to functions from Scheme and CL that there manipulated only pairs/conses "
 "('lists') and returned sentinel values ('() and nil) that represented 'empty' lists. The Clojure return values differ "
@@ -230,7 +230,7 @@ msgstr ""
 "ていない。"
 
 #. type: Plain text
-#: en/content/reference/lisps.adoc:45
+#: en/content/reference/lisps.adoc:47
 msgid ""
 "It helps to distinguish collections/data-structures and seqs/iteration. In both CL and Scheme they are conflated, in "
 "Clojure they are separate."
@@ -238,11 +238,10 @@ msgstr ""
 "コレクション/データ構造とseq/iterationを区別することは有用だ。CLとSchemeではどちらもそれらが入り混じっているが、"
 "Clojureでは区別されている。"
 
-#. type: Plain text
-#: en/content/reference/lisps.adoc:59
+#. type: Table
+#: en/content/reference/lisps.adoc:61
 #, no-wrap
 msgid ""
-"|===\n"
 "|   | Clojure | Common Lisp | Scheme | Java |\n"
 "| Has nil? | nil - means 'nothing' | nil - means false or empty list | - | null |\n"
 "| Has true? | true | - | #t | true (primitive) |\n"
@@ -254,9 +253,7 @@ msgid ""
 "| Host null: | nil | NA | NA | NA |\n"
 "| Host true: | true (boxed) | NA | NA | NA |\n"
 "| Host false: | false (boxed) | NA | NA | NA |\n"
-"|===\n"
 msgstr ""
-"|===\n"
 "|   | Clojure | Common Lisp | Scheme | Java |\n"
 "| nil があるか | nil - 「無」を意味する | nil - falseまたは空リストを意味する | - | null |\n"
 "| true があるか | true | - | #t | true (プリミティヴ) |\n"
@@ -268,4 +265,3 @@ msgstr ""
 "| ホスト環境の null: | nil | NA | NA | NA |\n"
 "| ホスト環境の true: | true (boxed) | NA | NA | NA |\n"
 "| ホスト環境の false: | false (boxed) | NA | NA | NA |\n"
-"|===\n"

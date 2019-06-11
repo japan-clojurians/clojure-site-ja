@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,40 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
-#: en/content/reference/sequences.adoc:15
-#: en/content/reference/deps_and_cli.adoc:13
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/deps_and_cli.adoc:11
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/getting_started.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/learn/hashed_colls.adoc:16
-#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
-#: en/content/guides/learn/sequential_colls.adoc:16
-#: en/content/guides/learn/functions.adoc:16
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr ""
 
 #. type: Title ==
 #: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
@@ -391,44 +357,143 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:135
+msgid "Installation directory"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:136
+msgid "Created during installation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:137
+#: en/content/reference/deps_and_cli.adoc:149
+#: en/content/reference/deps_and_cli.adoc:158
+msgid "Contents:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:138
+msgid "`bin/clojure` - main tool"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:139
+msgid "`bin/clj` - wrapper for interactive repl use (uses `rlwrap`)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:140
+msgid ""
+"`deps.edn` - install level deps.edn file, with some default deps (Clojure, "
+"etc) and provider config"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:141
+msgid ""
+"`example-deps.edn` - commented example that gets copied to `<config_dir>/"
+"deps.edn`"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:142
 msgid ""
-"Installation directory ** Created during installation ** Contents: *** `bin/"
-"clojure` - main tool *** `bin/clj` - wrapper for interactive repl use (uses "
-"`rlwrap`)  *** `deps.edn` - install level deps.edn file, with some default "
-"deps (Clojure, etc) and provider config *** `example-deps.edn` - commented "
-"example that gets copied to `<config_dir>/deps.edn` *** `libexec/clojure-"
-"tools-X.Y.Z.jar` - uberjar invoked by `clojure` to construct classpaths"
+"`libexec/clojure-tools-X.Y.Z.jar` - uberjar invoked by `clojure` to "
+"construct classpaths"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:143
+msgid "Config directory"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:144
+msgid ""
+"Holds a deps.edn file that persists across tool upgrades and affects all "
+"projects"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:145
+msgid "Locations used in this order:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:146
+msgid "If `$CLJ_CONFIG` is set, then use `$CLJ_CONFIG` (explicit override)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:147
+msgid ""
+"If `$XDG_CONFIG_HOME` is set, then use `$XDG_CONFIG_HOME/clojure` "
+"(Freedesktop conventions)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:148
+msgid "Else use `$HOME/.clojure` (most common)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:150
 msgid ""
-"Config directory ** Holds a deps.edn file that persists across tool upgrades "
-"and affects all projects ** Locations used in this order: *** If `"
-"$CLJ_CONFIG` is set, then use `$CLJ_CONFIG` (explicit override)  *** If `"
-"$XDG_CONFIG_HOME` is set, then use `$XDG_CONFIG_HOME/clojure` (Freedesktop "
-"conventions)  *** Else use `$HOME/.clojure` (most common)  ** Contents: *** "
 "`deps.edn` - user deps file, defines default Clojure version and provider "
 "defaults"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:155
+#: en/content/reference/deps_and_cli.adoc:151
+msgid "Cache directory"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:152
 msgid ""
-"Cache directory ** Lazily created when `clojure` is invoked without a local "
-"`deps.edn` file. Locations used in this order: *** If `$CLJ_CACHE` is set, "
-"then use `$CLJ_CACHE` (explicit override)  *** If `$XDG_CACHE_HOME` is set, "
-"then use `$XDG_CACHE_HOME/clojure` (Freedesktop conventions)  *** Else use "
-"`config_dir/.cpcache` (most common)"
+"Lazily created when `clojure` is invoked without a local `deps.edn` file. "
+"Locations used in this order:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:153
+msgid "If `$CLJ_CACHE` is set, then use `$CLJ_CACHE` (explicit override)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:154
+msgid ""
+"If `$XDG_CACHE_HOME` is set, then use `$XDG_CACHE_HOME/clojure` (Freedesktop "
+"conventions)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:155
+msgid "Else use `config_dir/.cpcache` (most common)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:156
+msgid "Project directory"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:157
+msgid "The current directory"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:159
+msgid "`deps.edn` - optional project deps"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:160
 msgid ""
-"Project directory ** The current directory ** Contents: *** `deps.edn` - "
-"optional project deps *** `.cpcache` - project cache directory, same as the "
-"user-level cache directory, created if there is a `deps.edn`"
+"`.cpcache` - project cache directory, same as the user-level cache "
+"directory, created if there is a `deps.edn`"
 msgstr ""
 
 #. type: Title ===
@@ -506,19 +571,39 @@ msgid "Coordinates can take several forms depending on the coordinate type:"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:182
+msgid "Maven coordinate: `{:mvn/version \"1.2.3\"}`"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:183
+msgid "Other optional keys: `:classifier`, `:extension`, `:exclusions`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:184
+msgid "Local project coordinate: `{:local/root \"/path/to/project\"}`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:185
+msgid "Optional key `:deps/manifest`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:186
+msgid "Specifies the project manifest type"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:187
 msgid ""
-"Maven coordinate: `{:mvn/version \"1.2.3\"}` ** Other optional keys: `:"
-"classifier`, `:extension`, `:exclusions`"
+"Default is to auto-detect the project type (such as `:deps`, `:lein`, `:pom`)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:188
-msgid ""
-"Local project coordinate: `{:local/root \"/path/to/project\"}` ** Optional "
-"key `:deps/manifest` *** Specifies the project manifest type *** Default is "
-"to auto-detect the project type (such as `:deps`, `:lein`, `:pom`)  *** "
-"Currently only `:deps` is supported"
+msgid "Currently only `:deps` is supported"
 msgstr ""
 
 #. type: Plain text
@@ -527,14 +612,39 @@ msgid "Local jar: `{:local/root \"/path/to/file.jar\"}`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:195
+#: en/content/reference/deps_and_cli.adoc:190
 msgid ""
 "Git coordinate: `{:git/url \"https://github.com/user/project.git\", :sha "
-"\"sha\", :tag \"tag\"}` ** The `:git/url` can be one of the following: *** "
-"https - secure anonymous access to public repos *** ssh or user@host form "
-"urls (including GitHub) - ssh-based access (see Git configuration section)  "
-"** The `:sha` attribute should indicate the full commit sha ** The `:tag` "
-"attribute is optional but can be used to indicate the semantics of the sha"
+"\"sha\", :tag \"tag\"}`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:191
+msgid "The `:git/url` can be one of the following:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:192
+msgid "https - secure anonymous access to public repos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:193
+msgid ""
+"ssh or user@host form urls (including GitHub) - ssh-based access (see Git "
+"configuration section)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:194
+msgid "The `:sha` attribute should indicate the full commit sha"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:195
+msgid ""
+"The `:tag` attribute is optional but can be used to indicate the semantics "
+"of the sha"
 msgstr ""
 
 #. type: delimited block -
@@ -578,7 +688,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/reference/deps_and_cli.adoc:216
-#: en/content/reference/java_interop.adoc:271
+#: en/content/reference/java_interop.adoc:275
 #, no-wrap
 msgid "Aliases"
 msgstr ""
@@ -591,51 +701,123 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:221
+msgid ""
+"-R - `resolve-deps` aliases are modifications applied during `resolve-deps`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:222
+#: en/content/reference/deps_and_cli.adoc:228
+#: en/content/reference/deps_and_cli.adoc:233
+#: en/content/reference/deps_and_cli.adoc:238
+msgid "Allowed keys in these aliases are:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:223
+msgid ""
+"`:extra-deps` - a deps map from lib to coordinate of deps to add to the deps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:224
+msgid ""
+"`:override-deps` - a deps map from lib to coordinate of override versions to "
+"use"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:225
+msgid ""
+"`:default-deps` - a deps map from lib to coordinate of versions to use if "
+"none is found"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:226
 msgid ""
-"-R - `resolve-deps` aliases are modifications applied during `resolve-deps` "
-"** Allowed keys in these aliases are: *** `:extra-deps` - a deps map from "
-"lib to coordinate of deps to add to the deps *** `:override-deps` - a deps "
-"map from lib to coordinate of override versions to use *** `:default-deps` - "
-"a deps map from lib to coordinate of versions to use if none is found ** If "
-"multiple -R alias maps are activated, all of these are merge-with merged"
+"If multiple -R alias maps are activated, all of these are merge-with merged"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:227
+msgid ""
+"-C - `make-classpath` aliases are modifications applied during `make-"
+"classpath`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:229
+msgid "`:extra-paths` - a collection of string paths to add to `:paths`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:230
+msgid ""
+"`:classpath-overrides` - a map of lib to string path to replace the location "
+"of the lib"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:231
 msgid ""
-"-C - `make-classpath` aliases are modifications applied during `make-"
-"classpath` ** Allowed keys in these aliases are: *** `:extra-paths` - a "
-"collection of string paths to add to `:paths` *** `:classpath-overrides` - a "
-"map of lib to string path to replace the location of the lib *** If multiple "
-"-C alias maps are activated, `:extra-paths` concatenate and `:classpath-"
-"overrides` merge-with merge"
+"If multiple -C alias maps are activated, `:extra-paths` concatenate and `:"
+"classpath-overrides` merge-with merge"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:232
+msgid "-O - JVM option aliases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:234
+msgid "`:jvm-opts` - a collection of string JVM options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:235
+msgid "If multiple -O alias maps are activated, `:jvm-opts` concatenate"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:236
 msgid ""
-"-O - JVM option aliases ** Allowed keys in these aliases are: *** `:jvm-"
-"opts` - a collection of string JVM options ** If multiple -O alias maps are "
-"activated, `:jvm-opts` concatenate ** If -J JVM options are also specified "
-"on the command line, they are concatenated after the alias options"
+"If -J JVM options are also specified on the command line, they are "
+"concatenated after the alias options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:237
+msgid "-M - clojure.main option aliases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:239
+msgid "`:main-opts` - a collection of clojure.main options"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:240
+msgid "If multiple -M alias maps are activated, only the last one will be used"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:241
 msgid ""
-"-M - clojure.main option aliases ** Allowed keys in these aliases are: *** `:"
-"main-opts` - a collection of clojure.main options ** If multiple -M alias "
-"maps are activated, only the last one will be used ** If command line "
-"clojure.main arguments are supplied on the command line, they are "
-"concatenated after the last main alias map"
+"If command line clojure.main arguments are supplied on the command line, "
+"they are concatenated after the last main alias map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:242
+msgid "-A - applies across all alias types"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:243
-msgid ""
-"-A - applies across all alias types ** These aliases support ALL alias keys "
-"above and all will be applied"
+msgid "These aliases support ALL alias keys above and all will be applied"
 msgstr ""
 
 #. type: Plain text
@@ -967,21 +1149,58 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:385
+msgid "Compute the deps map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:386
+msgid "Read the deps.edn configuration file in the following locations:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:387
+msgid "Install directory (unless -Srepro)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:388
+msgid "Config directory (if it exists and unless -Srepro)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:389
+msgid "Current directory (if it exists)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:390
+msgid "-Sdeps data (if it exists)"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:391
 msgid ""
-"Compute the deps map ** Read the deps.edn configuration file in the "
-"following locations: *** Install directory (unless -Srepro)  *** Config "
-"directory (if it exists and unless -Srepro)  *** Current directory (if it "
-"exists)  *** -Sdeps data (if it exists)  ** Combine the deps.edn maps in "
-"that order with `merge-with merge` (except for :paths where last wins)"
+"Combine the deps.edn maps in that order with `merge-with merge` (except for :"
+"paths where last wins)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:392
+msgid "Compute the resolve-deps args"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:393
+msgid ""
+"If `-R` specifies one or more aliases, find each alias in the deps map `:"
+"aliases`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:394
 msgid ""
-"Compute the resolve-deps args ** If `-R` specifies one or more aliases, find "
-"each alias in the deps map `:aliases` ** `merge-with` `merge` the alias maps "
-"- the result is the resolve-args map"
+"`merge-with` `merge` the alias maps - the result is the resolve-args map"
 msgstr ""
 
 #. type: Plain text
@@ -990,11 +1209,20 @@ msgid "Invoke `resolve-deps` with deps map and resolve-args map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:398
+#: en/content/reference/deps_and_cli.adoc:396
+msgid "Compute the classpath-overrides map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:397
 msgid ""
-"Compute the classpath-overrides map ** If `-C` specifies one or more "
-"aliases, find each alias in the deps map `:aliases` ** `merge` the classpath-"
-"override alias maps"
+"If `-C` specifies one or more aliases, find each alias in the deps map `:"
+"aliases`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:398
+msgid "`merge` the classpath-override alias maps"
 msgstr ""
 
 #. type: Plain text

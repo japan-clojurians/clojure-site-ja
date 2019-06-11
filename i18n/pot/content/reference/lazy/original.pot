@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-03-09 15:46+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,57 +17,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
-#: en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/sequences.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
+#: en/content/reference/transients.adoc:4
 #: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4
 #: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
+#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/other_functions.adoc:4
+#: en/content/reference/reducers.adoc:4
 #: en/content/reference/data_structures.adoc:4
-#: en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/lazy.adoc:4
-#: en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/search.adoc:4
-#: en/content/about/clojureclr.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/lisp.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4
-#: en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/community/swag.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
 #: en/content/community/downloads_older.adoc:4
-#: en/content/community/libraries.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
+#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
+#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
+#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/functional_programming.adoc:4
+#: en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/sequences.adoc:15 en/content/reference/metadata.adoc:15
-#: en/content/reference/reader.adoc:13 en/content/reference/transients.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/datatypes.adoc:16 en/content/reference/agents.adoc:16
-#: en/content/reference/protocols.adoc:15 en/content/reference/reducers.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/transducers.adoc:15 en/content/reference/vars.adoc:16
-#: en/content/reference/namespaces.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/multimethods.adoc:15
-#: en/content/about/functional_programming.adoc:15
-#: en/content/about/dynamic.adoc:16 en/content/about/spec.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/guides/reader_conditionals.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-msgid "toc::[]"
 msgstr ""
 
 #. type: Title =
@@ -91,26 +67,53 @@ msgid "In working on streams a few things became evident:"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/lazy.adoc:18
+msgid "stream code is ugly and imperative"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/lazy.adoc:19
-msgid ""
-"stream code is ugly and imperative ** even when made safe, still ugly, "
-"stateful"
+msgid "even when made safe, still ugly, stateful"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:20
+msgid "streams support full laziness"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:21
-msgid "streams support full laziness ** this ends up being extremely nice"
+msgid "this ends up being extremely nice"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:22
+msgid ""
+"Integrating streams transparently (i.e. not having both map and map-stream) "
+"would require a change, to relax the contract of the core sequence functions "
+"(map, filter etc)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:23
+msgid ""
+"If I am going to do that, could I achieve the same full laziness while "
+"keeping the beautiful recursive style of Clojure?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:24
+msgid "while being substantially compatible with existing code"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:25
+msgid "Yes!"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:26
-msgid ""
-"Integrating streams transparently (i.e. not having both map and map-stream) "
-"would require a change, to relax the contract of the core sequence functions "
-"(map, filter etc)  ** If I am going to do that, could I achieve the same "
-"full laziness while keeping the beautiful recursive style of Clojure? *** "
-"while being substantially compatible with existing code *** Yes! **** but - "
-"ideally some names should change"
+msgid "but - ideally some names should change"
 msgstr ""
 
 #. type: Title ===
@@ -135,13 +138,34 @@ msgid "A seq is like a logical cursor"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/lazy.adoc:33
+msgid "rest is fundamentally eager"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:34
+msgid "returns another seq or nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:35
+msgid ""
+"needs to determine if there is any more in order to determine if return "
+"value is nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:36
+msgid ""
+"lazy-cons can delay the calculation of first/rest, but not the determination "
+"if there is a rest"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/lazy.adoc:37
 msgid ""
-"rest is fundamentally eager ** returns another seq or nil ** needs to "
-"determine if there is any more in order to determine if return value is nil "
-"** lazy-cons can delay the calculation of first/rest, but not the "
-"determination if there is a rest *** determining that often requires "
-"'pulling' on an inner seq, reducing effective laziness"
+"determining that often requires 'pulling' on an inner seq, reducing "
+"effective laziness"
 msgstr ""
 
 #. type: Plain text
@@ -163,54 +187,126 @@ msgid "Enhancing the seq model - a third operation on seqs - 'next'"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lazy.adoc:50
+#: en/content/reference/lazy.adoc:44
 msgid ""
-"_**Changed:**_ (*rest* aseq) - returns a possibly empty seq, _never nil_ ** "
-"calls seq on arg if not already a seq ** the returned seq may be empty *** "
-"will print (), but not a single sentinel object ** never returns nil *** "
-"currently not enforced on 3rd-party seqs ** a (possibly) delayed path to the "
-"remaining items, if any"
+"_**Changed:**_ (*rest* aseq) - returns a possibly empty seq, _never nil_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:45 en/content/reference/lazy.adoc:58
+#: en/content/reference/lazy.adoc:63
+msgid "calls seq on arg if not already a seq"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:46
+msgid "the returned seq may be empty"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:47
+msgid "will print (), but not a single sentinel object"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:48
+msgid "never returns nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:49
+msgid "currently not enforced on 3rd-party seqs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:50
+msgid "a (possibly) delayed path to the remaining items, if any"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:51
+msgid "_**Changed**_: seqs can be empty"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:52
-msgid "_**Changed**_: seqs can be empty ** always an ISeq"
+msgid "always an ISeq"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lazy.adoc:56
-msgid ""
-"_**Changed**_: the *seq* function - no longer an identity for ISeqs ** still "
-"returns either a seq or nil ** (seq aseq) -> ___**no longer an identity, if "
-"aseq empty returns nil**___ ** still works on nil"
+#: en/content/reference/lazy.adoc:53
+msgid "_**Changed**_: the *seq* function - no longer an identity for ISeqs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lazy.adoc:60
+#: en/content/reference/lazy.adoc:54
+msgid "still returns either a seq or nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:55
 msgid ""
-"the *first* function doesn't change ** calls seq on arg if not already a seq "
-"** returns first item ** still works on nil"
+"(seq aseq) -> ___**no longer an identity, if aseq empty returns nil**___"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:56 en/content/reference/lazy.adoc:60
+msgid "still works on nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:57
+msgid "the *first* function doesn't change"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:59
+msgid "returns first item"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:61
+msgid "_**New**:_ the *next* function does what *rest* used to do"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:62
+msgid "returns the next seq, if any, else nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:64
+msgid "(next aseq) === (seq (rest aseq))"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:65
-msgid ""
-"_**New**:_ the *next* function does what *rest* used to do ** returns the "
-"next seq, if any, else nil ** calls seq on arg if not already a seq ** (next "
-"aseq) === (seq (rest aseq))  ** works on nil"
+msgid "works on nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:66
+msgid "_**Changed**_: seq?"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:67
-msgid "_**Changed**_: seq? ** (seq? ()) -> true"
+msgid "(seq? ()) -> true"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:68
+msgid "_**Changed:**_ Sequence fns (map, filter etc) return seqs, but not nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:69
+msgid "You'll need to call seq on their return value in order to get a seq/nil"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:70
-msgid ""
-"_**Changed:**_ Sequence fns (map, filter etc) return seqs, but not nil ** "
-"You'll need to call seq on their return value in order to get a seq/nil *** "
-"seq also serves as test for end, already idiomatic"
+msgid "seq also serves as test for end, already idiomatic"
 msgstr ""
 
 #. type: delimited block -
@@ -222,12 +318,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/lazy.adoc:77
+msgid "allows full laziness"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:78
+msgid "doesn't support nil punning"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/lazy.adoc:79
-#, no-wrap
-msgid ""
-"** allows full laziness\n"
-"** doesn't support nil punning\n"
-"*** since sequence fns no longer return seq/nil\n"
+msgid "since sequence fns no longer return seq/nil"
 msgstr ""
 
 #. type: Title ===
@@ -237,29 +339,80 @@ msgid "Recipe - How to write lazy sequence functions in new model"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lazy.adoc:93
+#: en/content/reference/lazy.adoc:83
+msgid "Goodbye lazy-cons, hello lazy-seq"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:84
+msgid "lazy-cons is gone"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:85
+msgid "new laziness macro - _**lazy-seq**_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:86
+msgid "takes a body that yields a seq, nil or anything seq-able"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:87
+msgid "returns a logical collection that implements seq by calling the body"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:88
+msgid "invokes the body only the first time seq is called on it, caches result"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:89
+msgid "will call seq on the body's return value if not already a seq or nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:90
 msgid ""
-"Goodbye lazy-cons, hello lazy-seq ** lazy-cons is gone ** new laziness macro "
-"- _**lazy-seq**_ *** takes a body that yields a seq, nil or anything seq-"
-"able *** returns a logical collection that implements seq by calling the "
-"body **** invokes the body only the first time seq is called on it, caches "
-"result **** will call seq on the body's return value if not already a seq or "
-"nil ** The net effect is the creation of a virtual collection that does no "
-"work until seq is called upon it - fully delayed ** Supports all collection "
-"ops ** Can be empty - e.g. calling seq on it can return nil *** when empty "
-"will print as ()"
+"The net effect is the creation of a virtual collection that does no work "
+"until seq is called upon it - fully delayed"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:91
+msgid "Supports all collection ops"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:92
+msgid "Can be empty - e.g. calling seq on it can return nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:93
+msgid "when empty will print as ()"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:94
+msgid "lazy-seq goes at top level of lazy sequence function"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:95
-msgid ""
-"lazy-seq goes at top level of lazy sequence function ** instead of nested "
-"lazy-cons"
+msgid "instead of nested lazy-cons"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:96
+msgid "inside, use a normal cons call"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:97
-msgid "inside, use a normal cons call ** won't be created until needed"
+msgid "won't be created until needed"
 msgstr ""
 
 #. type: Plain text
@@ -367,15 +520,43 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/lazy.adoc:145
+#: en/content/reference/lazy.adoc:139
 msgid ""
 "Audit your code for nil-punning. The lazy branch has supports compilation in "
 "a debug mode that asserts if you try to test the truth value of a lazy "
 "sequence in a conditional, and will throw an exception if you do. Just build "
-"clojure like so: ** ant -Dclojure.assert-if-lazy-seq=true ** Then, nil puns "
-"like the following will throw exceptions: *** (when (filter neg? [1 2]) :all-"
-"pos)  *** (not (concat))  *** (if (rest (seq [])) 1 2)  ** In all cases you "
-"can fix a nil pun by wrapping the sequence with a seq call:"
+"clojure like so:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:140
+msgid "ant -Dclojure.assert-if-lazy-seq=true"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:141
+msgid "Then, nil puns like the following will throw exceptions:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:142
+msgid "(when (filter neg? [1 2]) :all-pos)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:143
+msgid "(not (concat))"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:144
+msgid "(if (rest (seq [])) 1 2)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/lazy.adoc:145
+msgid ""
+"In all cases you can fix a nil pun by wrapping the sequence with a seq call:"
 msgstr ""
 
 #. type: delimited block -
@@ -388,8 +569,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/lazy.adoc:152
-#, no-wrap
-msgid "** After you are done, rebuild without the flag, as it will slow things down.\n"
+msgid ""
+"After you are done, rebuild without the flag, as it will slow things down."
 msgstr ""
 
 #. type: Title ===

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,40 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
-#: en/content/reference/sequences.adoc:15
-#: en/content/reference/deps_and_cli.adoc:13
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/deps_and_cli.adoc:11
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/getting_started.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/learn/hashed_colls.adoc:16
-#: en/content/guides/learn/syntax.adoc:14 en/content/guides/learn/flow.adoc:14
-#: en/content/guides/learn/sequential_colls.adoc:16
-#: en/content/guides/learn/functions.adoc:16
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr ""
 
 #. type: Title ===
 #: en/content/guides/reader_conditionals.adoc:120
@@ -532,23 +498,33 @@ msgid "Clojure provides recur and the sequence abstraction"
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:241
+msgid "`recur` is \"classic\" recursion"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:242
-msgid ""
-"`recur` is \"classic\" recursion ** Consumers don't control it, considered a "
-"lower-level facility"
+msgid "Consumers don't control it, considered a lower-level facility"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:243
+msgid "Sequences represent iteration as values"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:244
-msgid ""
-"Sequences represent iteration as values ** Consumers can partially iterate"
+msgid "Consumers can partially iterate"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:245
+msgid "Reducers represent iteration as function composition"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:246
-msgid ""
-"Reducers represent iteration as function composition ** Added in Clojure "
-"1.5, not covered here"
+msgid "Added in Clojure 1.5, not covered here"
 msgstr ""
 
 #. type: Title ===
@@ -558,10 +534,18 @@ msgid "`loop` and `recur`"
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:250
+msgid "Functional looping construct"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:251
+msgid "`loop` defines bindings"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:252
-msgid ""
-"Functional looping construct ** `loop` defines bindings ** `recur` re-"
-"executes `loop` with new bindings"
+msgid "`recur` re-executes `loop` with new bindings"
 msgstr ""
 
 #. type: Plain text
@@ -607,15 +591,28 @@ msgid "`recur` for recursion"
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:277
+msgid "`recur` must be in \"tail position\""
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:278
-msgid "`recur` must be in \"tail position\" ** The last expression in a branch"
+msgid "The last expression in a branch"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:279
+msgid "`recur` must provide values for all bound symbols by position"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/flow.adoc:280
+msgid "Loop bindings"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/flow.adoc:281
-msgid ""
-"`recur` must provide values for all bound symbols by position ** Loop "
-"bindings ** defn/fn arguments"
+msgid "defn/fn arguments"
 msgstr ""
 
 #. type: Plain text
@@ -673,9 +670,13 @@ msgid "`ex-info` takes a message and a map"
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/learn/flow.adoc:312
+msgid "`ex-data` gets the map back out"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/flow.adoc:313
-msgid ""
-"`ex-data` gets the map back out ** Or `nil` if not created with `ex-info`"
+msgid "Or `nil` if not created with `ex-info`"
 msgstr ""
 
 #. type: delimited block -

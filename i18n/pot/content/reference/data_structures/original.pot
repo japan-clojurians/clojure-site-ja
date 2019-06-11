@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,33 +46,6 @@ msgstr ""
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
-#: en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr ""
-
 #. type: Title ==
 #: en/content/reference/libs.adoc:64 en/content/reference/refs.adoc:73
 #: en/content/reference/namespaces.adoc:24
@@ -104,6 +77,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/reader.adoc:100
 #: en/content/reference/data_structures.adoc:235
+#: en/content/guides/learn/hashed_colls.adoc:19
 #, no-wrap
 msgid "Sets"
 msgstr ""
@@ -143,12 +117,38 @@ msgid "They provide good hash values"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/data_structures.adoc:24
+msgid "In addition, the collections:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/data_structures.adoc:25
+msgid "Are manipulated via interfaces."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/data_structures.adoc:26
+msgid "Support sequencing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/data_structures.adoc:27
+msgid "Support persistent manipulation."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/data_structures.adoc:28
+msgid "Support metadata"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/data_structures.adoc:29
+msgid "Implement java.lang.Iterable"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/data_structures.adoc:30
-msgid ""
-"In addition, the collections: ** Are manipulated via interfaces.  ** Support "
-"sequencing ** Support persistent manipulation.  ** Support metadata ** "
-"Implement java.lang.Iterable ** Implement the non-optional (read-only) "
-"portion of java.util.Collection"
+msgid "Implement the non-optional (read-only) portion of java.util.Collection"
 msgstr ""
 
 #. type: Title ==
@@ -247,14 +247,17 @@ msgid ""
 "and M respectively."
 msgstr ""
 
-#. type: Plain text
-#: en/content/reference/data_structures.adoc:69
+#. type: Table
+#: en/content/reference/data_structures.adoc:68
+#, no-wrap
 msgid ""
-"|=== | Example expression | Return value | `(== 1 1.0 1M)` | `true` | `(/ 2 "
-"3)` | `2/3` | `(/ 2.0 3)` | `0.6666666666666666` | `(map #(Math/abs %) "
-"(range -3 3))` | `(3 2 1 0 1 2)` | `(class 36786883868216818816N)` | "
-"`clojure.lang.BigInt` | `(class 3.14159265358M)` | `java.math.BigDecimal` |"
-"==="
+"| Example expression | Return value\n"
+"| `(== 1 1.0 1M)` | `true`\n"
+"| `(/ 2 3)` | `2/3`\n"
+"| `(/ 2.0 3)` | `0.6666666666666666`\n"
+"| `(map #(Math/abs %) (range -3 3))` | `(3 2 1 0 1 2)`\n"
+"| `(class 36786883868216818816N)` | `clojure.lang.BigInt`\n"
+"| `(class 3.14159265358M)` | `java.math.BigDecimal`\n"
 msgstr ""
 
 #. type: Plain text

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: 2018-03-31 17:25+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -34,22 +34,6 @@ msgstr ""
 #: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15 en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16 en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16 en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15 en/content/reference/refs.adoc:15
-#: en/content/reference/lazy.adoc:12 en/content/reference/reader.adoc:13 en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15 en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17 en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16 en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16 en/content/guides/weird_characters.adoc:10
-#: en/content/guides/spec.adoc:11 en/content/guides/reader_conditionals.adoc:10 en/content/guides/destructuring.adoc:11
-#: en/content/guides/faq.adoc:11 en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16 en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr "toc::[]"
 
 #. type: Title =
 #: en/content/reference/protocols.adoc:1
@@ -90,25 +74,49 @@ msgid "Provide a high-performance, dynamic polymorphism construct as an alternat
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/protocols.adoc:24
+msgid "Support the best parts of interfaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:25
+#, fuzzy
+#| msgid "Informational vs implementational"
+msgid "specification only, no implementation"
+msgstr "情報的 vs 実装的"
+
+#. type: Plain text
 #: en/content/reference/protocols.adoc:26
+msgid "a single type can implement multiple protocols"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:27
+msgid "While avoiding some of the drawbacks"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:28
 msgid ""
-"Support the best parts of interfaces ** specification only, no implementation ** a single type can implement multiple "
-"protocols"
+"Which interfaces are implemented is a design-time choice of the type author, cannot be extended later (although "
+"interface injection might eventually address this)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:29
+msgid "implementing an interface creates an isa/instanceof type relationship and hierarchy"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:30
 msgid ""
-"While avoiding some of the drawbacks ** Which interfaces are implemented is a design-time choice of the type author, "
-"cannot be extended later (although interface injection might eventually address this)  ** implementing an interface "
-"creates an isa/instanceof type relationship and hierarchy"
+"Avoid the 'expression problem' by allowing independent extension of the set of types, protocols, and implementations "
+"of protocols on types, by different parties"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:31
-msgid ""
-"Avoid the 'expression problem' by allowing independent extension of the set of types, protocols, and implementations "
-"of protocols on types, by different parties ** do so without wrappers/adapters"
+msgid "do so without wrappers/adapters"
 msgstr ""
 
 #. type: Plain text
@@ -156,10 +164,13 @@ msgid "Docs can be specified for the protocol and the functions"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/protocols.adoc:51
+msgid "The above yields a set of polymorphic functions and a protocol object"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/protocols.adoc:52
-msgid ""
-"The above yields a set of polymorphic functions and a protocol object ** all are namespace-qualified by the namespace "
-"enclosing the definition"
+msgid "all are namespace-qualified by the namespace enclosing the definition"
 msgstr ""
 
 #. type: Plain text
@@ -282,19 +293,40 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/protocols.adoc:104
+msgid "Function maps are maps of the keywordized method names to ordinary fns"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/protocols.adoc:105
-msgid ""
-"Function maps are maps of the keywordized method names to ordinary fns ** this facilitates easy reuse of existing fns "
-"and maps, for code reuse/mixins without derivation or composition"
+msgid "this facilitates easy reuse of existing fns and maps, for code reuse/mixins without derivation or composition"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:106
+#, fuzzy
+#| msgid "a deftype/defrecord can implement one or more protocols and/or interfaces"
+msgid "You can implement a protocol on an interface"
+msgstr "deftype/defrecordは1つ以上のプロトコルもしくはインターフェースを実装することができる"
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:107
+msgid "this is primarily to facilitate interop with the host (e.g. Java)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:108
+msgid "but opens the door to incidental multiple inheritance of implementation"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:109
+msgid "since a class can inherit from more than one interface, both of which implement the protocol"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/protocols.adoc:110
-msgid ""
-"You can implement a protocol on an interface ** this is primarily to facilitate interop with the host (e.g. Java)  ** "
-"but opens the door to incidental multiple inheritance of implementation *** since a class can inherit from more than "
-"one interface, both of which implement the protocol *** if one interface is derived from the other, the more derived "
-"is used, else which one is used is unspecified."
+msgid "if one interface is derived from the other, the more derived is used, else which one is used is unspecified."
 msgstr ""
 
 #. type: Plain text

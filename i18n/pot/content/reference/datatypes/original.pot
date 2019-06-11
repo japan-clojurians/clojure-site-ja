@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,33 +46,6 @@ msgstr ""
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
-#: en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
-msgstr ""
-
 #. type: Title ==
 #: en/content/reference/protocols.adoc:16
 #: en/content/reference/datatypes.adoc:17
@@ -103,8 +76,8 @@ msgid "Basics"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:176
-#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:177
+#: en/content/reference/special_forms.adoc:182
+#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:184
 msgid "Example:"
 msgstr ""
 
@@ -176,12 +149,21 @@ msgid "because they generate a named class, it has an accessible constructor"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/datatypes.adoc:36
+#: en/content/reference/datatypes.adoc:34
+msgid "fields can have type hints, and can be primitive"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:35
 msgid ""
-"fields can have type hints, and can be primitive ** note that currently a "
-"type hint of a non-primitive type will not be used to constrain the field "
-"type nor the constructor arg, but will be used to optimize its use in the "
-"class methods ** constraining the field type and constructor arg is planned"
+"note that currently a type hint of a non-primitive type will not be used to "
+"constrain the field type nor the constructor arg, but will be used to "
+"optimize its use in the class methods"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:36
+msgid "constraining the field type and constructor arg is planned"
 msgstr ""
 
 #. type: Plain text
@@ -191,12 +173,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/datatypes.adoc:41
+#: en/content/reference/datatypes.adoc:38
 msgid ""
 "deftype/defrecord can be written with a special reader syntax #my.thing[1 2 "
-"3] where: ** each element in the vector form is passed to the deftype/"
-"defrecord's constructor un-evaluated ** the deftype/defrecord name must be "
-"fully qualified ** only available in Clojure versions later than 1.3"
+"3] where:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:39
+msgid ""
+"each element in the vector form is passed to the deftype/defrecord's "
+"constructor un-evaluated"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:40
+msgid "the deftype/defrecord name must be fully qualified"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:41
+#: en/content/reference/datatypes.adoc:62
+msgid "only available in Clojure versions later than 1.3"
 msgstr ""
 
 #. type: Plain text
@@ -223,12 +221,41 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/datatypes.adoc:54
+#: en/content/reference/datatypes.adoc:48
 msgid ""
-"defrecord provides a complete implementation of a persistent map, including: "
-"** value-based equality and hashCode ** metadata support ** associative "
-"support ** keyword accessors for fields ** extensible fields (you can assoc "
-"keys not supplied with the defrecord definition)  ** etc"
+"defrecord provides a complete implementation of a persistent map, including:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:49
+msgid "value-based equality and hashCode"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:50
+msgid "metadata support"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:51
+msgid "associative support"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:52
+msgid "keyword accessors for fields"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:53
+msgid ""
+"extensible fields (you can assoc keys not supplied with the defrecord "
+"definition)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:54
+msgid "etc"
 msgstr ""
 
 #. type: Plain text
@@ -237,15 +264,37 @@ msgid "deftype supports mutable fields, defrecord does not"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/datatypes.adoc:62
+#: en/content/reference/datatypes.adoc:56
 msgid ""
 "defrecord supports an additional reader form of #my.record{:a 1, :b 2} "
-"taking a map that initializes a defrecord according to: ** the defrecord "
-"name must be fully qualified ** the elements in the map are un-evaluated ** "
-"existing defrecord fields take the keyed values ** defrecord fields without "
-"keyed values in the literal map are initialized to nil ** additional keyed "
-"values are allowed and added to the defrecord ** only available in Clojure "
-"versions later than 1.3"
+"taking a map that initializes a defrecord according to:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:57
+msgid "the defrecord name must be fully qualified"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:58
+msgid "the elements in the map are un-evaluated"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:59
+msgid "existing defrecord fields take the keyed values"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:60
+msgid ""
+"defrecord fields without keyed values in the literal map are initialized to "
+"nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:61
+msgid "additional keyed values are allowed and added to the defrecord"
 msgstr ""
 
 #. type: Plain text
@@ -325,36 +374,53 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/datatypes.adoc:79
+msgid "Concrete derivation is bad"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/datatypes.adoc:80
-msgid ""
-"Concrete derivation is bad ** you cannot derive datatypes from concrete "
-"classes, only interfaces"
+msgid "you cannot derive datatypes from concrete classes, only interfaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:81
+msgid "You should always program to protocols or interfaces"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:82
-msgid ""
-"You should always program to protocols or interfaces ** datatypes cannot "
-"expose methods not in their protocols or interfaces"
+msgid "datatypes cannot expose methods not in their protocols or interfaces"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:83
+msgid "Immutability should be the default"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:84
-msgid ""
-"Immutability should be the default ** and is the only option for records"
+msgid "and is the only option for records"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:85
+msgid "Encapsulation of information is folly"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:86
-msgid ""
-"Encapsulation of information is folly ** fields are public, use protocols/"
-"interfaces to avoid dependencies"
+msgid "fields are public, use protocols/interfaces to avoid dependencies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/datatypes.adoc:87
+msgid "Tying polymorphism to inheritance is bad"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:88
-msgid ""
-"Tying polymorphism to inheritance is bad ** protocols free you from that"
+msgid "protocols free you from that"
 msgstr ""
 
 #. type: Plain text

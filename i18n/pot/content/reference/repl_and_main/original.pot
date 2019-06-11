@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,33 +44,6 @@ msgstr ""
 #: en/content/about/functional_programming.adoc:4
 #: en/content/about/clojureclr.adoc:4
 msgid "Rich Hickey 2015-01-01"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:15 en/content/reference/protocols.adoc:15
-#: en/content/reference/sequences.adoc:15
-#: en/content/reference/multimethods.adoc:15 en/content/reference/libs.adoc:16
-#: en/content/reference/transients.adoc:16
-#: en/content/reference/compilation.adoc:16
-#: en/content/reference/other_libraries.adoc:16
-#: en/content/reference/macros.adoc:15 en/content/reference/transducers.adoc:15
-#: en/content/reference/refs.adoc:15 en/content/reference/lazy.adoc:12
-#: en/content/reference/reader.adoc:13
-#: en/content/reference/special_forms.adoc:15
-#: en/content/reference/namespaces.adoc:15
-#: en/content/reference/java_interop.adoc:15
-#: en/content/reference/other_functions.adoc:17
-#: en/content/reference/vars.adoc:16 en/content/reference/reducers.adoc:15
-#: en/content/reference/data_structures.adoc:16
-#: en/content/reference/repl_and_main.adoc:16
-#: en/content/reference/agents.adoc:16 en/content/reference/datatypes.adoc:16
-#: en/content/guides/weird_characters.adoc:10 en/content/guides/spec.adoc:11
-#: en/content/guides/reader_conditionals.adoc:10
-#: en/content/guides/destructuring.adoc:11 en/content/guides/faq.adoc:11
-#: en/content/about/spec.adoc:16 en/content/about/dynamic.adoc:16
-#: en/content/about/rationale.adoc:13 en/content/about/state.adoc:16
-#: en/content/about/functional_programming.adoc:15
-msgid "toc::[]"
 msgstr ""
 
 #. type: Title ==
@@ -132,28 +105,80 @@ msgid "With no options or args, runs an interactive Read-Eval-Print Loop"
 msgstr ""
 
 #. type: Plain text
+#: en/content/reference/repl_and_main.adoc:27
+msgid "init options:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:28
+msgid "-i, --init path Load a file or resource"
+msgstr ""
+
+#. type: Plain text
 #: en/content/reference/repl_and_main.adoc:29
-msgid ""
-"init options: ** -i, --init path Load a file or resource ** -e, --eval "
-"string Evaluate expressions in string; print non-nil values"
+msgid "-e, --eval string Evaluate expressions in string; print non-nil values"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:30
+msgid "main options:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:31
+msgid "-r, --repl Run a repl"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:32
+msgid "path Run a script from a file or resource"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:33
+msgid "- Run a script from standard input"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:34
+msgid "-m, --main A namespace to find a -main function for execution"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:35
+msgid "-h, -?, --help Print this help message and exit"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:36
+msgid "operation:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:37
+msgid "Establishes thread-local bindings for commonly set!-able vars"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:38
+msgid "Enters the user namespace"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:39
 msgid ""
-"main options: ** -r, --repl Run a repl ** path Run a script from a file or "
-"resource ** - Run a script from standard input ** -m, --main A namespace to "
-"find a -main function for execution ** -h, -?, --help Print this help "
-"message and exit"
+"Binds \\*command-line-args* to a seq of strings containing command line args "
+"that appear after any main option"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/repl_and_main.adoc:40
+msgid "Runs all init options in order"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:41
-msgid ""
-"operation: ** Establishes thread-local bindings for commonly set!-able vars "
-"** Enters the user namespace ** Binds \\*command-line-args* to a seq of "
-"strings containing command line args that appear after any main option ** "
-"Runs all init options in order ** Runs a repl or script if requested"
+msgid "Runs a repl or script if requested"
 msgstr ""
 
 #. type: Plain text

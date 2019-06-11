@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-06-12 00:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,7 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#: en/content/guides/learn/sequential_colls.adoc:102
 #, no-wrap
 msgid "Lists"
 msgstr ""
@@ -130,13 +131,18 @@ msgstr ""
 msgid "Text markup"
 msgstr ""
 
-#. type: Plain text
-#: en/content/community/editing.adoc:59
+#. type: Table
+#: en/content/community/editing.adoc:58
+#, no-wrap
 msgid ""
-"|=== | markup | effect | pass:[_italic_] | _italic_ | pass:[*bold*] | *bold* "
-"| pass:[_**italic and bold**_] | _**italic and bold**_ | pass:[`inline "
-"code`] | `inline code` | pass:[(C) (R) (TM)] | (C) (R) (TM)  | pass:[-- ...] "
-"| -- ...  | pass:[-> <- => <=] | -> <- => <= |==="
+"| markup | effect\n"
+"| pass:[_italic_] | _italic_\n"
+"| pass:[*bold*] | *bold*\n"
+"| pass:[_**italic and bold**_] | _**italic and bold**_\n"
+"| pass:[`inline code`] | `inline code`\n"
+"| pass:[(C) (R) (TM)] | (C) (R) (TM)\n"
+"| pass:[-- ...] | -- ...\n"
+"| pass:[-> <- => <=] | -> <- => <=\n"
 msgstr ""
 
 #. type: Plain text
@@ -375,8 +381,18 @@ msgid "first"
 msgstr ""
 
 #. type: Plain text
+#: en/content/community/editing.adoc:187
+msgid "second"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/editing.adoc:188
+msgid "nested"
+msgstr ""
+
+#. type: Plain text
 #: en/content/community/editing.adoc:189
-msgid "second ** nested *** more nested"
+msgid "more nested"
 msgstr ""
 
 #. type: Plain text
@@ -466,21 +482,14 @@ msgid ""
 "This is a basic table example however:"
 msgstr ""
 
-#. type: delimited block -
-#: en/content/community/editing.adoc:235
+#. type: Table
+#: en/content/community/editing.adoc:234 en/content/community/editing.adoc:242
 #, no-wrap
 msgid ""
 "[options=\"header\"]\n"
-"|===\n"
 "| col1 | col2\n"
 "| a | b\n"
 "| b | c\n"
-"|===\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/editing.adoc:243
-msgid "|=== | col1 | col2 | a | b | b | c |==="
 msgstr ""
 
 #. type: Title ==
