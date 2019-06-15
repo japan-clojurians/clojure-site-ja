@@ -50,3 +50,28 @@ body {
 /*code {
   font-size: 80%;
 }*/
+
+/* prevnext.ftl */
+
+.clja-prev-next-container {
+  margin-top: 50px;
+}
+
+.clja-prev-link {
+  padding: 6px;
+  float: left;
+  text-decoration: none;
+}
+
+.clja-prevnext-link-icon {
+  display: inline-block;
+  padding-right: 6px;
+  padding-left: 6px;
+  text-decoration: none;
+}
+
+.clja-next-link {
+  padding: 6px;
+  float: right;
+  text-decoration: none;
+}

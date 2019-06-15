@@ -10,6 +10,8 @@
 
 <p>${content.body}</p>
 
+<#include "prevnext.ftl">
+
 <hr />
 
 <#include "footer.ftl">
