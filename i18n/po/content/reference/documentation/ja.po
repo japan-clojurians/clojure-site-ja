@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-02-07 07:23+0900\n"
-"PO-Revision-Date: 2016-07-02 10:10+0900\n"
+"PO-Revision-Date: 2019-06-15 20:30+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/api/api.adoc:1 en/content/reference/documentation.adoc:38
 #, no-wrap
 msgid "API Documentation"
-msgstr ""
+msgstr "APIドキュメンテーション"
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
@@ -51,134 +51,134 @@ msgstr "ドキュメンテーション"
 #: en/content/reference/documentation.adoc:10
 #, no-wrap
 msgid "Reference Documentation"
-msgstr ""
+msgstr "リファレンスドキュメンテーション"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:13
 msgid "<<reader#,The Reader>>"
-msgstr ""
+msgstr "<<reader#,リーダー(reader)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:14
 msgid "<<repl_and_main#,The REPL and main>>"
-msgstr ""
+msgstr "<<repl_and_main#,REPLとmain>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:15
 msgid "<<evaluation#,Evaluation>>"
-msgstr ""
+msgstr "<<evaluation#,評価>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:16
 msgid "<<special_forms#,Special Forms>>"
-msgstr ""
+msgstr "<<special_forms#,特殊形式(special form)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:17
 msgid "<<macros#,Macros>>"
-msgstr ""
+msgstr "<<macros#,マクロ(macro)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:18
 msgid "<<other_functions#,Other Functions>>"
-msgstr ""
+msgstr "<<other_functions#,その他の関数>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:19
 msgid "<<data_structures#,Data Structures>>"
-msgstr ""
+msgstr "<<data_structures#,データ構造>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:20
 msgid "<<datatypes#,Datatypes>>"
-msgstr ""
+msgstr "<<datatypes#,データ型>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:21
 msgid "<<sequences#,Sequences>>"
-msgstr ""
+msgstr "<<sequences#,シーケンス(sequence)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:22
 msgid "<<transients#,Transients>>"
-msgstr ""
+msgstr "<<transients#,transient>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:23
 msgid "<<transducers#,Transducers>>"
-msgstr ""
+msgstr "<<transducers#,トランスデューサー(transducer)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:24
 msgid "<<multimethods#,Multimethods and Hierarchies>>"
-msgstr ""
+msgstr "<<multimethods#,マルチメソッド(multimethod)と階層>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:25
 msgid "<<protocols#,Protocols>>"
-msgstr ""
+msgstr "<<protocols#,プロトコル(protocol)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:26
 msgid "<<metadata#,Metadata>>"
-msgstr ""
+msgstr "<<metadata#,メタデータ>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:27
 msgid "<<namespaces#,Namespaces>>"
-msgstr ""
+msgstr "<<namespaces#,名前空間(namespace)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:28
 msgid "<<libs#,Libs>>"
-msgstr ""
+msgstr "<<libs#,ライブラリ(lib)>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:29
 msgid "<<vars#,Vars and Environments>>"
-msgstr ""
+msgstr "<<vars#,Varと環境>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:30
 msgid "<<refs#,Refs and Transactions>>"
-msgstr ""
+msgstr "<<refs#,Refとトランザクション>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:31
 msgid "<<agents#,Agents>>"
-msgstr ""
+msgstr "<<agents#,Agent>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:32
 msgid "<<atoms#,Atoms>>"
-msgstr ""
+msgstr "<<atoms#,Atom>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:33
 msgid "<<reducers#,Reducers>>"
-msgstr ""
+msgstr "<<reducers#,reducer>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:34
 msgid "<<java_interop#,Java Interop>>"
-msgstr ""
+msgstr "<<java_interop#,Javaとの相互運用>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:35
 msgid "<<compilation#,Compilation and Class Generation>>"
-msgstr ""
+msgstr "<<compilation#,コンパイルとクラス生成>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:36
 msgid "<<other_libraries#,Other Libraries>>"
-msgstr ""
+msgstr "<<other_libraries#,その他のライブラリ>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:37
 msgid "<<lisps#,Differences with Lisps>>"
-msgstr ""
+msgstr "<<lisps#,他のLispとの違い>>"
 
 #. type: Plain text
 #: en/content/reference/documentation.adoc:40
 msgid "<<xref/../../api/api#,Clojure API documentation>>"
-msgstr ""
+msgstr "<<xref/../../api/api#,Clojure APIドキュメンテーション>>"

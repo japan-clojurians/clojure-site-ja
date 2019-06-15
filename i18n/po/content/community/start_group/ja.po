@@ -73,7 +73,7 @@ msgstr ""
 #: en/content/community/start_group.adoc:23 en/content/guides/guides.adoc:20
 #, no-wrap
 msgid "Tools"
-msgstr ""
+msgstr "ツール"
 
 #. type: Plain text
 #: en/content/community/start_group.adoc:26

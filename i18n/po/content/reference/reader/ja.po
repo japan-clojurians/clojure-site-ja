@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-12 02:31+0900\n"
+"PO-Revision-Date: 2019-06-15 19:19+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -42,9 +42,9 @@ msgid ""
 "Clojure programs to manipulate, transform and produce other Clojure programs."
 msgstr ""
 "Clojureには http://en.wikipedia.org/wiki/Homoiconicity[同図像性] という特性がある。同図像性というのはClojureのプログラ"
-"ムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(及びCommon Lisp)とその他のプログラミング"
-"言語の間の重要な差だ。- Clojureはストリームやファイルの中の文法 *ではなく* 、データ構造の評価で定義される。Clojureプロ"
-"グラムが他のClojureプログラムを操作や変形、あるいは創り出すということはとても一般的で、簡単に行うことができる。"
+"ムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(およびCommon Lisp)とその他のプログラミン"
+"グ言語との間の重要な差だ。- Clojureはストリームやファイルの中の文法 *ではなく* 、データ構造の評価で定義される。Clojure"
+"プログラムが他のClojureプログラムを操作や変形、あるいは創り出すということはとても一般的で、簡単に行うことができる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:17
@@ -54,8 +54,8 @@ msgid ""
 "Clojure data representations, have utility on their own in many of the same contexts one might use XML or JSON etc."
 msgstr ""
 "とはいうものの、ほとんどのClojureプログラムはテキストファイルとして作成される。このテキストをパースし、コンパイラが解"
-"釈できるデータ構造を生成するのがreaderの役割だ。 _reader_ とClojureのデータの表現はXMLやJSON等を使うような文脈でも使用"
-"できる。"
+"釈できるデータ構造を生成するのがreaderの役割だ。 _reader_ とClojureのデータの表現はXMLやJSONなどを使うような文脈でも使"
+"用できる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:19
@@ -65,7 +65,7 @@ msgid ""
 "clojure/clojure.core-api.html#clojure.core/read[read], which reads the next form (not character) from a stream, and "
 "returns the object represented by that form."
 msgstr ""
-"readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップetc によって定義されていると言う"
+"readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップなどによって定義されていると言う"
 "人もいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現されるオ"
 "ブジェクトを返す https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] 関数によって表現され"
 "ている。"
@@ -98,8 +98,8 @@ msgid ""
 "Symbols begin with a non-numeric character and can contain alphanumeric characters and *, +, !, -, _, ', and ? (other "
 "characters may be allowed eventually)."
 msgstr ""
-"シンボルは数字でない文字で始まり、英数字及び*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性も"
-"ある)。"
+"シンボルは数字でない文字で始まり、英数字および*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性"
+"もある)。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:28
@@ -107,8 +107,8 @@ msgid ""
 "'/' has special meaning, it can be used once in the middle of a symbol to separate the namespace from the name, e.g. "
 "`my-namespace/foo`. '/' by itself names the division function."
 msgstr ""
-"'/' には特別な意味があり、シンボルの途中に含むことでネームスペースとシンボルの名前を分割することができる(例： 'my-"
-"namespace/foo')。'/'単体は除算関数を指す。"
+"'/' には特別な意味があり、シンボルの途中に含むことで名前空間とシンボルの名前を分割することができる(例： 'my-namespace/"
+"foo')。'/'単体は除算関数を指す。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:29
@@ -209,12 +209,12 @@ msgstr "'.'を含めたりクラスの名前に使用したりできない。"
 #. type: Plain text
 #: en/content/reference/reader.adoc:45
 msgid "Like symbols, they can contain a namespace, `:person/name`"
-msgstr "シンボルと同様にネームスペースを含むことができる。 `:person/name`"
+msgstr "シンボルと同様に名前空間を含むことができる。 `:person/name`"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:46
 msgid "A keyword that begins with two colons is auto-resolved in the current namespace to a qualified keyword:"
-msgstr "コロン2つで始まるキーワードは現在のネームスペースにおいて修飾されたキーワードに自動的に解決される:"
+msgstr "コロン2つで始まるキーワードは現在の名前空間において修飾されたキーワードに自動的に解決される:"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:47
@@ -222,8 +222,8 @@ msgid ""
 "If the keyword is unqualified, the namespace will be the current namespace. In `user`, `::rect` is read as `:user/"
 "rect`."
 msgstr ""
-"キーワードが修飾されていない場合、そのネームスペースは現在のネームスペースになる。 `user` では `::rect` は `user/"
-"rect` として読み込まれる。"
+"キーワードが修飾されていない場合、その名前空間は現在の名前空間になる。 `user` では `::rect` は `user/rect` として読み"
+"込まれる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:48
@@ -231,8 +231,8 @@ msgid ""
 "If the keyword is qualified, the namespace will be resolved using aliases in the current namespace. In a namespace "
 "where `x` is aliased to `example`, `::x/foo` resolves to `:example/foo`."
 msgstr ""
-"キーワードが修飾されている場合、そのネームスペースは現在のネームスペースでのエイリアスを利用して解決される。 `x` が "
-"`example` にエイリアスされたネームスペースでは、 `::x/foo` は `:example/foo` に解決される。"
+"キーワードが修飾されている場合、その名前空間は現在の名前空間でのエイリアスを利用して解決される。 `x` が `example` にエ"
+"イリアスされた名前空間では、 `::x/foo` は `:example/foo` に解決される。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
@@ -266,7 +266,7 @@ msgstr "マップ"
 #. type: Plain text
 #: en/content/reference/reader.adoc:60
 msgid "Maps are zero or more key/value pairs enclosed in braces: `{:a 1 :b 2}`"
-msgstr "マップは波括弧で括られた0個以上のキー/バリューの対: `{:a 1 :b 1}`"
+msgstr "マップは波括弧で括られた0個以上のキー/値の対: `{:a 1 :b 1}`"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:61
@@ -276,13 +276,13 @@ msgstr "カンマは空白と同様に扱われ、マップの対を区切るこ
 #. type: Plain text
 #: en/content/reference/reader.adoc:62
 msgid "Keys and values can be any forms."
-msgstr "キーとバリューにはどのようなフォームも使用できる。"
+msgstr "キーと値にはどのようなフォームも使用できる。"
 
 #. type: Title ====
 #: en/content/reference/reader.adoc:64
 #, no-wrap
 msgid "Map namespace syntax"
-msgstr "ネームスペース付きマップ記法"
+msgstr "名前空間付きマップ記法"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:67
@@ -296,14 +296,14 @@ msgid ""
 "is the name of a namespace and the prefix precedes the opening brace `{` of the map. Additionally, `pass:[#::]` can "
 "be used to auto-resolve namespaces with the same semantics as auto-resolved keywords."
 msgstr ""
-"マップのリテラルには任意でキーに対するデフォルトのネームスペースコンテキストを `#:ns` プレフィックスによって指定するこ"
-"とが可能で、その場合 _ns_ にはネームスペースの名前を指定し、プレフィックスはマップの `{` の前に置く。加えて `pass:"
-"[#::]` を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することができる。"
+"マップのリテラルには任意でキーに対するデフォルトの名前空間コンテキストを `#:ns` プレフィックスによって指定することが可"
+"能で、その場合 _ns_ には名前空間の名前を指定し、プレフィックスはマップの `{` の前に置く。加えて `pass:[#::]` を使用し"
+"てキーワードの名前空間の解決と同じセマンティクスで自動的に名前空間を解決することができる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:71
 msgid "A map literal with namespace syntax is read with the following differences from a map without:"
-msgstr "ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:"
+msgstr "名前空間付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:73
@@ -313,7 +313,7 @@ msgstr "キー"
 #. type: Plain text
 #: en/content/reference/reader.adoc:74
 msgid "Keys that are keywords or symbols without a namespace are read with the default namespace."
-msgstr "ネームスペースなしのキーワードもしくはシンボルであるキーはデフォルトのネームスペースで読み込まれる。"
+msgstr "名前空間なしのキーワードもしくはシンボルであるキーはデフォルトの名前空間で読み込まれる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:75
@@ -322,9 +322,9 @@ msgid ""
 "removed during read. This allows for the specification of keywords or symbols without namespaces as keys in a map "
 "literal with namespace syntax."
 msgstr ""
-"ネームスペースのあるシンボルもしくはキーワードであるキーは影響されずに読み込まれる。 *ただし* 、特別なネームスペース "
-"`_` は読み込み時に取り除かれるので扱いが異なる。これを使用することでネームスペースシンタックスのあるマップリテラルの中"
-"で、ネームスペースなしのキーワードやシンボルをキーとして指定することが可能になる。"
+"名前空間のあるシンボルもしくはキーワードであるキーは影響されずに読み込まれる。 *ただし* 、特別な名前空間 `_` は読み込"
+"み時に取り除かれるので扱いが異なる。これを使用することで名前空間シンタックスのあるマップリテラルの中で、名前空間なしの"
+"キーワードやシンボルをキーとして指定することが可能になる。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:76
@@ -349,7 +349,7 @@ msgstr "ネストしたマップリテラルのキーは影響を受けない。
 #. type: Plain text
 #: en/content/reference/reader.adoc:81 en/content/guides/weird_characters.adoc:474
 msgid "For example, the following map literal with namespace syntax:"
-msgstr "例として以下のネームスペース指定付きの以下のマップ:"
+msgstr "例として以下の名前空間指定付きの以下のマップ:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:88
@@ -400,7 +400,7 @@ msgstr "セットは0個以上の、先頭に `pass:[#]` を持つ波括弧で�
 #: en/content/reference/reader.adoc:104
 #, no-wrap
 msgid "deftype, defrecord, and constructor calls (version 1.3 and later):"
-msgstr "deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):"
+msgstr "deftype、defrecord、およびコンストラクタの呼び出し (version 1.3以降):"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:107
@@ -427,9 +427,9 @@ msgid ""
 "without corresponding entries in the literal map are assigned nil as their value. Any extra keyed values in the map "
 "literal are added to the resulting defrecord instance."
 msgstr ""
-"キーを付与されたバリューは *評価されずに* defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーが"
-"ないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果の"
-"defrecordインスタンスに追加される。"
+"キーを付与された値は *評価されずに* defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがない"
+"defrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応する値は結果のdefrecordインスタ"
+"ンスに追加される。"
 
 #. type: Title ==
 #: en/content/reference/reader.adoc:111
@@ -526,9 +526,9 @@ msgid ""
 "map of `{:a 1 :b 2}`. +"
 msgstr ""
 "メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラ"
-"ル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読"
-"み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには https://clojure.github.io/clojure/clojure.core-"
-"api.html#clojure.core/with-meta[with-meta] を参照):\n"
+"ル、レコード、タイプ、およびコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に"
+"読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/with-meta[with-meta] を参照):\n"
 "`^{:a 1 :b 2} [1 2 3]` は `{:a 1 :b 2}` をメタデータマップにもつ `[1 2 3]` を生成する。 "
 
 #. type: Plain text
@@ -545,7 +545,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/reader.adoc:144
 msgid "Such tags can be used to convey type information to the compiler. +"
-msgstr "このようなタグはコンパイラーに型情報を渡すことに使用できる。 "
+msgstr "このようなタグはコンパイラに型情報を渡すことに使用できる。 "
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:147
@@ -553,8 +553,8 @@ msgid ""
 "Another shorthand version allows the metadata to be a keyword, in which case it is treated as a single entry map with "
 "a key of the keyword and a value of true, e.g.: + `^:dynamic x` is the same as `^{:dynamic true} x` +"
 msgstr ""
-"もう一つの簡略した表記ではメタデータにキーワードを使用できる。その場合、メタデータはキーを指定したキーワードバリューを"
-"trueとした単一エントリーのマップとして扱われる: `^:dynamic x` は `^{:dynamic true} x` と同等。"
+"もう一つの簡略した表記ではメタデータにキーワードを使用できる。その場合、メタデータはキーをキーワード、値をtrueとした単"
+"一エントリーのマップとして扱われる: `^:dynamic x` は `^{:dynamic true} x` と同等。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:149
@@ -661,9 +661,9 @@ msgid ""
 "symbol. +"
 msgstr ""
 "シンボルに対してシンタックスクォートはシンボルを現在のコンテキストで _解決_ し、完全修飾されたシンボルを生成する。"
-"(例: namespace/name もしくは fully.qualified.Classname)。シンボルがネームスペースで修飾されておらず、pass:['#']で終わ"
-"る場合、同じ名前に'_'とユニークなIDを末尾につけた自動生成されたシンボルに解決される。例: x# は x_123に解決される。同じ"
-"シンタックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。"
+"(例: namespace/name もしくは fully.qualified.Classname)。シンボルが名前空間で修飾されておらず、pass:['#']で終わる場"
+"合、同じ名前に'_'とユニークなIDを末尾につけた自動生成されたシンボルに解決される。例: x# は x_123に解決される。同じシン"
+"タックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。"
 
 #. type: Plain text
 #: en/content/reference/reader.adoc:177
@@ -753,9 +753,9 @@ msgid ""
 "qualified name of a <<vars#,Var>> which will be invoked by the reader to parse the form following the tag. For "
 "example, given the `data_readers.clj` file above, the Clojure reader would parse this form:"
 msgstr ""
-"各ペアのキーはClojureリーダーによって認識されるタグとなる。ペアのバリューは完全修飾された <<vars#,Var>> の名前であり、"
-"リーダーがタグの後に続くフォームをパースするために参照される。例えば上記の `data_eaders.clj` ファイルが与えられた場"
-"合、Clojureのリーダーはこのフォームを次のようにパースする:"
+"各ペアのキーはClojureリーダーによって認識されるタグとなる。ペアの値は完全修飾された <<vars#,Var>> の名前であり、リー"
+"ダーがタグの後に続くフォームをパースするために参照される。例えば上記の `data_eaders.clj` ファイルが与えられた場合、"
+"Clojureのリーダーはこのフォームを次のようにパースする:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:207
@@ -783,13 +783,13 @@ msgid ""
 "invoked with the tag and value to produce a value. If pass:[*default-data-reader-fn*] is nil (the default), a "
 "RuntimeException will be thrown."
 msgstr ""
-"ネームスペースで修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは https://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers[default-data-readers] で定義されてい"
-"るが、 `data_readers.clj` で上書きすることもできるし、 https://clojure.github.io/clojure/clojure.core-api."
-"html#clojure.core/%2Adata-readers%2A[pass:[*data-readers*]] を再束縛することもできる。 タグに対してデータリーダーが見"
-"つからなかった場合、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn"
-"%2A[pass:[*default-data-reader-fn*]] で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 pass:[*default-"
-"data-reader-fn*] がnilの場合(デフォルト)RuntimeExceptionが発生する。"
+"名前空間で修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは https://clojure."
+"github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers[default-data-readers] で定義されているが、 "
+"`data_readers.clj` で上書きすることもできるし、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"%2Adata-readers%2A[pass:[*data-readers*]] を再束縛することもできる。 タグに対してデータリーダーが見つからなかった場"
+"合、 https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A[pass:[*default-"
+"data-reader-fn*]] で束縛されている関数がタグと値と共に呼びだされ値が作り出される。 pass:[*default-data-reader-fn*] が"
+"nilの場合(デフォルト)RuntimeExceptionが発生する。"
 
 #. type: Title ===
 #: en/content/reference/reader.adoc:212
@@ -970,8 +970,7 @@ msgid ""
 msgstr ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read[read] と https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/read-string[read-string] 関数は任意でオプションを指定したマップを第一引数に取ること"
-"ができる。このオプションマップのキーとバリューで現在のフィーチャーとリーダーコンディショナルの挙動を指定することができ"
-"る:"
+"ができる。このオプションマップのキーと値で現在のフィーチャーとリーダーコンディショナルの挙動を指定することができる:"
 
 #. type: delimited block -
 #: en/content/reference/reader.adoc:276

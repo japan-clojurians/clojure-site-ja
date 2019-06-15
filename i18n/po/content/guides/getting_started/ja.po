@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-15 14:33+0900\n"
+"PO-Revision-Date: 2019-06-15 20:53+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -38,8 +38,8 @@ msgid ""
 "Check out <<learn/syntax#,Learn Clojure>>, <<xref/../../community/resources#,Resources>>, or <<xref/../../community/"
 "books#,Books>> for learning the language!"
 msgstr ""
-"言語そのものについては <<learn/syntax#,Learn Clojure>>、 <<xref/../../community/resources#,Resources>>、  "
-"<<xref/../../community/books#,Books>> を見て学習しよう!"
+"言語そのものについては <<learn/syntax#,Clojureを学ぼう>>、 <<xref/../../community/resources#,リソース>>、  "
+"<<xref/../../community/books#,書籍>> を見て学習しよう!"
 
 #. type: Title ==
 #: en/content/guides/getting_started.adoc:16
@@ -101,8 +101,8 @@ msgid ""
 "Use the linux-install script to download and run the install, which will create /usr/local/bin/clj, /usr/local/bin/"
 "clojure, and /usr/local/lib/clojure:"
 msgstr ""
-"linux-installスクリプトを利用してダウンロードとインストール実行すると、 /usr/local/bin/clj、 /usr/local/bin/clojure、 "
-"及び /usr/local/lib/clojureが作成される:"
+"linux-installスクリプトを利用してダウンロードとインストール実行すると、/usr/local/bin/clj、/usr/local/bin/clojure、お"
+"よび/usr/local/lib/clojureが作成される:"
 
 #. type: delimited block -
 #: en/content/guides/getting_started.adoc:46

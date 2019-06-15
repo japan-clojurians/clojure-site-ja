@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-12 02:44+0900\n"
+"PO-Revision-Date: 2019-06-15 20:49+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,60 +20,60 @@ msgstr ""
 #: en/content/community/start_group.adoc:23 en/content/guides/guides.adoc:25
 #, no-wrap
 msgid "Tools"
-msgstr ""
+msgstr "ツール"
 
 #. type: Title =
 #: en/content/guides/guides.adoc:1
 #, no-wrap
 msgid "Guides"
-msgstr ""
+msgstr "ガイド"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:4
 msgid "Alex Miller 2015-11-25"
-msgstr ""
+msgstr "Alex Miller 2015-11-25"
 
 #. type: Title ===
 #: en/content/guides/guides.adoc:9
 #, no-wrap
 msgid "Learning"
-msgstr ""
+msgstr "学習"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:12
 msgid "<<getting_started#,Getting Started>>"
-msgstr ""
+msgstr "<<getting_started#,始め方>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:13
 msgid "<<learn/syntax#,Learn Clojure>>"
-msgstr ""
+msgstr "<<learn/syntax#,Clojureを学ぼう>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:14
 msgid "<<repl/introduction#,Programming at the REPL>>"
-msgstr ""
+msgstr "<<repl/introduction#,REPLでのプログラミング>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:15
 msgid "<<faq#,FAQ>>"
-msgstr ""
+msgstr "<<faq#,FAQ>>"
 
 #. type: Title ===
 #: en/content/guides/guides.adoc:16
 #, no-wrap
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:19
 msgid "<<spec#,spec>>"
-msgstr ""
+msgstr "<<spec#,spec>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:20
 msgid "<<weird_characters#,Reading Clojure Characters>>"
-msgstr ""
+msgstr "<<weird_characters#,Clojureの文字を読む>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:21
@@ -83,22 +83,22 @@ msgstr "<<destructuring#,分配束縛>>"
 #. type: Plain text
 #: en/content/guides/guides.adoc:22
 msgid "<<threading_macros#,Threading Macros>>"
-msgstr ""
+msgstr "<<threading_macros#,スレッディングマクロ(threading macro)>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:23
 msgid "<<comparators#,Comparators>>"
-msgstr ""
+msgstr "<<comparators#,comparator>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:24
 msgid "<<reader_conditionals#,Reader Conditionals>>"
-msgstr ""
+msgstr "<<reader_conditionals#,リーダーコンディショナル(reader conditional)>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:28
 msgid "<<deps_and_cli#,Deps and CLI>>"
-msgstr ""
+msgstr "<<deps_and_cli#,depsとCLI>>"
 
 #. type: Plain text
 #: en/content/guides/guides.adoc:29 en/content/about/rationale.adoc:68
@@ -109,4 +109,4 @@ msgstr "ライブラリ"
 #. type: Plain text
 #: en/content/guides/guides.adoc:31
 msgid "<<core_async_go#,Go Block Best Practices>>"
-msgstr ""
+msgstr "<<core_async_go#,goブロックのベストプラクティス>>"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2019-06-15 20:11+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,20 +20,20 @@ msgstr ""
 #: en/content/reference/metadata.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:36
 #, no-wrap
 msgid "Metadata"
-msgstr ""
+msgstr "メタデータ"
 
 #. type: Plain text
 #: en/content/reference/namespaces.adoc:1 en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
-msgstr "ネームスペース"
+msgstr "名前空間(namespace)"
 
 #. type: Plain text
 #: en/content/reference/atoms.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:39
 #, no-wrap
 msgid "Atoms"
-msgstr "Atom (アトム)"
+msgstr "Atom"
 
 #. type: Plain text
 #: en/content/news/2017/12/08/clojure19.adoc:17 en/content/news/2011/07/22/introducing-clojurescript.adoc:30

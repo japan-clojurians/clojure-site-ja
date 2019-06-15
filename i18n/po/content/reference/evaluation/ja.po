@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2018-04-02 07:15+0900\n"
-"PO-Revision-Date: 2016-11-14 08:47+0900\n"
+"PO-Revision-Date: 2019-06-15 19:14+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -105,8 +105,8 @@ msgid ""
 "error if there is no global var named by the symbol, or if the reference is to a non-public var in a different "
 "namespace."
 msgstr ""
-"ネームスペースで修飾されている場合、値はそのシンボルが指すグローバルなvarの値となる。シンボルが指すグローバルなvarが存"
-"在しない、もしくはパブリックではない別のネームスペースのvarを指している場合はエラーとなる。"
+"名前空間で修飾されている場合、値はそのシンボルが指すグローバルなvarの値となる。シンボルが指すグローバルなvarが存在しな"
+"い、もしくはパブリックではない別の名前空間のvarを指している場合はエラーとなる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:29
@@ -134,9 +134,9 @@ msgid ""
 "is considered to name a Java class object. Note that class names normally denote class objects, but are treated "
 "specially in certain special forms, e.g. `.` and `new`."
 msgstr ""
-"現在のネームスペースにシンボルに対応するクラスが存在するかを確認するためルックアップが行われる。存在する場合、シンボル"
-"はJavaのクラスオブジェクトを指すものとして扱われる。クラス名は通常クラスオブジェクトを意味するが、特別に扱われるフォー"
-"ムが存在することに注意 (例: '.' 及び 'new' )。"
+"現在の名前空間にシンボルに対応するクラスが存在するかを確認するためルックアップが行われる。存在する場合、シンボルはJava"
+"のクラスオブジェクトを指すものとして扱われる。クラス名は通常クラスオブジェクトを意味するが、特別に扱われるフォームが存"
+"在することに注意 (例: '.' および 'new' )。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:33
@@ -153,8 +153,8 @@ msgid ""
 "A lookup is done in the current namespace to see if there is a mapping from the symbol to a var. If so, the value is "
 "the value of the binding of the var referred-to by the symbol."
 msgstr ""
-"シンボルからvarへのマッピングの存在を現在のネームスペース内でルックアップする。存在する場合、値はシンボルに指されるvar"
-"のバインディングとなる。"
+"シンボルからvarへのマッピングの存在を現在の名前空間内でルックアップする。存在する場合、値はシンボルに指されるvarのバイ"
+"ンディングとなる。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:35
@@ -215,7 +215,7 @@ msgid ""
 msgstr ""
 "スペシャルフォームはコアな操作を行う、Clojureに組み込まれているプリミティブなフォームである。呼び出しの演算子がスペ"
 "シャルフォーム名前に解決される場合、呼び出しはそのスペシャルフォームに対する呼び出しとなる。各フォームについては "
-"<<special_forms#,Special Forms>> で触れている。"
+"<<special_forms#,特殊形式>> で触れている。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:55
@@ -224,7 +224,7 @@ msgid ""
 "is a symbol that names a global var that is a macro function, that macro function is called and is passed the "
 "_unevaluated_ operand forms. The return value of the macro is then evaluated in its place."
 msgstr ""
-"<<macros#,Macros>> はフォームを操作する関数で、文法の抽象化を可能にする。呼び出しの演算子がマクロ関数を指すグローバル"
+"<<macros#,マクロ>> はフォームを操作する関数で、文法の抽象化を可能にする。呼び出しの演算子がマクロ関数を指すグローバル"
 "なvarを指すシンボルである場合、そのマクロ関数が呼び出され、_評価する前_ の被演算子フォームを渡される。マクロの戻り値は"
 "その後、その場で評価される。"
 
@@ -238,11 +238,11 @@ msgid ""
 "by the compiler, but will not be part of the resulting value.  Note that special forms and macros might have other-"
 "than-normal evaluation of their arguments, as described in their entries under <<special_forms#,Special Forms>>."
 msgstr ""
-"演算子がスペシャルフォームかマクロではない場合、呼び出しは関数に対するものとして扱われる。演算子、及び被演算子（存在す"
-"る場合）は両方とも左から右へと評価される。演算子の評価の結果がIFn(Clojureの関数を表現するインターフェース)にキャストさ"
-"れ,invoke()がそれに対して引数を渡した上で呼び出される。invoke()の戻り値が呼び出した式の値となる。関数呼び出しにメタ"
-"データが存在する場合、コンパイラーに使用される場合があるが、結果の値には含まれることはない。 <<special_forms#,Special "
-"Forms>> にあるように、スペシャルフォームとマクロは通常とは異なる引数の評価の仕方をする場合がある点に注意。"
+"演算子がスペシャルフォームかマクロではない場合、呼び出しは関数に対するものとして扱われる。演算子、および被演算子（存在"
+"する場合）は両方とも左から右へと評価される。演算子の評価の結果がIFn(Clojureの関数を表現するインターフェース)にキャスト"
+"され,invoke()がそれに対して引数を渡した上で呼び出される。invoke()の戻り値が呼び出した式の値となる。関数呼び出しにメタ"
+"データが存在する場合、コンパイラに使用される場合があるが、結果の値には含まれることはない。 <<special_forms#,特殊形式"
+">> にあるように、スペシャルフォームとマクロは通常とは異なる引数の評価の仕方をする場合がある点に注意。"
 
 #. type: Plain text
 #: en/content/reference/evaluation.adoc:60

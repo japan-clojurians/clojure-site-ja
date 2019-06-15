@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-15 16:18+0900\n"
+"PO-Revision-Date: 2019-06-15 20:54+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -106,10 +106,10 @@ msgstr ""
 "true            ; Boolean (false もある)\n"
 "#\"[0-9]+\"       ; Regular expression (正規表現)\n"
 ":alpha          ; Keyword (キーワード)\n"
-":release/alpha  ; Keyword with namespace (ネームスペース付きキーワード)\n"
+":release/alpha  ; Keyword with namespace (名前空間付きキーワード)\n"
 "map             ; Symbol (シンボル)\n"
 "+               ; Symbol - ほとんどの句読点が使える\n"
-"clojure.core/+  ; Namespaced symbol (ネームスペース付きシンボル)\n"
+"clojure.core/+  ; Namespaced symbol (名前空間付きシンボル)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:46
@@ -187,7 +187,7 @@ msgid ""
 "the source either from .clj files or be given a series of expressions interactively. The Reader produces Clojure "
 "data. The Clojure compiler then produces the bytecode for the JVM."
 msgstr ""
-"Clojureでは、ソースコードが文字として <<xref/../../../reference/reader#,リーダー(Reader)>> に読み取られる。リーダーは"
+"Clojureでは、ソースコードが文字として <<xref/../../../reference/reader#,リーダー(reader)>> に読み取られる。リーダーは"
 "ソースを.cljファイルから読み取るかもしれないし対話的に一連の式を与えられるかもしれない。リーダーはClojureのデータを生"
 "成する。そしてClojureコンパイラはJVMへのバイトコードを生成する。"
 
@@ -474,8 +474,8 @@ msgid ""
 "In addition, there is a namespace `clojure.repl` that is included in the standard Clojure library that provides a "
 "number of helpful functions. To load that library and make it's functions available in our current context, call:"
 msgstr ""
-"加えて、 `clojure.repl` というClojure標準ライブラリに含まれたネームスペースがあり、便利な関数をいくつか提供している。"
-"このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:"
+"加えて、 `clojure.repl` というClojure標準ライブラリに含まれた名前空間があり、便利な関数をいくつか提供している。このラ"
+"イブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:"
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:172
@@ -486,7 +486,7 @@ msgstr "(require '[clojure.repl :refer :all])\n"
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:175
 msgid "For now, you can treat that as a magic incantation. Poof! We'll unpack it when we get to namespaces."
-msgstr "今はこれをおまじないとして扱ってもよいだろう。ネームスペースのところに到達したら中身を説明しよう。"
+msgstr "今はこれをおまじないとして扱ってもよいだろう。名前空間のところに到達したら中身を説明しよう。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:177
@@ -663,8 +663,8 @@ msgid ""
 "If you'd like to see a full listing of the functions in a particular namespace, you can use the `dir` function. Here "
 "we can use it on the `clojure.repl` namespace:"
 msgstr ""
-"特定のネームスペースの関数の一覧が見たい場合には、 `dir` 関数が利用できる。ここでは `clojure.repl` ネームスペースに対"
-"して使っている:"
+"特定の名前空間の関数の一覧が見たい場合には、 `dir` 関数が利用できる。ここでは `clojure.repl` 名前空間に対して使ってい"
+"る:"
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:251
@@ -795,9 +795,9 @@ msgid ""
 "called a `var`. In most actual Clojure code, vars should refer to either a constant value or a function, but it's "
 "common to define and re-define them for convenience when working at the REPL."
 msgstr ""
-"`def` は特殊形式であり、シンボル(x)を現在のネームスペースで値(7)に関連付ける。このつながりは `var` と呼ばれる。多くの"
-"実際のClojureコードでは、varは定数値もしくは関数のどちらかを指すべきだが、REPLでは便宜的にvarを定義して再定義すること"
-"が一般的だ。"
+"`def` は特殊形式であり、シンボル(x)を現在の名前空間で値(7)に関連付ける。このつながりは `var` と呼ばれる。多くの実際の"
+"Clojureコードでは、varは定数値もしくは関数のどちらかを指すべきだが、REPLでは便宜的にvarを定義して再定義することが一般"
+"的だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:301
@@ -805,8 +805,8 @@ msgid ""
 "Note the return value above is `pass:[#'user/x]` - that's the literal representation for a var: `#'` followed by the "
 "namespaced symbol. `user` is the default namespace."
 msgstr ""
-"上の戻り値が `pass:[#'user/x]` であることに注意しよう――これはvarのリテラル表現だ: `#'` の後にネームスペース付きのシン"
-"ボルが続く。 `user` はデフォルトのネームスペースだ。"
+"上の戻り値が `pass:[#'user/x]` であることに注意しよう――これはvarのリテラル表現だ: `#'` の後に名前空間付きのシンボルが"
+"続く。 `user` はデフォルトの名前空間だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:303

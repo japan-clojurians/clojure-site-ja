@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-15 16:30+0900\n"
+"PO-Revision-Date: 2019-06-15 20:15+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
 #, no-wrap
 msgid "Deps and CLI"
-msgstr ""
+msgstr "depsとCLI"
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:4
@@ -65,10 +65,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:24
-#, fuzzy
-#| msgid "Clojure programming"
 msgid "Clojure provides:"
-msgstr "Clojureプログラミング"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:26
@@ -319,10 +317,9 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/reference/deps_and_cli.adoc:130
-#, fuzzy, no-wrap
-#| msgid "Vectors"
+#, no-wrap
 msgid "Directories"
-msgstr "Vectors (ベクター)"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:133
@@ -331,17 +328,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:135
-#, fuzzy
-#| msgid "Installation on Windows"
 msgid "Installation directory"
-msgstr "Windowsへのインストール"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:136
-#, fuzzy
-#| msgid "Creating Functions"
 msgid "Created during installation"
-msgstr "関数を作る"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:137 en/content/reference/deps_and_cli.adoc:149
@@ -441,10 +434,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:157
-#, fuzzy
-#| msgid "The clojure.main namespace"
 msgid "The current directory"
-msgstr "clojure.mainネームスペース"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:159
@@ -603,10 +594,9 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/reference/deps_and_cli.adoc:205
-#, fuzzy, no-wrap
-#| msgid "paths"
+#, no-wrap
 msgid "Paths"
-msgstr "paths (パス)"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:208
@@ -678,10 +668,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:229
-#, fuzzy
-#| msgid "`args` - sequential collection of args to pass to accept"
 msgid "`:extra-paths` - a collection of string paths to add to `:paths`"
-msgstr "`args` - acceptに渡す引数のシーケンシャルなコレクション"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:230
@@ -715,10 +703,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:237
-#, fuzzy
-#| msgid "The clojure.main namespace"
 msgid "-M - clojure.main option aliases"
-msgstr "clojure.mainネームスペース"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:239
@@ -960,10 +946,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:336
-#, fuzzy
-#| msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
 msgid "`clojure [dep-opt*] [init-opt*] [main-opt] [arg*]`"
-msgstr "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:337
@@ -980,10 +964,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:341
-#, fuzzy
-#| msgid "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
 msgid "`java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]`"
-msgstr "Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]\n"
+msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:343
@@ -1019,18 +1001,11 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/reference/deps_and_cli.adoc:368
-#, fuzzy, no-wrap
-#| msgid ""
-#| "init options:\n"
-#| "-i, --init path Load a file or resource\n"
-#| "-e, --eval string Evaluate expressions in string; print non-nil values\n"
+#, no-wrap
 msgid ""
 "-i, --init path     Load a file or resource\n"
 "-e, --eval string   Eval exprs in string; print non-nil values\n"
 msgstr ""
-"init options:\n"
-"-i, --init path Load a file or resource\n"
-"-e, --eval string Evaluate expressions in string; print non-nil values\n"
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:371
@@ -1039,14 +1014,7 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/reference/deps_and_cli.adoc:378
-#, fuzzy, no-wrap
-#| msgid ""
-#| "main options:\n"
-#| "-r, --repl Run a repl\n"
-#| "path Run a script from a file or resource\n"
-#| "- Run a script from standard input\n"
-#| "-m, --main A namespace to find a -main function for execution\n"
-#| "-h, -?, --help Print this help message and exit\n"
+#, no-wrap
 msgid ""
 "-m, --main ns-name  Call the -main function from namespace w/args\n"
 "-r, --repl          Run a repl\n"
@@ -1054,12 +1022,6 @@ msgid ""
 "-                   Run a script from standard input\n"
 "-h, -?, --help      Print this help message and exit\n"
 msgstr ""
-"main options:\n"
-"-r, --repl Run a repl\n"
-"path Run a script from a file or resource\n"
-"- Run a script from standard input\n"
-"-m, --main A namespace to find a -main function for execution\n"
-"-h, -?, --help Print this help message and exit\n"
 
 #. type: Title ===
 #: en/content/reference/deps_and_cli.adoc:380

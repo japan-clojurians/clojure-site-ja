@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-02-18 20:21+0900\n"
+"PO-Revision-Date: 2019-06-15 18:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -65,7 +65,7 @@ msgstr "セット"
 #: en/content/reference/data_structures.adoc:1
 #, no-wrap
 msgid "Data Structures"
-msgstr ""
+msgstr "データ構造"
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:18

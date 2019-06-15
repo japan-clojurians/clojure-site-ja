@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-12 00:52+0900\n"
+"PO-Revision-Date: 2019-06-15 20:35+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -76,7 +76,7 @@ msgid ""
 msgstr ""
 "Clojureはその目標を次の方法で達成している: 業界標準でオープンなプラットフォームJVMを受け入れること、偉大なるLispを現代"
 "化すること、イミュータブルで永続的なデータ構造で関数型プログラミングを促進すること、ソフトウェアトランザクショナルメモ"
-"リと非同期のエージェントによって並行処理を組み込みでサポートすること。その結果は、堅牢で実用的で高速な言語だ。"
+"リと非同期のAgentによって並行処理を組み込みでサポートすること。その結果は、堅牢で実用的で高速な言語だ。"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:19
@@ -551,7 +551,7 @@ msgstr "ロックは繰り返し正しく行うにはあまりにも難しい"
 #. type: Plain text
 #: en/content/about/rationale.adoc:127
 msgid "Clojure's software transactional memory and agent systems do the hard part"
-msgstr "Clojureのソフトウェアトランザクショナルメモリとエージェントのシステムはその困難な部分を担っている"
+msgstr "ClojureのソフトウェアトランザクショナルメモリとAgentのシステムはその困難な部分を担っている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:128

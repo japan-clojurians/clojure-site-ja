@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2016-06-27 08:47+0900\n"
-"PO-Revision-Date: 2017-04-05 10:41+0900\n"
+"PO-Revision-Date: 2019-06-15 17:07+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -75,7 +75,7 @@ msgstr ""
 "ライブラリのすべてがその変換処理を支援してくれる。そういうわけで、マクロはLisp、そしてClojureがシンタックスの抽象化を"
 "サポートすることを可能にしている。関数を使うのと同じ理由、つまりコード内の重複を削減するためにマクロを使うのだ。マクロ"
 "は、関数では不十分な状況、例えば評価を制御する必要がある時、識別子を生成する必要がある時などにとっておくべきだ。"
-"Clojureのコアとなる構造の多くは、組み込みのプリミティヴではなくユーザーが定義できるのと全く同じようなマクロだ。"
+"Clojureのコアとなる構造の多くは、組み込みのプリミティブではなくユーザーが定義できるのと全く同じようなマクロだ。"
 
 #. type: delimited block -
 #: en/content/about/lisp.adoc:28

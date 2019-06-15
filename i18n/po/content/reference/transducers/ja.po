@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-15 14:23+0900\n"
+"PO-Revision-Date: 2019-06-15 19:05+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10
 #, no-wrap
 msgid "Transducers"
-msgstr "Transducers(トランスデューサー)"
+msgstr "トランスデューサー(transducer)"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:17
@@ -61,8 +61,8 @@ msgid ""
 "Also see the introductory http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] and this https://"
 "www.youtube.com/watch?v=6mTbuzafcII[video]."
 msgstr ""
-"導入として次のブログポスト及びビデオを参照: http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] "
-"https://www.youtube.com/watch?v=6mTbuzafcII[video]"
+"導入として次のブログポストおよびビデオを参照: http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog "
+"post] https://www.youtube.com/watch?v=6mTbuzafcII[video]"
 
 #. type: Title ==
 #: en/content/reference/transducers.adoc:20

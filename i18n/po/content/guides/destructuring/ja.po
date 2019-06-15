@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2019-06-15 18:59+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:782 en/content/guides/destructuring.adoc:522
 #, no-wrap
 msgid "Macros"
-msgstr "Macros(マクロ)"
+msgstr "マクロ(macro)"
 
 #. type: Title =
 #: en/content/guides/destructuring.adoc:1

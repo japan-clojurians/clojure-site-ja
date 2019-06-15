@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-02-18 20:10+0900\n"
+"PO-Revision-Date: 2019-06-15 18:59+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
 #, no-wrap
 msgid "Sequences"
-msgstr "シーケンス"
+msgstr "シーケンス(sequence)"
 
 #. type: Title ==
 #: en/content/reference/deps_and_cli.adoc:418 en/content/about/spec.adoc:337
@@ -300,8 +300,8 @@ msgid ""
 "Specs for data structures, attribute values and functions should all be the same and live in a globally-namespaced "
 "directory."
 msgstr ""
-"データ構造や属性値、関数のためのspecはすべて同じであるべきであり、グローバルにネームスペースの付いたディレクトリにある"
-"べきだ。"
+"データ構造や属性値、関数のためのspecはすべて同じであるべきであり、グローバルに名前空間の付いたディレクトリにあるべき"
+"だ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:93
@@ -343,10 +343,9 @@ msgid ""
 "becomes possible in the fully-dynamic case, i.e. even when no map spec is present, attributes (key-values) can be "
 "checked."
 msgstr ""
-"マップ(キーセット)のspecを属性(キー->値)のspecから分けておこう。ネームスペース付きのキーワードから値へのspecという、属"
-"性の粒度でのspecを推奨しサポートしよう。(マップの仕様を記述するために)キーを組み合わせてセットにすることが直交的にな"
-"り、完全に動的なケースでのチェックが可能になる、つまりマップのspecが存在しない場合でさえ、属性(キー-値)はチェックでき"
-"る。"
+"マップ(キーセット)のspecを属性(キー->値)のspecから分けておこう。名前空間付きのキーワードから値へのspecという、属性の粒"
+"度でのspecを推奨しサポートしよう。(マップの仕様を記述するために)キーを組み合わせてセットにすることが直交的になり、完全"
+"に動的なケースでのチェックが可能になる、つまりマップのspecが存在しない場合でさえ、属性(キー-値)はチェックできる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:113
@@ -436,7 +435,7 @@ msgstr ""
 #: en/content/about/spec.adoc:140
 #, no-wrap
 msgid "Global (namespaced) names are more important"
-msgstr "グローバルな(ネームスペース付きの)名前はより重要だ"
+msgstr "グローバルな(名前空間付きの)名前はより重要だ"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:147
@@ -448,19 +447,19 @@ msgid ""
 "can register the specs for those attributes directly under those names. This categorically changes the self-"
 "description of maps, particularly in dynamic contexts, and encourages composition and consistency."
 msgstr ""
-"Clojureはネームスペース付きのキーワードとシンボルをサポートしている。ここではネームスペースで修飾された名前のことを"
-"言っているのであって、Clojureのネームスペースオブジェクトのことを言っているわけではないことに注意しよう。これらは悲し"
-"いことにあまり活用されていないが、ディクショナリ/db/マップ/セットの中で衝突することなく常に共存することができるため、"
-"重要な利益をもたらす。 **spec** はspecを名付けるのにネームスペース付きのキーワードとシンボル(だけ)を認めている。ネーム"
-"スペース付きのキーを情報を持ったマップのために使う(広まってほしい習慣だ)と、マップの属性のためのspecを直接マップのキー"
-"の名前で登録することができる。このことは、とりわけ動的な状況において、マップというものの自己記述を絶対的に変えることに"
-"なり、合成や一貫性を促進することになる。"
+"Clojureは名前空間付きのキーワードとシンボルをサポートしている。ここでは名前空間で修飾された名前のことを言っているので"
+"あって、Clojureの名前空間オブジェクトのことを言っているわけではないことに注意しよう。これらは悲しいことにあまり活用さ"
+"れていないが、ディクショナリ/db/マップ/セットの中で衝突することなく常に共存することができるため、重要な利益をもたら"
+"す。 **spec** はspecを名付けるのに名前空間付きのキーワードとシンボル(だけ)を認めている。名前空間付きのキーを情報を持っ"
+"たマップのために使う(広まってほしい習慣だ)と、マップの属性のためのspecを直接マップのキーの名前で登録することができる。"
+"このことは、とりわけ動的な状況において、マップというものの自己記述を絶対的に変えることになり、合成や一貫性を促進するこ"
+"とになる。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:148
 #, no-wrap
 msgid "Don't further add to/overload the (reified) namespaces of Clojure"
-msgstr "Clojureの(実体化された)ネームスペースにさらに追加し/負担をかけすぎてはならない"
+msgstr "Clojureの(実体化された)名前空間にさらに追加し/負担をかけすぎてはならない"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:151
@@ -468,8 +467,8 @@ msgid ""
 "Nothing will be attached to vars, metadata etc. All functions have namespaced names which can serve as keys to their "
 "related data (e.g. spec) that is stored elsewhere."
 msgstr ""
-"varやメタデータなどには何も付加されない。すべての関数にはネームスペース付きの名前があり、それは別のどこかに格納された"
-"関連するデータ(例えばspec)へのキーとして働く。"
+"varやメタデータなどには何も付加されない。すべての関数には名前空間付きの名前があり、それは別のどこかに格納された関連す"
+"るデータ(例えばspec)へのキーとして働く。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:152
@@ -491,12 +490,12 @@ msgid ""
 msgstr ""
 "Lisp(したがってClojure)では、コードはデータだ。しかし、データはそれに関する言語を定義するまでコードではない。この領域"
 "での多くのDSLはスキーマのデータ表現に向かっている。しかし、述語的なspecには開かれた大きな語彙があり、便利な述語の多く"
-"がすでに存在し、coreやその他のネームスペースの関数としてよく知られている、もしくはシンプルな式として書くことができる。"
-"こうしたあらゆる述語を「データ化」する、あるいは名前を付け直さなければならないことによって得られる価値はほとんどなく、"
-"正確な意味を理解するのに明確なコストがある。 **spec** ではむしろ、もともとの述語と式が最初からデータであるという事実を"
-"活用して、ドキュメンテーションやエラー報告でのユーザーとのコミュニケーションで利用するためにそうしたデータを捉えてい"
-"る。そう、 ``clojure.spec`` の表層領域の多くはマクロになるが、specは圧倒的に人によって書かれ、組み合わせる時も手で行う"
-"ということだ。"
+"がすでに存在し、coreやその他の名前空間の関数としてよく知られている、もしくはシンプルな式として書くことができる。こうし"
+"たあらゆる述語を「データ化」する、あるいは名前を付け直さなければならないことによって得られる価値はほとんどなく、正確な"
+"意味を理解するのに明確なコストがある。 **spec** ではむしろ、もともとの述語と式が最初からデータであるという事実を活用し"
+"て、ドキュメンテーションやエラー報告でのユーザーとのコミュニケーションで利用するためにそうしたデータを捉えている。そ"
+"う、 ``clojure.spec`` の表層領域の多くはマクロになるが、specは圧倒的に人によって書かれ、組み合わせる時も手で行うという"
+"ことだ。"
 
 #. type: Title ===
 #: en/content/about/spec.adoc:163
@@ -635,9 +634,9 @@ msgid ""
 "applied in any map in which that keyword appears. There are a number of advantages to this:"
 msgstr ""
 "**spec** と他のシステムとの間で最も見た目に明らかな違いのひとつは、マップのspecに(例えば ``::x`` がとりうる) __値__ に"
-"ついて記述する場所がないことだ。これは、 ``:my.ns/k`` のようなネームスペース付きのキーワードに関連付けられた値の仕様は"
-"そのキーワード自体に登録され、そのキーワードが現れるあらゆるマップに適用されるべきだという **spec** の(強制的な)主張"
-"だ。これにはいくつもの利点がある:"
+"ついて記述する場所がないことだ。これは、 ``:my.ns/k`` のような名前空間付きのキーワードに関連付けられた値の仕様はその"
+"キーワード自体に登録され、そのキーワードが現れるあらゆるマップに適用されるべきだという **spec** の(強制的な)主張だ。こ"
+"れにはいくつもの利点がある:"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:214
@@ -657,7 +656,7 @@ msgstr "そうでなければ多くのマップのspecがkについて同じ宣�
 #. type: Plain text
 #: en/content/about/spec.adoc:217
 msgid "Namespaced keyword specs can be checked even when no map spec declares those keys"
-msgstr "ネームスペース付きキーワードのspecはマップのspecがそのキーを宣言していない時でさえチェックされる"
+msgstr "名前空間付きキーワードのspecはマップのspecがそのキーを宣言していない時でさえチェックされる"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:221
@@ -676,8 +675,8 @@ msgid ""
 "Of course, many existing map-based interfaces take non-namespaced keys. To support connecting them to properly "
 "namespaced and reusable specs, ``keys`` supports ``-un`` variants of ``:req`` and ``:opt``"
 msgstr ""
-"もちろん、多くの既存のマップベースのインターフェースはネームスペースなしのキーをとっている。正しくネームスペースが付い"
-"て再利用可能なspecとの接続をサポートするため、 ``keys`` は ``:req`` と ``:opt`` の ``-un`` 変種をサポートしている。"
+"もちろん、多くの既存のマップベースのインターフェースは名前空間なしのキーをとっている。正しく名前空間が付いて再利用可能"
+"なspecとの接続をサポートするため、 ``keys`` は ``:req`` と ``:opt`` の ``-un`` 変種をサポートしている。"
 
 #. type: delimited block -
 #: en/content/about/spec.adoc:228
@@ -693,8 +692,8 @@ msgid ""
 "unqualified keywords as have namespaced keywords - the resulting maps are not self-describing."
 msgstr ""
 "これは、非修飾のキー ``:a`` と ``:b`` を要求するが、それぞれ ``:my.ns/a`` と ``:my.ns/b`` という名前のspecを(定義され"
-"ている場合に)利用してバリデーションと生成を行うマップを記述している。これは非修飾のキーワードがネームスペース付きキー"
-"ワードが持つのと同等の力を伝えることはできないことに注意しよう。結果として得られるマップは自己記述的ではないのだ。"
+"ている場合に)利用してバリデーションと生成を行うマップを記述している。これは非修飾のキーワードが名前空間付きキーワード"
+"が持つのと同等の力を伝えることはできないことに注意しよう。結果として得られるマップは自己記述的ではないのだ。"
 
 #. type: Plain text
 #: en/content/about/spec.adoc:237
@@ -846,10 +845,10 @@ msgid ""
 "attribute values should be registered under their attribute name keyword. Once registered, the name can be used "
 "anywhere a spec/predicate is called for in any of the **spec** operations."
 msgstr ""
-"specを名前で再利用できるようにするためには、 ``def`` によって登録しなければならない。 ``def`` はネームスペース付きの"
-"キーワード/シンボルとspec/述語の式をとる。規約により、データのためのspecはキーワードに登録し、属性値はその属性名のキー"
-"ワードに登録するべきだ。ひとたび登録すれば、specの名前はあらゆる **spec** 操作でのspec/述語が必要なあらゆる場所で利用"
-"することができる。"
+"specを名前で再利用できるようにするためには、 ``def`` によって登録しなければならない。 ``def`` は名前空間付きのキーワー"
+"ド/シンボルとspec/述語の式をとる。規約により、データのためのspecはキーワードに登録し、属性値はその属性名のキーワードに"
+"登録するべきだ。ひとたび登録すれば、specの名前はあらゆる **spec** 操作でのspec/述語が必要なあらゆる場所で利用すること"
+"ができる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:293
@@ -943,9 +942,9 @@ msgid ""
 "wrapped version of the fn that tests the ``:args`` spec. ``unstrument`` returns a fn to its original version. You can "
 "generate data for interactive testing with ``gen/sample``."
 msgstr ""
-"``instrument`` で関数とネームスペースに選択的に組み込むことができる。これは関数のvarを ``:args`` specをテストするラッ"
-"プされたバージョンの関数に差し替える。 ``uninstrument``は関数を元のバージョンに戻す。 ``gen/sample`` でインタラクティ"
-"ブなテストのためにデータを生成することができる。"
+"``instrument`` で関数と名前空間に選択的に組み込むことができる。これは関数のvarを ``:args`` specをテストするラップされ"
+"たバージョンの関数に差し替える。 ``uninstrument``は関数を元のバージョンに戻す。 ``gen/sample`` でインタラクティブなテ"
+"ストのためにデータを生成することができる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:323
@@ -964,13 +963,13 @@ msgid ""
 "does not know about, and you can pass an override map to ``gen`` in order to supply alternative generators for one or "
 "more subpaths of a spec."
 msgstr ""
-"``check`` でネームスペース全体に対して一連のspecによる生成的テストを実行することができる。 ``gen`` を呼び出すことで"
-"test.ckeck互換のspecのジェネレータを得ることができる。 ``clojure.core`` のデータの述語の多くと対応するジェネレータとの"
-"間には組み込みで関連があり、 **spec** の複合的な演算子はそこからどのようにジェネレータを組み立てるべきか分かってい"
-"る。 specに対して ``gen`` を呼び出して一部のサブツリーについてジェネレータを組み立てることができないと、その場所を示す"
-"例外がスローされる。 specに分からないものにジェネレータを提供するためにジェネレータを返す関数を ``spec``　に渡すことが"
-"でき、また、specの1つ以上のサブパスで代わりになるジェネレータを提供するためのオーバーライドマップを ``gen`` に渡すこと"
-"ができる。"
+"``check`` で名前空間全体に対して一連のspecによる生成的テストを実行することができる。 ``gen`` を呼び出すことでtest."
+"ckeck互換のspecのジェネレータを得ることができる。 ``clojure.core`` のデータの述語の多くと対応するジェネレータとの間に"
+"は組み込みで関連があり、 **spec** の複合的な演算子はそこからどのようにジェネレータを組み立てるべきか分かっている。 "
+"specに対して ``gen`` を呼び出して一部のサブツリーについてジェネレータを組み立てることができないと、その場所を示す例外"
+"がスローされる。 specに分からないものにジェネレータを提供するためにジェネレータを返す関数を ``spec``　に渡すことがで"
+"き、また、specの1つ以上のサブパスで代わりになるジェネレータを提供するためのオーバーライドマップを ``gen`` に渡すことが"
+"できる。"
 
 #. type: Title ====
 #: en/content/about/spec.adoc:331

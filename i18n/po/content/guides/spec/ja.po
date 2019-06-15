@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2016-06-27 08:47+0900\n"
+"PO-Revision-Date: 2019-06-15 20:10+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -20,13 +20,13 @@ msgstr ""
 #: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
 #, no-wrap
 msgid "Sequences"
-msgstr "シーケンス"
+msgstr "シーケンス(sequence)"
 
 #. type: Title ==
 #: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:782 en/content/guides/destructuring.adoc:522
 #, no-wrap
 msgid "Macros"
-msgstr "Macros(マクロ)"
+msgstr "マクロ(macro)"
 
 #. type: Title ==
 #: en/content/reference/data_structures.adoc:120 en/content/guides/spec.adoc:435
@@ -519,12 +519,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:234
-#, fuzzy
-#| msgid "Creating a namespace: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
 msgid ""
 "Entity maps in spec are defined with https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec."
 "alpha/keys[`keys`]:"
-msgstr "ネームスペースの作成: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
+msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/spec.adoc:239
@@ -925,20 +923,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:438
-#, fuzzy
-#| msgid ""
-#| "Change Agent state: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] https://"
-#| "clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] https://clojure.github.io/clojure/"
-#| "clojure.core-api.html#clojure.core/restart-agent[restart-agent]"
 msgid ""
 "A few helpers are provided for other special collection cases - https://clojure.github.io/spec.alpha/clojure.spec."
 "alpha-api.html#clojure.spec.alpha/coll-of[`coll-of`], https://clojure.github.io/spec.alpha/clojure.spec.alpha-api."
 "html#clojure.spec.alpha/tuple[`tuple`], and https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure."
 "spec.alpha/map-of[`map-of`]."
 msgstr ""
-"エージェントの状態を変更する: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send[send] http://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off[send-off] https://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/restart-agent[restart-agent]"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:440
@@ -1129,68 +1119,38 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:518
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var "
-#| "given its name"
 msgid ""
 "https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/cat[`cat`] - concatenation of "
 "predicates/patterns"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
-"トする"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:519
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var "
-#| "given its name"
 msgid ""
 "https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/alt[`alt`] - choice among "
 "alternative predicates/patterns"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
-"トする"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:520
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var "
-#| "given its name"
 msgid ""
 "https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/*[`pass:[*]`] - 0 or more of a "
 "predicate/pattern"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
-"トする"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:521
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var "
-#| "given its name"
 msgid ""
 "https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%2B[`+`] - 1 or more of a "
 "predicate/pattern"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
-"トする"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:522
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] also tests for class "
-#| "relationships:"
 msgid ""
 "https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%3F[`?`] - 0 or 1 of a predicate/"
 "pattern"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F[isa?] はクラス間の関連性についてもテストす"
-"る。"
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:524
@@ -1943,16 +1903,10 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/spec.adoc:924
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] or @ can be used to retrieve the "
-#| "value inside a _reduced_"
 msgid ""
 "The https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen[`gen`] function can be "
 "used to obtain the generator for any spec."
 msgstr ""
-"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] もしくは @ を使用して _reduced_ の中"
-"の値を取得することができる。"
 
 #. type: delimited block -
 #: en/content/guides/spec.adoc:926
@@ -2377,10 +2331,9 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/spec.adoc:1161
-#, fuzzy, no-wrap
-#| msgid "Use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
+#, no-wrap
 msgid "spec also includes https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/inst-in[`inst-in`] for a range of instants:\n"
-msgstr "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] を使用して最終的なコレクションを作成する:"
+msgstr ""
 
 #. type: Plain text
 #: en/content/guides/spec.adoc:1171
