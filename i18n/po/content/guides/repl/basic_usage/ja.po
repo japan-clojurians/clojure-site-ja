@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2019-06-15 16:35+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -104,7 +104,7 @@ msgstr ""
 #. type: delimited block =
 #: en/content/guides/repl/basic_usage.adoc:61
 msgid "image:/images/content/guides/repl/editor-cli-repl.gif[\"Editor next to CLI REPL\"]"
-msgstr ""
+msgstr "image:/clojure-site-ja/images/content/guides/repl/editor-cli-repl.gif[\"Editor next to CLI REPL\"]"
 
 #. type: delimited block =
 #: en/content/guides/repl/basic_usage.adoc:66

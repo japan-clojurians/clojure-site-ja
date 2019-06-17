@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2019-06-15 16:37+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -65,10 +65,9 @@ msgstr ""
 
 #. type: Target for macro image
 #: en/content/guides/repl/introduction.adoc:26
-#, fuzzy, no-wrap
-#| msgid "/images/content/reference/transducers/xf.png"
+#, no-wrap
 msgid "/images/content/guides/repl/show-terminal-repl.gif"
-msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
+msgstr "/clojure-site-ja/images/content/guides/repl/show-terminal-repl.gif"
 
 #. type: Plain text
 #: en/content/guides/repl/introduction.adoc:29
@@ -83,10 +82,9 @@ msgstr ""
 
 #. type: Target for macro image
 #: en/content/guides/repl/introduction.adoc:31
-#, fuzzy, no-wrap
-#| msgid "/images/content/reference/transducers/xf.png"
+#, no-wrap
 msgid "/images/content/guides/repl/show-editor-repl.gif"
-msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
+msgstr "/clojure-site-ja/images/content/guides/repl/show-editor-repl.gif"
 
 #. type: Title ==
 #: en/content/guides/repl/introduction.adoc:34

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-02 07:15+0900\n"
+"PO-Revision-Date: 2019-06-15 16:30+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -120,10 +120,9 @@ msgstr ""
 
 #. type: Target for macro image
 #: en/content/reference/deps_and_cli.adoc:36
-#, fuzzy, no-wrap
-#| msgid "/images/content/reference/transducers/xf.png"
+#, no-wrap
 msgid "/images/content/guides/deps/deps.svg"
-msgstr "/clojure-site-ja/images/content/reference/transducers/xf.png"
+msgstr "/clojure-site-ja/images/content/guides/deps/deps.svg"
 
 #. type: Title ===
 #: en/content/reference/deps_and_cli.adoc:38

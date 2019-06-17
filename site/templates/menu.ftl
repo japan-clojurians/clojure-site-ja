@@ -12,13 +12,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about/rationale.html">概要</a></li>
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about/rationale">概要</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>api/api.html">API</a></li>
-              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>community/downloads.html">リリース</a></li> -->
-              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>community/resources.html">コミュニティ</a></li>
-              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>news/news.html">ニュース</a></li>
+            <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>api/api">API</a></li>
+              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>community/downloads">リリース</a></li> -->
+              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>guides/guides">ガイド</a></li>
+            <!-- <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>community/resources">コミュニティ</a></li>
+              <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
