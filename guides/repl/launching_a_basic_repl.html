@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Launching a Basic REPL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Launching a Basic REPL</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_using_the_cli_tools">Using the CLI tools</a></li>
+<li><a href="#_using_a_project_management_tool">Using a project management tool</a>
+<ul class="sectlevel2">
+<li><a href="#_leiningen">Leiningen</a></li>
+<li><a href="#_boot">Boot</a></li>
+</ul>
+</li>
+<li><a href="#_using_java_and_the_clojure_jar">Using Java and the Clojure JAR</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use any of the following methods to start a basic Clojure REPL in a terminal window:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_cli_tools"><a class="anchor" href="#_using_the_cli_tools"></a>Using the CLI tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to start a Clojure REPL is with using the <code>clj</code> command of the Clojure <a href="xref/../../deps_and_cli">CLI tools</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">clj ## run this command in a terminal window</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">Clojure 1.9.0
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="xref/../../getting_started">Getting Started</a> to learn how to install the Clojure CLI.</p>
+</div>
+<div class="paragraph">
+<p>You can exit the REPL by typing <code>Ctrl+D</code> (pressing the <code>Ctrl</code> and <code>D</code> keys at the same time).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_a_project_management_tool"><a class="anchor" href="#_using_a_project_management_tool"></a>Using a project management tool</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_leiningen"><a class="anchor" href="#_leiningen"></a>Leiningen</h3>
+<div class="paragraph">
+<p>If you have installed <a href="https://leiningen.org/">Leiningen</a>, you can use it to launch a REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">lein repl</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">nREPL server started on port 64411 on host 127.0.0.1 - nrepl://127.0.0.1:64411
+REPL-y 0.3.7, nREPL 0.2.12
+Clojure 1.8.0
+Java HotSpot(TM) 64-Bit Server VM 1.8.0_05-b13
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you run <code>lein repl</code> from inside a Leiningen project directory, the library dependencies
+ and source code of the project will be available at the REPL.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_boot"><a class="anchor" href="#_boot"></a>Boot</h3>
+<div class="paragraph">
+<p>If you have installed <a href="http://boot-clj.com/">Boot</a>, you can use it to launch a REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">boot repl</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">nREPL server started on port 50109 on host 127.0.0.1 - nrepl://127.0.0.1:50109
+REPL-y 0.3.7, nREPL 0.2.12
+Clojure 1.9.0
+Java HotSpot(TM) 64-Bit Server VM 1.8.0_05-b13
+        Exit: Control+D or (exit) or (quit)
+    Commands: (user/help)
+        Docs: (doc function-name-here)
+              (find-doc "part-of-name-here")
+Find by Name: (find-name "part-of-name-here")
+      Source: (source function-name-here)
+     Javadoc: (javadoc java-object-or-class-here)
+    Examples from clojuredocs.org: [clojuredocs or cdoc]
+              (user/clojuredocs name-here)
+              (user/clojuredocs "ns-here" "name-here")
+boot.user=&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_java_and_the_clojure_jar"><a class="anchor" href="#_using_java_and_the_clojure_jar"></a>Using Java and the Clojure JAR</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have <a href="xref/../../getting_started#_other_ways_to_run_clojure">downloaded and built Clojure</a>,
+ you can use Java to launch a Clojure REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -jar clojure.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">Clojure 1.9.0
+user=&gt;</code></pre>
+</div>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="introduction" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Introduction</a>
+  <a href="basic_usage" class="clja-next-link">Basic Usage&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

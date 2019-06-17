@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -97,7 +97,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_is_destructuring">What is Destructuring?</h2>
+<h2 id="_what_is_destructuring"><a class="anchor" href="#_what_is_destructuring"></a>What is Destructuring?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Destructuring is a way to concisely bind names to the values inside a data structure. Destructuring allows us to write more concise and readable code.</p>
@@ -141,7 +141,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sequential_destructuring">Sequential Destructuring</h2>
+<h2 id="_sequential_destructuring"><a class="anchor" href="#_sequential_destructuring"></a>Sequential Destructuring</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure destructuring is broken up into two categories, sequential destructuring and associative destructuring. Sequential destructuring represents a sequential data structure as a Clojure vector within a let binding.</p>
@@ -329,7 +329,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_associative_destructuring">Associative Destructuring</h2>
+<h2 id="_associative_destructuring"><a class="anchor" href="#_associative_destructuring"></a>Associative Destructuring</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Associative destructuring is similar to sequential destructuring, but applied instead to associative (key-value) structures (including maps, records, vectors, etc). The associative bindings are concerned with concisely extracting values of the map by key.</p>
@@ -470,7 +470,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_keyword_arguments">Keyword arguments</h3>
+<h3 id="_keyword_arguments"><a class="anchor" href="#_keyword_arguments"></a>Keyword arguments</h3>
 <div class="paragraph">
 <p>One special case is using associative destructuring for keyword-arg parsing. Consider a function that takes options <code>:debug</code> and <code>:verbose</code>. These could be specified in an options map:</p>
 </div>
@@ -517,7 +517,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_namespaced_keywords">Namespaced keywords</h3>
+<h3 id="_namespaced_keywords"><a class="anchor" href="#_namespaced_keywords"></a>Namespaced keywords</h3>
 <div class="paragraph">
 <p>If the keys in your map are namespaced keywords, you can also use destructuring with it, even though local binding symbols are not allowed to have namespaces. Destructuring a namespaced key will bind a value to the local name part of the key and drop the namespace.</p>
 </div>
@@ -568,7 +568,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_where_to_destructure">Where to destructure</h2>
+<h2 id="_where_to_destructure"><a class="anchor" href="#_where_to_destructure"></a>Where to destructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can utilize destructuring anywhere that there is an explicit or implicit let binding.</p>
@@ -680,7 +680,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_macros">Macros</h2>
+<h2 id="_macros"><a class="anchor" href="#_macros"></a>Macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Macro writers may find the need to write a macro that incorporates destructuring. The most common way to do so is to produce a call to something that already does destructuring (like <code>let</code>, <code>loop</code>, <code>fn</code>, etc). Some examples of this in <code>clojure.core</code> include <code>if-let</code>, <code>when-let</code>, <code>when-some</code>, etc.</p>

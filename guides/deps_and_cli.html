@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -140,7 +140,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_running_a_repl_and_using_libraries">Running a REPL and using libraries</h2>
+<h2 id="_running_a_repl_and_using_libraries"><a class="anchor" href="#_running_a_repl_and_using_libraries"></a>Running a REPL and using libraries</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After you download and install the tools, you can start a REPL by running the <code>clj</code> tool:</p>
@@ -188,7 +188,7 @@ user=&gt; (str (t/now))
 </div>
 </div>
 <div class="sect1">
-<h2 id="_writing_a_program">Writing a program</h2>
+<h2 id="_writing_a_program"><a class="anchor" href="#_writing_a_program"></a>Writing a program</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Soon you will want to build and save your own code that makes use of these libraries. Create a directory <code>hello-world</code> and change to that directory. Copy the <code>deps.edn</code> file into this directory. By default, the <code>clj</code> tool will look for source files in the <code>src</code> directory, so create the <code>src</code> directory and declare your program at <code>src/hello.clj</code>:</p>
@@ -222,7 +222,7 @@ Hello world, the time is 02:04 PM</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_local_libraries">Using local libraries</h2>
+<h2 id="_using_local_libraries"><a class="anchor" href="#_using_local_libraries"></a>Using local libraries</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You might decide to move part of this application into a library. The <code>clj</code> tool uses local coordinates to support projects that exist only on your local disk. Let&#8217;s extract the clj-time parts of this application out into a library in a parallel directory time-lib. The final structure will look something like this:</p>
@@ -294,7 +294,7 @@ Hello world, the time is 02:07 PM</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_git_libraries">Using git libraries</h2>
+<h2 id="_using_git_libraries"><a class="anchor" href="#_using_git_libraries"></a>Using git libraries</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It would be great to share that library with others. You can accomplish this by pushing the project to a public or private git repository and letting others use it with a git dependency coordinate.</p>
@@ -356,7 +356,7 @@ Hello world, the time is 02:10 PM</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_other_examples">Other examples</h2>
+<h2 id="_other_examples"><a class="anchor" href="#_other_examples"></a>Other examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>As your program gets more involved you might need to create variations on the standard classpath. The Clojure tools supports classpath modifications using aliases, which are parts of the deps file that are only used when the corresponding alias is supplied. Some of the things you can do are:</p>
@@ -378,7 +378,7 @@ Hello world, the time is 02:10 PM</code></pre>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="extra_paths">Include a test source directory</h3>
+<h3 id="extra_paths"><a class="anchor" href="#extra_paths"></a>Include a test source directory</h3>
 <div class="paragraph">
 <p>Typically, the project classpath includes only the project source, not its test source by default. You can add extra paths as modifications to the primary classpath in the make-classpath step of the classpath construction. To do so, add an alias <code>:test</code> that includes the extra relative source path <code>"test"</code>:</p>
 </div>
@@ -409,7 +409,7 @@ test:
 </div>
 </div>
 <div class="sect2">
-<h3 id="extra_deps">Add an optional dependency</h3>
+<h3 id="extra_deps"><a class="anchor" href="#extra_deps"></a>Add an optional dependency</h3>
 <div class="paragraph">
 <p>Aliases in the <code>deps.edn</code> file can also be used to add optional dependencies that affect the classpath:</p>
 </div>
@@ -427,7 +427,7 @@ test:
 </div>
 </div>
 <div class="sect2">
-<h3 id="override_deps">Override a dependency</h3>
+<h3 id="override_deps"><a class="anchor" href="#override_deps"></a>Override a dependency</h3>
 <div class="paragraph">
 <p>You can use multiple aliases in combination. For example this <code>deps.edn</code> file defines two aliases - <code>:old-async</code> to force the use of an older core.async version and <code>:bench</code> to add an extra dependency:</p>
 </div>
@@ -446,7 +446,7 @@ test:
 </div>
 </div>
 <div class="sect2">
-<h3 id="local_jar">Include a local jar on disk</h3>
+<h3 id="local_jar"><a class="anchor" href="#local_jar"></a>Include a local jar on disk</h3>
 <div class="paragraph">
 <p>Occasionally you may need to refer directly to a jar on disk that is not present in a Maven repository, such as a database driver jar.</p>
 </div>

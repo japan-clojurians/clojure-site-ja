@@ -276,4 +276,56 @@
         <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
         <lastmod></lastmod>
     </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/learn/flow.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/learn/functions.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/learn/hashed_colls.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/learn/sequential_colls.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/learn/syntax.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/annex_community_resources.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/annex_troubleshooting.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/basic_usage.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/data_visualization_at_the_repl.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/enhancing_your_repl_workflow.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/introduction.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/launching_a_basic_repl.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/navigating_namespaces.html</loc>
+        <lastmod></lastmod>
+    </url>
 </urlset>

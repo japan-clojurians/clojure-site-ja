@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojureを学ぼう - シーケンシャルなコレクション</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Clojureを学ぼう - シーケンシャルなコレクション</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ベクター">ベクター</a>
+<ul class="sectlevel2">
+<li><a href="#_インデックスアクセス">インデックスアクセス</a></li>
+<li><a href="#__code_count_code"><code>count</code></a></li>
+<li><a href="#_構築する">構築する</a></li>
+<li><a href="#_要素を追加する">要素を追加する</a></li>
+<li><a href="#_イミュータビリティ_不変性">イミュータビリティ(不変性)</a></li>
+</ul>
+</li>
+<li><a href="#_リスト">リスト</a>
+<ul class="sectlevel2">
+<li><a href="#_構築する_2">構築する</a></li>
+<li><a href="#_要素を追加する_2">要素を追加する</a></li>
+<li><a href="#_スタックアクセス">スタックアクセス</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojureのコレクション(collection)は値を複合的な値に「集める」(collect)。Clojureのコレクション型には重要なものが4種類ある:
+ベクター、リスト、セット、マップだ。4種類のコレクション型のうち、ベクターとリストは順序付き(ordered)だ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ベクター"><a class="anchor" href="#_ベクター"></a>ベクター</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ベクターはインデックス付き(indexed)でシーケンシャル(sequential)なデータ型だ。ベクターはこのように <code>[ ]</code> で表される:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">[1 2 3]</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_インデックスアクセス"><a class="anchor" href="#_インデックスアクセス"></a>インデックスアクセス</h3>
+<div class="paragraph">
+<p>「インデックス付き」(indexed)とは、ベクターの要素がインデックスで取得できることを意味する。Clojureでは(Javaと同様に)インデックスは1ではなく0から始まる。要素をインデックスで取得するには
+<code>get</code> を使う:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (get ["abc" false 99] 0)
+"abc"
+user=&gt; (get ["abc" false 99] 1)
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>無効なインデックスでgetを呼び出すと <code>nil</code> が返ってくる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (get ["abc" false 99] 14)
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_count_code"><a class="anchor" href="#__code_count_code"></a><code>count</code></h3>
+<div class="paragraph">
+<p>すべてのClojureコレクションは数えられる(counted):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (count [1 2 3])
+3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_構築する"><a class="anchor" href="#_構築する"></a>構築する</h3>
+<div class="paragraph">
+<p>リテラルの <code>[ ]</code> というシンタックスに加えて、Clojureのベクターは <code>vector</code> 関数で作ることもできる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (vector 1 2 3)
+[1 2 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_要素を追加する"><a class="anchor" href="#_要素を追加する"></a>要素を追加する</h3>
+<div class="paragraph">
+<p>要素は <code>conj</code> (conjoinの略)を使うことでベクターに追加される。要素は常にベクターの最後に追加される:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (conj [1 2 3] 4 5 6)
+[1 2 3 4 5 6]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_イミュータビリティ_不変性"><a class="anchor" href="#_イミュータビリティ_不変性"></a>イミュータビリティ(不変性)</h3>
+<div class="paragraph">
+<p>Clojureコレクションは、イミュータビリティや値による等価性比較といった、文字列や数値などの単純な値と共通して重要な性質を備えている。</p>
+</div>
+<div class="paragraph">
+<p>例えば、ベクターを作って <code>conj</code> で変更してみよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (def v [1 2 3])
+#'user/v
+user=&gt; (conj v 4 5 6)
+[1 2 3 4 5 6]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ここで <code>conj</code> は新しいベクターを返すが、もとのベクターを調べてみると変化していないことが分かる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; v
+[1 2 3]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コレクションを「変更」するあらゆる関数は新しいインスタンスを返す。これを上手く利用するにはプログラムが変更されたインスタンスを覚えておいたり持ち回ったりする必要があるだろう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_リスト"><a class="anchor" href="#_リスト"></a>リスト</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>リストはシーケンシャル(sequential)な連結リストであり、ベクターのように末尾ではなくリストの先頭に新しい要素を追加する。</p>
+</div>
+<div class="sect2">
+<h3 id="_構築する_2"><a class="anchor" href="#_構築する_2"></a>構築する</h3>
+<div class="paragraph">
+<p>リストは最初の要素を関数として呼び出すことで評価されるので、評価を避けるためにはリストをクォート(quote)しなければならない:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def cards '(10 :ace :jack 9))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>リストはインデックス付き(indexed)ではないので <code>first</code> と <code>rest</code> でたどらなければならない。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (first cards)
+10
+user=&gt; (rest cards)
+'(:ace :jack 9)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_要素を追加する_2"><a class="anchor" href="#_要素を追加する_2"></a>要素を追加する</h3>
+<div class="paragraph">
+<p><code>conj</code> はベクターと同様にリストに要素を追加するのに利用することができる。しかし、 <code>conj</code>
+は常にそのデータ構造で定数時間で要素追加可能な場所に要素を追加する。リストの場合には要素は前に追加される:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (conj cards :queen)
+(:queen 10 :ace :jack 9)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_スタックアクセス"><a class="anchor" href="#_スタックアクセス"></a>スタックアクセス</h3>
+<div class="paragraph">
+<p>リストはpeekとpopでスタックとして使うこともできる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (def stack '(:a :b))
+#'user/stack
+user=&gt; (peek stack)
+:a
+user=&gt; (pop stack)
+(:b)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="functions" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Functions</a>
+  <a href="hashed_colls" class="clja-next-link">Hashed Collections&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

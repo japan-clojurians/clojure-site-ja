@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Data Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Data Visualization</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_pretty_printing_using_code_clojure_pprint_code">Pretty-printing using <code>clojure.pprint</code></a></li>
+<li><a href="#_truncating_repl_output">Truncating REPL output</a></li>
+<li><a href="#_accessing_recent_results_code_1_code_code_2_code_code_3_code">Accessing recent results: <code>*1</code>, <code>*2</code>, <code>*3</code></a></li>
+<li><a href="#_investigating_exceptions">Investigating Exceptions</a></li>
+<li><a href="#_graphical_and_web_based_visualizations">Graphical and web-based visualizations</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each time we evaluate an expression, the REPL shows us a textual representation of the result:
+ that&#8217;s the <em>Print</em> part of <em>Read-Eval-Print-Loop</em>. Most of the time, this textual representation
+ is clear enough for the programmer, but sometimes it becomes difficult to read -
+ especially when dealing with big or deeply nested data structures.</p>
+</div>
+<div class="paragraph">
+<p>Fortunately, the REPL provides sharper tools for data visualization, which we will describe in this chapter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pretty_printing_using_code_clojure_pprint_code"><a class="anchor" href="#_pretty_printing_using_code_clojure_pprint_code"></a>Pretty-printing using <code>clojure.pprint</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As an example, consider the following code, which computes a summary of the arithmetic properties of some numbers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (defn number-summary
+  "Computes a summary of the arithmetic properties of a number, as a data structure."
+  [n]
+  (let [proper-divisors (into (sorted-set)
+                          (filter
+                            (fn [d]
+                              (zero? (rem n d)))
+                            (range 1 n)))
+        divisors-sum (apply + proper-divisors)]
+    {:n n
+     :proper-divisors proper-divisors
+     :even? (even? n)
+     :prime? (= proper-divisors #{1})
+     :perfect-number? (= divisors-sum n)}))
+#'user/number-summary
+user=&gt; (mapv number-summary [5 6 7 12 28 42])
+[{:n 5, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 7, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true} {:n 42, :proper-divisors #{1 2 3 6 7 14 21}, :even? true, :prime? false, :perfect-number? false}]
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For now, you don&#8217;t need to understand the code of the <code>number-summary</code> function defined above:
+ we&#8217;re just using it as a pretext to synthetize some hairy data structures. Real-world Clojure programming
+ for a specific domain will provide you with many examples of such hairy data structures.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As we can see, the result of our last expression is condensed on a single line, which makes it hard to read:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (mapv number-summary [5 6 7 12 28 42])
+[{:n 5, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 7, :proper-divisors #{1}, :even? false, :prime? true, :perfect-number? false} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true} {:n 42, :proper-divisors #{1 2 3 6 7 14 21}, :even? true, :prime? false, :perfect-number? false}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can use the <code><a href="https://clojure.github.io/clojure/clojure.pprint-api.html">clojure.pprint</a></code> lib
+ to print the result in a more 'visual' format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.pprint :as pp])
+nil
+user=&gt; (pp/pprint (mapv number-summary [5 6 7 12 28 42]))
+[{:n 5,
+  :proper-divisors #{1},
+  :even? false,
+  :prime? true,
+  :perfect-number? false}
+ {:n 6,
+  :proper-divisors #{1 2 3},
+  :even? true,
+  :prime? false,
+  :perfect-number? true}
+ {:n 7,
+  :proper-divisors #{1},
+  :even? false,
+  :prime? true,
+  :perfect-number? false}
+ {:n 12,
+  :proper-divisors #{1 2 3 4 6},
+  :even? true,
+  :prime? false,
+  :perfect-number? false}
+ {:n 28,
+  :proper-divisors #{1 2 4 7 14},
+  :even? true,
+  :prime? false,
+  :perfect-number? true}
+ {:n 42,
+  :proper-divisors #{1 2 3 6 7 14 21},
+  :even? true,
+  :prime? false,
+  :perfect-number? false}]
+nil</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP: Using an editor for syntax-highlighting the results</strong></p>
+</div>
+<div class="paragraph">
+<p>If you want your pretty-printed result to be displayed with more visual contrast,
+ you can also copy it to your editor buffer (the editor used below is <a href="https://www.gnu.org/software/emacs/">Emacs</a>):</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/content/guides/repl/repl-copy-pprint-editor.gif" alt="Copying pretty-printed result to editor"></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Needing to pretty-print the last REPL result is so common that <code>clojure.pprint</code> has a function for that:
+ <a href="https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/pp">clojure.pprint/pp</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (mapv number-summary [12 28])
+[{:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]
+user=&gt; (pp/pp)
+[{:n 12,
+  :proper-divisors #{1 2 3 4 6},
+  :even? true,
+  :prime? false,
+  :perfect-number? false}
+ {:n 28,
+  :proper-divisors #{1 2 4 7 14},
+  :even? true,
+  :prime? false,
+  :perfect-number? true}]
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, for a result which is a sequence of maps (like the above), you can use
+<a href="https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/print-table">clojure.pprint/print-table</a>
+to print it as a table:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (pp/print-table (mapv number-summary [6 12 28]))
+
+| :n | :proper-divisors | :even? | :prime? | :perfect-number? |
+|----+------------------+--------+---------+------------------|
+|  6 |         #{1 2 3} |   true |   false |             true |
+| 12 |     #{1 2 3 4 6} |   true |   false |            false |
+| 28 |    #{1 2 4 7 14} |   true |   false |             true |
+nil</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_truncating_repl_output"><a class="anchor" href="#_truncating_repl_output"></a>Truncating REPL output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When an expression evaluates to a large or deeply nested data structure,
+reading REPL output can become difficult.</p>
+</div>
+<div class="paragraph">
+<p>When a structure is too deeply nested, you can truncate
+the output by setting the <code><a href="https://clojuredocs.org/clojure.core/*print-level\*">*print-level*</a></code> Var:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (set! *print-level* 3)
+3
+user=&gt; {:a {:b [{:c {:d {:e 42}}}]}} ;; a deeply nested data structure
+{:a {:b [#]}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can undo this setting by evaluating <code>(set! <a href="https://clojuredocs.org/clojure.core/*print-level\*">*print-level*</a> nil)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Likewise, when a data structure contains long collections, you can limit the number of displayed item by setting
+the <code><a href="https://clojuredocs.org/clojure.core/*print-length\*">*print-length*</a></code> Var:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (set! *print-length* 3)
+3
+user=&gt; (repeat 100 (vec (range 100))) ;; a data structure containing looooong collections.
+([0 1 2 ...] [0 1 2 ...] [0 1 2 ...] ...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Like the above, evaluate <code>(set! <a href="https://clojuredocs.org/clojure.core/*print-length\*">*print-length*</a> nil)</code>
+to undo this setting.</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://clojuredocs.org/clojure.core/*print-level\*">*print-level*</a></code> and <code><a href="https://clojuredocs.org/clojure.core/*print-length\*">*print-length*</a></code>
+affect both ordinary REPL printing and pretty-pretting.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accessing_recent_results_code_1_code_code_2_code_code_3_code"><a class="anchor" href="#_accessing_recent_results_code_1_code_code_2_code_code_3_code"></a>Accessing recent results: <code>*1</code>, <code>*2</code>, <code>*3</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the REPL, the last evaluated result can be retrieved by evaluating <code>*1</code>; the one
+ before that is saved in <code>*2</code>, and the one before that in <code>*3</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (mapv number-summary [6 12 28])
+[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]
+user=&gt; (pp/pprint *1) ;; using *1 instead of re-typing the pevious expression (or its result)
+[{:n 6,
+ :proper-divisors #{1 2 3},
+ :even? true,
+ :prime? false,
+ :perfect-number? true}
+{:n 12,
+ :proper-divisors #{1 2 3 4 6},
+ :even? true,
+ :prime? false,
+ :perfect-number? false}
+{:n 28,
+ :proper-divisors #{1 2 4 7 14},
+ :even? true,
+ :prime? false,
+ :perfect-number? true}]
+nil
+user=&gt; *1 ;; now *1 has changed to become nil (because pp/pprint returns nil)
+nil
+user=&gt; *3 ;; ... which now means that our initial result is in *3:
+[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, :perfect-number? true} {:n 12, :proper-divisors #{1 2 3 4 6}, :even? true, :prime? false, :perfect-number? false} {:n 28, :proper-divisors #{1 2 4 7 14}, :even? true, :prime? false, :perfect-number? true}]
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP: saving a result by <code>def</code>-ining it</strong></p>
+</div>
+<div class="paragraph">
+<p>If you want to keep a result around for longer than 3 evaluations, you can simply
+ evaluate
+ <code>(def &lt;some-name&gt; *1)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (mapv number-summary [6 12 28])
+[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false ; ...
+user=&gt; (def my-summarized-numbers *1) ;; saving the result
+#'user/my-summarized-numbers
+user=&gt; my-summarized-numbers
+[{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false ; ...
+user=&gt; (count my-summarized-numbers)
+3
+user=&gt; (first my-summarized-numbers)
+{:n 6, :proper-divisors #{1 2 3}, :even? true, :prime? false, ; ...
+user=&gt; (pp/print-table my-summarized-numbers)
+
+| :n | :proper-divisors | :even? | :prime? | :perfect-number? |
+|----+------------------+--------+---------+------------------|
+|  6 |         #{1 2 3} |   true |   false |             true |
+| 12 |     #{1 2 3 4 6} |   true |   false |            false |
+| 28 |    #{1 2 4 7 14} |   true |   false |             true |
+nil
+user=&gt;</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_investigating_exceptions"><a class="anchor" href="#_investigating_exceptions"></a>Investigating Exceptions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some expressions won&#8217;t return a result when you evaluate them, but throw an <a href="https://en.wikipedia.org/wiki/Exception_handling">Exception</a>
+ instead. Throwing an Exception is your program saying to you: "something went wrong
+ when evaluating the expression, and I don&#8217;t know how to deal with it, so I gave up."</p>
+</div>
+<div class="paragraph">
+<p>For instance, an Exception will be thrown if you divide a number by zero:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (/ 1 0)
+ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, the REPL prints a one-line summary of the Exception: its type, its message, and the source code location
+ where the Exception was thrown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-plain-text" data-lang="plain-text">ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)
+^------type-------- ^--message----  ^location where the Exception was thrown</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This can be enough in many cases, but there is more information available.</p>
+</div>
+<div class="paragraph">
+<p>First, you can visualize the <em>stacktrace</em> of the Exception - that is, the chain
+ of function calls which led to the faulty instruction. The stacktrace can be printed
+ using <a href="https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst">clojure.repl/pst</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (pst *e)
+ArithmeticException Divide by zero
+	clojure.lang.Numbers.divide (Numbers.java:163)
+	clojure.lang.Numbers.divide (Numbers.java:3833)
+	user/eval15 (NO_SOURCE_FILE:3)
+	user/eval15 (NO_SOURCE_FILE:3)
+	clojure.lang.Compiler.eval (Compiler.java:7062)
+	clojure.lang.Compiler.eval (Compiler.java:7025)
+	clojure.core/eval (core.clj:3206)
+	clojure.core/eval (core.clj:3202)
+	clojure.main/repl/read-eval-print--8572/fn--8575 (main.clj:243)
+	clojure.main/repl/read-eval-print--8572 (main.clj:243)
+	clojure.main/repl/fn--8581 (main.clj:261)
+	clojure.main/repl (main.clj:261)
+nil</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP:</strong> the last thrown Exception can be obtained by evaluating <code>*e</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Finally, just evaluating the Exception at the REPL can provide a useful visualization:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; *e
+#error {
+ :cause "Divide by zero"
+ :via
+ [{:type java.lang.ArithmeticException
+   :message "Divide by zero"
+   :at [clojure.lang.Numbers divide "Numbers.java" 163]}]
+ :trace
+ [[clojure.lang.Numbers divide "Numbers.java" 163]
+  [clojure.lang.Numbers divide "Numbers.java" 3833]
+  [user$eval15 invokeStatic "NO_SOURCE_FILE" 3]
+  [user$eval15 invoke "NO_SOURCE_FILE" 3]
+  [clojure.lang.Compiler eval "Compiler.java" 7062]
+  [clojure.lang.Compiler eval "Compiler.java" 7025]
+  [clojure.core$eval invokeStatic "core.clj" 3206]
+  [clojure.core$eval invoke "core.clj" 3202]
+  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke "main.clj" 243]
+  [clojure.main$repl$read_eval_print__8572 invoke "main.clj" 243]
+  [clojure.main$repl$fn__8581 invoke "main.clj" 261]
+  [clojure.main$repl invokeStatic "main.clj" 261]
+  [clojure.main$repl_opt invokeStatic "main.clj" 325]
+  [clojure.main$main invokeStatic "main.clj" 424]
+  [clojure.main$main doInvoke "main.clj" 387]
+  [clojure.lang.RestFn invoke "RestFn.java" 397]
+  [clojure.lang.AFn applyToHelper "AFn.java" 152]
+  [clojure.lang.RestFn applyTo "RestFn.java" 132]
+  [clojure.lang.Var applyTo "Var.java" 702]
+  [clojure.main main "main.java" 37]]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this simplistic example, displaying all this information may be more than what is
+ needed to diagnose the issue; but this visualization becomes more helpful for 'real-world'
+ Exceptions, which tend to have the following charateristics in Clojure programs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Exceptions convey data:</strong> in Clojure programs, it&#8217;s common to attach additional data
+to an Exception (not just a human-readable error message): this is done by creating the Exception via
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ex-info">clojure.core/ex-info</a>.</p>
+</li>
+<li>
+<p><strong>Exceptions are chained:</strong> an Exception can be annotated with an optional <em>cause</em>, which is another
+(lower-level) Exception.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example program which demonstrates these sort of Exceptions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn divide-verbose
+  "Divides two numbers `x` and `y`, but throws more informative Exceptions when it goes wrong.
+  Returns a (double-precision) floating-point number."
+  [x y]
+  (try
+    (double (/ x y))
+    (catch Throwable cause
+      (throw
+        (ex-info
+          (str "Failed to divide " (pr-str x) " by " (pr-str y))
+          {:numerator x
+           :denominator y}
+          cause)))))
+
+(defn average
+  "Computes the average of a collection of numbers."
+  [numbers]
+  (try
+    (let [sum (apply + numbers)
+          cardinality (count numbers)]
+      (divide-verbose sum cardinality))
+    (catch Throwable cause
+      (throw
+        (ex-info
+          "Failed to compute the average of numbers"
+          {:numbers numbers}
+          cause)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t know it yet, but our <code>average</code> function fails when applied to an empty collection of numbers.
+However, visualizing the Exception makes it easy to diagnose. In the below REPL session, we can see
+that we calling our function with an empty vector of numbers led to dividing zero by zero:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (average [])
+ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)
+user=&gt; *e  ;; notice the `:data` key inside the chain of Exceptions represented in `:via`
+#error {
+ :cause "Divide by zero"
+ :via
+ [{:type clojure.lang.ExceptionInfo
+   :message "Failed to compute the average of numbers"
+   :data {:numbers []}                                      ;; &lt;-- HERE
+   :at [clojure.core$ex_info invokeStatic "core.clj" 4739]}
+  {:type clojure.lang.ExceptionInfo
+   :message "Failed to divide 0 by 0"
+   :data {:numerator 0, :denominator 0}                     ;; &lt;-- HERE
+   :at [clojure.core$ex_info invokeStatic "core.clj" 4739]}
+  {:type java.lang.ArithmeticException
+   :message "Divide by zero"
+   :at [clojure.lang.Numbers divide "Numbers.java" 163]}]
+ :trace
+ [[clojure.lang.Numbers divide "Numbers.java" 163]
+  [user$divide_verbose invokeStatic "NO_SOURCE_FILE" 11]
+  [user$divide_verbose invoke "NO_SOURCE_FILE" 6]
+  [user$average invokeStatic "NO_SOURCE_FILE" 25]
+  [user$average invoke "NO_SOURCE_FILE" 19]
+  [user$eval155 invokeStatic "NO_SOURCE_FILE" 32]
+  [user$eval155 invoke "NO_SOURCE_FILE" 32]
+  [clojure.lang.Compiler eval "Compiler.java" 7062]
+  [clojure.lang.Compiler eval "Compiler.java" 7025]
+  [clojure.core$eval invokeStatic "core.clj" 3206]
+  [clojure.core$eval invoke "core.clj" 3202]
+  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke "main.clj" 243]
+  [clojure.main$repl$read_eval_print__8572 invoke "main.clj" 243]
+  [clojure.main$repl$fn__8581 invoke "main.clj" 261]
+  [clojure.main$repl invokeStatic "main.clj" 261]
+  [clojure.main$repl_opt invokeStatic "main.clj" 325]
+  [clojure.main$main invokeStatic "main.clj" 424]
+  [clojure.main$main doInvoke "main.clj" 387]
+  [clojure.lang.RestFn invoke "RestFn.java" 397]
+  [clojure.lang.AFn applyToHelper "AFn.java" 152]
+  [clojure.lang.RestFn applyTo "RestFn.java" 132]
+  [clojure.lang.Var applyTo "Var.java" 702]
+  [clojure.main main "main.java" 37]]}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_graphical_and_web_based_visualizations"><a class="anchor" href="#_graphical_and_web_based_visualizations"></a>Graphical and web-based visualizations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Finally, the REPL being a full-featured programming environment, it is not limited
+ to text-based visualizations. Here are some handy "graphical" visualization tools bundled
+ Clojure:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.java.javadoc-api.html">clojure.java.javadoc</a> lets
+you view the <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a> of a class or object.
+Here is how to view the Javadoc for a Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">regex Pattern</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.java.javadoc :as jdoc])
+nil
+user=&gt; (jdoc/javadoc #"a+") ;; opens the Javadoc page for java.util.Pattern in a Web browser
+true
+user=&gt; (jdoc/javadoc java.util.regex.Pattern) ;; equivalent to the above
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.inspector-api.html">clojure.inspector</a> lets you open
+GUI-based visualizations of data, for instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.inspector :as insp])
+nil
+user=&gt; (insp/inspect-table (mapv number-summary [2 5 6 28 42]))
+#object[javax.swing.JFrame 0x26425897 "javax.swing.JFrame[frame1,0,23,400x600,layout=java.awt.BorderLayout,title=Clojure Inspector,resizable,normal,defaultCloseOperation=HIDE_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,22,400x578,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/content/guides/repl/clj-inspect-table.png" alt="clojure.inspector table viz"></span></p>
+</div>
+<div class="paragraph">
+<p>Finally, <a href="https://clojure.github.io/clojure/clojure.java.browse-api.html#clojure.java.browse/browse-url">clojure.java.browse/browse-url</a>
+lets you open any URL in a Web browser, which can be handy for specific needs.</p>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="basic_usage" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Basic Usage</a>
+  <a href="navigating_namespaces" class="clja-next-link">Navigating Namespaces&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

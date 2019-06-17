@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Navigating Namespaces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Navigating Namespaces</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_the_current_namespace">The current namespace</a></li>
+<li><a href="#_creating_a_namespace_with_code_ns_code">Creating a namespace with <code>ns</code></a></li>
+<li><a href="#_switching_to_an_existing_namespace_with_code_in_ns_code">Switching to an existing namespace with <code>in-ns</code></a></li>
+<li><a href="#_working_with_libs">Working with libs</a>
+<ul class="sectlevel2">
+<li><a href="#how-to-make-sure-a-lib-is-loaded">How to make sure a lib is loaded</a></li>
+<li><a href="#_example_a_project_for_greeting_people">Example: a project for greeting people</a></li>
+<li><a href="#_how_things_can_go_wrong">How things can go wrong</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So far we have only used the REPL for small self-contained experiments; but the REPL is most
+valuable for <strong><em>putting yourself in the shoes</em> of the program</strong> you are developing or debugging,
+i.e evaluating exactly the same expressions in the REPL as your program does when it runs.</p>
+</div>
+<div class="paragraph">
+<p>This is achieved by giving your REPL the same context as your running program, which implies
+using REPL in the same <a href="xref/../../../reference/namespaces">namespaces</a> where your code is defined.
+We will see how to do that in the following sections.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Namespaces are one of the trickiest parts of Clojure. If you&#8217;re just learning the language,
+feel free to skip this chapter for now; you can come back to it when you start working on 'real-world' Clojure projects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_current_namespace"><a class="anchor" href="#_the_current_namespace"></a>The current namespace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you evaluate code in the REPL, you are always evaluating code in the context of the <em>current namespace</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>The current namespace determines:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>How the code that you are writing may refer to code from other namespaces.</em></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, if the current namespace is <code>myapp.foo.bar</code> and you evaluate <code>(require [clojure.set :as cset :refer [union]])</code>,
+ you can now refer to the <code>clojure.set/union</code> Var either by <code>cset/union</code> (because of the <code>:as cset</code> alias) or just <code>union</code>
+ (because of <code>:refer [union]</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; *ns*
+#object[clojure.lang.Namespace 0x7d1cfb8b "user"]
+user=&gt; (ns myapp.foo.bar) ;; creating and switching to the myapp.foo.bar namespace - `ns` will be explained later in this guide.
+nil
+myapp.foo.bar=&gt; (require '[clojure.set :as cset :refer [union]]) ;; this will only affect the current namespace
+nil
+myapp.foo.bar=&gt; (cset/union #{1 2} #{2 3})
+#{1 3 2}
+myapp.foo.bar=&gt; (union #{1 2} #{2 3})
+#{1 3 2}
+myapp.foo.bar=&gt; (cset/intersection #{1 2} #{2 3})
+#{2}
+myapp.foo.bar=&gt; (in-ns 'user) ;; now switching back to the `user` namespace - `in-ns` will be explained later in this guide.
+#object[clojure.lang.Namespace 0x7d1cfb8b "user"]
+user=&gt; (union #{1 2} #{2 3})  ;; won't work, because `union` has not been :refer'ed in the `user` namespace
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: union in this context, compiling:(NO_SOURCE_PATH:9:1)
+user=&gt; (cset/intersection #{1 2} #{2 3}) ;; won't work, because the `cset` alias has not been defined in the current namespace.
+CompilerException java.lang.RuntimeException: No such namespace: cset, compiling:(NO_SOURCE_PATH:10:1)
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP:</strong> You can find what aliases are defined in a given namespace by calling <a href="https://clojuredocs.org/clojure.core/ns-aliases">ns-aliases</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">myapp.foo.bar=&gt; (ns-aliases 'myapp.foo.bar)
+{cset #object[clojure.lang.Namespace 0x4b2a01d4 "clojure.set"]}</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>In what namespace the Vars that you define (using for example <code>(def &#8230;&#8203;)</code> or <code>(defn &#8230;&#8203;)</code>) will exist.</em></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, if the current namespace is <code>myapp.foo.bar</code> and you define a Var named <code>my-favorite-number</code>,
+you will be able to reference that Var as <code>myapp.foo.bar/my-favorite-number</code> from other namespaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (ns myapp.foo.bar) ;; creating and switching to the `myapp.foo.bar` namespace - NOTE `ns` will be explained later in this guide
+nil
+myapp.foo.bar=&gt; (def my-favorite-number 42) ;; defining a Var named `my-favorite-number`
+#'myapp.foo.bar/my-favorite-number
+myapp.foo.bar=&gt; my-favorite-number
+42
+myapp.foo.bar=&gt; (ns myapp.baz) ;; creating and switching to another namespace `myapp.baz`
+nil
+myapp.baz=&gt; myapp.foo.bar/my-favorite-number ;; refering to `my-favorite-number`
+42
+myapp.baz=&gt; (require '[myapp.foo.bar :as foobar]) ;; we can also use an alias to make it shorter
+nil
+myapp.baz=&gt; foobar/my-favorite-number
+42</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can find what the current namespace is by evaluating <code>*ns*</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; *ns*
+#object[clojure.lang.Namespace 0x7d1cfb8b "user"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, by default, when you start a REPL with <code>clj</code>, the current namespace is <code>user</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_namespace_with_code_ns_code"><a class="anchor" href="#_creating_a_namespace_with_code_ns_code"></a>Creating a namespace with <code>ns</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create and switch to a new namespace by evaluating <code>(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a> MY-NAMESPACE-NAME)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (ns myapp.foo-bar)
+nil
+myapp.foo-bar=&gt; *ns*
+#object[clojure.lang.Namespace 0xacdb094 "myapp.foo-bar"]
+myapp.foo-bar=&gt; (def x 42)
+#'myapp.foo-bar/x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> when you switch to a new namespace, the names and aliases that were defined
+ in the previous namespaces are no longer available:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (ns myapp.ns1) ;; creating a new namespace and defining a Var `x` and an alias `str/`:
+nil
+myapp.ns1=&gt; (def x 42)
+#'myapp.ns1/x
+myapp.ns1=&gt; x
+42
+myapp.ns1=&gt; (require '[clojure.string :as str])
+nil
+myapp.ns1=&gt; (str/upper-case "hello")
+"HELLO"
+myapp.ns1=&gt; (ns myapp.ns2) ;; now switching to another namespace:
+nil
+myapp.ns2=&gt; x ;; won't work, because x has not been defined in namespace `myapp.ns2`
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: x in this context, compiling:(NO_SOURCE_PATH:0:0)
+myapp.ns2=&gt; (str/upper-case "hello") ;; won't work, because alias `str` has not been defined in namespace `myapp.ns2`
+CompilerException java.lang.RuntimeException: No such namespace: str, compiling:(NO_SOURCE_PATH:9:1)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_switching_to_an_existing_namespace_with_code_in_ns_code"><a class="anchor" href="#_switching_to_an_existing_namespace_with_code_in_ns_code"></a>Switching to an existing namespace with <code>in-ns</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can switch to an existing namespace by evaluating <code>(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a> 'MY-NAMESPACE-NAME)</code>.
+Here&#8217;s an example REPL session that creates a namespace <code>myapp.some-ns</code>, defines a Var named <code>x</code> in it,
+moves back to the <code>user</code> namespace, then moves again to <code>myapp.some-ns</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (ns myapp.some-ns) ;;;; creating the namespace `myapp.some-ns`
+nil
+myapp.some-ns=&gt; *ns* ;; where are we?
+#object[clojure.lang.Namespace 0xacdb094 "myapp.some-ns"]
+myapp.some-ns=&gt; (def x 42) ;; defining `x`
+#'myapp.some-ns/x
+myapp.some-ns=&gt; (in-ns 'user) ;;;; switching back to `user`
+#object[clojure.lang.Namespace 0x4b45dcb8 "user"]
+user=&gt; *ns* ;; where are we?
+#object[clojure.lang.Namespace 0x4b45dcb8 "user"]
+user=&gt; (in-ns 'myapp.some-ns) ;;;; ...switching back again to `myapp.some-ns`
+#object[clojure.lang.Namespace 0xacdb094 "myapp.some-ns"]
+myapp.some-ns=&gt; *ns* ;; where are we?
+#object[clojure.lang.Namespace 0xacdb094 "myapp.some-ns"]
+myapp.some-ns=&gt; x ;; `x` is still here!
+42</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>What happens if you <code>in-ns</code> to a namespace that has never been created?</em></strong>
+You will see strange things happening. For instance, you will not be able to define
+a function using <code>defn</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (in-ns 'myapp.never-created)
+#object[clojure.lang.Namespace 0x22356acd "myapp.never-created"]
+myapp.never-created=&gt; (defn say-hello [x] (println "Hello, " x "!"))
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: defn in this context, compiling:(NO_SOURCE_PATH:2:1)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Explanation:</strong> in this situation, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
+creates the new namespace and switches to it like <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a> does,
+but it does a little less work than <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a>,
+because it does not automatically make available all the names defined in <code>clojure.core</code>,
+such as <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a>.
+You can fix that by evaluating <code>(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer-clojure">clojure.core/refer-clojure</a>)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">myapp.never-created=&gt; (clojure.core/refer-clojure)
+nil
+myapp.never-created=&gt; (defn say-hello [x] (println "Hello, " x "!"))
+#'myapp.never-created/say-hello
+myapp.never-created=&gt; (say-hello "Jane")
+Hello,  Jane !
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you only use <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns">in-ns</a>
+to switch to namespaces that have already been created, you won&#8217;t have to deal with these subtleties.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_libs"><a class="anchor" href="#_working_with_libs"></a>Working with libs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most of the namespaces you will navigate at the REPL will already exist in source files or dependencies
+of your project, i.e in <a href="xref/../../../reference/libs">libs</a> of your project.</p>
+</div>
+<div class="paragraph">
+<p>There is an important usage precaution for switching to namespaces defined in libs:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>If a namespace is defined in a <a href="xref/../../../reference/libs">lib</a> of your project,
+always make sure you have <em>loaded</em> the lib in the REPL before switching to it.</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="how-to-make-sure-a-lib-is-loaded"><a class="anchor" href="#how-to-make-sure-a-lib-is-loaded"></a>How to make sure a lib is loaded</h3>
+<div class="paragraph">
+<p>To make sure that a lib with namespace <code>mylib.ns1</code> has been loaded in the REPL, you can do any one of the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a></code> it directly: <code>(require '[mylib.ns1])</code></p>
+</li>
+<li>
+<p>load a namespace which itself requires <code>mylib.ns1</code> (directly or indirectly).</p>
+</li>
+<li>
+<p>evaluate manually all the code in the source file <code>mylib.ns1</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_a_project_for_greeting_people"><a class="anchor" href="#_example_a_project_for_greeting_people"></a>Example: a project for greeting people</h3>
+<div class="paragraph">
+<p>For example, assume a Clojure project with the following structure and content:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-plain-text" data-lang="plain-text">.
+└── src
+    └── myproject
+        ├── person_names.clj
+        └── welcome.clj</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; -----------------------------------------------
+;; src/myproject/welcome.clj
+(ns myproject.welcome
+  (:require [myproject.person-names :as pnames])) ;; NOTE: `myproject.welcome` requires `myproject.person-names`
+
+(defn greet
+  [first-name last-name]
+  (str "Hello, " (pnames/familiar-name first-name last-name)))
+
+
+;; -----------------------------------------------
+;; src/myproject/person_names.clj
+(ns myproject.person-names
+  (:require [clojure.string :as str]))
+
+(def nicknames
+  {"Robert"     "Bob"
+   "Abigail"    "Abbie"
+   "William"    "Bill"
+   "Jacqueline" "Jackie"})
+
+(defn familiar-name
+  "What to call someone you may be familiar with."
+  [first-name last-name]
+  (let [fname (str/capitalize first-name)
+        lname (str/capitalize last-name)]
+    (or
+      (get nicknames fname)
+      (str fname " " lname))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here are 3 ways to make sure <code>myproject.person-names</code> is loaded:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 1: requiring myproject.person-names directly
+Clojure 1.9.0
+user=&gt; (require '[myproject.person-names])
+nil
+user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.
+{"Robert" "Bob", "Abigail" "Abbie", "William" "Bill", "Jacqueline" "Jackie"}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 2: requiring myproject.welcome, which itself requires myproject.person-names
+Clojure 1.9.0
+user=&gt; (require '[myproject.welcome])
+nil
+user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.
+{"Robert" "Bob", "Abigail" "Abbie", "William" "Bill", "Jacqueline" "Jackie"}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 3: manually copying the code of myproject.person-names in the REPL.
+Clojure 1.9.0
+(ns myproject.person-names
+  (:require [clojure.string :as str]))
+
+(def nicknames
+  {"Robert"     "Bob"
+   "Abigail"    "Abbie"
+   "William"    "Bill"
+   "Jacqueline" "Jackie"})
+
+(defn familiar-name
+  "What to call someone you may be familiar with."
+  [first-name last-name]
+  (let [fname (str/capitalize first-name)
+        lname (str/capitalize last-name)]
+    (or
+      (get nicknames fname)
+      (str fname " " lname))))
+nil
+myproject.person-names=&gt; myproject.person-names=&gt; #'myproject.person-names/nicknames
+myproject.person-names=&gt; myproject.person-names=&gt; #'myproject.person-names/familiar-name
+myproject.person-names=&gt; myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.
+{"Robert" "Bob", "Abigail" "Abbie", "William" "Bill", "Jacqueline" "Jackie"}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP:</strong> you can see (among other things) what libs get loaded by using the <code>:verbose</code> tag in <code><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (require '[myproject.welcome] :verbose)
+(clojure.core/load "/myproject/welcome")
+(clojure.core/in-ns 'clojure.core.specs.alpha)
+(clojure.core/alias 's 'clojure.spec.alpha)
+(clojure.core/load "/myproject/person_names")
+(clojure.core/in-ns 'myproject.person-names)
+(clojure.core/alias 'str 'clojure.string)
+(clojure.core/in-ns 'myproject.welcome)
+(clojure.core/alias 'pnames 'myproject.person-names)
+nil</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_things_can_go_wrong"><a class="anchor" href="#_how_things_can_go_wrong"></a>How things can go wrong</h3>
+<div class="paragraph">
+<p>Continuing with the above example project, here is a REPL session showing how things can go wrong
+if you switch to a lib namespace without loading it first:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
+Clojure 1.9.0
+user=&gt; (ns myproject.person-names)
+nil
+myproject.person-names=&gt; nicknames ;; #'nicknames won't be defined, because the lib has not been loaded.
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)
+myproject.person-names=&gt; (require '[myproject.person-names]) ;; won't fix the situation, because the namespaces has already been created
+nil
+myproject.person-names=&gt; nicknames
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="data_visualization_at_the_repl" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Data Visualization at the REPL</a>
+  <a href="enhancing_your_repl_workflow" class="clja-next-link">Enhancing your REPL workflow&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

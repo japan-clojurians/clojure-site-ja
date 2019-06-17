@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -117,7 +117,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="def">(<code>def</code> <em>symbol</em> <em>doc-string</em>? <em>init</em>?)</h2>
+<h2 id="def"><a class="anchor" href="#def"></a>(<code>def</code> <em>symbol</em> <em>doc-string</em>? <em>init</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Creates and interns or locates a global <a href="https://clojure.org/reference/vars">var</a> with the name of <em>symbol</em> and a namespace of the value of the current namespace (<code>*ns*</code>). If <em>init</em> is supplied, it is evaluated, and the root binding of the var is set to the resulting value. If <em>init</em> is not supplied, the root binding of the var is unaffected. <code>def</code> always applies to the root binding, even if the var is thread-bound at the point where <code>def</code> is called. <code>def</code> yields the var itself (not its value). Throws an exception if <em>symbol</em> is already in the namespace and not mapped to an interned var. Support for <em>doc-string</em> was added in Clojure 1.3.</p>
@@ -214,7 +214,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="if">(<code>if</code> <em>test</em> <em>then</em> <em>else</em>?)</h2>
+<h2 id="if"><a class="anchor" href="#if"></a>(<code>if</code> <em>test</em> <em>then</em> <em>else</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Evaluates <em>test</em>. If not the singular values <code>nil</code> or <code>false</code>, evaluates and yields <em>then</em>, otherwise, evaluates and yields <em>else</em>. If <em>else</em> is not supplied it defaults to <code>nil</code>. All of the other conditionals in Clojure are based upon the same logic, that is, <code>nil</code> and <code>false</code> constitute logical falsity, and everything else constitutes logical truth, and those meanings apply throughout. <code>if</code> performs conditional tests of boolean Java method return values without conversion to Boolean. Note that <code>if</code> does not test for arbitrary values of java.lang.Boolean, only the singular value <code>false</code> (Java&#8217;s <code>Boolean.FALSE</code>), so if you are creating your own boxed Booleans make sure to use <code>Boolean/valueOf</code> and not the Boolean constructors.</p>
@@ -222,7 +222,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="do">(<code>do</code> <em>expr</em>*)</h2>
+<h2 id="do"><a class="anchor" href="#do"></a>(<code>do</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Evaluates the expressions <em>expr</em>s in order and returns the value of the last. If no expressions are supplied, returns <code>nil</code>.</p>
@@ -230,7 +230,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="let">(<code>let</code> [ <em>binding</em>* ] <em>expr</em>*)</h2>
+<h2 id="let"><a class="anchor" href="#let"></a>(<code>let</code> [ <em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>binding</em> &#8658; <em>binding-form</em> <em>init-expr</em></p>
@@ -255,7 +255,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="quote">(<code>quote</code> <em>form</em>)</h2>
+<h2 id="quote"><a class="anchor" href="#quote"></a>(<code>quote</code> <em>form</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Yields the unevaluated <em>form</em>.</p>
@@ -272,7 +272,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="var">(<code>var</code> <em>symbol</em>)</h2>
+<h2 id="var"><a class="anchor" href="#var"></a>(<code>var</code> <em>symbol</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <em>symbol</em> must resolve to a var, and the Var object itself <em>(not its value)</em> is returned. The reader macro <code>#'x</code> expands to <code>(var x)</code>.</p>
@@ -280,13 +280,13 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="fn">(<code>fn</code> <em>name</em>? [<em>params</em>* ] <em>expr</em>*)</h2>
+<h2 id="fn"><a class="anchor" href="#fn"></a>(<code>fn</code> <em>name</em>? [<em>params</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_em_name_em_em_params_em_em_expr_em">(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</h2>
+<h2 id="__code_fn_code_em_name_em_em_params_em_em_expr_em"><a class="anchor" href="#__code_fn_code_em_name_em_em_params_em_em_expr_em"></a>(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>params</em> &#8658; <em>positional-param</em>* , or <em>positional-param</em>* &amp; <em>rest-param</em><br>
@@ -335,13 +335,13 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</h2>
+<h2 id="__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em"><a class="anchor" href="#__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em"></a>(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</h2>
+<h2 id="__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em"><a class="anchor" href="#__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em"></a>(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The syntax extension also applies to <code>defn</code> and other macros which expand to <code>fn</code> forms.</p>
@@ -381,7 +381,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="loop">(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</h2>
+<h2 id="loop"><a class="anchor" href="#loop"></a>(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur"><code>recur</code></a>.</p>
@@ -389,7 +389,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="recur">(<code>recur</code> <em>expr</em>*)</h2>
+<h2 id="recur"><a class="anchor" href="#recur"></a>(<code>recur</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
@@ -410,7 +410,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="throw">(<code>throw</code> <em>expr</em>)</h2>
+<h2 id="throw"><a class="anchor" href="#throw"></a>(<code>throw</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <em>expr</em> is evaluated and thrown, therefore it should yield an instance of some derivee of <code>Throwable</code>.</p>
@@ -418,7 +418,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="try">(<code>try</code> <em>expr</em>* <em>catch-clause</em>* <em>finally-clause</em>?)</h2>
+<h2 id="try"><a class="anchor" href="#try"></a>(<code>try</code> <em>expr</em>* <em>catch-clause</em>* <em>finally-clause</em>?)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>catch-clause</em> &#8594; (catch <em>classname</em> <em>name</em> <em>expr</em>*)<br>
@@ -430,13 +430,13 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="monitor-enter">(<code>monitor-enter</code> <em>expr</em>)</h2>
+<h2 id="monitor-enter"><a class="anchor" href="#monitor-enter"></a>(<code>monitor-enter</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="monitor-exit">(<code>monitor-exit</code> <em>expr</em>)</h2>
+<h2 id="monitor-exit"><a class="anchor" href="#monitor-exit"></a>(<code>monitor-exit</code> <em>expr</em>)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>These are synchronization primitives that should be avoided in user code. Use the <code>locking</code> macro.</p>
@@ -444,7 +444,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="_other_special_forms">Other Special Forms</h2>
+<h2 id="_other_special_forms"><a class="anchor" href="#_other_special_forms"></a>Other Special Forms</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a id="."></a>
@@ -458,13 +458,13 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="sect1">
-<h2 id="binding-forms">Binding Forms (Destructuring)</h2>
+<h2 id="binding-forms"><a class="anchor" href="#binding-forms"></a>Binding Forms (Destructuring)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports abstract structural binding, often called destructuring, in let binding lists, fn parameter lists, and any macro that expands into a <code>let</code> or <code>fn</code>. A <em>binding-form</em> can be a data structure literal containing symbols that get bound to the respective parts of the <em>init-expr</em>. The binding is abstract in that a vector literal can bind to anything that is sequential, while a map literal can bind to anything that is associative.</p>
 </div>
 <div class="sect2">
-<h3 id="_vector_binding_destructuring">Vector binding destructuring</h3>
+<h3 id="_vector_binding_destructuring"><a class="anchor" href="#_vector_binding_destructuring"></a>Vector binding destructuring</h3>
 <div class="paragraph">
 <p>Vector <em>binding-expr</em>s allow you to bind names to parts of <em>sequential</em> things (not just vectors), like vectors, lists, seqs, strings, arrays, and anything that supports <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth"><code>nth</code></a>. The basic sequential form is a vector of <em>binding-form</em>s, which will be bound to successive elements from the <em>init-expr</em>, looked up via <code>nth</code>. In addition, and optionally, <code>&amp;</code> followed by a <em>binding-form</em> will cause that <em>binding-form</em> to be bound to the remainder of the sequence, i.e. that part not yet bound, looked up via <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext"><code>nthnext</code></a>.</p>
 </div>
@@ -503,7 +503,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="sect2">
-<h3 id="_map_binding_destructuring">Map binding destructuring</h3>
+<h3 id="_map_binding_destructuring"><a class="anchor" href="#_map_binding_destructuring"></a>Map binding destructuring</h3>
 <div class="paragraph">
 <p>Map <em>binding-form</em>s allow you to bind names to parts of associative things, like maps, vectors, strings, and arrays (the latter three have integer keys). It consists of a map of <em>binding-form-key</em> pairs, each symbol being bound to the value in the <em>init-expr</em> at the key. In addition, and optionally, an <code>:as</code> key in the binding form followed by a symbol will cause that symbol to be bound to the entire <em>init-expr</em>. Also optionally, an <code>:or</code> key in the binding form followed by another map may be used to supply default values for some or all of the keys if they are not found in the <em>init-expr</em>:</p>
 </div>
@@ -602,7 +602,7 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nested_destructuring">Nested destructuring</h3>
+<h3 id="_nested_destructuring"><a class="anchor" href="#_nested_destructuring"></a>Nested destructuring</h3>
 <div class="paragraph">
 <p>Since binding forms can be nested within one another arbitrarily, you can pull apart just about anything:</p>
 </div>
@@ -618,6 +618,11 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="evaluation" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Evaluation</a>
+  <a href="macros" class="clja-next-link">Macros&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

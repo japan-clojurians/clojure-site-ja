@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -131,7 +131,7 @@ original <a href="https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-c
 </div>
 </div>
 <div class="sect1">
-<h2 id="lists"><code>( &#8230;&#8203; )</code> - List</h2>
+<h2 id="lists"><a class="anchor" href="#lists"></a><code>( &#8230;&#8203; )</code> - List</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Lists are sequential heterogeneous collections implemented as a linked list.</p>
@@ -154,7 +154,7 @@ original <a href="https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-c
 </div>
 </div>
 <div class="sect1">
-<h2 id="vectors"><code>[ &#8230;&#8203; ]</code> - Vector</h2>
+<h2 id="vectors"><a class="anchor" href="#vectors"></a><code>[ &#8230;&#8203; ]</code> - Vector</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Vectors are sequential, indexed, heterogeneous collections. Indexing is 0-based.</p>
@@ -178,7 +178,7 @@ original <a href="https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-c
 </div>
 </div>
 <div class="sect1">
-<h2 id="maps"><code>{ &#8230;&#8203; }</code> - Map</h2>
+<h2 id="maps"><a class="anchor" href="#maps"></a><code>{ &#8230;&#8203; }</code> - Map</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Maps are heterogeneous collections specified with alternating keys and values:</p>
@@ -199,7 +199,7 @@ original <a href="https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-c
 </div>
 </div>
 <div class="sect1">
-<h2 id="dispatch"><code>#</code> - Dispatch character</h2>
+<h2 id="dispatch"><a class="anchor" href="#dispatch"></a><code>#</code> - Dispatch character</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You&#8217;ll see this character beside another e.g. <code>#(</code> or <code>#"</code>.</p>
@@ -214,7 +214,7 @@ source and "reads" it as Clojure data) how to interpret the next character using
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_set"><code>#{ &#8230;&#8203; }</code> - Set</h2>
+<h2 id="__code_code_set"><a class="anchor" href="#__code_code_set"></a><code>#{ &#8230;&#8203; }</code> - Set</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#dispatch"><code>#</code></a> for additional details.</p>
@@ -251,7 +251,7 @@ IllegalArgumentException Duplicate key: 1  clojure.lang.PersistentHashSet.create
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_discard"><code>#_</code> - Discard</h2>
+<h2 id="__code_code_discard"><a class="anchor" href="#__code_code_discard"></a><code>#_</code> - Discard</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#dispatch"><code>#</code></a> for additional details.</p>
@@ -304,7 +304,7 @@ This can prove useful for debugging situations or for multiline comments.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_regular_expression"><code>#"&#8230;&#8203;"</code> - Regular Expression</h2>
+<h2 id="__code_code_regular_expression"><a class="anchor" href="#__code_code_regular_expression"></a><code>#"&#8230;&#8203;"</code> - Regular Expression</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#dispatch"><code>#</code></a> for additional details.</p>
@@ -336,7 +336,7 @@ Java string escaping is not required</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_anonymous_function"><code>#(&#8230;&#8203;)</code> - Anonymous function</h2>
+<h2 id="__code_code_anonymous_function"><a class="anchor" href="#__code_code_anonymous_function"></a><code>#(&#8230;&#8203;)</code> - Anonymous function</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#dispatch"><code>#</code></a> for additional details.</p>
@@ -368,7 +368,7 @@ are declared. See the <code>%</code> character for discussion around arity.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_var_quote"><code>#'</code> - Var quote</h2>
+<h2 id="__code_code_var_quote"><a class="anchor" href="#__code_code_var_quote"></a><code>#'</code> - Var quote</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>#'</code> is the var quote which expands into a call to the <code>var</code> function:</p>
@@ -405,7 +405,7 @@ See the use of <code>meta</code> in the metadata (<a href="xref/../weird_charact
 </div>
 </div>
 <div class="sect1">
-<h2 id="tagged_literals"><code>#inst</code>, <code>#uuid</code>, and <code>#js</code> etc. - tagged literals</h2>
+<h2 id="tagged_literals"><a class="anchor" href="#tagged_literals"></a><code>#inst</code>, <code>#uuid</code>, and <code>#js</code> etc. - tagged literals</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Tagged literals are defined in edn and supported by the Clojure and
@@ -444,7 +444,7 @@ ClojureScript data structures into JavaScript structures directly. Note that
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_code_n_code_code_code_anonymous_function_arguments"><code>%</code>, <code>%n</code>, <code>%&amp;</code> - Anonymous function arguments</h2>
+<h2 id="__code_code_code_n_code_code_code_anonymous_function_arguments"><a class="anchor" href="#__code_code_code_n_code_code_code_anonymous_function_arguments"></a><code>%</code>, <code>%n</code>, <code>%&amp;</code> - Anonymous function arguments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>%</code> is an argument in an anonymous function <code><mark>(&#8230;&#8203;)</code> as in <code></mark>(* % %)</code>.</p>
@@ -502,7 +502,7 @@ argument).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_deref"><code>@</code> - Deref</h2>
+<h2 id="__code_code_deref"><a class="anchor" href="#__code_code_deref"></a><code>@</code> - Deref</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>@</code> expands into a call to the <code>deref</code> function, so these two forms
@@ -531,7 +531,7 @@ force computation and potentially block.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_and_code_code_metadata"><code>^</code> (and <code>#^</code>) - Metadata</h2>
+<h2 id="__code_code_and_code_code_metadata"><a class="anchor" href="#__code_code_and_code_code_metadata"></a><code>^</code> (and <code>#^</code>) - Metadata</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>^</code> is the metadata marker. Metadata is a map of values (with shorthand option)
@@ -615,7 +615,7 @@ user=&gt; (meta #'five)
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_quote"><code>'</code> - Quote</h2>
+<h2 id="__code_code_quote"><a class="anchor" href="#__code_code_quote"></a><code>'</code> - Quote</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Quoting is used to indicate that the next form should be read but not evaluated.
@@ -643,7 +643,7 @@ user=&gt;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_comment"><code>;</code> - Comment</h2>
+<h2 id="__code_code_comment"><a class="anchor" href="#__code_code_comment"></a><code>;</code> - Comment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>;</code> starts a line comment and ignores all input from its starting point to the end of the
@@ -671,7 +671,7 @@ but these are all the same to Clojure</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_keyword"><code>:</code> - Keyword</h2>
+<h2 id="__code_code_keyword"><a class="anchor" href="#__code_code_keyword"></a><code>:</code> - Keyword</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>:</code> is the indicator for a keyword. Keywords are often used as keys in maps and
@@ -719,7 +719,7 @@ user =&gt; (get my-map :three 3) ; same as above, but using get
 </div>
 </div>
 <div class="sect1">
-<h2 id="autoresolved_keys"><code>::</code> - Auto-resolved keyword</h2>
+<h2 id="autoresolved_keys"><a class="anchor" href="#autoresolved_keys"></a><code>::</code> - Auto-resolved keyword</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>::</code> is used to auto-resolve a keyword in the current namespace. If no qualifier
@@ -754,7 +754,7 @@ you could use <code>::my-function</code> to refer to the fully qualified name.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_and_code_code_namespace_map_syntax"><code>#:</code> and <code>#::</code> - Namespace Map Syntax</h2>
+<h2 id="__code_code_and_code_code_namespace_map_syntax"><a class="anchor" href="#__code_code_and_code_code_namespace_map_syntax"></a><code>#:</code> and <code>#::</code> - Namespace Map Syntax</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Namespace map syntax was added in Clojure 1.9 and is used to specify a default
@@ -814,7 +814,7 @@ precedes the opening brace <code>{</code> of the map.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_namespace_separator"><code>/</code> - Namespace separator</h2>
+<h2 id="__code_code_namespace_separator"><a class="anchor" href="#__code_code_namespace_separator"></a><code>/</code> - Namespace separator</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>/</code> can be the division function <code>clojure.core//</code>, but can also act as a
@@ -831,7 +831,7 @@ for simple names.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_character_literal"><code>\</code> - Character literal</h2>
+<h2 id="__code_code_character_literal"><a class="anchor" href="#__code_code_character_literal"></a><code>\</code> - Character literal</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>\</code> indicates a literal character as in:</p>
@@ -851,7 +851,7 @@ for simple names.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_inner_class_reference"><code>$</code> - Inner class reference</h2>
+<h2 id="__code_code_inner_class_reference"><a class="anchor" href="#__code_code_inner_class_reference"></a><code>$</code> - Inner class reference</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Used to reference inner classes and interfaces in Java. Separates the
@@ -884,7 +884,7 @@ imported Java class</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_code_code_code_some_code_code_cond_code_code_as_code_etc_threading_macros"><code>-></code>, <code>->></code>, <code>some-></code>, <code>cond-></code>, <code>as-></code> etc. - Threading macros</h2>
+<h2 id="__code_code_code_code_code_some_code_code_cond_code_code_as_code_etc_threading_macros"><a class="anchor" href="#__code_code_code_code_code_some_code_code_cond_code_code_as_code_etc_threading_macros"></a><code>-></code>, <code>->></code>, <code>some-></code>, <code>cond-></code>, <code>as-></code> etc. - Threading macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>These are threading macros. Please refer to <a href="xref/../threading_macros">Official Clojure Documentation</a></p>
@@ -899,7 +899,7 @@ imported Java class</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="syntax_quote"><code>`</code> - Syntax quote</h2>
+<h2 id="syntax_quote"><a class="anchor" href="#syntax_quote"></a><code>`</code> - Syntax quote</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>`</code> is the syntax quote. Syntax quote is similar to quoting (to delay
@@ -969,7 +969,7 @@ quote creates a list, but does not evaluate it. That list is actually code.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="unqote"><code>~</code> - Unquote</h2>
+<h2 id="unqote"><a class="anchor" href="#unqote"></a><code>~</code> - Unquote</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#syntax_quote"><code>`</code></a> for additional information.</p>
@@ -1009,7 +1009,7 @@ user=&gt; `~five ; within a syntax quoted block, ~ will turn evaluation back on 
 </div>
 </div>
 <div class="sect1">
-<h2 id="unquote_splicing"><code>~@</code> - Unquote splicing</h2>
+<h2 id="unquote_splicing"><a class="anchor" href="#unquote_splicing"></a><code>~@</code> - Unquote splicing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="xref/../weird_characters#syntax_quote"><code>`</code></a> and <a href="xref/../weird_characters#unquote"><code>~</code></a> for additional information.</p>
@@ -1049,7 +1049,7 @@ user=&gt; `(1 ~@three-and-four) ;  evaluates `three-and-four` and places its con
 </div>
 </div>
 <div class="sect1">
-<h2 id="gensym"><code>&lt;symbol&gt;#</code> - Gensym</h2>
+<h2 id="gensym"><a class="anchor" href="#gensym"></a><code>&lt;symbol&gt;#</code> - Gensym</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>#</code> <em>at the end</em> of a symbol is used to automatically generate a new symbol.
@@ -1103,7 +1103,7 @@ user=&gt;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_reader_conditional"><code>#?</code> - Reader conditional</h2>
+<h2 id="__code_code_reader_conditional"><a class="anchor" href="#__code_code_reader_conditional"></a><code>#?</code> - Reader conditional</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Reader conditionals are designed to allow different dialects of Clojure
@@ -1128,7 +1128,7 @@ to share common code. The reader conditional behaves similarly to a traditional
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_splicing_reader_conditional"><code>#?@</code> - Splicing Reader conditional</h2>
+<h2 id="__code_code_splicing_reader_conditional"><a class="anchor" href="#__code_code_splicing_reader_conditional"></a><code>#?@</code> - Splicing Reader conditional</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The syntax for a splicing reader conditional is <code>#?@</code>. It is used to splice
@@ -1160,7 +1160,7 @@ lists into the containing form. So the Clojure reader would read this:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_var_name_code_earmuffs"><code>*var-name*</code> - "Earmuffs"</h2>
+<h2 id="__code_var_name_code_earmuffs"><a class="anchor" href="#__code_var_name_code_earmuffs"></a><code>*var-name*</code> - "Earmuffs"</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Earmuffs (a pair of asterisk bookending var names) is a naming convention in
@@ -1187,7 +1187,7 @@ and out streams for Clojure.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_code_code_code_code_and_code_code_core_async_channel_macros"><code>&gt;!!</code>, <code>&lt;!!</code>, <code>&gt;!</code>, and <code>&lt;!</code> - core.async channel macros</h2>
+<h2 id="__code_code_code_code_code_code_and_code_code_core_async_channel_macros"><a class="anchor" href="#__code_code_code_code_code_code_and_code_code_core_async_channel_macros"></a><code>&gt;!!</code>, <code>&lt;!!</code>, <code>&gt;!</code>, and <code>&lt;!</code> - core.async channel macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>These symbols are channel operations in <a href="https://github.com/clojure/core.async"><code>core.async</code></a>
@@ -1257,7 +1257,7 @@ asynchronous code from the code base.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_symbol_code_predicate_suffix"><code>&lt;symbol&gt;?</code> - Predicate Suffix</h2>
+<h2 id="__code_symbol_code_predicate_suffix"><a class="anchor" href="#__code_symbol_code_predicate_suffix"></a><code>&lt;symbol&gt;?</code> - Predicate Suffix</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Putting <code>?</code> at the end of a symbol is a naming convention common across
@@ -1308,7 +1308,7 @@ false</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_symbol_code_unsafe_operations"><code>&lt;symbol&gt;!</code> - Unsafe Operations</h2>
+<h2 id="__code_symbol_code_unsafe_operations"><a class="anchor" href="#__code_symbol_code_unsafe_operations"></a><code>&lt;symbol&gt;!</code> - Unsafe Operations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/bbatsov/clojure-style-guide#changing-state-fns-with-exclamation-mark">The Clojure style guide has this to say</a>:</p>
@@ -1352,7 +1352,7 @@ user=&gt; @my-stateful-thing
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_unused_argument"><code>_</code> - Unused argument</h2>
+<h2 id="__code_code_unused_argument"><a class="anchor" href="#__code_code_unused_argument"></a><code>_</code> - Unused argument</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you see the underscore character used as function arguments or in a <code>let</code> binding,
@@ -1383,7 +1383,7 @@ last argument - the new value of the atom so we use <code>_</code> for the other
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_whitespace_character"><code>,</code> - Whitespace character</h2>
+<h2 id="__code_code_whitespace_character"><a class="anchor" href="#__code_code_whitespace_character"></a><code>,</code> - Whitespace character</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In Clojure, <code>,</code> is treated as whitespace, exactly the same as spaces, tabs, or newlines.
@@ -1399,7 +1399,7 @@ readability:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_code_reader_eval"><code>#=</code> Reader eval</h2>
+<h2 id="__code_code_reader_eval"><a class="anchor" href="#__code_code_reader_eval"></a><code>#=</code> Reader eval</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>#=</code> allows the reader to evaluate an arbitrary form during read time:</p>

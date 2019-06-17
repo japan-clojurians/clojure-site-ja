@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Introduction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Introduction</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_a_repl">What is a REPL?</a></li>
+<li><a href="#_why_use_a_repl">Why use a REPL?</a></li>
+<li><a href="#_what_this_guide_will_cover">What this guide will cover</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This guide is for developers who have at least a <a href="xref/../../learn/syntax">basic understanding</a> of Clojure,
+ and want to become more proficient at using the Clojure REPL.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_a_repl"><a class="anchor" href="#_what_is_a_repl"></a>What is a REPL?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Clojure <em>REPL</em> (standing for <em>Read-Eval-Print Loop</em>) is a programming environment which
+enables the programmer to interact with a running Clojure program and modify it, by evaluating
+one code expression at a time.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/guides/repl/show-terminal-repl.gif" alt="A Clojure REPL in a terminal">
+</div>
+<div class="title">Figure 1. A Clojure REPL in a terminal window</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/guides/repl/show-editor-repl.gif" alt="An editor-integrated Clojure REPL">
+</div>
+<div class="title">Figure 2. An editor-integrated Clojure REPL</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_use_a_repl"><a class="anchor" href="#_why_use_a_repl"></a>Why use a REPL?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Clojure REPL gives the programmer an interactive development experience.
+When developing new functionality, it enables her to build programs first by performing small tasks manually,
+as if she <em>were</em> the computer, then gradually make them more and more automated, until the desired
+functionality is fully programmed. When debugging, the REPL makes the execution of her programs feel <em>tangible:</em>
+it enables the programmer to rapidly reproduce the problem, observe its symptoms closely,
+then improvise experiments to rapidly narrow down the cause of the bug and iterate towards a fix.</p>
+</div>
+<div class="paragraph">
+<p>Many Clojure programmers consider the REPL, and the tight feedback loop it provides, to be the most compelling
+reason to use Clojure. This does not mean that the language features of Clojure, such as immutable data structures, are not valuable: the Clojure REPL
+gets most of its leverage <em>because</em> of these features, in particular because Clojure was designed with interactive development
+in mind.</p>
+</div>
+<div class="paragraph">
+<p>In Clojure, a programmer will typically use the REPL for a wide spectrum of programming tasks, when in another
+language she would turn to other sorts of tools. Such tasks include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>launching local development environments,</p>
+</li>
+<li>
+<p>running automated test suites,</p>
+</li>
+<li>
+<p>one-off database queries and interventions,</p>
+</li>
+<li>
+<p>debugging,</p>
+</li>
+<li>
+<p>orchestrating remote machines,</p>
+</li>
+<li>
+<p>getting familiar with libraries and APIs,</p>
+</li>
+<li>
+<p>&#8230;&#8203;and many forms of exploration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Fundamentally, the reason programmers use the REPL for all these tasks is always the same:
+because they want a mix of automation and improvisation that can be provided neither by fully manual tools (such as dashboard, consoles, etc.)
+nor by fully automated ones (such as scripts), while keeping their workflow focused in one full-featured programming environment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_this_guide_will_cover"><a class="anchor" href="#_what_this_guide_will_cover"></a>What this guide will cover</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide will start by getting you started with a Clojure REPL,
+then gradually move to more and more advanced ways of using Clojure REPLs.</p>
+</div>
+<div class="paragraph">
+<p>Depending on your needs, you may not need to read the entirety of this guide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you are <strong><em>just starting to learn Clojure</em></strong>, the first 2 chapters
+<a href="launching_a_basic_repl">Launching a basic Clojure REPL</a> and <a href="basic_usage">Basic Usage</a>
+are enough to get you started with a productive learning environment.</p>
+</li>
+<li>
+<p>As soon as you start <strong><em>developing non-trivial programs</em></strong> (such as a hobby web app),
+you will need the ideas presented in at least the next 2 chapters: <a href="data_visualization_at_the_repl">Data visualization at the REPL</a>
+and <a href="navigating_namespaces">Navigating namespaces</a>.</p>
+</li>
+<li>
+<p>For <strong><em>working on Clojure projects at a professional level</em></strong>,
+<a href="enhancing_your_repl_workflow">Enhancing your REPL workflow</a> is a must.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First, we&#8217;ll learn how to <a href="launching_a_basic_repl">launch a basic Clojure REPL</a>.</p>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  
+  <a href="launching_a_basic_repl" class="clja-next-link">Launching a Basic REPL&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

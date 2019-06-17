@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -109,7 +109,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rationale">Rationale</h2>
+<h2 id="_rationale"><a class="anchor" href="#_rationale"></a>Rationale</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure "endeavors to be a general-purpose language suitable in those areas where Java is suitable" (from <a href="xref/../../about/rationale">Rationale</a>). To effectively target the JVM platform, Clojure needs to provide ready access to Java libraries, ideally in a way suited for dynamic development. In practice, this means meeting the JVM platform in two places:</p>
@@ -146,7 +146,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_building_classpaths_with_tools_deps_alpha">Building classpaths with tools.deps.alpha</h2>
+<h2 id="_building_classpaths_with_tools_deps_alpha"><a class="anchor" href="#_building_classpaths_with_tools_deps_alpha"></a>Building classpaths with tools.deps.alpha</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The JVM classpath consists of a series of roots, either directory paths or the path to a jar file. Classes (and Clojure files) map via package or namespace to a path relative to a classpath root. For example, the <code>java.lang.String</code> class can be found at path <code>java/lang/String.class</code> and the <code>clojure.set</code> Clojure namespace may be found at paths <code>clojure/set.class</code> (for AOT), <code>clojure/set.clj</code>, or <code>clojure/set.cljc</code>. When the JVM needs to load one of these files it searches each root for the relative path and loads it when found.</p>
@@ -160,7 +160,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_resolve_deps">resolve-deps</h3>
+<h3 id="_resolve_deps"><a class="anchor" href="#_resolve_deps"></a>resolve-deps</h3>
 <div class="paragraph">
 <p><strong><code>(resolve-deps deps args-map)</code></strong></p>
 </div>
@@ -232,7 +232,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_make_classpath">make-classpath</h3>
+<h3 id="_make_classpath"><a class="anchor" href="#_make_classpath"></a>make-classpath</h3>
 <div class="paragraph">
 <p><strong><code>(make-classpath lib-map paths args-map)</code></strong></p>
 </div>
@@ -269,10 +269,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_command_line_tools">Command line tools</h2>
+<h2 id="_command_line_tools"><a class="anchor" href="#_command_line_tools"></a>Command line tools</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_directories">Directories</h3>
+<h3 id="_directories"><a class="anchor" href="#_directories"></a>Directories</h3>
 <div class="paragraph">
 <p>The tools rely on several directories and optionally on several environment variables.</p>
 </div>
@@ -396,7 +396,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deps_edn">deps.edn</h3>
+<h3 id="_deps_edn"><a class="anchor" href="#_deps_edn"></a>deps.edn</h3>
 <div class="paragraph">
 <p>The configuration file format (in "deps.edn" files) is an edn map with top-level keys for <code>:deps</code>, <code>:paths</code>, and <code>:aliases</code>, plus provider-specific keys for configuring dependency sources.</p>
 </div>
@@ -424,7 +424,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dependencies">Dependencies</h3>
+<h3 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h3>
 <div class="paragraph">
 <p>Dependencies are declared in deps.edn with a top level key <code>:deps</code> - a map from library to coordinate. Libraries are symbols of the form &lt;groupID&gt;/&lt;artifactId&gt; or simply &lt;id&gt; if the group and artifact ID are the same.</p>
 </div>
@@ -508,7 +508,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_paths">Paths</h3>
+<h3 id="_paths"><a class="anchor" href="#_paths"></a>Paths</h3>
 <div class="paragraph">
 <p>Paths are declared in a top level key <code>:paths</code> and is a vector of string paths (typically relative to the project root). These source paths will be included on the classpath.</p>
 </div>
@@ -522,7 +522,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_aliases">Aliases</h3>
+<h3 id="_aliases"><a class="anchor" href="#_aliases"></a>Aliases</h3>
 <div class="paragraph">
 <p>Aliases are defined in the <code>:aliases</code> section of the config file. The Clojure tool supports several kinds of aliases:</p>
 </div>
@@ -666,7 +666,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_procurers">Procurers</h3>
+<h3 id="_procurers"><a class="anchor" href="#_procurers"></a>Procurers</h3>
 <div class="paragraph">
 <p>Coordinates are interpreted by procurers, which know how to determine dependencies for a library and download artifacts. tools.deps.alpha is designed to support an extensible set of procurers that can expand over time. Currently the available procurers are: <code>mvn</code>,  <code>local</code>, and <code>git</code>.</p>
 </div>
@@ -684,7 +684,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_maven_private_s3_repos">Maven private S3 repos</h4>
+<h4 id="_maven_private_s3_repos"><a class="anchor" href="#_maven_private_s3_repos"></a>Maven private S3 repos</h4>
 <div class="paragraph">
 <p>The tools also provide support for connecting to private S3 Maven repositories (thanks to the <a href="https://github.com/s3-wagon-private/s3-wagon-private">s3-wagon-private</a> and <a href="https://github.com/spring-projects/aws-maven">aws-maven</a> projects).</p>
 </div>
@@ -723,7 +723,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_git_configuration">Git configuration</h4>
+<h4 id="_git_configuration"><a class="anchor" href="#_git_configuration"></a>Git configuration</h4>
 <div class="paragraph">
 <p>The supported git url protocols are https and ssh. https repos will be accessed anonymously and require no additional authentication information. This approach is recommended for public repos.</p>
 </div>
@@ -760,7 +760,7 @@ To check whether you have registered identities, use:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_usage">Usage</h3>
+<h3 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h3>
 <div class="paragraph">
 <p>Usage:</p>
 </div>
@@ -826,7 +826,7 @@ path                Run a script from a file or resource
 </div>
 </div>
 <div class="sect2">
-<h3 id="_classpath_construction">Classpath construction</h3>
+<h3 id="_classpath_construction"><a class="anchor" href="#_classpath_construction"></a>Classpath construction</h3>
 <div class="paragraph">
 <p>The following process is used to construct the classpath for invoking clojure.main:</p>
 </div>
@@ -897,7 +897,7 @@ path                Run a script from a file or resource
 </div>
 </div>
 <div class="sect2">
-<h3 id="_classpath_caching">Classpath caching</h3>
+<h3 id="_classpath_caching"><a class="anchor" href="#_classpath_caching"></a>Classpath caching</h3>
 <div class="paragraph">
 <p>Classpath files are cached in the current directory under <code>.cpcache/</code>. File are of two forms:</p>
 </div>
@@ -931,7 +931,7 @@ path                Run a script from a file or resource
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installers">Installers</h2>
+<h2 id="_installers"><a class="anchor" href="#_installers"></a>Installers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For tools installation, see the instructions in the <a href="xref/../../guides/getting_started">Getting Started</a> guide.</p>
@@ -939,7 +939,7 @@ path                Run a script from a file or resource
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossary">Glossary</h2>
+<h2 id="_glossary"><a class="anchor" href="#_glossary"></a>Glossary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Library</strong></p>
@@ -1050,6 +1050,11 @@ path                Run a script from a file or resource
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="lisps" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Differences with Lisps</a>
+  
+</div>
 
 <hr />
 

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojureを学ぼう - フロー制御</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Clojureを学ぼう - フロー制御</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_文_vs_式">文 vs. 式</a></li>
+<li><a href="#_フロー制御式">フロー制御式</a>
+<ul class="sectlevel2">
+<li><a href="#__code_if_code"><code>if</code></a></li>
+<li><a href="#_真">真</a></li>
+<li><a href="#__code_if_code_と_code_do_code"><code>if</code> と <code>do</code></a></li>
+<li><a href="#__code_when_code"><code>when</code></a></li>
+<li><a href="#__code_cond_code"><code>cond</code></a></li>
+<li><a href="#__code_cond_code_と_code_else_code"><code>cond</code> と <code>else</code></a></li>
+<li><a href="#__code_case_code"><code>case</code></a></li>
+<li><a href="#__code_else_code_式付きの_code_case_code"><code>else</code> 式付きの <code>case</code></a></li>
+</ul>
+</li>
+<li><a href="#_副作用のための繰り返し">副作用のための繰り返し</a>
+<ul class="sectlevel2">
+<li><a href="#__code_dotimes_code"><code>dotimes</code></a></li>
+<li><a href="#__code_doseq_code"><code>doseq</code></a></li>
+<li><a href="#_複数の束縛を持った_code_doseq_code">複数の束縛を持った <code>doseq</code></a></li>
+</ul>
+</li>
+<li><a href="#_clojureの_code_for_code">Clojureの <code>for</code></a></li>
+<li><a href="#_再帰">再帰</a>
+<ul class="sectlevel2">
+<li><a href="#_再帰と繰り返し">再帰と繰り返し</a></li>
+<li><a href="#__code_loop_code_と_code_recur_code"><code>loop</code> と <code>recur</code></a></li>
+<li><a href="#__code_defn_code_と_code_recur_code"><code>defn</code> と <code>recur</code></a></li>
+<li><a href="#_再帰のための_code_recur_code">再帰のための <code>recur</code></a></li>
+</ul>
+</li>
+<li><a href="#_例外">例外</a>
+<ul class="sectlevel2">
+<li><a href="#_例外処理">例外処理</a></li>
+<li><a href="#_例外をスローする">例外をスローする</a></li>
+<li><a href="#_clojureのデータを持った例外">Clojureのデータを持った例外</a></li>
+<li><a href="#__code_with_open_code"><code>with-open</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_文_vs_式"><a class="anchor" href="#_文_vs_式"></a>文 vs. 式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Javaでは、式は値を返すが、文は値を返さない。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// "if"は値を返さないので文だ:
+String s;
+if (x &gt; 10) {
+    s = "greater";
+} else {
+    s = "greater or equal";
+}
+obj.someMethod(s);
+
+// 三項演算子は式だ。なぜなら値を返すからだ。:
+obj.someMethod(x &gt; 10 ? "greater" : "greater or equal");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>しかしClojureでは、あらゆるものが式なのだ! <em>あらゆるもの</em> が値を返し、複数の式のブロックは最後の値を返す。副作用のみを実行する式は
+<code>nil</code> を返す。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_フロー制御式"><a class="anchor" href="#_フロー制御式"></a>フロー制御式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>したがって、フロー制御のオペレータもまた式なのだ!</p>
+</div>
+<div class="paragraph">
+<p>フロー制御のオペレータは組み合わせ可能なので、どこでも使うことができる。これにより、重複コードが減り、中間変数が少なくなる。</p>
+</div>
+<div class="paragraph">
+<p>フロー制御のオペレータはマクロによって拡張することもできる。マクロはユーザのコードによってコンパイラを拡張することを可能にする。今日はマクロについて議論しないが、詳しくは
+<a href="xref/../../../reference/macros">マクロ</a> 、
+<a href="https://aphyr.com/posts/305-clojure-from-the-ground-up-macros">Clojure from
+the Ground Up</a> 、 <a href="http://www.braveclojure.com/writing-macros/">Clojure for the
+Brave and True</a> ほか多くの場所で読むことができる。</p>
+</div>
+<div class="sect2">
+<h3 id="__code_if_code"><a class="anchor" href="#__code_if_code"></a><code>if</code></h3>
+<div class="paragraph">
+<p><code>if</code> は最も重要な制御式であり、条件と"then"と"else"で構成されている。 <code>if</code> は条件によって選ばれた分岐だけを評価する。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (str "2 is " (if (even? 2) "even" "odd"))
+2 is even
+
+user=&gt; (if (true? false) "impossible!") ;; elseは省くこともできる
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_真"><a class="anchor" href="#_真"></a>真</h3>
+<div class="paragraph">
+<p>Clojureでは、すべての値は論理的に真または偽のどちらかだ。 <code>false</code> と <code>nil</code>
+の値だけが「偽」であり、その他のすべての値は論理的に真だ。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (if true :truthy :falsey)
+:truthy
+user=&gt; (if (Object.) :truthy :falsey) ; オブジェクトは真
+:truthy
+user=&gt; (if [] :truthy :falsey) ; 空のコレクションは真
+:truthy
+user=&gt; (if 0 :truthy :falsey) ; 0は真
+:truthy
+(if false :truthy :falsey)
+:falsey
+(if nil :truthy :falsey)
+:falsey</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_if_code_と_code_do_code"><a class="anchor" href="#__code_if_code_と_code_do_code"></a><code>if</code> と <code>do</code></h3>
+<div class="paragraph">
+<p><code>if</code> は"then"と"else"に単一の式しかとらない。単一の式よりも大きなブロックを作るには <code>do</code> を使おう。</p>
+</div>
+<div class="paragraph">
+<p>このようにする唯一の理由は本体部が副作用を持つからであることに注意しよう! (なぜか分かるだろうか?)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(if (even? 5)
+  (do (println "even")
+      true)
+  (do (println "odd")
+      false))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_when_code"><a class="anchor" href="#__code_when_code"></a><code>when</code></h3>
+<div class="paragraph">
+<p><code>when</code> は <code>then</code> の分岐だけを持つ <code>if</code> だ。条件をチェックし、本体部として任意個の文を評価する(なので <code>do</code> は必要ない)。
+最後の式の値が返る。条件が偽の場合、 nilが返る。</p>
+</div>
+<div class="paragraph">
+<p><code>when</code> は読み手に"else"の分岐がないことを伝える。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(when (neg? x)
+  (throw (RuntimeException. (str "x must be positive: " x))))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_cond_code"><a class="anchor" href="#__code_cond_code"></a><code>cond</code></h3>
+<div class="paragraph">
+<p><code>cond</code> はテストと式が並んだものだ。個々のテストは順に評価され、最初に真になるテストに対応する式が評価されて返る。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [x 5]
+  (cond
+    (&lt; x 2) "x is less than 2"
+    (&lt; x 10) "x is less than 10"))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_cond_code_と_code_else_code"><a class="anchor" href="#__code_cond_code_と_code_else_code"></a><code>cond</code> と <code>else</code></h3>
+<div class="paragraph">
+<p>いずれのテストも満たさない場合、nilが返る。最後のテストに <code>:else</code> を使うのが一般的なイディオムだ。 <code>:else</code>
+のようなキーワードは常に真と評価されるため、これが常にデフォルトとして選ばれる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [x 11]
+  (cond
+    (&lt; x 2)  "x is less than 2"
+    (&lt; x 10) "x is less than 10"
+    :else  "x is greater than or equal to 10"))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_case_code"><a class="anchor" href="#__code_case_code"></a><code>case</code></h3>
+<div class="paragraph">
+<p><code>case</code> は引数を一連の値と比較し一致するものを探す。これは(線形ではなく)定数時間で終わる!
+しかし、個々の値はコンパイル時リテラル(数値、文字列、キーワードなど)でなければならない。</p>
+</div>
+<div class="paragraph">
+<p><code>cond</code>, <code>case</code> と違い、いずれの値にも一致しないと例外をスローする。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (defn foo [x]
+         (case x
+           5 "x is 5"
+           10 "x is 10"))
+#'user/foo
+
+user=&gt; (foo 10)
+x is 10
+
+user=&gt; (foo 11)
+IllegalArgumentException No matching clause: 11</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_else_code_式付きの_code_case_code"><a class="anchor" href="#__code_else_code_式付きの_code_case_code"></a><code>else</code> 式付きの <code>case</code></h3>
+<div class="paragraph">
+<p><code>case</code> は最後にひとつの式を持つことができ、いずれのテストも満たさない場合に評価される。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (defn foo [x]
+         (case x
+           5 "x is 5"
+           10 "x is 10"
+           "x isn't 5 or 10"))
+#'user/foo
+
+user=&gt; (foo 11)
+x isn't 5 or 10</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_副作用のための繰り返し"><a class="anchor" href="#_副作用のための繰り返し"></a>副作用のための繰り返し</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__code_dotimes_code"><a class="anchor" href="#__code_dotimes_code"></a><code>dotimes</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>式を <em>n</em> 回評価する</p>
+</li>
+<li>
+<p><code>nil</code> を返す</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (dotimes [i 3]
+         (println i))
+0
+1
+2
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_doseq_code"><a class="anchor" href="#__code_doseq_code"></a><code>doseq</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>シーケンスに対して繰り返す</p>
+</li>
+<li>
+<p>遅延シーケンスの場合、評価を強制する</p>
+</li>
+<li>
+<p><code>nil</code> を返す</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (doseq [n (range 3)]
+         (println n))
+0
+1
+2
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_複数の束縛を持った_code_doseq_code"><a class="anchor" href="#_複数の束縛を持った_code_doseq_code"></a>複数の束縛を持った <code>doseq</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ネストした <code>foreach</code> のループに似ている</p>
+</li>
+<li>
+<p>シーケンスの中身のすべての順列を処理する</p>
+</li>
+<li>
+<p><code>nil</code> を返す</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (doseq [letter [:a :b]
+               number (range 3)] ; 0, 1, 2の要素を持つリスト
+         (prn [letter number]))
+[:a 0]
+[:a 1]
+[:a 2]
+[:b 0]
+[:b 1]
+[:b 2]
+nil</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojureの_code_for_code"><a class="anchor" href="#_clojureの_code_for_code"></a>Clojureの <code>for</code></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>forループ <strong>ではなく</strong> リスト内包表記</p>
+</li>
+<li>
+<p>シーケンスを順に取り出すためのジェネレータ関数</p>
+</li>
+<li>
+<p>束縛は <code>doseq</code> と同じように振る舞う</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (for [letter [:a :b]
+             number (range 3)] ; 0, 1, 2の要素を持つリスト
+         [letter number])
+([:a 0] [:a 1] [:a 2] [:b 0] [:b 1] [:b 2])</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_再帰"><a class="anchor" href="#_再帰"></a>再帰</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_再帰と繰り返し"><a class="anchor" href="#_再帰と繰り返し"></a>再帰と繰り返し</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojureはrecurとシーケンス抽象を提供している</p>
+</li>
+<li>
+<p><code>recur</code> is "classic" recursion ** Consumers don&#8217;t control it, considered a
+lower-level facility</p>
+</li>
+<li>
+<p>Sequences represent iteration as values ** Consumers can partially iterate</p>
+</li>
+<li>
+<p>Reducers represent iteration as function composition ** Added in Clojure
+1.5, not covered here</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_loop_code_と_code_recur_code"><a class="anchor" href="#__code_loop_code_と_code_recur_code"></a><code>loop</code> と <code>recur</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Functional looping construct <strong> <code>loop</code> defines bindings </strong> <code>recur</code>
+re-executes <code>loop</code> with new bindings</p>
+</li>
+<li>
+<p>むしろライブラリの高階関数を使うようにしよう</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(loop [i 0]
+  (if (&lt; i 10)
+    (recur (inc i))
+    i))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_defn_code_と_code_recur_code"><a class="anchor" href="#__code_defn_code_と_code_recur_code"></a><code>defn</code> と <code>recur</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>関数の引数は暗黙的な <code>loop</code> の束縛だ</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn increase [i]
+  (if (&lt; i 10)
+    (recur (inc i))
+    i))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_再帰のための_code_recur_code"><a class="anchor" href="#_再帰のための_code_recur_code"></a>再帰のための <code>recur</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>recur</code> must be in "tail position" ** The last expression in a branch</p>
+</li>
+<li>
+<p><code>recur</code> must provide values for all bound symbols by position <strong> Loop
+bindings </strong> defn/fn arguments</p>
+</li>
+<li>
+<p><code>recur</code> による再帰はスタックを消費しない</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_例外"><a class="anchor" href="#_例外"></a>例外</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_例外処理"><a class="anchor" href="#_例外処理"></a>例外処理</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Java と同じような <code>try</code>/<code>catch</code>/<code>finally</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(try
+  (/ 2 1)
+  (catch ArithmeticException e
+    "divide by zero")
+  (finally
+    (println "cleanup")))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_例外をスローする"><a class="anchor" href="#_例外をスローする"></a>例外をスローする</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(try
+  (throw (Exception. "something went wrong"))
+  (catch Exception e (.getMessage e)))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clojureのデータを持った例外"><a class="anchor" href="#_clojureのデータを持った例外"></a>Clojureのデータを持った例外</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ex-info</code> はメッセージとマップをとる</p>
+</li>
+<li>
+<p><code>ex-data</code> gets the map back out ** Or <code>nil</code> if not created with <code>ex-info</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(try
+  (throw (ex-info "There was a problem" {:detail 42}))
+  (catch Exception e
+    (prn (:detail (ex-data e)))))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_with_open_code"><a class="anchor" href="#__code_with_open_code"></a><code>with-open</code></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [f (clojure.java.io/writer "/tmp/new")]
+  (try
+    (.write f "some text")
+    (finally
+      (.close f))))
+
+;; このように書ける:
+(with-open [f (clojure.java.io/writer "/tmp/new")]
+  (.write f "some text"))</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="hashed_colls" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Hashed Collections</a>
+  
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

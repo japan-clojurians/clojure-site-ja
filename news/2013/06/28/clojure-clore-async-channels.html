@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../../../../about/rationale.html">概要</a></li>
+            <li><a href="../../../../about/rationale">概要</a></li>
             <li><a href="../../../../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../../../../api/api.html">API</a></li>
-              <li><a href="../../../../community/downloads.html">リリース</a></li> -->
-              <li><a href="../../../../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../../../../community/resources.html">コミュニティ</a></li>
-              <li><a href="../../../../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -85,7 +85,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rationale">Rationale</h2>
+<h2 id="_rationale"><a class="anchor" href="#_rationale"></a>Rationale</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There comes a time in all good programs when components or subsystems must stop communicating directly with one another. This is often achieved via the introduction of queues between the producers of data and the consumers/processors of that data. This architectural indirection ensures that important decisions can be made with some degree of independence, and leads to systems that are easier to understand, manage, monitor and change, and make better use of computational resources, etc.</p>
@@ -121,7 +121,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_history">History</h2>
+<h2 id="_history"><a class="anchor" href="#_history"></a>History</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The roots of this style go back at least as far as <a href="http://en.wikipedia.org/wiki/Communicating_sequential_processes">Hoare&#8217;s Communicating Sequential Processes (CSP)</a>, followed by realizations and extensions in e.g. <a href="http://en.wikipedia.org/wiki/Occam_programming_language">occam</a>, <a href="http://www.cs.kent.ac.uk/projects/ofa/jcsp/">Java CSP</a> and the <a href="http://golang.org/">Go programming language</a>.</p>
@@ -135,16 +135,16 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_details">Details</h2>
+<h2 id="_details"><a class="anchor" href="#_details"></a>Details</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_just_a_library">Just a library</h3>
+<h3 id="_just_a_library"><a class="anchor" href="#_just_a_library"></a>Just a library</h3>
 <div class="paragraph">
 <p><strong>core.async</strong> is a library. It doesn&#8217;t modify Clojure. It is designed to support Clojure 1.5+.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_creating_channels">Creating channels</h3>
+<h3 id="_creating_channels"><a class="anchor" href="#_creating_channels"></a>Creating channels</h3>
 <div class="paragraph">
 <p>You can create a channel with the <a href="http://clojure.github.io/core.async/#clojure.core.async/chan">chan</a> function. This will return a channel that supports multiple writers and readers. By default, the channel is unbuffered, but you can supply a number to indicate a buffer size, or supply a buffer object created via <a href="http://clojure.github.io/core.async/#clojure.core.async/buffer">buffer</a>, <a href="http://clojure.github.io/core.async/#clojure.core.async/dropping-buffer">dropping-buffer</a> or <a href="http://clojure.github.io/core.async/#clojure.core.async/sliding-buffer">sliding-buffer</a>.</p>
 </div>
@@ -153,7 +153,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_go_blocks_and_ioc_threads">go blocks and IOC 'threads'</h3>
+<h3 id="_go_blocks_and_ioc_threads"><a class="anchor" href="#_go_blocks_and_ioc_threads"></a>go blocks and IOC 'threads'</h3>
 <div class="paragraph">
 <p><code>go</code> is a macro that takes its body and examines it for any channel operations. It will turn the body into a state machine. Upon reaching any blocking operation, the state machine will be 'parked' and the actual thread of control will be released. This approach is similar to that used in <a href="http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx">C# async</a>. When the blocking operation completes, the code will be resumed (on a thread-pool thread, or the sole thread in a JS VM). In this way the inversion of control that normally leaks into the program itself with event/callback systems is encapsulated by the mechanism, and you are left with straightforward sequential code. It will also provide the illusion of threads, and more important, separable sequential subsystems, to ClojureScript.</p>
 </div>
@@ -162,37 +162,37 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_channel_on_ordinary_threads">Channel on ordinary threads</h3>
+<h3 id="_channel_on_ordinary_threads"><a class="anchor" href="#_channel_on_ordinary_threads"></a>Channel on ordinary threads</h3>
 <div class="paragraph">
 <p>There are analogous operations for use on ordinary threads - <a href="http://clojure.github.io/core.async/#clojure.core.async/%3E!!">&gt;!!</a> (<em>put blocking</em>) and <a href="http://clojure.github.io/core.async/#clojure.core.async/&lt;!!">&lt;!!</a> (<em>take blocking</em>), which will block the thread on which they are called, until complete. While you can use these operations on threads created with e.g. future, there is also a macro, <a href="http://clojure.github.io/core.async/#clojure.core.async/thread">thread</a>, analogous to <code>go</code>, that will launch a first-class thread and similarly return a channel, and should be preferred over <code>future</code> for channel work.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mixing_modes">Mixing modes</h3>
+<h3 id="_mixing_modes"><a class="anchor" href="#_mixing_modes"></a>Mixing modes</h3>
 <div class="paragraph">
 <p>You can put on a channel from either flavor of <code>&gt;!</code>/<code>&gt;!!</code> and similarly take with either of <code>&lt;!</code>/<code>&lt;&lt;!</code> in any combination, i.e. the channel is oblivious to the nature of the threads which use it.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_alt">alt</h3>
+<h3 id="_alt"><a class="anchor" href="#_alt"></a>alt</h3>
 <div class="paragraph">
 <p>It is often desirable to be able to wait for any one (and only one) of a set of channel operations to complete. This powerful facility is made available through the <a href="http://clojure.github.io/core.async/#clojure.core.async/alts!">alts!</a> function (for use in <code>go</code> blocks), and the analogous <a href="http://clojure.github.io/core.async/#clojure.core.async/alts!!">alts!!</a> (<em>alts blocking</em>). If more than one operation is available to complete, one can be chosen at random or by priority (i.e. in the order they are supplied). There are corresponding <a href="http://clojure.github.io/core.async/#clojure.core.async/alt!">alt!</a> and <a href="http://clojure.github.io/core.async/#clojure.core.async/alt!!">alt!!</a> macros that combine the choice with conditional evaluation of expressions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_timeouts">Timeouts</h3>
+<h3 id="_timeouts"><a class="anchor" href="#_timeouts"></a>Timeouts</h3>
 <div class="paragraph">
 <p>Timeouts are just channels that automatically close after a period of time. You can create one with the <a href="http://clojure.github.io/core.async/#clojure.core.async/timeout">timeout</a> function, then just include the timeout in an <code>alt</code> variant. A nice aspect of this is that timeouts can be shared between threads of control, e.g. in order to have a set of activities share a bound.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_value_of_values">The value of values</h3>
+<h3 id="_the_value_of_values"><a class="anchor" href="#_the_value_of_values"></a>The value of values</h3>
 <div class="paragraph">
 <p>As with STM, the pervasive use of persistent data structures offers particular benefits for CSP-style channels. In particular, it is always safe and efficient to put a Clojure data structure on a channel, without fear of its subsequent use by either the producer or consumer.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_contrasting_go_language_channels">Contrasting Go language channels</h3>
+<h3 id="_contrasting_go_language_channels"><a class="anchor" href="#_contrasting_go_language_channels"></a>Contrasting Go language channels</h3>
 <div class="paragraph">
 <p>core.async has obvious similarities to Go channels. Some differences with Go are:</p>
 </div>
@@ -217,13 +217,13 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_whither_actors">Whither actors?</h3>
+<h3 id="_whither_actors"><a class="anchor" href="#_whither_actors"></a>Whither actors?</h3>
 <div class="paragraph">
 <p>I remain unenthusiastic about actors. They still couple the producer with the consumer. Yes, one can emulate or implement certain kinds of queues with actors (and, notably, people often do), but since any actor mechanism already incorporates a queue, it seems evident that queues are more primitive. It should be noted that Clojure&#8217;s mechanisms for concurrent use of state remain viable, and channels are oriented towards the flow aspects of a system.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deadlocks">Deadlocks</h3>
+<h3 id="_deadlocks"><a class="anchor" href="#_deadlocks"></a>Deadlocks</h3>
 <div class="paragraph">
 <p>Note that, unlike other Clojure concurrency constructs, channels, like all communications, are subject to deadlocks, the simplest being waiting for a message that will never arrive, which must be dealt with manually via timeouts etc. CSP proper is amenable to certain kinds of automated correctness analysis. No work has been done on that front for core.async as yet.</p>
 </div>
@@ -234,13 +234,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_future_directions">Future directions</h2>
+<h2 id="_future_directions"><a class="anchor" href="#_future_directions"></a>Future directions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Networks channels and distribution are interesting areas for attention. We will also being doing performance tuning and refining the APIs.</p>
 </div>
 <div class="sect2">
-<h3 id="_team">Team</h3>
+<h3 id="_team"><a class="anchor" href="#_team"></a>Team</h3>
 <div class="paragraph">
 <p>I&#8217;d like to thank the team that helped bring core.async to life:</p>
 </div>
@@ -268,7 +268,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_status">Status</h3>
+<h3 id="_status"><a class="anchor" href="#_status"></a>Status</h3>
 <div class="paragraph">
 <p>While the library is still in an early state , we are ready for people to start trying it out and giving us feedback. The CLJS port is still work in progress. Please have a look at the <a href="https://github.com/clojure/core.async/tree/master/examples">examples</a>, which we will expand over time.</p>
 </div>

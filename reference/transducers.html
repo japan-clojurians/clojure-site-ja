@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -113,7 +113,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_用語">用語</h2>
+<h2 id="_用語"><a class="anchor" href="#_用語"></a>用語</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>reducing関数</em> とは <strong>reduce</strong> に渡すような関数 - 累積結果と新しい入力を受け取り、新しい累積結果を返す関数だ:</p>
@@ -136,7 +136,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_トランスデューサーで変換を定義する">トランスデューサーで変換を定義する</h2>
+<h2 id="_トランスデューサーで変換を定義する"><a class="anchor" href="#_トランスデューサーで変換を定義する"></a>トランスデューサーで変換を定義する</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojureに含まれるほとんどのシーケンス関数は、トランスデューサーを返すアリティを持つ。そのアリティは入力のコレクションを省いたものになっている;
@@ -206,13 +206,13 @@ whatever, input -&gt; whatever</code></pre>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample">random-sample</a></p>
 </div>
 <div class="sect2">
-<h3 id="_トランスデューサーを使用する">トランスデューサーを使用する</h3>
+<h3 id="_トランスデューサーを使用する"><a class="anchor" href="#_トランスデューサーを使用する"></a>トランスデューサーを使用する</h3>
 <div class="paragraph">
 <p>トランスデューサーは様々なコンテキストで使用することができる (新しいコンテキストの作り方は下記を参照)。.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_transduce">transduce</h3>
+<h3 id="_transduce"><a class="anchor" href="#_transduce"></a>transduce</h3>
 <div class="paragraph">
 <p>最も一般的なトランスデューサーの適用方法は
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/transduce">transduce</a>
@@ -246,7 +246,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_eduction">eduction</h3>
+<h3 id="_eduction"><a class="anchor" href="#_eduction"></a>eduction</h3>
 <div class="paragraph">
 <p>トランスデューサーをcollに適用する際の処理を捕捉するには
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction">eduction</a>
@@ -262,7 +262,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_into">into</h3>
+<h3 id="_into"><a class="anchor" href="#_into"></a>into</h3>
 <div class="paragraph">
 <p>トランスデューサーを入力コレクションに適用し、出力コレクションを新たに構築する場合は
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">into</a>
@@ -275,7 +275,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sequence">sequence</h3>
+<h3 id="_sequence"><a class="anchor" href="#_sequence"></a>sequence</h3>
 <div class="paragraph">
 <p>入力コレクションに対するトランスデューサーの適用からシーケンスを作成する場合には
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence">sequence</a>
@@ -293,7 +293,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_トランスデューサーの作成">トランスデューサーの作成</h2>
+<h2 id="_トランスデューサーの作成"><a class="anchor" href="#_トランスデューサーの作成"></a>トランスデューサーの作成</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>トランスデューサーを返すほとんどの関数は次のような形態をとる (custom code in "&#8230;&#8203;"):</p>
@@ -332,7 +332,7 @@ whatever, input -&gt; whatever</code></pre>
 関数を使用すると デフォルトのcompletionアリティを追加することによってreducing関数をトランスデューサー関数に変換することができる。</p>
 </div>
 <div class="sect2">
-<h3 id="_早期終了">早期終了</h3>
+<h3 id="_早期終了"><a class="anchor" href="#_早期終了"></a>早期終了</h3>
 <div class="paragraph">
 <p>Clojureにはreduceの早期終了を指定するメカニズムがある:</p>
 </div>
@@ -370,7 +370,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reduce処理の状態を持つトランスデューサー">reduce処理の状態を持つトランスデューサー</h3>
+<h3 id="_reduce処理の状態を持つトランスデューサー"><a class="anchor" href="#_reduce処理の状態を持つトランスデューサー"></a>reduce処理の状態を持つトランスデューサー</h3>
 <div class="paragraph">
 <p>いくつかのトランスデューサー( <strong>take</strong> 、 <strong>partition</strong>
 等)はreduce処理に状態が必要となる。この状態はtransduce可能な処理がトランスデューサーを適用する度に作成される。例として連続する重複した値を一つにまとめるdedupeトランスデューサーを考える。このトランスデューサーは現在の値を引き渡すかどうかを決めるにあたって、一つ前の値を記憶する必要がある:</p>
@@ -403,7 +403,7 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_transduce可能な処理の作成">transduce可能な処理の作成</h2>
+<h2 id="_transduce可能な処理の作成"><a class="anchor" href="#_transduce可能な処理の作成"></a>transduce可能な処理の作成</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>トランスデューサーは様々な処理で使用できるように設計されている。トランスデューサー処理は各ステップが一つの入力を消化する、一連のステップとして定義される。入力ソースは各処理に特有のものであり
@@ -429,6 +429,11 @@ whatever, input -&gt; whatever</code></pre>
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="transients" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Transients</a>
+  <a href="multimethods" class="clja-next-link">Multimethods and Hierarchies&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

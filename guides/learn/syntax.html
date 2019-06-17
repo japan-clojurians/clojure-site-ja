@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojureを学ぼう - シンタックス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Clojureを学ぼう - シンタックス</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_リテラル">リテラル</a></li>
+<li><a href="#_評価">評価</a>
+<ul class="sectlevel2">
+<li><a href="#_伝統的な評価_java">伝統的な評価 (Java)</a></li>
+<li><a href="#_clojureの評価">Clojureの評価</a></li>
+<li><a href="#_構造_vs_セマンティクス">構造 vs セマンティクス</a></li>
+<li><a href="#_クォートで評価を遅らせる">クォートで評価を遅らせる</a></li>
+</ul>
+</li>
+<li><a href="#_repl">REPL</a>
+<ul class="sectlevel2">
+<li><a href="#_replで探索する">REPLで探索する</a></li>
+</ul>
+</li>
+<li><a href="#_clojureの基本">Clojureの基本</a>
+<ul class="sectlevel2">
+<li><a href="#__code_def_code"><code>def</code></a></li>
+<li><a href="#_印字">印字</a></li>
+</ul>
+</li>
+<li><a href="#_知識をテストしよう">知識をテストしよう</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_リテラル"><a class="anchor" href="#_リテラル"></a>リテラル</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下はClojureで一般的なプリミティブのリテラル表現の例だ。</p>
+</div>
+<div class="paragraph">
+<p><code>;</code> は行末までのコメントになる。時にはヘッダー行を示すために複数のセミコロンが使われることもある。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; 数値型
+42              ; Long - 64ビット整数 (-2^63から2^63-1まで)
+6.022e23        ; Double - 倍精度64ビット浮動小数点数
+42N             ; BigInt - 任意精度整数
+1.0M            ; BigDecimal - 任意精度固定小数点十進数
+22/7            ; Ratio (分数)
+
+;; 文字型
+"hello"         ; String (文字列)
+\e              ; Character (文字)
+
+;; その他の型
+nil             ; null値
+true            ; Boolean (false もある)
+#"[0-9]+"       ; Regular expression (正規表現)
+:alpha          ; Keyword (キーワード)
+:release/alpha  ; Keyword with namespace (ネームスペース付きキーワード)
+map             ; Symbol (シンボル)
++               ; Symbol - ほとんどの句読点が使える
+clojure.core/+  ; Namespaced symbol (ネームスペース付きシンボル)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>上記のリテラルはすべて有効なClojureの式だ。</p>
+</div>
+<div class="paragraph">
+<p>Clojureにはまた、4つのコレクション型についてリテラルシンタックスがある:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">'(1 2 3)     ; list (リスト)
+[1 2 3]      ; vector (ベクター)
+#{1 2 3}     ; set (セット)
+{:a 1, :b 2} ; map (マップ)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これらについては後ほどもっと詳しく説明するので、今はこれら4つのデータ構造が複合データを作るのに使えることを知っていれば十分だ。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_評価"><a class="anchor" href="#_評価"></a>評価</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>次に、Clojureはどのように式を読み取って評価するのか検討しよう。</p>
+</div>
+<div class="sect2">
+<h3 id="_伝統的な評価_java"><a class="anchor" href="#_伝統的な評価_java"></a>伝統的な評価 (Java)</h3>
+<div class="paragraph">
+<p><span class="image"><img src="/clojure-site-ja/images/content/guides/learn/syntax/traditional-evaluation.png" alt="Java evaluation"></span></p>
+</div>
+<div class="paragraph">
+<p>Javaでは、ソースコード(.javaファイル)が文字としてコンパイラ(javac)に読み取られ、バイトコード(.classファイル)が生成され、それがJVMにロードされる。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clojureの評価"><a class="anchor" href="#_clojureの評価"></a>Clojureの評価</h3>
+<div class="paragraph">
+<p><span class="image"><img src="/clojure-site-ja/images/content/guides/learn/syntax/clojure-evaluation.png" alt="Clojure evaluation"></span></p>
+</div>
+<div class="paragraph">
+<p>Clojureでは、ソースコードが文字として <a href="xref/../../../reference/reader">リーダー(Reader)</a>
+に読み取られる。リーダーはソースを.cljファイルから読み取るかもしれないし対話的に一連の式を与えられるかもしれない。リーダーはClojureのデータを生成する。そしてClojureコンパイラはJVMへのバイトコードを生成する。</p>
+</div>
+<div class="paragraph">
+<p>ここで重要な点が2つある:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ソースコードの単位は <strong>Clojureの式</strong>
+であり、Clojureのソースファイルではない。ソースファイルはちょうどREPLで対話的にタイプするのと同じように一連の式として読み取られる。</p>
+</li>
+<li>
+<p>リーダーとコンパイラの分離はマクロの余地を生む鍵となる分離だ。マクロはコードを(データとして)受け取ってコードを(データとして)出力する特殊な関数だ。マクロ展開のループがこの評価モデルのどこに挿入できるか分かるだろうか?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_構造_vs_セマンティクス"><a class="anchor" href="#_構造_vs_セマンティクス"></a>構造 vs セマンティクス</h3>
+<div class="paragraph">
+<p>あるClojureの式を考えてみよう:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/clojure-site-ja/images/content/guides/learn/syntax/structure-and-semantics.png" alt="Structure and semantics"></span></p>
+</div>
+<div class="paragraph">
+<p>この図は、緑色のシンタックス(リーダーによって生成されたClojureのデータ)と青色のセマンティクス(そのデータがClojureランタイムにどのように理解されるか)の違いを示している。</p>
+</div>
+<div class="paragraph">
+<p>シンボルとリストを <strong>除き</strong>
+、ほとんどのリテラルのClojureフォームは自分自身に評価される。シンボルは他のものを指し示すのに使われ、評価されると指し示しているものを返す。(図のような)リストは呼び出しとして評価される。</p>
+</div>
+<div class="paragraph">
+<p>図では、(+ 3 4)はシンボル(+)と2つの数(3と4)を持つリストとして読み取られる。第1要素(+がある場所)は「関数位置(function
+position)」、つまり呼び出すものがある場所と呼ばれることがある。関数は呼び出すものとして明らかだが、他にもランタイムの認識する少数の特別なオペレータとして、マクロと他に一握りの呼び出し可能なものがある。</p>
+</div>
+<div class="paragraph">
+<p>上の式の評価を考えてみると:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3と4はそれ自身(long)に評価される</p>
+</li>
+<li>
+<p>は `` を実装している関数に評価される</p>
+</li>
+<li>
+<p>リストを評価すると3と4を引数として <code>+</code> 関数が呼び出される</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>多くの言語には文と式の両方があり、文は何らかのステートフルな効果はあるが値を返さない。Clojureでは、あらゆるものが値に評価される式だ。一部の式には副作用もある(大多数はそうではないが)。</p>
+</div>
+<div class="paragraph">
+<p>それでは、Clojureでどのように式を対話的に評価できるか考えてみよう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_クォートで評価を遅らせる"><a class="anchor" href="#_クォートで評価を遅らせる"></a>クォートで評価を遅らせる</h3>
+<div class="paragraph">
+<p>時には評価を停止することが便利な場合もある(特にシンボルとリストについて)。シンボルが指し示しているものをルックアップすることなく単にシンボルであってほしいことがある:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; 'x
+x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>また、リストが(評価すべきコードではなく)単にデータ値のリストであってほしいことがある:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; '(1 2 3)
+(1 2 3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>遭遇するかもしれない分かりづらいエラーのひとつは、データのリストをコードのように誤って評価してしまった結果だ:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (1 2 3)
+ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>今はクォートについてあまり気にしすぎる必要はないが、シンボルやリストの評価を避けるためにこの資料でも時折目にするだろう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repl"><a class="anchor" href="#_repl"></a>REPL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureを使う時間のほとんどはエディタもしくはREPL(Read-Eval-Print-Loop)で過ごすだろう。REPLは以下の部分でできている:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>式(文字列)を読み取って(Read)、Clojureのデータを生成する</p>
+</li>
+<li>
+<p>#1から返ってきたデータを評価して(Evaluate)、結果(これもClojureのデータ)を生成する。</p>
+</li>
+<li>
+<p>それをデータから文字へ戻す変換によって結果を印字する(Print)</p>
+</li>
+<li>
+<p>最初に戻る(Loop)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>#2の重要な点のひとつは、Clojureは式を実行する前に常にコンパイルするということだ。Clojureは <strong>常に</strong>
+JVMのバイトコードにコンパイルされる。Clojureインタプリタというものはないのだ。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (+ 3 4)
+7</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>上の囲みは、(+ 3 4)という式の評価と結果の受け取りを示している。</p>
+</div>
+<div class="sect2">
+<h3 id="_replで探索する"><a class="anchor" href="#_replで探索する"></a>REPLで探索する</h3>
+<div class="paragraph">
+<p>たいていのREPL環境は対話的な利用を支援するいくつかの仕組みをサポートしている。例えば、特別なシンボルが最後の3つの式の評価結果を記憶しておいてくれる:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>*1</code> (最後の結果)</p>
+</li>
+<li>
+<p><code>*2</code> (2つ前の式の結果)</p>
+</li>
+<li>
+<p><code>*3</code> (3つ前の式の結果)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (+ 3 4)
+7
+user=&gt; (+ 10 *1)
+17
+user=&gt; (+ *1 *2)
+24</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>加えて、 <code>clojure.repl</code>
+というClojure標準ライブラリに含まれたネームスペースがあり、便利な関数をいくつか提供している。このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.repl :refer :all])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>今はこれをおまじないとして扱ってもよいだろう。ネームスペースのところに到達したら中身を説明しよう。</p>
+</div>
+<div class="paragraph">
+<p>REPLで便利な追加の関数にアクセスできるようになった: <code>doc</code>, <code>find-doc</code>, <code>apropos</code>, <code>source</code>, <code>dir</code>
+だ。</p>
+</div>
+<div class="paragraph">
+<p><code>doc</code> 関数は任意の関数のドキュメンテーションを表示する。 <code>+</code> に対して呼び出してみよう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (doc +)
+
+clojure.core/+
+([] [x] [x y] [x y &amp; more])
+  Returns the sum of nums. (+) returns 0. Does not auto-promote
+  longs, will throw on overflow. See also: +'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>doc</code> 関数は <code>+</code> のドキュメンテーションを有効なシグネチャとともに印字している。</p>
+</div>
+<div class="paragraph">
+<p>docはドキュメンテーションを印字して、結果としてnilを返す――評価の出力で両方が見えるだろう。</p>
+</div>
+<div class="paragraph">
+<p><code>doc</code> をそれ自身に対して呼び出すこともできる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (doc doc)
+
+clojure.repl/doc
+([name])
+Macro
+  Prints documentation for a var or special form given its name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>あるものがどのような名前で呼ばれるか自信がない? <code>apropos</code> コマンドを使って特定の文字列や正規表現にマッチする関数を見つけることができる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (apropos "+")
+(clojure.core/+ clojure.core/+')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>find-doc</code> でdocstring自体も含むように検索範囲を広げることもできる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (find-doc "trim")
+
+clojure.core/subvec
+([v start] [v start end])
+  Returns a persistent vector of the items in vector from
+  start (inclusive) to end (exclusive).  If end is not supplied,
+  defaults to (count vector). This operation is O(1) and very fast, as
+  the resulting vector shares structure with the original and no
+  trimming is done.
+
+clojure.string/trim
+([s])
+  Removes whitespace from both ends of string.
+
+clojure.string/trim-newline
+([s])
+  Removes all trailing newline \n or return \r characters from
+  string.  Similar to Perl's chomp.
+
+clojure.string/triml
+([s])
+  Removes whitespace from the left side of string.
+
+clojure.string/trimr
+([s])
+  Removes whitespace from the right side of string.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>特定のネームスペースの関数の一覧が見たい場合には、 <code>dir</code> 関数が利用できる。ここでは <code>clojure.repl</code>
+ネームスペースに対して使っている:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (dir clojure.repl)
+
+apropos
+demunge
+dir
+dir-fn
+doc
+find-doc
+pst
+root-cause
+set-break-handler!
+source
+source-fn
+stack-element-str
+thread-stopper</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>そして最後に、ランタイムにアクセス可能な任意の関数のドキュメンテーションだけでなく背後にあるソースを見ることもできる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (source dir)
+
+(defmacro dir
+  "Prints a sorted directory of public vars in a namespace"
+  [nsname]
+  `(doseq [v# (dir-fn '~nsname)]
+     (println v#)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>このワークショップを進めるにあたって、使っている関数のdocstringやソースコードを気軽に調べてみてほしい。Clojureライブラリ自体の実装を探索することは、言語とその使われ方についてさらに学ぶための素晴らしい方法だ。</p>
+</div>
+<div class="paragraph">
+<p>Clojureを学ぶ際に[Clojure
+Cheatsheet](<a href="https://clojure.org/api/cheatsheet)を開いておくのもまた素晴らしいアイディアだ。チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。" class="bare">https://clojure.org/api/cheatsheet)を開いておくのもまた素晴らしいアイディアだ。チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。</a></p>
+</div>
+<div class="paragraph">
+<p>それではClojureの基本について考えてみよう。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojureの基本"><a class="anchor" href="#_clojureの基本"></a>Clojureの基本</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__code_def_code"><a class="anchor" href="#__code_def_code"></a><code>def</code></h3>
+<div class="paragraph">
+<p>REPLで何かを評価する時に、後のためにデータを保存しておくと便利なことがある。これは <code>def</code> でできる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (def x 7)
+#'user/x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>def</code> は特殊形式であり、シンボル(x)を現在のネームスペースで値(7)に関連付ける。このつながりは <code>var</code>
+と呼ばれる。多くの実際のClojureコードでは、varは定数値もしくは関数のどちらかを指すべきだが、REPLでは便宜的にvarを定義して再定義することが一般的だ。</p>
+</div>
+<div class="paragraph">
+<p>上の戻り値が <code>#'user/x</code> であることに注意しよう――これはvarのリテラル表現だ: <code>#'</code>
+の後にネームスペース付きのシンボルが続く。 <code>user</code> はデフォルトのネームスペースだ。</p>
+</div>
+<div class="paragraph">
+<p>シンボルは指し示すものをルックアップすることで評価されることを思い出そう。したがって単にシンボルを使って値を取り戻すことができる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (+ x x)
+14</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_印字"><a class="anchor" href="#_印字"></a>印字</h3>
+<div class="paragraph">
+<p>言語を学ぶ際にする最も一般的なことのひとつは値を印字することだ。Clojureは値を印字するためにいくつかの関数を提供している:</p>
+</div>
+<div class="paragraph table">
+<p>|=== | | Human-Readable | Machine-Readable | |With newline| println | prn |
+|Without newline | print | pr | |===</p>
+</div>
+<div class="paragraph">
+<p>人間が読める(human-readable)形式は特殊印字文字(改行やタブなど)を期待される形式に翻訳して文字列をクォートなしで印字する。
+<code>println</code> は関数をデバッグしたりREPLで値を印字するのによく使う。 <code>println</code>
+は任意個数の引数をとって、個々の引数の印字した値の間にスペースを入れる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (println "What is this:" (+ 1 2))
+What is this: 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>println関数には副作用(印字)があり、結果としてnilを返す。</p>
+</div>
+<div class="paragraph">
+<p>上の"What is
+this:"は囲っているクォートが印字されず、リーダーが同じように再び読み取ることができる文字列ではないことに注意しよう。その目的では、機械が読める(machine-readable)バージョンのprnを使おう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (prn "one\n\ttwo")
+"one\n\ttwo"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>印字された結果はリーダーが再び読み取れる有効な形式であることに注意しよう。人間が読める印字関数、機械が読める印字関数の両者は異なるコンテキストで有用なものだ。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_知識をテストしよう"><a class="anchor" href="#_知識をテストしよう"></a>知識をテストしよう</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>REPLを使って、7654と1234の和を計算しよう。</p>
+</li>
+<li>
+<p>次の代数式をClojureの式として書き換えよう: <code>( 7 + 3 * 4 + 5) / 10</code> 。</p>
+</li>
+<li>
+<p>REPLのドキュメンテーション関数を使って、 <code>rem</code>, <code>mod</code>
+関数のドキュメンテーションを見つけよう。ドキュメンテーションに基づいて式の結果を比較しよう。</p>
+</li>
+<li>
+<p><code>find-doc</code> を使って、最も最近のREPLでの例外のスタックトレースを印字する関数を見つけよう。</p>
+</li>
+</ol>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  
+  <a href="functions" class="clja-next-link">Functions&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

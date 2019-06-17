@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -94,7 +94,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_動機">動機</h2>
+<h2 id="_動機"><a class="anchor" href="#_動機"></a>動機</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojureは抽象に基づいて記述されている。シーケンス、コレクション、コーラビリティなどの抽象が存在する。加えてClojureはこれらの抽象の複数の実装を提供している。これらの抽象はホストのインターフェース、実装はホストのクラスで定義されている。これは言語自身のブートストラップには十分だったものの、Clojureが同様の抽象化と低レベルの実装の機構を欠く原因になっていた。
@@ -104,7 +104,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_基本">基本</h2>
+<h2 id="_基本"><a class="anchor" href="#_基本"></a>基本</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>データ型機能 -
@@ -116,7 +116,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deftypeとdefrecord">deftypeとdefrecord</h2>
+<h2 id="_deftypeとdefrecord"><a class="anchor" href="#_deftypeとdefrecord"></a>deftypeとdefrecord</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a>と
@@ -196,7 +196,7 @@ versions later than 1.3</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_なぜdeftypeとdefrecordの両方があるのか">なぜdeftypeとdefrecordの両方があるのか?</h2>
+<h2 id="_なぜdeftypeとdefrecordの両方があるのか"><a class="anchor" href="#_なぜdeftypeとdefrecordの両方があるのか"></a>なぜdeftypeとdefrecordの両方があるのか?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>結論としては、ほとんどのOOプログラムは明確に2つに分類される:実装/プログラミングのドメインのもの(例えばStringやコレクションのクラス、もしくはClojureの参照型)とアプリケーションドメインの情報を表現するクラス(例えば従業員、購入注文など)だ。アプリケーションドメインの情報にクラスが使用されることは常に不幸な特徴であった。クラス特有のマイクロ言語の背後に情報が隠されてしてしまうことにつながるからだ。例えば一見無害なemployee.getName()もデータに対する特別なインターフェースだ。そのようなクラスに情報を入れることは、全ての本が異なる言語で書かれていたら問題になるのと同じように問題だ。情報を処理する際に一般的なアプローチを取ることができなくなり、無用な特殊性の爆発を招き、再利用を不可能にする。</p>
@@ -215,7 +215,7 @@ defrecordを使用することによって、一般的に操作可能な情報�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_データ型とプロトコルには強い主張がある">データ型とプロトコルには強い主張がある</h2>
+<h2 id="_データ型とプロトコルには強い主張がある"><a class="anchor" href="#_データ型とプロトコルには強い主張がある"></a>データ型とプロトコルには強い主張がある</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>datatypeとprotocolはホストの言語構造と明瞭な関係を持っており、Clojureの機能をJavaのプログラムに提供する良い手段ではあるものの、ホストとの連携のための言語構造ではない。つまりは、ホストの全てのOOのメカニズムを完全に真似したり適合させたりするための努力は一切していない。具体的には以下の意見を反映している:</p>
@@ -250,7 +250,7 @@ APIがある場合は、gen-classを利用する必要がある。これがCloju
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reify">reify</h2>
+<h2 id="_reify"><a class="anchor" href="#_reify"></a>reify</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>deftypeとdefrecordは名前付きの型を定義するが、
@@ -284,7 +284,7 @@ APIがある場合は、gen-classを利用する必要がある。これがCloju
 </div>
 </div>
 <div class="sect1">
-<h2 id="_javaアノテーションサポート">Javaアノテーションサポート</h2>
+<h2 id="_javaアノテーションサポート"><a class="anchor" href="#_javaアノテーションサポート"></a>Javaアノテーションサポート</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>deftype、defrecord、及びdefinterfaceで作成された型は、Javaとの連携のためにJavaアノテーションを含むクラスを生成することができる。アノテーションは以下に対するメタデータとして記述される:</p>
@@ -345,6 +345,11 @@ APIがある場合は、gen-classを利用する必要がある。これがCloju
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="data_structures" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Data Structures</a>
+  <a href="sequences" class="clja-next-link">Sequences&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

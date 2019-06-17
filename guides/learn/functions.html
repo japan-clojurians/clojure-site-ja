@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojureを学ぼう - 関数</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Clojureを学ぼう - 関数</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_関数を作る">関数を作る</a>
+<ul class="sectlevel2">
+<li><a href="#_マルチアリティ関数">マルチアリティ関数</a></li>
+<li><a href="#_可変長引数関数">可変長引数関数</a></li>
+<li><a href="#_無名関数">無名関数</a></li>
+<li><a href="#__code_defn_code_vs_code_fn_code"><code>defn</code> vs <code>fn</code></a></li>
+<li><a href="#_無名関数のシンタックス">無名関数のシンタックス</a></li>
+<li><a href="#_落とし穴">落とし穴</a></li>
+</ul>
+</li>
+<li><a href="#_関数を適用する">関数を適用する</a>
+<ul class="sectlevel2">
+<li><a href="#__code_apply_code"><code>apply</code></a></li>
+</ul>
+</li>
+<li><a href="#_ローカル変数とクロージャ">ローカル変数とクロージャ</a>
+<ul class="sectlevel2">
+<li><a href="#__code_let_code"><code>let</code></a></li>
+<li><a href="#_クロージャ">クロージャ</a></li>
+</ul>
+</li>
+<li><a href="#_javaとの相互運用">Javaとの相互運用</a>
+<ul class="sectlevel2">
+<li><a href="#_javaコードを呼び出す">Javaコードを呼び出す</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_関数を作る"><a class="anchor" href="#_関数を作る"></a>関数を作る</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojureは関数型言語だ。関数はファーストクラスであり、他の関数に渡したり他の関数から返したりすることができる。多くのClojureコードは主に(副作用のない)純粋関数で構成されているので、同じ入力で呼び出すと同じ出力が得られる。</p>
+</div>
+<div class="paragraph">
+<p><code>defn</code> は名前付きの関数を定義する:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;;    名前   引数           本体
+;;    -----  ------  -------------------
+(defn greet  [name]  (str "Hello, " name) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この関数は単一の引数 <code>name</code> を持つが、引数のベクターには任意個の引数を含めることができる。</p>
+</div>
+<div class="paragraph">
+<p>関数名を「関数位置」(リストの最初の要素)に置いて関数を呼び出してみよう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (greet "students")
+"Hello, students"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_マルチアリティ関数"><a class="anchor" href="#_マルチアリティ関数"></a>マルチアリティ関数</h3>
+<div class="paragraph">
+<p>関数は異なる個数の引数(異なる「アリティ」(arity))をとるように定義することができる。異なるアリティはすべて同じ <code>defn</code>
+の中に定義されなければならない―― <code>defn</code> を複数回使うと以前の関数を置き換えてしまう。</p>
+</div>
+<div class="paragraph">
+<p>個々のアリティは <code>([args*] body*)</code> というリストだ。あるアリティが別のアリティを呼び出すことができる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn messenger
+  ([]     (messenger "Hello world!"))
+  ([msg]  (println msg)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この関数は2つのアリティ(0引数と1引数)を宣言している。0引数のアリティは1引数のアリティをデフォルト値で呼び出して出力する。この関数を適切な個数の引数を渡して呼び出す:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (messenger)
+Hello world!
+nil
+
+user=&gt; (messenger "Hello class!")
+Hello class!
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_可変長引数関数"><a class="anchor" href="#_可変長引数関数"></a>可変長引数関数</h3>
+<div class="paragraph">
+<p>関数は可変個の引数を定義することもできる――これは「可変長引数」関数として知られている。可変の引数は引数リストの末尾になければならない。この引数はシーケンスにまとめられており、関数から使うことができる。</p>
+</div>
+<div class="paragraph">
+<p>可変の引数の始まりは <code>&amp;</code> で示される。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn hello [greeting &amp; who]
+  (println greeting who))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この関数は引数 <code>greeting</code> とリストにまとめられる <code>who</code>
+という名前の可変個の引数(0個以上)をとる。このことは3引数で呼び出してみると分かる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (hello "Hello" "world" "class")
+Hello (world class)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>println</code> が <code>who</code> を出力すると、まとめられた2要素のリストとして出力されることが分かる。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_無名関数"><a class="anchor" href="#_無名関数"></a>無名関数</h3>
+<div class="paragraph">
+<p>無名関数は <code>fn</code> で作ることができる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;;    引数           本体
+;;   ---------  -----------------
+(fn  [message]  (println message) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>無名関数には名前がないので、あとで参照することはできない。むしろ、無名関数は別の関数に渡す時点で作るのが典型的だ。</p>
+</div>
+<div class="paragraph">
+<p>もしくは直ちに呼び出すことも可能だ(一般的な利用方法ではないが)。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;;     操作 (関数)                      引数
+;; --------------------------------  --------------
+(  (fn [message] (println message))  "Hello world!" )
+
+;; Hello world!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ここではより大きな式の関数位置で無名関数を定義したが、その式は直ちに無名関数の式を引数で呼び出している。</p>
+</div>
+<div class="paragraph">
+<p>多くの言語には文と式の両方があり、文は命令的に何かを行い値は返さないが、式は値を返す。Clojureには値を返す <strong>式</strong> だけがある。 <code>if</code>
+のようなフロー制御の式でさえこれに含まれることはあとで見よう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_defn_code_vs_code_fn_code"><a class="anchor" href="#__code_defn_code_vs_code_fn_code"></a><code>defn</code> vs <code>fn</code></h3>
+<div class="paragraph">
+<p><code>defn</code> は <code>def</code> と <code>fn</code> を縮約したものだと考えると便利かもしれない。 <code>fn</code> が関数を定義し、 <code>def</code>
+が関数を名前に束縛する。これらは等価だ:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn greet [name] (str "Hello, " name))
+
+(def greet (fn [name] (str "Hello, " name)))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_無名関数のシンタックス"><a class="anchor" href="#_無名関数のシンタックス"></a>無名関数のシンタックス</h3>
+<div class="paragraph">
+<p>Clojureのリーダーに実装された <code>fn</code> による無名関数のより短い形式がある: <code>#()</code>
+。このシンタックスは引数リストを省略し、位置に基づいて引数を指定する。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>%</code> は単一の引数に使う</p>
+</li>
+<li>
+<p><code>%1</code>, <code>%2</code>, <code>%3</code> などは複数の引数に使う</p>
+</li>
+<li>
+<p><code>%&amp;</code> は任意の残りの(可変長)引数に使う</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ネストした無名関数では引数が名付けられていないことで曖昧さが生じるため、ネストすることは認められていない。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; これと等価: (fn [x] (+ 6 x))
+#(+ 6 %)
+
+;; これと等価: (fn [x y] (+ x y))
+#(+ %1 %2)
+
+;; これと等価: (fn [x y &amp; zs] (println x y zs))
+#(println %1 %2 %&amp;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_落とし穴"><a class="anchor" href="#_落とし穴"></a>落とし穴</h3>
+<div class="paragraph">
+<p>要素をとってベクターに包む無名関数が必要になることは一般的だ。このように書こうとするかもしれない:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; こうしてはならない
+#([%])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この無名関数はこれと等価に展開される:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(fn [x] ([x]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>このフォームはベクターで包んで <strong>さらに</strong> そのベクターを引数なしで呼び出そうとする(追加の丸括弧の組)。そうではなくて:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; 代わりにこうする:
+#(vector %)
+
+;; もしくはこうだ:
+(fn [x] [x])
+
+;; もしくは最もシンプルなのは単に vector 関数そのものを使うことだ:
+vector</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_関数を適用する"><a class="anchor" href="#_関数を適用する"></a>関数を適用する</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__code_apply_code"><a class="anchor" href="#__code_apply_code"></a><code>apply</code></h3>
+<div class="paragraph">
+<p><code>apply</code> 関数は関数を0個以上の固定の引数で呼び出し、残りの必要な引数を最後のシーケンスから取り出す。最後の引数は <strong>必ず</strong>
+シーケンスでなければならない。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(apply f '(1 2 3 4))    ;; (f 1 2 3 4) と同じ
+(apply f 1 '(2 3 4))    ;; (f 1 2 3 4) と同じ
+(apply f 1 2 '(3 4))    ;; (f 1 2 3 4) と同じ
+(apply f 1 2 3 '(4))    ;; (f 1 2 3 4) と同じ</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これら4つの呼び出しはすべて <code>(f 1 2 3 4)</code> と等価だ。 <code>apply</code>
+は引数がシーケンスとして渡されてきたがそのシーケンス内の値で関数を呼び出さなければならない場合に便利だ。</p>
+</div>
+<div class="paragraph">
+<p>例えば、こう書くのを避けるために <code>apply</code> を使うことができる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn plot [shape coords]   ;; coords は [x y]
+  (plotxy shape (first coords) (second coords)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>代わりにシンプルに書くことができる:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn plot [shape coords]
+  (apply plotxy shape coords))</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ローカル変数とクロージャ"><a class="anchor" href="#_ローカル変数とクロージャ"></a>ローカル変数とクロージャ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__code_let_code"><a class="anchor" href="#__code_let_code"></a><code>let</code></h3>
+<div class="paragraph">
+<p><code>let</code>
+は「レキシカルスコープ」でシンボルを値に束縛する。レキシカルスコープは名前のための新たなコンテキストを作り、それは周囲のコンテキストの内側にネストされる。letで定義された名前は外側のコンテキストにおける名前に優先する。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;;      束縛     　　　名前はここで定義されている
+;;    ------------  ----------------------
+(let  [name value]  (code that uses name))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>個々の <code>let</code> は0個以上の束縛を定義し、本体に0個以上の式を持つことができる。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [x 1
+      y 2]
+  (+ x y))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この <code>let</code> 式は <code>x</code> と <code>y</code> の2つのローカル束縛を作っている。式 <code>(+ x y)</code> は <code>let</code>
+のレキシカルスコープ内にあり、xが１に、yが2に解決される。 <code>let</code>
+式の外側では、xとyはすでに値に束縛されていない限り継続して意味を持つことはない。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn messenger [msg]
+  (let [a 7
+        b 5
+        c (clojure.string/capitalize msg)]
+    (println a b c)
+  ) ;; let のスコープの終わり
+) ;; 関数の終わり</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>messenger関数は <code>msg</code> 引数をとる。ここで <code>defn</code> もまた <code>msg</code> のレキシカルスコープを作っている―― <code>messenger</code>
+関数の範囲内でだけ意味がある。</p>
+</div>
+<div class="paragraph">
+<p>この関数のスコープの範囲内に <code>let</code> は <code>a</code>, <code>b</code>, <code>c</code> を定義する新たなスコープを作っている。let式のあとで <code>a</code>
+を使おうとすれば、コンパイラがエラーを報告するだろう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_クロージャ"><a class="anchor" href="#_クロージャ"></a>クロージャ</h3>
+<div class="paragraph">
+<p><code>fn</code> 特殊形式は「クロージャ」(closure)を作る。クロージャは周囲のレキシカルスコープ(上の <code>msg</code>, <code>a</code>, <code>b</code>, <code>c</code>
+など)を「閉じ込め」(close over)て、その値をレキシカルスコープを超えて捕捉する。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn messenger-builder [greeting]
+  (fn [who] (println greeting who))) ; greeting を閉じ込める
+
+;; greeting はここで与えられて、スコープを外れる
+(def hello-er (messenger-builder "Hello"))
+
+;; hello-er がクロージャなので greeting の値は引き続き得られる
+(hello-er "world!")
+;; Hello world!</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_javaとの相互運用"><a class="anchor" href="#_javaとの相互運用"></a>Javaとの相互運用</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_javaコードを呼び出す"><a class="anchor" href="#_javaコードを呼び出す"></a>Javaコードを呼び出す</h3>
+<div class="paragraph">
+<p>以下はClojureからJavaを呼び出すための呼び出し規約(calling conventions)のまとめだ:</p>
+</div>
+<div class="paragraph table">
+<p>|=== | Task | Java | Clojure | |Instantiation| <code>new Widget("foo")</code> |
+<code>(Widget. "foo")</code> | |Instance method| <code>rnd.next()</code> | <code>(.nextInt rnd)</code> |
+|Instance field| <code>object.field</code> | <code>(.-field object)</code> | |Static method|
+<code>Math.sqrt(25)</code> | <code>(Math/sqrt 25)</code> | |Static field| <code>Math.PI</code> | <code>Math/PI</code> |</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=== Javaメソッド vs 関数
+</p><p class="tableblock">* JavaのメソッドはClojureの関数ではない
+* 保持したり引数として渡したりすることはできない
+* 必要な場合に関数にラップすることができる
+</p><p class="tableblock">[source, clojure]
+----
+;; 引数に対して .length を呼び出すための関数を作る
+(fn [obj] (.length obj))
+</p><p class="tableblock">;; 同じこと
+<mark>(.length %)
+----
+</p><p class="tableblock">== 知識をテストしよう
+</p><p class="tableblock">1) 引数をとらず「Hello」と出力する関数 <code>greet</code> を定義しよう。 <em>_ を実装で置き換えよう: <code>(defn greet [] </em><em>)</code>
+</p><p class="tableblock">2) <code>greet</code> を最初は <code>fn</code> 特殊形式、次は <code></mark>()</code> リーダーマクロとともに <code>def</code> を使って再定義しよう。
+[source, clojure]
+----
+;; fn を使う
+(def greet <em>)
+</p><p class="tableblock">;; #() を使う
+(def greet </em>)
+----
+</p><p class="tableblock">3) 次のような関数 <code>greeting</code> を定義しよう:
+</p><p class="tableblock">* 引数を与えられなければ"Hello, World!"を返す
+* 1つの引数xを与えられると"Hello, <strong>x</strong>!"を返す
+* 2つの引数xとyを与えられると"<strong>x</strong>, <strong>y</strong>!"を返す
+[source, clojure]
+----
+;; ヒント 文字列を結合するのに str 関数を使う
+(doc str)
+</p><p class="tableblock">(defn greeting <em></em>)
+</p><p class="tableblock">;; テスト用
+(assert (= "Hello, World!" (greeting)))
+(assert (= "Hello, Clojure!" (greeting "Clojure")))
+(assert (= "Good morning, Clojure!" (greeting "Good morning" "Clojure")))
+----
+</p><p class="tableblock">4) 単一の引数 <code>x</code> をとってそのまま返す関数 <code>do-nothing</code> を定義しよう。
+[source, clojure]
+----
+(defn do-nothing [x] </em><em>)
+----
+Clojureでは、これは <code>identity</code> 関数だ。それ自体ではidentityはあまり役に立たないが、高階関数を扱う際に必要になることがある。
+[source, clojure]
+----
+(source identity)
+----
+</p><p class="tableblock">5) 任意個の引数をとり、すべて無視してキーワード <code>:thing</code> を返す関数 <code>always-thing</code> を定義しよう。
+[source, clojure]
+----
+(defn always-thing [<em>] </em></em>)
+----
+</p><p class="tableblock">6) 単一の引数 <code>x</code> をとる関数 <code>make-thingy</code> を定義しよう。この関数は、任意個の引数をとって常にxを返すような別の関数を返す必要がある。
+[source, clojure]
+----
+(defn make-thingy [x] <em><em>)
+</p><p class="tableblock">;; テスト
+(let [n (rand-int Integer/MAX_VALUE)
+      f (make-thingy n)]
+  (assert (= n (f)))
+  (assert (= n (f :foo)))
+  (assert (= n (apply f :foo (range)))))
+----
+Clojureでは、これは <code>constantly</code> 関数だ。
+[source, clojure]
+----
+(source constantly)
+----
+</p><p class="tableblock">7) 別の関数をとって引数なしで3回呼び出す関数 <code>triplicate</code> を定義しよう。
+[source, clojure]
+----
+(defn triplicate [f] </em></em>)
+----
+</p><p class="tableblock">8) 単一の引数 <code>f</code> をとる関数 <code>opposite</code> を定義しよう。この関数は、任意個の引数をとって <code>f</code> を適用して結果に <code>not</code>
+   を呼び出すような別の関数を返す必要がある。Clojureの <code>not</code> 関数は論理否定をする。
+[source, clojure]
+----
+(defn opposite [f]
+  (fn [&amp; args] <em><em>))
+----
+Clojureでは、これはcomplement関数だ。
+[source, clojure]
+----
+(defn complement
+  "Takes a fn f and returns a fn that takes the same arguments as f,
+  has the same effects, if any, and returns the opposite truth value."
+  [f]
+  (fn
+    ([] (not (f)))
+    ([x] (not (f x)))
+    ([x y] (not (f x y)))
+    ([x y &amp; zs] (not (apply f x y zs)))))
+----
+</p><p class="tableblock">9) 別の関数と任意個の引数をとり、その関数を引数に3回適用する関数 <code>triplicate2</code>
+   を定義しよう。前にtriplicateの問題で定義した関数を再利用しよう。
+[source, clojure]
+----
+(defn triplicate2 [f &amp; args]
+  (triplicate </em></em>))
+----
+</p><p class="tableblock">10) <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>
+    クラス(<code>Math/pow</code>, <code>Math/cos</code>, <code>Math/sin</code>, <code>Math/PI</code>)を使って、次の数学的な事実を示そう:
+* piのコサインは-1
+* あるxについて sin(x)^2 + cos(x)^2 = 1
+</p><p class="tableblock">11) HTTP URLを文字列としてとり、WebからそのURLで取得した内容を文字列として返す関数を定義しよう。
+</p><p class="tableblock">ヒント:
+<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html">java.net.URL</a>
+クラスとその <code>openStream</code> を使う。そして内容を文字列として得るためにClojureの <code>slurp</code> 関数を使う。
+[source, clojure]
+----
+(defn http-get [url]
+  <em><em>)
+</p><p class="tableblock">(assert (.contains (http-get "http://www.w3.org") "html"))
+----
+実は、Clojureの <code>slurp</code> 関数は引数をファイル名として解釈しようとする前に先にURLとして解釈する。単純化したhttp-getを書こう:
+[source, clojure]
+----
+(defn http-get [url]
+  </em></em>)
+----
+</p><p class="tableblock">12) 2つの引数をとる関数 <code>one-less-arg</code> を定義しよう:
+* <code>f</code>, 関数
+* <code>x</code>, 値
+</p><p class="tableblock">そして <code>x</code> と追加の引数に対して <code>f</code> を呼び出すような別の関数を返す。<br>
+[source, clojure]
+----
+(defn one-less-arg [f x]
+  (fn [&amp; args] <em><em>))
+----
+Clojureでは、 <code>partial</code> 関数がこれをより一般化したものだ。
+</p><p class="tableblock">13) 2つの関数 <code>f</code> と <code>g</code> を引数としてとる関数 <code>two-fns</code> を定義しよう。この関数は、1つの引数をとって <code>g</code>
+    を呼び出してからその結果に <code>f</code> を呼び出した結果を返すような別の関数を返す。
+</p><p class="tableblock">つまり、その関数は <code>f</code> と <code>g</code> の合成を返す。
+[source, clojure]
+----
+(defn two-fns [f g]
+  </em></em>)
+----</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="syntax" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Syntax</a>
+  <a href="sequential_colls" class="clja-next-link">Sequential Collections&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

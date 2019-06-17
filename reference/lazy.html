@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -151,7 +151,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_current_seq_model">The current seq model</h3>
+<h3 id="_the_current_seq_model"><a class="anchor" href="#_the_current_seq_model"></a>The current seq model</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -196,7 +196,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enhancing_the_seq_model_a_third_operation_on_seqs_next">Enhancing the seq model - a third operation on seqs - 'next'</h3>
+<h3 id="_enhancing_the_seq_model_a_third_operation_on_seqs_next"><a class="anchor" href="#_enhancing_the_seq_model_a_third_operation_on_seqs_next"></a>Enhancing the seq model - a third operation on seqs - 'next'</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -343,7 +343,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_recipe_how_to_write_lazy_sequence_functions_in_new_model">Recipe - How to write lazy sequence functions in new model</h3>
+<h3 id="_recipe_how_to_write_lazy_sequence_functions_in_new_model"><a class="anchor" href="#_recipe_how_to_write_lazy_sequence_functions_in_new_model"></a>Recipe - How to write lazy sequence functions in new model</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -450,19 +450,19 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_victim_nil_punning">The victim - nil punning</h3>
+<h3 id="_the_victim_nil_punning"><a class="anchor" href="#_the_victim_nil_punning"></a>The victim - nil punning</h3>
 <div class="paragraph">
 <p>One of the nice things about CL&#8217;s cons using nil for end-of-list is that, when coupled with nil&#8217;s testability in conditionals, cons-returning functions could be used like predicates. Now only <strong>seq</strong> and <strong>next</strong> can be used in that manner - map, filter etc cannot. Note that much of the economy of the seq/nil dyad still applies, e.g. the use of when in map above.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extension_iseqs">Extension ISeqs</h3>
+<h3 id="_extension_iseqs"><a class="anchor" href="#_extension_iseqs"></a>Extension ISeqs</h3>
 <div class="paragraph">
 <p>If you are extending ISeq you&#8217;ll need to support <strong>ISeq.more()</strong> (the underpinnings of rest). Fortunately, most ISeq extenders derive from ASeq, which defines <strong>more()</strong> in terms of <strong>next</strong>. If you derive your seq from ASeq, <em>don&#8217;t define more()</em>, use the version supplied by ASeq. Just rename your rest() method to next().</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_recipe_porting">Recipe - Porting</h3>
+<h3 id="_recipe_porting"><a class="anchor" href="#_recipe_porting"></a>Recipe - Porting</h3>
 <div class="paragraph">
 <p>To move to the new model you&#8217;ll need to take the following steps, in this order:</p>
 </div>
@@ -516,7 +516,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_don_t_hang_onto_your_head">Don&#8217;t hang (onto) your head</h3>
+<h3 id="_don_t_hang_onto_your_head"><a class="anchor" href="#_don_t_hang_onto_your_head"></a>Don&#8217;t hang (onto) your head</h3>
 <div class="paragraph">
 <p>Recursively defined lazy sequence functions are elegant and easy to understand. They can be very memory efficient, allowing you to work with data sources that might not fit in memory, because only the part of the data structure in current use need be in memory. It could be tricky at times to determine which parts were currently in use, as they might still be referenced by local variables. Clojure does local-variable clearing on tail calls to ensure that no lingering references remain on the stack, but there was one remaining case - closed-over locals, that was difficult to control, especially when using a macro like lazy-seq which creates a closure on your behalf.</p>
 </div>
@@ -567,6 +567,11 @@
 <p>The body of the old filter has been put in a helper fn, and lazy-cons replaced with cons, then the whole call is wrapped in a lazy-seq, following the recipe above. However lazy-seq also creates a closure which closes over coll. Without some enhancement, this filter, while lazier, will have the same memory footprint as the old. The new lazy branch contains a compiler enhancement for this and similar scenarios. <strong>lazy-seq</strong> and <strong>delay</strong> both perform closed-over local clearing on the tail call of their body, ensuring no references remain in the closure itself when the tail-call executes. They can do this because they cache the results, and thus know the closure will be invoked only once. Thus the lazy branch has no problems with the filter expression above, and you can use similar techniques to control memory usage in your own lazy functions.</p>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  
+  
+</div>
 
 <hr />
 

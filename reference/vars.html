@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -141,7 +141,7 @@ user=&gt; (+ x y)
 </div>
 </div>
 <div class="sect1">
-<h2 id="set">(<strong>set!</strong> var-symbol expr)</h2>
+<h2 id="set"><a class="anchor" href="#set"></a>(<strong>set!</strong> var-symbol expr)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Assignment special form.</p>
@@ -158,7 +158,7 @@ user=&gt; (+ x y)
 </div>
 </div>
 <div class="sect1">
-<h2 id="Interning">Interning</h2>
+<h2 id="Interning"><a class="anchor" href="#Interning"></a>Interning</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Namespace system maintains global maps of symbols to Var objects <em>(see <a href="namespaces">Namespaces</a>)</em>. If a <em><strong>def</strong></em> expression does not find an interned entry in the current namespace for the symbol being def-ed, it creates one, otherwise it uses the existing Var. This find-or-create process is called interning. This means that, unless they have been unmap-ed, Var objects are stable references and need not be looked up every time. It also means that namespaces constitute a global environment in which, as described in <a href="evaluation">Evaluation</a>, the compiler attempts to resolve all free symbols as Vars.</p>
@@ -169,7 +169,7 @@ user=&gt; (+ x y)
 </div>
 </div>
 <div class="sect1">
-<h2 id="local-vars">Non-interned Vars</h2>
+<h2 id="local-vars"><a class="anchor" href="#local-vars"></a>Non-interned Vars</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It is possible to create vars that are not interned by using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars">with-local-vars</a>. These vars will not be found during free symbol resolution, and their values have to be accessed manually. But they can serve as useful thread-local mutable cells.</p>
@@ -177,7 +177,7 @@ user=&gt; (+ x y)
 </div>
 </div>
 <div class="sect1">
-<h2 id="related">Related functions</h2>
+<h2 id="related"><a class="anchor" href="#related"></a>Related functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Variants of <em><strong>def</strong></em>: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-">defn-</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline">definline</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro">defmacro</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti">defmulti</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce">defonce</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct">defstruct</a><br>
@@ -188,6 +188,11 @@ Common Var metadata: <a href="https://clojure.github.io/clojure/clojure.core-api
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="libs" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Libs</a>
+  <a href="refs" class="clja-next-link">Refs and Transactions&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

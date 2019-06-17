@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -144,7 +144,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="nil">nil</h2>
+<h2 id="nil"><a class="anchor" href="#nil"></a>nil</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>nil is a possible value of any data type in Clojure. nil has the same value as Java null. The Clojure conditional system is based around nil and false, with nil and false representing the values of logical falsity in conditional tests - anything else is logical truth. In addition, nil is used as the end-of-sequence sentinel value in the sequence protocol.</p>
@@ -152,7 +152,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="Numbers">Numbers</h2>
+<h2 id="Numbers"><a class="anchor" href="#Numbers"></a>Numbers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure provides full support for JVM primitive values by default, allowing high performance, idiomatic Clojure code for numeric applications.</p>
@@ -161,25 +161,25 @@
 <p>Clojure also supports the Java boxed number types derived from java.lang.Number, including BigInteger and BigDecimal, plus its own Ratio type. There is some special handling:</p>
 </div>
 <div class="sect2">
-<h3 id="_longs">Longs</h3>
+<h3 id="_longs"><a class="anchor" href="#_longs"></a>Longs</h3>
 <div class="paragraph">
 <p>By default Clojure operates with natural numbers as instances of Java&#8217;s long primitive type. When a primitive integer operation results in a value that too large to be contained in a primitive value, a java.lang.ArithmeticException is thrown. Clojure provides a set of alternative math operators suffixed with an apostrophe: +', -', *', inc', and dec'. These operators auto-promote to BigInt upon overflow, but are less efficient than the regular math operators.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ratio">Ratio</h3>
+<h3 id="_ratio"><a class="anchor" href="#_ratio"></a>Ratio</h3>
 <div class="paragraph">
 <p>Represents a ratio between integers. Division of integers that can&#8217;t be reduced to an integer yields a ratio, i.e. 22/7 = 22/7, rather than a floating point or truncated value.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_contagion">Contagion</h3>
+<h3 id="_contagion"><a class="anchor" href="#_contagion"></a>Contagion</h3>
 <div class="paragraph">
 <p>BigInts and floating point types are "contagious" across operations. That is, any integer operation involving a BigInt will result in a BigInt, and any operation involving a double or float will result in a double.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bigint_and_bigdecimal_literals">BigInt and BigDecimal literals</h3>
+<h3 id="_bigint_and_bigdecimal_literals"><a class="anchor" href="#_bigint_and_bigdecimal_literals"></a>BigInt and BigDecimal literals</h3>
 <div class="paragraph">
 <p>Numeric literals for BigInt and BigDecimal are specified using a postfix N and M respectively.</p>
 </div>
@@ -223,7 +223,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_related_functions">Related functions</h3>
+<h3 id="_related_functions"><a class="anchor" href="#_related_functions"></a>Related functions</h3>
 <div class="paragraph">
 <p>Computation: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2B">+</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2D">-</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2A">*</a>  <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2F">/</a>  <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/inc">inc</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec">dec</a>  <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/quot">quot</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rem">rem</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/min">min</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/max">max</a><br>
 Auto-promoting computation: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2B%27">+'</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2D%27">-'</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2A%27">*'</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/inc%27">inc'</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec%27">dec'</a><br>
@@ -236,7 +236,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Strings">Strings</h2>
+<h2 id="Strings"><a class="anchor" href="#Strings"></a>Strings</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure strings are Java Strings. See also <a href="other_functions#printing">Printing</a>.</p>
@@ -248,7 +248,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_2">Related functions</h3>
+<h3 id="_related_functions_2"><a class="anchor" href="#_related_functions_2"></a>Related functions</h3>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str">str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/string?">string?</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str">pr-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str">prn-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str">print-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str">println-str</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a></p>
 </div>
@@ -256,13 +256,13 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Characters">Characters</h2>
+<h2 id="Characters"><a class="anchor" href="#Characters"></a>Characters</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure characters are Java Characters.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_3">Related functions</h3>
+<h3 id="_related_functions_3"><a class="anchor" href="#_related_functions_3"></a>Related functions</h3>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char">char</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-name-string">char-name-string</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-escape-string">char-escape-string</a></p>
 </div>
@@ -270,7 +270,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Keywords">Keywords</h2>
+<h2 id="Keywords"><a class="anchor" href="#Keywords"></a>Keywords</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Keywords are symbolic identifiers that evaluate to themselves. They provide very fast equality tests. Like Symbols, they have names and optional <a href="namespaces">namespaces</a>, both of which are strings. The leading ':' is not part of the namespace or name.</p>
@@ -279,7 +279,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 <p>Keywords implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example <code>(:mykey my-hash-map :none)</code> means the same as <code>(get my-hash-map :mykey :none)</code>. See <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get">get</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_4">Related functions</h3>
+<h3 id="_related_functions_4"><a class="anchor" href="#_related_functions_4"></a>Related functions</h3>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword">keyword</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword?">keyword?</a></p>
 </div>
@@ -287,7 +287,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Symbols">Symbols</h2>
+<h2 id="Symbols"><a class="anchor" href="#Symbols"></a>Symbols</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Symbols are identifiers that are normally used to refer to something else. They can be used in program forms to refer to function parameters, let bindings, class names and global vars. They have names and optional <a href="namespaces">namespaces</a>, both of which are strings. Symbols can have metadata (see <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>).</p>
@@ -296,7 +296,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 <p>Symbols, just like Keywords, implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example <code>('mysym my-hash-map :none)</code> means the same as <code>(get my-hash-map 'mysym :none)</code>. See <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get">get</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_5">Related functions</h3>
+<h3 id="_related_functions_5"><a class="anchor" href="#_related_functions_5"></a>Related functions</h3>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol">symbol</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol?">symbol?</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/genysm">gensym</a> (see also the #-suffix <a href="reader">reader</a> macro)</p>
 </div>
@@ -304,7 +304,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Collections">Collections</h2>
+<h2 id="Collections"><a class="anchor" href="#Collections"></a>Collections</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>All of the Clojure collections are immutable and <a href="http://en.wikipedia.org/wiki/Persistent_data_structure">persistent</a>. In particular, the Clojure collections support efficient creation of 'modified' versions, by utilizing structural sharing, and make all of their performance bound guarantees for persistent use. The collections are efficient and inherently thread-safe. Collections are represented by abstractions, and there may be one or more concrete realizations. In particular, since 'modification' operations yield new collections, the new collection might not have the same concrete type as the source collection, but will have the same logical (interface) type.</p>
@@ -316,13 +316,13 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 <p>Because collections support the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq">seq</a> function, all of the <a href="sequences">sequence functions</a> can be used with any collection.</p>
 </div>
 <div class="sect2">
-<h3 id="hash">Java collection hashes</h3>
+<h3 id="hash"><a class="anchor" href="#hash"></a>Java collection hashes</h3>
 <div class="paragraph">
 <p>The Java collection interfaces specify algorithms for <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html#hashCode()">Lists</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html#hashCode()">Sets</a>, and <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html#hashCode()">Maps</a> in calculating hashCode() values. All Clojure collections conform to these specifications in their hashCode() implementations.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clojure_collection_hashes">Clojure collection hashes</h3>
+<h3 id="_clojure_collection_hashes"><a class="anchor" href="#_clojure_collection_hashes"></a>Clojure collection hashes</h3>
 <div class="paragraph">
 <p>Clojure provides its own hash computations that provide better hash properties for collections (and other types), known as the <em>hasheq</em> value.</p>
 </div>
@@ -360,13 +360,13 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="Lists">Lists (IPersistentList)</h2>
+<h2 id="Lists"><a class="anchor" href="#Lists"></a>Lists (IPersistentList)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Lists are collections. They implement the ISeq interface directly (except for the empty list, which is not a valid seq). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count">count</a> is O(1). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> puts the item at the front of the list.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_6">Related functions</h3>
+<h3 id="_related_functions_6"><a class="anchor" href="#_related_functions_6"></a>Related functions</h3>
 <div class="paragraph">
 <p>Create a list: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list">list</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list*">list*</a><br>
 Treat a list like a stack: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek">peek</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop">pop</a><br>
@@ -376,13 +376,13 @@ Examine a list: <a href="https://clojure.github.io/clojure/clojure.core-api.html
 </div>
 </div>
 <div class="sect1">
-<h2 id="Vectors">Vectors (IPersistentVector)</h2>
+<h2 id="Vectors"><a class="anchor" href="#Vectors"></a>Vectors (IPersistentVector)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Vector is a collection of values indexed by contiguous integers. Vectors support access to items by index in log32N hops. <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count">count</a> is O(1). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> puts the item at the end of the vector. Vectors also support <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq">rseq</a>, which returns the items in reverse order. Vectors implement IFn, for invoke() of one argument, which they presume is an index and look up in themselves as if by nth, i.e. vectors are functions of their indices. Vectors are compared first by length, then each element is compared in order.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_7">Related functions</h3>
+<h3 id="_related_functions_7"><a class="anchor" href="#_related_functions_7"></a>Related functions</h3>
 <div class="paragraph">
 <p>Create a vector: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector">vector</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec">vec</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector-of">vector-of</a><br>
 Examine a vector: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get">get</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth">nth</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek">peek</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq">rseq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector?">vector?</a><br>
@@ -395,13 +395,13 @@ Examine a vector: <a href="https://clojure.github.io/clojure/clojure.core-api.ht
 </div>
 </div>
 <div class="sect1">
-<h2 id="Maps">Maps (IPersistentMap)</h2>
+<h2 id="Maps"><a class="anchor" href="#Maps"></a>Maps (IPersistentMap)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Map is a collection that maps keys to values. Two different map types are provided - hashed and sorted. Hash maps require keys that correctly support hashCode and equals. Sorted maps require keys that implement Comparable, or an instance of Comparator. Hash maps provide faster access (log32N hops) vs (logN hops), but sorted maps are, well, sorted. <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count">count</a> is O(1). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> expects another (possibly single entry) map as the item, and returns a new map which is the old map plus the entries from the new, which may overwrite entries of the old. <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> also accepts a MapEntry or a vector of two items (key and value). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq">seq</a> returns a sequence of map entries, which are key/value pairs. Sorted map also supports <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq">rseq</a>, which returns the entries in reverse order. Maps implement IFn, for invoke() of one argument (a key) with an optional second argument (a default value), i.e. maps are functions of their keys. nil keys and values are ok.</p>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_8">Related functions</h3>
+<h3 id="_related_functions_8"><a class="anchor" href="#_related_functions_8"></a>Related functions</h3>
 <div class="paragraph">
 <p>Create a new map: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-map">hash-map</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map">sorted-map</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by">sorted-map-by</a><br>
 'change' a map: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc">assoc</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc">dissoc</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/select-keys">select-keys</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge">merge</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge-with">merge-with</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap">zipmap</a><br>
@@ -412,7 +412,7 @@ Examine a map entry: <a href="https://clojure.github.io/clojure/clojure.core-api
 </div>
 </div>
 <div class="sect1">
-<h2 id="StructMaps">StructMaps</h2>
+<h2 id="StructMaps"><a class="anchor" href="#StructMaps"></a>StructMaps</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -450,7 +450,7 @@ Most uses of StructMaps would now be better served by <a href="datatypes">record
 </div>
 </div>
 <div class="sect2">
-<h3 id="_related_functions_9">Related functions</h3>
+<h3 id="_related_functions_9"><a class="anchor" href="#_related_functions_9"></a>Related functions</h3>
 <div class="paragraph">
 <p>StructMap setup: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct">create-struct</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct">defstruct</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/accessor">accessor</a><br>
 Create individual struct: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map">struct-map</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct">struct</a></p>
@@ -459,7 +459,7 @@ Create individual struct: <a href="https://clojure.github.io/clojure/clojure.cor
 </div>
 </div>
 <div class="sect1">
-<h2 id="ArrayMaps">ArrayMaps</h2>
+<h2 id="ArrayMaps"><a class="anchor" href="#ArrayMaps"></a>ArrayMaps</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When doing code form manipulation it is often desirable to have a map which maintains key order. An array map is such a map - it is simply implemented as an array of key val key val&#8230;&#8203; As such, it has linear lookup performance, and is only suitable for <em>very small</em> maps. It implements the full map interface. New ArrayMaps can be created with the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/array-map">array-map</a> function. Note that an array map will only maintain sort order when un-'modified'. Subsequent assoc-ing will eventually cause it to 'become' a hash-map.</p>
@@ -467,7 +467,7 @@ Create individual struct: <a href="https://clojure.github.io/clojure/clojure.cor
 </div>
 </div>
 <div class="sect1">
-<h2 id="Sets">Sets</h2>
+<h2 id="Sets"><a class="anchor" href="#Sets"></a>Sets</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sets are collections of unique values.</p>
@@ -553,6 +553,11 @@ Create individual struct: <a href="https://clojure.github.io/clojure/clojure.cor
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="other_functions" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Other Functions</a>
+  <a href="datatypes" class="clja-next-link">Datatypes&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

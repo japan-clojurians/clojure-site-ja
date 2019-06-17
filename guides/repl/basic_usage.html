@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Basic Usage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Basic Usage</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_evaluating_clojure_expressions">Evaluating Clojure expressions</a></li>
+<li><a href="#_the_2_flavors_of_printing">The 2 flavors of printing</a></li>
+<li><a href="#_calling_clojure_libs_from_the_repl">Calling Clojure libs from the REPL</a>
+<ul class="sectlevel2">
+<li><a href="#_example_using_clojure_string">Example: using clojure.string</a></li>
+</ul>
+</li>
+<li><a href="#_looking_up_documentation">Looking up documentation</a>
+<ul class="sectlevel3">
+<li><a href="#_doc">doc</a></li>
+<li><a href="#_source">source</a></li>
+<li><a href="#_dir">dir</a></li>
+<li><a href="#_apropos">apropos</a></li>
+<li><a href="#_find_doc">find-doc</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_evaluating_clojure_expressions"><a class="anchor" href="#_evaluating_clojure_expressions"></a>Evaluating Clojure expressions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Having started the REPL (as described <a href="launching_a_basic_repl">in the previous chapter</a>),
+you can now evaluate Clojure expressions by simply typing them into the REPL and pressing ENTER:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (+ 2 3)
+5
+user=&gt; (defn factorial [n]
+(if (= n 0)
+  1
+  (* n (factorial (dec n)))))
+#'user/factorial
+user=&gt; (factorial 10)
+3628800
+user=&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Under each expression, we see the <em>result</em> of evaluating the expression.
+ This is what a REPL does: for each expression that we submit to it, the REPL <strong>R</strong>eads it,
+ <strong>E</strong>valuates it, then <strong>P</strong>rints the result, all of this in a <strong>L</strong>oop.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are in the process of learning Clojure, take some time to experiment at the REPL.
+The rapid feedback loop it provides makes for a very effective learning environment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Although the above examples are very basic, you can run full-featured Clojure programs
+ in this way. Clojure was designed so that its REPL environment provides the full power of the language:
+ you could actually run any existing Clojure program simply by pasting the content of the source files
+ in the right order into the REPL.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>TIP: using an editor next to your REPL</strong></p>
+</div>
+<div class="paragraph">
+<p>Editing Clojure code inside the terminal window can get tedious; when that is the case,
+ one simple trick is to write the code in a text editor of your choosing that has a syntax-aware
+ Clojure mode, and copy and paste code from the editor to the REPL terminal window. Here&#8217;s an
+ example of what this looks like (the editor used is <a href="https://atom.io/packages/language-clojure/">Atom</a>):</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/images/content/guides/repl/editor-cli-repl.gif" alt="Editor next to CLI REPL"></span></p>
+</div>
+<div class="paragraph">
+<p>In the <em><a href="enhancing_your_repl_workflow">Enhancing your REPL workflow</a></em> chapter of this guide,
+we will see more ergonomic configurations for using the REPL.
+However, this minimalist setup is sufficient for the scope of this tutorial,
+and is important for mastering the fundamentals.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_2_flavors_of_printing"><a class="anchor" href="#_the_2_flavors_of_printing"></a>The 2 flavors of printing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider the following evaluation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (println "Hello World")
+Hello World
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is strange: unlike the previous examples, it looks like evaluating the <code>(println "Hello World")</code> expression
+ yielded 2 results: <code>Hello World</code> and <code>nil</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is because the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println">println</a>
+ function <em>prints</em> its argument to the standard output but <em>returns</em> nil.
+ Therefore, the 2 lines we see under our expression are very different in nature:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Hello World</code> is a <em>side effect</em> of evaluating the expression (printing to standard output): the printing was done by our code.</p>
+</li>
+<li>
+<p><code>nil</code> is the <em>result</em> of evaluating the expression: the printing was done by the REPL.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_calling_clojure_libs_from_the_repl"><a class="anchor" href="#_calling_clojure_libs_from_the_repl"></a>Calling Clojure libs from the REPL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So far, we have only called code that we had defined manually at the REPL (for instance our <code>factorial</code> function defined above).
+But the REPL also lets you use pre-existing Clojure code, i.e Clojure <a href="xref/../../../reference/libs">libs</a>.<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>
+Given a Clojure lib with namespace <code>my.name.space</code>, you can evaluate <code>(<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a> '[my.name.space])</code>
+ to make that lib&#8217;s code loaded and available in the REPL.</p>
+</div>
+<div class="sect2">
+<h3 id="_example_using_clojure_string"><a class="anchor" href="#_example_using_clojure_string"></a>Example: using clojure.string</h3>
+<div class="paragraph">
+<p>For example, <code><a href="https://clojure.github.io/clojure/clojure.string-api.html">clojure.string</a></code>
+ is a lib bundled with Clojure for manipulating text.
+ Let&#8217;s require <code>clojure.string</code> and call its <code>clojure.string/upper-case</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.string])
+nil
+user=&gt; (clojure.string/upper-case "clojure")
+"CLOJURE"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require">require</a></code> also lets use
+ define an <em>alias</em> for the <code>clojure.string</code> namespace, by adding an <code>:as</code> clause. This enables us to
+ refer to names defined in the <code>clojure.string</code> namespace more concisely:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.string :as str])
+nil
+user=&gt; (str/upper-case "clojure")
+"CLOJURE"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, if we&#8217;re <em>very</em> lazy and don&#8217;t want to type an alias at all, we can add a <code>:refer</code> clause:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.string :refer [upper-case]])
+nil
+user=&gt; (upper-case "clojure")
+"CLOJURE"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_looking_up_documentation"><a class="anchor" href="#_looking_up_documentation"></a>Looking up documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REPL can also be used for looking up API documentation, using the <code><a href="https://clojure.github.io/clojure/clojure.repl-api.html">clojure.repl</a></code> lib.
+ Evaluate the following expression at the REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.repl :refer :all])
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This expression makes all the names defined in the <code>clojure.repl</code> namespace available in the REPL.</p>
+</div>
+<div class="sect3">
+<h4 id="_doc"><a class="anchor" href="#_doc"></a>doc</h4>
+<div class="paragraph">
+<p>You can print the API documentation of a given Var by evaluating <code>(<a href="https://clojuredocs.org/clojure.repl/doc">doc</a> MY-VAR-NAME)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (doc nil?)
+-------------------------
+clojure.core/nil?
+([x])
+  Returns true if x is nil, false otherwise.
+nil
+user=&gt; (doc clojure.string/upper-case)
+-------------------------
+clojure.string/upper-case
+([s])
+  Converts string to all upper-case.
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_source"><a class="anchor" href="#_source"></a>source</h4>
+<div class="paragraph">
+<p>You can also view the source code that was used to define a Var using <code><a href="https://clojuredocs.org/clojure.repl/source">source</a></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (source some?)
+(defn some?
+  "Returns true if x is not nil, false otherwise."
+  {:tag Boolean
+   :added "1.6"
+   :static true}
+  [x] (not (nil? x)))
+nil</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dir"><a class="anchor" href="#_dir"></a>dir</h4>
+<div class="paragraph">
+<p>You can use <code><a href="https://clojuredocs.org/clojure.repl/dir">dir</a></code> to list the names of all the Vars defined a given namespace.
+ Let&#8217;s do this with the <code>clojure.string</code> namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (dir clojure.string)
+blank?
+capitalize
+ends-with?
+escape
+includes?
+index-of
+join
+last-index-of
+lower-case
+re-quote-replacement
+replace
+replace-first
+reverse
+split
+split-lines
+starts-with?
+trim
+trim-newline
+triml
+trimr
+upper-case
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As another example, let&#8217;s use <code>dir</code> to see what&#8217;s available in <code>clojure.repl</code> itself:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (dir clojure.repl)
+apropos
+demunge
+dir
+dir-fn
+doc
+find-doc
+pst
+root-cause
+set-break-handler!
+source
+source-fn
+stack-element-str
+thread-stopper
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We recognize the <code>doc</code>, <code>source</code> and <code>dir</code> operations we&#8217;ve used so far.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_apropos"><a class="anchor" href="#_apropos"></a>apropos</h4>
+<div class="paragraph">
+<p>If you don&#8217;t exactly remember the name of some Var, you can search for it
+ using <code><a href="https://clojuredocs.org/clojure.repl/apropos">apropos</a></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (apropos "index")
+(clojure.core/indexed? clojure.core/keep-indexed clojure.core/map-indexed clojure.string/index-of clojure.string/last-index-of)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code><a href="https://clojuredocs.org/clojure.repl/apropos">apropos</a></code> only searches Var names; you can search docstrings
+ (the text that is printed by <code><a href="https://clojuredocs.org/clojure.repl/doc">doc</a></code>) using
+ <code><a href="https://clojuredocs.org/clojure.repl/find-doc">find-doc</a></code>:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_find_doc"><a class="anchor" href="#_find_doc"></a>find-doc</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (find-doc "indexed")
+-------------------------
+clojure.core/contains?
+([coll key])
+ Returns true if key is present in the given collection, otherwise
+ returns false.  Note that for numerically indexed collections like
+ vectors and Java arrays, this tests if the numeric key is within the
+ range of indexes. 'contains?' operates constant or logarithmic time;
+ it will not perform a linear search for a value.  See also 'some'.
+-------------------------
+clojure.core/indexed?
+([coll])
+ Return true if coll implements Indexed, indicating efficient lookup by index
+-------------------------
+clojure.core/keep-indexed
+([f] [f coll])
+ Returns a lazy sequence of the non-nil results of (f index item). Note,
+ this means false return values will be included.  f must be free of
+ side-effects.  Returns a stateful transducer when no collection is
+ provided.
+-------------------------
+clojure.core/map-indexed
+([f] [f coll])
+ Returns a lazy sequence consisting of the result of applying f to 0
+ and the first item of coll, followed by applying f to 1 and the second
+ item in coll, etc, until coll is exhausted. Thus function f should
+ accept 2 arguments, index and item. Returns a stateful transducer when
+ no collection is provided.
+nil</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Documentation is available only for libs that have been required.</strong></p>
+</div>
+<div class="paragraph">
+<p>For instance, if you have not required the <code>clojure.set</code> namespace, you won&#8217;t be
+able to search documentation for <code>clojure.set/union</code>. This is illustrated by this
+example REPL session:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">clj
+Clojure 1.9.0
+user=&gt; (doc clojure.set/union)
+nil                             ;; no doc found
+user=&gt; (apropos "union")
+()
+user=&gt; (require '[clojure.set]) ;; now we're requiring clojure.set
+nil
+user=&gt; (doc clojure.set/union)
+-------------------------
+clojure.set/union
+([] [s1] [s1 s2] [s1 s2 &amp; sets])
+  Return a set that is the union of the input sets
+nil
+user=&gt; (apropos "union")
+(clojure.set/union)
+user=&gt;</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a> Note that what we call a Clojure <a href="xref/../../../reference/libs">lib</a> is not necessarily a <a href="https://en.wikipedia.org/wiki/Library_(computing)">library</a>: it can also be a source code file in your current project.
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="launching_a_basic_repl" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Launching a basic REPL</a>
+  <a href="data_visualization_at_the_repl" class="clja-next-link">Data Visualization at the REPL&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

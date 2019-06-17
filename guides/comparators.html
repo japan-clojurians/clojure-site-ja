@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -85,7 +85,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_summary">Summary</h2>
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A comparator is a function that takes two arguments <em>x</em> and <em>y</em> and returns a value indicating
@@ -182,7 +182,7 @@ at most one of those two values to appear in the sorted collection.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here we briefly describe the default sorting order provided by the function <code>compare</code>.
@@ -210,7 +210,7 @@ There are a few rules to follow when writing a comparator that works correctly.<
 </div>
 </div>
 <div class="sect1">
-<h2 id="_off_the_shelf_comparators">Off-the-shelf comparators</h2>
+<h2 id="_off_the_shelf_comparators"><a class="anchor" href="#_off_the_shelf_comparators"></a>Off-the-shelf comparators</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>First consider using well-tested comparators developed by others, especially if they are complex.</p>
@@ -224,10 +224,10 @@ libraries for this.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_writing_your_own_comparators">Writing your own comparators</h2>
+<h2 id="_writing_your_own_comparators"><a class="anchor" href="#_writing_your_own_comparators"></a>Writing your own comparators</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_reverse_order">Reverse order</h3>
+<h3 id="_reverse_order"><a class="anchor" href="#_reverse_order"></a>Reverse order</h3>
 <div class="paragraph">
 <p>To sort numbers in decreasing order, simply write a comparator that calls <code>compare</code> with the arguments
 in the opposite order:</p>
@@ -259,7 +259,7 @@ are %1 and %2, in that order.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_multi_field_comparators">Multi-field comparators</h3>
+<h3 id="_multi_field_comparators"><a class="anchor" href="#_multi_field_comparators"></a>Multi-field comparators</h3>
 <div class="paragraph">
 <p>Because equal-length Clojure vectors are compared lexicographically, they can be used to do multi-field
 sorting on values like maps or records. This only works if the fields are already sorted by <code>compare</code>
@@ -321,7 +321,7 @@ See the "decorate-sort-undecorate" technique described in the documentation for
 </div>
 </div>
 <div class="sect2">
-<h3 id="_boolean_comparators">Boolean comparators</h3>
+<h3 id="_boolean_comparators"><a class="anchor" href="#_boolean_comparators"></a>Boolean comparators</h3>
 <div class="paragraph">
 <p>Java comparators are all 3-way, meaning they return a negative, 0, or positive integer depending upon whether
 the first argument should be considered less than, equal to, or greater than the second argument.</p>
@@ -384,7 +384,7 @@ method <code>compare</code> if you want all the details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_general_rules_for_comparators">General rules for comparators</h3>
+<h3 id="_general_rules_for_comparators"><a class="anchor" href="#_general_rules_for_comparators"></a>General rules for comparators</h3>
 <div class="paragraph">
 <p>Any comparator, whether 3-way or boolean, should return answers consistent with a
 <a href="https://en.wikipedia.org/wiki/Total_order">total order</a> on the values
@@ -415,10 +415,10 @@ As explained later, it should not behave like <code>&lt;=</code> for numbers
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mistakes_to_avoid">Mistakes to avoid</h2>
+<h2 id="_mistakes_to_avoid"><a class="anchor" href="#_mistakes_to_avoid"></a>Mistakes to avoid</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_comparators_for_sorted_sets_and_maps_are_easy_to_get_wrong">Comparators for sorted sets and maps are easy to get wrong</h3>
+<h3 id="_comparators_for_sorted_sets_and_maps_are_easy_to_get_wrong"><a class="anchor" href="#_comparators_for_sorted_sets_and_maps_are_easy_to_get_wrong"></a>Comparators for sorted sets and maps are easy to get wrong</h3>
 <div class="paragraph">
 <p>This is just as accurately stated as "comparators are easy to get wrong", but it is often more noticeable
 when you use a bad comparator for sorted sets and maps. If you write the kinds of bad comparators in this
@@ -496,7 +496,7 @@ for any reason, or only the supplied comparator function?)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_beware_using_subtraction_in_a_comparator">Beware using subtraction in a comparator</h3>
+<h3 id="_beware_using_subtraction_in_a_comparator"><a class="anchor" href="#_beware_using_subtraction_in_a_comparator"></a>Beware using subtraction in a comparator</h3>
 <div class="paragraph">
 <p>Java comparators return a negative int value if the first argument is to be treated as less than the second,
 a positive int value if the first argument is to be treated as greater than the second, and 0 if they are equal.</p>
@@ -587,7 +587,7 @@ If your comparator is not guaranteed to be given such restricted inputs, better 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comparators_that_work_between_different_types">Comparators that work between different types</h2>
+<h2 id="_comparators_that_work_between_different_types"><a class="anchor" href="#_comparators_that_work_between_different_types"></a>Comparators that work between different types</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sometimes you might wish to sort a collection of values by some key, but that key is not unique.

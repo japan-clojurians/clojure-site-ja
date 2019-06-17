@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -103,7 +103,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="dot">Member access</h2>
+<h2 id="dot"><a class="anchor" href="#dot"></a>Member access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>(.instanceMember instance args*)</strong><br>
@@ -142,7 +142,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_dot_special_form">The Dot special form</h2>
+<h2 id="_the_dot_special_form"><a class="anchor" href="#_the_dot_special_form"></a>The Dot special form</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>(<em>.</em> instance-expr member-symbol)</strong><br>
@@ -226,7 +226,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <p>The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.</p>
 </div>
 <div class="sect2">
-<h3 id="_alternative_macro_syntax">Alternative Macro Syntax</h3>
+<h3 id="_alternative_macro_syntax"><a class="anchor" href="#_alternative_macro_syntax"></a>Alternative Macro Syntax</h3>
 <div class="paragraph">
 <p>As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing '.':</p>
 </div>
@@ -307,7 +307,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_support_for_java_in_clojure_library_functions">Support for Java in Clojure Library Functions</h2>
+<h2 id="_support_for_java_in_clojure_library_functions"><a class="anchor" href="#_support_for_java_in_clojure_library_functions"></a>Support for Java in Clojure Library Functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Many of the Clojure library functions have defined semantics for objects of Java types. contains? and get work on Java Maps, arrays, Strings, the latter two with integer keys. count works on Java Strings, Collections and arrays. nth works on Java Strings, Lists and arrays. seq works on Java reference arrays, Iterables and Strings. Since much of the rest of the library is built upon these functions, there is great support for using Java objects in Clojure algorithms.</p>
@@ -315,7 +315,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implementing_interfaces_and_extending_classes">Implementing Interfaces and Extending Classes</h2>
+<h2 id="_implementing_interfaces_and_extending_classes"><a class="anchor" href="#_implementing_interfaces_and_extending_classes"></a>Implementing Interfaces and Extending Classes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> macro. The resulting objects are of an anonymous class. You can also generate statically-named classes and .class files with <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a>. As of Clojure 1.2, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> is also available for implementing interfaces.</p>
@@ -338,7 +338,7 @@ f &#8658; (name [params*] body) or (name ([params*] body) ([params+] body) &#823
 </div>
 </div>
 <div class="sect1">
-<h2 id="_arrays">Arrays</h2>
+<h2 id="_arrays"><a class="anchor" href="#_arrays"></a>Arrays</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports the creation, reading and modification of Java arrays. It is recommended that you limit use of arrays to interop with Java libraries that require them as arguments or use them as return values.</p>
@@ -357,7 +357,7 @@ Process an existing array: <a href="https://clojure.github.io/clojure/clojure.co
 </div>
 </div>
 <div class="sect1">
-<h2 id="typehints">Type Hints</h2>
+<h2 id="typehints"><a class="anchor" href="#typehints"></a>Type Hints</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are <a href="metadata#_metadata_reader_macros">metadata tags</a> placed on symbols or expressions that are consumed by the compiler. They can be placed on function parameters, let-bound names, var names (when defined), and expressions:</p>
@@ -417,7 +417,7 @@ user=&gt; (time (reduce + (map len2 (repeat 1000000 "asdf"))))
 </div>
 </div>
 <div class="sect1">
-<h2 id="TypeAliases">Aliases</h2>
+<h2 id="TypeAliases"><a class="anchor" href="#TypeAliases"></a>Aliases</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class names.
@@ -483,7 +483,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="primitives">Support for Java Primitives</h2>
+<h2 id="primitives"><a class="anchor" href="#primitives"></a>Support for Java Primitives</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure has support for high-performance manipulation of, and arithmetic involving, Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.</p>
@@ -601,7 +601,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_coercions">Coercions</h2>
+<h2 id="_coercions"><a class="anchor" href="#_coercions"></a>Coercions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>At times it is necessary to have a value of a particular primitive type. These coercion functions yield a value of the indicated type as long as such a coercion is possible: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigdec">bigdec</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint">bigint</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean">boolean</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte">byte</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char">char</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double">double</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float">float</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int">int</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long">long</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num">num</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short">short</a></p>
@@ -609,7 +609,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="optimization">Some optimization tips</h2>
+<h2 id="optimization"><a class="anchor" href="#optimization"></a>Some optimization tips</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -639,7 +639,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_simple_xml_support">Simple XML Support</h2>
+<h2 id="_simple_xml_support"><a class="anchor" href="#_simple_xml_support"></a>Simple XML Support</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Included with the distribution is simple XML support, found in the src/xml.clj file. All names from this file are in the xml namespace.</p>
@@ -660,7 +660,7 @@ For example, byte arrays (byte-array []) have a type of "[B".</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_calling_clojure_from_java">Calling Clojure From Java</h2>
+<h2 id="_calling_clojure_from_java"><a class="anchor" href="#_calling_clojure_from_java"></a>Calling Clojure From Java</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://clojure.github.io/clojure/javadoc">clojure.java.api</a> package provides a minimal interface to bootstrap Clojure access from other JVM languages. It does this by providing:</p>
@@ -734,6 +734,11 @@ deref.invoke(printLength);</code></pre>
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="reducers" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Reducers</a>
+  <a href="compilation" class="clja-next-link">Compilation and Class Generation&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

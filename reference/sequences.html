@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -113,22 +113,22 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_seq_interface">The Seq interface</h2>
+<h2 id="_the_seq_interface"><a class="anchor" href="#_the_seq_interface"></a>The Seq interface</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="__em_first_em_coll">(<em>first</em> coll)</h3>
+<h3 id="__em_first_em_coll"><a class="anchor" href="#__em_first_em_coll"></a>(<em>first</em> coll)</h3>
 <div class="paragraph">
 <p>Returns the first item in the collection. Calls seq on its argument. If coll is nil, returns nil.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__em_rest_em_coll">(<em>rest</em> coll)</h3>
+<h3 id="__em_rest_em_coll"><a class="anchor" href="#__em_rest_em_coll"></a>(<em>rest</em> coll)</h3>
 <div class="paragraph">
 <p>Returns a sequence of the items after the first. Calls seq on its argument. If there are no more items, returns a logical sequence for which <strong>seq</strong> returns nil.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__em_cons_em_item_seq">(<em>cons</em> item seq)</h3>
+<h3 id="__em_cons_em_item_seq"><a class="anchor" href="#__em_cons_em_item_seq"></a>(<em>cons</em> item seq)</h3>
 <div class="paragraph">
 <p>Returns a new seq where item is the first element and seq is the rest.</p>
 </div>
@@ -139,7 +139,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_seq_library">The Seq library</h2>
+<h2 id="_the_seq_library"><a class="anchor" href="#_the_seq_library"></a>The Seq library</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a sampling of the primary sequence functions, grouped broadly by their capabilities. Some functions can be used in different ways and so appear in more than one group. There are many more listed in the <a href="https://clojure.github.io/clojure/">API</a> section.</p>
@@ -148,7 +148,7 @@
 <p>Since Clojure 1.7, Clojure also provides <a href="transducers">transducers</a>, an alternate model for composable transformations on collections. Transducers decouple the input, processing, and output parts of transformation and allow reuse of transformations in more contexts, such as core.async channels. Many of the sequence functions in the list below will create transducers if the input collection is omitted. See the Transducers page for more details.</p>
 </div>
 <div class="sect2">
-<h3 id="_seq_in_seq_out">Seq in, Seq out</h3>
+<h3 id="_seq_in_seq_out"><a class="anchor" href="#_seq_in_seq_out"></a>Seq in, Seq out</h3>
 <div class="paragraph">
 <p>Shorter seq from a longer seq: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct">distinct</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter">filter</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove">remove</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for">for</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep">keep</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed">keep-indexed</a><br>
 Longer seq from a shorter seq: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cons">cons</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/concat">concat</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat">lazy-cat</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat">mapcat</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cycle">cycle</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interleave">interleave</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose">interpose</a><br>
@@ -160,7 +160,7 @@ Process each item of a seq to create a new seq: <a href="https://clojure.github.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_a_seq">Using a seq</h3>
+<h3 id="_using_a_seq"><a class="anchor" href="#_using_a_seq"></a>Using a seq</h3>
 <div class="paragraph">
 <p>Extract a specific-numbered item from a seq: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/first">first</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ffirst">ffirst</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nfirst">nfirst</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/second">second</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth">nth</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first">when-first</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/last">last</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand-nth">rand-nth</a><br>
 Construct a collection from a seq: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap">zipmap</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">into</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce">reduce</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set">set</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec">vec</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array">into-array</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d">to-array-2d</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/frequencies">frequencies</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/group-by">group-by</a><br>
@@ -172,7 +172,7 @@ Check if lazy seqs have been forcibly evaluated: <a href="https://clojure.github
 </div>
 </div>
 <div class="sect2">
-<h3 id="_creating_a_seq">Creating a seq</h3>
+<h3 id="_creating_a_seq"><a class="anchor" href="#_creating_a_seq"></a>Creating a seq</h3>
 <div class="paragraph">
 <p>Lazy seq from collection: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq">seq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vals">vals</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys">keys</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq">rseq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subseq">subseq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq">rsubseq</a><br>
 Lazy seq from producer function: <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq">lazy-seq</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/repeatedly">repeatedly</a> <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterate">iterate</a><br>
@@ -182,6 +182,11 @@ Lazy seq from other objects: <a href="https://clojure.github.io/clojure/clojure.
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="datatypes" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Datatypes</a>
+  <a href="transients" class="clja-next-link">Transients&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

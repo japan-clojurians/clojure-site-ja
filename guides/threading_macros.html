@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -85,7 +85,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="thread-first">The thread-first macro (->)</h3>
+<h3 id="thread-first"><a class="anchor" href="#thread-first"></a>The thread-first macro (->)</h3>
 <div class="paragraph">
 <p>In idiomatic Clojure, pure functions transform immutable data structures into a
 desired output format. Consider a function that applies two transformations to a
@@ -157,7 +157,7 @@ left to right order of application, rather than reading from the innermost expre
 </div>
 </div>
 <div class="sect2">
-<h3 id="thread-last">thread-last (->>) and thread-as (as->) macros</h3>
+<h3 id="thread-last"><a class="anchor" href="#thread-last"></a>thread-last (->>) and thread-as (as->) macros</h3>
 <div class="paragraph">
 <p>The <code>-></code> macro follows a purely syntactic transformation rule: for each
 expression, insert the threaded value between the function name and the
@@ -271,7 +271,7 @@ This allows a value to thread into any argument position, not just first or last
 </div>
 </div>
 <div class="sect2">
-<h3 id="_some_some_and_cond">some->, some->> and cond-></h3>
+<h3 id="_some_some_and_cond"><a class="anchor" href="#_some_some_and_cond"></a>some->, some->> and cond-></h3>
 <div id="some" class="paragraph">
 <p>Two of Clojure&#8217;s more specialized threading macros, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->"><code>some-></code></a> and <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->>"><code>some->></code></a>, are used most commonly when interfacing with Java
 methods. <code>some-></code> resembles <code>-></code> in that it threads a value through

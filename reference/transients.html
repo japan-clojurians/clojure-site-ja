@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -92,7 +92,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rationale">Rationale</h2>
+<h2 id="_rationale"><a class="anchor" href="#_rationale"></a>Rationale</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>If a tree falls in the woods, does it make a sound?</em><br>
@@ -107,7 +107,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_they_work">How they work</h2>
+<h2 id="_how_they_work"><a class="anchor" href="#_how_they_work"></a>How they work</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Transient data structures are always created from an existing persistent Clojure data structure. As of Clojure 1.1.0, vectors, hash-maps, and hash-sets are supported. Note that not all Clojure data structures can support this feature, but most will. Lists will not, as there is no benefit to be had.</p>
@@ -133,7 +133,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example">Example</h2>
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here&#8217;s a very typical example, some code that builds up a vector for return, all 'changes' being local to the function. Note how the transient-using version has exactly the same structure, just:</p>
@@ -176,7 +176,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concurrent_use">Concurrent use</h2>
+<h2 id="_concurrent_use"><a class="anchor" href="#_concurrent_use"></a>Concurrent use</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>That&#8217;s all there is to using transients, but they have another important constraint: <strong>Transients require thread isolation.</strong> Because each result of a transient operation shares (mutable) structure with the previous, it is an error if more than one thread manipulates a transient at once. Use of a particular transient instance should be controlled either by using it in an single-threaded scope, or in a framework that enforces this.</p>
@@ -187,7 +187,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_summary">Summary</h2>
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Transients provide a high-performance optimization of functional data-structure-building code that works with Clojure&#8217;s data structures and provides critical safety guarantees.</p>
@@ -238,6 +238,11 @@
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="sequences" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Sequences</a>
+  <a href="transducers" class="clja-next-link">Transducers&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

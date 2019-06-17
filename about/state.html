@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -101,7 +101,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_命令型プログラミング">命令型プログラミング</h2>
+<h2 id="_命令型プログラミング"><a class="anchor" href="#_命令型プログラミング"></a>命令型プログラミング</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>命令型のプログラムは世界(例えばメモリ)を直接操作する。それは今では維持できないシングルスレッドという前提――世界を観察したり変更したりする間、世界は停止している――に基づいている。「これをせよ」と言えばそれは起こり、「あれを変更せよ」と言えばそれは変化する。命令型プログラミング言語は、これをせよ/あれをせよと言ってメモリロケーションを変更することを指向している。</p>
@@ -112,7 +112,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_関数型プログラミング">関数型プログラミング</h2>
+<h2 id="_関数型プログラミング"><a class="anchor" href="#_関数型プログラミング"></a>関数型プログラミング</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>関数型プログラミングはより数学的に世界を捉え、プログラムは特定の値を取って別の値を生み出す関数だとみなす。関数型のプログラムは、命令型のプログラムが持つ外界への「効果」を避けるため、理解しやすく、推論しやすく、テストしやすいものになる、というのも関数の活動は完全にローカルなものだからだ。プログラムが純粋に関数型である限り、並行処理は問題にならない。なぜなら協調させるべき変更が全く存在しないからだ。</p>
@@ -120,7 +120,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ワーキングモデルとアイデンティティ">ワーキングモデルとアイデンティティ</h2>
+<h2 id="_ワーキングモデルとアイデンティティ"><a class="anchor" href="#_ワーキングモデルとアイデンティティ"></a>ワーキングモデルとアイデンティティ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>一部のプログラムは大きな関数(例えばコンパイラや定理証明器)だが、その他の多くのプログラムはそうではない――むしろワーキングモデルのようなもので、私がこの議論で
@@ -139,7 +139,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_オブジェクト指向プログラミング_oo">オブジェクト指向プログラミング(OO)</h2>
+<h2 id="_オブジェクト指向プログラミング_oo"><a class="anchor" href="#_オブジェクト指向プログラミング_oo"></a>オブジェクト指向プログラミング(OO)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>OOとは、何よりも、プログラムにおいてアイデンティティと状態をモデリングするためのツールを提供する試みだ(振る舞いを状態に関連付けることや階層的な分類はどちらもここでは無視する)。OOは典型的にはアイデンティティと状態を統合している、つまりオブジェクト(アイデンティティ)が状態の値を保持するメモリに対するポインタになっている。コピーすることなくアイデンティティから独立した状態を取得する方法はない。変更されるのをブロックすることなく安定した状態を観察する方法も(コピーする方法さえ)ない。置き換えによるメモリ変更以外でアイデンティティの状態に異なる値を関連付ける方法もない。言い換えれば、
@@ -152,7 +152,7 @@ OOはこのようである必要はないのだが、たいていそうなって
 </div>
 </div>
 <div class="sect1">
-<h2 id="_clojureプログラミング">Clojureプログラミング</h2>
+<h2 id="_clojureプログラミング"><a class="anchor" href="#_clojureプログラミング"></a>Clojureプログラミング</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>方法は他にもあり、それはアイデンティティと状態を分離することだ(再び、間接化がプログラミングにおける困難から救ってくれる)。私たちは、状態の観念を「このメモリブロックの中身」から離れて「このアイデンティティに現在関連付けられている
@@ -169,7 +169,7 @@ OOはこのようである必要はないのだが、たいていそうなって
 <p>参加者(スレッド)がただ1つしかないときでも、このような方法でプログラムを構築する価値はある。関数の値の計算がアイデンティティ/値の関連から独立していると、プログラムはより理解しやすくテストしやすくなる。そして(必然的に)必要になったときに他の参加者を追加するのも簡単だ。</p>
 </div>
 <div class="sect2">
-<h3 id="_並行処理">並行処理</h3>
+<h3 id="_並行処理"><a class="anchor" href="#_並行処理"></a>並行処理</h3>
 <div class="paragraph">
 <p>並行処理に取り組むということは、全能という幻想をあきらめることを意味する。他の参加者が存在しうるし、世界は変化し続けるということをプログラムは認識しなければならない。そのため、何らかのアイデンティティの状態の値を観察することで得られるのはせいぜいスナップショットだということをプログラムは理解しなければならない、というのもそれらのアイデンティティは後に新たな値を取りうるからだ。しかし、多くの場合には決定を下したりレポートしたりする目的にはそれで十分だ。私たち人間は自らの感覚系から得られるスナップショットで上手くやっている。そうした状態の値はイミュータブルなので、処理中に手元で変化することがないのが良いところだ。</p>
 </div>
@@ -190,7 +190,7 @@ immutability(イミュータブルであることを好め)というよく言わ
 </div>
 </div>
 <div class="sect1">
-<h2 id="actors">メッセージパッシングとアクター</h2>
+<h2 id="actors"><a class="anchor" href="#actors"></a>メッセージパッシングとアクター</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>アイデンティティと状態をモデリングする方法は他にもあり、人気のある方法のひとつがメッセージパッシングの
@@ -225,7 +225,7 @@ distribution)をサポートしている。すべてのコードをこのよう�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_まとめ">まとめ</h2>
+<h2 id="_まとめ"><a class="anchor" href="#_まとめ"></a>まとめ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojureは、モデルとしてのプログラムを明示的にサポートし、並行処理に際してシングルプロセスでのアイデンティティと状態を管理するための堅牢で使いやすい機能を提供する関数型言語だ。</p>
@@ -243,6 +243,11 @@ distribution)をサポートしている。すべてのコードをこのよう�
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  <a href="rationale" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Rationale</a>
+  <a href="spec" class="clja-next-link">spec&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

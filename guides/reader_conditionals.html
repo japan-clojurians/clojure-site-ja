@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -95,7 +95,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Reader conditionals are a feature added in Clojure 1.7. They are designed to allow different dialects of Clojure to share common code that is mostly platform independent, but contains some platform dependent code. If you are writing code across multiple platforms that is mostly independent you should separate <code>.clj</code> and <code>.cljs</code> files instead.</p>
@@ -173,7 +173,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_host_interop">Host interop</h2>
+<h2 id="_host_interop"><a class="anchor" href="#_host_interop"></a>Host interop</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Host interop is one of the biggest pain points solved by reader conditionals. You may have a Clojure file that is almost pure Clojure, but needs to call out to the host environment for one function. <a href="https://github.com/lymingtonprecision/route-ccrs/blob/c579aea05504736f2cfbd31c3c755f7e25fdad77/src/route_ccrs/manufacturing_methods.cljc#L8-L10">This</a> is a classic example:</p>
@@ -188,7 +188,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_namespaces">Namespaces</h2>
+<h2 id="_namespaces"><a class="anchor" href="#_namespaces"></a>Namespaces</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Namespaces are the other big pain point for sharing code between Clojure and ClojureScript. ClojureScript has different syntax for <a href="https://clojurescript.org/about/differences#_macros">requiring macros</a> than Clojure. To use macros that work in both Clojure and ClojureScript in a <code>.cljc</code> file, you&#8217;ll need reader conditionals in the namespace declaration.</p>
@@ -227,7 +227,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exception_handling">Exception handling</h2>
+<h2 id="_exception_handling"><a class="anchor" href="#_exception_handling"></a>Exception handling</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Exception handling is another area that benefits from reader conditionals. ClojureScript supports <code>(catch :default)</code> to catch everything, however you will often still want to handle host specific exceptions. Here&#8217;s an <a href="https://github.com/runexec/lemon-disc/blob/c24c6638f1d476a0f5470387e52a2b702117c4a9/src/lemon_disc/core.cljc#L65-L72">example</a> from <a href="https://github.com/runexec/lemon-disc">lemon-disc</a>.</p>
@@ -247,7 +247,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_splicing">Splicing</h2>
+<h2 id="_splicing"><a class="anchor" href="#_splicing"></a>Splicing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The splicing reader conditional is not as widely used as the standard one. For an example on its usage, let&#8217;s look at the <a href="https://github.com/clojure/clojure-clr/blob/544e9354e121e10a656702222d47c8398468fb02/Clojure/Clojure.Tests/clojure/test_clojure/reader.cljc#L672-L677">tests</a> for reader conditionals in the ClojureCLR reader. What might not be obvious at first glance is that the vectors inside the splicing reader conditional are being wrapped by a surrounding vector.</p>
@@ -267,7 +267,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_file_organisation">File organisation</h2>
+<h2 id="_file_organisation"><a class="anchor" href="#_file_organisation"></a>File organisation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There isn&#8217;t a clear community consensus yet around where to put <code>.cljc</code> files. Two options are to have a single <code>src</code> directory with <code>.clj</code>, <code>.cljs</code>, and <code>.cljc</code> files, or to have separate <code>src/clj</code>, <code>src/cljc</code>, and <code>src/cljs</code> directories.</p>
@@ -275,7 +275,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cljx">cljx</h2>
+<h2 id="_cljx"><a class="anchor" href="#_cljx"></a>cljx</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before reader conditionals were introduced, the same goal of sharing code between platforms was solved by a Leiningen plugin called <a href="https://github.com/lynaghk/cljx">cljx</a>. cljx processes files with the <code>.cljx</code> extension and outputs multiple platform specific files to a generated sources directory. These were then read as normal Clojure or ClojureScript files by the Clojure <a href="xref/../../reference/reader">reader</a>. This worked well, but required another piece of tooling to run. cljx was deprecated on June 13 2015 in favour of reader conditionals.</p>
@@ -328,7 +328,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_backwards_compatibility">Backwards compatibility</h2>
+<h2 id="_backwards_compatibility"><a class="anchor" href="#_backwards_compatibility"></a>Backwards compatibility</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>At the time of writing, there is no way to use <code>.cljc</code> files in versions of Clojure less than 1.7, nor is there any porting mechanism to preprocess <code>.cljc</code> files to output <code>.clj</code> and <code>.cljs</code> files like cljx does. For that reason library maintainers may need to wait for a while until they can safely drop support for older versions of Clojure and adopt reader conditionals.</p>

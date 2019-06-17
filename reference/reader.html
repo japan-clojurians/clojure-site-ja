@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -135,10 +135,10 @@ Lisp)とその他のプログラミング言語の間の重要な差だ。- Cloj
 </div>
 </div>
 <div class="sect1">
-<h2 id="_リーダーフォーム_reader_form">リーダーフォーム(reader form)</h2>
+<h2 id="_リーダーフォーム_reader_form"><a class="anchor" href="#_リーダーフォーム_reader_form"></a>リーダーフォーム(reader form)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_シンボル">シンボル</h3>
+<h3 id="_シンボル"><a class="anchor" href="#_シンボル"></a>シンボル</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -160,7 +160,7 @@ Lisp)とその他のプログラミング言語の間の重要な差だ。- Cloj
 </div>
 </div>
 <div class="sect2">
-<h3 id="_リテラル">リテラル</h3>
+<h3 id="_リテラル"><a class="anchor" href="#_リテラル"></a>リテラル</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -202,19 +202,19 @@ the current namespace. In a namespace where <code>x</code> is aliased to <code>e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_リスト">リスト</h3>
+<h3 id="_リスト"><a class="anchor" href="#_リスト"></a>リスト</h3>
 <div class="paragraph">
 <p>リストは0個以上の丸括弧で括られたフォーム: <code>(a b c)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ベクター">ベクター</h3>
+<h3 id="_ベクター"><a class="anchor" href="#_ベクター"></a>ベクター</h3>
 <div class="paragraph">
 <p>ベクターは0個以上の角括弧で括られたフォーム: <code>[1 2 3]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_マップ">マップ</h3>
+<h3 id="_マップ"><a class="anchor" href="#_マップ"></a>マップ</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -229,7 +229,7 @@ the current namespace. In a namespace where <code>x</code> is aliased to <code>e
 </ul>
 </div>
 <div class="sect3">
-<h4 id="map_namespace_syntax">ネームスペース付きマップ記法</h4>
+<h4 id="map_namespace_syntax"><a class="anchor" href="#map_namespace_syntax"></a>ネームスペース付きマップ記法</h4>
 <div class="paragraph">
 <p><em>Clojure 1.9で追加された</em></p>
 </div>
@@ -288,13 +288,13 @@ affected.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_セット">セット</h3>
+<h3 id="_セット"><a class="anchor" href="#_セット"></a>セット</h3>
 <div class="paragraph">
 <p>セットは0個以上の、先頭に <code>#</code> を持つ波括弧で括られたフォーム： <code>#{:a :b :c}</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降">deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</h3>
+<h3 id="_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降"><a class="anchor" href="#_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降"></a>deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -316,20 +316,20 @@ defrecordのフィールドに割り当てられる。マップリテラルに�
 </div>
 </div>
 <div class="sect1">
-<h2 id="macrochars">マクロ文字</h2>
+<h2 id="macrochars"><a class="anchor" href="#macrochars"></a>マクロ文字</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>リーダーの挙動はリーダー自身に組み込まれている定義とリードテーブルによる拡張システムの組み合わせで決定される。read
 tableのエントリーはマクロキャラクターと呼ばれる特定の文字に対応する、リーダーマクロと呼ばれるる読み込みの動作のマッピングを定義する。特別な指定がない限り、マクロキャラクターはユーザーシンボルに含めることはできない</p>
 </div>
 <div class="sect2">
-<h3 id="_クォート">クォート(')</h3>
+<h3 id="_クォート"><a class="anchor" href="#_クォート"></a>クォート(')</h3>
 <div class="paragraph">
 <p><code>'form</code> &#8658; <code>(quote form)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_文字">文字 (\)</h3>
+<h3 id="_文字"><a class="anchor" href="#_文字"></a>文字 (\)</h3>
 <div class="paragraph">
 <p>上記のように文字リテラルを生成する。文字リテラルの例: <code>\a \b \c</code></p>
 </div>
@@ -343,19 +343,19 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コメント">コメント (;)</h3>
+<h3 id="_コメント"><a class="anchor" href="#_コメント"></a>コメント (;)</h3>
 <div class="paragraph">
 <p>単一行コメント。セミコロンから行末までをreaderに無視させる効果がある。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deref">Deref (@)</h3>
+<h3 id="_deref"><a class="anchor" href="#_deref"></a>Deref (@)</h3>
 <div class="paragraph">
 <p><code>@form &#8658; (deref form)</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_メタデータ">メタデータ (^)</h3>
+<h3 id="_メタデータ"><a class="anchor" href="#_メタデータ"></a>メタデータ (^)</h3>
 <div class="paragraph">
 <p>メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>
@@ -378,7 +378,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ディスパッチ">ディスパッチ (#)</h3>
+<h3 id="_ディスパッチ"><a class="anchor" href="#_ディスパッチ"></a>ディスパッチ (#)</h3>
 <div class="paragraph">
 <p>ディスパッチマクロはリーダーに、後に続く文字でインデックスされた別のテーブルに定義されているリーダーマクロを使用させる。</p>
 </div>
@@ -423,7 +423,7 @@ java.util.regex.Patternタイプになる。正規表現のエスケープ文字
 </div>
 </div>
 <div class="sect2">
-<h3 id="syntax-quote">シンタックスクォート (`, バッククォートである点について注意), (アンクォート) (~), (アンクォートスプライシング) (~@)</h3>
+<h3 id="syntax-quote"><a class="anchor" href="#syntax-quote"></a>シンタックスクォート (`, バッククォートである点について注意), (アンクォート) (~), (アンクォートスプライシング) (~@)</h3>
 <div class="paragraph">
 <p>シンボル、リスト、ベクター、セット、マップ以外のフォームについては `xと&#8217;xは同等。</p>
 </div>
@@ -454,7 +454,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="sect1">
-<h2 id="_extensible_data_notation_edn_拡張可能なデータ記法">extensible data notation (edn) (拡張可能なデータ記法)</h2>
+<h2 id="_extensible_data_notation_edn_拡張可能なデータ記法"><a class="anchor" href="#_extensible_data_notation_edn_拡張可能なデータ記法"></a>extensible data notation (edn) (拡張可能なデータ記法)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojureのreaderは <a href="https://github.com/edn-format/edn">extensible data notation
@@ -463,7 +463,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="sect1">
-<h2 id="tagged_literals">タグ付きリテラル(tagged literal)</h2>
+<h2 id="tagged_literals"><a class="anchor" href="#tagged_literals"></a>タグ付きリテラル(tagged literal)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>タグ付きリテラルはednのClojureによる実装
@@ -504,7 +504,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 がnilの場合(デフォルト)RuntimeExceptionが発生する。</p>
 </div>
 <div class="sect2">
-<h3 id="_組み込みのタグ付きリテラル">組み込みのタグ付きリテラル</h3>
+<h3 id="_組み込みのタグ付きリテラル"><a class="anchor" href="#_組み込みのタグ付きリテラル"></a>組み込みのタグ付きリテラル</h3>
 <div class="paragraph">
 <p>Clojure 1.4では <em>instant</em> と <em>UUID</em> のタグ付きリテラルが導入された。instantは <code>#inst
 "yyyy-mm-ddThh:mm:ss.fff+hh:mm"</code> という形式をとる。 注意:
@@ -548,7 +548,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="sect1">
-<h2 id="_リーダーコンディショナル_reader_conditional">リーダーコンディショナル(reader conditional)</h2>
+<h2 id="_リーダーコンディショナル_reader_conditional"><a class="anchor" href="#_リーダーコンディショナル_reader_conditional"></a>リーダーコンディショナル(reader conditional)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure 1.7 で複数のClojureプラットフォームの間でロードできるポータブルなファイルのための新しい拡張子
@@ -644,6 +644,11 @@ js/NaN、それ以外のプラットフォームではnilとして読み込ま�
 </div>
 </div>
 </div></p>
+
+<div class="clja-prev-next-container">
+  
+  <a href="repl_and_main" class="clja-next-link">REPL and main&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
 
 <hr />
 

@@ -46,13 +46,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../about/rationale.html">概要</a></li>
+            <li><a href="../about/rationale">概要</a></li>
             <li><a href="../reference/documentation">リファレンス</a></li>
-            <!-- <li><a href="../api/api.html">API</a></li>
-              <li><a href="../community/downloads.html">リリース</a></li> -->
-              <li><a href="../guides/guides.html">ガイド</a></li>
-            <!-- <li><a href="../community/resources.html">コミュニティ</a></li>
-              <li><a href="../news/news.html">ニュース</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -119,7 +119,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_started">Getting started</h2>
+<h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting started</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="xref/../../../about/spec">spec</a> library specifies the structure of data, validates or destructures it, and can generate data based on the spec.</p>
@@ -152,7 +152,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_predicates">Predicates</h2>
+<h2 id="_predicates"><a class="anchor" href="#_predicates"></a>Predicates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Each spec describes a set of allowed values. There are several ways to build specs and all of them can be composed to build more sophisticated specs.</p>
@@ -207,7 +207,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_registry">Registry</h2>
+<h2 id="_registry"><a class="anchor" href="#_registry"></a>Registry</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Until now, we&#8217;ve been using specs directly. However, spec provides a central registry for globally declaring reusable specs. The registry associates a namespaced keyword with a specification. The use of namespaces ensures that we can define reusable non-conflicting specs across libraries or applications.</p>
@@ -267,7 +267,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_composing_predicates">Composing predicates</h2>
+<h2 id="_composing_predicates"><a class="anchor" href="#_composing_predicates"></a>Composing predicates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The simplest way to compose specs is with <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/and"><code>and</code></a> and <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/or"><code>or</code></a>. Let&#8217;s create a spec that combines several predicates into a composite spec with <code>s/and</code>:</p>
@@ -320,7 +320,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_explain">Explain</h2>
+<h2 id="_explain"><a class="anchor" href="#_explain"></a>Explain</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain"><code>explain</code></a> is another high-level operation in spec that can be used to report (to <code>*out*</code>) why a value does not conform to a spec. Let&#8217;s see what explain says about some non-conforming examples we&#8217;ve seen so far.</p>
@@ -397,7 +397,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_entity_maps">Entity Maps</h2>
+<h2 id="_entity_maps"><a class="anchor" href="#_entity_maps"></a>Entity Maps</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure programs rely heavily on passing around maps of data. A common approach in other libraries is to describe each entity type, combining both the keys it contains and the structure of their values. Rather than define attribute (key+value) specifications in the scope of the entity (the map), specs assign meaning to individual attributes,
@@ -565,7 +565,7 @@ semantics at the attribute level across our libraries and applications.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_multi_spec">multi-spec</h2>
+<h2 id="_multi_spec"><a class="anchor" href="#_multi_spec"></a>multi-spec</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>One common occurrence in Clojure is to use maps as tagged entities and a special field that indicates the "type" of the map where type indicates a potentially open set of types, often with shared attributes across the types.</p>
@@ -659,7 +659,7 @@ semantics at the attribute level across our libraries and applications.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_collections">Collections</h2>
+<h2 id="_collections"><a class="anchor" href="#_collections"></a>Collections</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A few helpers are provided for other special collection cases - <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/coll-of"><code>coll-of</code></a>, <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/tuple"><code>tuple</code></a>, and  <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/map-of"><code>map-of</code></a>.</p>
@@ -805,7 +805,7 @@ semantics at the attribute level across our libraries and applications.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sequences">Sequences</h2>
+<h2 id="_sequences"><a class="anchor" href="#_sequences"></a>Sequences</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sometimes sequential data is used to encode additional structure (typically new syntax, often used in macros). spec provides the standard <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a> operators to describe the structure of a sequential data value:</p>
@@ -955,7 +955,7 @@ you need nested regular expressions to describe the inner sequential data:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_spec_for_validation">Using spec for validation</h2>
+<h2 id="_using_spec_for_validation"><a class="anchor" href="#_using_spec_for_validation"></a>Using spec for validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now is a good time to step back and think about how spec can be used for runtime data validation.</p>
@@ -1038,7 +1038,7 @@ you need nested regular expressions to describe the inner sequential data:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spec_ing_functions">Spec&#8217;ing functions</h2>
+<h2 id="_spec_ing_functions"><a class="anchor" href="#_spec_ing_functions"></a>Spec&#8217;ing functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The pre- and post-condition example in the previous section hinted at an interesting question - how do we define the input and output specifications for a function or macro?</p>
@@ -1098,7 +1098,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_higher_order_functions">Higher order functions</h2>
+<h2 id="_higher_order_functions"><a class="anchor" href="#_higher_order_functions"></a>Higher order functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Higher order functions are common in Clojure and spec provides <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fspec"><code>fspec</code></a> to support spec&#8217;ing them.</p>
@@ -1129,7 +1129,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_macros">Macros</h2>
+<h2 id="_macros"><a class="anchor" href="#_macros"></a>Macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>As macros are functions that take code and produce code, they can also be spec&#8217;ed like functions. One special consideration however is that you must keep in mind that you are receiving code as data, not evaluated arguments, and that you are most commonly producing new code as data, so often it&#8217;s not helpful to spec the :ret value of a macro (as it&#8217;s just code).</p>
@@ -1161,7 +1161,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_game_of_cards">A game of cards</h2>
+<h2 id="_a_game_of_cards"><a class="anchor" href="#_a_game_of_cards"></a>A game of cards</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here&#8217;s a bigger set of specs to model a game of cards:</p>
@@ -1234,13 +1234,13 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_generators">Generators</h2>
+<h2 id="_generators"><a class="anchor" href="#_generators"></a>Generators</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A key design constraint of spec is that all specs are also designed to act as generators of sample data that conforms to the spec (a critical requirement for property-based testing).</p>
 </div>
 <div class="sect2">
-<h3 id="_project_setup">Project Setup</h3>
+<h3 id="_project_setup"><a class="anchor" href="#_project_setup"></a>Project Setup</h3>
 <div class="paragraph">
 <p>spec generators rely on the Clojure property testing library <a href="https://github.com/clojure/test.check">test.check</a>. However, this dependency is dynamically loaded and you can use the parts of spec other than <code>gen</code>, <code>exercise</code>, and testing without declaring test.check as a runtime dependency. When you wish to use these parts of spec (typically during testing), you will need to declare a dev dependency on test.check.</p>
 </div>
@@ -1292,7 +1292,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sampling_generators">Sampling Generators</h3>
+<h3 id="_sampling_generators"><a class="anchor" href="#_sampling_generators"></a>Sampling Generators</h3>
 <div class="paragraph">
 <p>The <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen"><code>gen</code></a> function can be used to obtain the generator for any spec.</p>
 </div>
@@ -1348,7 +1348,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercise">Exercise</h3>
+<h3 id="_exercise"><a class="anchor" href="#_exercise"></a>Exercise</h3>
 <div class="paragraph">
 <p>For this we have <a href="https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise"><code>exercise</code></a>, which returns pairs of generated and conformed values for a spec. <code>exercise</code> by default produces 10 samples (like <code>sample</code>) but you can pass both functions a number indicating the number of samples to produce.</p>
 </div>
@@ -1391,7 +1391,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_code_s_and_code_generators">Using <code>s/and</code> Generators</h3>
+<h3 id="_using_code_s_and_code_generators"><a class="anchor" href="#_using_code_s_and_code_generators"></a>Using <code>s/and</code> Generators</h3>
 <div class="paragraph">
 <p>All of the generators we&#8217;ve seen worked fine but there are a number of cases where they will need some additional help. One common case is when the predicate implicitly presumes values of a particular type but the spec does not specify them:</p>
 </div>
@@ -1444,7 +1444,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_generators">Custom Generators</h3>
+<h3 id="_custom_generators"><a class="anchor" href="#_custom_generators"></a>Custom Generators</h3>
 <div class="paragraph">
 <p>Building your own generator gives you the freedom to be either narrower and/or be more explicit about what values you want to generate. Alternately, custom generators can be used in cases where conformant values can be generated more efficiently than using a base predicate plus filtering. Spec does not trust custom generators and any values they produce will also be checked by their associated spec to guarantee they pass conformance.</p>
 </div>
@@ -1576,7 +1576,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_range_specs_and_generators">Range Specs and Generators</h3>
+<h3 id="_range_specs_and_generators"><a class="anchor" href="#_range_specs_and_generators"></a>Range Specs and Generators</h3>
 <div class="paragraph">
 <p>There are several cases where it&#8217;s useful to spec (and generate) values in a range and spec provides helpers for these cases.</p>
 </div>
@@ -1628,7 +1628,7 @@ Spec
 </div>
 </div>
 <div class="sect1">
-<h2 id="_instrumentation_and_testing">Instrumentation and Testing</h2>
+<h2 id="_instrumentation_and_testing"><a class="anchor" href="#_instrumentation_and_testing"></a>Instrumentation and Testing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>spec provides a set of development and testing functionality in the <code>clojure.spec.test.alpha</code> namespace, which we can include with:</p>
@@ -1639,7 +1639,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_instrumentation">Instrumentation</h3>
+<h3 id="_instrumentation"><a class="anchor" href="#_instrumentation"></a>Instrumentation</h3>
 <div class="paragraph">
 <p>Instrumentation validates that the <code>:args</code> spec is being invoked on instrumented functions and thus provides validation for external uses of a function. Let&#8217;s turn on instrumentation for our previously spec&#8217;ed <code>ranged-rand</code> function:</p>
 </div>
@@ -1671,7 +1671,7 @@ val: {:start 8, :end 5} fails at: [:args] predicate: (&lt; (:start %) (:end %))
 </div>
 </div>
 <div class="sect2">
-<h3 id="_testing">Testing</h3>
+<h3 id="_testing"><a class="anchor" href="#_testing"></a>Testing</h3>
 <div class="paragraph">
 <p>We mentioned earlier that <code>clojure.spec.test.alpha</code> provides tools for automatically testing functions. When functions have specs, we can use <a href="https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/check"><code>check</code></a>, to automatically generate tests that check the function using the specs.</p>
 </div>
@@ -1759,7 +1759,7 @@ cause this case to occur.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_combining_code_check_code_and_code_instrument_code">Combining <code>check</code> and <code>instrument</code></h3>
+<h3 id="_combining_code_check_code_and_code_instrument_code"><a class="anchor" href="#_combining_code_check_code_and_code_instrument_code"></a>Combining <code>check</code> and <code>instrument</code></h3>
 <div class="paragraph">
 <p>While both <code>instrument</code> (for enabling <code>:args</code> checking) and <code>check</code> (for generating tests of a function) are useful tools, they can be combined to provide even deeper levels of test coverage.</p>
 </div>
@@ -1825,7 +1825,7 @@ cause this case to occur.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_wrapping_up">Wrapping Up</h2>
+<h2 id="_wrapping_up"><a class="anchor" href="#_wrapping_up"></a>Wrapping Up</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this guide we have covered most of the features for designing and using specs and generators. We expect to add some more advanced generator techniques and help on testing in a future update.</p>
