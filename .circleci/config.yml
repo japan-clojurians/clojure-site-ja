@@ -61,7 +61,7 @@ jobs:
       - run: pip3 install -r python-packages.txt
       - run:
           name: install jbake
-          command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-{{ .Environment.JBAKE_VERSION }}-bin.zip && unzip -o jbake.zip && mv jbake-{{ .Environment.JBAKE_VERSION }} ~/jbake; fi
+          command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-${JBAKE_VERSION}-bin.zip && unzip -o jbake.zip && mv jbake-${JBAKE_VERSION} ~/jbake; fi
       - save_cache:
           paths: ~/jbake
           key: *jbake_cache_key
