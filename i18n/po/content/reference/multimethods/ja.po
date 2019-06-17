@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-05-04 06:22+0900\n"
+"PO-Revision-Date: 2019-06-15 19:16+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -39,7 +39,7 @@ msgstr "Rich Hickey 2015-01-01"
 #: en/content/reference/multimethods.adoc:1
 #, no-wrap
 msgid "Multimethods and Hierarchies"
-msgstr "マルチメソッドとヒエラルキー"
+msgstr "マルチメソッド(multimethod)と階層"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:17
@@ -70,8 +70,8 @@ msgid ""
 msgstr ""
 "Clojureのマルチメソッドは _ディスパッチ関数_ と一つ以上の _メソッド_ で定義される。 _**defmulti**_ を使用してマルチメ"
 "ソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が _ディスパッチ値_ の生成のためにマルチメソッドの引"
-"数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索し"
-"する。関連するメソッドが定義されている場合、( https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から派生した値と関連するメソッドを探索しす"
+"る。関連するメソッドが定義されている場合、( https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "defmethod[defmethod] 経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義"
 "が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは _**:default**_)、"
 "存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。"
@@ -104,8 +104,8 @@ msgid ""
 "core-api.html#clojure.core/isa?[isa?] is not https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "instance?[instance?]."
 msgstr ""
-"導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシ"
-"ステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。 https://"
+"派生(derivation)はJavaの継承(クラス値)、もしくはClojureのアドホックな階層システムの組み合わせで判断される。階層システ"
+"ムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した派生をサポートしている。 https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] 関数はこの関連性を作成し、 the https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] 関数が関連性の存在をテストする。 https://"
 "clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?[isa?] と https://clojure.github.io/clojure/clojure."
@@ -117,8 +117,8 @@ msgid ""
 "You can define hierarchical relationships with +(derive child parent)+. Child and parent can be either symbols or "
 "keywords, and must be namespace-qualified:"
 msgstr ""
-"+(derive child parent)+ を使って階層的な関連を定義することが出来る。子と親にはネームスペースで修飾されたシンボルとキー"
-"ワードを使用することが出来る:"
+"+(derive child parent)+ を使って階層的な関連を定義することができる。子と親には名前空間で修飾されたシンボルとキーワード"
+"を使用することができる:"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:27
@@ -164,7 +164,7 @@ msgstr ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents[parents] / https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core/ancestors[ancestors] / https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/descendants[descendants] と https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa"
-"%3F[isa?]を使うことでヒエラルキーについて調べることが出来る。"
+"%3F[isa?]を使うことで階層について調べることができる。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:45
@@ -214,7 +214,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:62
 msgid "`isa?` uses the hierarchy system"
-msgstr "`isa?`はヒエラルキーシステムを使う。"
+msgstr "`isa?`は階層システムを使う。"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:67
@@ -232,13 +232,13 @@ msgid ""
 "You can also use a class as the child (but not the parent, the only way to make something the child of a class is via "
 "Java inheritance)."
 msgstr ""
-"クラスを子として使うことも出来る。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしか出来"
+"クラスを子として使うこともできる。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしかでき"
 "ない)。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:72
 msgid "This allows you to superimpose new taxonomies on the existing Java class hierarchy:"
-msgstr "これを使用して既存のJavaクラスのヒエラルキーに新たな分類を重ねて定義することが可能になる:"
+msgstr "これにより既存のJavaクラスの階層に新たな分類を重ねて定義することが可能になる:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:77
@@ -393,7 +393,7 @@ msgid ""
 msgstr ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method[prefer-method] はディスパッチ値が複"
 "数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別の"
-"ディスパッチ値よりも優先されることを宣言することが出来る:"
+"ディスパッチ値よりも優先されることを宣言することができる:"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:134
@@ -450,9 +450,9 @@ msgid ""
 "can also be created with https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-"
 "hierarchy], and all of the above functions can take an optional hierarchy as a first argument."
 msgstr ""
-"上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、 https://clojure.github."
-"io/clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-hierarchy] で完全に独立したヒエラルキーを作ることも"
-"可能で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。"
+"上記の全ての例ではマルチメソッドシステムが使用するグローバルな階層を使用しているが、 https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/make-hierarchy[make-hierarchy] で完全に独立した階層を作ることも可能で、上記"
+"の全ての関数は任意で階層を第1引数にとることができる。"
 
 #. type: Plain text
 #: en/content/reference/multimethods.adoc:154
@@ -466,7 +466,7 @@ msgstr ""
 "このシンプルなシステムは非常に強力だ。Clojureのマルチメソッドと伝統的なJavaスタイルのシングルディスパッチの関係を理解"
 "するひとつの方法は、シングルディスパッチはClojureのマルチメソッドにおいてディスパッチ関数が第一引数に対してgetClassを"
 "呼び出し、かつメソッドがそのクラスと関連しているようなものだ。Clojureのマルチメソッドはクラスや型と密に結びついていな"
-"いため、複数の引数のどのような属性に基づくことが出来、また引数に対するバリデーションを行いエラー処理メソッドを呼び出す"
+"いため、複数の引数のどのような属性に基づくことができ、また引数に対するバリデーションを行いエラー処理メソッドを呼び出す"
 "こと等が可能になる。"
 
 #. type: Plain text
@@ -475,8 +475,8 @@ msgid ""
 "_Note: In this example, the keyword :Shape is being used as the dispatch function, as keywords are functions of maps, "
 "as described in the <<data_structures#,Data Structures>> section._"
 msgstr ""
-"_注: この例ではキーワード :Shape がディスパッチ関数として使われている。 <<data_structures#,Data Structures>> のセク"
-"ションで説明されている通り、キーワードはマップに対する関数だからだ。_"
+"_注: この例ではキーワード :Shape がディスパッチ関数として使われている。 <<data_structures#,データ構造>> のセクションで"
+"説明されている通り、キーワードはマップに対する関数だからだ。_"
 
 #. type: delimited block -
 #: en/content/reference/multimethods.adoc:176

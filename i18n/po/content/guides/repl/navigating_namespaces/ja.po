@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2018-04-02 07:18+0900\n"
+"PO-Revision-Date: 2019-06-15 20:09+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -56,10 +56,9 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/guides/repl/navigating_namespaces.adoc:28
-#, fuzzy, no-wrap
-#| msgid "The clojure.main namespace"
+#, no-wrap
 msgid "The current namespace"
-msgstr "clojure.mainネームスペース"
+msgstr "現在の名前空間"
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:31
@@ -185,19 +184,16 @@ msgstr ""
 
 #. type: Title ==
 #: en/content/guides/repl/navigating_namespaces.adoc:116
-#, fuzzy, no-wrap
-#| msgid "Creating Transducers"
+#, no-wrap
 msgid "Creating a namespace with `ns`"
-msgstr "トランスデューサーの作成"
+msgstr ""
 
 #. type: delimited block =
 #: en/content/guides/repl/navigating_namespaces.adoc:119
-#, fuzzy
-#| msgid "Creating a namespace: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
 msgid ""
 "You can create and switch to a new namespace by evaluating `(https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/ns[ns] MY-NAMESPACE-NAME)`:"
-msgstr "ネームスペースの作成: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns]"
+msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/repl/navigating_namespaces.adoc:130
@@ -306,8 +302,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:205
-#, fuzzy, no-wrap
-#| msgid "Agent error management: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode![set-error-mode!] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
+#, no-wrap
 msgid ""
 "**Explanation:** in this situation, https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns]\n"
 "creates the new namespace and switches to it like https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns] does,\n"
@@ -315,7 +310,7 @@ msgid ""
 "because it does not automatically make available all the names defined in `clojure.core`,\n"
 "such as https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn[defn].\n"
 "You can fix that by evaluating `(https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer-clojure[clojure.core/refer-clojure])`:\n"
-msgstr "エージェントのエラーマネジメント: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error[agent-error] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent[restart-agent] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler![set-error-handler!] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler[error-handler] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode![set-error-mode!] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode[error-mode]"
+msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/repl/navigating_namespaces.adoc:215
@@ -332,22 +327,16 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:219
-#, fuzzy
-#| msgid ""
-#| "Use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] to produce a final collection:"
 msgid ""
 "If you only use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns] to switch to "
 "namespaces that have already been created, you won't have to deal with these subtleties."
 msgstr ""
-"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into[into] を使用して最終的なコレクションを作成す"
-"る:"
 
 #. type: Title ==
 #: en/content/guides/repl/navigating_namespaces.adoc:221
-#, fuzzy, no-wrap
-#| msgid "Using Libs"
+#, no-wrap
 msgid "Working with libs"
-msgstr "ライブラリの使用"
+msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:225
@@ -383,15 +372,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:240
-#, fuzzy
-#| msgid ""
-#| "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive] is the fundamental "
-#| "relationship-maker"
 msgid ""
 "`https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require]` it directly: `(require "
 "'[mylib.ns1])`"
 msgstr ""
-"基本的には https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive[derive]を使って関係性を作る。"
 
 #. type: Plain text
 #: en/content/guides/repl/navigating_namespaces.adoc:241
@@ -569,10 +553,9 @@ msgstr ""
 
 #. type: delimited block =
 #: en/content/guides/repl/navigating_namespaces.adoc:342
-#, fuzzy, no-wrap
-#| msgid "To create a sequence from the application of a transducer to an input collection, use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence[sequence]:"
+#, no-wrap
 msgid "**TIP:** you can see (among other things) what libs get loaded by using the `:verbose` tag in `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require]`:\n"
-msgstr "入力コレクションに対するトランスデューサーの適用からシーケンスを作成する場合には https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence[sequence] を使用する:"
+msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/repl/navigating_namespaces.adoc:357

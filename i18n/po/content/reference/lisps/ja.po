@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-12 01:45+0900\n"
+"PO-Revision-Date: 2019-06-15 17:51+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -129,7 +129,7 @@ msgstr "マップ、ベクター、セットに対してリーダーのシンタ
 #. type: Plain text
 #: en/content/reference/lisps.adoc:34
 msgid "_**cons**_, _**first**_ and _**rest**_ manipulate sequence abstractions, not concrete cons cells"
-msgstr "_**cons**_, _**first**_ 及び _**rest**_ は具体的なコンスセルに対してではなく、シーケンス抽象を操作する。"
+msgstr "_**cons**_, _**first**_ および _**rest**_ は具体的なコンスセルに対してではなく、シーケンス抽象を操作する。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:35
@@ -192,7 +192,7 @@ msgid ""
 "support ([], {}, and ()). Thus there can be no sentinel empty collection value."
 msgstr ""
 "リスト以外にもコレクションは存在する。空のコレクションのインスタンスを作ることができ、いくつかはリテラルをサポートして"
-"いる ([]、 {}、 及び ())。よって、空のコレクションを示すセンチネルな値は存在しない。"
+"いる ([]、 {}、 および ())。よって、空のコレクションを示すセンチネルな値は存在しない。"
 
 #. type: Plain text
 #: en/content/reference/lisps.adoc:44
@@ -256,8 +256,8 @@ msgid ""
 msgstr ""
 "|   | Clojure | Common Lisp | Scheme | Java |\n"
 "| nil があるか | nil - 「無」を意味する | nil - falseまたは空リストを意味する | - | null |\n"
-"| true があるか | true | - | #t | true (プリミティヴ) |\n"
-"| false があるか | false | - | #f | false (プリイティヴ) |\n"
+"| true があるか | true | - | #t | true (プリミティブ) |\n"
+"| false があるか | false | - | #f | false (プリミティブ) |\n"
 "| 条件分岐の際の区別: | nil と false/ それ以外 | nil/非nil | #f/非#f | false/true |\n"
 "| リスト/シーケンスライブラリが個別の具体的な型を扱うか | 扱わない - seqによるコレクションの実装の抽象化 | 扱う - コンス と ベクター | 扱う - ペア | 扱わない - イテレーターによるコレクション実装の抽象化 |\n"
 "| シングルトンの空リスト値があるか | ない - 具体的なコレクション型ごとに空のコレクションの値が存在しうる | nil | '() | ない |\n"

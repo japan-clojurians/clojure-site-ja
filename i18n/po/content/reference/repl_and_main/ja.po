@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-06-12 00:05+0900\n"
-"PO-Revision-Date: 2019-06-12 02:31+0900\n"
+"PO-Revision-Date: 2019-06-15 19:20+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -58,7 +58,7 @@ msgstr "REPLとmainエントリーポイント"
 #: en/content/reference/repl_and_main.adoc:17
 #, no-wrap
 msgid "The clojure.main namespace"
-msgstr "clojure.mainネームスペース"
+msgstr "clojure.main名前空間"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:20
@@ -66,8 +66,8 @@ msgid ""
 "The `clojure.main` namespace provides functions that allow Clojure programs and interactive sessions to be launched "
 "via Java's application launcher tool `java`."
 msgstr ""
-"`clojure.main` のネームスペースはJavaのアプリケーションランチャーツール `java` からClojureプログラムやインタラクティブ"
-"なセッションを起動するための関数を提供している。"
+"`clojure.main` の名前空間はJavaのアプリケーションランチャーツール `java` からClojureプログラムやインタラクティブなセッ"
+"ションを起動するための関数を提供している。"
 
 #. type: Title ==
 #: en/content/reference/repl_and_main.adoc:21
@@ -123,7 +123,7 @@ msgstr "- 標準入力からスクリプトを実行する"
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:34
 msgid "-m, --main A namespace to find a -main function for execution"
-msgstr "-m, --main 実行対象の-main関数を見つけるためのネームスペース"
+msgstr "-m, --main 実行対象の-main関数を見つけるための名前空間"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:35
@@ -143,7 +143,7 @@ msgstr "一般的に利用されるset!操作が可能なvarに対してスレ�
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:38
 msgid "Enters the user namespace"
-msgstr "userネームスペースに切り替える"
+msgstr "user名前空間に切り替える"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:39
@@ -293,7 +293,7 @@ msgstr "java -cp clojure.jar clojure.main\n"
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:95
 msgid "The REPL prompt shows the name of the current namespace (pass:[*ns*]), which defaults to _user_."
-msgstr "REPLプロンプトは現在のネームスペースの名前 (pass:[*ns*]) を表示し、デフォルトは _user_ である。"
+msgstr "REPLプロンプトは現在の名前空間の名前 (pass:[*ns*]) を表示し、デフォルトは _user_ である。"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:97
@@ -318,8 +318,8 @@ msgid ""
 "The https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] namespace has a number of useful functions "
 "for inspecting the source and documentation of available functions:"
 msgstr ""
-"https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] ネームスペースには、利用可能な関数のソースやド"
-"キュメントの閲覧に有用な関数がいくつもある:"
+"https://clojure.github.io/clojure/clojure.repl-api.html[clojure.repl] 名前空間には、利用可能な関数のソースやドキュメン"
+"トの閲覧に有用な関数がいくつもある:"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:104
@@ -461,7 +461,7 @@ msgstr "`port` - 正の整数、必須"
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:147
 msgid "`accept` - namespaced symbol of function to invoke on socket accept, required"
-msgstr "`accept` - ソケットの受理時に呼び出される関数のネームスペース付きのシンボル、必須"
+msgstr "`accept` - ソケットの受理時に呼び出される関数の名前空間付きのシンボル、必須"
 
 #. type: Plain text
 #: en/content/reference/repl_and_main.adoc:148
