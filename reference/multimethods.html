@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - マルチメソッドとヒエラルキー</title>
+    <title>Clojure - マルチメソッド(multimethod)と階層</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>マルチメソッドとヒエラルキー</h1>
+  <h1>マルチメソッド(multimethod)と階層</h1>
 </div>
 
 <p><em></em></p>
@@ -92,7 +92,7 @@
 <div class="paragraph">
 <p>Clojureのマルチメソッドは <em>ディスパッチ関数</em> と一つ以上の <em>メソッド</em> で定義される。 <em><strong>defmulti</strong></em>
 を使用してマルチメソッドを定義する場合、ディスパッチ関数を与える必要がある。この関数が <em>ディスパッチ値</em>
-の生成のためにマルチメソッドの引数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から導出された値と関連するメソッドを探索しする。関連するメソッドが定義されている場合、(
+の生成のためにマルチメソッドの引数に適用される。マルチメソッドはその後ディスパッチ値、もしくはディスパッチ値から派生した値と関連するメソッドを探索しする。関連するメソッドが定義されている場合、(
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod">defmethod</a>
 経由)、そのメソッドディスパッチ値を引数として呼び出される。ディスパッチ値と関連するメソッドの定義が存在しない場合、マルチメソッドはデフォルトのディスパッチ値と関連するメソッドを探索し(デフォルトは
 <em><strong>:default</strong></em>)、存在する場合それを仕様する。存在しない場合、マルチメソッドの呼び出しはエラーとなる。</p>
@@ -109,7 +109,7 @@
 メソッドの間の優先順位が曖昧な場合に優先順位を定義する。</p>
 </div>
 <div class="paragraph">
-<p>導出はJavaの継承(クラス値)、もしくはClojureのアドホックなヒエラルキーシステムの組み合わせで判断される。ヒエラルキーシステムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した導出をサポートしている。
+<p>派生(derivation)はJavaの継承(クラス値)、もしくはClojureのアドホックな階層システムの組み合わせで判断される。階層システムは名前(シンボル、もしくはキーワード)間、またはクラスと名前の関連性を利用した派生をサポートしている。
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive">derive</a>
 関数はこの関連性を作成し、 the
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?">isa?</a>
@@ -121,7 +121,7 @@
 </div>
 <div class="paragraph">
 <p>(derive child parent)
-を使って階層的な関連を定義することが出来る。子と親にはネームスペースで修飾されたシンボルとキーワードを使用することが出来る:</p>
+を使って階層的な関連を定義することができる。子と親には名前空間で修飾されたシンボルとキーワードを使用することができる:</p>
 </div>
 <div class="paragraph">
 <p><em>注: :: のリーダー文法をキーワードに使用すると(::keywords)名前空間に解決される。</em></p>
@@ -149,7 +149,7 @@
 /
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants">descendants</a>
 と
-<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>を使うことでヒエラルキーについて調べることが出来る。</p>
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F">isa?</a>を使うことで階層について調べることができる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -173,7 +173,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>`isa?`はヒエラルキーシステムを使う。</p>
+<p>`isa?`は階層システムを使う。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -182,10 +182,10 @@
 </div>
 </div>
 <div class="paragraph">
-<p>クラスを子として使うことも出来る。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしか出来ない)。</p>
+<p>クラスを子として使うこともできる。(親としては使えない、何かのクラスの子を定義することはJavaの継承関係を通してしかできない)。</p>
 </div>
 <div class="paragraph">
-<p>これを使用して既存のJavaクラスのヒエラルキーに新たな分類を重ねて定義することが可能になる:</p>
+<p>これにより既存のJavaクラスの階層に新たな分類を重ねて定義することが可能になる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -264,7 +264,7 @@
 </div>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method">prefer-method</a>
-はディスパッチ値が複数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別のディスパッチ値よりも優先されることを宣言することが出来る:</p>
+はディスパッチ値が複数マッチし、どちらを優先するべきか曖昧な場合に順序を付けることに使用する。マルチメソッド毎に特定のディスパッチ値が別のディスパッチ値よりも優先されることを宣言することができる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -287,16 +287,16 @@
 </div>
 </div>
 <div class="paragraph">
-<p>上記の全ての例ではマルチメソッドシステムが使用するグローバルなヒエラルキーを使用しているが、
+<p>上記の全ての例ではマルチメソッドシステムが使用するグローバルな階層を使用しているが、
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy">make-hierarchy</a>
-で完全に独立したヒエラルキーを作ることも可能で、上記の全ての関数は任意でヒエラルキーを第一引数に取ることが出来る。</p>
+で完全に独立した階層を作ることも可能で、上記の全ての関数は任意で階層を第1引数にとることができる。</p>
 </div>
 <div class="paragraph">
-<p>このシンプルなシステムは非常に強力だ。Clojureのマルチメソッドと伝統的なJavaスタイルのシングルディスパッチの関係を理解するひとつの方法は、シングルディスパッチはClojureのマルチメソッドにおいてディスパッチ関数が第一引数に対してgetClassを呼び出し、かつメソッドがそのクラスと関連しているようなものだ。Clojureのマルチメソッドはクラスや型と密に結びついていないため、複数の引数のどのような属性に基づくことが出来、また引数に対するバリデーションを行いエラー処理メソッドを呼び出すこと等が可能になる。</p>
+<p>このシンプルなシステムは非常に強力だ。Clojureのマルチメソッドと伝統的なJavaスタイルのシングルディスパッチの関係を理解するひとつの方法は、シングルディスパッチはClojureのマルチメソッドにおいてディスパッチ関数が第一引数に対してgetClassを呼び出し、かつメソッドがそのクラスと関連しているようなものだ。Clojureのマルチメソッドはクラスや型と密に結びついていないため、複数の引数のどのような属性に基づくことができ、また引数に対するバリデーションを行いエラー処理メソッドを呼び出すこと等が可能になる。</p>
 </div>
 <div class="paragraph">
-<p><em>注: この例ではキーワード :Shape がディスパッチ関数として使われている。 <a href="data_structures">Data
-Structures</a> のセクションで説明されている通り、キーワードはマップに対する関数だからだ。</em></p>
+<p><em>注: この例ではキーワード :Shape がディスパッチ関数として使われている。 <a href="data_structures">データ構造</a>
+のセクションで説明されている通り、キーワードはマップに対する関数だからだ。</em></p>
 </div>
 <div class="listingblock">
 <div class="content">

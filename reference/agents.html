@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - エージェントと非同期処理</title>
+    <title>Clojure - Agentと非同期アクション</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>エージェントと非同期処理</h1>
+  <h1>Agentと非同期アクション</h1>
 </div>
 
 <p><em></em></p>
@@ -87,59 +87,59 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>エージェントはRefと同じくミュータブルな状態の共有を提供する。 <a href="refs">Refs</a> は <em>協調した</em> 、 <em>複数のもの</em> への <em>同期的</em>
-な変更をサポートしているのに対し、エージェントは <em>独立した</em> <em>個別のもの</em> への <em>非同期</em>
-な変更を提供する。エージェントは単一のストレージに束縛され、アクションの結果としてそのストレージにだけ(新しい状態への)変更を許可する。アクションとはエージェントの状態に対して非同期的に適用される
+<p>AgentはRefと同じくミュータブルな状態の共有を提供する。 <a href="refs">Ref</a> は <em>協調した</em> 、 <em>複数のもの</em> への <em>同期的</em>
+な変更をサポートしているのに対し、Agentは <em>独立した</em> <em>個別のもの</em> への <em>非同期</em>
+な変更を提供する。Agentは単一のストレージに束縛され、アクションの結果としてそのストレージにだけ(新しい状態への)変更を許可する。アクションとはAgentの状態に対して非同期的に適用される
 (任意で引数を追加できる)
-関数であり、戻り値がエージェントの新しい状態となる。アクションは関数であるため、マルチメソッドを使うことができ、アクションをポリモーフィックにすることも出来る。更には関数の数には限りがなく、エージェントがサポートできるアクションにも限りがない点が他の言語によるパターンマッチによるメッセージの処理ループと対照的である。</p>
+関数であり、戻り値がAgentの新しい状態となる。アクションは関数であるため、マルチメソッドを使うことができ、アクションをポリモーフィックにすることもできる。更には関数の数には限りがなく、Agentがサポートできるアクションにも限りがない点が他の言語によるパターンマッチによるメッセージの処理ループと対照的である。</p>
 </div>
 <div class="paragraph">
-<p>Clojureのエージェントは <em>リアクティブ</em> であり、自律的ではない -
-手続き的なメッセージループやブロッキングレシーブ等は存在しない。エージェントの状態自体はイミュータブル
-(Clojureの永続的なコレクションのインスタンスが好ましい) にするべきで、エージェントの状態はどのスレッドからでもメッセージ無しで即座に読み込める
+<p>ClojureのAgentは <em>リアクティブ</em> であり、自律的ではない -
+手続き的なメッセージループやブロッキングレシーブ等は存在しない。Agentの状態自体はイミュータブル
+(Clojureの永続的なコレクションのインスタンスが好ましい) にするべきで、Agentの状態はどのスレッドからでもメッセージなしで即座に読み込める
 (
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
-関数か <a href="reader">reader</a> macro @ を使用する) 。要するに、観測においては協調や調停が不要である。</p>
+関数か <a href="reader">リーダー</a> マクロ @ を使用する) 。要するに、観測においては協調や調停が不要である。</p>
 </div>
 <div class="paragraph">
-<p>エージェントのアクションディスパッチは (send agent fn args*) の形式を取る。
+<p>Agentのアクションディスパッチは (send agent fn args*) の形式を取る。
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
-(及び
+(および
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>)
 は即座にリターンされ、後ほど別のスレッドで以下が起こる:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>与えられた fn がエージェントの <em>状態</em> と任意の引数に対して適用される。</p>
+<p>与えられた fn がAgentの <em>状態</em> と任意の引数に対して適用される。</p>
 </li>
 <li>
-<p>エージェントに対してバリデーター関数がセットされている場合、 fn の戻り値がバリデーター関数に渡される。詳細については
+<p>Agentに対してバリデーター関数がセットされている場合、 fn の戻り値がバリデーター関数に渡される。詳細については
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!">set-validator!</a>
 を参照</p>
 </li>
 <li>
-<p>バリデーターが成功、もしくはバリデーターが指定されていない場合、与えられた fn の戻り値がエージェントの新しい状態となる。</p>
+<p>バリデーターが成功、もしくはバリデーターが指定されていない場合、与えられた fn の戻り値がAgentの新しい状態となる。</p>
 </li>
 <li>
-<p>エージェントに対してウォッチャーが追加されている場合、それらが呼ばれる。詳細については
+<p>Agentに対してウォッチャーが追加されている場合、それらが呼ばれる。詳細については
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch">add-watch</a>
 を参照</p>
 </li>
 <li>
-<p>関数の実行中に他のディスパッチが行われた場合(直接、もしくは関節的に)、エージェントの状態の <em>変更後</em> まで保留となる。</p>
+<p>関数の実行中に他のディスパッチが行われた場合(直接、もしくは関節的に)、Agentの状態の <em>変更後</em> まで保留となる。</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>アクション関数によって例外が投げられた場合、ネストされたディスパッチは起こらず、例外はエージェント自身にキャッシュされる。エラーがキャッシュされたエージェントに対しては、エラーがクリアされるまで後に続く全ての操作が即座に例外となる。エージェントのエラー内容は
+<p>アクション関数によって例外が投げられた場合、ネストされたディスパッチは起こらず、例外はAgent自身にキャッシュされる。エラーがキャッシュされたAgentに対しては、エラーがクリアされるまで後に続く全ての操作が即座に例外となる。Agentのエラー内容は
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
 で取得することが可能で、
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
-を使用してエージェントを再起動することが出来る。</p>
+を使用してAgentを再起動することができる。</p>
 </div>
 <div class="paragraph">
-<p>全てのエージェントのアクションはスレッドプール内のスレッドにインターリーブされる。どの時点でも各エージェントに対して最大でも一つのアクションが実行される。別のエージェントやスレッドからエージェントへとディスパッチされたアクションは
+<p>全てのAgentのアクションはスレッドプール内のスレッドにインターリーブされる。どの時点でも各Agentに対して最大でも一つのアクションが実行される。別のAgentやスレッドからAgentへとディスパッチされたアクションは
 send が行われた順番で起こり、他のソースからディスパッチされたアクションと( 可能性として )インターリーブされる。
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
 はCPUバウンドな処理に使用するべきで、
@@ -147,14 +147,14 @@ send が行われた順番で起こり、他のソースからディスパッチ
 はIOでブロックする可能性があるアクションに適切なものとなっている。</p>
 </div>
 <div class="paragraph">
-<p>エージェントはSTMと統合されている -
+<p>AgentはSTMと統合されている -
 トランザクションの中で行われる全てのディスパッチはコミットまで保留され、リトライや中断が発生した際にはディスパッチが廃棄される。</p>
 </div>
 <div class="paragraph">
 <p>全てのClojureの並列サポートと同じく、ユーザーコードのロックは一切関与してこない。</p>
 </div>
 <div class="paragraph">
-<p>エージェントを使用すると非デーモンバックグラウンドスレッドのプールが立ち上がり、JVMのシャットダウンを妨げる点には注意が必要になる。シャットダウンを行い場合は
+<p>Agentを使用すると非デーモンバックグラウンドスレッドのプールが立ち上がり、JVMのシャットダウンを妨げる点には注意が必要になる。シャットダウンを行い場合は
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a>
 を使用してこれらのスレッドを終了させる。</p>
 </div>
@@ -164,7 +164,7 @@ send が行われた順番で起こり、他のソースからディスパッチ
 <h2 id="_例"><a class="anchor" href="#_例"></a>例</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>この例ではメッセージの巡回送信のテストを実装している。n個のエージェントのチェインの作成と、連続するm個のアクションのチェインの先頭へのディスパッチが行われ、チェインを辿っていく。</p>
+<p>この例ではメッセージの巡回送信のテストを実装している。n個のAgentのチェーンの作成と、連続するm個のアクションのチェインの先頭へのディスパッチが行われ、チェーンを辿っていく。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -194,25 +194,25 @@ send が行われた順番で起こり、他のソースからディスパッチ
 <h2 id="_関連する関数"><a class="anchor" href="#_関連する関数"></a>関連する関数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>エージェントを作成する:
+<p>Agentを作成する:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent">agent</a></p>
 </div>
 <div class="paragraph">
-<p>エージェントの観察:
+<p>Agentを観察する:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
-<em>( @ <a href="reader">reader</a> マクロも参照)</em>
+<em>( @ <a href="reader">リーダー</a> マクロも参照)</em>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler">error-handler</a>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode">error-mode</a></p>
 </div>
 <div class="paragraph">
-<p>エージェントの状態を変更する:
+<p>Agentの状態を変更する:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send">send</a>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off">send-off</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a></p>
 </div>
 <div class="paragraph">
-<p>エージェントに対してブロックを伴う待ちを行う:
+<p>Agentに対してブロックを伴う待ちを行う:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await">await</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for">await-for</a></p>
 </div>
@@ -227,11 +227,11 @@ send が行われた順番で起こり、他のソースからディスパッチ
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch">remove-watch</a></p>
 </div>
 <div class="paragraph">
-<p>エージェントのスレッドを管理する:
+<p>Agentのスレッドを管理する:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents">shutdown-agents</a></p>
 </div>
 <div class="paragraph">
-<p>エージェントのエラーマネジメント:
+<p>Agentのエラー管理:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error">agent-error</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent">restart-agent</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler!">set-error-handler!</a>

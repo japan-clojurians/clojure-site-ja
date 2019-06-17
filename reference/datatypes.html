@@ -111,7 +111,7 @@
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype">deftype</a>と
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord">defrecord</a>と
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a>は抽象の実装を定義するメカニズムを提供し、reifyについてはそれらの実装のインスタンスを提供する。抽象自体は
-<a href="protocols">プロトコル</a>もしくはインターフェースによって定義される。データ型はホストの型(deftypeとdefrecordについては名前付き、reifyの場合は匿名)と何らかの構造(deftypeとdefrecordについては明示的なフィールド、reifyの場合は暗黙的なクロージャー)及び任意の型の抽象メソッドの実装を提供する。これらは比較的綺麗な方法でホストの最もパフォーマンスの良いプリミティヴへのアクセスとポリモーフィズム機構をサポートする。これらはただホストを括弧の中に記述するメカニズムではなく、ホストの機能の制限されたサブセットのみをサポートしており、多くの場合ホスト自身よりも動的である点に注意する必要がある。意図としては、ホストとの連携のために制限されたスコープの外に出る必要がない限り、プラットフォーム上で最もパフォーマンスの良いデータ構造を手にするためにClojureを離れる必要はない。</p>
+<a href="protocols">プロトコル</a>もしくはインターフェースによって定義される。データ型はホストの型(deftypeとdefrecordについては名前付き、reifyの場合は匿名)と何らかの構造(deftypeとdefrecordについては明示的なフィールド、reifyの場合は暗黙的なクロージャー)および任意の型の抽象メソッドの実装を提供する。これらは比較的綺麗な方法でホストの最もパフォーマンスの良いプリミティブへのアクセスとポリモーフィズム機構をサポートする。これらはただホストを括弧の中に記述するメカニズムではなく、ホストの機能の制限されたサブセットのみをサポートしており、多くの場合ホスト自身よりも動的である点に注意する必要がある。意図としては、ホストとの連携のために制限されたスコープの外に出る必要がない限り、プラットフォーム上で最もパフォーマンスの良いデータ構造を手にするためにClojureを離れる必要はない。</p>
 </div>
 </div>
 </div>
@@ -287,7 +287,7 @@ APIがある場合は、gen-classを利用する必要がある。これがCloju
 <h2 id="_javaアノテーションサポート"><a class="anchor" href="#_javaアノテーションサポート"></a>Javaアノテーションサポート</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>deftype、defrecord、及びdefinterfaceで作成された型は、Javaとの連携のためにJavaアノテーションを含むクラスを生成することができる。アノテーションは以下に対するメタデータとして記述される:</p>
+<p>deftype、defrecord、およびdefinterfaceで作成された型は、Javaとの連携のためにJavaアノテーションを含むクラスを生成することができる。アノテーションは以下に対するメタデータとして記述される:</p>
 </div>
 <div class="ulist">
 <ul>

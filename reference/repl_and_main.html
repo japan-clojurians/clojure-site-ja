@@ -82,7 +82,7 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_clojure_mainネームスペース">clojure.mainネームスペース</a></li>
+<li><a href="#_clojure_main名前空間">clojure.main名前空間</a></li>
 <li><a href="#_clojure_main_help">clojure.main --help</a></li>
 <li><a href="#_replの起動">REPLの起動</a></li>
 <li><a href="#_スクリプトの起動">スクリプトの起動</a></li>
@@ -94,10 +94,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_clojure_mainネームスペース"><a class="anchor" href="#_clojure_mainネームスペース"></a>clojure.mainネームスペース</h2>
+<h2 id="_clojure_main名前空間"><a class="anchor" href="#_clojure_main名前空間"></a>clojure.main名前空間</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>clojure.main</code> のネームスペースはJavaのアプリケーションランチャーツール <code>java</code>
+<p><code>clojure.main</code> の名前空間はJavaのアプリケーションランチャーツール <code>java</code>
 からClojureプログラムやインタラクティブなセッションを起動するための関数を提供している。</p>
 </div>
 </div>
@@ -196,7 +196,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>REPLプロンプトは現在のネームスペースの名前 (*ns*) を表示し、デフォルトは <em>user</em> である。</p>
+<p>REPLプロンプトは現在の名前空間の名前 (*ns*) を表示し、デフォルトは <em>user</em> である。</p>
 </div>
 <div class="paragraph">
 <p>REPLを利用している際には、特別なvarをいくつか利用できる:</p>
@@ -213,7 +213,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="paragraph">
 <p><a href="https://clojure.github.io/clojure/clojure.repl-api.html">clojure.repl</a>
-ネームスペースには、利用可能な関数のソースやドキュメントの閲覧に有用な関数がいくつもある:</p>
+名前空間には、利用可能な関数のソースやドキュメントの閲覧に有用な関数がいくつもある:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -339,7 +339,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 <p><code>port</code> - 正の整数、必須</p>
 </li>
 <li>
-<p><code>accept</code> - ソケットの受理時に呼び出される関数のネームスペース付きのシンボル、必須</p>
+<p><code>accept</code> - ソケットの受理時に呼び出される関数の名前空間付きのシンボル、必須</p>
 </li>
 <li>
 <p><code>args</code> - acceptに渡す引数のシーケンシャルなコレクション</p>

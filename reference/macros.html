@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Macros(マクロ)</title>
+    <title>Clojure - マクロ(macro)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Macros(マクロ)</h1>
+  <h1>マクロ(macro)</h1>
 </div>
 
 <p><em></em></p>
@@ -86,10 +86,10 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Clojureにはプログラマティカルなマクロシステムがあり、ユーザーコードによるコンパイラの拡張を可能にする。マクロを使用することで、他の言語ではプリミティヴや組み込みサポートが必要になる文法構造を定義することができる。実際、Clojureのコアな文法構造はプリミティヴではなく、通常のマクロである。</p>
+<p>Clojureにはプログラマティカルなマクロシステムがあり、ユーザーコードによるコンパイラの拡張を可能にする。マクロを使用することで、他の言語ではプリミティブや組み込みサポートが必要になる文法構造を定義することができる。実際、Clojureのコアな文法構造はプリミティブではなく、通常のマクロである。</p>
 </div>
 <div class="paragraph">
-<p>いくつかのマクロは単純なプリミティヴフォームの組み合わせを作り出す。例えば
+<p>いくつかのマクロは単純なプリミティブフォームの組み合わせを作り出す。例えば
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when"><code>when</code></a>
 は <a href="special_forms#if"><code>if</code></a> と <a href="special_forms#do"><code>do</code></a> を組み合わせる:</p>
 </div>
@@ -150,12 +150,12 @@ user=&gt; (macroexpand '(-&gt; {} (assoc :a 1) (assoc :b 2)))
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-let">if-let</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond">cond</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp">condp</a><br>
-ループ ( <a href="sequences">Sequences</a> も参照):<br>
+ループ ( <a href="sequences">シーケンス</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for">for</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq">doseq</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes">dotimes</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while">while</a><br>
-varを扱う ( <a href="vars">Vars and Environment</a> も参照):<br>
+varを扱う ( <a href="vars">Varと環境</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare">declare</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn">defn</a><br>
@@ -170,7 +170,7 @@ varを扱う ( <a href="vars">Vars and Environment</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto">doto</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e">-></a><br>
-ダイナミックスコープ ( <a href="vars">Vars and Environment</a> も参照):<br>
+動的スコープ ( <a href="vars">Varと環境</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking">locking</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time">time</a><br>
@@ -179,11 +179,11 @@ varを扱う ( <a href="vars">Vars and Environment</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open">with-open</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str">with-out-str</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision">with-precision</a><br>
-lazyなものを作成する ( <a href="sequences">Sequences</a> も参照):<br>
+lazyなものを作成する ( <a href="sequences">シーケンス</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat">lazy-cat</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons">lazy-cons</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay">delay</a><br>
-<a href="java_interop">Java interop</a> macros:<br>
+<a href="java_interop">Javaとの相互運用</a> macros:<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E">..</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap">amap</a><br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce">areduce</a><br>
@@ -201,8 +201,7 @@ lazyなものを作成する ( <a href="sequences">Sequences</a> も参照):<br>
 <a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a></p>
 </div>
 <div class="paragraph">
-<p>いくつかの <a href="special_forms">special forms</a> は実際には主に分配束縛を提供する目的でマクロとして実装されている: fn
-let loop</p>
+<p>いくつかの <a href="special_forms">特殊形式</a> は実際には主に分配束縛を提供する目的でマクロとして実装されている: fn let loop</p>
 </div>
 </div>
 </div></p>

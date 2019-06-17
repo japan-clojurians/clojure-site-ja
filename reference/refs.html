@@ -87,18 +87,17 @@
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="vars">Vars</a> はスレッド間の <em>分離</em>
-によってミュータブルなストレージの安全な使用を保証しているが、トランザクショナルな参照(Ref)は
+<p><a href="vars">Var</a> はスレッド間の <em>分離</em> によってミュータブルなストレージの安全な使用を保証しているが、トランザクショナルな参照(Ref)は
 <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">software
 transactional memory</a> (STM) システムによってミュータブルなストレージの安全な <em>共有</em>
 を保証する。Refは最初から最後まで単一のストレージに束縛され、変更をトランザクションの中でしか許容しない。</p>
 </div>
 <div class="paragraph">
 <p>データベースのトランザクションを使用したことがあればClojureのトランザクションを理解することは容易だ -
-Refに対する全ての処理がアトミックで一貫性があり、分離されていることを保証する。アトミックとは、トランザクション内でのRefに対する変更が全て起こるか、一切起こらないかのどちらかであることを意味する。一貫性があるとは全ての新しい値に対して、トランザクションのコミットの前にバリデーション関数でチェックを行うことが出来ることを意味する。分離されているとはトランザクション内での影響は、トランザクションが動いている間は他のトランザクションから観測されないことを意味する。もう一つ、STMの一般的な機能としてトランザクションの動作中に競合が起こった場合の自動的なリトライもある。</p>
+Refに対する全ての処理がアトミックで一貫性があり、分離されていることを保証する。アトミックとは、トランザクション内でのRefに対する変更が全て起こるか、一切起こらないかのどちらかであることを意味する。一貫性があるとは全ての新しい値に対して、トランザクションのコミットの前にバリデーション関数でチェックを行うことができることを意味する。分離されているとはトランザクション内での影響は、トランザクションが動いている間は他のトランザクションから観測されないことを意味する。もう一つ、STMの一般的な機能としてトランザクションの動作中に競合が起こった場合の自動的なリトライもある。</p>
 </div>
 <div class="paragraph">
-<p>STMを実現するには複数の方式があり (ロック/悲観的, ロックフリー/楽観的 及び それらの混合)
+<p>STMを実現するには複数の方式があり (ロック/悲観的, ロックフリー/楽観的 および それらの混合)
 、未だに研究の対象となる問題である。ClojureのSTMは
 <a href="http://en.wikipedia.org/wiki/Multiversion_concurrency_control">multiversion
 concurrency control</a> と adaptive history queue を
@@ -141,12 +140,12 @@ or
 <li>
 <p>トランザクションはリトライが <em>行われる</em> のでトランザクション内でI/O等の副作用を伴う処理は避けるべきで、
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!">io!</a>
-マクロを使用することでトランザクション内で純粋ではない関数の使用を防ぐことが出来る。</p>
+マクロを使用することでトランザクション内で純粋ではない関数の使用を防ぐことができる。</p>
 </li>
 <li>
 <p>変更を受けているあるRefの値の正当性の制約が同時に <em>変更を受けていない</em> 別のRefの値に依存する場合、
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure">ensure</a>
-を使用して2つ目のRefを変更から保護することが出来る。 'ensure'
+を使用して2つ目のRefを変更から保護することができる。 'ensure'
 されたRef(3つ目)は保護されるが、元のRef(2つ目)に対する変更は保護されない。</p>
 </li>
 <li>
@@ -191,7 +190,7 @@ or
 </div>
 </div>
 <div class="paragraph">
-<p>シャッフルの実行にあたって値の喪失や重複が起こらないことが確認出来る:</p>
+<p>シャッフルの実行にあたって値の喪失や重複が起こらないことが確認できる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -218,7 +217,7 @@ Distinct: 1000</code></pre>
 <div class="paragraph">
 <p>Refの観測:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref">deref</a>
-<em>( @ <a href="reader">reader</a> マクロも参照)</em></p>
+<em>( @ <a href="reader">リーダー</a> マクロも参照)</em></p>
 </div>
 <div class="paragraph">
 <p>トランザクションマクロ:

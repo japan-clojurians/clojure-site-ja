@@ -93,15 +93,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/documentation.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
         <loc>http://clojure-site-ja.github.io/reference/lazy.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -133,6 +125,10 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/reference/documentation.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/reference/evaluation.html</loc>
         <lastmod></lastmod>
     </url>
@@ -146,6 +142,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -269,11 +269,11 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/guides.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/guides.html</loc>
         <lastmod></lastmod>
     </url>
     <url>

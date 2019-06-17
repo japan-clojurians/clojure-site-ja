@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - ライブラリの使用</title>
+    <title>Clojure - ライブラリ(lib)を使う</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>ライブラリの使用</h1>
+  <h1>ライブラリ(lib)を使う</h1>
 </div>
 
 <p><em></em></p>
@@ -82,21 +82,21 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_libの規約">Libの規約</a></li>
-<li><a href="#_libの例">Libの例</a></li>
+<li><a href="#_libの規約">libの規約</a></li>
+<li><a href="#_libの例">libの例</a></li>
 <li><a href="#_プレフィックスリスト">プレフィックスリスト</a></li>
 <li><a href="#_関連する関数">関連する関数</a></li>
-<li><a href="#order">Libのロード順</a></li>
+<li><a href="#order">libのロード順</a></li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Clojureはコードローディングと依存関係の追跡のための "lib"
-機構を提供している。libとはクラスパス内のJavaリソースに存在する、単一の名前ついたClojureソースコードである。libは一般的に、一つのClojureネームスペースの完全な定義を提供する。</p>
+機構を提供している。libとはクラスパス内のJavaリソースに存在する、単一の名前ついたClojureソースコードである。libは一般的に、一つのClojure名前空間の完全な定義を提供する。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_libの規約"><a class="anchor" href="#_libの規約"></a>Libの規約</h2>
+<h2 id="_libの規約"><a class="anchor" href="#_libの規約"></a>libの規約</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojureはlibの命名と構成における規約を定義している:</p>
@@ -126,7 +126,7 @@ core facilities, and/or other libs,</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_libの例"><a class="anchor" href="#_libの例"></a>Libの例</h2>
+<h2 id="_libの例"><a class="anchor" href="#_libの例"></a>libの例</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>単純なlib:</p>
@@ -143,21 +143,21 @@ core facilities, and/or other libs,</p>
 <ul>
 <li>
 <p><code>ns</code>
-フォームがlibのネームスペースに名前を付けるとともに依存関係の宣言を行う。このlibは通常名前によって相対クラスパスのパスに存在するソースファイルに定義される:
+フォームがlibの名前空間に名前を付けるとともに依存関係の宣言を行う。このlibは通常名前によって相対クラスパスのパスに存在するソースファイルに定義される:
 com/my_company/clojure/examples/my_utils.clj
 (ピリオドからスラッシュ、ハイフンからアンダースコアへの変換に注意)。</p>
 </li>
 <li>
 <p><code>:import</code> 句でこのlibが <code>java.util.Date</code>
-を使用していることを宣言し、このlibのコード内において名前の装飾無しで使用することが可能になる。</p>
+を使用していることを宣言し、このlibのコード内において非修飾名で使用することが可能になる。</p>
 </li>
 <li>
 <p><code>:use</code> 句は <code>clojure.string</code> ライブラリの <code>join</code>
-関数のみに対するして依存関係を宣言している。このライブラリ中のコードでは join を修飾無しで使用することが出来る。</p>
+関数のみに対するして依存関係を宣言している。このライブラリ中のコードでは join を非修飾名で使用することができる。</p>
 </li>
 <li>
-<p><code>:require</code> 句は <code>clojure.java.io</code> ライブラリ内の関数に対する依存関係を宣言し、それらを省略したネームスペースエイリアス
-<code>jio</code> を使用して呼び出すことが出来る。</p>
+<p><code>:require</code> 句は <code>clojure.java.io</code> ライブラリ内の関数に対する依存関係を宣言し、それらを省略した名前空間エイリアス
+<code>jio</code> を使用して呼び出すことができる。</p>
 </li>
 </ul>
 </div>
@@ -167,9 +167,9 @@ com/my_company/clojure/examples/my_utils.clj
 <h2 id="_プレフィックスリスト"><a class="anchor" href="#_プレフィックスリスト"></a>プレフィックスリスト</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Libが名前のプレフィックスを共有する複数のライブラリに依存することは一般的であり、 <code>require</code> と <code>use</code> (及び ns
+<p>libが名前のプレフィックスを共有する複数のライブラリに依存することは一般的であり、 <code>require</code> と <code>use</code> (および ns
 フォームにおける <code>:require</code> と <code>:use</code> 句)
-に対する呼び出しにおいて共通のプレフィックスを取り出し、一度だけ指定することが出来る。例えば以下の2つのフォームは同義になる:</p>
+に対する呼び出しにおいて共通のプレフィックスを取り出し、一度だけ指定することができる。例えば以下の2つのフォームは同義になる:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -184,7 +184,7 @@ com/my_company/clojure/examples/my_utils.clj
 <h2 id="_関連する関数"><a class="anchor" href="#_関連する関数"></a>関連する関数</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ネームスペースの作成:
+<p>名前空間の作成:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns">ns</a></p>
 </div>
 <div class="paragraph">
@@ -199,11 +199,11 @@ com/my_company/clojure/examples/my_utils.clj
 </div>
 </div>
 <div class="sect1">
-<h2 id="order"><a class="anchor" href="#order"></a>Libのロード順</h2>
+<h2 id="order"><a class="anchor" href="#order"></a>libのロード順</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Libはコンパイル後 (<code>.class</code>) もしくはソース (<code>.clj</code> or <code>.cljc</code>)
-の形式で存在しうる。クラスパス上に一つ、もしくはそれら全てが存在する可能性があり、以下のルールでその中の一つからLibがロードされる:</p>
+<p>libはコンパイル後 (<code>.class</code>) もしくはソース (<code>.clj</code> or <code>.cljc</code>)
+の形式で存在しうる。クラスパス上に一つ、もしくはそれら全てが存在する可能性があり、以下のルールでその中の一つからlibがロードされる:</p>
 </div>
 <div class="ulist">
 <ul>

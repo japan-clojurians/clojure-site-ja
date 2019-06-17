@@ -90,7 +90,7 @@
 <li><a href="#_ベクター">ベクター</a></li>
 <li><a href="#_マップ">マップ</a></li>
 <li><a href="#_セット">セット</a></li>
-<li><a href="#_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降">deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</a></li>
+<li><a href="#_deftype_defrecord_およびコンストラクタの呼び出し_version_1_3以降">deftype、defrecord、およびコンストラクタの呼び出し (version 1.3以降):</a></li>
 </ul>
 </li>
 <li><a href="#macrochars">マクロ文字</a>
@@ -115,17 +115,16 @@
 </div>
 <div class="paragraph">
 <p>Clojureには <a href="http://en.wikipedia.org/wiki/Homoiconicity">同図像性</a>
-という特性がある。同図像性というのはClojureのプログラムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(及びCommon
-Lisp)とその他のプログラミング言語の間の重要な差だ。- Clojureはストリームやファイルの中の文法 <strong>ではなく</strong>
+という特性がある。同図像性というのはClojureのプログラムはClojureのデータ構造で表現されることを高尚に説明する言葉だ。これはClojure(およびCommon
+Lisp)とその他のプログラミング言語との間の重要な差だ。- Clojureはストリームやファイルの中の文法 <strong>ではなく</strong>
 、データ構造の評価で定義される。Clojureプログラムが他のClojureプログラムを操作や変形、あるいは創り出すということはとても一般的で、簡単に行うことができる。</p>
 </div>
 <div class="paragraph">
 <p>とはいうものの、ほとんどのClojureプログラムはテキストファイルとして作成される。このテキストをパースし、コンパイラが解釈できるデータ構造を生成するのがreaderの役割だ。
-<em>reader</em> とClojureのデータの表現はXMLやJSON等を使うような文脈でも使用できる。</p>
+<em>reader</em> とClojureのデータの表現はXMLやJSONなどを使うような文脈でも使用できる。</p>
 </div>
 <div class="paragraph">
-<p>readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップetc
-によって定義されていると言う人もいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現されるオブジェクトを返す
+<p>readerの文法は文字で定義されており、Clojureの言語はシンボル、リスト、ベクター、マップなどによって定義されていると言う人もいるかもしれない。実際にはreaderはフォームを(文字ではなく)ストリームから読み込み、そのフォームによって表現されるオブジェクトを返す
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
 関数によって表現されている。</p>
 </div>
@@ -142,10 +141,10 @@ Lisp)とその他のプログラミング言語の間の重要な差だ。- Cloj
 <div class="ulist">
 <ul>
 <li>
-<p>シンボルは数字でない文字で始まり、英数字及び*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性もある)。</p>
+<p>シンボルは数字でない文字で始まり、英数字および*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性もある)。</p>
 </li>
 <li>
-<p>'/' には特別な意味があり、シンボルの途中に含むことでネームスペースとシンボルの名前を分割することができる(例：
+<p>'/' には特別な意味があり、シンボルの途中に含むことで名前空間とシンボルの名前を分割することができる(例：
 'my-namespace/foo')。'/'単体は除算関数を指す。</p>
 </li>
 <li>
@@ -218,28 +217,28 @@ the current namespace. In a namespace where <code>x</code> is aliased to <code>e
 <div class="ulist">
 <ul>
 <li>
-<p>マップは波括弧で括られた0個以上のキー/バリューの対: <code>{:a 1 :b 1}</code></p>
+<p>マップは波括弧で括られた0個以上のキー/値の対: <code>{:a 1 :b 1}</code></p>
 </li>
 <li>
 <p>カンマは空白と同様に扱われ、マップの対を区切ることにも使える。<code>{:a 1, :b 2}</code></p>
 </li>
 <li>
-<p>キーとバリューにはどのようなフォームも使用できる。</p>
+<p>キーと値にはどのようなフォームも使用できる。</p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="map_namespace_syntax"><a class="anchor" href="#map_namespace_syntax"></a>ネームスペース付きマップ記法</h4>
+<h4 id="map_namespace_syntax"><a class="anchor" href="#map_namespace_syntax"></a>名前空間付きマップ記法</h4>
 <div class="paragraph">
 <p><em>Clojure 1.9で追加された</em></p>
 </div>
 <div class="paragraph">
-<p>マップのリテラルには任意でキーに対するデフォルトのネームスペースコンテキストを <code>#:ns</code> プレフィックスによって指定することが可能で、その場合
-<em>ns</em> にはネームスペースの名前を指定し、プレフィックスはマップの <code>{</code> の前に置く。加えて <code>#::</code>
-を使用してキーワードのネームスペースの解決と同じセマンティクスで自動的にネームスペースを解決することができる。</p>
+<p>マップのリテラルには任意でキーに対するデフォルトの名前空間コンテキストを <code>#:ns</code> プレフィックスによって指定することが可能で、その場合 <em>ns</em>
+には名前空間の名前を指定し、プレフィックスはマップの <code>{</code> の前に置く。加えて <code>#::</code>
+を使用してキーワードの名前空間の解決と同じセマンティクスで自動的に名前空間を解決することができる。</p>
 </div>
 <div class="paragraph">
-<p>ネームスペース付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:</p>
+<p>名前空間付きのマップリテラルの文法に対する読み込みは通常のマップに対する読み込みと以下の点が異なる:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -264,7 +263,7 @@ affected.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>例として以下のネームスペース指定付きの以下のマップ:</p>
+<p>例として以下の名前空間指定付きの以下のマップ:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -294,7 +293,7 @@ affected.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降"><a class="anchor" href="#_deftype_defrecord_及びコンストラクタの呼び出し_version_1_3以降"></a>deftype、defrecord、及びコンストラクタの呼び出し (version 1.3以降):</h3>
+<h3 id="_deftype_defrecord_およびコンストラクタの呼び出し_version_1_3以降"><a class="anchor" href="#_deftype_defrecord_およびコンストラクタの呼び出し_version_1_3以降"></a>deftype、defrecord、およびコンストラクタの呼び出し (version 1.3以降):</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -307,8 +306,8 @@ affected.</p>
 <code>my.record{:a 1, :b 2}</code><br></p>
 </li>
 <li>
-<p>キーを付与されたバリューは <strong>評価されずに</strong>
-defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応するバリューは結果のdefrecordインスタンスに追加される。</p>
+<p>キーを付与された値は <strong>評価されずに</strong>
+defrecordのフィールドに割り当てられる。マップリテラルに対応するエントリーがないdefrecordのフィールドにはnilが割り当てられる。defrecordで定義されている以外のキーに対応する値は結果のdefrecordインスタンスに追加される。</p>
 </li>
 </ul>
 </div>
@@ -357,7 +356,7 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 <div class="sect2">
 <h3 id="_メタデータ"><a class="anchor" href="#_メタデータ"></a>メタデータ (^)</h3>
 <div class="paragraph">
-<p>メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラル、レコード、タイプ、及びコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには
+<p>メタデータは次のようなオブジェクトと関連のあるマップだ：シンボル、リスト、ベクター、マップ、IMetaを返すタグ付きリテラル、レコード、タイプ、およびコンストラクタ呼び出し。メタデータのリーダーマクロは最初にメタデータを読み込み、それを次に読み込むフォームに関連付ける。(オブジェクトにメタデータを関連付けるには
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta">with-meta</a>
 を参照):
 <code>^{:a 1 :b 2} [1 2 3]</code> は <code>{:a 1 :b 2}</code> をメタデータマップにもつ <code>[1 2 3]</code> を生成する。</p>
@@ -367,10 +366,10 @@ tableのエントリーはマクロキャラクターと呼ばれる特定の文
 <code>^String x</code> は <code>^{:tag java.lang.String} x</code> と同等。</p>
 </div>
 <div class="paragraph">
-<p>このようなタグはコンパイラーに型情報を渡すことに使用できる。</p>
+<p>このようなタグはコンパイラに型情報を渡すことに使用できる。</p>
 </div>
 <div class="paragraph">
-<p>もう一つの簡略した表記ではメタデータにキーワードを使用できる。その場合、メタデータはキーを指定したキーワードバリューをtrueとした単一エントリーのマップとして扱われる:
+<p>もう一つの簡略した表記ではメタデータにキーワードを使用できる。その場合、メタデータはキーをキーワード、値をtrueとした単一エントリーのマップとして扱われる:
 <code>^:dynamic x</code> は <code>^{:dynamic true} x</code> と同等。</p>
 </div>
 <div class="paragraph">
@@ -430,7 +429,7 @@ java.util.regex.Patternタイプになる。正規表現のエスケープ文字
 <div class="paragraph">
 <p>シンボルに対してシンタックスクォートはシンボルを現在のコンテキストで <em>解決</em> し、完全修飾されたシンボルを生成する。(例:
 namespace/name もしくは
-fully.qualified.Classname)。シンボルがネームスペースで修飾されておらず、'#'で終わる場合、同じ名前に'_'とユニークなIDを末尾につけた自動生成されたシンボルに解決される。例:
+fully.qualified.Classname)。シンボルが名前空間で修飾されておらず、'#'で終わる場合、同じ名前に'_'とユニークなIDを末尾につけた自動生成されたシンボルに解決される。例:
 x# は x_123に解決される。同じシンタックスクォート内での同じシンボルに対する参照は同一の自動生成されたシンボルに解決される。</p>
 </div>
 <div class="paragraph">
@@ -480,7 +479,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 </div>
 <div class="paragraph">
-<p>各ペアのキーはClojureリーダーによって認識されるタグとなる。ペアのバリューは完全修飾された <a href="vars">Var</a>
+<p>各ペアのキーはClojureリーダーによって認識されるタグとなる。ペアの値は完全修飾された <a href="vars">Var</a>
 の名前であり、リーダーがタグの後に続くフォームをパースするために参照される。例えば上記の <code>data_eaders.clj</code>
 ファイルが与えられた場合、Clojureのリーダーはこのフォームを次のようにパースする:</p>
 </div>
@@ -494,7 +493,7 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 に対して呼び出す。データリーダー関数はフォームが通常のClojureデータ構造としてリーダーに読み込まれた後に呼び出される。</p>
 </div>
 <div class="paragraph">
-<p>ネームスペースで修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは
+<p>名前空間で修飾されていないリーダータグはClojureのために確保されている。デフォルトのリーダータグは
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a>
 で定義されているが、 <code>data_readers.clj</code> で上書きすることもできるし、
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A">*data-readers*</a>
@@ -595,7 +594,7 @@ js/NaN、それ以外のプラットフォームではnilとして読み込ま�
 <p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read">read</a>
 と
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read-string">read-string</a>
-関数は任意でオプションを指定したマップを第一引数に取ることができる。このオプションマップのキーとバリューで現在のフィーチャーとリーダーコンディショナルの挙動を指定することができる:</p>
+関数は任意でオプションを指定したマップを第一引数に取ることができる。このオプションマップのキーと値で現在のフィーチャーとリーダーコンディショナルの挙動を指定することができる:</p>
 </div>
 <div class="listingblock">
 <div class="content">

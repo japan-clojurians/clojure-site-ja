@@ -134,10 +134,10 @@ nil             ; null値
 true            ; Boolean (false もある)
 #"[0-9]+"       ; Regular expression (正規表現)
 :alpha          ; Keyword (キーワード)
-:release/alpha  ; Keyword with namespace (ネームスペース付きキーワード)
+:release/alpha  ; Keyword with namespace (名前空間付きキーワード)
 map             ; Symbol (シンボル)
 +               ; Symbol - ほとんどの句読点が使える
-clojure.core/+  ; Namespaced symbol (ネームスペース付きシンボル)</code></pre>
+clojure.core/+  ; Namespaced symbol (名前空間付きシンボル)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -180,7 +180,7 @@ clojure.core/+  ; Namespaced symbol (ネームスペース付きシンボル)</c
 <p><span class="image"><img src="/clojure-site-ja/images/content/guides/learn/syntax/clojure-evaluation.png" alt="Clojure evaluation"></span></p>
 </div>
 <div class="paragraph">
-<p>Clojureでは、ソースコードが文字として <a href="xref/../../../reference/reader">リーダー(Reader)</a>
+<p>Clojureでは、ソースコードが文字として <a href="xref/../../../reference/reader">リーダー(reader)</a>
 に読み取られる。リーダーはソースを.cljファイルから読み取るかもしれないし対話的に一連の式を与えられるかもしれない。リーダーはClojureのデータを生成する。そしてClojureコンパイラはJVMへのバイトコードを生成する。</p>
 </div>
 <div class="paragraph">
@@ -340,7 +340,7 @@ user=&gt; (+ *1 *2)
 </div>
 <div class="paragraph">
 <p>加えて、 <code>clojure.repl</code>
-というClojure標準ライブラリに含まれたネームスペースがあり、便利な関数をいくつか提供している。このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:</p>
+というClojure標準ライブラリに含まれた名前空間があり、便利な関数をいくつか提供している。このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -348,7 +348,7 @@ user=&gt; (+ *1 *2)
 </div>
 </div>
 <div class="paragraph">
-<p>今はこれをおまじないとして扱ってもよいだろう。ネームスペースのところに到達したら中身を説明しよう。</p>
+<p>今はこれをおまじないとして扱ってもよいだろう。名前空間のところに到達したら中身を説明しよう。</p>
 </div>
 <div class="paragraph">
 <p>REPLで便利な追加の関数にアクセスできるようになった: <code>doc</code>, <code>find-doc</code>, <code>apropos</code>, <code>source</code>, <code>dir</code>
@@ -429,8 +429,7 @@ clojure.string/trimr
 </div>
 </div>
 <div class="paragraph">
-<p>特定のネームスペースの関数の一覧が見たい場合には、 <code>dir</code> 関数が利用できる。ここでは <code>clojure.repl</code>
-ネームスペースに対して使っている:</p>
+<p>特定の名前空間の関数の一覧が見たい場合には、 <code>dir</code> 関数が利用できる。ここでは <code>clojure.repl</code> 名前空間に対して使っている:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -493,12 +492,12 @@ Cheatsheet](<a href="https://clojure.org/api/cheatsheet)を開いておくのも
 </div>
 </div>
 <div class="paragraph">
-<p><code>def</code> は特殊形式であり、シンボル(x)を現在のネームスペースで値(7)に関連付ける。このつながりは <code>var</code>
+<p><code>def</code> は特殊形式であり、シンボル(x)を現在の名前空間で値(7)に関連付ける。このつながりは <code>var</code>
 と呼ばれる。多くの実際のClojureコードでは、varは定数値もしくは関数のどちらかを指すべきだが、REPLでは便宜的にvarを定義して再定義することが一般的だ。</p>
 </div>
 <div class="paragraph">
 <p>上の戻り値が <code>#'user/x</code> であることに注意しよう――これはvarのリテラル表現だ: <code>#'</code>
-の後にネームスペース付きのシンボルが続く。 <code>user</code> はデフォルトのネームスペースだ。</p>
+の後に名前空間付きのシンボルが続く。 <code>user</code> はデフォルトの名前空間だ。</p>
 </div>
 <div class="paragraph">
 <p>シンボルは指し示すものをルックアップすることで評価されることを思い出そう。したがって単にシンボルを使って値を取り戻すことができる:</p>

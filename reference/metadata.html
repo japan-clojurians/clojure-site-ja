@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8"/>
-    <title>Clojure - Metadata</title>
+    <title>Clojure - メタデータ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clojure の日本語ドキュメントです">
     <meta name="author" content="Japan Clojurians">
@@ -72,7 +72,7 @@
     <div class="container">
 
 <div class="page-header">
-  <h1>Metadata</h1>
+  <h1>メタデータ</h1>
 </div>
 
 <p><em></em></p>
@@ -88,13 +88,23 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Symbols and collections support metadata, a map of data <em>about</em> the symbol or collection. The metadata system allows for arbitrary annotation of data. It is used to convey information to the compiler about types, but can also be used by application developers for many purposes, annotating data sources, policy etc.</p>
+<p>Symbols and collections support metadata, a map of data <em>about</em> the symbol
+or collection. The metadata system allows for arbitrary annotation of
+data. It is used to convey information to the compiler about types, but can
+also be used by application developers for many purposes, annotating data
+sources, policy etc.</p>
 </div>
 <div class="paragraph">
-<p>An important thing to understand about metadata is that it is not considered to be part of the value of an object. As such, <em>metadata does not impact equality (or hash codes)</em>. Two objects that differ only in metadata are equal.</p>
+<p>An important thing to understand about metadata is that it is not considered
+to be part of the value of an object. As such, <em>metadata does not impact
+equality (or hash codes)</em>. Two objects that differ only in metadata are
+equal.</p>
 </div>
 <div class="paragraph">
-<p>That said, metadata and its relationship to an object is immutable - an object with different metadata is a different object. One consequence of this is that applying metadata to a lazy sequence will realize the head of the sequence so that both objects can share the same sequence.</p>
+<p>That said, metadata and its relationship to an object is immutable - an
+object with different metadata is a different object. One consequence of
+this is that applying metadata to a lazy sequence will realize the head of
+the sequence so that both objects can share the same sequence.</p>
 </div>
 <hr>
 </div>
@@ -112,7 +122,8 @@
 <h2 id="__em_with_meta_em_obj_map"><a class="anchor" href="#__em_with_meta_em_obj_map"></a>(<em>with-meta</em> obj map)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Returns an object of the same type and value as obj, with map as its metadata.</p>
+<p>Returns an object of the same type and value as obj, with map as its
+metadata.</p>
 </div>
 </div>
 </div>
@@ -120,19 +131,15 @@
 <h2 id="_metadata_reader_macros"><a class="anchor" href="#_metadata_reader_macros"></a>Metadata Reader Macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In addition to with-meta, there are a number of reader macros (<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata to the expression following it:</p>
+<p>In addition to with-meta, there are a number of reader macros
+(<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata
+to the expression following it:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided map.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code></p>
-</li>
-</ul>
-</div>
+<p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided
+map.  ** Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code></p>
 </li>
 <li>
 <p><code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.</p>
@@ -145,23 +152,17 @@
 </div>
 </li>
 <li>
-<p><code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Equivalent to <code>^{:tag java.lang.String} obj</code></p>
-</li>
-<li>
-<p>Used to hint an objects type to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type Hints</a> for more information and a complete list of special type hints.</p>
-</li>
-</ul>
-</div>
+<p><code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.  <strong>
+Equivalent to <code>^{:tag java.lang.String} obj</code> </strong> Used to hint an objects type
+to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type
+Hints</a> for more information and a complete list of special type hints.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>It is possible to add multiple pieces of metadata by chaining the metadata reader macros together.
-For example: <code>^:dynamic ^ints obj</code> would apply both the :dynamic flag and ints type-hint to obj.</p>
+<p>It is possible to add multiple pieces of metadata by chaining the metadata
+reader macros together.  For example: <code>^:dynamic ^ints obj</code> would apply both
+the :dynamic flag and ints type-hint to obj.</p>
 </div>
 </div>
 </div></p>
