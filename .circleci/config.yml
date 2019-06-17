@@ -8,12 +8,13 @@ docker_env:
     shell: /bin/bash --login
     environtment:
       - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+      - JBAKE_VERSION: "2.6.3"
 
 keys:
   test_cache_key: &test_cache_key
     test-{{ .Branch }}
   jbake_cache_key: &jbake_cache_key
-    jbake-{{ .Branch }}
+    jbake-{{ .Environment.JBAKE_VERSION }}-{{ .Branch }}
   repo_cache_key: &repo_cache_key
     repo-{{ .Branch }}-{{ .Revision }}
 
@@ -60,7 +61,7 @@ jobs:
       - run: pip3 install -r python-packages.txt
       - run:
           name: install jbake
-          command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-2.6.3-bin.zip && unzip -o jbake.zip && mv jbake-2.6.3 ~/jbake; fi
+          command: if [[ ! -e ~/jbake ]]; then curl -o jbake.zip http://cdn.cognitect.com/clojure.org/jbake-{{ .Environment.JBAKE_VERSION }}-bin.zip && unzip -o jbake.zip && mv jbake-{{ .Environment.JBAKE_VERSION }} ~/jbake; fi
       - save_cache:
           paths: ~/jbake
           key: *jbake_cache_key
