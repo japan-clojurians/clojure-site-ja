@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 docker_env:
   container_config: &container_config
@@ -69,7 +69,7 @@ jobs:
           command: make publish -e JBAKE_CMD=~/jbake/bin/jbake 2>/dev/null
 
 workflows:
-  version: 2.1
+  version: 2
   test_and_deploy:
     jobs:
       - test
