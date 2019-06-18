@@ -69,7 +69,7 @@ jobs:
           command: make publish -e JBAKE_CMD=~/jbake/bin/jbake 2>/dev/null
 
 workflows:
-  version: 2
+  version: 2.1
   test_and_deploy:
     jobs:
       - test
