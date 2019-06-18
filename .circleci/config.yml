@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 docker_env:
   container_config: &container_config
@@ -41,7 +41,7 @@ jobs:
             mv ./ja /tmp/circleci-artifacts/translation-result
       - store_artifacts:
           path: /tmp/circleci-artifacts
-      - save_cache:
+     - save_cache:
           paths: ~/repo
           key: *repo_cache_key
 
@@ -60,7 +60,7 @@ jobs:
       - run: pip3 install -r python-packages.txt
       - run:
           name: install jbake
-          command: if [[ ! -e ~/jbake ]]; then curl -vLO https://dl.bintray.com/jbake/binary/jbake-2.6.3-bin.zip && unzip -o jbake-2.6.3-bin.zip && mv jbake-2.6.3-bin ~/jbake; fi
+          command: if [[ ! -e ~/jbake ]]; then curl -vLO https://dl.bintray.com/jbake/binary/jbake-2.6.4-bin.zip && unzip -o jbake-2.6.4-bin.zip && mv jbake-2.6.4-bin ~/jbake; fi
       - save_cache:
           paths: ~/jbake
           key: *jbake_cache_key
