@@ -41,7 +41,7 @@ jobs:
             mv ./ja /tmp/circleci-artifacts/translation-result
       - store_artifacts:
           path: /tmp/circleci-artifacts
-     - save_cache:
+      - save_cache:
           paths: ~/repo
           key: *repo_cache_key
 
