@@ -60,7 +60,7 @@ jobs:
       - run: pip3 install -r python-packages.txt
       - run:
           name: install jbake
-          command: if [[ ! -e ~/jbake ]]; then wget https://dl.bintray.com/jbake/binary/jbake-2.6.3-bin.zip && unzip -o jbake-2.6.3-bin.zip && mv jbake-2.6.3-bin ~/jbake; fi
+          command: if [[ ! -e ~/jbake ]]; then curl -vLO https://dl.bintray.com/jbake/binary/jbake-2.6.3-bin.zip && unzip -o jbake-2.6.3-bin.zip && mv jbake-2.6.3-bin ~/jbake; fi
       - save_cache:
           paths: ~/jbake
           key: *jbake_cache_key
