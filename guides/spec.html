@@ -92,7 +92,7 @@
 <li><a href="#_collections">Collections</a></li>
 <li><a href="#_sequences">Sequences</a></li>
 <li><a href="#_using_spec_for_validation">Using spec for validation</a></li>
-<li><a href="#_spec_ing_functions">Spec&#8217;ing functions</a></li>
+<li><a href="#_specing_functions">Spec&#8217;ing functions</a></li>
 <li><a href="#_higher_order_functions">Higher order functions</a></li>
 <li><a href="#_macros">Macros</a></li>
 <li><a href="#_a_game_of_cards">A game of cards</a></li>
@@ -101,7 +101,7 @@
 <li><a href="#_project_setup">Project Setup</a></li>
 <li><a href="#_sampling_generators">Sampling Generators</a></li>
 <li><a href="#_exercise">Exercise</a></li>
-<li><a href="#_using_code_s_and_code_generators">Using <code>s/and</code> Generators</a></li>
+<li><a href="#_using_sand_generators">Using <code>s/and</code> Generators</a></li>
 <li><a href="#_custom_generators">Custom Generators</a></li>
 <li><a href="#_range_specs_and_generators">Range Specs and Generators</a></li>
 </ul>
@@ -110,7 +110,7 @@
 <ul class="sectlevel2">
 <li><a href="#_instrumentation">Instrumentation</a></li>
 <li><a href="#_testing">Testing</a></li>
-<li><a href="#_combining_code_check_code_and_code_instrument_code">Combining <code>check</code> and <code>instrument</code></a></li>
+<li><a href="#_combining_check_and_instrument">Combining <code>check</code> and <code>instrument</code></a></li>
 </ul>
 </li>
 <li><a href="#_wrapping_up">Wrapping Up</a></li>
@@ -1038,7 +1038,7 @@ you need nested regular expressions to describe the inner sequential data:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spec_ing_functions"><a class="anchor" href="#_spec_ing_functions"></a>Spec&#8217;ing functions</h2>
+<h2 id="_specing_functions"><a class="anchor" href="#_specing_functions"></a>Spec&#8217;ing functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The pre- and post-condition example in the previous section hinted at an interesting question - how do we define the input and output specifications for a function or macro?</p>
@@ -1391,7 +1391,7 @@ Spec
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_code_s_and_code_generators"><a class="anchor" href="#_using_code_s_and_code_generators"></a>Using <code>s/and</code> Generators</h3>
+<h3 id="_using_sand_generators"><a class="anchor" href="#_using_sand_generators"></a>Using <code>s/and</code> Generators</h3>
 <div class="paragraph">
 <p>All of the generators we&#8217;ve seen worked fine but there are a number of cases where they will need some additional help. One common case is when the predicate implicitly presumes values of a particular type but the spec does not specify them:</p>
 </div>
@@ -1759,7 +1759,7 @@ cause this case to occur.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_combining_code_check_code_and_code_instrument_code"><a class="anchor" href="#_combining_code_check_code_and_code_instrument_code"></a>Combining <code>check</code> and <code>instrument</code></h3>
+<h3 id="_combining_check_and_instrument"><a class="anchor" href="#_combining_check_and_instrument"></a>Combining <code>check</code> and <code>instrument</code></h3>
 <div class="paragraph">
 <p>While both <code>instrument</code> (for enabling <code>:args</code> checking) and <code>check</code> (for generating tests of a function) are useful tools, they can be combined to provide even deeper levels of test coverage.</p>
 </div>

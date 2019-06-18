@@ -84,9 +84,9 @@
 <ul class="sectlevel1">
 <li><a href="#_the_seq_interface">The Seq interface</a>
 <ul class="sectlevel2">
-<li><a href="#__em_first_em_coll">(<em>first</em> coll)</a></li>
-<li><a href="#__em_rest_em_coll">(<em>rest</em> coll)</a></li>
-<li><a href="#__em_cons_em_item_seq">(<em>cons</em> item seq)</a></li>
+<li><a href="#_first_coll">(<em>first</em> coll)</a></li>
+<li><a href="#_rest_coll">(<em>rest</em> coll)</a></li>
+<li><a href="#_cons_item_seq">(<em>cons</em> item seq)</a></li>
 </ul>
 </li>
 <li><a href="#_the_seq_library">The Seq library</a>
@@ -116,19 +116,19 @@
 <h2 id="_the_seq_interface"><a class="anchor" href="#_the_seq_interface"></a>The Seq interface</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="__em_first_em_coll"><a class="anchor" href="#__em_first_em_coll"></a>(<em>first</em> coll)</h3>
+<h3 id="_first_coll"><a class="anchor" href="#_first_coll"></a>(<em>first</em> coll)</h3>
 <div class="paragraph">
 <p>Returns the first item in the collection. Calls seq on its argument. If coll is nil, returns nil.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__em_rest_em_coll"><a class="anchor" href="#__em_rest_em_coll"></a>(<em>rest</em> coll)</h3>
+<h3 id="_rest_coll"><a class="anchor" href="#_rest_coll"></a>(<em>rest</em> coll)</h3>
 <div class="paragraph">
 <p>Returns a sequence of the items after the first. Calls seq on its argument. If there are no more items, returns a logical sequence for which <strong>seq</strong> returns nil.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__em_cons_em_item_seq"><a class="anchor" href="#__em_cons_em_item_seq"></a>(<em>cons</em> item seq)</h3>
+<h3 id="_cons_item_seq"><a class="anchor" href="#_cons_item_seq"></a>(<em>cons</em> item seq)</h3>
 <div class="paragraph">
 <p>Returns a new seq where item is the first element and seq is the rest.</p>
 </div>

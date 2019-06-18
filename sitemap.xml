@@ -13,7 +13,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/community/downloads.html</loc>
+        <loc>http://clojure-site-ja.github.io/privacy.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -21,7 +21,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/privacy.html</loc>
+        <loc>http://clojure-site-ja.github.io/community/downloads.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -69,6 +69,74 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/reference/refs.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/reader.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/namespaces.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/lisps.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/evaluation.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/atoms.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/repl_and_main.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/reducers.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/other_functions.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/multimethods.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/libs.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/documentation.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/datatypes.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/agents.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/reference/transducers.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/reference/deps_and_cli.html</loc>
         <lastmod></lastmod>
     </url>
@@ -85,15 +153,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/compilation.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/data_structures.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/lazy.html</loc>
+        <loc>http://clojure-site-ja.github.io/reference/sequences.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -101,11 +161,11 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/protocols.html</loc>
+        <loc>http://clojure-site-ja.github.io/reference/lazy.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/sequences.html</loc>
+        <loc>http://clojure-site-ja.github.io/reference/data_structures.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -113,111 +173,15 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/agents.html</loc>
+        <loc>http://clojure-site-ja.github.io/reference/protocols.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/atoms.html</loc>
+        <loc>http://clojure-site-ja.github.io/reference/compilation.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/reference/datatypes.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/documentation.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/evaluation.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/libs.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/lisps.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/macros.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/metadata.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/multimethods.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/namespaces.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/other_functions.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/reader.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/reducers.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/refs.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/repl_and_main.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/reference/transducers.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/clojureclr.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/clojurescript.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/concurrent_programming.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/dynamic.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/features.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/functional_programming.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/jvm_hosted.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/lisp.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/rationale.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/about/runtime_polymorphism.html</loc>
+        <loc>http://clojure-site-ja.github.io/about/state.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -225,7 +189,51 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/about/state.html</loc>
+        <loc>http://clojure-site-ja.github.io/about/runtime_polymorphism.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/rationale.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/lisp.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/jvm_hosted.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/functional_programming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/features.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/dynamic.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/concurrent_programming.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/clojurescript.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/about/clojureclr.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/guides.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -269,23 +277,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/getting_started.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/guides.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/learn/flow.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/learn/functions.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/learn/hashed_colls.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/learn/syntax.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -293,31 +285,19 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/learn/syntax.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/learn/hashed_colls.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/annex_community_resources.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/learn/functions.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/annex_troubleshooting.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/learn/flow.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/basic_usage.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/data_visualization_at_the_repl.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/enhancing_your_repl_workflow.html</loc>
-        <lastmod></lastmod>
-    </url>
-    <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/introduction.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/repl/navigating_namespaces.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -325,7 +305,27 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/navigating_namespaces.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/repl/introduction.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/enhancing_your_repl_workflow.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/data_visualization_at_the_repl.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/basic_usage.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/annex_troubleshooting.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/annex_community_resources.html</loc>
         <lastmod></lastmod>
     </url>
 </urlset>

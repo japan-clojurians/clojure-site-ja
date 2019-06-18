@@ -89,7 +89,7 @@
 </li>
 <li><a href="#debugging-tools-and-techniques">Debugging tools and techniques</a>
 <ul class="sectlevel2">
-<li><a href="#_printing_in_flight_values_with_code_prn_code">Printing in-flight values with <code>prn</code></a></li>
+<li><a href="#_printing_in_flight_values_with_prn">Printing in-flight values with <code>prn</code></a></li>
 <li><a href="#_intercepting_and_saving_values_on_the_fly">Intercepting and saving values on-the-fly</a></li>
 <li><a href="#_reproducing_the_context_of_an_expression">Reproducing the context of an expression</a></li>
 <li><a href="#_community_resources_about_repl_debugging">Community resources about REPL debugging</a></li>
@@ -236,7 +236,7 @@ depends on your toolchain. For instance:</p>
 you can customize the REPL by launching a 'sub-REPL': see <a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl">clojure.main/repl</a>.</p>
 </li>
 <li>
-<p>when using <a href="https://github.com/clojure/tools.nrepl">nREPL</a>.<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>, this can be done by writing custom <a href="https://github.com/clojure/tools.nrepl#middleware">middleware</a>.</p>
+<p>when using <a href="https://github.com/clojure/tools.nrepl">nREPL</a>.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, this can be done by writing custom <a href="https://github.com/clojure/tools.nrepl#middleware">middleware</a>.</p>
 </li>
 </ul>
 </div>
@@ -353,7 +353,7 @@ because it lets you inspect and alter the flow of a running program. In this sec
 tools and techniques to leverage the REPL for debugging.</p>
 </div>
 <div class="sect2">
-<h3 id="_printing_in_flight_values_with_code_prn_code"><a class="anchor" href="#_printing_in_flight_values_with_code_prn_code"></a>Printing in-flight values with <code>prn</code></h3>
+<h3 id="_printing_in_flight_values_with_prn"><a class="anchor" href="#_printing_in_flight_values_with_prn"></a>Printing in-flight values with <code>prn</code></h3>
 <div class="paragraph">
 <p><code>(<a href="https://clojuredocs.org/clojure.core/prn">prn</a> &#8230;&#8203;)</code> expressions can be added in strategic places in your code to print intermediary values:</p>
 </div>
@@ -547,7 +547,7 @@ promoting a scientific approach to debugging in general.</p>
 <div class="paragraph">
 <p>While interactive development at the REPL gives a lot of power to programmers,
 it also adds new challenges: programs must be designed so that they lend themselves
-well to REPL interaction, which is a new constraint to be vigilant of when writing code.<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span></p>
+well to REPL interaction, which is a new constraint to be vigilant of when writing code.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>Covering this topic extensively would take us too far for the scope of this guide,
@@ -674,7 +674,7 @@ which provides a set of ready-made components.</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/tolitius/mount">Mount</a></strong> takes a radically different approach as Component, choosing to
-use Vars and namespaces as the supporting infrastructure for state.<span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span></p>
+use Vars and namespaces as the supporting infrastructure for state.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
 </li>
 <li>
 <p><strong><a href="https://github.com/weavejester/integrant">Integrant</a></strong> is a more recent library which shares Component&#8217;s approach
@@ -686,14 +686,14 @@ while addressing some of its perceived limitations.</p>
 </div>
 <div id="footnotes">
 <hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> At the time of writing (March 2018), <a href="https://github.com/clojure/tools.nrepl">nREPL</a> is the most popular toolchain for REPL-editor integration
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. At the time of writing (March 2018), <a href="https://github.com/clojure/tools.nrepl">nREPL</a> is the most popular toolchain for REPL-editor integration
 </div>
-<div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a> A similar phenomenon happens with the well-known technique of <a href="https://en.wikipedia.org/wiki/Software_testing">automated testing</a>: while testing can bring a lot of value to programmers, it requires extra care to write code that is 'testable'. Just like tests, the REPL should not be an afterthought when writing Clojure code.
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. A similar phenomenon happens with the well-known technique of <a href="https://en.wikipedia.org/wiki/Software_testing">automated testing</a>: while testing can bring a lot of value to programmers, it requires extra care to write code that is 'testable'. Just like tests, the REPL should not be an afterthought when writing Clojure code.
 </div>
-<div class="footnote" id="_footnote_3">
-<a href="#_footnoteref_3">3</a> At the time of writing, there is controversy in the Clojure community regarding the relative merits of both approaches.
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. At the time of writing, there is controversy in the Clojure community regarding the relative merits of both approaches.
 </div>
 </div></p>
 

@@ -88,7 +88,7 @@
 <li><a href="#_the_victim_nil_punning">The victim - nil punning</a></li>
 <li><a href="#_extension_iseqs">Extension ISeqs</a></li>
 <li><a href="#_recipe_porting">Recipe - Porting</a></li>
-<li><a href="#_don_t_hang_onto_your_head">Don&#8217;t hang (onto) your head</a></li>
+<li><a href="#_dont_hang_onto_your_head">Don&#8217;t hang (onto) your head</a></li>
 </ul>
 </div>
 <div class="paragraph">
@@ -516,7 +516,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_don_t_hang_onto_your_head"><a class="anchor" href="#_don_t_hang_onto_your_head"></a>Don&#8217;t hang (onto) your head</h3>
+<h3 id="_dont_hang_onto_your_head"><a class="anchor" href="#_dont_hang_onto_your_head"></a>Don&#8217;t hang (onto) your head</h3>
 <div class="paragraph">
 <p>Recursively defined lazy sequence functions are elegant and easy to understand. They can be very memory efficient, allowing you to work with data sources that might not fit in memory, because only the part of the data structure in current use need be in memory. It could be tricky at times to determine which parts were currently in use, as they might still be referenced by local variables. Clojure does local-variable clearing on tail calls to ensure that no lingering references remain on the stack, but there was one remaining case - closed-over locals, that was difficult to control, especially when using a macro like lazy-seq which creates a closure on your behalf.</p>
 </div>

@@ -88,7 +88,7 @@ memoryシステム</a> (STM)は、<em>同期的</em> で <em>協調的</em> な�
 <a href="xref/../../reference/agents">Agent</a> システムは、 <em>非同期的</em> で <em>独立</em>
 した方法でのスレッド間での状態変更の共有をサポートしている。 <a href="xref/../../reference/atoms">Atom</a> システムは、
 <em>同期的</em> で <em>独立</em> した方法でのスレッド間での状態変更の共有をサポートしている。
-<a href="xref/../../reference/special_forms#def">def</a>,
+<a href="xref/../../reference/special_forms#def#">def</a>,
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>
 などを通して提供されている <a href="xref/../../reference/vars">動的varシステム</a>
 は、スレッド内での状態変更の隔離をサポートしている。</p>
@@ -144,7 +144,7 @@ screencast</a> でカバーされている。</p>
 <p>デフォルトではVarは静的だが、 <a href="xref/../../reference/metadata">メタデータ</a>
 とともに定義されたVarのスレッド別の束縛は動的(dynamic)とマークされる。
 <a href="xref/../../reference/vars">動的var</a> もまたオブジェクトに対するミュータブルな参照だ。動的varは、
-<a href="xref/../../reference/special_forms#def">def</a> で作られる(スレッド共有の)ルート束縛を持ち、
+<a href="xref/../../reference/special_forms#def#">def</a> で作られる(スレッド共有の)ルート束縛を持ち、
 <strong><em>set!</em></strong> を使って設定することができるが、それが可能なのは
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding">binding</a>
 を使って新しい格納先にスレッドローカルに束縛された場合だけだ。そうした束縛や束縛に対するその後のあらゆる変更は、スレッド <em>内</em>

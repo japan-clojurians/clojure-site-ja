@@ -85,30 +85,30 @@
 <li><a href="#_文_vs_式">文 vs. 式</a></li>
 <li><a href="#_フロー制御式">フロー制御式</a>
 <ul class="sectlevel2">
-<li><a href="#__code_if_code"><code>if</code></a></li>
+<li><a href="#_if"><code>if</code></a></li>
 <li><a href="#_真">真</a></li>
-<li><a href="#__code_if_code_と_code_do_code"><code>if</code> と <code>do</code></a></li>
-<li><a href="#__code_when_code"><code>when</code></a></li>
-<li><a href="#__code_cond_code"><code>cond</code></a></li>
-<li><a href="#__code_cond_code_と_code_else_code"><code>cond</code> と <code>else</code></a></li>
-<li><a href="#__code_case_code"><code>case</code></a></li>
-<li><a href="#__code_else_code_式付きの_code_case_code"><code>else</code> 式付きの <code>case</code></a></li>
+<li><a href="#_if_と_do"><code>if</code> と <code>do</code></a></li>
+<li><a href="#_when"><code>when</code></a></li>
+<li><a href="#_cond"><code>cond</code></a></li>
+<li><a href="#_cond_と_else"><code>cond</code> と <code>else</code></a></li>
+<li><a href="#_case"><code>case</code></a></li>
+<li><a href="#_else_式付きの_case"><code>else</code> 式付きの <code>case</code></a></li>
 </ul>
 </li>
 <li><a href="#_副作用のための繰り返し">副作用のための繰り返し</a>
 <ul class="sectlevel2">
-<li><a href="#__code_dotimes_code"><code>dotimes</code></a></li>
-<li><a href="#__code_doseq_code"><code>doseq</code></a></li>
-<li><a href="#_複数の束縛を持った_code_doseq_code">複数の束縛を持った <code>doseq</code></a></li>
+<li><a href="#_dotimes"><code>dotimes</code></a></li>
+<li><a href="#_doseq"><code>doseq</code></a></li>
+<li><a href="#_複数の束縛を持った_doseq">複数の束縛を持った <code>doseq</code></a></li>
 </ul>
 </li>
-<li><a href="#_clojureの_code_for_code">Clojureの <code>for</code></a></li>
+<li><a href="#_clojureの_for">Clojureの <code>for</code></a></li>
 <li><a href="#_再帰">再帰</a>
 <ul class="sectlevel2">
 <li><a href="#_再帰と繰り返し">再帰と繰り返し</a></li>
-<li><a href="#__code_loop_code_と_code_recur_code"><code>loop</code> と <code>recur</code></a></li>
-<li><a href="#__code_defn_code_と_code_recur_code"><code>defn</code> と <code>recur</code></a></li>
-<li><a href="#_再帰のための_code_recur_code">再帰のための <code>recur</code></a></li>
+<li><a href="#_loop_と_recur"><code>loop</code> と <code>recur</code></a></li>
+<li><a href="#_defn_と_recur"><code>defn</code> と <code>recur</code></a></li>
+<li><a href="#_再帰のための_recur">再帰のための <code>recur</code></a></li>
 </ul>
 </li>
 <li><a href="#_例外">例外</a>
@@ -116,7 +116,7 @@
 <li><a href="#_例外処理">例外処理</a></li>
 <li><a href="#_例外をスローする">例外をスローする</a></li>
 <li><a href="#_clojureのデータを持った例外">Clojureのデータを持った例外</a></li>
-<li><a href="#__code_with_open_code"><code>with-open</code></a></li>
+<li><a href="#_with_open"><code>with-open</code></a></li>
 </ul>
 </li>
 </ul>
@@ -167,7 +167,7 @@ the Ground Up</a> 、 <a href="http://www.braveclojure.com/writing-macros/">Cloj
 Brave and True</a> ほか多くの場所で読むことができる。</p>
 </div>
 <div class="sect2">
-<h3 id="__code_if_code"><a class="anchor" href="#__code_if_code"></a><code>if</code></h3>
+<h3 id="_if"><a class="anchor" href="#_if"></a><code>if</code></h3>
 <div class="paragraph">
 <p><code>if</code> は最も重要な制御式であり、条件と"then"と"else"で構成されている。 <code>if</code> は条件によって選ばれた分岐だけを評価する。</p>
 </div>
@@ -205,7 +205,7 @@ user=&gt; (if 0 :truthy :falsey) ; 0は真
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_if_code_と_code_do_code"><a class="anchor" href="#__code_if_code_と_code_do_code"></a><code>if</code> と <code>do</code></h3>
+<h3 id="_if_と_do"><a class="anchor" href="#_if_と_do"></a><code>if</code> と <code>do</code></h3>
 <div class="paragraph">
 <p><code>if</code> は"then"と"else"に単一の式しかとらない。単一の式よりも大きなブロックを作るには <code>do</code> を使おう。</p>
 </div>
@@ -223,7 +223,7 @@ user=&gt; (if 0 :truthy :falsey) ; 0は真
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_when_code"><a class="anchor" href="#__code_when_code"></a><code>when</code></h3>
+<h3 id="_when"><a class="anchor" href="#_when"></a><code>when</code></h3>
 <div class="paragraph">
 <p><code>when</code> は <code>then</code> の分岐だけを持つ <code>if</code> だ。条件をチェックし、本体部として任意個の文を評価する(なので <code>do</code> は必要ない)。
 最後の式の値が返る。条件が偽の場合、 nilが返る。</p>
@@ -239,7 +239,7 @@ user=&gt; (if 0 :truthy :falsey) ; 0は真
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_cond_code"><a class="anchor" href="#__code_cond_code"></a><code>cond</code></h3>
+<h3 id="_cond"><a class="anchor" href="#_cond"></a><code>cond</code></h3>
 <div class="paragraph">
 <p><code>cond</code> はテストと式が並んだものだ。個々のテストは順に評価され、最初に真になるテストに対応する式が評価されて返る。</p>
 </div>
@@ -253,7 +253,7 @@ user=&gt; (if 0 :truthy :falsey) ; 0は真
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_cond_code_と_code_else_code"><a class="anchor" href="#__code_cond_code_と_code_else_code"></a><code>cond</code> と <code>else</code></h3>
+<h3 id="_cond_と_else"><a class="anchor" href="#_cond_と_else"></a><code>cond</code> と <code>else</code></h3>
 <div class="paragraph">
 <p>いずれのテストも満たさない場合、nilが返る。最後のテストに <code>:else</code> を使うのが一般的なイディオムだ。 <code>:else</code>
 のようなキーワードは常に真と評価されるため、これが常にデフォルトとして選ばれる。</p>
@@ -269,7 +269,7 @@ user=&gt; (if 0 :truthy :falsey) ; 0は真
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_case_code"><a class="anchor" href="#__code_case_code"></a><code>case</code></h3>
+<h3 id="_case"><a class="anchor" href="#_case"></a><code>case</code></h3>
 <div class="paragraph">
 <p><code>case</code> は引数を一連の値と比較し一致するものを探す。これは(線形ではなく)定数時間で終わる!
 しかし、個々の値はコンパイル時リテラル(数値、文字列、キーワードなど)でなければならない。</p>
@@ -294,7 +294,7 @@ IllegalArgumentException No matching clause: 11</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_else_code_式付きの_code_case_code"><a class="anchor" href="#__code_else_code_式付きの_code_case_code"></a><code>else</code> 式付きの <code>case</code></h3>
+<h3 id="_else_式付きの_case"><a class="anchor" href="#_else_式付きの_case"></a><code>else</code> 式付きの <code>case</code></h3>
 <div class="paragraph">
 <p><code>case</code> は最後にひとつの式を持つことができ、いずれのテストも満たさない場合に評価される。</p>
 </div>
@@ -318,7 +318,7 @@ x isn't 5 or 10</code></pre>
 <h2 id="_副作用のための繰り返し"><a class="anchor" href="#_副作用のための繰り返し"></a>副作用のための繰り返し</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="__code_dotimes_code"><a class="anchor" href="#__code_dotimes_code"></a><code>dotimes</code></h3>
+<h3 id="_dotimes"><a class="anchor" href="#_dotimes"></a><code>dotimes</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -341,7 +341,7 @@ nil</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_doseq_code"><a class="anchor" href="#__code_doseq_code"></a><code>doseq</code></h3>
+<h3 id="_doseq"><a class="anchor" href="#_doseq"></a><code>doseq</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -367,7 +367,7 @@ nil</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_複数の束縛を持った_code_doseq_code"><a class="anchor" href="#_複数の束縛を持った_code_doseq_code"></a>複数の束縛を持った <code>doseq</code></h3>
+<h3 id="_複数の束縛を持った_doseq"><a class="anchor" href="#_複数の束縛を持った_doseq"></a>複数の束縛を持った <code>doseq</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -399,7 +399,7 @@ nil</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_clojureの_code_for_code"><a class="anchor" href="#_clojureの_code_for_code"></a>Clojureの <code>for</code></h2>
+<h2 id="_clojureの_for"><a class="anchor" href="#_clojureの_for"></a>Clojureの <code>for</code></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -449,7 +449,7 @@ lower-level facility</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_loop_code_と_code_recur_code"><a class="anchor" href="#__code_loop_code_と_code_recur_code"></a><code>loop</code> と <code>recur</code></h3>
+<h3 id="_loop_と_recur"><a class="anchor" href="#_loop_と_recur"></a><code>loop</code> と <code>recur</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -471,7 +471,7 @@ re-executes <code>loop</code> with new bindings</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_defn_code_と_code_recur_code"><a class="anchor" href="#__code_defn_code_と_code_recur_code"></a><code>defn</code> と <code>recur</code></h3>
+<h3 id="_defn_と_recur"><a class="anchor" href="#_defn_と_recur"></a><code>defn</code> と <code>recur</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -489,7 +489,7 @@ re-executes <code>loop</code> with new bindings</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_再帰のための_code_recur_code"><a class="anchor" href="#_再帰のための_code_recur_code"></a>再帰のための <code>recur</code></h3>
+<h3 id="_再帰のための_recur"><a class="anchor" href="#_再帰のための_recur"></a>再帰のための <code>recur</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -562,7 +562,7 @@ bindings </strong> defn/fn arguments</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_with_open_code"><a class="anchor" href="#__code_with_open_code"></a><code>with-open</code></h3>
+<h3 id="_with_open"><a class="anchor" href="#_with_open"></a><code>with-open</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(let [f (clojure.java.io/writer "/tmp/new")]

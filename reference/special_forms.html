@@ -89,9 +89,9 @@
 <li><a href="#quote">(<code>quote</code> <em>form</em>)</a></li>
 <li><a href="#var">(<code>var</code> <em>symbol</em>)</a></li>
 <li><a href="#fn">(<code>fn</code> <em>name</em>? [<em>params</em>* ] <em>expr</em>*)</a></li>
-<li><a href="#__code_fn_code_em_name_em_em_params_em_em_expr_em">(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</a></li>
-<li><a href="#__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</a></li>
-<li><a href="#__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em">(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</a></li>
+<li><a href="#_fn_name_params_expr">(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</a></li>
+<li><a href="#_fn_name_param_condition_map_expr">(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</a></li>
+<li><a href="#_fn_name_param_condition_map_expr_2">(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</a></li>
 <li><a href="#loop">(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</a></li>
 <li><a href="#recur">(<code>recur</code> <em>expr</em>*)</a></li>
 <li><a href="#throw">(<code>throw</code> <em>expr</em>)</a></li>
@@ -247,7 +247,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>See <a href="special_forms#binding-forms">Binding Forms</a> for more information about binding forms.</p>
+<p>See <a href="special_forms#binding-forms#">Binding Forms</a> for more information about binding forms.</p>
 </div>
 <div class="paragraph">
 <p><strong>Locals created with <code>let</code> are not variables. Once created their values never change!</strong></p>
@@ -286,7 +286,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_em_name_em_em_params_em_em_expr_em"><a class="anchor" href="#__code_fn_code_em_name_em_em_params_em_em_expr_em"></a>(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</h2>
+<h2 id="_fn_name_params_expr"><a class="anchor" href="#_fn_name_params_expr"></a>(<code>fn</code> <em>name</em>? ([<em>params</em>* ] <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>params</em> &#8658; <em>positional-param</em>* , or <em>positional-param</em>* &amp; <em>rest-param</em><br>
@@ -318,7 +318,7 @@ user=&gt; (meta #'mymax)
 <p>Note that named fns such as <code>mult</code> are normally defined with <code>defn</code>, which expands into something such as the above.</p>
 </div>
 <div class="paragraph">
-<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of <em>param</em>s <em>including the rest param, if present</em>. See <a href="special_forms#recur"><code>recur</code></a>.</p>
+<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of <em>param</em>s <em>including the rest param, if present</em>. See <a href="special_forms#recur#"><code>recur</code></a>.</p>
 </div>
 <div class="paragraph">
 <p>fns implement the Java <code>Callable</code>, <code>Runnable</code> and <code>Comparator</code> interfaces.</p>
@@ -335,13 +335,13 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em"><a class="anchor" href="#__code_fn_code_em_name_em_em_param_em_em_condition_map_em_em_expr_em"></a>(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</h2>
+<h2 id="_fn_name_param_condition_map_expr"><a class="anchor" href="#_fn_name_param_condition_map_expr"></a>(<code>fn</code> <em>name</em>? [<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em"><a class="anchor" href="#__code_fn_code_name_em_param_em_em_condition_map_em_em_expr_em"></a>(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</h2>
+<h2 id="_fn_name_param_condition_map_expr_2"><a class="anchor" href="#_fn_name_param_condition_map_expr_2"></a>(<code>fn</code> name? ([<em>param</em>* ] <em>condition-map</em>? <em>expr</em>*)+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The syntax extension also applies to <code>defn</code> and other macros which expand to <code>fn</code> forms.</p>
@@ -376,7 +376,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>See <a href="special_forms#binding-forms">Binding Forms</a> for more information about binding forms.</p>
+<p>See <a href="special_forms#binding-forms#">Binding Forms</a> for more information about binding forms.</p>
 </div>
 </div>
 </div>
@@ -384,7 +384,7 @@ user=&gt; (meta #'mymax)
 <h2 id="loop"><a class="anchor" href="#loop"></a>(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur"><code>recur</code></a>.</p>
+<p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur#"><code>recur</code></a>.</p>
 </div>
 </div>
 </div>
@@ -392,7 +392,7 @@ user=&gt; (meta #'mymax)
 <h2 id="recur"><a class="anchor" href="#recur"></a>(<code>recur</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
+<p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop#"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
 </div>
 <div class="paragraph">
 <p>Note that <code>recur</code> is the only non-stack-consuming looping construct in Clojure. There is no tail-call optimization and the use of self-calls for looping of unknown bounds is discouraged. <code>recur</code> is functional and its use in tail-position is verified by the compiler.</p>
@@ -447,12 +447,12 @@ user=&gt; (meta #'mymax)
 <h2 id="_other_special_forms"><a class="anchor" href="#_other_special_forms"></a>Other Special Forms</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a id="."></a>
+<p>anchor:.[]
 <a id="new"></a>
 The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_interop#new">new</a>, and <a href="java_interop#set">set!</a> of fields are described in the <a href="java_interop">Java Interop</a> section of the reference.</p>
 </div>
 <div class="paragraph">
-<p><a id="set!"></a>
+<p>anchor:set![]
 <a href="vars#set%21">set!</a> of vars is described in the <a href="vars">Vars</a> section of the reference.</p>
 </div>
 </div>
