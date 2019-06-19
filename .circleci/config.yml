@@ -3,8 +3,7 @@ version: 2
 docker_env:
   container_config: &container_config
     docker:
-      - image: ubuntu:bionic
-    working_directory: ~/repo
+      - image: clojuriansjp/clojure-site-build-env
     shell: /bin/bash --login
     environtment:
       - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
@@ -12,61 +11,45 @@ docker_env:
 keys:
   test_cache_key: &test_cache_key
     test-{{ .Branch }}
-  jbake_cache_key: &jbake_cache_key
-    jbake-2.6.3-{{ .Branch }}
   repo_cache_key: &repo_cache_key
     repo-{{ .Branch }}-{{ .Revision }}
+
 
 jobs:
   test:
     <<: *container_config
     steps:
       - run: mkdir -p /tmp/circleci-artifacts
-      - run: apt-get update; apt-get install -y git make po4a openjdk-8-jdk
+      - run: apt-get update; apt-get install -y git make
       - checkout
       - restore_cache:
           key: *test_cache_key
       - run:
-          name: install redpen
-          command: if [[ ! -e ~/redpen ]]; then curl -L -o redpen.tar.gz https://github.com/redpen-cc/redpen/releases/download/redpen-1.9.0/redpen-1.9.0.tar.gz && tar xvf redpen.tar.gz && mv redpen-distribution-1.9.0 ~/redpen; fi
-      - save_cache:
-          paths:
-            - ~/redpen
-          key: *test_cache_key
-      - run:
           name: test
           command: |
-            make test -e REDPEN_CMD=~/redpen/bin/redpen 2>/dev/null
+            make test 2>/dev/null
             mkdir /tmp/circleci-artifacts/translation-result
             mv ./ja /tmp/circleci-artifacts/translation-result
       - store_artifacts:
           path: /tmp/circleci-artifacts
       - save_cache:
-          paths: ~/repo
+          paths: ~/work
           key: *repo_cache_key
 
   deploy:
     <<: *container_config
     steps:
-      - run: apt-get update; apt-get install -y git make unzip ca-certificates po4a openjdk-8-jdk python3-pip python3-dev
+      - run: apt-get update; apt-get install -y git make
       - run: mkdir -p ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "13:b1:55:43:8c:4d:eb:0a:c2:43:34:85:a6:8f:ff:11"
       - restore_cache:
           key: *repo_cache_key
-      - restore_cache:
-          key: *jbake_cache_key
       - run: pip3 install -r python-packages.txt
       - run:
-          name: install jbake
-          command: if [[ ! -e ~/jbake ]]; then curl -vLO https://dl.bintray.com/jbake/binary/jbake-2.6.4-bin.zip && unzip -o jbake-2.6.4-bin.zip && mv jbake-2.6.4-bin ~/jbake; fi
-      - save_cache:
-          paths: ~/jbake
-          key: *jbake_cache_key
-      - run:
           name: deployment
-          command: make publish -e JBAKE_CMD=~/jbake/bin/jbake 2>/dev/null
+          command: make publish 2>/dev/null
 
 workflows:
   version: 2
