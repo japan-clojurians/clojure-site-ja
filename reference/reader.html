@@ -166,14 +166,23 @@ Lisp)とその他のプログラミング言語との間の重要な差だ。- C
 <p>文字列 - "ダブルクォート" で囲まれている。複数行にまたがることもできる。標準のJavaエスケープ文字がサポートされている。</p>
 </li>
 <li>
-<p>Numbers - generally represented as per Java <strong> Integers can be indefinitely
-long and will be read as Longs when in range and clojure.lang.BigInts
-otherwise. Integers with an N suffix are always read as BigInts. When
-possible, they can be specified in any base with radix from 2 to 36 (see
-<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)">Long.parseLong()</a>);
-for example <code>2r101010</code>, <code>8r52</code>, <code>36r16</code>, and <code>42</code> are all the same Long.  </strong>
-Floating point numbers are read as Doubles; with M suffix they are read as
-BigDecimals.  ** Ratios are supported, e.g. <code>22/7</code>.</p>
+<p>数値 - 一般的に Java と同様に表記される</p>
+<div class="ulist">
+<ul>
+<li>
+<p>整数は長さの制限がなく、Longの範囲内にある時はLongとして読み込まれ、それ以外の場合には
+clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整数は常にBigIntとして読み込まれる。可能な場合には2から36の基数を指定して表記することができる(参照:
+<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html#parseLong(java.lang.String,%20int)">Long.parseLong()</a>)。例えば
+<code>2r101010</code>、<code>8r52</code>、<code>36r16</code>,<code>42</code> は全て同じLongになる。</p>
+</li>
+<li>
+<p>浮動小数点数はDoubleとして読み込まれる。末尾にMが付いているとBigDecimalとして読み込まれる。</p>
+</li>
+<li>
+<p>分数もサポートされている(例: <code>22/7</code>)。</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>文字 - 先頭にバックスラッシュが付いている：<code>\c</code>、 <code>\newline</code>、<code>\space</code>、 <code>\tab</code>、 <code>\formfeed</code>、
@@ -187,15 +196,35 @@ BigDecimals.  ** Ratios are supported, e.g. <code>22/7</code>.</p>
 <p>ブーリアン - <code>true</code> と <code>false</code></p>
 </li>
 <li>
-<p>Keywords - Keywords are like symbols, except: <strong> They can and must begin
-with a colon, e.g. :fred.  </strong> They cannot contain '.' or name classes.  <strong>
-Like symbols, they can contain a namespace, <code>:person/name</code> </strong> A keyword that
-begins with two colons is auto-resolved in the current namespace to a
-qualified keyword: <strong>* If the keyword is unqualified, the namespace will be
-the current namespace. In <code>user</code>, <code>::rect</code> is read as <code>:user/rect</code>.  </strong>* If
-the keyword is qualified, the namespace will be resolved using aliases in
-the current namespace. In a namespace where <code>x</code> is aliased to <code>example</code>,
-<code>::x/foo</code> resolves to <code>:example/foo</code>.</p>
+<p>キーワード - キーワードはシンボルと似ているが、以下の点で異なる:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>コロン(:) で始まらなければならない(例：:fred)。</p>
+</li>
+<li>
+<p>'.'を含めたりクラスの名前に使用したりできない。</p>
+</li>
+<li>
+<p>シンボルと同様に名前空間を含むことができる。 <code>:person/name</code></p>
+</li>
+<li>
+<p>コロン2つで始まるキーワードは現在の名前空間において修飾されたキーワードに自動的に解決される:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>キーワードが修飾されていない場合、その名前空間は現在の名前空間になる。 <code>user</code> では <code>::rect</code> は <code>user/rect</code>
+として読み込まれる。</p>
+</li>
+<li>
+<p>キーワードが修飾されている場合、その名前空間は現在の名前空間でのエイリアスを利用して解決される。 <code>x</code> が <code>example</code>
+にエイリアスされた名前空間では、 <code>::x/foo</code> は <code>:example/foo</code> に解決される。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -243,22 +272,34 @@ the current namespace. In a namespace where <code>x</code> is aliased to <code>e
 <div class="ulist">
 <ul>
 <li>
-<p>Keys <strong> Keys that are keywords or symbols without a namespace are read with
-the default namespace.  </strong> Keys that are keywords or symbols with a
-namespace are not affected <strong>except</strong> for the special namespace <code>_</code>, which is
-removed during read. This allows for the specification of keywords or
-symbols without namespaces as keys in a map literal with namespace syntax.</p>
+<p>キー</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Keys that are not symbols or keywords are not affected.</p>
+<p>名前空間なしのキーワードもしくはシンボルであるキーはデフォルトの名前空間で読み込まれる。</p>
+</li>
+<li>
+<p>名前空間のあるシンボルもしくはキーワードであるキーは影響されずに読み込まれる。 <strong>ただし</strong> 、特別な名前空間 <code>_</code>
+は読み込み時に取り除かれるので扱いが異なる。これを使用することで名前空間シンタックスのあるマップリテラルの中で、名前空間なしのキーワードやシンボルをキーとして指定することが可能になる。</p>
+</li>
+<li>
+<p>キーワードもしくはシンボル以外のキーは影響を受けない。</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Values <strong> Values are not affected.  </strong> Nested map literal keys are not
-affected.</p>
+<p>値</p>
+<div class="ulist">
+<ul>
+<li>
+<p>値は影響を受けない。</p>
+</li>
+<li>
+<p>ネストしたマップリテラルのキーは影響を受けない。</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

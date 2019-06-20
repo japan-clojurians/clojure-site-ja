@@ -514,10 +514,51 @@ Cheatsheet](<a href="https://clojure.org/api/cheatsheet)を開いておくのも
 <div class="paragraph">
 <p>言語を学ぶ際にする最も一般的なことのひとつは値を印字することだ。Clojureは値を印字するためにいくつかの関数を提供している:</p>
 </div>
-<div class="paragraph table">
-<p>|=== | | Human-Readable | Machine-Readable | |With newline| println | prn |
-|Without newline | print | pr | |===</p>
-</div>
+<table class="tableblock frame-all grid-all stretch table">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">人間が読める</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">機械が読める</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">改行あり</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">println</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prn</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">改行なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">print</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>人間が読める(human-readable)形式は特殊印字文字(改行やタブなど)を期待される形式に翻訳して文字列をクォートなしで印字する。
 <code>println</code> は関数をデバッグしたりREPLで値を印字するのによく使う。 <code>println</code>

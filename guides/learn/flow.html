@@ -435,15 +435,34 @@ nil</code></pre>
 <p>Clojureはrecurとシーケンス抽象を提供している</p>
 </li>
 <li>
-<p><code>recur</code> is "classic" recursion ** Consumers don&#8217;t control it, considered a
-lower-level facility</p>
+<p><code>recur</code> は「古典的な」再帰だ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>利用者がコントロールできず、低レベルな機能と考えられる</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Sequences represent iteration as values ** Consumers can partially iterate</p>
+<p>シーケンスは繰り返しを値として表現する</p>
+<div class="ulist">
+<ul>
+<li>
+<p>利用者が部分的に繰り返すことができる</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Reducers represent iteration as function composition ** Added in Clojure
-1.5, not covered here</p>
+<p>reducerは繰り返しを関数合成として表現する</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojure 1.5で追加されたが、ここでは扱わない</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -453,8 +472,17 @@ lower-level facility</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Functional looping construct <strong> <code>loop</code> defines bindings </strong> <code>recur</code>
-re-executes <code>loop</code> with new bindings</p>
+<p>関数型のループ構文</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>loop</code> は束縛を定義する</p>
+</li>
+<li>
+<p><code>recur</code> は新たな束縛で <code>loop</code> を再実行する</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>むしろライブラリの高階関数を使うようにしよう</p>
@@ -493,11 +521,27 @@ re-executes <code>loop</code> with new bindings</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>recur</code> must be in "tail position" ** The last expression in a branch</p>
+<p><code>recur</code> は「末尾位置」になければならない式</p>
+<div class="ulist">
+<ul>
+<li>
+<p>分岐の最後の式</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><code>recur</code> must provide values for all bound symbols by position <strong> Loop
-bindings </strong> defn/fn arguments</p>
+<p><code>recur</code> はすべての束縛シンボルに対応する値を与えなければならない数</p>
+<div class="ulist">
+<ul>
+<li>
+<p>loopの束縛</p>
+</li>
+<li>
+<p>defn/fnの引数</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><code>recur</code> による再帰はスタックを消費しない</p>
@@ -548,7 +592,14 @@ bindings </strong> defn/fn arguments</p>
 <p><code>ex-info</code> はメッセージとマップをとる</p>
 </li>
 <li>
-<p><code>ex-data</code> gets the map back out ** Or <code>nil</code> if not created with <code>ex-info</code></p>
+<p><code>ex-data</code> はそのマップを取り出す</p>
+<div class="ulist">
+<ul>
+<li>
+<p>もしくは <code>ex-info</code> で作られたものでなければ <code>nil</code></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

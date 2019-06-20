@@ -114,23 +114,58 @@
 <p>オプションと引数の指定がない場合、インタラクティブな REPL (Read-Eval-Print Loop) を実行する</p>
 </li>
 <li>
-<p>init options: <strong> -i, --init path Load a file or resource </strong> -e, --eval
-string Evaluate expressions in string; print non-nil values</p>
-</li>
-<li>
-<p>main options: <strong> -r, --repl Run a repl </strong> path Run a script from a file or
-resource <strong> - Run a script from standard input </strong> -m, --main A namespace to
-find a -main function for execution ** -h, -?, --help Print this help
-message and exit</p>
-</li>
-<li>
-<p>operation: ** Establishes thread-local bindings for commonly set!-able vars</p>
+<p>initオプション:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Enters the user namespace <strong> Binds *command-line-args* to a seq of
-strings containing command line args that appear after any main option </strong>
-Runs all init options in order ** Runs a repl or script if requested</p>
+<p>-i, --init パス ファイル、もしくはリソースをロードする</p>
+</li>
+<li>
+<p>-e, --eval 文字列 文字列中の式を評価する; 非nilな値をプリントする</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>mainオプション:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>-r, --repl replを実行する</p>
+</li>
+<li>
+<p>path ファイル、もしくはリソースからスクリプトを実行する</p>
+</li>
+<li>
+<p>- 標準入力からスクリプトを実行する</p>
+</li>
+<li>
+<p>-m, --main 実行対象の-main関数を見つけるための名前空間</p>
+</li>
+<li>
+<p>-h, -?, --help このメッセージをプリントして終了する</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>操作:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>一般的に利用されるset!操作が可能なvarに対してスレッドローカルな束縛を行う</p>
+</li>
+<li>
+<p>user名前空間に切り替える</p>
+</li>
+<li>
+<p>*command-line-args* を、mainオプションの後に指定されたコマンドライン引数を含む文字列シーケンスに束縛する</p>
+</li>
+<li>
+<p>全てのinitオプションを順に実行する</p>
+</li>
+<li>
+<p>repl、もしくは指定があればスクリプトを実行する</p>
 </li>
 </ul>
 </div>

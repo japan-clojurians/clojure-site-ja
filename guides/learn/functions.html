@@ -106,8 +106,10 @@
 <li><a href="#_javaとの相互運用">Javaとの相互運用</a>
 <ul class="sectlevel2">
 <li><a href="#_javaコードを呼び出す">Javaコードを呼び出す</a></li>
+<li><a href="#_javaメソッド_vs_関数">Javaメソッド vs 関数</a></li>
 </ul>
 </li>
+<li><a href="#_知識をテストしよう">知識をテストしよう</a></li>
 </ul>
 </div>
 </div>
@@ -443,100 +445,233 @@ vector</code></pre>
 <div class="paragraph">
 <p>以下はClojureからJavaを呼び出すための呼び出し規約(calling conventions)のまとめだ:</p>
 </div>
-<div class="paragraph table">
-<p>|=== | Task | Java | Clojure | |Instantiation| <code>new Widget("foo")</code> |
-<code>(Widget. "foo")</code> | |Instance method| <code>rnd.next()</code> | <code>(.nextInt rnd)</code> |
-|Instance field| <code>object.field</code> | <code>(.-field object)</code> | |Static method|
-<code>Math.sqrt(25)</code> | <code>(Math/sqrt 25)</code> | |Static field| <code>Math.PI</code> | <code>Math/PI</code> |</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch table">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">タスク</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">=== Javaメソッド vs 関数</p>
-<p class="tableblock">* JavaのメソッドはClojureの関数ではない
-* 保持したり引数として渡したりすることはできない
-* 必要な場合に関数にラップすることができる</p>
-<p class="tableblock">[source, clojure]
-----
-;; 引数に対して .length を呼び出すための関数を作る
-(fn [obj] (.length obj))</p>
-<p class="tableblock">;; 同じこと
-<mark>(.length %)
-----</p>
-<p class="tableblock">== 知識をテストしよう</p>
-<p class="tableblock">1) 引数をとらず「Hello」と出力する関数 <code>greet</code> を定義しよう。 <em>_ を実装で置き換えよう: <code>(defn greet [] </em><em>)</code></p>
-<p class="tableblock">2) <code>greet</code> を最初は <code>fn</code> 特殊形式、次は <code></mark>()</code> リーダーマクロとともに <code>def</code> を使って再定義しよう。
-[source, clojure]
-----
-;; fn を使う
-(def greet <em>)</p>
-<p class="tableblock">;; #() を使う
-(def greet </em>)
-----</p>
-<p class="tableblock">3) 次のような関数 <code>greeting</code> を定義しよう:</p>
-<p class="tableblock">* 引数を与えられなければ"Hello, World!"を返す
-* 1つの引数xを与えられると"Hello, <strong>x</strong>!"を返す
-* 2つの引数xとyを与えられると"<strong>x</strong>, <strong>y</strong>!"を返す
-[source, clojure]
-----
-;; ヒント 文字列を結合するのに str 関数を使う
-(doc str)</p>
-<p class="tableblock">(defn greeting <em></em>)</p>
-<p class="tableblock">;; テスト用
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clojure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンス化</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>new Widget("foo")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Widget. "foo")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンスメソッド</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rnd.next()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(.nextInt rnd)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンスフィールド</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>object.field</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(.-field object)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">staticメソッド</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math.sqrt(25)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Math/sqrt 25)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">staticフィールド</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math.PI</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math/PI</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_javaメソッド_vs_関数"><a class="anchor" href="#_javaメソッド_vs_関数"></a>Javaメソッド vs 関数</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>JavaのメソッドはClojureの関数ではない</p>
+</li>
+<li>
+<p>保持したり引数として渡したりすることはできない</p>
+</li>
+<li>
+<p>必要な場合に関数にラップすることができる</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; 引数に対して .length を呼び出すための関数を作る
+(fn [obj] (.length obj))
+
+;; 同じこと
+#(.length %)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_知識をテストしよう"><a class="anchor" href="#_知識をテストしよう"></a>知識をテストしよう</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>1) 引数をとらず「Hello」と出力する関数 <code>greet</code> を定義しよう。 <em>_ を実装で置き換えよう: <code>(defn greet [] </em>_)</code></p>
+</div>
+<div class="paragraph">
+<p>2) <code>greet</code> を最初は <code>fn</code> 特殊形式、次は <code>#()</code> リーダーマクロとともに <code>def</code> を使って再定義しよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; fn を使う
+(def greet __)
+
+;; #() を使う
+(def greet __)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3) 次のような関数 <code>greeting</code> を定義しよう:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>引数を与えられなければ"Hello, World!"を返す</p>
+</li>
+<li>
+<p>1つの引数xを与えられると"Hello, <strong>x</strong>!"を返す</p>
+</li>
+<li>
+<p>2つの引数xとyを与えられると"<strong>x</strong>, <strong>y</strong>!"を返す</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>;; ヒント 文字列を結合するのに str 関数を使う
+(doc str)
+
+(defn greeting ___)
+
+;; テスト用
 (assert (= "Hello, World!" (greeting)))
 (assert (= "Hello, Clojure!" (greeting "Clojure")))
-(assert (= "Good morning, Clojure!" (greeting "Good morning" "Clojure")))
-----</p>
-<p class="tableblock">4) 単一の引数 <code>x</code> をとってそのまま返す関数 <code>do-nothing</code> を定義しよう。
-[source, clojure]
-----
-(defn do-nothing [x] </em><em>)
-----
-Clojureでは、これは <code>identity</code> 関数だ。それ自体ではidentityはあまり役に立たないが、高階関数を扱う際に必要になることがある。
-[source, clojure]
-----
-(source identity)
-----</p>
-<p class="tableblock">5) 任意個の引数をとり、すべて無視してキーワード <code>:thing</code> を返す関数 <code>always-thing</code> を定義しよう。
-[source, clojure]
-----
-(defn always-thing [<em>] </em></em>)
-----</p>
-<p class="tableblock">6) 単一の引数 <code>x</code> をとる関数 <code>make-thingy</code> を定義しよう。この関数は、任意個の引数をとって常にxを返すような別の関数を返す必要がある。
-[source, clojure]
-----
-(defn make-thingy [x] <em><em>)</p>
-<p class="tableblock">;; テスト
+(assert (= "Good morning, Clojure!" (greeting "Good morning" "Clojure")))</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>4) 単一の引数 <code>x</code> をとってそのまま返す関数 <code>do-nothing</code> を定義しよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn do-nothing [x] ___)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojureでは、これは <code>identity</code> 関数だ。それ自体ではidentityはあまり役に立たないが、高階関数を扱う際に必要になることがある。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(source identity)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>5) 任意個の引数をとり、すべて無視してキーワード <code>:thing</code> を返す関数 <code>always-thing</code> を定義しよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn always-thing [__] ___)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>6) 単一の引数 <code>x</code> をとる関数 <code>make-thingy</code> を定義しよう。この関数は、任意個の引数をとって常にxを返すような別の関数を返す必要がある。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn make-thingy [x] ___)
+
+;; テスト
 (let [n (rand-int Integer/MAX_VALUE)
       f (make-thingy n)]
   (assert (= n (f)))
   (assert (= n (f :foo)))
-  (assert (= n (apply f :foo (range)))))
-----
-Clojureでは、これは <code>constantly</code> 関数だ。
-[source, clojure]
-----
-(source constantly)
-----</p>
-<p class="tableblock">7) 別の関数をとって引数なしで3回呼び出す関数 <code>triplicate</code> を定義しよう。
-[source, clojure]
-----
-(defn triplicate [f] </em></em>)
-----</p>
-<p class="tableblock">8) 単一の引数 <code>f</code> をとる関数 <code>opposite</code> を定義しよう。この関数は、任意個の引数をとって <code>f</code> を適用して結果に <code>not</code>
-   を呼び出すような別の関数を返す必要がある。Clojureの <code>not</code> 関数は論理否定をする。
-[source, clojure]
-----
-(defn opposite [f]
-  (fn [&amp; args] <em><em>))
-----
-Clojureでは、これはcomplement関数だ。
-[source, clojure]
-----
-(defn complement
+  (assert (= n (apply f :foo (range)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojureでは、これは <code>constantly</code> 関数だ。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(source constantly)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>7) 別の関数をとって引数なしで3回呼び出す関数 <code>triplicate</code> を定義しよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn triplicate [f] ___)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>8) 単一の引数 <code>f</code> をとる関数 <code>opposite</code> を定義しよう。この関数は、任意個の引数をとって <code>f</code> を適用して結果に <code>not</code>
+   を呼び出すような別の関数を返す必要がある。Clojureの <code>not</code> 関数は論理否定をする。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn opposite [f]
+  (fn [&amp; args] ___))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojureでは、これはcomplement関数だ。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn complement
   "Takes a fn f and returns a fn that takes the same arguments as f,
   has the same effects, if any, and returns the opposite truth value."
   [f]
@@ -544,56 +679,79 @@ Clojureでは、これはcomplement関数だ。
     ([] (not (f)))
     ([x] (not (f x)))
     ([x y] (not (f x y)))
-    ([x y &amp; zs] (not (apply f x y zs)))))
-----</p>
-<p class="tableblock">9) 別の関数と任意個の引数をとり、その関数を引数に3回適用する関数 <code>triplicate2</code>
-   を定義しよう。前にtriplicateの問題で定義した関数を再利用しよう。
-[source, clojure]
-----
-(defn triplicate2 [f &amp; args]
-  (triplicate </em></em>))
-----</p>
-<p class="tableblock">10) <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>
+    ([x y &amp; zs] (not (apply f x y zs)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>9) 別の関数と任意個の引数をとり、その関数を引数に3回適用する関数 <code>triplicate2</code>
+   を定義しよう。前にtriplicateの問題で定義した関数を再利用しよう。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn triplicate2 [f &amp; args]
+  (triplicate ___))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>10) <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>
     クラス(<code>Math/pow</code>, <code>Math/cos</code>, <code>Math/sin</code>, <code>Math/PI</code>)を使って、次の数学的な事実を示そう:
 * piのコサインは-1
 * あるxについて sin(x)^2 + cos(x)^2 = 1</p>
-<p class="tableblock">11) HTTP URLを文字列としてとり、WebからそのURLで取得した内容を文字列として返す関数を定義しよう。</p>
-<p class="tableblock">ヒント:
+</div>
+<div class="paragraph">
+<p>11) HTTP URLを文字列としてとり、WebからそのURLで取得した内容を文字列として返す関数を定義しよう。</p>
+</div>
+<div class="paragraph">
+<p>ヒント:
 <a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html">java.net.URL</a>
-クラスとその <code>openStream</code> を使う。そして内容を文字列として得るためにClojureの <code>slurp</code> 関数を使う。
-[source, clojure]
-----
-(defn http-get [url]
-  <em><em>)</p>
-<p class="tableblock">(assert (.contains (http-get "http://www.w3.org") "html"))
-----
-実は、Clojureの <code>slurp</code> 関数は引数をファイル名として解釈しようとする前に先にURLとして解釈する。単純化したhttp-getを書こう:
-[source, clojure]
-----
-(defn http-get [url]
-  </em></em>)
-----</p>
-<p class="tableblock">12) 2つの引数をとる関数 <code>one-less-arg</code> を定義しよう:
+クラスとその <code>openStream</code> を使う。そして内容を文字列として得るためにClojureの <code>slurp</code> 関数を使う。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn http-get [url]
+  ___)
+
+(assert (.contains (http-get "http://www.w3.org") "html"))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実は、Clojureの <code>slurp</code> 関数は引数をファイル名として解釈しようとする前に先にURLとして解釈する。単純化したhttp-getを書こう:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn http-get [url]
+  ___)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>12) 2つの引数をとる関数 <code>one-less-arg</code> を定義しよう:
 * <code>f</code>, 関数
 * <code>x</code>, 値</p>
-<p class="tableblock">そして <code>x</code> と追加の引数に対して <code>f</code> を呼び出すような別の関数を返す。<br>
-[source, clojure]
-----
-(defn one-less-arg [f x]
-  (fn [&amp; args] <em><em>))
-----
-Clojureでは、 <code>partial</code> 関数がこれをより一般化したものだ。</p>
-<p class="tableblock">13) 2つの関数 <code>f</code> と <code>g</code> を引数としてとる関数 <code>two-fns</code> を定義しよう。この関数は、1つの引数をとって <code>g</code>
+</div>
+<div class="paragraph">
+<p>そして <code>x</code> と追加の引数に対して <code>f</code> を呼び出すような別の関数を返す。<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn one-less-arg [f x]
+  (fn [&amp; args] ___))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojureでは、 <code>partial</code> 関数がこれをより一般化したものだ。</p>
+</div>
+<div class="paragraph">
+<p>13) 2つの関数 <code>f</code> と <code>g</code> を引数としてとる関数 <code>two-fns</code> を定義しよう。この関数は、1つの引数をとって <code>g</code>
     を呼び出してからその結果に <code>f</code> を呼び出した結果を返すような別の関数を返す。</p>
-<p class="tableblock">つまり、その関数は <code>f</code> と <code>g</code> の合成を返す。
-[source, clojure]
-----
-(defn two-fns [f g]
-  </em></em>)
-----</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="paragraph">
+<p>つまり、その関数は <code>f</code> と <code>g</code> の合成を返す。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn two-fns [f g]
+  ___)</code></pre>
+</div>
 </div>
 </div>
 </div></p>

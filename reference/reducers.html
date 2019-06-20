@@ -142,9 +142,14 @@
 <p>マップのコレクションは reduce-kv でreduceされる</p>
 </li>
 <li>
-<p>When init is not provided, f is invoked with no arguments to produce an
-identity value ** <em>Note: f may be invoked multiple times to provide the
-identity value</em></p>
+<p>init が与えられていない場合、 初期値を作り出すためにfが引数なしで呼び出される</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>注意: 初期値を作り出すためにfが複数呼び出される場合がある</em></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

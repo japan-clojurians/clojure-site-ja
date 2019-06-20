@@ -148,16 +148,45 @@
 <p>いまだ核心的な強みであるデータとしてのコード(code-as-data)とシンタックスの抽象化</p>
 </li>
 <li>
-<p>What about the standard Lisps (Common Lisp and Scheme)? <strong> Slow/no
-innovation post standardization </strong> Core data structures mutable, not
-extensible <strong> No concurrency in specs </strong> Good implementations already exist
-for JVM (ABCL, Kawa, SISC et al)  ** Standard Lisps are their own platforms</p>
+<p>標準のLisp (Common LispとScheme)はどうだろうか?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>標準化以降のイノベーションが遅い/ない</p>
 </li>
 <li>
-<p>Clojure is a Lisp not constrained by backwards compatibility <strong> Extends the
-code-as-data paradigm to maps and vectors </strong> Defaults to immutability <strong>
-Core data structures are extensible abstractions </strong> Embraces a platform
-(JVM)</p>
+<p>コアとなるデータ構造がミュータブルで、拡張もできない</p>
+</li>
+<li>
+<p>並行処理が仕様に含まれていない</p>
+</li>
+<li>
+<p>JVM向けの良い実装がすでに存在する(ABCL, Kawa, SISCなど)</p>
+</li>
+<li>
+<p>標準のLispはそれぞれ固有のプラットフォームになっている</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Clojureは後方互換性による制約のないLispだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>データとしてのコード(code-as-data)というパラダイムをマップとベクターにまで拡張している</p>
+</li>
+<li>
+<p>デフォルトでイミュータブルになっている</p>
+</li>
+<li>
+<p>コアのデータ構造は拡張可能な抽象だ</p>
+</li>
+<li>
+<p>プラットフォーム(JVM)を受け入れている</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -172,18 +201,43 @@ Core data structures are extensible abstractions </strong> Embraces a platform
 <p>イミュータブルなデータ + 第一級関数</p>
 </li>
 <li>
-<p>Could always be done in Lisp, by discipline/convention <strong> But if a data
-structure <em>can</em> be mutated, dangerous to presume it won&#8217;t be </strong> In
-traditional Lisp, only the list data structure is structurally recursive</p>
+<p>Lispでは規律や規約によって常に可能だった</p>
+<div class="ulist">
+<ul>
+<li>
+<p>しかしデータ構造が変更され <em>うる</em> ものであれば変更されないと推定するのは危険だ</p>
 </li>
 <li>
-<p>Pure functional languages tend to strongly static types ** Not for everyone,
-or every task</p>
+<p>伝統的なLispでは、リストというデータ構造だけが構造的に再帰的だ</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Clojure is a functional language with a dynamic emphasis <strong> All data
-structures immutable &amp; persistent, supporting recursion </strong> Heterogeneous
-collections, return types ** Dynamic polymorphism</p>
+<p>純粋関数型言語は強い静的型付けである傾向にある</p>
+<div class="ulist">
+<ul>
+<li>
+<p>みんなに適しているわけではないし、あらゆるタスクに適しているわけでもない</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Clojureは動的であることを重視する関数型言語だ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>すべてのデータ構造はイミュータブルで永続的で再帰をサポートしている</p>
+</li>
+<li>
+<p>異なる型の値が混在したコレクションや戻り型</p>
+</li>
+<li>
+<p>動的ポリモーフィズム</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -195,41 +249,163 @@ collections, return types ** Dynamic polymorphism</p>
 <div class="ulist">
 <ul>
 <li>
-<p>VMs, not OSes, are the platforms of the future, providing: ** Type system</p>
+<p>OSではなくVMが未来のプラットフォームであり、次のものを提供する:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Dynamic enforcement and safety <strong> Libraries </strong>* Abstract away OSes <strong>*
-<em>Huge</em> set of facilities </strong>* Built-in and 3rd-party <strong> Memory and other
-resource management </strong>* GC is platform, not language, facility <strong> Bytecode<br>
-JIT compilation </strong>* Abstracts away hardware</p>
+<p>型システム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>動的な強制と安全性</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Language as platform vs. language + platform <strong> Old way - each language
-defines its own runtime </strong>* GC, bytecode, type system, libraries etc <strong> New
-way (JVM, .Net)  </strong>* Common runtime independent of language</p>
+<p>ライブラリ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OSの抽象化</p>
 </li>
 <li>
-<p>Language built for platform vs language ported-to platform <strong> Many new
-languages still take 'Language as platform' approach </strong> When ported, have
-platform-on-platform issues <strong>* Memory management, type-system, threading
-issues </strong>* Library duplication <strong>*</strong> If original language based on C, some
-extension libraries written in C don&#8217;t come over</p>
+<p><em>非常に多数の</em> 機能の集合</p>
 </li>
 <li>
-<p>Platforms are dictated by clients <strong> 'Must run on JVM' or .Net vs 'must run
-on Unix' or Windows </strong> JVM has established track record and trust level <strong>*
-Now also open source </strong> Interop with other code required <strong>*</strong> C linkage
-insufficient these days</p>
+<p>組み込みとサードパーティ</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Java/JVM _is_language + platform <strong> Not the original story, but other
-languages for JVM always existed, now embraced by Sun </strong> Java can be
-tedious, insufficiently expressive <strong>* Lack of first-class functions, no
-type inference, etc </strong> Ability to call/consume Java is critical</p>
+<p>メモリと他のリソースの管理</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GCは言語ではなくプラットフォームの機能である</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>バイトコード + JITコンパイル</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ハードウェアの抽象化</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームとしての言語 vs. 言語 + プラットフォーム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>古いやり方 - 各言語がそれぞれランタイムを定義する</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GC、バイトコード、型システム、ライブラリなど</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>新しいやり方(JVM, .NET)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>言語とは独立した共通のランタイム</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームのために構築された言語 vs プラットフォームにポートされた言語</p>
+<div class="ulist">
+<ul>
+<li>
+<p>多くの新しい言語はいまだ「プラットフォームとしての言語」というアプローチをとっている</p>
+</li>
+<li>
+<p>ポートされる際にプラットフォーム上のプラットフォームという問題を抱えることになる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>メモリ管理、型システム、スレッドの問題</p>
+</li>
+<li>
+<p>ライブラリの重複</p>
+</li>
+<li>
+<p>元の言語がC言語をベースにしていても、C言語で書かれた一部の拡張ライブラリはついてこない</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラットフォームは顧客に指定されている</p>
+<div class="ulist">
+<ul>
+<li>
+<p>「JVM(または.NET)上で実行しなければならない」vs「UNIX(またはWindows)で実行しなければならない」</p>
+</li>
+<li>
+<p>JVMは実績と信頼できるレベルを確立してきた</p>
+<div class="ulist">
+<ul>
+<li>
+<p>今やオープンソースでもある</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>他のコードとの相互運用が求められる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>C言語との連携では最近では不十分になってきている</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Java/JVMは言語 + プラットフォーム</p>
+<div class="ulist">
+<ul>
+<li>
+<p>もともとそうだったわけではないが、JVM向けの他の言語は常に存在し、今やSunにも受け入れられている</p>
+</li>
+<li>
+<p>Javaは冗長で表現力が不十分になりがちだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>第一級関数を欠き、型推論がない、など</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Javaを呼び出し取り込む能力は決定的に重要だ</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Clojureは言語であり、JVMがプラットフォームだ</p>
@@ -244,13 +420,27 @@ type inference, etc </strong> Ability to call/consume Java is critical</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Born of simulation, now used for everything, even when inappropriate **
-Encouraged by Java/C# in all situations, due to their lack of (idiomatic)
-support for anything else</p>
+<p>シミュレーションから生まれ、今ではあらゆるものに、時には適していないものにさえ利用されている</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Java/C#によってあらゆる状況で奨励されてきたが、それはJava/C#がそれ以外の(慣用的な)方法を欠いていたためだ</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Mutable stateful objects are the new spaghetti code <strong> Hard to understand,
-test, reason about </strong> Concurrency disaster</p>
+<p>ミュータブルでステートフルなオブジェクトは新たなスパゲッティコードだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>理解するのもテストするのも推論するのも難しい</p>
+</li>
+<li>
+<p>並行処理にとって災難だ</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>継承はポリモーフィズムを実現する唯一の方法ではない</p>
@@ -258,7 +448,7 @@ test, reason about </strong> Concurrency disaster</p>
 <li>
 <p>「10個のデータ構造それぞれに操作する関数が10個ずつあるより、1個のデータ構造を操作する関数が100個あるほうが良い。」 - Alan</p>
 <div class="olist upperalpha">
-<ol class="upperalpha" type="A">
+<ol class="upperalpha">
 <li>
 <p>Perlis</p>
 </li>
@@ -290,9 +480,17 @@ test, reason about </strong> Concurrency disaster</p>
 <p>ポリモーフィズムは拡張可能で柔軟なシステムをもたらす</p>
 </li>
 <li>
-<p>Clojure multimethods decouple polymorphism from OO and types <strong> Supports
-multiple taxonomies </strong> Dispatches via static, dynamic or external
-properties, metadata, etc</p>
+<p>Clojureのマルチメソッドはオブジェクト指向と型からポリモーフィズムを分離したものだ</p>
+<div class="ulist">
+<ul>
+<li>
+<p>複数の基準での分類をサポートしている</p>
+</li>
+<li>
+<p>静的、動的または外部的なプロパティ、メタデータなどによってディスパッチする</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -304,8 +502,14 @@ properties, metadata, etc</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Immutability makes much of the problem go away ** Share freely between
-threads</p>
+<p>イミュータブルであることによって多くの問題はなくなる</p>
+<div class="ulist">
+<ul>
+<li>
+<p>スレッド間で自由に共有できる</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>しかし、状態の変更はシミュレーションや外部世界に対するプログラムでのプロキシとして現実に必要なものだ</p>

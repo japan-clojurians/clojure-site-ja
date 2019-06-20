@@ -107,16 +107,37 @@
 <p>libの名前は通常ふたつ以上のピリオドで区切られたシンボルである。</p>
 </li>
 <li>
-<p>A lib&#8217;s container is a Java resource whose classpath-relative path is
-derived from the lib name: <strong> The path is a string </strong> Periods in the lib
-name are replaced by slashes in the path <strong> Hyphens in the lib name are
-replaced by underscores in the path </strong> The path may end with ".class",
-".clj", or ".cljc" (see <a href="libs#order">Lib load order</a> below)</p>
+<p>libはJavaのリソースとして、libの名前から導出されたクラスパスに対して相対的なパスに格納される:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>パスは文字列</p>
 </li>
 <li>
-<p>A lib begins with an "ns" form that <strong> creates the Clojure namespace that
-shares its name, and </strong> declares its dependencies on Java classes, Clojure&#8217;s
-core facilities, and/or other libs,</p>
+<p>lib名のピリオドはパスではスラッシュで置換される</p>
+</li>
+<li>
+<p>lib名のハイフンはパスではアンダースコアで置換される</p>
+</li>
+<li>
+<p>パスの拡張子には".class"、 ".clj"、 もしくは ".cljc"を使用することができる(以下の
+<a href="libs#order">libのロード順</a> を参照)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>libは以下を行う"ns"フォームで始まる:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>libと同じ名前のClojure名前空間を作成する</p>
+</li>
+<li>
+<p>Javaのクラス、Clojureのコア機構、他のlib等に対する依存関係を宣言する</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
