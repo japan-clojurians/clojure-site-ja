@@ -3,7 +3,7 @@ version: 2
 docker_env:
   container_config: &container_config
     docker:
-      - image: clojuriansjp/clojure-site-build-env
+      - image: clojuriansjp/clojure-site-build-env:v20190621075405
     shell: /bin/bash --login
     environtment:
       - TZ: "/usr/share/zoneinfo/Asia/Tokyo"
