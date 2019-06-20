@@ -10,8 +10,6 @@ docker_env:
 keys:
   test_cache_key: &test_cache_key
     test-{{ .Branch }}
-  repo_cache_key: &repo_cache_key
-    repo-{{ .Branch }}-{{ .Revision }}
 
 
 jobs:
@@ -31,20 +29,17 @@ jobs:
             mv ./ja /tmp/circleci-artifacts/translation-result
       - store_artifacts:
           path: /tmp/circleci-artifacts
-      - save_cache:
-          paths: ~/work
-          key: *repo_cache_key
+
 
   deploy:
     <<: *container_config
     steps:
       - run: apt-get update; apt-get install -y git make
       - run: mkdir -p ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - "13:b1:55:43:8c:4d:eb:0a:c2:43:34:85:a6:8f:ff:11"
-      - restore_cache:
-          key: *repo_cache_key
       - run: pip3 install -r python-packages.txt
       - run:
           name: deployment
