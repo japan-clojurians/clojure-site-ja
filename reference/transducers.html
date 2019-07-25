@@ -106,9 +106,11 @@
 - コレクション、ストリーム、チャネル、オブザーバブル等。トランスデューサーは入力を意識することも中間集計結果を生成することもなく、直接的に合成する。</p>
 </div>
 <div class="paragraph">
-<p>導入として次のブログポストおよびビデオを参照:
-<a href="http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming">blog post</a>
-<a href="https://www.youtube.com/watch?v=6mTbuzafcII">video</a></p>
+<p>Also see the introductory
+<a href="http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming">blog post</a>,
+this <a href="https://www.youtube.com/watch?v=6mTbuzafcII">video</a>, and this section of
+the FAQ <a href="https://clojure.org/guides/faq#transducers_vs_seqs">about good use
+cases for transducers</a>.</p>
 </div>
 </div>
 </div>
@@ -296,19 +298,22 @@ whatever, input -&gt; whatever</code></pre>
 <h2 id="_トランスデューサーの作成"><a class="anchor" href="#_トランスデューサーの作成"></a>トランスデューサーの作成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>トランスデューサーを返すほとんどの関数は次のような形態をとる (custom code in "&#8230;&#8203;"):</p>
+<p>Transducers have the following shape (custom code in "&#8230;&#8203;"):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(fn [xf]
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(fn [rf]
   (fn ([] ...)
       ([result] ...)
       ([result input] ...)))</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>コアのシーケンス関数の多く (map、 filter、etc) は処理特有の引数を受け取り、(述語、関数、個数、 etc)
-それらの引数を包含するトランスデューサーを返す。中には <strong>cat</strong> 等 <em>それ自体が</em> トランスデューサーであり、 <strong>xf</strong> を受け取らない関数もある。</p>
+<p>Many of the core sequence functions (like map, filter, etc) take
+operation-specific arguments (a predicate, function, count, etc) and return
+a transducer of this shape closing over those arguments. In some cases, like
+<strong>cat</strong>, the core function <em>is</em> a transducer function and does not take an
+<strong>rf</strong>.</p>
 </div>
 <div class="paragraph">
 <p>内部の関数は異なる用途のために3種類のアリティで定義されている:</p>
@@ -316,13 +321,13 @@ whatever, input -&gt; whatever</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Init</strong> (アリティ 0) - ネストしている変換 <strong>xf</strong> をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。</p>
+<p><strong>Init</strong> (arity 0) - should call the init arity on the nested transform <strong>rf</strong>, which will eventually call out to the transducing process.</p>
 </li>
 <li>
-<p><strong>Step</strong> (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって <strong>xf</strong> の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって <strong>xf</strong> を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。</p>
+<p><strong>Step</strong> (arity 2) - this is a standard reduction function but it is expected to call the <strong>rf</strong> step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call <strong>rf</strong> or not. map will always call it exactly once. cat may call it many times depending on the inputs.</p>
 </li>
 <li>
-<p><strong>Completion</strong> (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば <strong>transduce</strong> )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は <strong>xf</strong> の完了引数を一度のみ呼び出す必要がある。</p>
+<p><strong>Completion</strong> (arity 1) - some processes will not end, but for those that do (like <strong>transduce</strong>), the completion arity is used to produce a final value and/or flush state. This arity must call the <strong>rf</strong> completion arity exactly once.</p>
 </li>
 </ul>
 </div>

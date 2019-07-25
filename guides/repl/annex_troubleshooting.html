@@ -102,7 +102,8 @@
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; my-nonexistent-name
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: my-nonexistent-name in this context, compiling:(NO_SOURCE_PATH:0:0)</code></pre>
+Syntax error compiling at (REPL:0:0).
+Unable to resolve symbol: my-nonexistent-name in this context</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -134,7 +135,8 @@ You should either write <code>myapp.ns23/my-non-existent-name</code> or switch t
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; ns3/foo-bar
-CompilerException java.lang.RuntimeException: No such namespace: ns3, compiling:(NO_SOURCE_PATH:0:0)</code></pre>
+Syntax error compiling at (REPL:0:0).
+No such namespace: ns3</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -165,10 +167,10 @@ you can fix that by evaluating <code>(require '[myapp.ns3 :as ns3])</code></p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; clojure.set/union
-CompilerException java.lang.ClassNotFoundException: clojure.set, compiling:(NO_SOURCE_PATH:0:0)
-user=&gt;</code></pre>
+Syntax error (ClassNotFoundException) compiling at (REPL:0:0).
+clojure.set</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -192,7 +194,8 @@ lib <a href="navigating_namespaces#how-to-make-sure-a-lib-is-loaded">has been lo
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[a.b.c])
-FileNotFoundException Could not locate a/b/c__init.class or a/b/c.clj on classpath.  clojure.lang.RT.load (RT.java:463)</code></pre>
+Execution error (FileNotFoundException) at user/eval161 (REPL:1).
+Could not locate a/b/c__init.class, a/b/c.clj or a/b/c.cljc on classpath.</code></pre>
 </div>
 </div>
 <div class="paragraph">

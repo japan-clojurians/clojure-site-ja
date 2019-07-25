@@ -87,6 +87,13 @@
 <li><a href="#_accessing_recent_results_1_2_3">Accessing recent results: <code>*1</code>, <code>*2</code>, <code>*3</code></a></li>
 <li><a href="#_investigating_exceptions">Investigating Exceptions</a></li>
 <li><a href="#_graphical_and_web_based_visualizations">Graphical and web-based visualizations</a></li>
+<li><a href="#_dealing_with_mysterious_values_advanced">Dealing with mysterious values (advanced)</a>
+<ul class="sectlevel3">
+<li><a href="#_viewing_the_type_hierarchy_using_type_and_ancestors">Viewing the type hierarchy using <code>type</code> and <code>ancestors</code></a></li>
+<li><a href="#_using_javadoc">Using Javadoc</a></li>
+<li><a href="#_inspecting_java_types_with_clojure_reflect">Inspecting Java types with <code>clojure.reflect</code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -394,18 +401,12 @@ user=&gt;</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (/ 1 0)
-ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)</code></pre>
+Execution error (ArithmeticException) at user/eval163 (REPL:1).
+Divide by zero</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>By default, the REPL prints a one-line summary of the Exception: its type, its message, and the source code location
- where the Exception was thrown:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-plain-text" data-lang="plain-text">ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)
-^------type-------- ^--message----  ^location where the Exception was thrown</code></pre>
-</div>
+<p>By default, the REPL prints a two-line summary of the Exception. The first line reports the error phase (execution, compilation, macroexpansion, etc) and its location. The second line reports the cause.</p>
 </div>
 <div class="paragraph">
 <p>This can be enough in many cases, but there is more information available.</p>
@@ -543,45 +544,46 @@ that we calling our function with an empty vector of numbers led to dividing zer
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (average [])
-ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)
+Execution error (ArithmeticException) at user/divide-verbose (REPL:6).
+Divide by zero
 user=&gt; *e  ;; notice the `:data` key inside the chain of Exceptions represented in `:via`
 #error {
  :cause "Divide by zero"
  :via
  [{:type clojure.lang.ExceptionInfo
    :message "Failed to compute the average of numbers"
-   :data {:numbers []}                                      ;; &lt;-- HERE
-   :at [clojure.core$ex_info invokeStatic "core.clj" 4739]}
+   :data {:numbers []}
+   :at [user$average invokeStatic "NO_SOURCE_FILE" 10]}
   {:type clojure.lang.ExceptionInfo
    :message "Failed to divide 0 by 0"
-   :data {:numerator 0, :denominator 0}                     ;; &lt;-- HERE
-   :at [clojure.core$ex_info invokeStatic "core.clj" 4739]}
+   :data {:numerator 0, :denominator 0}
+   :at [user$divide_verbose invokeStatic "NO_SOURCE_FILE" 9]}
   {:type java.lang.ArithmeticException
    :message "Divide by zero"
-   :at [clojure.lang.Numbers divide "Numbers.java" 163]}]
+   :at [clojure.lang.Numbers divide "Numbers.java" 188]}]
  :trace
- [[clojure.lang.Numbers divide "Numbers.java" 163]
-  [user$divide_verbose invokeStatic "NO_SOURCE_FILE" 11]
-  [user$divide_verbose invoke "NO_SOURCE_FILE" 6]
-  [user$average invokeStatic "NO_SOURCE_FILE" 25]
-  [user$average invoke "NO_SOURCE_FILE" 19]
-  [user$eval155 invokeStatic "NO_SOURCE_FILE" 32]
-  [user$eval155 invoke "NO_SOURCE_FILE" 32]
-  [clojure.lang.Compiler eval "Compiler.java" 7062]
-  [clojure.lang.Compiler eval "Compiler.java" 7025]
-  [clojure.core$eval invokeStatic "core.clj" 3206]
-  [clojure.core$eval invoke "core.clj" 3202]
-  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke "main.clj" 243]
-  [clojure.main$repl$read_eval_print__8572 invoke "main.clj" 243]
-  [clojure.main$repl$fn__8581 invoke "main.clj" 261]
-  [clojure.main$repl invokeStatic "main.clj" 261]
-  [clojure.main$repl_opt invokeStatic "main.clj" 325]
-  [clojure.main$main invokeStatic "main.clj" 424]
-  [clojure.main$main doInvoke "main.clj" 387]
+ [[clojure.lang.Numbers divide "Numbers.java" 188]
+  [user$divide_verbose invokeStatic "NO_SOURCE_FILE" 6]
+  [user$divide_verbose invoke "NO_SOURCE_FILE" 1]
+  [user$average invokeStatic "NO_SOURCE_FILE" 7]
+  [user$average invoke "NO_SOURCE_FILE" 1]
+  [user$eval173 invokeStatic "NO_SOURCE_FILE" 1]
+  [user$eval173 invoke "NO_SOURCE_FILE" 1]
+  [clojure.lang.Compiler eval "Compiler.java" 7176]
+  [clojure.lang.Compiler eval "Compiler.java" 7131]
+  [clojure.core$eval invokeStatic "core.clj" 3214]
+  [clojure.core$eval invoke "core.clj" 3210]
+  [clojure.main$repl$read_eval_print__9068$fn__9071 invoke "main.clj" 414]
+  [clojure.main$repl$read_eval_print__9068 invoke "main.clj" 414]
+  [clojure.main$repl$fn__9077 invoke "main.clj" 435]
+  [clojure.main$repl invokeStatic "main.clj" 435]
+  [clojure.main$repl_opt invokeStatic "main.clj" 499]
+  [clojure.main$main invokeStatic "main.clj" 598]
+  [clojure.main$main doInvoke "main.clj" 561]
   [clojure.lang.RestFn invoke "RestFn.java" 397]
   [clojure.lang.AFn applyToHelper "AFn.java" 152]
   [clojure.lang.RestFn applyTo "RestFn.java" 132]
-  [clojure.lang.Var applyTo "Var.java" 702]
+  [clojure.lang.Var applyTo "Var.java" 705]
   [clojure.main main "main.java" 37]]}</code></pre>
 </div>
 </div>
@@ -629,6 +631,136 @@ user=&gt; (insp/inspect-table (mapv number-summary [2 5 6 28 42]))
 <p>Finally, <a href="https://clojure.github.io/clojure/clojure.java.browse-api.html#clojure.java.browse/browse-url">clojure.java.browse/browse-url</a>
 lets you open any URL in a Web browser, which can be handy for specific needs.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dealing_with_mysterious_values_advanced"><a class="anchor" href="#_dealing_with_mysterious_values_advanced"></a>Dealing with mysterious values (advanced)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes, the printed representation of a value in the REPL is not very informative; sometimes,
+it can even be misleading as to the nature of that value.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+This often happens with values which are obtained via Java interop.</p>
+</div>
+<div class="paragraph">
+<p>As an example, we&#8217;ll create an InputStream object using the <a href="https://clojuredocs.org/clojure.java.io"><code>clojure.java.io</code></a> lib. If you don&#8217;t know
+what an InputStream is, all the better - the point of this section is to teach you how to find your footing
+in uncharted territory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.java.io :as io])
+nil
+user=&gt; (def v (io/input-stream "https://www.clojure.org")) ;; NOTE won't work if you're not connected to the Internet
+#'user/v
+user=&gt; v
+#object[java.io.BufferedInputStream 0x4ee37ca3 "java.io.BufferedInputStream@4ee37ca3"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above code sample defined an InputStream named <code>v</code>.</p>
+</div>
+<div class="paragraph">
+<p>Now imagine you don&#8217;t know where <code>v</code> comes from, and let&#8217;s try to interact with it at the REPL
+so as to gain more understanding of it.</p>
+</div>
+<div class="sect3">
+<h4 id="_viewing_the_type_hierarchy_using_type_and_ancestors"><a class="anchor" href="#_viewing_the_type_hierarchy_using_type_and_ancestors"></a>Viewing the type hierarchy using <code>type</code> and <code>ancestors</code></h4>
+<div class="paragraph">
+<p>The printed representation of <code>v</code> tells us one thing about it: its <em>runtime type</em>, in this case <code>java.io.BufferedInputStream</code>.
+The <em>type</em> of a value can help us know what operations we may call on it.
+We can evaluate <code>(<a href="https://clojuredocs.org/clojure.core/type">type</a> v)</code> to obtain the <em>concrete type</em> of <code>v</code>, and
+<code>(<a href="https://clojuredocs.org/clojure.core/ancestors">ancestors</a> (type v))</code> to obtain its entire <em>type hierarchy:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (type v) ;; what is the type of our obscure value?
+java.io.BufferedInputStream
+user=&gt; (ancestors (type v))
+#{java.io.InputStream java.lang.AutoCloseable java.io.Closeable java.lang.Object java.io.FilterInputStream}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_javadoc"><a class="anchor" href="#_using_javadoc"></a>Using Javadoc</h4>
+<div class="paragraph">
+<p>As we saw in the previous section, we can use the <a href="https://clojure.github.io/clojure/clojure.java.javadoc-api.html">clojure.java.javadoc</a> lib
+to view online documentation about a Java type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.java.javadoc :as jdoc])
+nil
+user=&gt; (jdoc/javadoc java.io.InputStream) ;; should open a web page about java.io.InputStream
+true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_inspecting_java_types_with_clojure_reflect"><a class="anchor" href="#_inspecting_java_types_with_clojure_reflect"></a>Inspecting Java types with <code>clojure.reflect</code></h4>
+<div class="paragraph">
+<p>Javadoc is helpful, but sometimes Javadoc won&#8217;t even be available. In such cases, we can use
+the REPL itself to inspect types, via Java reflection.</p>
+</div>
+<div class="paragraph">
+<p>We can use the <code><a href="https://clojure.github.io/clojure/clojure.reflect-api.html#clojure.reflect/reflect">clojure.reflect/reflect</a></code>
+function to obtain information about a Java type as a plain Clojure data structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (require '[clojure.reflect :as reflect])
+nil
+user=&gt; (reflect/reflect java.io.InputStream)
+{:bases #{java.lang.Object java.io.Closeable}, :flags #{:public :abstract}, :members #{#clojure.reflect.Method{:name close, :return-type void, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name mark, :return-type void, :declaring-class java.io.InputStream, :parameter-types [int], :exception-types [], :flags #{:public :synchronized}} #clojure.reflect.Method{:name available, :return-type int, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public :abstract}} #clojure.reflect.Method{:name markSupported, :return-type boolean, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [], :flags #{:public}} #clojure.reflect.Field{:name MAX_SKIP_BUFFER_SIZE, :type int, :declaring-class java.io.InputStream, :flags #{:private :static :final}} #clojure.reflect.Constructor{:name java.io.InputStream, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [], :flags #{:public}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [byte&lt;&gt;], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name skip, :return-type long, :declaring-class java.io.InputStream, :parameter-types [long], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name reset, :return-type void, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public :synchronized}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [byte&lt;&gt; int int], :exception-types [java.io.IOException], :flags #{:public}}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, that is a <em>very</em> hairy data structure. Fortunately, we have learned how to deal with hairy data structures in the
+<a href="#_pretty_printing_using_code_clojure_pprint_code">first section</a> of this chapter: pretty-printing to the rescue!
+Let&#8217;s use pretty-printing to display the methods exposed by <code>java.io.InputStream</code> in a table:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (-&gt;&gt; (reflect/reflect java.io.InputStream) :members (sort-by :name) (pp/print-table [:name :flags :parameter-types :return-type]))
+
+|                :name |                     :flags | :parameter-types | :return-type |
+|----------------------+----------------------------+------------------+--------------|
+| MAX_SKIP_BUFFER_SIZE | #{:private :static :final} |                  |              |
+|            available |                 #{:public} |               [] |          int |
+|                close |                 #{:public} |               [] |         void |
+|  java.io.InputStream |                 #{:public} |               [] |              |
+|                 mark |   #{:public :synchronized} |            [int] |         void |
+|        markSupported |                 #{:public} |               [] |      boolean |
+|                 read |       #{:public :abstract} |               [] |          int |
+|                 read |                 #{:public} |         [byte&lt;&gt;] |          int |
+|                 read |                 #{:public} | [byte&lt;&gt; int int] |          int |
+|                reset |   #{:public :synchronized} |               [] |         void |
+|                 skip |                 #{:public} |           [long] |         long |
+nil</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, this tells us that we can call a <code>.read</code> method on <code>v</code> with no arguments, which will return an <code>int</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (.read v)
+60
+user=&gt; (.read v)
+33
+user=&gt; (.read v)
+68</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Without any prior knowledge, we have managed to learn that <code>v</code> is an InputStream, and read bytes from it.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. For instance, <a href="https://docs.datomic.com/on-prem/entities.html">Datomic</a> and <a href="https://github.com/tonsky/datascript">DataScript</a> Entity objects are printed like Clojure maps, even though they are significantly different from ordinary maps.
 </div>
 </div></p>
 

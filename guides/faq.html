@@ -91,6 +91,8 @@
 <li><a href="#_java_and_interop">Java and Interop</a></li>
 <li><a href="#_design_and_use">Design and Use</a></li>
 <li><a href="#_deps_and_cli">Deps and CLI</a></li>
+<li><a href="#_contributing">Contributing</a></li>
+<li><a href="#_future_ideas">Future ideas</a></li>
 </ul>
 </div>
 <div class="paragraph">
@@ -129,13 +131,13 @@
 <p><strong><a href="faq#underscore">What does an _ mean in a let binding or parameter?</a></strong></p>
 </div>
 <div class="paragraph">
-<p>_ has no special meaning in Clojure as a symbol. However, it is a convention to use _ (or a leading _) to denote a binding that will not be used in the expression.</p>
+<p>_ has no special meaning in Clojure as a symbol. However, it is a convention to use _ (or a leading _) to denote a binding that will not be used in the expression. A common case for this is skipping unneeded values in <a href="destructuring#_sequential_destructuring">sequential destructuring</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn get-x [point]
-  (let [[x _] point]   ;; y-value of point is unused, so mark it with _
-    x))</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn get-y [point]
+  (let [[_ y] point]   ;; x-value of point is unused, so mark it with _
+    y))</code></pre>
 </div>
 </div>
 <div id="anon_vector" class="paragraph">
@@ -192,6 +194,57 @@
 </div>
 <div class="paragraph">
 <p>Note that all of these are eager transformations - they produce the output vector when you invoke them. The original sequence version <code>(map inc (filter odd? [1 2 3]))</code> is lazy and will only produce values as needed (with chunking under the hood for greater performance). Neither of these is right or wrong, but they are both useful in different circumstances.</p>
+</div>
+<div id="arg_order" class="paragraph">
+<p><strong><a href="faq#arg_order">What are the rules of thumb for arg order in core functions?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Primary collection operands come first. That way one can write <code>&#8594;</code> and
+its ilk, and their position is independent of whether or not they have
+variable arity parameters. There is a tradition of this in OO
+languages and Common Lisp (<code>slot-value</code>, <code>aref</code>, <code>elt</code>).</p>
+</div>
+<div class="paragraph">
+<p>One way to think about sequences is that they are read from the left,
+and fed from the right:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>&lt;- [1 2 3 4]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Most of the sequence functions consume and produce sequences. So one
+way to visualize that is as a chain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>map &lt;- filter &lt;- [1 2 3 4]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and one way to think about many of the seq functions is that they are
+parameterized in some way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>(map f) &lt;- (filter pred) &lt;- [1 2 3 4]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So, sequence functions take their source(s) last, and any other
+parameters before them, and partial allows for direct parameterization
+as above. There is a tradition of this in functional languages and
+Lisps.</p>
+</div>
+<div class="paragraph">
+<p>Note that this is not the same as taking the primary operand last.
+Some sequence functions have more than one source (concat,
+interleave). When sequence functions are variadic, it is usually in
+their sources.</p>
+</div>
+<div class="paragraph">
+<p><em>Adapted from <a href="https://groups.google.com/d/msg/clojure/iyyNyWs53dc/Q_8BtjRthqgJ">comments by Rich Hickey</a>.</em></p>
 </div>
 <div id="transducers_vs_seqs" class="paragraph">
 <p><strong><a href="faq#transducers_vs_seqs">What are good use cases for transducers?</a></strong></p>
@@ -262,6 +315,39 @@
 <div class="paragraph">
 <p>spec is in alpha to indicate that the API may still change. spec was broken out of Clojure core so that spec can be updated independently from the main Clojure version. At some point spec&#8217;s API will be considered stable and at that point the alpha will be removed.</p>
 </div>
+<div id="spec_location" class="paragraph">
+<p><strong><a href="faq#spec_location">Where should I put my specs?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>There is no single right answer to this question. For data specs, it is often useful to put them in their own namespace, which may or may not match the qualifier used in the data specs. Matching the qualifier to the namespace allows the use of auto-resolved keywords both within the specs and in aliases in other namespaces, but also entwines them, making refactoring more complicated.</p>
+</div>
+<div class="paragraph">
+<p>For function specs, most people either put them immediately before or after the function they apply to, or in a separate namespace that can optionally be required when needed (for testing or validation). In the latter case, Clojure core has followed the pattern of using foo.bar.specs to hold function specs for the functions in foo.bar.</p>
+</div>
+<div id="regex_nesting" class="paragraph">
+<p><strong><a href="faq#regex_nesting">How do nested regex ops work?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Regex ops (cat, alt, *, +, ?, etc) always describe the elements in a sequential collection. They are not, by themselves, specs. When used in a spec context they are coerced into specs. Nested regex ops combine to form a single regex spec over the same sequential collection.</p>
+</div>
+<div class="paragraph">
+<p>To validate a nested collection, use <code>s/spec</code> to wrap the inner regex, forcing a spec boundary between regex ops.</p>
+</div>
+<div id="instrument_ret" class="paragraph">
+<p><strong><a href="faq#instrument_ret">Why doesn&#8217;t <code>instrument</code> check return values?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Instrument is intended to verify that a function is being invoked according to its args spec. That is, is the function being called correctly? This functionality should be used during development.</p>
+</div>
+<div class="paragraph">
+<p>Checking whether a function operates correctly is a test-time activity and this should be checked with the <code>check</code> function which will actually invoke the function with generated args and verify the ret and fn specs on each invocation.</p>
+</div>
+<div id="skip_macros" class="paragraph">
+<p><strong><a href="faq#skip_macros">Is there a way to skip checking macro specs?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Yes, set the Java system property <code>-Dclojure.spec.skip-macros=true</code> and no macro specs will be checked during macroexpansion.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -299,7 +385,7 @@
 <p>Clojure uses two internal thread pools to service futures and agent function executions. Both pools use non-daemon threads and the JVM will not exit while any non-daemon thread is alive. In particular, the pool that services futures and agent send-off calls uses an Executor cached thread pool with a 60 second timeout. In the scenario above, the program will wait until the background threads have completed their work and the threads expire before it can exit.</p>
 </div>
 <div id="write_skew" class="paragraph">
-<p><strong><a href="faq#write_skew">Why does the Clojure STM does not guarantee serializability but only snapshot isolation?</a></strong></p>
+<p><strong><a href="faq#write_skew">Why the Clojure STM does not guarantee serializability but only snapshot isolation?</a></strong></p>
 </div>
 <div class="paragraph">
 <p>If reads were included by default, then STM would be slower (as more transactions would require serializability). However, in many cases, reads do not need to be included. Thus, users can choose to accept the performance penalty when it is necessary and get faster performance when it is not.</p>
@@ -327,7 +413,7 @@
 <p>creates a new internal Namespace object (if it does not yet exist)</p>
 </li>
 <li>
-<p>makes that namespace the new current namespace (<strong>ns</strong>)</p>
+<p>makes that namespace the new current namespace (<code>*ns*</code>)</p>
 </li>
 <li>
 <p>auto-refers all vars from clojure.core and imports all classes from java.lang</p>
@@ -381,21 +467,85 @@
 <p><strong><a href="faq#varargs">How do you invoke a Java method with a vararg signature?</a></strong></p>
 </div>
 <div class="paragraph">
-<p>Java treats a trailing varargs parameter as an array and it can be invoked from Clojure. Example:</p>
+<p>Java treats a trailing varargs parameter as an array and it can be invoked from Clojure by passing an explicit array.</p>
 </div>
 <div class="paragraph">
-<p><code>(.method object fixed-args&#8230;&#8203; (into-array type variable-args&#8230;&#8203;))</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
+<p>Examples:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; asList takes an Object vararg parameter
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; Invoke static Arrays.asList(T... a)
 (java.util.Arrays/asList (object-array [0 1 2]))
 
-;; format takes one fixed parameter and a varargs
-(String/format "%s %s, %s" (object-array ["March" 1 2016]))</code></pre>
+;; Invoke static String.format(String format, Object... args)
+(String/format "%s %s, %s" (object-array ["March" 1 2016]))
+
+;; For a primitive vararg, use the appropriate primitive array constructor
+;; Invoke put(int row, int col, double... data)
+(.put o 1 1 (double-array [2.0]))
+
+;; Passing at least an empty array is required if there are no varargs
+(.put o 1 1 (double-array []))</code></pre>
+</div>
+</div>
+<div id="illegal_access" class="paragraph">
+<p><strong><a href="faq#illegal_access">Why do I get an illegal access warning?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Java 9 added a module system, allowing code to be partitioned into modules where code outside a module cannot invoke code inside the module unless it has been exported by the module. One of the areas affected by this change in Java is reflective access. Clojure uses reflection when it encounters a Java interop call without sufficient type information about the target object or the function arguments. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def fac (javax.xml.stream.XMLInputFactory/newInstance))
+(.createXMLStreamReader fac (java.io.StringReader. ""))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here <code>fac</code> is an instance of <code>com.sun.xml.internal.stream.XMLInputFactoryImpl</code>, which is an extension of <code>javax.xml.stream.XMLInputFactory</code>. In the java.xml module, javax.xml.stream is an exported package, but the XMLInputFactoryImpl is an internal implementation of the public abstract class in that package. The invocation of <code>createXMLStreamReader</code> here will be reflective and the Reflector will attempt to invoke the method based on the implementation class, which is not accessible outside the module, yielding:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by clojure.lang.Reflector (file:/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar) to method com.sun.xml.internal.stream.XMLInputFactoryImpl.createXMLStreamReader(java.io.Reader)
+WARNING: Please consider reporting this to the maintainers of clojure.lang.Reflector
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first thing to note here is that this is a warning. Java 9 through Java 12 will all permit the call to be made and the code will continue to work.</p>
+</div>
+<div class="paragraph">
+<p>There are several potential workarounds:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Perhaps the best is to provide type hints to the exported types so the call is no longer reflective:<br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(.createXMLStreamReader ^javax.xml.stream.XMLInputFactory fac (java.io.StringReader. ""))</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As of Clojure 1.10, turn off illegal access with <code>--illegal-access=deny</code>. The Java reflection system will then provide the necessary feedback to Clojure to detect that calling through the inaccessible class is not an option. Clojure will find the public invocation path instead and no warning will be issued.</p>
+</li>
+<li>
+<p>Use JVM module system flags (<code>--add-exports</code> etc ) to forcibly export the internal packages to avoid the warning. This is not recommended.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If it is difficult to tell from the warning where the reflection is occurring, it may help to add the flag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code>--illegal-access=debug</code></pre>
 </div>
 </div>
 </div>
@@ -437,6 +587,80 @@
 </div>
 <div class="paragraph">
 <p>No. Other tools exist to do this now or could be added on top of the existing functionality but this was not part of the initial goal.</p>
+</div>
+<div id="clj_standalone" class="paragraph">
+<p><strong><a href="faq#clj_standalone">How can I create a single-file Clojure script, ideally self-invokable via a <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang line</a>?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t need any extra dependencies, just put <code>#!/usr/bin/env clojure</code> as the first line. Note that <code>clojure</code> won&#8217;t automatically call a <code>-main</code> function, so be sure your file does more than just define functions. You can find command-line arguments in <code>*command-line-args*</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you do need extra dependencies, try the following, courtesy Dominic Monroe, substituting whatever deps you need in place of <code>funcool/tubax</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#!/bin/sh
+
+"exec" "clojure" "-Sdeps" '{:deps {funcool/tubax {:mvn/version "0.2.0"}}}' "$0" "$@"
+
+;; Clojure code goes here.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributing"><a class="anchor" href="#_contributing"></a>Contributing</h2>
+<div class="sectionbody">
+<div id="ca" class="paragraph">
+<p><strong><a href="faq#ca">Why does Clojure require that contributors first sign a contributor agreement (CA)?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>See <a href="http://clojure.org/contributing" class="bare">http://clojure.org/contributing</a></p>
+</div>
+<div class="paragraph">
+<p>It boils down to two reasons:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To protect Clojure from future legal challenges that might discourage businesses from adopting it.</p>
+</li>
+<li>
+<p>To enable Clojure to be relicensed under a different open-source license if that would be advantageous.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Signing the Contributor Agreement grants Rich Hickey joint ownership of your contributions. In exchange, Rich Hickey guarantees that Clojure will always be available under an open-source license approved by either the <a href="http://www.fsf.org/">Free Software Foundation</a> or the <a href="http://opensource.org/">Open Source Initiative</a>.</p>
+</div>
+<div id="echosign_bug" class="paragraph">
+<p><strong><a href="faq#echosign_bug">Why does my CA email confirmation say "Clojure CA (between &lt;my-company&gt; and Rich Hickey) is Signed and Filed!"</a></strong></p>
+</div>
+<div class="paragraph">
+<p>This is a quirk of Adobe EchoSign specific to users whose email account is already associated with an Adobe EchoSign account. In those cases, EchoSign will use the company name from your existing profile in the subject line rather than the individual name that was signed on the form. Don&#8217;t worry! This has no effect - the agreement is as signed and attached in the email.</p>
+</div>
+<div id="prs" class="paragraph">
+<p><strong><a href="faq#prs">Other projects hosted on GitHub accept pull requests.  Why not Clojure?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Rich Hickey prefers to evaluate patches attached to JIRA tickets.  This is not to make it more difficult for contributors, or for legal reasons, but because of workflow preferences. See <a href="xref/../../dev/dev">the development page</a> for more details.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://groups.google.com/forum/#!msg/clojure/jWMaop_eVaQ/3M4gddaXDZoJ">Link</a> to Oct 2012 Clojure Google group message from Rich Hickey on this topic.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_future_ideas"><a class="anchor" href="#_future_ideas"></a>Future ideas</h2>
+<div class="sectionbody">
+<div id="native" class="paragraph">
+<p><strong><a href="faq#native">Will there be a native version of Clojure in the future?</a></strong></p>
+</div>
+<div class="paragraph">
+<p>Frequently people ask for a "native" version of Clojure, ie one that does not rely on the JVM. ClojureScript self-hosting is one current path but probably only useful for a subset of use cases. The [<a href="https://www.graalvm.org/" class="bare">https://www.graalvm.org/</a>](GraalVM) project includes standalone execution using the SubstrateVM. Native images produced with Graal start extremely fast but may have fewer opportunities to optimize performance than the full JVM.</p>
+</div>
+<div class="paragraph">
+<p>However, neither of these is likely what people are envisioning when they ask for a "native version of Clojure", which is a version of the language that is not JVM-hosted and compiles directly to a native executable, probably via something like LLVM. Clojure leverages an enormous amount of performance, portability, and functionality from the JVM and relies heavily on things like a world-class garbage collector. Building a "Clojure native" would require a large amount of work to make a version of Clojure that was slower (probably much slower), less portable, and with significantly less functionality (as the Clojure library relies heavily on the JDK). The Clojure core team has no plans to work on this but it would be an amazing learning project for anyone and we encourage you to go for it!</p>
 </div>
 </div>
 </div></p>

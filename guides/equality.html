@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Equality</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Equality</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document discusses the concept of equality in Clojure, including the functions <code>=</code>, <code>==</code>, and <code>identical?</code>, and how they differ from Java&#8217;s <code>equals</code> method.  It also has some description of Clojure&#8217;s <code>hash</code>, and how it differs from Java&#8217;s <code>hashCode</code>. The beginning of this guide provides a summary of the most important information for quick reference followed by a much more extensive review of the details.</p>
+</div>
+<div class="paragraph">
+<p><em>Information in this guide describes the behavior of Clojure 1.10.0 unless noted otherwise.</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure&#8217;s <code>=</code> is true when comparing immutable values that represent
+the same value, or when comparing mutable objects that are the
+identical object.  As a convenience, <code>=</code> also returns true when used
+to compare Java collections against each other, or against Clojure&#8217;s
+immutable collections, if their contents are equal.  However, there
+are important caveats if you use non-Clojure collections.</p>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s <code>=</code> is true when called with two immutable scalar values, if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Both arguments are <code>nil</code>, <code>true</code>, <code>false</code>, the same character, or
+the same string (i.e. the same sequence of characters).</p>
+</li>
+<li>
+<p>Both arguments are symbols, or both keywords, with equal namespaces and names.</p>
+</li>
+<li>
+<p>Both arguments are numbers in the same 'category', and numerically
+the same, where category is one of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>integer or ratio</p>
+</li>
+<li>
+<p>floating point (float or double)</p>
+</li>
+<li>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s <code>=</code> is true when called with two collections, if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Both arguments are <em>sequential</em> (sequences, lists, vectors, queues,
+or Java collections implementing <code>java.util.List</code>) with <code>=</code> elements
+in the same order.</p>
+</li>
+<li>
+<p>Both arguments are sets (including Java sets implementing
+<code>java.util.Set</code>), with <code>=</code> elements, ignoring order.</p>
+</li>
+<li>
+<p>Both arguments are maps (including Java maps implementing
+<code>java.util.Map</code>), with <code>=</code> keys <strong>and</strong> values, ignoring entry order.</p>
+</li>
+<li>
+<p>Both arguments are records created with <code>defrecord</code>, with <code>=</code> keys
+<strong>and</strong> values, ignoring order, <em>and</em> they have the same type.  <code>=</code>
+returns <code>false</code> when comparing a record to a map, regardless of
+their keys and values, because they do not have the same type.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s <code>=</code> is true when called with two mutable Clojure objects,
+i.e. vars, refs, atoms, or agents, or with two "pending" Clojure
+objects, i.e. futures, promises, or delays, if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Both arguments are the identical object, i.e. <code>(identical?  x y)</code> is true.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For all other types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Both arguments are the same type defined with <code>deftype</code>.  The type&#8217;s
+<code>equiv</code> method is called and its return value becomes the value of
+<code>(= x y)</code>.</p>
+</li>
+<li>
+<p>For other types, Java&#8217;s <code>x.equals(y)</code> is true.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s <code>==</code> is intended specifically for numerical values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>==</code> can be used with numbers across different number categories (such as integer <code>0</code> and floating point <code>0.0</code>).</p>
+</li>
+<li>
+<p>If any value being compared is not a number, an exception is thrown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you call <code>=</code> or <code>==</code> with more than two arguments, the result will
+be true when all consecutive pairs are <code>=</code> or <code>==</code>.  <code>hash</code> is
+consistent with <code>=</code>, with the exceptions given below.</p>
+</div>
+<div class="paragraph">
+<p>Exceptions, or possible surprises:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When using non-Clojure collections in a Clojure hash-based
+collection (as map keys, or set elements), it will not appear equal
+to a similar collection with Clojure counterparts, due to the
+difference in hashing behavior.  (see
+<a href="xref/../equality#equality_and_hash">Equality and hash</a> and
+<a href="https://clojure.atlassian.net/browse/CLJ-1372">CLJ-1372</a>)</p>
+</li>
+<li>
+<p>When comparing collections with <code>=</code>, numbers within the collections
+are also compared with <code>=</code>, so the three numeric categories above
+are significant.</p>
+</li>
+<li>
+<p>'Not a Number' values <code>##NaN</code>, <code>Float/NaN</code>, and <code>Double/NaN</code> are not
+<code>=</code> or <code>==</code> to anything, not even themselves.
+<em>Recommendation:</em> Avoid including <code>##NaN</code> inside of Clojure data
+structures where you want to compare them to each other using <code>=</code>,
+and sometimes get <code>true</code> as the result.</p>
+</li>
+<li>
+<p>0.0 is <code>=</code> to -0.0</p>
+</li>
+<li>
+<p>Clojure regex&#8217;s, e.g. <code>#"a.*bc"</code>, are implemented using Java
+<code>java.util.regex.Pattern</code> objects, and Java&#8217;s <code>equals</code> on two
+<code>Pattern</code> objects returns <code>(identical? re1 re2)</code>, even though they
+are documented as immutable objects.  Thus <code>(= #"abc" #"abc")</code>
+returns false, and <code>=</code> only returns true if two regex&#8217;s happen to be
+the same identical object in memory.  <em>Recommendation:</em> Avoid using
+regex instances inside of Clojure data structures where you want to
+compare them to each other using <code>=</code>, and get <code>true</code> as the result
+even if the regex instances are not identical objects.  If you feel
+the need to, consider converting them to strings first, e.g. <code>(str
+#"abc")</code> &#8594; <code>"abc"</code> (see
+<a href="https://clojure.atlassian.net/browse/CLJ-1182">CLJ-1182</a>)</p>
+</li>
+<li>
+<p>Clojure persistent queues are never <code>=</code> to Java collections
+implementing <code>java.util.List</code>, not even if they have <code>=</code> elements in
+the same order (see
+<a href="https://clojure.atlassian.net/browse/CLJ-1059">CLJ-1059</a>)</p>
+</li>
+<li>
+<p>Using <code>=</code> to compare a sorted map with another map, where <code>compare</code>
+throws an exception when comparing their keys to each other because
+they have different types (e.g. keywords vs. numbers), will in some
+cases throw an exception (see
+<a href="https://clojure.atlassian.net/browse/CLJ-2325">CLJ-2325</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In most cases, <code>hash</code> is consistent with <code>=</code>, meaning: if <code>(= x y)</code>,
+then <code>(= (hash x) (hash y))</code>.  For any values or objects where this
+does not hold, Clojure hash-based collections will not be able to find
+or remove those items correctly, i.e. for hash-based sets with those
+items as elements, or hash-based maps with those items as keys.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>hash</code> is consistent with <code>=</code> for numbers, except for special float
+and double values.  <em>Recommendation:</em> Convert floats to doubles with
+<code>(double x)</code> to avoid this issue.</p>
+</li>
+<li>
+<p><code>hash</code> is not consistent with <code>=</code> for immutable Clojure collections
+and their non-Clojure counterparts.  See the
+<a href="xref/../equality#equality_and_hash">Equality and hash</a>
+section for more details.  <em>Recommendation:</em> Convert
+non-Clojure collections to their Clojure immutable counterparts
+before including them in other Clojure data structures.</p>
+</li>
+<li>
+<p><code>hash</code> is not consistent with <code>=</code> for objects with class <code>VecSeq</code>,
+returned from calls like <code>(seq (vector-of :int 0 1 2))</code> (see
+<a href="https://clojure.atlassian.net/browse/CLJ-1364">CLJ-1364</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Equality in Clojure is most often tested using <code>=</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (= 2 (+ 1 1))
+true
+user&gt; (= (str "fo" "od") "food")
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unlike Java&#8217;s <code>equals</code> method, Clojure&#8217;s <code>=</code> returns true for many
+values that do not have the same type as each other.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (= (float 314.0) (double 314.0))
+true
+user&gt; (= 3 3N)
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>=</code> does <strong>not</strong> always return true when two numbers have the same
+numeric value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (= 2 2.0)
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to test for numeric equality across different numeric categories, use <code>==</code>.  See the section <a href="xref/../equality#numbers">Numbers</a> below for details.</p>
+</div>
+<div class="paragraph">
+<p>Sequential collections (sequences, vectors, lists, and queues) with equal elements in the same order are equal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (range 3)
+(0 1 2)
+user&gt; (= [0 1 2] (range 3))
+true
+user&gt; (= [0 1 2] '(0 1 2))
+true
+;; not = because different order
+user&gt; (= [0 1 2] [0 2 1])
+false
+;; not = because different number of elements
+user&gt; (= [0 1] [0 1 2])
+false
+;; not = because 2 and 2.0 are not =
+user&gt; (= '(0 1 2) '(0 1 2.0))
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Two sets are equal if they have equal elements.  Sets are normally unordered but even with sorted sets, the sort order is not considered when comparing for equality.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def s1 #{1999 2001 3001})
+#'user/s1
+user&gt; s1
+#{2001 1999 3001}
+user&gt; (def s2 (sorted-set 1999 2001 3001))
+#'user/s2
+user&gt; s2
+#{1999 2001 3001}
+user&gt; (= s1 s2)
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Two maps are equal if they have the same set of keys, and each key
+maps to equal values in each map.  As with sets, maps are unordered
+and the sort order is not considered for sorted maps.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def m1 (sorted-map-by &gt; 3 -7 5 10 15 20))
+#'user/m1
+user&gt; (def m2 {3 -7, 5 10, 15 20})
+#'user/m2
+user&gt; m1
+{15 20, 5 10, 3 -7}
+user&gt; m2
+{3 -7, 5 10, 15 20}
+user&gt; (= m1 m2)
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that while vectors are indexed and possess some map-like qualities, maps
+and vectors never compare as <code>=</code> in Clojure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def v1 ["a" "b" "c"])
+#'user/v1
+user&gt; (def m1 {0 "a" 1 "b" 2 "c"})
+#'user/m1
+user&gt; (v1 0)
+"a"
+user&gt; (m1 0)
+"a"
+user&gt; (= v1 m1)
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Any metadata associated with Clojure collections is ignored when
+comparing them.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def s1 (with-meta #{1 2 3} {:key1 "set 1"}))
+#'user/s1
+user&gt; (def s2 (with-meta #{1 2 3} {:key1 "set 2 here"}))
+#'user/s2
+user&gt; (binding [*print-meta* true] (pr-str s1))
+"^{:key1 \"set 1\"} #{1 2 3}"
+user&gt; (binding [*print-meta* true] (pr-str s2))
+"^{:key1 \"set 2 here\"} #{1 2 3}"
+user&gt; (= s1 s2)
+true
+user&gt; (= (meta s1) (meta s2))
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Records created with <code>defrecord</code> in many ways behave similarly to
+Clojure maps.  However, they are only <code>=</code> to other records of the same
+type, and only then if they have the same keys and the same values.
+They are never equal to maps, even if they have the same keys and
+values.</p>
+</div>
+<div class="paragraph">
+<p>When you define a Clojure record, you are doing so in order to create
+a distinct type that can be distinguished from other types&#8201;&#8212;&#8201;you want
+each type to have its own behavior with Clojure protocols and
+multimethods.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (defrecord MyRec1 [a b])
+user.MyRec1
+user=&gt; (def r1 (-&gt;MyRec1 1 2))
+#'user/r1
+user=&gt; r1
+#user.MyRec1{:a 1, :b 2}
+
+user=&gt; (defrecord MyRec2 [a b])
+user.MyRec2
+user=&gt; (def r2 (-&gt;MyRec2 1 2))
+#'user/r2
+user=&gt; r2
+#user.MyRec2{:a 1, :b 2}
+
+user=&gt; (def m1 {:a 1 :b 2})
+#'user/m1
+
+user=&gt; (= r1 r2)
+false             ; r1 and r2 have different types
+user=&gt; (= r1 m1)
+false             ; r1 and m1 have different types
+user=&gt; (into {} r1)
+{:a 1, :b 2}      ; this is one way to "convert" a record to a map
+user=&gt; (= (into {} r1) m1)
+true              ; the resulting map is = to m1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clojure <code>=</code> behaves the same as Java&#8217;s <code>equals</code> for all types except
+numbers and Clojure collections.</p>
+</div>
+<div class="paragraph">
+<p>Booleans and characters are straightforward in their equality.</p>
+</div>
+<div class="paragraph">
+<p>Strings are straightforward, too, except in some cases involving
+Unicode where strings that consist of different sequences of Unicode
+characters can look the same when displayed, and in some applications
+should be treated as equal even though <code>=</code> returns false.  See
+"Normalization" on the Wikipedia page on
+<a href="http://en.wikipedia.org/wiki/Unicode_equivalence">Unicode equivalence</a> if
+you are interested.  There are libraries like
+<a href="http://site.icu-project.org/">ICU</a> (International Components for Unicode for Java)
+that can help if you need to do this.</p>
+</div>
+<div class="paragraph">
+<p>Two symbols are equal if they have the same namespace and symbol name.
+Two keywords are equal given the same conditions.  Clojure makes
+equality testing for keywords particularly quick (a simple pointer
+comparison).  It achieves this by its <code>intern</code> method of the Keyword
+class guaranteeing that all keywords with the same namespace and name
+will return the same keyword object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="numbers"><a class="anchor" href="#numbers"></a>Numbers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java <code>equals</code> is only true for two numbers if the types and numeric
+values are the same.  Thus <code>equals</code> is false even for Integer 1 and
+Long 1, because they have different types.  Exception: Java <code>equals</code>
+is also false for two BigDecimal values that are numerically equal if
+they have different scales, e.g. 1.50M and 1.500M are not equal.  This
+behavior is documented for BigDecimal method
+<a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object-"><code>equals</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>Clojure <code>=</code> is true if the 'category' and numeric values are the same.
+Category is one of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>integer or ratios, where integer includes all Java integer types such as <code>Byte</code>, <code>Short</code>, <code>Integer</code>, <code>Long</code>, <code>BigInteger</code>, and <code>clojure.lang.BigInt</code>, and ratios are represented with the Java type named <code>clojure.lang.Ratio</code>.</p>
+</li>
+<li>
+<p>floating point: <code>Float</code> and <code>Double</code></p>
+</li>
+<li>
+<p>decimal: <code>BigDecimal</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So <code>(= (int 1) (long 1))</code> is true because they are in the same integer
+category, but <code>(= 1 1.0)</code> is false because they are in different
+categories (integer vs. floating).  While integers and ratios are
+separate types in the Clojure implementation, for the purposes of <code>=</code>
+they are effectively in the same category.  The results of arithmetic
+operations on ratios are auto-converted to integers if they are whole
+numbers.  Thus any Clojure number that has type Ratio cannot equal any
+integer, so <code>=</code> always gives the correct numerical answer (<code>false</code>)
+when comparing a ratio to an integer.</p>
+</div>
+<div class="paragraph">
+<p>Clojure also has <code>==</code> that is only useful for comparing numbers.  It
+returns true whenever <code>=</code> does.  It also returns true for numbers that
+are numerically equal, even if they are in different categories.  Thus
+<code>(= 1 1.0)</code> is false, but <code>(== 1 1.0)</code> is true.</p>
+</div>
+<div class="paragraph">
+<p>Why does <code>=</code> have different categories for numbers, you might wonder?
+It would be difficult (if it is even possible) to make <code>hash</code> consistent
+with <code>=</code> if it behaved like <code>==</code> (see section
+<a href="xref/../equality#equality_and_hash">Equality and hash</a>).
+Imagine trying to write <code>hash</code> such that it was guaranteed to
+return the same hash value for all of <code>(float 1.5)</code>, <code>(double 1.5)</code>,
+BigDecimal values 1.50M, 1.500M, etc. and the ratio <code>(/ 3 2)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Clojure uses <code>=</code> to compare values for equality when they are used as
+elements in sets, or keys in maps.  Thus Clojure&#8217;s numeric categories
+come into play if you use sets with numeric elements or maps with
+numeric keys.</p>
+</div>
+<div class="sect2">
+<h3 id="_floating_point_numbers_are_usually_approximations"><a class="anchor" href="#_floating_point_numbers_are_usually_approximations"></a>Floating point numbers are usually approximations</h3>
+<div class="paragraph">
+<p>Note that floating point values might behave in ways that surprise
+you, if you have not learned of their approximate nature before.  They
+are often approximations simply because they are represented with a
+fixed number of bits, and thus many values cannot be represented
+exactly and must be approximated (or be out of range).  This is true
+for floating point numbers in any programming language.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def d1 (apply + (repeat 100 0.1)))
+#'user/d1
+user&gt; d1
+9.99999999999998
+user&gt; (== d1 10.0)
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is a whole field called <a href="https://en.wikipedia.org/wiki/Numerical_analysis">Numerical Analysis</a>
+dedicated to studying algorithms that use numerical approximation.
+There are libraries of Fortran code that are used because their order
+of floating point operations is carefully crafted to give guarantees
+on the difference between their approximate answers and the exact
+answers.  <a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">"What Every Computer Scientist Should Know About Floating-Point Arithmetic"</a> is good reading if you want
+quite a few details.</p>
+</div>
+<div class="paragraph">
+<p>If you want exact answers for at least some kinds of problems, ratios
+or BigDecimals might suit your needs.  Realize that these require
+variable amounts of memory if the number of digits required grow
+(e.g. after many arithmetic operations), and significantly more
+computation time.  They also won&#8217;t help if you want exact values of pi
+or the square root of 2.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_floating_point_not_a_number"><a class="anchor" href="#_floating_point_not_a_number"></a>Floating point "Not A Number"</h3>
+<div class="paragraph">
+<p>Clojure uses the underlying Java double-size floating point numbers
+(64-bit) with representation and behavior defined by a standard, IEEE
+754.  There is a special value <a href="http://en.wikipedia.org/wiki/NaN"><code>NaN</code></a> ("Not A Number")
+that is not even equal to itself. Clojure represents this value as
+the symbolic value <code>##NaN</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (Math/sqrt -1)
+##NaN
+user&gt; (= ##NaN ##NaN)
+false
+user&gt; (== ##NaN ##NaN)
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This leads to some odd behavior if this "value" appears in your data.
+While no error occurs when adding <code>##NaN</code> as a set element or a key in a
+map, you cannot then search for it and find it.  You also cannot
+remove it using functions like <code>disj</code> or <code>dissoc</code>.  It will appear
+normally in sequences created from collections containing it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def s1 #{1.0 2.0 ##NaN})
+#'user/s1
+user&gt; s1
+#{2.0 1.0 ##NaN}
+user&gt; (s1 1.0)
+1.0
+user&gt; (s1 1.5)
+nil
+user&gt; (s1 ##NaN)
+nil             ; cannot find ##NaN in a set, because it is not = to itself
+
+user&gt; (disj s1 2.0)
+#{1.0 ##NaN}
+user&gt; (disj s1 ##NaN)
+#{2.0 1.0 ##NaN}    ; ##NaN is still in the result!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In many cases, collections that contain <code>##NaN</code> will not be <code>=</code> to another collection, even if they look like they should be, because <code>(= ##NaN ##NaN)</code> is <code>false</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (= [1 ##NaN] [1 ##NaN])
+false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Oddly enough, there are exceptions where collections contain <code>##NaN</code> that look like they should be <code>=</code>, and they are, because <code>(identical? ##NaN ##NaN)</code> is <code>true</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (def s2 #{##NaN 2.0 1.0})
+#'user/s2
+user&gt; s2
+#{2.0 1.0 ##NaN}
+user&gt; (= s1 s2)
+true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Java has a special case in its <code>equals</code> method for floating point
+values that makes <code>##NaN</code> equal to itself.  Clojure <code>=</code> and <code>==</code> do not.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (.equals ##NaN ##NaN)
+true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="equality_and_hash"><a class="anchor" href="#equality_and_hash"></a>Equality and hash</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java has <code>equals</code> to compare pairs of objects for equality.</p>
+</div>
+<div class="paragraph">
+<p>Java has a method <code>hashCode</code> that is <em>consistent</em> with this notion of
+equality (or is documented that it should be, at least).  This means
+that for any two objects <code>x</code> and <code>y</code> where <code>equals</code> is true,
+<code>x.hashCode()</code> and <code>y.hashCode()</code> are equal, too.</p>
+</div>
+<div class="paragraph">
+<p>This hash consistency property makes it possible to use <code>hashCode</code> to
+implement hash-based data structures like maps and sets that use hashing
+techniques internally.  For example, a hash table could be used to
+implement a set, and it will be guaranteed that objects with different
+<code>hashCode</code> values can be put into different hash buckets, and objects
+in different hash buckets will never be equal to each other.</p>
+</div>
+<div class="paragraph">
+<p>Clojure has <code>=</code> and <code>hash</code> for similar reasons.  Since Clojure <code>=</code>
+considers more pairs of things equal to each other than Java <code>equals</code>,
+Clojure <code>hash</code> must return the same hash value for more pairs of
+objects.  For example, <code>hash</code> always returns the same value regardless
+of whether a sequence of <code>=</code> elements is in a sequence, vector, list,
+or queue:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (hash ["a" 5 :c])
+1698166287
+user&gt; (hash (seq ["a" 5 :c]))
+1698166287
+user&gt; (hash '("a" 5 :c))
+1698166287
+user&gt; (hash (conj clojure.lang.PersistentQueue/EMPTY "a" 5 :c))
+1698166287</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, since <code>hash</code> is not consistent with <code>=</code> when comparing
+Clojure immutable collections with their non-Clojure counterparts,
+mixing the two can lead to undesirable behavior, as shown in the
+examples below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (def java-list (java.util.ArrayList. [1 2 3]))
+#'user/java-list
+user=&gt; (def clj-vec [1 2 3])
+#'user/clj-vec
+
+;; They are =, even though they are different classes
+user=&gt; (= java-list clj-vec)
+true
+user=&gt; (class java-list)
+java.util.ArrayList
+user=&gt; (class clj-vec)
+clojure.lang.PersistentVector
+
+;; Their hash values are different, though.
+
+user=&gt; (hash java-list)
+30817
+user=&gt; (hash clj-vec)
+736442005
+
+;; If java-list and clj-vec are put into collections that do not use
+;; their hash values, like a vector or array-map, then those
+;; collections will be equal, too.
+
+user=&gt; (= [java-list] [clj-vec])
+true
+user=&gt; (class {java-list 5})
+clojure.lang.PersistentArrayMap
+user=&gt; (= {java-list 5} {clj-vec 5})
+true
+user=&gt; (assoc {} java-list 5 clj-vec 3)
+{[1 2 3] 3}
+
+;; However, if java-list and clj-vec are put into collections that do
+;; use their hash values, like a hash-set, or a key in a hash-map,
+;; then those collections will not be equal because of the different
+;; hash values.
+
+user=&gt; (class (hash-map java-list 5))
+clojure.lang.PersistentHashMap
+user=&gt; (= (hash-map java-list 5) (hash-map clj-vec 5))
+false               ; sorry, not true
+user=&gt; (= (hash-set java-list) (hash-set clj-vec))
+false               ; also not true
+
+user=&gt; (get (hash-map java-list 5) java-list)
+5
+user=&gt; (get (hash-map java-list 5) clj-vec)
+nil                 ; you were probably hoping for 5
+
+user=&gt; (conj #{} java-list clj-vec)
+#{[1 2 3] [1 2 3]}          ; you may have been expecting #{[1 2 3]}
+user=&gt; (hash-map java-list 5 clj-vec 3)
+{[1 2 3] 5, [1 2 3] 3}      ; I bet you wanted {[1 2 3] 3} instead</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Most of the time you use maps in Clojure, you do not specify whether
+you want an array map or a hash map.  By default array maps are
+used if there are at most 8 keys, and hash maps are used if there are
+over 8 keys.  Clojure functions choose the implementation for you as
+you do operations on the maps.  Thus even if you tried to use array
+maps consistently, you are likely to frequently get hash maps as you
+create larger maps.</p>
+</div>
+<div class="paragraph">
+<p>We do <em>not</em> recommend trying to avoid the use of hash-based sets and
+maps in Clojure.  They use hashing to help achieve high performance in
+their operations.  Instead we would recommend avoiding the use of
+non-Clojure collections as parts within Clojure collections.
+Primarily this advice is because most such non-Clojure collections are
+mutable, and mutability often leads to subtle bugs.  Another reason is
+the inconsistency of <code>hash</code> with <code>=</code>.</p>
+</div>
+<div class="paragraph">
+<p>Similar behavior occurs for Java collections that implement
+<code>java.util.List</code>, <code>java.util.Set</code>, and <code>java.util.Map</code>, and any of the
+few kinds of values for which Clojure&#8217;s <code>hash</code> is not consistent with
+<code>=</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you use hash-inconsistent values as parts within <em>any</em> Clojure
+collection, even as elements in a sequential collection like a list or
+vector, those collections become hash-inconsistent with each other,
+too.  This occurs because the hash value of collections is calculated
+by combining the hash values of their parts.</p>
+</div>
+<div class="sect2">
+<h3 id="_historical_notes_on_hash_inconsistency_for_non_clojure_collections"><a class="anchor" href="#_historical_notes_on_hash_inconsistency_for_non_clojure_collections"></a>Historical notes on hash inconsistency for non-Clojure collections</h3>
+<div class="paragraph">
+<p>You are likely wondering <em>why</em> <code>hash</code> is not consistent with <code>=</code> for
+non-Clojure collections.  Non-Clojure collections have used Java&#8217;s
+<code>hashCode</code> method long before Clojure existed.  When Clojure was
+initially developed, it used the same formula for calculating a hash
+function from collection elements as <code>hashCode</code> did.</p>
+</div>
+<div class="paragraph">
+<p>Before the release of Clojure 1.6.0 it was discovered that this use of
+<code>hashCode</code> for Clojure&#8217;s <code>hash</code> function can lead to many hash
+collisions when small collections are used as set elements or map
+keys.</p>
+</div>
+<div class="paragraph">
+<p>For example, imagine a Clojure program that represents the contents of
+a 2-dimensional grid with 100 rows and 100 columns using a map with
+keys that are vectors of two numbers in the range [0, 99].  There are
+10,000 such points in this grid, so 10,000 keys in the map, but
+<code>hashCode</code> only gives 3,169 different results.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (def grid-keys (for [x (range 100), y (range 100)]
+                        [x y]))
+#'user/grid-keys
+user=&gt; (count grid-keys)
+10000
+user=&gt; (take 5 grid-keys)
+([0 0] [0 1] [0 2] [0 3] [0 4])
+user=&gt; (take-last 5 grid-keys)
+([99 95] [99 96] [99 97] [99 98] [99 99])
+user=&gt; (count (group-by #(.hashCode %) grid-keys))
+3169</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus there are an average of 10,000 / 3,169 = 3.16 collisions per hash
+bucket if the map uses the default Clojure implementation of a
+hash-map.</p>
+</div>
+<div class="paragraph">
+<p>The Clojure developers
+<a href="https://archive.clojure.org/design-wiki/display/design/Better%2Bhashing.html">analyzed</a>
+several alternate hash functions, and chose one based on the Murmur3
+hash function, which has been in use since Clojure 1.6.0.  It also
+uses a different way than Java&#8217;s <code>hashCode</code> does to combine the hashes
+of multiple elements in a collection.</p>
+</div>
+<div class="paragraph">
+<p>At that time, Clojure could have changed <code>hash</code> to use the new
+technique for non-Clojure collections as well, but it was judged that
+doing so would significantly slow down a Java method called <code>hasheq</code>,
+used to implement <code>hash</code>.  See
+<a href="https://clojure.atlassian.net/browse/CLJ-1372">CLJ-1372</a> for approaches
+that have been considered so far, but as of this time no one has
+discovered a competitively fast way to do it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_cases_of_hash_inconsistent_with"><a class="anchor" href="#_other_cases_of_hash_inconsistent_with"></a>Other cases of <code>hash</code> inconsistent with <code>=</code></h3>
+<div class="paragraph">
+<p>For some Float and Double values that are <code>=</code> to each other, their
+<code>hash</code> values are inconsistent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (= (float 1.0e9) (double 1.0e9))
+true
+user&gt; (map hash [(float 1.0e9) (double 1.0e9)])
+(1315859240 1104006501)
+user&gt; (hash-map (float 1.0e9) :float-one (double 1.0e9) :oops)
+{1.0E9 :oops, 1.0E9 :float-one}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can avoid the <code>Float</code> vs <code>Double</code> hash inconsistency by
+consistently using one or the other types in floating point code.
+Clojure defaults to doubles for floating point values, so that may be
+the most convenient choice.</p>
+</div>
+<div class="paragraph">
+<p>Rich Hickey has decided that changing this inconsistency in hash
+values for types <code>Float</code> and <code>Double</code> is out of scope for Clojure
+(mentioned in a comment of
+<a href="https://clojure.atlassian.net/browse/CLJ-1036">CLJ-1036</a>).  Ticket
+<a href="https://clojure.atlassian.net/browse/CLJ-1649">CLJ-1649</a> has been filed
+suggesting a change that <code>=</code> always return false when comparing floats
+to doubles, which would make <code>hash</code> consistent with <code>=</code> by eliminating
+the restriction on <code>hash</code>, but there is no decision on that yet.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_defining_equality_for_your_own_types"><a class="anchor" href="#_defining_equality_for_your_own_types"></a>Defining equality for your own types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the code of the projects below for examples of how to do this, and much more.  In
+particular, the Java methods <code>equals</code> and <code>hashCode</code> from standard
+Java objects, and the Clojure Java methods <code>equiv</code> and <code>hasheq</code> are
+the most relevant for how <code>=</code> and <code>hash</code> behave.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/clojure/data.priority-map">org.clojure/data.priority-map</a></p>
+</li>
+<li>
+<p><a href="https://github.com/clj-commons/ordered">org.flatland/ordered</a> but note
+that it needs a change so that its custom ordered map data structure
+is not <code>=</code> to any Clojure record:
+<a href="https://github.com/clj-commons/ordered/pull/34">PR #34</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The paper
+<a href="http://home.pipeline.com/~hbaker1/ObjectIdentity.html">"Equal Rights for Functional Objects, or, the More Things Change, The More They Are the Same"</a> by Henry
+Baker includes code written in Common Lisp for a function <code>EGAL</code> that
+was an inspiration for Clojure&#8217;s <code>=</code>.  The idea of "deep equality"
+making sense for immutable values, but not as much sense for mutable
+objects (unless the mutable objects are the same object in memory), is
+independent of programming language.</p>
+</div>
+<div class="paragraph">
+<p>Some differences between <code>EGAL</code> and Clojure&#8217;s <code>=</code> are described below.
+These are fairly esoteric details about the behavior of <code>EGAL</code>, and
+are not necessary to know for an understanding of Clojure&#8217;s <code>=</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_comparing_mutable_collections_to_other_things"><a class="anchor" href="#_comparing_mutable_collections_to_other_things"></a>Comparing mutable collections to other things</h3>
+<div class="paragraph">
+<p><code>EGAL</code> is defined to be <code>false</code> when comparing mutable objects to
+anything else, unless that other thing is the same identical mutable
+object in memory.</p>
+</div>
+<div class="paragraph">
+<p>As a convenience, Clojure&#8217;s <code>=</code> is designed to return <code>true</code> in some
+cases when comparing Clojure immutable collections to non-Clojure
+collections.</p>
+</div>
+<div class="paragraph">
+<p>There is no Java method to determine whether an arbitrary collection
+is mutable or immutable, so it is not possible in Clojure to implement
+the intended behavior of <code>EGAL</code>, although one might consider <code>=</code> "closer"
+to <code>EGAL</code> if it always returned <code>false</code> when one of the arguments was
+a non-Clojure collection.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lazy_and_pending_values"><a class="anchor" href="#_lazy_and_pending_values"></a>Lazy and pending values</h3>
+<div class="paragraph">
+<p>Baker recommends that <code>EGAL</code> force lazy values when comparing them
+(see Section 3. J. "Lazy Values" in the "Equal Rights for Functional Objects" paper).  When comparing a lazy sequence to
+another sequential thing, Clojure&#8217;s <code>=</code> does force the evaluation of
+the lazy sequence, stopping if it reaches a non-<code>=</code> sequence element.
+Chunked sequences, e.g. as produced by <code>range</code>, can cause evaluation
+to proceed a little bit further than that point, as is the case for
+any event in Clojure that causes evaluation of part of a lazy
+sequence.</p>
+</div>
+<div class="paragraph">
+<p>Clojure&#8217;s <code>=</code> does not <code>deref</code> delay, promise, or future objects when
+comparing them.  Instead, it compares them via <code>identical?</code>, thus
+returning <code>true</code> only if they are the same identical object in memory,
+even if calling <code>deref</code> on them would result in values that were <code>=</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_closures"><a class="anchor" href="#_closures"></a>Closures</h3>
+<div class="paragraph">
+<p>Baker describes in detail how <code>EGAL</code> can return <code>true</code> in some cases
+when comparing
+<a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">closures</a>
+to each other (see Section 3. D. "Equality of Functions and
+Function-Closures" in the "Equal Rights for Functional Objects" paper).</p>
+</div>
+<div class="paragraph">
+<p>When given a function or closure as an argument, Clojure&#8217;s <code>=</code> only
+returns <code>true</code> if they are <code>identical?</code> to each other.</p>
+</div>
+<div class="paragraph">
+<p>Baker appeared to be motivated to define <code>EGAL</code> this way because of
+the prevalence in some Lisp family languages of using closures to
+represent objects, where those objects could contain mutable state, or
+immutable values (see the example below).  Given that Clojure has
+multiple other ways of creating immutable values and mutable objects
+(e.g. records, reify, proxy, deftype), using closures to do so is
+uncommon.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn make-point [init-x init-y]
+  (let [x init-x
+        y init-y]
+    (fn [msg]
+      (cond (= msg :get-x) x
+            (= msg :get-y) y
+	    (= msg :get-both) [x y]
+	    :else nil))))
+
+user=&gt; (def p1 (make-point 5 7))
+#'user/p1
+user=&gt; (def p2 (make-point -3 4))
+#'user/p2
+user=&gt; (p1 :get-x)
+5
+user=&gt; (p2 :get-both)
+[-3 4]
+user=&gt; (= p1 p2)
+false             ; We expect this to be false,
+                  ; because p1 and p2 have different x, y values
+user=&gt; (def p3 (make-point 5 7))
+#'user/p3
+user=&gt; (= p1 p3)
+false             ; Baker's EGAL would return true here.  Clojure
+                  ; = returns false because p1 and p3 are not identical?</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

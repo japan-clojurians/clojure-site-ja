@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Programming at the REPL: Guidelines for REPL-Aided Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link href="../../css/webflow.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../about/rationale">概要</a></li>
+            <li><a href="../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../api/api">API</a></li>
+              <li><a href="../../community/downloads">リリース</a></li> -->
+              <li><a href="../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../community/resources">コミュニティ</a></li>
+              <li><a href="../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>Programming at the REPL: Guidelines for REPL-Aided Development</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_the_repl_is_a_user_interface_to_your_program">The REPL is a User Interface to your program</a></li>
+<li><a href="#_dont_get_carried_away_by_the_repl">Don&#8217;t get carried away by the REPL</a></li>
+<li><a href="#_dont_forget_to_save_your_work_and_make_it_accessible">Don&#8217;t forget to save your work, and make it accessible</a></li>
+<li><a href="#_the_repl_is_not_the_only_tool_for_interactive_development">The REPL is not the only tool for interactive development</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Clojure REPLs are used for a broad spectrum of purposes, from learning the language
+to data exploration to live music performance. This chapter will provide some guiding
+principles for applying Clojure REPLs to the more common use case of pragmatic software
+development.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_repl_is_a_user_interface_to_your_program"><a class="anchor" href="#_the_repl_is_a_user_interface_to_your_program"></a>The REPL is a User Interface to your program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Programs commonly offer User Interfaces through a variety of media:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Graphical: web pages, mobile and desktop apps</p>
+</li>
+<li>
+<p>Network-based: Web Services / HTTP APIs / &#8230;&#8203;</p>
+</li>
+<li>
+<p>Storage-based: the program keeps a database up to date, which can then be queried</p>
+</li>
+<li>
+<p>Command-Line Interfaces (CLI): from interaction via a terminal</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should think of the REPL as another medium for user-to-program interaction;
+compared to those listed above, it requires advanced knowledge (programming in Clojure!),
+but it is also extremely expressive and cheap to develop, since it requires almost
+no anticipation of what parts of the code users will want to leverage. For instance,
+the REPL is a very suitable UI for <em>ad hoc</em> data exports.</p>
+</div>
+<div class="paragraph">
+<p>In Clojure projects, it is common practice to define functions and namespaces solely
+intended for REPL interaction: consider it an alternative to CLI, dashboards, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dont_get_carried_away_by_the_repl"><a class="anchor" href="#_dont_get_carried_away_by_the_repl"></a>Don&#8217;t get carried away by the REPL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REPL can give you a lot of velocity, but do not mistake motion for progress.
+You should <strong><em>always come to the REPL with a plan</em></strong>, otherwise the REPL will bring you
+more distraction than focus. If you find it difficult to keep the plan in your head
+while using the REPL, <strong><em>consider writing it down</em></strong>.</p>
+</div>
+<div class="paragraph">
+<p>The REPL will only guide you through very incremental changes, which is prone to getting
+you stuck in 'local maxima'. When more strategic thinking is required, force yourself to
+take a step back. In particular, <strong><em>rapid feedback is no substitute for software design
+and methodic problem-solving.</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dont_forget_to_save_your_work_and_make_it_accessible"><a class="anchor" href="#_dont_forget_to_save_your_work_and_make_it_accessible"></a>Don&#8217;t forget to save your work, and make it accessible</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REPL is a very ephemeral and exclusive medium. If there is anything to take away from a REPL session,
+it should probably reside in other places than your flawed human memory (for instance in
+code, tests, commented-out code, documentation, data files, etc.).</p>
+</div>
+<div class="paragraph">
+<p>If what you learned in the REPL is a prerequisite to your project, you should do some extra work
+to make it accessible to other contributors (including yourself in a few months).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_repl_is_not_the_only_tool_for_interactive_development"><a class="anchor" href="#_the_repl_is_not_the_only_tool_for_interactive_development"></a>The REPL is not the only tool for interactive development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are other tools which provide a tight feedback loop while programming:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>auto-reloading test suites (example: <a href="https://github.com/marick/Midje">Midje</a>)</p>
+</li>
+<li>
+<p>static code analysis tools (linters, static type checkers)</p>
+</li>
+<li>
+<p>hot-code reloading (example: <a href="https://github.com/bhauman/lein-figwheel">Figwheel</a>)</p>
+</li>
+<li>
+<p>'visual' test suites (example: <a href="https://github.com/bhauman/devcards">Devcards</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There is no reason to see these approaches as 'competing' with REPL-aided development,
+and oftentimes the REPL can assist you in using them. Each of these approaches has
+its strengths and weaknesses: for instance, the REPL makes the execution of programs
+very tangible, but is a poor tool for detecting breakage.</p>
+</div>
+</div>
+</div></p>
+
+<div class="clja-prev-next-container">
+  <a href="enhancing_your_repl_workflow" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Enhancing your REPL workflow</a>
+  <a href="annex_community_resources" class="clja-next-link">Annex: Community resources about the REPL&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+</div>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>

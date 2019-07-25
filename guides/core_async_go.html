@@ -125,7 +125,7 @@ to respect back-pressure.</p>
     (fn [response]
       (put! out-c response (fn [_] (load-urls (next urls) out-c))))))
 
-(load-urls urls)</code></pre>
+(load-urls urls response-chan)</code></pre>
 </div>
 </div>
 <div class="paragraph">

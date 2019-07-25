@@ -133,7 +133,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Rather than explictly binding each variable, we describe the bindings based on their sequential order. That&#8217;s a pretty weird statement, "describe the bindings," so let&#8217;s look at it again.</p>
+<p>Rather than explicitly binding each variable, we describe the bindings based on their sequential order. That&#8217;s a pretty weird statement, "describe the bindings," so let&#8217;s look at it again.</p>
 </div>
 <div class="paragraph">
 <p>We have a data structure <code>my-line</code> that looks like this, <code>[[5 10] [10 20]]</code>. In our destructuring form we will create a vector containing two elements, <code>p1</code> and <code>p2</code>, each of which are vectors themselves. This will bind the vector <code>[5 10]</code> to the symbol <code>p1</code> and the vector <code>[10 20]</code> to the symbol <code>p2</code>. Since we want to work with the elements of <code>p1</code> and <code>p2</code> rather than the structures themselves, we destructure <code>p1</code> and <code>p2</code> within the same let statement. The vector <code>p1</code> looks like this, <code>[5 10]</code>, so to destructure it, we create a vector containing two elements, <code>x1</code> and <code>y1</code>. This binds <code>5</code> to the symbol <code>x1</code> and <code>10</code> to the symbol <code>y1</code>. The same is repeated for <code>p2</code> binding <code>10</code> to <code>x2</code> and <code>20</code> to <code>y2</code>. At this point, we now have everything we need to work with our data.</p>
@@ -526,8 +526,24 @@
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def human {:person/name "Franklin"
             :person/age 25
             :hobby/hobbies "running"})
-(let [{:keys [person/name person/age hobby/hobbies]} human]
+(let [{:keys [hobby/hobbies]
+       :person/keys [name age]} human]
   (println name "is" age "and likes" hobbies))
+;= Franklin is 25 and likes running</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Destructuring namespaced keywords using <code>:keys</code> alone can result in local bindings that clash. Because all map destructuring options can be combined, any local binding form can be defined individually.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def human {:person/name "Franklin"
+            :person/age 25
+            :hobby/name "running"})
+(let [{:person/keys [age]
+       hobby-name :hobby/name
+       person-name :person/name} human]
+  (println person-name "is" age "and likes" hobby-name))
 ;= Franklin is 25 and likes running</code></pre>
 </div>
 </div>
@@ -536,7 +552,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[person :as p])
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; this assumes you have a person.clj namespace in your project
+;; if not do the following at your repl instead: (create-ns 'person) (alias 'p 'person)
+(require '[person :as p])
 
 (let [person {::p/name "Franklin", ::p/age 25}
       {:keys [::p/name ::p/age]} person]

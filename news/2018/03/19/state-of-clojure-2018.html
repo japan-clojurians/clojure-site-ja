@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - State of Clojure 2018 Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>State of Clojure 2018 Results</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the annual State of Clojure 2018 survey results! Thanks so much for taking the time to check in and provide your feedback. We are very fortunate to have data for some of these questions going all the way back to 2010, giving us a long view on how the data is trending. This year, we had 2325 respondents, about the same as last year.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rapid_uptake_of_clojure_1_9"><a class="anchor" href="#_rapid_uptake_of_clojure_1_9"></a>Rapid Uptake of Clojure 1.9</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the release of Clojure 1.9 in December, we expected to see a shift in version usage, and we did. 72% of developers are already using it with about 60% still using Clojure 1.8 as well. Only a small (6%) number of developers are still using versions 1.7 or older.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/clojure-use.png" alt="Clojure version use">
+</div>
+</div>
+<div class="paragraph">
+<p>We also keep an eye on JDK usage. Uptake of Java 1.9, released last year, has been a bit slower with only 29% adopting Java 1.9 so far and 88% of developers using Java 1.8. Only 6% of developers are using Java 1.7 and less than 1% are still using Java 1.6.</p>
+</div>
+<div class="paragraph">
+<p>In the editor/IDE world we saw some consolidation this year with both Emacs (50%) and IntelliJ/Cursive (29%) making gains. All other editors saw decreases, although there is still a lot of interesting innovation happening around Atom and VS Code, which was not included but saw a lot of mentions in the comments (~5% of total respondents) - will definitely add next year!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/editor.png" alt="Editor use">
+</div>
+</div>
+<div class="paragraph">
+<p>In the ClojureScript world, Figwheel continues to dominate as a critical part of most ClojureScript developer&#8217;s REPL workflow (76%). <a href="https://clojuriststogether.org/">Clojurists Together</a> is a new community effort to support open source projects in the community and they have been <a href="https://clojuriststogether.org/news/february-2018-monthly-update/">funding</a> work on Figwheel among other projects. Lumo was a new REPL option this year and made a strong showing of 12%.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/repl.png" alt="CLJS REPL use">
+</div>
+</div>
+<div class="paragraph">
+<p>In CLJS target environments, we saw an increase of +6% targeting Node (to 29%) and +4% targeting Lambda (to 13%) - both things to watch.</p>
+</div>
+<div class="paragraph">
+<p>In the build tooling world, the entry of the <a href="https://clojure.org/guides/deps_and_cli">clj</a> tool is driving a lot of reevaluation and change right now. With so many things in flux, this area is sure to evolve significantly in 2018 and it will be interesting to see where we are in 2019. One important omission in the choices this year was shadow-cljs. There were a lot of mentions in the comments and it&#8217;s clearly an important tool for many to build and deploy - we&#8217;ll be sure to add it next year.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interest_surging_from_javascript_programmers"><a class="anchor" href="#_interest_surging_from_javascript_programmers"></a>Interest Surging from JavaScript Programmers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When we look at which language communities people are coming from, those answers have been remarkably stable for years, but there was significant movement this year for JavaScript (which vaulted over both Python and Ruby). Clearly people are finding ClojureScript (and its strong resonance with React) as an interesting and viable alternative to JavaScript.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/prior-langs.png" alt="Prior language">
+</div>
+</div>
+<div class="paragraph">
+<p>As to where Clojurists hang out, we saw significant increases in use of Reddit (+5%) and Slack (+4%) and some decreases in use of the Clojure mailing lists, IRC, and attendance at both in-person and on-line conferences. One new choice added this year was the ClojureVerse Discourse server - it seems to be a useful midpoint between Slack (high volume live chat) and mailing lists (low volume asynchronous discussion). This was a new option yet 17% of respondents reported using it.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/community-forums.png" alt="Community forums">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_and_clojurescript_used_in_many_domains_and_industries"><a class="anchor" href="#_clojure_and_clojurescript_used_in_many_domains_and_industries"></a>Clojure and ClojureScript Used in Many Domains and Industries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the things we are always watching is the trend of people using Clojure for their day-to-day work. This year, we continued to see about 2/3 of respondents using Clojure for work (compare that to the very first survey back in 2010 when less than 1/3 were doing so). Web development has always been the most dominant domain - in 2010, 53% were doing web dev and these days fully 82% of Clojure devs are involved in some kind of web development (not surprising given how many Clojure devs are using both Clojure and ClojureScript together).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/domains.png" alt="Domains">
+</div>
+</div>
+<div class="paragraph">
+<p>When looking at the industries using Clojure, we added a few choices this year based on prominent results in last year&#8217;s "Other" category - entertainment (3%), energy/utility (2%), automotive/manufacturing (2%). We also saw a noticeable increase (+3%) in Financial services. Perhaps due to the new choices, we saw small decreases in the largest and most generic categories, enterprise software and consumer software.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/content/news/2018-03-19/industries.png" alt="Industries">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interest_in_hiring_stays_strong"><a class="anchor" href="#_interest_in_hiring_stays_strong"></a>Interest in Hiring Stays Strong</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are several questions about how Clojure and ClojureScript should change or be prioritized for improvement. The results are largely similar to prior years, although the question format changed a little making it hard to directly compare every detail. The top result is clearly error messages though - while spec has started us down a road, that is still a work in progress which will continue this year. Many people have been using the Expound library for taking spec error output and making the data easier to read.</p>
+</div>
+<div class="paragraph">
+<p>Hiring and staffing is always an interesting one to watch and that increased this year. We often see the seemingly contradictory dual complaints of companies that need more people and developers that have a hard time finding positions. To a large degree this is either a mismatch in the geographic distribution of jobs and people and/or a mismatch in needs and skill levels. It has been very encouraging to see so many large teams growing and hiring of late though.</p>
+</div>
+<div class="paragraph">
+<p>The need for more docs and tutorials is also one that has gone up and down over the years and seems to be up again this year. While there are a wealth of resources for new Clojure developers now in every format, it is also sometimes difficult for people to find just the right resource for their experience level and need. There have been many good discussions lately about this and lots of active work in the community.</p>
+</div>
+<div class="paragraph">
+<p>In general, there have been so many new tools, learning resources, companies, etc of late that it&#8217;s hard to keep up - 2018 is going to be a great year for Clojure!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_check_out_the_data"><a class="anchor" href="#_check_out_the_data"></a>Check Out the Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;d like to dig into the full results, you can find the complete set of data from this and former years here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.surveymonkey.com/results/SM-9BC5FNJ68/">2018</a></p>
+</li>
+<li>
+<p><a href="https://www.surveymonkey.com/results/SM-7K6NXJY3/">2016</a></p>
+</li>
+<li>
+<p><a href="http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results">2015</a></p>
+</li>
+<li>
+<p><a href="http://blog.cognitect.com/blog/2014/10/20/results-of-2014-state-of-clojure-and-clojurescript-survey">2014</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2013/11/18/results-of-the-2013-state-of-clojure-clojurescript-survey/">2013</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2012/08/06/results-of-the-2012-state-of-clojure-survey/">2012</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2011/07/11/results-of-the-2011-state-of-clojure-survey/">2011</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2010/06/07/results-from-the-state-of-clojure-summer-2010-survey/">2010</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Note that we are doing the survey about every 14 months so the last survey occurred in late 2016 rather than 2017.</em></p>
+</div>
+<div class="paragraph">
+<p>Thanks again for being part of the community!</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

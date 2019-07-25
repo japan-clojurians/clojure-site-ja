@@ -108,6 +108,7 @@
 <li><a href="#tagged_literals">タグ付きリテラル(tagged literal)</a>
 <ul class="sectlevel2">
 <li><a href="#_組み込みのタグ付きリテラル">組み込みのタグ付きリテラル</a></li>
+<li><a href="#_default_data_reader_function">Default data reader function</a></li>
 </ul>
 </li>
 <li><a href="#_リーダーコンディショナルreader_conditional">リーダーコンディショナル(reader conditional)</a></li>
@@ -141,7 +142,9 @@ Lisp)とその他のプログラミング言語との間の重要な差だ。- C
 <div class="ulist">
 <ul>
 <li>
-<p>シンボルは数字でない文字で始まり、英数字および*、+、!、 -、 _、 '、?を含むことができる(将来他の文字が許容される可能性もある)。</p>
+<p>Symbols begin with a non-numeric character and can contain alphanumeric
+characters and *, +, !, -, _, ', ?, &lt;, &gt; and = (other characters may be
+allowed eventually).</p>
 </li>
 <li>
 <p>'/' には特別な意味があり、シンボルの途中に含むことで名前空間とシンボルの名前を分割することができる(例：
@@ -196,6 +199,9 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <p>ブーリアン - <code>true</code> と <code>false</code></p>
 </li>
 <li>
+<p>Symbolic values - <code>##Inf</code>, <code>##-Inf</code>, and <code>##NaN</code></p>
+</li>
+<li>
 <p>キーワード - キーワードはシンボルと似ているが、以下の点で異なる:</p>
 <div class="ulist">
 <ul>
@@ -203,10 +209,11 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <p>コロン(:) で始まらなければならない(例：:fred)。</p>
 </li>
 <li>
-<p>'.'を含めたりクラスの名前に使用したりできない。</p>
+<p>They cannot contain '.' in the name part, or name classes.</p>
 </li>
 <li>
-<p>シンボルと同様に名前空間を含むことができる。 <code>:person/name</code></p>
+<p>Like symbols, they can contain a namespace, <code>:person/name</code>, which may
+contain '.'s.</p>
 </li>
 <li>
 <p>コロン2つで始まるキーワードは現在の名前空間において修飾されたキーワードに自動的に解決される:</p>
@@ -310,7 +317,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">#:person{:first "Han"
          :last "Solo"
-         :ship #:ship{:name "Millenium Falcon"
+         :ship #:ship{:name "Millennium Falcon"
                       :model "YT-1300f light freighter"}}</code></pre>
 </div>
 </div>
@@ -321,7 +328,7 @@ clojrue.lang.BigIntとして読み込まれる。末尾にNが付いている整
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:person/first "Han"
  :person/last "Solo"
- :person/ship {:ship/name "Millenium Falcon"
+ :person/ship {:ship/name "Millennium Falcon"
                :ship/model "YT-1300f light freighter"}}</code></pre>
 </div>
 </div>
@@ -553,26 +560,29 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>(def instant #inst "2018-03-28T10:48:00.000")
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def instant #inst "2018-03-28T10:48:00.000")
 (= java.util.Date (class instant))
-;=&gt; true</pre>
+;=&gt; true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>pass[<strong>data-readers</strong>] は束縛可能な動的Varなので、デフォルトのリーダーを別のものに置き換えることができる。例えば
-<code>clojure.instant/read-instant-calendar</code> はリテラルをパースして <code>java.util.Calendar</code>
-にするが、 <code>clojure.instant/read-instant-timestamp</code> はリテラルをパースして
-<code>java.util.Timestamp</code> にする:</p>
+<p>Since
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A">*data-readers*</a>
+is a dynamic var that can be bound, you can replace the default reader with
+a different one. For example, <code>clojure.instant/read-instant-calendar</code> will
+parse the literal into a <code>java.util.Calendar</code>, while
+<code>clojure.instant/read-instant-timestamp</code> will parse it into a
+<code>java.util.Timestamp</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>(binding [*data-readers* {'inst read-instant-calendar}]
-  (= java.util.Calendar (class (read-string instant))))
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(binding [*data-readers* {'inst read-instant-calendar}]
+  (= java.util.Calendar (class (read-string (pr-str instant)))))
 ;=&gt; true
 
 (binding [*data-readers* {'inst read-instant-timestamp}]
-  (= java.util.Timestamp (class (read-string instant))))
-;=&gt; true</pre>
+  (= java.util.Timestamp (class (read-string (pr-str instant)))))
+;=&gt; true</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -580,8 +590,32 @@ user=&gt; `(fred x ~x lst ~@lst 7 8 :nine)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>(= java.util.UUID (class (read-string "#uuid \"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\"")))
-;=&gt; true</pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(= java.util.UUID (class (read-string "#uuid \"3b8a31ed-fd89-4f1b-a00f-42e3d60cf5ce\"")))
+;=&gt; true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_data_reader_function"><a class="anchor" href="#_default_data_reader_function"></a>Default data reader function</h3>
+<div class="paragraph">
+<p>If no data reader is found when reading a tagged literal, the
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A">*default-data-reader-fn*</a>
+is invoked. You can set your own default data reader function and the
+provided
+<a href="http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal">tagged-literal</a>
+function can be used to build an object that can store an unhandled
+literal. The object returned by <code>tagged-literal</code> supports keyword lookup of
+the <code>:tag</code> and <code>:form</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(set! *default-data-reader-fn* tagged-literal)
+
+;; read #object as a generic TaggedLiteral object
+(def x #object[clojure.lang.Namespace 0x23bff419 "user"])
+
+[(:tag x) (:form x)]
+;=&gt; [object [clojure.lang.Namespace 599782425 "user"]]</code></pre>
 </div>
 </div>
 </div>

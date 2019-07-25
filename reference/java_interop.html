@@ -82,7 +82,8 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#dot">Member access</a></li>
+<li><a href="#_class_access">Class access</a></li>
+<li><a href="#_member_access">Member access</a></li>
 <li><a href="#_the_dot_special_form">The Dot special form</a>
 <ul class="sectlevel2">
 <li><a href="#_alternative_macro_syntax">Alternative Macro Syntax</a></li>
@@ -103,7 +104,29 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="dot"><a class="anchor" href="#dot"></a>Member access</h2>
+<h2 id="_class_access"><a class="anchor" href="#_class_access"></a>Class access</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Classname</strong><br>
+<strong>Classname$NestedClassName</strong></p>
+</div>
+<div class="paragraph">
+<p>Symbols representing class names are resolved to the Class instance. Inner or nested classes are separated from their outer class with a <code>$</code>. Fully-qualified class names are always valid. If a class is `import`ed in the namespace, it may be used without qualification. All classes in java.lang are automatically imported to every namespace.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">String
+-&gt; java.lang.String
+(defn date? [d] (instance? java.util.Date d))
+-&gt; #'user/date?
+(.getEnclosingClass java.util.Map$Entry)
+-&gt; java.util.Map</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_member_access"><a class="anchor" href="#_member_access"></a>Member access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>(.instanceMember instance args*)</strong><br>
@@ -144,7 +167,7 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <div class="sect1">
 <h2 id="_the_dot_special_form"><a class="anchor" href="#_the_dot_special_form"></a>The Dot special form</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div id="dot" class="paragraph">
 <p><strong>(<em>.</em> instance-expr member-symbol)</strong><br>
 <strong>(<em>.</em> Classname-symbol member-symbol)</strong><br>
 <strong>(<em>.</em> instance-expr -field-symbol)</strong><br>
@@ -319,6 +342,9 @@ Classname/staticField ==&gt; (. Classname staticField)</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy">proxy</a> macro. The resulting objects are of an anonymous class. You can also generate statically-named classes and .class files with <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a>. As of Clojure 1.2, <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify">reify</a> is also available for implementing interfaces.</p>
+</div>
+<div class="paragraph">
+<p>Java annotations may be attached to classes, constructors, and methods via <a href="metadata">metadata</a> on <code>gen-class</code> and Clojure type constructs, see the <a href="datatypes#_java_annotation_support">datatypes reference</a> for an example.</p>
 </div>
 <hr>
 <div class="paragraph">

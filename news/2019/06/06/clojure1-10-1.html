@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojure 1.10.1 release</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Clojure 1.10.1 release</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure 1.10.1 is a small release focusing on two issues: working around a Java performance regression and improving error reporting from clojure.main.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_java_performance_regression"><a class="anchor" href="#_java_performance_regression"></a>Java performance regression</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Recent builds of Java 8 (u202), 11 (11.0.2), 12, and 13 included some changes that drastically affect optimization performance of calls from static initializers to static fields. Clojure provides support for loading code on startup from a user.clj file and this occurred in the static initializer of the Clojure runtime (RT) class and was thus affected.</p>
+</div>
+<div class="paragraph">
+<p>This issue may eventually be resolved in Java, but in Clojure we have modified runtime initialization to avoid loading user.clj in a static initializer, which mitigates the case where this caused a performance degradation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_main_error_reporting"><a class="anchor" href="#_clojure_main_error_reporting"></a>clojure.main error reporting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>clojure.main is frequently used as a Clojure program launcher by external tools. Previously, uncaught exceptions would be automatically printed by the JVM, which would also print the stack trace.</p>
+</div>
+<div class="paragraph">
+<p>This release will now catch exceptions and use the same error triage and printing functionality as the Clojure repl. The full stack trace, ex-info, and other information will be printed to a target specified by the configuration. See <a href="xref/../../../../../reference/repl_and_main#_as_launcher">clojure.main docs</a> for configuration details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changelog"><a class="anchor" href="#_changelog"></a>Changelog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the <a href="https://github.com/clojure/clojure/blob/master/changes.md#changes-to-clojure-in-version-1101">change log</a> for a complete list of all changes in Clojure 1.10.1.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

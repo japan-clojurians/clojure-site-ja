@@ -134,7 +134,7 @@
 <p>Implement java.lang.Iterable</p>
 </li>
 <li>
-<p>Implement the non-optional (read-only) portion of java.util.Collection</p>
+<p>Implement the non-optional (read-only) portion of java.util.Collection or java.util.Map</p>
 </li>
 </ul>
 </div>
@@ -185,51 +185,38 @@
 </div>
 <table class="tableblock frame-all grid-all stretch table">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Example expression</th>
+<th class="tableblock halign-left valign-top">Return value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return value</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(== 1 1.0 1M)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(/ 2 3)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>2/3</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(/ 2.0 3)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0.6666666666666666</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map #(Math/abs %) (range -3 3))</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(3 2 1 0 1 2)</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(class 36786883868216818816N)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clojure.lang.BigInt</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(class 3.14159265358M)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>java.math.BigDecimal</code></p></td>
 </tr>
 </tbody>
@@ -252,7 +239,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 <h2 id="Strings"><a class="anchor" href="#Strings"></a>Strings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojure strings are Java Strings. See also <a href="other_functions#printing#">Printing</a>.</p>
+<p>Clojure strings are Java Strings. See also <a href="other_functions#printing">Printing</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -376,7 +363,7 @@ Coercions: <a href="https://clojure.github.io/clojure/clojure.core-api.html#cloj
 <h2 id="Lists"><a class="anchor" href="#Lists"></a>Lists (IPersistentList)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Lists are collections. They implement the ISeq interface directly (except for the empty list, which is not a valid seq). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count">count</a> is O(1). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> puts the item at the front of the list.</p>
+<p>Lists are collections. They implement the ISeq interface directly. (Note that the empty list implements ISeq as well, however the <code>seq</code> function will always return <code>nil</code> for an empty sequence.) <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count">count</a> is O(1). <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj">conj</a> puts the item at the front of the list.</p>
 </div>
 <div class="sect2">
 <h3 id="_related_functions_6"><a class="anchor" href="#_related_functions_6"></a>Related functions</h3>

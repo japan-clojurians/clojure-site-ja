@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Anatomy of a Reducer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Anatomy of a Reducer</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last time, <a href="xref/../../08/reducers">I blogged</a> about Clojure&#8217;s new <a href="https://github.com/clojure/clojure/blob/master/src/clj/clojure/core/reducers.clj">reducers library</a>. This time I&#8217;d like to look at the details of what constitutes a reducer, as well as some background about the library.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_whats_a_reducing_function"><a class="anchor" href="#_whats_a_reducing_function"></a>What&#8217;s a Reducing Function?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The reducers library is built around transforming reducing functions. A reducing function is simply a binary function, akin to the one you might pass to <em>reduce</em>. While the two arguments might be treated symmetrically by the function, there is an implied semantic that distinguishes the arguments: the first argument is a result or accumulator that is being built up by the reduction, while the second is some new input value from the source being reduced. While <em>reduce</em> works from the 'left', that is neither a property nor promise of the reducing function, but one of <em>reduce</em> itself. So we&#8217;ll say simply that a reducing fn has the shape:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(f result input) -&gt; new-result</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition, a reducing fn may be called with no args, and should then return an identity value for its operation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_transforming_reducing_functions"><a class="anchor" href="#_transforming_reducing_functions"></a>Transforming Reducing Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function that transforms a reducing fn simply takes one, and returns another one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(xf reducing-fn) -&gt; reducing-fn</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Many of the core collection operations can be expressed in terms of such a transformation. Imagine if we were to define the cores of <em>map</em>, <em>filter</em> and <em>mapcat</em> in this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn mapping [f]
+  (fn [f1]
+    (fn [result input]
+      (f1 result (f input)))))
+
+(defn filtering [pred]
+  (fn [f1]
+    (fn [result input]
+      (if (pred input)
+        (f1 result input)
+        result))))
+
+(defn mapcatting [f]
+  (fn [f1]
+    (fn [result input]
+      (reduce f1 result (f input)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are a few things to note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The functions consist only of the core logic of their operations</p>
+</li>
+<li>
+<p>That logic does not include any notion of collection, nor order</p>
+</li>
+<li>
+<p>filtering and kin can 'skip' inputs by simply returning the incoming result</p>
+</li>
+<li>
+<p>mapcatting and kin can produce more than one result per input by simply operating on result more than once</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using these directly is somewhat odd, because we are operating on the reducing operation rather than the collection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(reduce + 0 (map inc [1 2 3 4]))
+;;becomes
+(reduce ((mapping inc) +) 0 [1 2 3 4])</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reducers"><a class="anchor" href="#_reducers"></a>Reducers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We expect map/filter etc to take and return logical collections. The premise of the reducers library is that the minimum definition of collection is something that is reducible. reduce ends up using a protocol (CollReduce) to ask the collection to <em>reduce</em> itself, so we can make reducible things by extending that protocol. Thus, given a collection and a reducing function transformer like those above, we can make a reducible with a function like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn reducer
+  ([coll xf]
+   (reify
+    clojure.core.protocols/CollReduce
+    (coll-reduce [_ f1 init]
+      (clojure.core.protocols/coll-reduce coll (xf f1) init)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(reduce + 0 (map inc [1 2 3 4]))
+;;becomes
+(reduce + 0 (reducer [1 2 3 4] (mapping inc)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s better. It feels as if we have transformed the collection itself. Note:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reducer ultimately asks the source collection to reduce <em>itself</em></p>
+</li>
+<li>
+<p>reducer will work with any reducing function transformer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Another objective of the library is to support reducer-based code with the same shape as our current seq-based code. Getting there is easy:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn rmap [f coll]
+  (reducer coll (mapping f)))
+
+(defn rfilter [pred coll]
+  (reducer coll (filtering pred)))
+
+(defn rmapcat [f coll]
+  (reducer coll (mapcatting f)))
+
+(reduce + 0 (rmap inc [1 2 3 4]))
+;=&gt; 14
+
+(reduce + 0 (rfilter even? [1 2 3 4]))
+;=&gt; 6
+
+(reduce + 0 (rmapcat range [1 2 3 4 5]))
+;=&gt; 20</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_reducible_to_parallel_foldable"><a class="anchor" href="#_from_reducible_to_parallel_foldable"></a>From Reducible to (Parallel) Foldable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While it is an interesting exercise to find another fundamental way to define the core collection operations, the end result is not much different, just faster, certainly something <a href="http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.104.7401">a state-of-the-art compilation and type system</a> (had we one) might do for us given sequence code. To stop here would be to completely miss the point of the library. These operations have different, fundamentally simpler semantics than their sequence-based counterparts.</p>
+</div>
+<div class="paragraph">
+<p>How does one define parallel mapping/filtering/mapcatting etc? <em>We already did!</em> As long as the transformation itself doesn&#8217;t care about order (e.g. as <em>take</em> does), then a reducer is as foldable as its source. As with <em>reduce</em>, <em>fold</em> bottoms out on a protocol (CollFold), and our reducer can extend that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn folder
+  ([coll xf]
+     (reify
+      ;;extend CollReduce as before
+
+      CollFold
+      (coll-fold [_ n combinef reducef]
+        (coll-fold coll n combinef (xf reducef))))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>folder</em> has the same requirements as <em>reducer</em> - collection + reducing function transformer</p>
+</li>
+<li>
+<p>when <em>fold</em> is applied to something that can&#8217;t fold, it devolves to <em>reduce</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Thus the real definitions of reducers/map et al use <em>folder</em> (while take uses <em>reducer</em>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn rmap [f coll]
+  (folder coll (mapping f)))
+
+(defn rfilter [pred coll]
+  (folder coll (filtering pred)))
+
+(defn rmapcat [f coll]
+  (folder coll (mapcatting f)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus a wide variety of collection transformations can instead be expressed as reducing function transformations, and applied in both sequential and parallel contexts, across a wide variety of data structures.</p>
+</div>
+<div class="paragraph">
+<p>The library deals with several other details, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the transformers all need a nullary arity that just delegates to the transformed reducing function</p>
+</li>
+<li>
+<p>the transformers support a ternary arity where 2 inputs are supplied per step, as occurs with reduce-kv and map sources</p>
+</li>
+<li>
+<p>all of the reducers are curried</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These additions are all mechanical, and are handled by macros. It is my hope that the above will help illuminate the core logic underlying the library.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_background"><a class="anchor" href="#_background"></a>Background</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Much prior work highlights the value of fold as a primary mechanism for collection manipulation, superior to iteration, although most of that work was done in the context of recursively defined functions on lists or sequences - i.e. fold implies foldl/foldr, and the results remain inherently sequential.</p>
+</div>
+<div class="paragraph">
+<p>The two primary motivators for this library were the Haskell Iteratee library and Guy Steele&#8217;s ICFP '09 talk.</p>
+</div>
+<div class="sect2">
+<h3 id="_haskell_iteratees"><a class="anchor" href="#_haskell_iteratees"></a>Haskell Iteratees</h3>
+<div class="paragraph">
+<p>The <a href="http://www.haskell.org/haskellwiki/Enumerator_and_iteratee">Haskell Enumerator/Iteratee library</a> and its antecedents are an inspiring effort to disentangle the source of data and the operations that might apply to it, and one of the first I think to reify the role of the 'iteratee'. An enumerator makes successive calls to the iteratee to supply it items, decoupling the iteratee from the data source. But the iteratee is still driving in some sense, as it is in charge of signaling Done, and, it returns on each step the next iteratee to use, effectively dictating a single thread of control. One benefit is that even operations like <em>take</em> can be defined functionally, as they can encode their internal state in the 'next' iteratee returned. OTOH, and unlike reducers, the design wraps the result being built up in a new iteratee each step, with potential allocation overhead.</p>
+</div>
+<div class="paragraph">
+<p>Being an automaton in a state, an iteratee is like a reified left fold, and thus inherently serial. So, while they form quite a nice substrate for the design of, e.g. parsers, iteratees are unsuitable for defining things like map/filter etc if one intends to be able to parallelize them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_guy_steeles_icfp_09_talk"><a class="anchor" href="#_guy_steeles_icfp_09_talk"></a>Guy Steele&#8217;s ICFP '09 talk</h3>
+<div class="paragraph">
+<p><a href="http://vimeo.com/6624203">Organizing Functional Code for Parallel Execution or, foldl and foldr Considered Slightly Harmful</a></p>
+</div>
+<div class="paragraph">
+<p>This talk boils down to - stop programming with streams, lists, generators etc if you intend to exploit parallelism, as does the reducers library.</p>
+</div>
+<div class="paragraph">
+<p>Where reducers diverges from that talk is in the structure of the fork/join parallel computation. Rather than map+reduce, reducers uses reduce+combine. This reflects 2 considerations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It is accepted fork/join practice that at some point you stop splitting in half and handle the leaves 'sequentially'</p>
+<div class="ulist">
+<ul>
+<li>
+<p>if the best way to do that at the top is <em>reduce</em>, why not at the bottom as well?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>map</em> forces a result per input</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can see the awkwardness of the latter in the map/reduce-oriented definition of parallel <em>filter</em> in the talk, which must 'listify' items or return empty lists, creating a bunch of concatenation busy-work for the reducing step. Many other collection algorithms suffer similarly in their map/reduce-oriented implementations, having greater internal complexity and wrapping the results in collection representations, with corresponding creation of more garbage and reduction busy-work etc vs the reducing function transformer versions of same.</p>
+</div>
+<div class="paragraph">
+<p>It is interesting that the accumulator style is not completely absent from the reducers design, in fact it is important to the characteristics just described. What has been abandoned are the <em>single initial value</em> and <em>serial execution</em> promises of foldl/r.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I hope this makes reducers easier to understand, use and define.</p>
+</div>
+<div class="paragraph">
+<p>Rich</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

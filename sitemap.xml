@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>http://clojure-site-ja.github.io/community/devchangelog.html</loc>
+        <loc>http://clojure-site-ja.github.io/api/cheatsheet.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/api/cheatsheet.html</loc>
+        <loc>http://clojure-site-ja.github.io/community/devchangelog.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -25,11 +25,39 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/news/2019/06/06/clojure1-10-1.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2019/05/16/jira-migration.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2019/02/04/state-of-clojure-2019.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2019/01/07/clojure-2019-survey.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2018/12/17/clojure110.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2018/03/19/state-of-clojure-2018.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/news/2018/01/05/git-deps.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/news/2017/12/08/clojure19.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2017/01/31/state-of-clojure-2016.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -58,6 +86,14 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/news/2013/06/28/clojure-clore-async-channels.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2012/05/15/anatomy-of-reducer.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/news/2012/05/08/reducers.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -237,6 +273,14 @@
         <lastmod></lastmod>
     </url>
     <url>
+        <loc>http://clojure-site-ja.github.io/guides/test_check_beginner.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/equality.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
         <loc>http://clojure-site-ja.github.io/guides/higher_order_functions.html</loc>
         <lastmod></lastmod>
     </url>
@@ -297,7 +341,7 @@
         <lastmod></lastmod>
     </url>
     <url>
-        <loc>http://clojure-site-ja.github.io/guides/repl/navigating_namespaces.html</loc>
+        <loc>http://clojure-site-ja.github.io/guides/repl/guidelines_for_repl_aided_development.html</loc>
         <lastmod></lastmod>
     </url>
     <url>
@@ -326,6 +370,10 @@
     </url>
     <url>
         <loc>http://clojure-site-ja.github.io/guides/repl/annex_community_resources.html</loc>
+        <lastmod></lastmod>
+    </url>
+    <url>
+        <loc>http://clojure-site-ja.github.io/guides/repl/navigating_namespaces.html</loc>
         <lastmod></lastmod>
     </url>
 </urlset>

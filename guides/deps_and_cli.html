@@ -92,6 +92,7 @@
 <li><a href="#extra_deps">Add an optional dependency</a></li>
 <li><a href="#override_deps">Override a dependency</a></li>
 <li><a href="#local_jar">Include a local jar on disk</a></li>
+<li><a href="#aot_compilation">Ahead-of-time (AOT) compilation</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +154,15 @@ user=&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Once in the REPL you can type Clojure expressions and press enter to evaluate them.</p>
+<p>Once in the REPL you can type Clojure expressions and press enter to evaluate them.  Type Control-D to exit the REPL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">user=&gt; (+ 2 3)   # press the `enter` key after typing the expression to evaluate it
+5                # result of expression
+user=&gt;           # type Ctrl-D here to exit the REPL (does not print)
+$</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>There are many Clojure and Java libraries available that provide access to practically any functionality you might need. For example, consider the commonly used Clojure library <a href="https://github.com/clj-time/clj-time">clj-time</a> for working with dates and times.</p>
@@ -375,6 +384,9 @@ Hello world, the time is 02:10 PM</code></pre>
 <li>
 <p><a href="deps_and_cli#local_jar">Use a local jar on disk</a></p>
 </li>
+<li>
+<p><a href="deps_and_cli#aot_compilation">Ahead-of-time (AOT) compilation</a></p>
+</li>
 </ul>
 </div>
 <div class="sect2">
@@ -458,6 +470,77 @@ test:
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
  {db/driver {:local/root "/path/to/db/driver.jar"}}}</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aot_compilation"><a class="anchor" href="#aot_compilation"></a>Ahead-of-time (AOT) compilation</h3>
+<div class="paragraph">
+<p>When using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class">gen-class</a> or <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface">gen-interface</a>, the Clojure source must be ahead-of-time compiled to generate the java class(es).</p>
+</div>
+<div class="paragraph">
+<p>This can be done by calling <code>compile</code>. The default destination for compiled class files is <code>classes/</code>, which needs to be created and added to the classpath:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ mkdir classes</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edit <code>deps.edn</code> to add <code>"classes"</code> to the paths:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:paths ["src" "classes"]}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Declare a class with gen-class in <code>src/my_class.clj</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns my-class)
+
+(gen-class
+  :name my_class.MyClass
+  :methods [[hello [] String]])
+
+(defn -hello [this]
+  "Hello, World!")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you can reference the class with <code>:import</code> in another source file <code>src/hello.clj</code>. Notice that the namespace is also added in <code>:require</code> so compilation can automatically find all dependent namespaces and compile them.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns hello
+  (:require [my-class])
+  (:import (my_class MyClass)))
+
+(defn -main [&amp; args]
+  (let [inst (MyClass.)]
+    (println (.hello inst))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can compile in the REPL or run a script to do the compilation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -e "(compile 'hello)"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then run the hello namespace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj -m hello
+Hello, World!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="xref/../../reference/compilation">Compilation and Class Generation</a> for a complete reference.</p>
 </div>
 </div>
 </div>

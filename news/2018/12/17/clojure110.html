@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Clojure 1.10 release</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Clojure 1.10 release</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure 1.10 focuses on two major areas: improved error reporting and Java compatibility.</p>
+</div>
+<div class="paragraph">
+<p>Error reporting at the REPL now <a href="xref/../../../../../reference/repl_and_main#_error_printing">categorizes</a> errors based on their phase of execution (read, macroexpand, compile, etc). Errors carry additional information about location and context as data, and present phase-specific error messages with better location reporting. This functionality is built into the clojure.main REPL, but the functionality is also available to other REPLs and tools with the ability to use and/or modify the data to produce better error messages.</p>
+</div>
+<div class="paragraph">
+<p>Clojure 1.10 now requires Java 8 or above and has been updated particularly for compatibility with Java 8 and Java 11. Changes included bytecode-related bug fixes, removed use of deprecated APIs, and updates related to the module system introduced in Java 9.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://github.com/clojure/clojure/blob/master/changes.md#changes-to-clojure-in-version-110">change log</a> for a complete list of all fixes, enhancements, and new features in Clojure 1.10.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors"><a class="anchor" href="#_contributors"></a>Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to all of the community members who contributed patches to Clojure 1.10 (first time contributors in bold):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alexander Kiel</strong></p>
+</li>
+<li>
+<p><strong>Ben Bader</strong></p>
+</li>
+<li>
+<p>Bruce Adams</p>
+</li>
+<li>
+<p><strong>Cezary Kosko</strong></p>
+</li>
+<li>
+<p>Erik Assum</p>
+</li>
+<li>
+<p><strong>Eugene Kostenko</strong></p>
+</li>
+<li>
+<p>Ghadi Shayban</p>
+</li>
+<li>
+<p><strong>Gijs Stuurman</strong></p>
+</li>
+<li>
+<p>Jozef Wagner</p>
+</li>
+<li>
+<p><strong>Kwang Yul Seo</strong></p>
+</li>
+<li>
+<p><strong>Matthew Gilliard</strong></p>
+</li>
+<li>
+<p>Michał Marczyk</p>
+</li>
+<li>
+<p>Nicola Mometto</p>
+</li>
+<li>
+<p>Nikita Prokopov</p>
+</li>
+<li>
+<p><strong>Sean Corfield</strong></p>
+</li>
+<li>
+<p><strong>Sebastien Martel</strong></p>
+</li>
+<li>
+<p>Shogo Ohta</p>
+</li>
+<li>
+<p>Stuart Sierra</p>
+</li>
+</ul>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

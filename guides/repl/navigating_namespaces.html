@@ -134,7 +134,7 @@ feel free to skip this chapter for now; you can come back to it when you start w
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; *ns*
 #object[clojure.lang.Namespace 0x7d1cfb8b "user"]
 user=&gt; (ns myapp.foo.bar) ;; creating and switching to the myapp.foo.bar namespace - `ns` will be explained later in this guide.
@@ -150,9 +150,11 @@ myapp.foo.bar=&gt; (cset/intersection #{1 2} #{2 3})
 myapp.foo.bar=&gt; (in-ns 'user) ;; now switching back to the `user` namespace - `in-ns` will be explained later in this guide.
 #object[clojure.lang.Namespace 0x7d1cfb8b "user"]
 user=&gt; (union #{1 2} #{2 3})  ;; won't work, because `union` has not been :refer'ed in the `user` namespace
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: union in this context, compiling:(NO_SOURCE_PATH:9:1)
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: union in this context
 user=&gt; (cset/intersection #{1 2} #{2 3}) ;; won't work, because the `cset` alias has not been defined in the current namespace.
-CompilerException java.lang.RuntimeException: No such namespace: cset, compiling:(NO_SOURCE_PATH:10:1)
+Syntax error compiling at (REPL:1:1).
+No such namespace: cset
 user=&gt;</code></pre>
 </div>
 </div>
@@ -190,7 +192,7 @@ you will be able to reference that Var as <code>myapp.foo.bar/my-favorite-number
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (ns myapp.foo.bar) ;; creating and switching to the `myapp.foo.bar` namespace - NOTE `ns` will be explained later in this guide
 nil
 myapp.foo.bar=&gt; (def my-favorite-number 42) ;; defining a Var named `my-favorite-number`
@@ -199,7 +201,7 @@ myapp.foo.bar=&gt; my-favorite-number
 42
 myapp.foo.bar=&gt; (ns myapp.baz) ;; creating and switching to another namespace `myapp.baz`
 nil
-myapp.baz=&gt; myapp.foo.bar/my-favorite-number ;; refering to `my-favorite-number`
+myapp.baz=&gt; myapp.foo.bar/my-favorite-number ;; referring to `my-favorite-number`
 42
 myapp.baz=&gt; (require '[myapp.foo.bar :as foobar]) ;; we can also use an alias to make it shorter
 nil
@@ -220,7 +222,7 @@ myapp.baz=&gt; foobar/my-favorite-number
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; *ns*
 #object[clojure.lang.Namespace 0x7d1cfb8b "user"]</code></pre>
 </div>
@@ -243,7 +245,7 @@ user=&gt; *ns*
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (ns myapp.foo-bar)
 nil
 myapp.foo-bar=&gt; *ns*
@@ -259,7 +261,7 @@ myapp.foo-bar=&gt; (def x 42)
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (ns myapp.ns1) ;; creating a new namespace and defining a Var `x` and an alias `str/`:
 nil
 myapp.ns1=&gt; (def x 42)
@@ -273,9 +275,11 @@ myapp.ns1=&gt; (str/upper-case "hello")
 myapp.ns1=&gt; (ns myapp.ns2) ;; now switching to another namespace:
 nil
 myapp.ns2=&gt; x ;; won't work, because x has not been defined in namespace `myapp.ns2`
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: x in this context, compiling:(NO_SOURCE_PATH:0:0)
+Syntax error compiling at (REPL:0:0).
+Unable to resolve symbol: x in this context
 myapp.ns2=&gt; (str/upper-case "hello") ;; won't work, because alias `str` has not been defined in namespace `myapp.ns2`
-CompilerException java.lang.RuntimeException: No such namespace: str, compiling:(NO_SOURCE_PATH:9:1)</code></pre>
+Syntax error compiling at (REPL:1:1).
+No such namespace: str</code></pre>
 </div>
 </div>
 </div>
@@ -291,7 +295,7 @@ moves back to the <code>user</code> namespace, then moves again to <code>myapp.s
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (ns myapp.some-ns) ;;;; creating the namespace `myapp.some-ns`
 nil
 myapp.some-ns=&gt; *ns* ;; where are we?
@@ -318,11 +322,12 @@ a function using <code>defn</code>:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (in-ns 'myapp.never-created)
 #object[clojure.lang.Namespace 0x22356acd "myapp.never-created"]
 myapp.never-created=&gt; (defn say-hello [x] (println "Hello, " x "!"))
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: defn in this context, compiling:(NO_SOURCE_PATH:2:1)</code></pre>
+Syntax error compiling at (REPL:1:1).
+Unable to resolve symbol: defn in this context</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -447,7 +452,7 @@ always make sure you have <em>loaded</em> the lib in the REPL before switching t
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 1: requiring myproject.person-names directly
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (require '[myproject.person-names])
 nil
 user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.
@@ -457,7 +462,7 @@ user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 2: requiring myproject.welcome, which itself requires myproject.person-names
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (require '[myproject.welcome])
 nil
 user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.
@@ -467,7 +472,7 @@ user=&gt; myproject.person-names/nicknames ;; checking that the myproject.person
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj ## APPROACH 3: manually copying the code of myproject.person-names in the REPL.
-Clojure 1.9.0
+Clojure 1.10.0
 (ns myproject.person-names
   (:require [clojure.string :as str]))
 
@@ -505,7 +510,7 @@ myproject.person-names=&gt; myproject.person-names/nicknames ;; checking that th
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (require '[myproject.welcome] :verbose)
 (clojure.core/load "/myproject/welcome")
 (clojure.core/in-ns 'clojure.core.specs.alpha)
@@ -532,15 +537,17 @@ if you switch to a lib namespace without loading it first:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">$ clj
-Clojure 1.9.0
+Clojure 1.10.0
 user=&gt; (ns myproject.person-names)
 nil
 myproject.person-names=&gt; nicknames ;; #'nicknames won't be defined, because the lib has not been loaded.
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)
+Syntax error compiling at (REPL:0:0).
+Unable to resolve symbol: nicknames in this context
 myproject.person-names=&gt; (require '[myproject.person-names]) ;; won't fix the situation, because the namespaces has already been created
 nil
 myproject.person-names=&gt; nicknames
-CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)</code></pre>
+Syntax error compiling at (REPL:0:0).
+Unable to resolve symbol: nicknames in this context</code></pre>
 </div>
 </div>
 </div>

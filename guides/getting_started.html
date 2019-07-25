@@ -142,19 +142,19 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">curl -O https://download.clojure.org/install/linux-install-1.9.0.358.sh
-chmod +x linux-install-1.9.0.358.sh
-sudo ./linux-install-1.9.0.358.sh</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">curl -O https://download.clojure.org/install/linux-install-1.10.1.466.sh
+chmod +x linux-install-1.10.1.466.sh
+sudo ./linux-install-1.10.1.466.sh</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>プラットフォーム別のインストーラ(apt-getなど)は将来的に提供される。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_windowsへのインストール"><a class="anchor" href="#_windowsへのインストール"></a>Windowsへのインストール</h3>
 <div class="paragraph">
-<p>現在は提供されていない - LeiningenもしくはBootを参照。</p>
+<p>An early release version of clj on Windows is available at
+<a href="https://github.com/clojure/tools.deps.alpha/wiki/clj-on-Windows">clj on
+Windows</a>.  Please provide feedback at
+<a href="https://clojure.atlassian.net/projects/TDEPS" class="bare">https://clojure.atlassian.net/projects/TDEPS</a>.</p>
 </div>
 </div>
 </div>
@@ -166,14 +166,13 @@ sudo ./linux-install-1.9.0.358.sh</code></pre>
 <p><strong>ローカルビルド</strong></p>
 </div>
 <div class="paragraph">
-<p>ソースをダウンロードし、Clojureをビルドする:</p>
+<p>Download and build Clojure from source (requires Git, Java, and Maven):</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">git clone https://github.com/clojure/clojure.git
 cd clojure
-./antsetup.sh
-ant local</code></pre>
+mvn -Plocal -Dmaven.test.skip=true package</code></pre>
 </div>
 </div>
 <div class="paragraph">

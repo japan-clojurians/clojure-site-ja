@@ -87,6 +87,13 @@
 <li><a href="#_replの起動">REPLの起動</a></li>
 <li><a href="#_スクリプトの起動">スクリプトの起動</a></li>
 <li><a href="#_スクリプトに引数を渡す">スクリプトに引数を渡す</a></li>
+<li><a href="#_error_printing">Error printing</a>
+<ul class="sectlevel2">
+<li><a href="#_at_repl">At REPL</a></li>
+<li><a href="#_as_launcher">As launcher</a></li>
+</ul>
+</li>
+<li><a href="#_tap">tap</a></li>
 <li><a href="#_ソケットサーバーの起動">ソケットサーバーの起動</a></li>
 <li><a href="#_関連する関数">関連する関数</a></li>
 </ul>
@@ -122,6 +129,10 @@
 </li>
 <li>
 <p>-e, --eval 文字列 文字列中の式を評価する; 非nilな値をプリントする</p>
+</li>
+<li>
+<p>--report target Report uncaught exception to "file" (default), "stderr", or
+"none", overrides System property clojure.main.report (added in 1.10.1)</p>
 </li>
 </ul>
 </div>
@@ -159,7 +170,8 @@
 <p>user名前空間に切り替える</p>
 </li>
 <li>
-<p>*command-line-args* を、mainオプションの後に指定されたコマンドライン引数を含む文字列シーケンスに束縛する</p>
+<p>Binds <code>*command-line-args*</code> to a seq of strings containing command
+line args that appear after any main option</p>
 </li>
 <li>
 <p>全てのinitオプションを順に実行する</p>
@@ -180,54 +192,21 @@
 <p>パスは絶対パス、もしくはファイルシステムの相対パス、クラスパスに対する相対パスを指定できる。クラスパスに対する相対パスは @ もしくは @/
 でプリフィックスされる。</p>
 </div>
-<div class="paragraph">
-<p>usageメッセージに同様の内容が記述されている:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">Usage: java -cp clojure.jar clojure.main [init-opt*] [main-opt] [arg*]
-
-With no options or args, runs an interactive Read-Eval-Print Loop
-
-init options:
--i, --init path Load a file or resource
--e, --eval string Evaluate expressions in string; print non-nil values
-
-main options:
--r, --repl Run a repl
-path Run a script from a file or resource
-- Run a script from standard input
--m, --main A namespace to find a -main function for execution
--h, -?, --help Print this help message and exit
-
-operation:
-
-- Establishes thread-local bindings for commonly set!-able vars
-- Enters the user namespace
-- Binds *command-line-args* to a seq of strings containing command line
-args that appear after any main option
-- Runs all init options in order
-- Runs a repl or script if requested
-
-The init options may be repeated and mixed freely, but must appear before
-any main option. The appearance of any eval option before running a repl
-suppresses the usual repl greeting message: "Clojure ~(clojure-version)".
-
-Paths may be absolute or relative in the filesystem or relative to
-classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_replの起動"><a class="anchor" href="#_replの起動"></a>REPLの起動</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clojureの <em>repl</em> を起動する最もシンプルな方法はClojureのホームディレクトリから次のコマンドを使用することだ:</p>
+<p>The simplest way to launch a Clojure <em>repl</em> is to use the
+<a href="xref/../../guides/getting_started">clj</a> command tool, which invokes
+clojure.main:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">$ clj
+Clojure 1.10.0
+user=&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -314,7 +293,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main /path/to/myscript.clj</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">clj /path/to/myscript.clj</code></pre>
 </div>
 </div>
 </div>
@@ -327,7 +306,7 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">java -cp clojure.jar clojure.main /path/to/myscript.clj arg1 arg2 arg3</code></pre>
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">clj /path/to/myscript.clj arg1 arg2 arg3</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -341,20 +320,197 @@ classpath. Classpath-relative paths have prefix of @ or @/</code></pre>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_error_printing"><a class="anchor" href="#_error_printing"></a>Error printing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_at_repl"><a class="anchor" href="#_at_repl"></a>At REPL</h3>
+<div class="paragraph">
+<p>As of Clojure 1.10, Clojure errors categorized into one of several phases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:read-source</code> - an error thrown while reading characters at the REPL or
+from a source file.</p>
+</li>
+<li>
+<p><code>:macro-syntax-check</code> - a syntax error found in the syntax of a macro call,
+either from spec or from a macro throwing IllegalArgumentException,
+IllegalStateException, or ExceptionInfo.</p>
+</li>
+<li>
+<p><code>:macroexpansion</code> - all other errors thrown during macro evaluation are
+categorized as macroexpansion errors.</p>
+</li>
+<li>
+<p><code>:compile-syntax-check</code> - a syntax error caught during compilation.</p>
+</li>
+<li>
+<p><code>:compilation</code> - non-syntax errors caught during compilation.</p>
+</li>
+<li>
+<p><code>:execution</code> - any errors thrown at execution time.</p>
+</li>
+<li>
+<p><code>:read-eval-result</code> - any error thrown while reading the result of execution
+(only applicable for REPLs that read the result).</p>
+</li>
+<li>
+<p><code>:print-eval-result</code> - any error thrown while printing the result of
+execution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exceptions thrown during all phases (exception <code>:execution</code>) will have
+ex-data attached with one or more the following keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:clojure.error/phase</code> - phase indicator</p>
+</li>
+<li>
+<p><code>:clojure.error/source</code> - file name (no path)</p>
+</li>
+<li>
+<p><code>:clojure.error/line</code> - integer line number</p>
+</li>
+<li>
+<p><code>:clojure.error/column</code> - integer column number</p>
+</li>
+<li>
+<p><code>:clojure.error/symbol</code> - symbol being expanded/compiled/invoked</p>
+</li>
+<li>
+<p><code>:clojure.error/class</code> - cause exception class symbol</p>
+</li>
+<li>
+<p><code>:clojure.error/cause</code> - cause exception message</p>
+</li>
+<li>
+<p><code>:clojure.error/spec</code> - explain-data for a spec error</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The clojure.main REPL includes the categorization and printing of errors by
+default, but the individual steps of this process are exposed as well for
+other REPLs to use, specifically the functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/Throwable-%3Emap">Throwable->map</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>converts an Exception chain into Clojure data</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-triage">ex-triage</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>analyzes Clojure exception data to pull relevant information from the top
+and bottom of the exception chain into a map describing just the set of data
+needed to format an exception string</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-str">ex-str</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>produces a phase-appropriate message given a set of exception data</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The clojure.main REPL combines these functions in a pipeline to produce the
+printed exception message: <code>(-> ex Throwable->map
+clojure.main/ex-triage clojure.main/ex-str)</code>. Other REPLs can use one or
+more pieces of this pipeline as necessary when building or customizing their
+exception printing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_as_launcher"><a class="anchor" href="#_as_launcher"></a>As launcher</h3>
+<div class="paragraph">
+<p>Up to Clojure 1.10.0, clojure.main when used as a program launcher (with -m,
+-e, or with a script), uncaught exceptions would be automatically printed
+along with the full nested stack trace. In this case, the error triage and
+printing process above was not applied.</p>
+</div>
+<div class="paragraph">
+<p>As of Clojure 1.10.1, uncaught exceptions will now be caught and printed
+according to the same error triage and printing functionality as the Clojure
+REPL. The full stack trace, ex-info, and other information will be printed
+to a target specified by the configuration.</p>
+</div>
+<div class="paragraph">
+<p>The three available error targets are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>file</code> - write to a temp file (default, falls back to <code>stderr</code>)</p>
+</li>
+<li>
+<p><code>stderr</code> - write to stderr stream</p>
+</li>
+<li>
+<p><code>none</code> - don&#8217;t write</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These error targets can be specified either as options to clojure.main, or
+as Java system properties (flags take precedence). When invoking
+clojure.main (or using the clj tool), use <code>--report &lt;target&gt;</code>. For Java
+system property, use <code>-Dclojure.main.report=&lt;target&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>Other programs may wish to take advantage of this functionality, and it is
+available in
+<a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/report-error">report-error</a>,
+which takes a Throwable and optionally the :target.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tap"><a class="anchor" href="#_tap"></a>tap</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>tap is a shared, globally accessible system for distributing a series of
+informational or diagnostic values to a set of (presumably effectful)
+handler functions. It can be used as a better debug <code>prn</code>, or for facilities
+like logging etc.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tap%3E"><code>tap></code></a>
+sends a value to the set of taps. Taps can be added with
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-tap"><code>add-tap</code></a>
+and will be called with any value sent to tap&gt;. The tap function may
+(briefly) block (e.g. for streams) and will never impede calls to tap&gt;, but
+blocking indefinitely may cause tap values to be dropped. If no taps are
+registered, tap&gt; discards. Remove taps with
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap"><code>remove-tap</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_ソケットサーバーの起動"><a class="anchor" href="#_ソケットサーバーの起動"></a>ソケットサーバーの起動</h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-この機能は1.8.0で追加された。
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>現在のClojureランタイムではシステムプロパティを基に、初期化時にソケットサーバーを起動することが可能となっている。想定される活用方法の一つはソケットベースのREPLだが、他にも既存のプログラムのコードの変更を行わずに動的にサーバー機能を追加する様々なことに利用可能なポテンシャルがある。</p>
 </div>
@@ -428,10 +584,11 @@ Connection closed by foreign host.</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1671">CLJ-1671</a></p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1671">CLJ-1671</a></p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/display/design/Socket+Server+REPL">ソケットREPLの設計ページ</a></p>
+<p><a href="https://archive.clojure.org/design-wiki/display/design/Socket%2BServer%2BREPL.html">Socket
+REPL design page</a></p>
 </li>
 </ul>
 </div>
@@ -447,6 +604,11 @@ Connection closed by foreign host.</code></pre>
 <div class="paragraph">
 <p>再利用可能なREPL:
 <code><a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl">clojure.main/repl</a></code></p>
+</div>
+<div class="paragraph">
+<p>Error handling:
+<code><a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-triage">clojure.main/ex-triage</a></code>
+<code><a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-str">clojure.main/ex-str</a></code></p>
 </div>
 <div class="paragraph">
 <p>一般的なREPL varへのset!を許可:

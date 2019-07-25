@@ -100,7 +100,7 @@
 </div>
 <div class="paragraph">
 <p>At this point, you know enough to understand how the REPL works; we&#8217;ll now focus on giving
-you a more streamlined development experience with the REPL. There is a variety of things
+you a more streamlined development experience with the REPL. There are a variety of things
 you may want to improve:</p>
 </div>
 <div class="quoteblock">
@@ -124,7 +124,7 @@ See the <a href="#editor-integrations">Editor integrations</a> section below for
 </blockquote>
 </div>
 <div class="paragraph">
-<p>As mentioned above, one solution could be to use an <a href="#editor-integrations">Editor integration</a>;
+<p>As mentioned above, one solution could be to use an <a href="#editor-integrations">editor integration</a>.
 Note that some editors such as <strong><a href="https://sekao.net/nightcode/">Nightcode</a></strong> are designed specifically to
 provide a 'batteries-included' experience for Clojure.</p>
 </div>
@@ -206,15 +206,15 @@ For instance:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><a href="https://github.com/metasoarous/oz">oz</a></strong> is a Clojure library for displaying numerical charts;</p>
+<p><strong><a href="https://github.com/metasoarous/oz">oz</a></strong> is a Clojure library for displaying numerical charts</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/eggsyntax/datawalk">datawalk</a></strong> is a Clojure library for interactively exploring complex
-Clojure data structures.</p>
+Clojure data structures</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/walmartlabs/system-viz">system-viz</a></strong> is a Clojure library for visualizing the components of a running
-Clojure system.</p>
+Clojure system</p>
 </li>
 </ul>
 </div>
@@ -232,11 +232,11 @@ depends on your toolchain. For instance:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>when using a REPL started from <a href="xref/../../../reference/repl_and_main">clojure.main</a> - as is the case when using the <code>clj</code> tool,
+<p>when using a REPL started from <a href="xref/../../../reference/repl_and_main">clojure.main</a> (as is the case when using the <code>clj</code> tool)
 you can customize the REPL by launching a 'sub-REPL': see <a href="https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl">clojure.main/repl</a>.</p>
 </li>
 <li>
-<p>when using <a href="https://github.com/clojure/tools.nrepl">nREPL</a>.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, this can be done by writing custom <a href="https://github.com/clojure/tools.nrepl#middleware">middleware</a>.</p>
+<p>when using <a href="https://nrepl.org">nREPL</a>.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, this can be done by writing custom <a href="https://nrepl.org/nrepl/design/middleware.html">middleware</a>.</p>
 </li>
 </ul>
 </div>
@@ -248,8 +248,8 @@ you can customize the REPL by launching a 'sub-REPL': see <a href="https://cloju
 </blockquote>
 </div>
 <div class="paragraph">
-<p>The Clojure <a href="xref/../../../reference/repl_and_main#launching_a_socket_server">Socket Server</a> feature can be used
-to that end. Tools like <strong><a href="https://github.com/clojure/tools.nrepl">tools.nrepl</a></strong> and <strong><a href="https://github.com/Unrepl/unrepl">unrepl</a></strong>
+<p>The Clojure <a href="xref/../../../reference/repl_and_main#launching_a_socket_server">socket server</a> feature can be used
+to that end. Tools like <strong><a href="https://nrepl.org">nREPL</a></strong> and <strong><a href="https://github.com/Unrepl/unrepl">unrepl</a></strong>
 can be used to provide a richer experience.</p>
 </div>
 <div class="admonitionblock warning">
@@ -422,7 +422,7 @@ lightweight syntax.</p>
 <div class="sect3">
 <h4 id="_going_further_tracing_libraries"><a class="anchor" href="#_going_further_tracing_libraries"></a>Going further: tracing libraries</h4>
 <div class="paragraph">
-<p><em>Tracing</em> libraries such as <strong><a href="https://github.com/clojure/tools.trace">tools.trace</a></strong> and <strong><a href="http://bpiel.github.io/sayid/">Sayid</a></strong>
+<p><em>Tracing</em> libraries such as <strong><a href="https://github.com/clojure/tools.trace">tools.trace</a></strong> and <strong><a href="http://clojure-emacs.github.io/sayid/">Sayid</a></strong>
 can help you instrument larger portions of your code, for example by automatically printing all the function calls in a
 given namespace, or all intermediary values in a given expression.</p>
 </div>
@@ -454,7 +454,7 @@ user=&gt; n
 </div>
 </div>
 <div class="paragraph">
-<p>This 'inline-def' technique is described in more depth in <a href="https://blog.michielborkent.nl/blog/2017/05/25/inline-def-debugging/">this blog post by Michiel Borkent</a>.</p>
+<p>This 'inline-def' technique is described in more depth in <a href="https://blog.michielborkent.nl/2017/05/25/inline-def-debugging/">this blog post by Michiel Borkent</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -495,11 +495,9 @@ and values as the locals used by the expressions. The 'physics' example below il
 ;; note: the same effect could be achieved using the 'inline-def' technique described in the previous section.
 
 ;;;; we can now directly evaluate any expression in the function body:
-    (* r r) ; =&gt; 2.5E13
-
-          (&gt;= r earth-radius) ; =&gt; false
-
-          (Math/pow (/ r earth-radius) 3.0) ; =&gt; 0.48337835316173317</code></pre>
+(* r r) ; =&gt; 2.5E13
+(&gt;= r earth-radius) ; =&gt; false
+(Math/pow (/ r earth-radius) 3.0) ; =&gt; 0.48337835316173317</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -687,7 +685,7 @@ while addressing some of its perceived limitations.</p>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. At the time of writing (March 2018), <a href="https://github.com/clojure/tools.nrepl">nREPL</a> is the most popular toolchain for REPL-editor integration
+<a href="#_footnoteref_1">1</a>. At the time of writing (March 2018), <a href="https://nrepl.org">nREPL</a> is the most popular toolchain for REPL-editor integration
 </div>
 <div class="footnote" id="_footnotedef_2">
 <a href="#_footnoteref_2">2</a>. A similar phenomenon happens with the well-known technique of <a href="https://en.wikipedia.org/wiki/Software_testing">automated testing</a>: while testing can bring a lot of value to programmers, it requires extra care to write code that is 'testable'. Just like tests, the REPL should not be an afterthought when writing Clojure code.
@@ -699,7 +697,7 @@ while addressing some of its perceived limitations.</p>
 
 <div class="clja-prev-next-container">
   <a href="navigating_namespaces" class="clja-prev-link"><span class="clja-prevnext-link-icon">←</span>&nbsp;Navigating Namespaces</a>
-  <a href="annex_community_resources" class="clja-next-link">Annex: Community resources about the REPL&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
+  <a href="guidelines_for_repl_aided_development" class="clja-next-link">Guidelines for REPL-Aided Development&nbsp;<span class="clja-prevnext-link-icon">→</span></a>
 </div>
 
 <hr />

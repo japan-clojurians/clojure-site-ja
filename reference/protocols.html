@@ -82,8 +82,13 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_motivation">Motivation</a></li>
+<li><a href="#_motivation">Motivation</a>
+<ul class="sectlevel2">
 <li><a href="#_basics">Basics</a></li>
+<li><a href="#_extend_only_things_you_control">Extend only things you control</a></li>
+<li><a href="#_extend_via_metadata">Extend via metadata</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -155,11 +160,8 @@ Protocols were introduced in Clojure 1.2.
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_basics"><a class="anchor" href="#_basics"></a>Basics</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basics"><a class="anchor" href="#_basics"></a>Basics</h3>
 <div class="paragraph">
 <p>A protocol is a named set of named methods and their signatures, defined using <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol">defprotocol</a>:</p>
 </div>
@@ -328,6 +330,36 @@ Protocols were introduced in Clojure 1.2.
   Foo
    {:baz (fn ([x] ...) ([x y zs] ...))
     :bar (fn [x y] ...)})</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extend_only_things_you_control"><a class="anchor" href="#_extend_only_things_you_control"></a>Extend only things you control</h3>
+<div class="paragraph">
+<p>You should extend a protocol to a type only if you control the type, the protocol, or both. This is particularly important for the protocols included with Clojure itself. For more information see the <a href="https://groups.google.com/d/msg/clojure/vyX5-F3NiVg/Ti1apkxDFl0J">mailing list discussion</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extend_via_metadata"><a class="anchor" href="#_extend_via_metadata"></a>Extend via metadata</h3>
+<div class="paragraph">
+<p>As of Clojure 1.10, protocols can optionally elect to be extended via per-value metadata:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defprotocol Component
+  :extend-via-metadata true
+  (start [component]))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When :extend-via-metadata is true, values can extend protocols by adding metadata where keys are fully-qualified protocol function symbols and values are function implementations. Protocol implementations are checked first for direct definitions (defrecord, deftype, reify), then metadata definitions, then external extensions (extend, extend-type, extend-protocol).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def component (with-meta {:name "db"} {`start (constantly "started")}))
+(start component)
+;;=&gt; "started"</code></pre>
+</div>
 </div>
 </div>
 </div>

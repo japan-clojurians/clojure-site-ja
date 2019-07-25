@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - State of Clojure 2019 Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>State of Clojure 2019 Results</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the annual State of Clojure survey results! Every year we survey Clojure and ClojureScript developers to evaluate the state of the language and its users. Thank you to everyone that took the time to complete the survey and provide your input. This year, we had 2461 respondents. Some highlights:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Clojure is used by many <a href="#work">companies</a> for web development, commercial services, and enterprise apps in a broad set of domains including financial services, enterprise software, retail, advertising, health care, and more.</p>
+</li>
+<li>
+<p>Clojure is <a href="#strengths">valued</a> for its idiomatic support for functional programming, immutable data, interactive REPL, and ease of development.</p>
+</li>
+<li>
+<p>Clojure and its <a href="#community">community</a> are active and vibrant, as seen in the many thriving discussion forums, conferences, and user groups, with active involvement in community library development.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more details and the <a href="https://www.surveymonkey.com/results/SM-S9JVNXNQV/">full results</a>, see below.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="work"><a class="anchor" href="#work"></a>A Language for Work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the first Clojure survey in 2010, 27% of respondents reported using Clojure for work and 33% for serious hobby projects. This number has steadily grown over the years and we now see 66% using it at work and 54% using it for serious hobby projects.</p>
+</div>
+<div class="paragraph">
+<p>Clojure is being used in a wide variety of domains - web development (81%) and open source (48%) of course, but also building and delivering commercial services (31%) and enterprise apps (22%). This work occurs in a wide variety of industries - financial services, enterprise software, consumer software, retail, media/advertising, healthcare, education, and many more.</p>
+</div>
+<div class="paragraph">
+<p>For the last four years, the percentage of Clojure developers in 1-10 person companies has fallen, this year to 35% (compared to 44% 3 years ago). We saw increases in developers working at companies sized 1000+ and 11-100. We also saw the number of consumers of these Clojure projects as less "in team" and more "outside team" or "outside the organization".</p>
+</div>
+<div class="paragraph">
+<p>We added a new question this year to gauge the general experience level of Clojure developers. Almost half of Clojure users (49%) had 11 or more years of experience with 21% having 21 years or more. A recent <a href="https://snyk.io/blog/jvm-ecosystem-report-2018-processes-you/">JVM ecosystem survey</a> asked a similar question and for comparison saw 42% had 11 or more years of experience and only 3% had 21 or more years. Clojure developers tend to be more experienced on average than other JVM developers.</p>
+</div>
+<div class="paragraph">
+<p>Survey comments said:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Thanks to Clojure and ClojureScript I can make a living building and maintaining large systems and delivering complex solutions on time. Thank you!"</p>
+</li>
+<li>
+<p>"Clojure is thoughtfully designed and stable. It’s a dynamic, functional lisp that can actually be sold to the bosses. (A sentence I never thought I would write)."</p>
+</li>
+<li>
+<p>"There is no way my team could pull all the rabbits out of hats that we do working in any other language. The only thing I ever seriously worry about, about Clojure, is how to ensure I get to work in Clojure and with Clojurists again should my current gig come to an end."</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hundreds of <a href="xref/../../../../../community/companies">companies</a> and tens of thousands of Clojure developers are working in Clojure or ClojureScript every day, using it as the foundation of their business. The survey indicates that Clojure developers are increasingly using it more for work, at bigger companies, impacting ever larger groups of users.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="strengths"><a class="anchor" href="#strengths"></a>Strengths of Clojure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For years we have asked people what aspects of Clojure were most important to them. These answers are remarkably consistent and this year was no different. However it is good to reexamine these strengths to see why developers value Clojure. The big four that are always at the top of the list are: functional programming, immutability, the REPL, and ease of development. These traits are interrelated. Language support for immutable persistent data structures makes functional programming idiomatic and effective. A REPL on a live, growing system, with data loaded, is a great way for developers to try their new code in context as it is written, improving quality.</p>
+</div>
+<div class="paragraph">
+<p>Other important features include host compatibility / interop (allowing us to take full advantage of the underlying platform and its libraries, whether that&#8217;s the JVM or JavaScript), the community, runtime performance, expressive syntax, concurrency support, and a shared language across tiers.</p>
+</div>
+<div class="paragraph">
+<p>Some comments about the language:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Quality permeates Clojure. Language design, library design, interactive development, community architecture experience, all top notch."</p>
+</li>
+<li>
+<p>"Clojure/script is allowing me to create things that would be impossible in other languages."</p>
+</li>
+<li>
+<p>"Clojure is beautiful, functional and concise. It really rejuvenated my love for programming."</p>
+</li>
+<li>
+<p>"I really appreciate the well thought out design of Clojure. We feel that Clojure gives us distinct advantages while providing a language with minimum disruption."</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="community"><a class="anchor" href="#community"></a>Vibrant Community</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Clojure community is active, growing, and always helpful. Over the years, the primary communication mechanisms have changed along with the industry varying from IRC to the mailing lists to in recent years, Slack. We&#8217;ve been tracking this for a couple years now. Slack continues to be strong with 64% of respondents using it (note that this may be biased by where we advertised the survey!). The Clojure subreddit continued its strong rise to 55% use. ClojureTV on YouTube was a new answer this year but almost half are using it to watch Clojure videos. The official Clojure mailing lists had another drop this year as people shift away from "old school" mailing lists. And the original place where communication happened for Clojure is IRC which continued to fall out of use, now at only 7%.</p>
+</div>
+<div class="paragraph">
+<p>We also added a new question to gauge how users of Clojure interact with the ecosystem. 96% reported being happy users of the language and libraries, 65% were building services or products, 51% were advocating for Clojure in their organization. More than a quarter (28%) were active in helping new users (something very common to see on Slack, Reddit, or the mailing lists). And 25% reported creating or maintaining open source libraries, filing issues on libraries (17%), or providing pull requests for fixes (15%).</p>
+</div>
+<div class="paragraph">
+<p>Some quotes from users:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"It’s been great watching the ecosystem converge on excellence these past years, thanks so much for all the work and careful design!"</p>
+</li>
+<li>
+<p>"I love how the community continues to improve, and people generally are friendly."</p>
+</li>
+<li>
+<p>"Thanks for a great language, a steady hand at the wheel, and a passionate community!"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_data"><a class="anchor" href="#_the_data"></a>The Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;d like to dig into the full results, you can find the complete set of data from this and former years here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.surveymonkey.com/results/SM-S9JVNXNQV/">2019</a></p>
+</li>
+<li>
+<p><a href="https://www.surveymonkey.com/results/SM-9BC5FNJ68/">2018</a></p>
+</li>
+<li>
+<p><a href="https://www.surveymonkey.com/results/SM-7K6NXJY3/">2016</a></p>
+</li>
+<li>
+<p><a href="http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results">2015</a></p>
+</li>
+<li>
+<p><a href="http://blog.cognitect.com/blog/2014/10/20/results-of-2014-state-of-clojure-and-clojurescript-survey">2014</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2013/11/18/results-of-the-2013-state-of-clojure-clojurescript-survey/">2013</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2012/08/06/results-of-the-2012-state-of-clojure-survey/">2012</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2011/07/11/results-of-the-2011-state-of-clojure-survey/">2011</a></p>
+</li>
+<li>
+<p><a href="http://cemerick.com/2010/06/07/results-from-the-state-of-clojure-summer-2010-survey/">2010</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Thanks again for using Clojure and ClojureScript and participating in the survey!</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

@@ -88,10 +88,15 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>reducerは <a href="sequences">シーケンス</a>
-を使用した操作とは異なるアプローチで、標準的なClojureのコレクションに対する操作を提供する。シーケンス関数は一般的に単一のスレッドで、逐次的に中間の結果を作りながら遅延評価される。しかし、多くのシーケンス関数は概念的には並列に適用することが可能で、マシンのコア数に比例したコードの速度を実現できる。reducerの背景についての詳細は元の
-<a href="http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html">blog</a>
-<a href="http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html">posts</a> を参照。</p>
+<p>Reducers provide an alternative approach to using <a href="sequences">sequences</a>
+to manipulate standard Clojure collections. Sequence functions are typically
+applied lazily, in order, create intermediate results, and in a single
+thread. However, many sequence functions (like map and filter) could
+conceptually be applied in parallel, yielding code that will get faster
+automatically as machines get more cores. For more details on the rationale
+for reducers, see the original
+<a href="https://clojure.org/news/2012/05/08/reducers">blog</a>
+<a href="https://clojure.org/news/2012/05/15/anatomy-of-reducer">posts</a>.</p>
 </div>
 <div class="paragraph">
 <p><em>reducer</em> とは   <em>畳み込み可能なコレクション</em> (自分自身の畳み込み方を知っているコレクション) と <em>畳み込み関数</em>
@@ -170,7 +175,8 @@
 - これは複数回呼び出される。操作は並列に実行されうる。結果は順序を保持する。</p>
 </div>
 <div class="paragraph">
-<p>以下の関数は (シーケンス版と同様に) reducerをreduce、fold可能なコレクションを作成する:
+<p>The following functions (analogous to the sequence versions) create reducers
+from a reducible or foldable collection:
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map">r/map</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/mapcat">r/mapcat</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/filter">r/filter</a>
@@ -178,13 +184,15 @@
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten">r/flatten</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while">r/take-while</a>
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take">r/take</a>
-および
-<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/drop">r/drop</a>
-。 これらの関数は実際には元のコレクションを変換しない。積算した結果を得るには r/reduce か r/fold を使用する。出力を得るには
+and
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/drop">r/drop</a>.
+None of these functions actually transforms the source collection. To
+produce an accumulated result, you must use r/reduce or r/fold. To produce
+an output collection, use
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into">clojure.core/into</a>
-を使用してコレクションのタイプを選択するか、提供されている
+to choose the collection type or the provided
 <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat">r/foldcat</a>
-を使用してreduce可能,fold可能,seq可能、count可能なコレクションを得る。</p>
+to produce a collection that is reducible, foldable, seqable, and counted.</p>
 </div>
 </div>
 </div>

@@ -82,7 +82,14 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_リテラル">リテラル</a></li>
+<li><a href="#_リテラル">リテラル</a>
+<ul class="sectlevel2">
+<li><a href="#_numeric_types">Numeric types</a></li>
+<li><a href="#_character_types">Character types</a></li>
+<li><a href="#_symbols_and_idents">Symbols and idents</a></li>
+<li><a href="#_literal_collections">Literal collections</a></li>
+</ul>
+</li>
 <li><a href="#_評価">評価</a>
 <ul class="sectlevel2">
 <li><a href="#_伝統的な評価_java">伝統的な評価 (Java)</a></li>
@@ -111,38 +118,90 @@
 <h2 id="_リテラル"><a class="anchor" href="#_リテラル"></a>リテラル</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>以下はClojureで一般的なプリミティブのリテラル表現の例だ。</p>
+<p>Below are some examples of literal representations of common primitives in
+Clojure.  All of these literals are valid Clojure expressions.</p>
 </div>
 <div class="paragraph">
-<p><code>;</code> は行末までのコメントになる。時にはヘッダー行を示すために複数のセミコロンが使われることもある。</p>
+<p>The <code>;</code> creates a comment to the end of the line. Sometimes multiple
+semicolons are used to indicate header comment sections, but this is just a
+convention.</p>
 </div>
+<div class="sect2">
+<h3 id="_numeric_types"><a class="anchor" href="#_numeric_types"></a>Numeric types</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; 数値型
-42              ; Long - 64ビット整数 (-2^63から2^63-1まで)
-6.022e23        ; Double - 倍精度64ビット浮動小数点数
-42N             ; BigInt - 任意精度整数
-1.0M            ; BigDecimal - 任意精度固定小数点十進数
-22/7            ; Ratio (分数)
-
-;; 文字型
-"hello"         ; String (文字列)
-\e              ; Character (文字)
-
-;; その他の型
-nil             ; null値
-true            ; Boolean (false もある)
-#"[0-9]+"       ; Regular expression (正規表現)
-:alpha          ; Keyword (キーワード)
-:release/alpha  ; Keyword with namespace (名前空間付きキーワード)
-map             ; Symbol (シンボル)
-+               ; Symbol - ほとんどの句読点が使える
-clojure.core/+  ; Namespaced symbol (名前空間付きシンボル)</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">42        ; integer
+-1.5      ; floating point
+22/7      ; ratio</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>上記のリテラルはすべて有効なClojureの式だ。</p>
+<p>Integers are read as fixed precision 64-bit integers when they are in range
+and arbitrary precision otherwise. A trailing <code>N</code> can be used to force
+arbitrary precision. Clojure also supports the Java syntax for octal (prefix
+<code>0</code>), hexadecimal (prefix <code>0x</code>) and arbitrary radix (prefix with base then
+<code>r</code>) integers. Ratios are provided as their own type combining a numerator
+and denominator.</p>
 </div>
+<div class="paragraph">
+<p>Floating point values are read as double-precision 64-bit floats, or
+arbitrary precision with an <code>M</code> suffix. Exponential notation is also
+supported. The special symbolic values <code>##Inf</code>, <code>##-Inf</code>, and
+<code>##NaN</code> represent positive infinity, negative infinity, and "not a
+number" values respectively.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_character_types"><a class="anchor" href="#_character_types"></a>Character types</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">"hello"         ; string
+\e              ; character
+#"[0-9]+"       ; regular expression</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Strings are contained in double quotes and may span multiple
+lines. Individual characters are represented with a leading backslash. There
+are a few special named characters: <code>\newline</code> <code>\spec</code> <code>\tab</code>, etc. Unicode
+characters can be represented with <code>\uNNNN</code> or in octal with <code>\oNNN</code>.</p>
+</div>
+<div class="paragraph">
+<p>Literal regular expressions are strings with a leading <code>#</code>. These are
+compiled to java.util.regex.Pattern objects.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_symbols_and_idents"><a class="anchor" href="#_symbols_and_idents"></a>Symbols and idents</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">map             ; symbol
++               ; symbol - most punctuation allowed
+clojure.core/+  ; namespaced symbol
+nil             ; null value
+true false      ; booleans
+:alpha          ; keyword
+:release/alpha  ; keyword with namespace</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Symbols are composed of letters, numbers, and other punctutation and are
+used to refer to something else, like a function, value, namespace,
+etc. Symbols may optionally have a namespace, separated with a forward slash
+from the name.</p>
+</div>
+<div class="paragraph">
+<p>There are three special symbols that are read as different types - <code>nil</code> is
+the null value, and <code>true</code> and <code>false</code> are the boolean values.</p>
+</div>
+<div class="paragraph">
+<p>Symbols that start with a leading colon are called keywords. Keywords always
+evaluate to themselves and are frequently used as enumerated values or
+attribute names in Clojure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_literal_collections"><a class="anchor" href="#_literal_collections"></a>Literal collections</h3>
 <div class="paragraph">
 <p>Clojureにはまた、4つのコレクション型についてリテラルシンタックスがある:</p>
 </div>
@@ -156,6 +215,7 @@ clojure.core/+  ; Namespaced symbol (名前空間付きシンボル)</code></pre
 </div>
 <div class="paragraph">
 <p>これらについては後ほどもっと詳しく説明するので、今はこれら4つのデータ構造が複合データを作るのに使えることを知っていれば十分だ。</p>
+</div>
 </div>
 </div>
 </div>
@@ -266,7 +326,8 @@ x</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (1 2 3)
-ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn</code></pre>
+Execution error (ClassCastException) at user/eval156 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -339,8 +400,10 @@ user=&gt; (+ *1 *2)
 </div>
 </div>
 <div class="paragraph">
-<p>加えて、 <code>clojure.repl</code>
-というClojure標準ライブラリに含まれた名前空間があり、便利な関数をいくつか提供している。このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:</p>
+<p>In addition, there is a namespace <code>clojure.repl</code> that is included in the
+standard Clojure library that provides a number of helpful functions. To
+load that library and make its functions available in our current context,
+call:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -468,8 +531,10 @@ thread-stopper</code></pre>
 <p>このワークショップを進めるにあたって、使っている関数のdocstringやソースコードを気軽に調べてみてほしい。Clojureライブラリ自体の実装を探索することは、言語とその使われ方についてさらに学ぶための素晴らしい方法だ。</p>
 </div>
 <div class="paragraph">
-<p>Clojureを学ぶ際に[Clojure
-Cheatsheet](<a href="https://clojure.org/api/cheatsheet)を開いておくのもまた素晴らしいアイディアだ。チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。" class="bare">https://clojure.org/api/cheatsheet)を開いておくのもまた素晴らしいアイディアだ。チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。</a></p>
+<p>It is also an excellent idea to keep a copy of the
+<a href="xref/../../../api/cheatsheet">Clojure Cheatsheet</a> open while you are
+learning Clojure. The cheatsheet categorizes the functions available in the
+standard library and is an invaluable reference.</p>
 </div>
 <div class="paragraph">
 <p>それではClojureの基本について考えてみよう。</p>
@@ -516,45 +581,30 @@ Cheatsheet](<a href="https://clojure.org/api/cheatsheet)を開いておくのも
 </div>
 <table class="tableblock frame-all grid-all stretch table">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">人間が読める</th>
+<th class="tableblock halign-left valign-top">機械が読める</th>
 <th class="tableblock halign-left valign-top"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">人間が読める</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">機械が読める</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">改行あり</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">println</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">prn</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">改行なし</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">print</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pr</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -574,8 +624,9 @@ What is this: 3</code></pre>
 <p>println関数には副作用(印字)があり、結果としてnilを返す。</p>
 </div>
 <div class="paragraph">
-<p>上の"What is
-this:"は囲っているクォートが印字されず、リーダーが同じように再び読み取ることができる文字列ではないことに注意しよう。その目的では、機械が読める(machine-readable)バージョンのprnを使おう:</p>
+<p>Note that "What is this:" above did not print the surrounding quotes and is
+not a string that the Reader could read again in the same way. For that
+purpose, use the machine-readable version prn:</p>
 </div>
 <div class="listingblock">
 <div class="content">

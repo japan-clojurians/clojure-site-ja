@@ -80,7 +80,7 @@
 <p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>Note: This document describes Clojure 1.7 and Java 6, but applies to most other versions as well.</em></p>
+<p><em>Note: This document describes Clojure 1.10 and Java 8, but applies to most other versions as well.</em></p>
 </div>
 </div>
 </div>
@@ -105,8 +105,7 @@ of values in a desired sorted order, e.g a
 <p>The default comparator <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare">compare</a>
 works well for sorting numbers in increasing order, or strings, keywords, or symbols,
 in <a href="https://en.wikipedia.org/wiki/Lexicographical_order">lexicographic</a> (i.e dictionary) order,
-and a few other cases. See <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare">compare</a>
-for examples and more details.</p>
+and a few other cases. See below for examples and more details.</p>
 </div>
 <div class="paragraph">
 <p>If <code>compare</code> does not do what you want, you must provide your own comparator that does. Each of the
@@ -147,6 +146,11 @@ between the "comes after" or "equals" cases.</p>
 <p>Compare equal-length Clojure vectors containing "sort keys" in order to do a multi-field comparison
 between values.</p>
 </li>
+<li>
+<p>Remove or replace occurrences of "Not a Number" (<code>##NaN</code>)
+from your data before sorting a collection, and avoid using them as
+parts of keys in a sorted collection.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -185,27 +189,112 @@ at most one of those two values to appear in the sorted collection.</p>
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here we briefly describe the default sorting order provided by the function <code>compare</code>.
+<p>Here we describe the default sorting order provided by the function <code>compare</code>.
 After that we give examples of other comparators, with some guidelines to follow and
 mistakes to avoid when writing your own.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojures_default_comparator"><a class="anchor" href="#_clojures_default_comparator"></a>Clojure&#8217;s default comparator</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If you do not specify your own comparator, sorting is done by a built-in function <code>compare</code>.
-<code>compare</code> works for many types of values, ordering them in one particular way: increasing
-numeric order for numbers; <a href="https://en.wikipedia.org/wiki/Lexicographical_order">lexicographic order</a>
-(aka dictionary order) for strings, symbols, and keywords; shortest-to-longest order by Clojure
-vectors, with lexicographic ordering among equal length vectors. All Java types implement
-the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html">Comparable</a>
-interface such as characters, booleans, File, URI, and UUID are compared via their
-<code>compareTo</code> methods. Finally, <code>nil</code> can be compared to all values described earlier, and
-is considered less than everything else.
-See <a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare">compare</a>
-for examples and more details.</p>
+<code>compare</code> works for many types of values, ordering them in one particular way:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>numbers are sorted in increasing numeric order, returning 0 if two
+numbers are numerically equal by <code>==</code>, even if <code>=</code> returns false.
+Exception: Even though <code>(== ##NaN x)</code> is false for all
+numbers <em>x</em>, even <code>##NaN</code>, <code>(compare ##NaN x)</code> is 0 for all
+numbers <em>x</em>, including <code>##NaN</code>.</p>
+</li>
+<li>
+<p>strings are sorted in
+<a href="http://en.wikipedia.org/wiki/Lexicographical_order">lexicographic
+order</a> (aka dictionary order) by their representation as sequences
+of UTF-16 code units.  This is alphabetical order (case-sensitive)
+for strings restricted to the ASCII subset.</p>
+</li>
+<li>
+<p>symbols are sorted first by their namespace, if they have one, and
+if they have the same namespace, then by their name.  Both the
+namespace and names are compared as their string representations
+would be, lexicographically.  All symbols that do not have a
+namespace are sorted before any symbol with a namespace.</p>
+</li>
+<li>
+<p>keywords are sorted the same way as symbols, but an exception is
+thrown if you attempt to compare a keyword to a symbol.</p>
+</li>
+<li>
+<p>vectors are sorted from fewest elements to most elements, with
+<a href="http://en.wikipedia.org/wiki/Lexicographical_order">lexicographic
+ordering</a> among equal length vectors.</p>
+</li>
+<li>
+<p>Clojure refs are sorted in the order that they were created.</p>
+</li>
+<li>
+<p>All Java types implementing the
+<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a>
+interface such as characters, booleans, File, URI, and UUID are
+compared via their <code>compareTo</code> methods.</p>
+</li>
+<li>
+<p><code>nil</code>: can be compared to all values above, and is considered less
+than anything else.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>If this built-in sorting order does not meet your needs, or does not work at all for values
-of type you wish to sort, you can write your own comparator and use that instead.
-There are a few rules to follow when writing a comparator that works correctly.</p>
+<p><code>compare</code> throws an exception if given two values whose types are "too
+different", e.g. it can compare integers, longs, and doubles to each
+other, but not strings to keywords or keywords to symbols.  It cannot
+compare lists, sequences, sets, or maps.</p>
+</div>
+<div class="paragraph">
+<p>The examples below with <code>sort</code>, <code>sorted-set</code>, and <code>sorted-map</code> all use
+the default comparator.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (sort [22/7 2.71828 ##-Inf 1 55 3N])
+(##-Inf 1 2.71828 3N 22/7 55)
+
+user&gt; (sorted-set "aardvark" "boo" "a" "Antelope" "bar")
+#{"Antelope" "a" "aardvark" "bar" "boo"}
+
+user&gt; (sorted-set 'user/foo 'clojure.core/pprint 'bar 'clojure.core/apply 'user/zz)
+#{bar clojure.core/apply clojure.core/pprint user/foo user/zz}
+
+user&gt; (sorted-map :map-key 10, :amp [3 2 1], :blammo "kaboom")
+{:amp [3 2 1], :blammo "kaboom", :map-key 10}
+
+user&gt; (sort [[-8 2 5] [-5 -1 20] [1 2] [1 -5] [10000]])
+([10000] [1 -5] [1 2] [-8 2 5] [-5 -1 20])
+
+user&gt; (import '(java.util UUID))
+java.util.UUID
+
+user&gt; (sort [(UUID. 0xa 0) (UUID. 5 0x11) (UUID. 5 0xb)])
+(#uuid "00000000-0000-0005-0000-00000000000b"
+ #uuid "00000000-0000-0005-0000-000000000011"
+ #uuid "00000000-0000-000a-0000-000000000000")
+
+user&gt; (sort [:ns2/kw1 :ns2/kw2 :ns1/kw2 :kw2 nil])
+(nil :kw2 :ns1/kw2 :ns2/kw1 :ns2/kw2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An exception will be thrown if you call <code>compare</code> with different
+types.  Any numeric types above can be compared to each other, but not
+to a non-numeric type.  An exception will also be thrown if you use
+<code>compare</code> on a list, set, map, or any other type not mentioned above.
+You must implement your own comparator if you wish to sort such
+values.</p>
 </div>
 </div>
 </div>
@@ -217,7 +306,7 @@ There are a few rules to follow when writing a comparator that works correctly.<
 </div>
 <div class="paragraph">
 <p>A perfect example of this would be sorting Unicode strings in different languages in orders
-specific to different locales. The Java <a href="http://docs.oracle.com/javase/6/docs/api/java/text/Collator.html">Collator</a>
+specific to different locales. The Java <a href="https://docs.oracle.com/javase/8/docs/api/java/text/Collator.html">Collator</a>
 class and <a href="http://site.icu-project.org/home#TOC-What-is-ICU-">ICU</a> (International Components for Unicode) provide
 libraries for this.</p>
 </div>
@@ -379,7 +468,7 @@ false</code></pre>
 </div>
 <div class="paragraph">
 <p>See Clojure source file
-<a href="https://github.com/clojure/clojure/blob/clojure-1.7.0/src/jvm/clojure/lang/AFunction.java#L46">src/jvm/clojure/lang/AFunction.java</a>
+<a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50">src/jvm/clojure/lang/AFunction.java</a>
 method <code>compare</code> if you want all the details.</p>
 </div>
 </div>
@@ -417,6 +506,55 @@ As explained later, it should not behave like <code>&lt;=</code> for numbers
 <div class="sect1">
 <h2 id="_mistakes_to_avoid"><a class="anchor" href="#_mistakes_to_avoid"></a>Mistakes to avoid</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_be_wary_of_not_a_number_values_as_compared_values_in_sorted_collections"><a class="anchor" href="#_be_wary_of_not_a_number_values_as_compared_values_in_sorted_collections"></a>Be wary of "Not a Number" values as compared values in sorted collections</h3>
+<div class="paragraph">
+<p>Clojure&#8217;s default comparator <code>compare</code> treats "Not a Number"
+(<code>##NaN</code>) values as equal to all other numbers.  If you call
+<a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort">sort</a>
+on sequences of numbers that contain occurrences of <code>##NaN</code>, it
+might throw an exception.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (sort [##NaN 5 13 ##NaN 3 7 12 ##NaN 8 4 2 20 6 9 ##NaN 50 83 19 -7 0 18 26 30 42 ##NaN 57 90 -8 -12 43 87 38])
+Execution error (IllegalArgumentException) at java.util.TimSort/mergeHi (TimSort.java:899).
+Comparison method violates its general contract!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Even if it does not throw an exception, it is likely that the returned
+sequence will not be sorted.  This is because <code>compare</code> does not put
+<code>##NaN</code> into a total order with other numbers as a comparator
+should, in order for <code>sort</code> to work correctly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (sort [##NaN 10 5 13 ##NaN 3 7 12 ##NaN 8 4 2 20 6 9 ##NaN 50 83 19 -7])
+(##NaN -7 2 3 4 5 6 7 8 10 12 13 ##NaN ##NaN 9 19 20 ##NaN 50 83)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because <code>##NaN</code> is not equal to any other value, you cannot use
+code like this to remove values from a sequence of numbers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (remove #(= % ##NaN) [9 3 ##NaN 4])
+(9 3 ##NaN 4)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may use the Java method <code>Double/isNaN</code> to indicate whether a value
+is <code>##NaN</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user&gt; (remove #(Double/isNaN %) [9 3 ##NaN 4])
+(9 3 4)</code></pre>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_comparators_for_sorted_sets_and_maps_are_easy_to_get_wrong"><a class="anchor" href="#_comparators_for_sorted_sets_and_maps_are_easy_to_get_wrong"></a>Comparators for sorted sets and maps are easy to get wrong</h3>
 <div class="paragraph">
@@ -480,7 +618,7 @@ nil</code></pre>
 <div class="paragraph">
 <p>The problem here is that <code>by-2nd-&lt;=</code> gives inconsistent answers. If you ask it whether <code>["c" 1]</code> comes before <code>["b" 1]</code>,
 it returns true (which Clojure&#8217;s boolean-to-int comparator conversion turns into -1).
-f you ask it whether <code>["b" 1]</code> comes before <code>["c" 1]</code>, again it returns true (again converted into -1 by Clojure).
+If you ask it whether <code>["b" 1]</code> comes before <code>["c" 1]</code>, again it returns true (again converted into -1 by Clojure).
 One cannot reasonably expect an implementation of a sorted data structure to provide any kind of guarantees on
 its behavior if you give it an inconsistent comparator.</p>
 </div>
@@ -527,9 +665,9 @@ It is less error-prone to use explicit conditional checks and return -1, 0, or 1
 <div class="paragraph">
 <p>Why? Java comparators must return a 32-bit <em>int</em> type, so when a Clojure function is used as a comparator
 and it returns any type of number, that number is converted to an <em>int</em> behind the scenes using the Java method
-<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Number.html#intValue%28%29">intValue</a>.
+<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html#intValue--">intValue</a>.
 See Clojure source file
-<a href="https://github.com/clojure/clojure/blob/clojure-1.7.0/src/jvm/clojure/lang/AFunction.java#L46">src/jvm/clojure/lang/AFunction.java</a>
+<a href="https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50">src/jvm/clojure/lang/AFunction.java</a>
 method <code>compare</code> if you want the details.</p>
 </div>
 <div class="paragraph">
@@ -632,7 +770,8 @@ for <code>compare</code> to work on, and those vectors have the same second elem
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;; compare throws exception if you try to compare a string and a
 ;; keyword
 user&gt; (sort by-number-then-whatever [["a" 2] ["c" 3] [:b 2]])
-ClassCastException java.lang.String cannot be cast to clojure.lang.Keyword  clojure.lang.Keyword.compareTo (Keyword.java:109)</code></pre>
+Execution error (ClassCastException) at user/by-number-then-whatever (REPL:2).
+class java.lang.String cannot be cast to class clojure.lang.Keyword</code></pre>
 </div>
 </div>
 <div class="paragraph">

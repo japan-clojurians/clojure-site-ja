@@ -426,7 +426,7 @@
 <div class="sect2">
 <h3 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h3>
 <div class="paragraph">
-<p>Dependencies are declared in deps.edn with a top level key <code>:deps</code> - a map from library to coordinate. Libraries are symbols of the form &lt;groupID&gt;/&lt;artifactId&gt; or simply &lt;id&gt; if the group and artifact ID are the same.</p>
+<p>Dependencies are declared in deps.edn with a top level key <code>:deps</code> - a map from library to coordinate. Libraries are symbols of the form &lt;groupID&gt;/&lt;artifactId&gt; or simply &lt;id&gt; if the group and artifact ID are the same. To indicate a classifier, use &lt;groupId&gt;/&lt;artifactId&gt;$&lt;classifier&gt;.</p>
 </div>
 <div class="paragraph">
 <p>Coordinates can take several forms depending on the coordinate type:</p>
@@ -438,7 +438,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Other optional keys: <code>:classifier</code>, <code>:extension</code>, <code>:exclusions</code></p>
+<p>Other optional keys: <code>:extension</code>, <code>:exclusions</code></p>
+</li>
+<li>
+<p>Note: <code>:classifier</code> is no longer supported - add to lib name as specified above</p>
 </li>
 </ul>
 </div>
@@ -455,10 +458,7 @@
 <p>Specifies the project manifest type</p>
 </li>
 <li>
-<p>Default is to auto-detect the project type (such as <code>:deps</code>, <code>:lein</code>, <code>:pom</code>)</p>
-</li>
-<li>
-<p>Currently only <code>:deps</code> is supported</p>
+<p>Default is to auto-detect the project type (currently either <code>:deps</code> or <code>:pom</code>)</p>
 </li>
 </ul>
 </div>
@@ -468,13 +468,20 @@
 </li>
 <li>
 <p>Local jar: <code>{:local/root "/path/to/file.jar"}</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the jar has been packaged with a pom.xml file, the pom will be read and used to find transitive deps</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Git coordinate: <code>{:git/url "https://github.com/user/project.git", :sha "sha", :tag "tag"}</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>:git/url</code> can be one of the following:</p>
+<p>Required key <code>:git/url</code> can be one of the following:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -487,10 +494,23 @@
 </div>
 </li>
 <li>
-<p>The <code>:sha</code> attribute should indicate the full commit sha</p>
+<p>Required key <code>:sha</code> should indicate the full commit sha</p>
 </li>
 <li>
-<p>The <code>:tag</code> attribute is optional but can be used to indicate the semantics of the sha</p>
+<p>Optional key <code>:tag</code> is used only to indicate the semantics of the sha</p>
+</li>
+<li>
+<p>Optional key <code>:deps/root</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Specifies the relative path within the root to search for the manifest file</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Optional key <code>:deps/manifest</code> - same as in <code>:local</code> deps</p>
 </li>
 </ul>
 </div>
@@ -684,7 +704,43 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_maven_private_s3_repos"><a class="anchor" href="#_maven_private_s3_repos"></a>Maven private S3 repos</h4>
+<h4 id="_maven_authenticated_repos"><a class="anchor" href="#_maven_authenticated_repos"></a>Maven authenticated repos</h4>
+<div class="paragraph">
+<p>For Maven deps in authenticated repositories, existing Maven infrastructure is used to convey credentials.</p>
+</div>
+<div class="paragraph">
+<p>In your ~/.m2/settings.xml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;servers&gt;
+  ...
+  &lt;server&gt;
+    &lt;id&gt;my-auth-repo&lt;/id&gt;
+    &lt;username&gt;zango&lt;/username&gt;
+    &lt;password&gt;123&lt;/password&gt;
+  &lt;/server&gt;
+  ...
+&lt;/servers&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then in your deps.edn include a repo with a name matching the server id (here <code>my-auth-repo</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:deps
+ {authenticated/dep {:mvn/version "1.2.3"}}
+ :mvn/repos
+ {"my-auth-repo" {:url "https://my.auth.com/repo"}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then just refer to your dependencies as usual in the <code>:deps</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maven_s3_repos"><a class="anchor" href="#_maven_s3_repos"></a>Maven S3 repos</h4>
 <div class="paragraph">
 <p>The tools also provide support for connecting to private S3 Maven repositories (thanks to the <a href="https://github.com/s3-wagon-private/s3-wagon-private">s3-wagon-private</a> and <a href="https://github.com/spring-projects/aws-maven">aws-maven</a> projects).</p>
 </div>
@@ -700,7 +756,26 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Specify your AWS S3 credentials using one of these mechanisms:</p>
+<p>AWS credentials can be set in the ~/.m2/settings.xml on a per-server basis. The repository name in deps.edn must match the server id in settings.xml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;servers&gt;
+  ...
+  &lt;server&gt;
+    &lt;id&gt;my-private-repo&lt;/id&gt;
+    &lt;username&gt;AWS_ACCESS_KEY_HERE&lt;/username&gt;
+    &lt;password&gt;AWS_SECRET_ACCESS_KEY_HERE&lt;/password&gt;
+  &lt;/server&gt;
+  ...
+&lt;/servers&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to specify your AWS credentials using the AWS credential chain. This is NOT RECOMMENDED as the same AWS credentials will be used for all AWS repositories (unlike settings.xml, which lets you set these on a per-repository basis).</p>
+</div>
+<div class="paragraph">
+<p>AWS S3 credentials can be set in the environment using one of these mechanisms:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -720,6 +795,27 @@
 </div>
 <div class="paragraph">
 <p>For more information, most of the advice in <a href="http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html">this AWS document</a> describes how credentials are located. Note however that the Java system properties options will NOT work with the command line tools (but would work if using the tools.deps.alpha library directly).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maven_proxies"><a class="anchor" href="#_maven_proxies"></a>Maven proxies</h4>
+<div class="paragraph">
+<p>In environments where the internet is accessed via a proxy, existing Maven configuration in <code>~/.m2/settings.xml</code> is used to set up the proxy connection:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;proxies&gt;
+  &lt;proxy&gt;
+    &lt;id&gt;my-proxy&lt;/id&gt;
+    &lt;host&gt;proxy.my.org&lt;/host&gt;
+    &lt;port&gt;3128&lt;/port&gt;
+    &lt;nonProxyHosts&gt;localhost|*.my.org&lt;/nonProxyHosts&gt;
+  &lt;/proxy&gt;
+&lt;/proxies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Refer to the Maven <a href="https://maven.apache.org/guides/mini/guide-proxies.html">Guide to using proxies</a> for further details.</p>
 </div>
 </div>
 <div class="sect3">

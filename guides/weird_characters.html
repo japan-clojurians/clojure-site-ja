@@ -91,6 +91,7 @@
 <li><a href="#_regular_expression"><code>#"&#8230;&#8203;"</code> - Regular Expression</a></li>
 <li><a href="#_anonymous_function"><code>#(&#8230;&#8203;)</code> - Anonymous function</a></li>
 <li><a href="#_var_quote"><code>#'</code> - Var quote</a></li>
+<li><a href="#_symbolic_values"><code>##</code> - Symbolic values</a></li>
 <li><a href="#tagged_literals"><code>#inst</code>, <code>#uuid</code>, and <code>#js</code> etc. - tagged literals</a></li>
 <li><a href="#_n_anonymous_function_arguments"><code>%</code>, <code>%n</code>, <code>%&amp;</code> - Anonymous function arguments</a></li>
 <li><a href="#_deref"><code>@</code> - Deref</a></li>
@@ -237,8 +238,8 @@ user=&gt; (hash-set 1 2 3 4)
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; #{1 2 3 4 1}
-
-IllegalArgumentException Duplicate key: 1  clojure.lang.PersistentHashSet.createWithCheck (PersistentHashSet.java:68)</code></pre>
+Syntax error reading source at (REPL:83:13).
+Duplicate key: 1</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -401,6 +402,25 @@ See the use of <code>meta</code> in the metadata (<a href="xref/../weird_charact
 <p><a href="xref/../../reference/special_forms#var">Clojure Official Documentation: Special Forms</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_symbolic_values"><a class="anchor" href="#_symbolic_values"></a><code>##</code> - Symbolic values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure can read and print the symbolic values <code>##Inf</code>,
+<code>##-Inf</code>, and <code>##NaN</code>.  These are also available in edn.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (/ 1.0 0.0)
+##Inf
+user=&gt; (/ -1.0 0.0)
+##-Inf
+user=&gt; (Math/sqrt -1.0)
+##NaN</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -625,9 +645,12 @@ The reader expands <code>'</code> into a call to the <code>quote</code> special 
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (1 3 4) ; fails as it tries to invoke 1 as a function
 
-ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval925 (NO_SOURCE_FILE:1)
+Execution error (ClassCastException) at myproject.person-names/eval230 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn
+
 user=&gt; '(1 3 4) ; quote
 (1 3 4)
+
 user=&gt; (quote (1 2 3)) ; using the longer quote method
 (1 2 3)
 user=&gt;</code></pre>
@@ -758,28 +781,12 @@ you could use <code>::my-function</code> to refer to the fully qualified name.</
 <div class="sectionbody">
 <div class="paragraph">
 <p>Namespace map syntax was added in Clojure 1.9 and is used to specify a default
-namespace context for keys in a map, where those keywords (or symbols) share a
+namespace context when keys or symbols in a map where they share a
 common namespace.</p>
 </div>
 <div class="paragraph">
-<p><code>#::</code> can be used to auto-resolve the namespace of keyword or symbol keys
-in a map using the current namespace.</p>
-</div>
-<div class="paragraph">
-<p>These two examples are equivalent:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (keys {:user/a 1, :user/b 2})
-(:user/a :user/b)
-user=&gt; (keys #::{:a 1, :b 2})
-(:user/a :user/b)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Similar to <a href="xref/../weird_characters#autoresolved_keys">autoresolved keywords</a>,
-you can also specify an alias in the namespace map prefix with
-<code>#:ns</code> prefix, where <em>ns</em> is the name of a namespace and the prefix
+<p>The <code>#:ns</code> syntax specifies a fully-qualified namespace map prefix n alias
+in the namespace map prefix with, where <em>ns</em> is the name of a namespace and the prefix
 precedes the opening brace <code>{</code> of the map.</p>
 </div>
 <div class="paragraph">
@@ -802,6 +809,53 @@ precedes the opening brace <code>{</code> of the map.</p>
  :person/last "Solo"
  :person/ship {:ship/name "Millennium Falcon"
                :ship/model "YT-1300f light freighter"}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that these maps represent the identical object - these are just alternate syntaxes.</p>
+</div>
+<div class="paragraph">
+<p><code>#::</code> can be used to auto-resolve the namespace of keyword or symbol keys
+in a map using the current namespace.</p>
+</div>
+<div class="paragraph">
+<p>These two examples are equivalent:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (keys {:user/a 1, :user/b 2})
+(:user/a :user/b)
+user=&gt; (keys #::{:a 1, :b 2})
+(:user/a :user/b)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Similar to <a href="xref/../weird_characters#autoresolved_keys">autoresolved keywords</a>,
+you can also use <code>#::alias</code> to auto-resolve with a namespace alias defined in
+the <code>ns</code> form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(ns rebel.core
+  (:require
+    [rebel.person :as p]
+    [rebel.ship   :as s] ))
+
+#::p{:first "Han"
+     :last "Solo"
+     :ship #::s{:name "Millennium Falcon"
+                :model "YT-1300f light freighter"}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is read the same as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:rebel.person/first "Han"
+ :rebel.person/last "Solo"
+ :rebel.person/ship {:rebel.ship/name "Millennium Falcon"
+                     :rebel.ship/model "YT-1300f light freighter"}}</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -911,7 +965,8 @@ evaluation) but has some additional effects.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (1 2 3)
-ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval832 (NO_SOURCE_FILE:1)
+Execution error (ClassCastException) at myproject.person-names/eval232 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn
 user=&gt; `(1 2 3)
 (1 2 3)</code></pre>
 </div>
@@ -962,7 +1017,7 @@ quote creates a list, but does not evaluate it. That list is actually code.</p>
 <p><a href="http://aphyr.com/posts/305-clojure-from-the-ground-up-macros">Clojure from the ground up: macros</a></p>
 </li>
 <li>
-<p><a href="xref/../../macros">Clojure Official Documentation</a></p>
+<p><a href="xref/../../reference/macros">Clojure Official Documentation</a></p>
 </li>
 </ul>
 </div>
@@ -1061,7 +1116,15 @@ userspace. A regular <code>let</code> will fail in a macro definition:</p>
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (defmacro m [] `(let [x 1] x))
 #'user/m
 user=&gt; (m)
-CompilerException java.lang.RuntimeException: Can't let qualified name: user/x, compiling:(NO_SOURCE_PATH:1)</code></pre>
+Syntax error macroexpanding clojure.core/let at (REPL:1:1).
+myproject.person-names/x - failed: simple-symbol? at: [:bindings :form :local-symbol]
+  spec: :clojure.core.specs.alpha/local-name
+myproject.person-names/x - failed: vector? at: [:bindings :form :seq-destructure]
+  spec: :clojure.core.specs.alpha/seq-binding-form
+myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]
+  spec: :clojure.core.specs.alpha/map-bindings
+myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]
+  spec: :clojure.core.specs.alpha/map-special-binding</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1096,7 +1159,7 @@ user=&gt;</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">ClojureDocs - gensyms</a></p>
+<p><a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">ClojureDocs - gensym</a></p>
 </li>
 </ul>
 </div>
@@ -1121,7 +1184,7 @@ to share common code. The reader conditional behaves similarly to a traditional
 <div class="ulist">
 <ul>
 <li>
-<p><a href="xref/../reader_conditionals">Reader conditonals</a></p>
+<p><a href="xref/../reader_conditionals">Reader conditionals</a></p>
 </li>
 </ul>
 </div>
@@ -1407,16 +1470,7 @@ readability:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (read-string "#=(+ 3 4)")
-;;=&gt; 7
-#=123
-;;=&gt; 123
-
-#="foo"
-;;=&gt; foo
-
-(def foo 1)
-#='foo
-;;=&gt; 1</code></pre>
+;;=&gt; 7</code></pre>
 </div>
 </div>
 <div class="paragraph">

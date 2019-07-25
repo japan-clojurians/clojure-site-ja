@@ -111,93 +111,54 @@ Miscellaneous:<br>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch table">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Example expression</th>
+<th class="tableblock halign-left valign-top">Return value</th>
+<th class="tableblock halign-left valign-top"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example expression</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return value</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="special_forms#fn#">fn</a></p></td>
-</tr>
-<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="special_forms#fn">fn</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map (fn [x] (+ 2 x)) [1 2 3])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(3 4 5)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#() <a href="reader">reader</a> macro</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map #(+ 2 %) [1 2 3])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(3 4 5)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial">partial</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map (partial + 2) [1 2 3])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(3 4 5)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp">comp</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map (comp - *) [2 4 6] [1 2 3])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(-2 -8 -18)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement">complement</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map (complement zero?) [3 2 1 0])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(true true true false)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly">constantly</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(map (constantly 9) [1 2 3])</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(9 9 9)</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>

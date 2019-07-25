@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - Reducers - A Library and Model for Collection Processing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../../../css/normalize.css" rel="stylesheet">
+    <link href="../../../../css/webflow.css" rel="stylesheet">
+    <link href="../../../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../../../about/rationale">概要</a></li>
+            <li><a href="../../../../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../../../../api/api">API</a></li>
+              <li><a href="../../../../community/downloads">リリース</a></li> -->
+              <li><a href="../../../../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../../../../community/resources">コミュニティ</a></li>
+              <li><a href="../../../../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+<h1>Reducers - A Library and Model for Collection Processing</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m happy to have <a href="https://github.com/clojure/clojure/commit/89e5dce0fdfec4bc09fa956512af08d8b14004f6">pushed</a> today the beginnings of a new Clojure library for higher-order manipulation of collections, based upon <em>reduce</em> and <em>fold</em>. Of course, Clojure already has Lisp&#8217;s <em>reduce</em>, which corresponds to the traditional <em>foldl</em> of functional programming. <em>reduce</em> is based upon sequences, as are many of the core functions of Clojure, like <em>map</em>, <em>filter</em> etc. So, what could be better? It&#8217;s a long story, so I&#8217;ll give you the ending first:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There is a new namespace: clojure.core.reducers</p>
+</li>
+<li>
+<p>It contains new versions of <code>map</code>, <code>filter</code> etc based upon transforming reducing functions - reducers</p>
+</li>
+<li>
+<p>It contains a new function, <code>fold</code>, which is a parallel reduce+combine</p>
+</li>
+<li>
+<p><code>fold</code> uses fork/join when working with (the existing!) Clojure vectors and maps</p>
+</li>
+<li>
+<p>Your new parallel code has exactly the same shape as your existing seq-based code</p>
+</li>
+<li>
+<p>The reducers are composable</p>
+</li>
+<li>
+<p>Reducer implementations are primarily functional - no iterators</p>
+</li>
+<li>
+<p>The model uses regular data structures, not 'parallel collections' or other OO malarkey</p>
+</li>
+<li>
+<p>It&#8217;s fast, and can become faster still</p>
+</li>
+<li>
+<p>This is work-in-progress</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basics"><a class="anchor" href="#_basics"></a>Basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The story starts best at the bottom.</p>
+</div>
+<div class="paragraph">
+<p>Clojure and other functional languages have a function called <em>map</em> that takes a function and a collection/list.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What does it mean to map a function on a collection?</p>
+</li>
+<li>
+<p>What are the common signatures?</p>
+</li>
+<li>
+<p>Do they <a href="http://www.infoq.com/presentations/Simple-Made-Easy">complect</a> what to do with how to do it?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The classic recursive functional definition of <em>map</em> is to apply <em>f</em> to the first thing in the collection, then <em>cons</em> the result onto the result of mapping <em>f</em> on the <em>rest</em> of the collection. This definition includes plenty of 'how':</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How: mechanism - recursion</p>
+</li>
+<li>
+<p>How: order - sequentially</p>
+</li>
+<li>
+<p>How: laziness - (often) lazily</p>
+</li>
+<li>
+<p>How: representation - making a list/seq, or other concrete collection</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Newer OO frameworks will often remove some of these problems by having map be a function of <code>fn * Coll &#8594; Coll</code> for any type of Coll, removing the sequentiality but also losing the laziness, and they still specify a concrete collection result.</p>
+</div>
+<div class="paragraph">
+<p>Semantically, and minimally, <em>map</em> means "apply-to-all" e.g. <code>(map inc coll)</code> means give me a (logical) collection where every item is one greater than it was in <em>coll</em>. But, <em>map</em> doesn&#8217;t know how to navigate around every collection - the use of seqs/lists/iterators/streams etc forces a shared known representation. Nor does <code>inc</code> (or any function) know how to apply itself to every collection representation, else we could just say <code>(inc coll)</code>.</p>
+</div>
+<div class="paragraph">
+<p>The only thing that knows how to apply a function to a collection is the collection itself.</p>
+</div>
+<div class="paragraph">
+<p>What is the generic gateway to a collection applying things to itself? In Clojure, it is (internal) <em>reduce</em>.</p>
+</div>
+<div class="paragraph">
+<p>We now have a new super-generalized and minimal abstraction for collections - a collection is some set of things that, when given a function to apply to its contents, can do so and give you the result, i.e. <em>a collection is (at minimum) <strong>reducible</strong></em>. In other words, you can call <em>reduce</em> on it.</p>
+</div>
+<div class="paragraph">
+<p>Thus, <code>core.reducers/map</code> is a function of <code>fn * reducible &#8594; reducible</code>. (Whereas <code>core/map</code> is a function of <code>fn * seqable &#8594; seqable</code>.)</p>
+</div>
+<div class="paragraph">
+<p>Now, how? If someone is going to ask the result of <code>(map inc coll)</code> to reduce itself with some function <em>f</em>, <em>map</em> must ultimately ask <em>coll</em> to do the job. Rather than pass <em>coll f</em>, <em>map</em> passes <em>coll</em> a new, transformed, reducing function that takes what <em>coll</em> supplies, calls <code>inc</code> on it, and then calls <em>f</em> on that.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(reduce + (r/map inc [1 2 3])) === (reduce (fn [ret x] (+ ret (inc x))) (+) [1 2 3])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>i.e. the core work of <em>map f</em> looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(fn [f1]
+  (fn [ret v]
+    (f1 ret (f v))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It takes a reducing function f1, and returns a new reducing function that calls f1 after applying f to its input.</p>
+</div>
+<div class="paragraph">
+<p>Thus you can define <em>map</em> as a function of <code>fn * reducible &#8594; reducible</code> by merely transforming the reducing function. Mapping is semantically a function of the function of <em><strong>one step</strong></em> of a reduction. This transformation is decomplected from both representation and order. We call functions such as this <em>map</em>, that take a reducible, and in turn return something reducible via transformation of the reducing function, reducers.</p>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s revisit the hows above&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How: mechanism - functional transformation of reducing function</p>
+</li>
+<li>
+<p>How: order - doesn&#8217;t know</p>
+</li>
+<li>
+<p>How: laziness - doesn&#8217;t know</p>
+</li>
+<li>
+<p>How: representation - doesn&#8217;t build anything</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is important to note that now, when <code>(map f coll)</code> is called nothing happens except the creation of a recipe for a new collection, a recipe that is itself reducible. No work is done yet to the contained elements and no concrete collection is produced.</p>
+</div>
+<div class="paragraph">
+<p>The beautiful thing is that this 'transformation of reducing function' mechanism also works for many of the traditional seq functions, like <em>filter</em>, <em>take</em>, <em>flatten</em> etc. Note the fact that <em>filter</em> is (potentially) contractive, and <em>flatten</em> is (potentially) expansive per step - the mechanism is general and not limited to 1:1 transformations. And other reducer definitions are as pretty as map&#8217;s - none of the imperativeness of iterators, or generators with yield.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ok_so_wheres_my_cake"><a class="anchor" href="#_ok_so_wheres_my_cake"></a>Ok, So Where&#8217;s My Cake?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If map doesn&#8217;t do the work of mapping, but merely creates a recipe, when does the work get done? When you reduce its result:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.core.reducers :as r])
+(reduce + (r/filter even? (r/map inc [1 1 1 2])))
+;=&gt; 6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That should look familiar - it&#8217;s the same named functions, applied in the same order, with the same arguments, producing the same result as the Clojure&#8217;s seq-based fns. The difference is that, reduce being eager, and these reducers fns being out of the seq game, there&#8217;s no per-step allocation overhead, so it&#8217;s faster. Laziness is great when you need it, but when you don&#8217;t you shouldn&#8217;t have to pay for it.</p>
+</div>
+<div class="paragraph">
+<p>The reducer fns are curried, and they can be easily composed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">;;red is a reducer awaiting a collection
+(def red (comp (r/filter even?) (r/map inc)))
+(reduce + (red [1 1 1 2]))
+;=&gt; 6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus reduction 'recipes' (reducers) are first class.</p>
+</div>
+<div class="paragraph">
+<p>What if we <em>want</em> a collection result? It&#8217;s good to know that into uses reduce:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(into [] (r/filter even? (r/map inc [1 1 1 2])))
+;=&gt; [2 2 2]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note there are no intermediate collections produced.</p>
+</div>
+<div class="paragraph">
+<p>And, of course, you don&#8217;t always want a result of the same collection type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(into #{} (r/filter even? (r/map inc [1 1 1 2])))
+;=&gt; #{2}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simplicity_is_opportunity"><a class="anchor" href="#_simplicity_is_opportunity"></a>Simplicity is Opportunity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Decomplecting the core operations from representation and laziness has given us some speed, but what about the elimination of order? It should open the door to parallelism, but we are stuck with the semantics of <em>reduce</em> being <em>foldl</em>, i.e. it uses an accumulator and is <a href="http://vimeo.com/6624203">fundamentally serial</a>. We can parallelize reduction by using independent sub-reductions and combining their results, and the library defines a function that does just that: <em><strong>fold</strong></em>.</p>
+</div>
+<div class="paragraph">
+<p>The primary signature of fold takes a combining function, a reducing function, and a collection and returns the result of combining the results of reducing subsegments of the collection, potentially in parallel. Obviously if the work is to occur in parallel, the functions must be associative, but they need not be commutative - <em>fold</em> preserves order. Note that there is no initial 'seed' or 'accumulator' value, as there may be with reduce and foldl. But, since the subsegments are themselves reduced (with <em>reduce</em>), it raises the question as to what supplies the seed values for those reductions?</p>
+</div>
+<div class="paragraph">
+<p>The combining function (an associative binary fn) must have some 'identity' value, a value that, when combined with some X, yields X. 0 is an identity value for +, as is 1 for *. The combining fn must supply an identity value when called with no arguments (as do + and *). It will be called with no arguments to supply a seed for each leaf reduction. There is a fn (called <em>monoid</em>, shh!) to help you build such combining functions.</p>
+</div>
+<div class="paragraph">
+<p>If no combining fn is supplied, the reducing fn is used. Simple folds look like reduces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(r/fold + [1 2 3 4])
+;=&gt; 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But by promising less (i.e. not promising stepwise reduction from left or right) <em>fold</em> can do more - run in parallel. It does this when the collection is amenable to parallel subdivision. Ideal candidates are data structures built from trees. Clojure vectors and maps are trees, and have parallel implementations of <em>fold</em> based upon the <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html">ForkJoin framework</a>.</p>
+</div>
+<div class="paragraph">
+<p>What if the underlying collection is not amenable (e.g. is a sequence)? <em>fold</em> just devolves into <em>reduce</em>, producing the same semantic, if not physical, result.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s a tremendous amount you can accomplish with this reduce+combine strategy, especially when you consider that the map, filter etc reducers will not constitute independent layers of parallel jobs - they just transform the reducing fn working on the leaves.</p>
+</div>
+<div class="paragraph">
+<p>You can have a look at the <code>cat</code> function included in the library for an interesting example of a combining fn. cat quickly gathers up the fold results, forming a binary tree with the reductions as leaves. It returns a highly abstract, yet now quite useful 'collection' that is just counted, reducible, foldable and seqable.</p>
+</div>
+<div class="paragraph">
+<p>Oh yeah, perf. Don&#8217;t be surprised to see things become 2-3X faster, or more with more cores.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_opportunity_i_e_work"><a class="anchor" href="#_more_opportunity_i_e_work"></a>More Opportunity (i.e. Work)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As much fun as this is, there&#8217;s still more fun to be had by those so inclined:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There are more seq fns that could become reducer fns</p>
+</li>
+<li>
+<p>Given multiple iterable sources, we should be able to build a multi-reducible, recovering the multi-input capabilities of map.</p>
+</li>
+<li>
+<p>Arrays, arraylists, strings etc are all amenable to parallel fold.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>fork/join-based vector fold is 14 lines, so these are not difficult.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Those IFn.LLL, DDD etc primitive-taking function interfaces can now spring to life.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We should be able to build primitive-transmitting reducer function pipelines.</p>
+</li>
+<li>
+<p>We&#8217;d then need to look for and use them in the reductions of arrays and vectors of primitives</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Internal reduce solves the lazily dangling open resource problem, a problem solved similarly by <a href="http://www.haskell.org/haskellwiki/Enumerator_and_iteratee">Haskell&#8217;s enumerators and iteratees</a>. (Note that unlike iteratees, reducers do not allocate wrappers per step)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We need reducible I/O sources.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By adopting an alternative view of collections as reducible, rather than seqable things, we can get a complementary set of fundamental operations that tradeoff laziness for parallelism, while retaining the same high-level, functional programming model. Because the two models retain the same shape, we can easily choose whichever is appropriate for the task at hand.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_follow_up"><a class="anchor" href="#_follow_up"></a>Follow Up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the follow up <a href="xref/../../../05/15/anatomy-of-reducer">blog post</a> for more details about what constitutes a reducer, as well as some background about the library.</p>
+</div>
+<div class="paragraph">
+<p>Rich</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/prettify.js"></script>
+
+  </body>
+</html>

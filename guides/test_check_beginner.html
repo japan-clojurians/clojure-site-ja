@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Clojure - test.check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clojure の日本語ドキュメントです">
+    <meta name="author" content="Japan Clojurians">
+    <meta name="keywords" content="Clojure 日本語">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/webflow.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/clojure-logo-icon-32.png">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">Clojure</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../about/rationale">概要</a></li>
+            <li><a href="../reference/documentation">リファレンス</a></li>
+            <!-- <li><a href="../api/api">API</a></li>
+              <li><a href="../community/downloads">リリース</a></li> -->
+              <li><a href="../guides/guides">ガイド</a></li>
+            <!-- <li><a href="../community/resources">コミュニティ</a></li>
+              <li><a href="../news/news">ニュース</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+              </ul>
+              </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+<div class="page-header">
+  <h1>test.check</h1>
+</div>
+
+<p><em></em></p>
+
+<p><div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_property_based_testing">Property-based testing</a></li>
+<li><a href="#_generators">Generators</a>
+<ul class="sectlevel2">
+<li><a href="#_development_tools">Development Tools</a></li>
+<li><a href="#_scalar_generators">Scalar Generators</a></li>
+<li><a href="#_collection_generators">Collection Generators</a></li>
+<li><a href="#_generator_combinators">Generator Combinators</a></li>
+</ul>
+</li>
+<li><a href="#_properties">Properties</a>
+<ul class="sectlevel2">
+<li><a href="#_quick_check"><code>quick-check</code></a></li>
+<li><a href="#_defspec"><code>defspec</code></a></li>
+</ul>
+</li>
+<li><a href="#_additional_documentation">Additional Documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>test.check is a property-based testing library for clojure, inspired
+by <a href="http://hackage.haskell.org/package/QuickCheck">QuickCheck</a>.</p>
+</div>
+<div class="paragraph">
+<p>This guide, which is based on version <code>0.10.0</code>, will briefly introduce
+property-based testing using test.check examples, and then cover basic
+usage of the different parts of the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_property_based_testing"><a class="anchor" href="#_property_based_testing"></a>Property-based testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Property-based tests are often contrasted with "example-based tests",
+which are tests which test a function by enumerating specific inputs
+and the expected outputs (i.e., "examples"). This guide is written in
+terms of testing pure functions, but for testing less pure systems you
+can imagine a function that wraps the test, which uses the arguments
+to set up the context for the system, runs the system, and then
+queries the environment to measure the effects, and returns the result
+of those queries.</p>
+</div>
+<div class="paragraph">
+<p>Property-based testing, in contrast, describes properties that should
+be true for all valid inputs. A property-based test consists of a
+method for generating valid inputs (a "generator"), and a function
+which takes a generated input and combines it with the function under
+test to decide whether the property holds for that particular input.</p>
+</div>
+<div class="paragraph">
+<p>A classic first example of a property is one that tests the <code>sort</code>
+function by checking that it&#8217;s idempotent. In test.check, this could
+be written like this:</p>
+</div>
+<div id="quick-check-examples" class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.test.check :as tc])
+(require '[clojure.test.check.generators :as gen])
+(require '[clojure.test.check.properties :as prop])
+
+(def sort-idempotent-prop
+  (prop/for-all [v (gen/vector gen/int)]
+    (= (sort v) (sort (sort v)))))
+
+(tc/quick-check 100 sort-idempotent-prop)
+;; =&gt; {:result true,
+;; =&gt;  :pass? true,
+;; =&gt;  :num-tests 100,
+;; =&gt;  :time-elapsed-ms 28,
+;; =&gt;  :seed 1528580707376}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the <code>(gen/vector gen/int)</code> expression is the generator for inputs
+to the <code>sort</code> function; it specifies that an input is a vector of
+integers. In reality, <code>sort</code> can take any collection of compatibly
+<code>Comparable</code> objects; there&#8217;s often a tradeoff between the simplicity
+of a generator and the completeness with which it describes the actual
+input space.</p>
+</div>
+<div class="paragraph">
+<p>The name <code>v</code> is bound to a particular generated vector of integers,
+and the expression in the body of the <code>prop/for-all</code> determines
+whether the trial passes or fails.</p>
+</div>
+<div class="paragraph">
+<p>The <code>tc/quick-check</code> call "runs the property" 100 times, meaning it
+generates one hundred vectors of integers and evaluates
+<code>(= (sort v) (sort (sort v)))</code> for each of them; it reports success
+only if each of those trials passes.</p>
+</div>
+<div class="paragraph">
+<p>If any of the trials fails, then test.check attempts to "shrink" the
+input to a minimal failing example, and then reports the original
+failing example and the shrunk one. For example, this faulty property
+claims that after sorting a vector of integers, the first element
+should be less than the last element:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def prop-sorted-first-less-than-last
+  (prop/for-all [v (gen/not-empty (gen/vector gen/int))]
+    (let [s (sort v)]
+      (&lt; (first s) (last s)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we run this property with <code>tc/quick-check</code>, it returns something
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:num-tests 5,
+ :seed 1528580863556,
+ :fail [[-3]],
+ :failed-after-ms 1,
+ :result false,
+ :result-data nil,
+ :failing-size 4,
+ :pass? false,
+ :shrunk
+ {:total-nodes-visited 5,
+  :depth 2,
+  :pass? false,
+  :result false,
+  :result-data nil,
+  :time-shrinking-ms 1,
+  :smallest [[0]]}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The original failing example <code>[-3]</code> (given at the <code>:fail</code> key) has
+been shrunk to <code>[0]</code> (under <code>[:shrunk :smallest]</code>), and a variety of
+other data is provided as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generators"><a class="anchor" href="#_generators"></a>Generators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The different parts of test.check are cleanly separated by namespace.
+We will proceed from the bottom up, starting with generators, then
+properties, and then two methods for running tests.</p>
+</div>
+<div class="paragraph">
+<p>Generators are supported by the <code>clojure.test.check.generators</code>
+namespace.</p>
+</div>
+<div class="paragraph">
+<p>The built-in generators fall into three categories: scalars (basic
+data types), collections, and combinators.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>scalars (basic data types: numbers, strings, etc.)</p>
+</li>
+<li>
+<p>collections (lists, maps, sets, etc.)</p>
+</li>
+<li>
+<p>combinators</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The combinators are general enough to support creating generators
+for arbitrary custom types.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, there are several development functions for
+experimenting with generators. We&#8217;ll introduce those first so we can
+use them to demonstrate the rest of the generator functionality.</p>
+</div>
+<div class="sect2">
+<h3 id="_development_tools"><a class="anchor" href="#_development_tools"></a>Development Tools</h3>
+<div class="paragraph">
+<p>The <code>gen/sample</code> function takes a generator and returns a collection
+of small sample elements from that generator:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/sample gen/boolean)
+(true false true true true false true true false false)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>gen/generate</code> function takes a generator and returns a single
+generated element, and additionally allows specifying the <code>size</code> of
+the element. <code>size</code> is an abstract parameter, that is generally an
+integer ranging from 0 to 200.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate gen/large-integer 50)
+-165175</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scalar_generators"><a class="anchor" href="#_scalar_generators"></a>Scalar Generators</h3>
+<div class="paragraph">
+<p>test.check comes with generators for booleans, numbers, characters,
+strings, keywords, symbols, and UUIDs. E.g.:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/sample gen/double)
+(-0.5 ##Inf -2.0 -2.0 0.5 -3.875 -0.5625 -1.75 5.0 -2.0)
+
+user=&gt; (gen/sample gen/char-alphanumeric)
+(\G \w \i \1 \V \U \8 \U \t \M)
+
+user=&gt; (gen/sample gen/string-alphanumeric)
+("" "" "e" "Fh" "w46H" "z" "Y" "7" "NF4e" "b0")
+
+user=&gt; (gen/sample gen/keyword)
+(:. :Lx :x :W :DR :*- :j :g :G :_)
+
+user=&gt; (gen/sample gen/symbol)
+(+ kI G uw jw M9E ?23 T3 * .q)
+
+user=&gt; (gen/sample gen/uuid)
+(#uuid "c4342745-9f71-42cb-b89e-e99651b9dd5f"
+ #uuid "819c3d12-b45a-4373-a307-5943cf17d90b"
+ #uuid "c72b5d34-255f-408f-8d16-4828ed740904"
+ #uuid "d342d515-b297-4ed4-91cc-8cd55007e2c2"
+ #uuid "6d09c6f3-12d4-4e5e-9de5-0ed32c9fef20"
+ #uuid "a572178c-5460-44ee-b992-9d3d26daf8c0"
+ #uuid "572cc48e-b3a8-40ca-9449-48af08c617d3"
+ #uuid "5f6ed50b-adef-4e7f-90d0-44511900491e"
+ #uuid "ddbbfd07-d580-4638-9858-57a469d91727"
+ #uuid "c32b7788-70de-4bf5-b24f-1e7cb564a37d")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_collection_generators"><a class="anchor" href="#_collection_generators"></a>Collection Generators</h3>
+<div class="paragraph">
+<p>The collection generators are generally functions with arguments
+for generators of their elements.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/vector gen/boolean) 5)
+[false false false false]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(note that the second argument to <code>gen/generate</code> here is not specifying
+the size of the collection, but the abstract <code>size</code> parameter mentioned
+earlier; the default value for <code>gen/generate</code> is 30)</p>
+</div>
+<div class="paragraph">
+<p>There are also generators for heterogeneous collections, the most
+important of which is <code>gen/tuple</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/tuple gen/boolean gen/keyword gen/large-integer))
+[true :r -85718]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Some collection generators can also be customized further:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/vector-distinct (gen/vector gen/boolean 3)
+                                          {:min-elements 3 :max-elements 5}))
+[[true  false false]
+ [true  true  false]
+ [false false true]
+ [false true  true]]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generator_combinators"><a class="anchor" href="#_generator_combinators"></a>Generator Combinators</h3>
+<div class="paragraph">
+<p>The scalar and collection generators can generate a variety of structures,
+but creating nontrivial custom generators requires using the combinators.</p>
+</div>
+<div class="sect3">
+<h4 id="_genone_of"><a class="anchor" href="#_genone_of"></a><code>gen/one-of</code></h4>
+<div class="paragraph">
+<p><code>gen/one-of</code> takes a collection of generators and returns a generator
+that can generate values from any of them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/sample (gen/one-of [gen/boolean gen/double gen/large-integer]))
+(-1.0 -1 true false 3 true true -24 -0.4296875 3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is also <code>gen/frequency</code>, which is similar but allows specifying
+a weight for each generator.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gensuch_that"><a class="anchor" href="#_gensuch_that"></a><code>gen/such-that</code></h4>
+<div class="paragraph">
+<p><code>gen/such-that</code> restricts an existing generator to a subset of its
+values, using a predicate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/sample (gen/such-that odd? gen/large-integer))
+(3 -1 -1 -1 -3 5 -11 1 -1 -5)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, there&#8217;s no magic here: the only way to generate values that
+match the predicate is to generate values repeatedly until one happens
+to match. This means <code>gen/such-that</code> can randomly fail if the predicate
+doesn&#8217;t match too many times in a row:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (count (gen/sample (gen/such-that odd? gen/large-integer) 10000))
+ExceptionInfo Couldn't satisfy such-that predicate after 10 tries.  clojure.core/ex-info (core.clj:4754)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This call to <code>gen/sample</code> (asking for 10000 odd numbers) fails because
+<code>gen/large-integer</code> returns even numbers about half the time, so
+seeing ten even numbers in a row isn&#8217;t extraordinarily unlikely.</p>
+</div>
+<div class="paragraph">
+<p><code>gen/such-that</code> should be avoided unless the predicate is highly
+likely to succeed. In other cases, there is often an alternative way
+to build the generator, as we&#8217;ll see with <code>gen/fmap</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_genfmap"><a class="anchor" href="#_genfmap"></a><code>gen/fmap</code></h4>
+<div class="paragraph">
+<p><code>gen/fmap</code> allows you to modify any generator by supplying a function
+to modify the values it generates. You can use this to construct
+arbitrary structures or custom objects by generating the pieces they
+need and then combining them in the <code>gen/fmap</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/fmap (fn [[name age]]
+                                 {:type :humanoid
+                                  :name name
+                                  :age  age})
+                               (gen/tuple gen/string-ascii
+                                          (gen/large-integer* {:min 0}))))
+{:type :humanoid, :name ".o]=w2hZ", :age 14}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another use of <code>gen/fmap</code> is to restrict or skew the distribution of
+another generator using targeted transformations. For example, to
+turn a general integer generator into a generator of odd numbers, you
+could either use the <code>gen/fmap</code> function <code>#(+ 1 (* 2 %))</code> (which also
+has the effect of doubling the range of the distribution) or
+<code>#(cond-> % (even? %) (+ 1))</code> (which doesn&#8217;t).</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a generator that only generates upper-case strings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/sample (gen/fmap #(.toUpperCase %) gen/string-ascii))
+("" "" "JT" "" "&gt;Y1@" "" "]-" "XCJ@C" "&lt;ANF.\"|" "I@O\"M")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_genbind"><a class="anchor" href="#_genbind"></a><code>gen/bind</code></h4>
+<div class="paragraph">
+<p>The most advanced combinator allows generating things in multiple
+stages, with the generators in later stages constructed using values
+generated in earlier stages.</p>
+</div>
+<div class="paragraph">
+<p>While this may sound complicated, the signature is hardly different
+from <code>gen/fmap</code>: the argument order is reversed, and the function
+is expected to return a generator instead of a value.</p>
+</div>
+<div class="paragraph">
+<p>As an example, suppose you want to generate a random list of numbers
+in two different orders (e.g., to test a function that should be
+agnostic to collection ordering). This is hard to do using <code>gen/fmap</code>
+or any other combinator, since generating two collections directly
+will generally give you collections with different elements, and if
+you just generate one you don&#8217;t have the opportunity to use the
+generated list with another generator (e.g. <code>gen/shuffle</code>) that might
+be able to reorder it.</p>
+</div>
+<div class="paragraph">
+<p><code>gen/bind</code> gives us exactly the two-phase structure we need:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/bind (gen/vector gen/large-integer)
+                               (fn [xs]
+                                 (gen/fmap (fn [ys] [xs ys])
+                                           (gen/shuffle xs)))))
+[[-5967 -9114 -2 -4 68583042 223266 540 3 -100]
+ [223266 -9114 -2 -100 3 540 -5967 -4 68583042]]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The structure here is a bit obtuse, as the function we passed
+to <code>gen/bind</code> couldn&#8217;t simply call <code>(gen/shuffle xs)</code>&#8201;&#8212;&#8201;if it
+had, the whole generator would have simply returned the one
+collection generated by <code>(gen/shuffle xs)</code>; in order to both
+generate a second collection with <code>gen/shuffle</code> and also return
+the original collection, we use <code>gen/fmap</code> to combine the two
+into a vector.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s another structure that&#8217;s a bit simpler at the expense of doing
+an extra shuffle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate (gen/bind (gen/vector gen/large-integer)
+                               (fn [xs] (gen/vector (gen/shuffle xs) 2))))
+[[-4 254202577 -27512 1596863 0 6] [-4 6 254202577 1596863 -27512 0]]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, an option with arguably even better readability is to use
+the <code>gen/let</code> macro, which uses a <code>let</code>-like syntax to describe
+uses of <code>gen/fmap</code> and <code>gen/bind</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">user=&gt; (gen/generate
+        (gen/let [xs (gen/vector gen/large-integer)
+                  ys (gen/shuffle xs)]
+          [xs ys]))
+[[0 47] [0 47]]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A property is an actual test&#8201;&#8212;&#8201;it combines a generator with a
+function you want to test, and checks that the function behaves as
+expected given the generated values.</p>
+</div>
+<div class="paragraph">
+<p>Properties are created using the <code>clojure.test.check.properties/for-all</code>
+macro.</p>
+</div>
+<div class="paragraph">
+<p>The property in <a href="#quick-check-examples">the first example</a> generates a
+vector and then calls the function being tested (<code>sort</code>) three times.</p>
+</div>
+<div class="paragraph">
+<p>Properties can also combine several generators, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def +-is-commutative
+  (prop/for-all [a gen/large-integer
+                 b gen/large-integer]
+    (= (+ a b) (+ b a))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are two ways to actually run properties, which is what the next
+two sections are about.</p>
+</div>
+<div class="sect2">
+<h3 id="_quick_check"><a class="anchor" href="#_quick_check"></a><code>quick-check</code></h3>
+<div class="paragraph">
+<p>The standalone and functional method of running tests is via the
+<code>quick-check</code> function in the <code>clojure.test.check</code> namespace.</p>
+</div>
+<div class="paragraph">
+<p>It takes a property and a number of trials, and runs the property
+up to that many times, returning a map describing success or
+failure.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#quick-check-examples">the examples above</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_defspec"><a class="anchor" href="#_defspec"></a><code>defspec</code></h3>
+<div class="paragraph">
+<p><code>defspec</code> is a macro for writing property-based-tests that are
+recognized and run by <code>clojure.test</code>.</p>
+</div>
+<div class="paragraph">
+<p>The difference from <code>quick-check</code> is partly just syntactic, and
+partly that it <em>defines</em> a test instead of running it.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <a href="#quick-check-examples">first <code>quick-check</code> example
+in this guide</a> could also be written like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(require '[clojure.test.check.clojure-test :refer [defspec]])
+
+(defspec sort-is-idempotent 100
+  (prop/for-all [v (gen/vector gen/int)]
+    (= (sort v) (sort (sort v)))))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Given this, calling <code>(clojure.test/run-tests)</code> in the same namespace
+produces the following output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Testing my.test.ns
+{:result true, :num-tests 100, :seed 1536503193939, :test-var "sort-is-idempotent"}
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_documentation"><a class="anchor" href="#_additional_documentation"></a>Additional Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For additional documentation, see the
+<a href="https://github.com/clojure/test.check/blob/master/README.md">test.check README</a>.</p>
+</div>
+</div>
+</div></p>
+
+<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+
+  </body>
+</html>

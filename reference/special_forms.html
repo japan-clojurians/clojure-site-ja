@@ -247,7 +247,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>See <a href="special_forms#binding-forms#">Binding Forms</a> for more information about binding forms.</p>
+<p>See <a href="special_forms#binding-forms">Binding Forms</a> for more information about binding forms.</p>
 </div>
 <div class="paragraph">
 <p><strong>Locals created with <code>let</code> are not variables. Once created their values never change!</strong></p>
@@ -318,7 +318,7 @@ user=&gt; (meta #'mymax)
 <p>Note that named fns such as <code>mult</code> are normally defined with <code>defn</code>, which expands into something such as the above.</p>
 </div>
 <div class="paragraph">
-<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of <em>param</em>s <em>including the rest param, if present</em>. See <a href="special_forms#recur#"><code>recur</code></a>.</p>
+<p>A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of <em>param</em>s <em>including the rest param, if present</em>. See <a href="special_forms#recur"><code>recur</code></a>.</p>
 </div>
 <div class="paragraph">
 <p>fns implement the Java <code>Callable</code>, <code>Runnable</code> and <code>Comparator</code> interfaces.</p>
@@ -362,7 +362,7 @@ user=&gt; (meta #'mymax)
 <p>where either key is optional. The condition map may also be provided as metadata of the arglist.</p>
 </div>
 <div class="paragraph">
-<p><em>pre-expr</em> and <em>post-expr</em> are boolean expressions that may refer to the parameters of the function. In addition, <code>%</code> may be used in a <em>post-expr</em> to refer to the function&#8217;s return value. If any of the conditions evaluate to <code>false</code> and <code>*assert*</code> is true, an assertion failure exception is thrown.</p>
+<p><em>pre-expr</em> and <em>post-expr</em> are boolean expressions that may refer to the parameters of the function. In addition, <code>%</code> may be used in a <em>post-expr</em> to refer to the function&#8217;s return value. If any of the conditions evaluate to <code>false</code> and <code>*assert*</code> is true, a <code>java.lang.AssertionError</code> exception is thrown.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -376,7 +376,7 @@ user=&gt; (meta #'mymax)
 </div>
 </div>
 <div class="paragraph">
-<p>See <a href="special_forms#binding-forms#">Binding Forms</a> for more information about binding forms.</p>
+<p>See <a href="special_forms#binding-forms">Binding Forms</a> for more information about binding forms.</p>
 </div>
 </div>
 </div>
@@ -384,7 +384,7 @@ user=&gt; (meta #'mymax)
 <h2 id="loop"><a class="anchor" href="#loop"></a>(<code>loop</code> [<em>binding</em>* ] <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur#"><code>recur</code></a>.</p>
+<p><code>loop</code> is exactly like <code>let</code>, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings. See <a href="special_forms#recur"><code>recur</code></a>.</p>
 </div>
 </div>
 </div>
@@ -392,7 +392,7 @@ user=&gt; (meta #'mymax)
 <h2 id="recur"><a class="anchor" href="#recur"></a>(<code>recur</code> <em>expr</em>*)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop#"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
+<p>Evaluates the expressions <em>expr</em>s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the <em>expr</em>s. If the recursion point was a <code>fn</code> method, then it rebinds the params. If the recursion point was a <a href="special_forms#loop"><code>loop</code></a>, then it rebinds the <code>loop</code> bindings. Execution then jumps back to the recursion point. The <code>recur</code> expression must match the arity of the recursion point exactly. In particular, if the recursion point was the top of a variadic fn method, there is no gathering of <code>rest</code> args - a single seq (or null) should be passed. <code>recur</code> in other than a tail position is an error.</p>
 </div>
 <div class="paragraph">
 <p>Note that <code>recur</code> is the only non-stack-consuming looping construct in Clojure. There is no tail-call optimization and the use of self-calls for looping of unknown bounds is discouraged. <code>recur</code> is functional and its use in tail-position is verified by the compiler.</p>
@@ -462,6 +462,9 @@ The special forms <a href="java_interop#dot">dot ('.')</a>, <a href="java_intero
 <div class="sectionbody">
 <div class="paragraph">
 <p>Clojure supports abstract structural binding, often called destructuring, in let binding lists, fn parameter lists, and any macro that expands into a <code>let</code> or <code>fn</code>. A <em>binding-form</em> can be a data structure literal containing symbols that get bound to the respective parts of the <em>init-expr</em>. The binding is abstract in that a vector literal can bind to anything that is sequential, while a map literal can bind to anything that is associative.</p>
+</div>
+<div class="paragraph">
+<p>All binding symbols that don&#8217;t match their respective part due to an absence of data (too few elements in a sequential structure, no key in an associative structure, etc) are bound to nil.</p>
 </div>
 <div class="sect2">
 <h3 id="_vector_binding_destructuring"><a class="anchor" href="#_vector_binding_destructuring"></a>Vector binding destructuring</h3>

@@ -81,9 +81,12 @@
 <div class="sectionbody">
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
-<ul class="sectlevel1">
+<ul class="sectlevel2">
 <li><a href="#_meta_obj">(<em>meta</em> obj)</a></li>
 <li><a href="#_with_meta_obj_map">(<em>with-meta</em> obj map)</a></li>
+<li><a href="#_print_meta"><em>*print-meta*</em></a></li>
+<li><a href="#_vary_meta_obj_map">(<em>vary-meta</em> obj map)</a></li>
+<li><a href="#_alter_meta_ref_f_args_and_reset_meta_ref_map">(<em>alter-meta!</em> ref f &amp; args) and (<em>reset-meta!</em> ref map)</a></li>
 <li><a href="#_metadata_reader_macros">Metadata Reader Macros</a></li>
 </ul>
 </div>
@@ -99,69 +102,103 @@
 <hr>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_meta_obj"><a class="anchor" href="#_meta_obj"></a>(<em>meta</em> obj)</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_meta_obj"><a class="anchor" href="#_meta_obj"></a>(<em>meta</em> obj)</h3>
 <div class="paragraph">
 <p>Returns the metadata of obj, returns nil if there is no metadata.</p>
 </div>
-<hr>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(pprint (meta #'+)) ;; #'+ is the + var
+
+;; {:added "1.2",
+;;  :name +,
+;;  :file "clojure/core.clj",
+;;  :column 1,
+;;  :line 984,
+;;  :arglists ([] [x] [x y] [x y &amp; more]),
+;;  ...</code></pre>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_with_meta_obj_map"><a class="anchor" href="#_with_meta_obj_map"></a>(<em>with-meta</em> obj map)</h2>
-<div class="sectionbody">
+</div>
+<div class="sect2">
+<h3 id="_with_meta_obj_map"><a class="anchor" href="#_with_meta_obj_map"></a>(<em>with-meta</em> obj map)</h3>
 <div class="paragraph">
 <p>Returns an object of the same type and value as obj, with map as its metadata.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def m ^:hi [1 2 3])
+(meta (with-meta m {:bye true}))
+;; {:bye true}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_print_meta"><a class="anchor" href="#_print_meta"></a><em>*print-meta*</em></h3>
+<div class="paragraph">
+<p>If set to logical true, when printing an object, its metadata will also be printed in a form that can be read back by the reader.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def m ^:hi [1 2 3])
+(binding [*print-meta* true]
+  (prn m))
+
+;; ^{:hi true} [1 2 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vary_meta_obj_map"><a class="anchor" href="#_vary_meta_obj_map"></a>(<em>vary-meta</em> obj map)</h3>
+<div class="paragraph">
+<p>Returns an object of the same type and value as obj, with <code>(apply f (meta obj) f &amp; args)</code> as its metadata.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(def m ^:hi [1 2 3])
+(meta (vary-meta m merge {:bye true}))
+;; {:hi true, :bye true}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alter_meta_ref_f_args_and_reset_meta_ref_map"><a class="anchor" href="#_alter_meta_ref_f_args_and_reset_meta_ref_map"></a>(<em>alter-meta!</em> ref f &amp; args) and (<em>reset-meta!</em> ref map)</h3>
+<div class="paragraph">
+<p>Modify or reset the metadata respectively for a namespace/var/ref/agent/atom.</p>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_metadata_reader_macros"><a class="anchor" href="#_metadata_reader_macros"></a>Metadata Reader Macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In addition to with-meta, there are a number of reader macros (<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata to the expression following it:</p>
+<p>In addition to with-meta, there are a number of reader macros (<a href="reader#macrochars">The Reader: Macro Characters</a>) for applying metadata to the expression following it at read-time:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>^{:doc "How obj works!"} obj</code> - Sets the metadata of obj to the provided map.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Equivalent to <code>(with-meta obj {:doc "How obj works!"})</code></p>
-</li>
-</ul>
-</div>
+<p><code>^{:doc "How it works!"}</code> - adds the metadata map to the metadata of the next value read</p>
 </li>
 <li>
-<p><code>^:dynamic obj</code> - Sets the given keyword to true in the object&#8217;s metadata.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Equivalent to <code>^{:dynamic true} obj</code></p>
-</li>
-</ul>
-</div>
+<p><code>^:dynamic</code> - like <code>^{:dynamic true}</code></p>
 </li>
 <li>
-<p><code>^String obj</code> - Sets the value of :tag key in the object&#8217;s metadata.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Equivalent to <code>^{:tag java.lang.String} obj</code></p>
+<p><code>^String</code> - like <code>^{:tag java.lang.String}</code></p>
 </li>
 <li>
-<p>Used to hint an objects type to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type Hints</a> for more information and a complete list of special type hints.</p>
-</li>
-</ul>
-</div>
+<p><code>^"java.lang.String"</code> - like <code>^{:tag java.lang.String}</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
+<p>The <code>:tag</code> key is used to hint an objects type to the Clojure compiler. See <a href="java_interop#typehints">Java Interop: Type Hints</a> for more information and a complete list of special type hints.</p>
+</div>
+<div class="paragraph">
 <p>It is possible to add multiple pieces of metadata by chaining the metadata reader macros together.
-For example: <code>^:dynamic ^ints obj</code> would apply both the :dynamic flag and ints type-hint to obj.</p>
+For example: <code>^:dynamic ^ints obj</code> would apply both the :dynamic flag and ints type-hint to obj. Metadata chains from right to left (left takes precedence).</p>
+</div>
+<div class="paragraph">
+<p>Note that metadata reader macros are applied at read-time, not at evaluation-time, and can only be used with values that support metadata, like symbols, vars, collections, sequences, namespaces, refs, atoms, agents, etc. Some important exceptions that <strong>don&#8217;t</strong> support metadata are strings, numbers, booleans, Java objects, keywords (these are cached and can be shared within the runtime), and deftypes (unless they explicitly implement clojure.lang.IMeta).</p>
 </div>
 </div>
 </div></p>

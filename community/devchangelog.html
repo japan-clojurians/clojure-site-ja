@@ -85,8 +85,494 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_dev_release_naming_guide"><a class="anchor" href="#_dev_release_naming_guide"></a>Dev release naming guide</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Alpha - new feature work and enhancements in development</p>
+</li>
+<li>
+<p>Beta - bug fixing only, no new feature work is expected</p>
+</li>
+<li>
+<p>RC - a release candidate, which will be released as a final release unless critical issues are found</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note: All dev releases are subject to breaking changes for new work since the prior release.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_1_10_1"><a class="anchor" href="#_release_1_10_1"></a>Release 1.10.1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_10_1_rc1_may_21_2019"><a class="anchor" href="#_1_10_1_rc1_may_21_2019"></a>1.10.1-RC1 (May 21, 2019)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated changelog for 1.10.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_1_beta3_may_16_2019"><a class="anchor" href="#_1_10_1_beta3_may_16_2019"></a>1.10.1-beta3 (May 16, 2019)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2504">CLJ-2504</a> Provide more options for error reporting in clojure.main</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_1_beta2_apr_11_2019"><a class="anchor" href="#_1_10_1_beta2_apr_11_2019"></a>1.10.1-beta2 (Apr 11, 2019)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2497">CLJ-2497</a> Put error report location on its own line</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2499">CLJ-2499</a> Some compiler expr evals report as wrong phase</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_1_beta1_mar_21_2019"><a class="anchor" href="#_1_10_1_beta1_mar_21_2019"></a>1.10.1-beta1 (Mar 21, 2019)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2484">CLJ-2484</a> Move user.clj initialization out of RT&lt;clinit&gt;</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2463">CLJ-2463</a> clojure.main uncaught exception handling</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2491">CLJ-2491</a> Make fragile tests work under Java 12 and less fragile</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_release_1_10"><a class="anchor" href="#_release_1_10"></a>Release 1.10</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_10_0_rc5_dec_11_2018"><a class="anchor" href="#_1_10_0_rc5_dec_11_2018"></a>1.10.0-RC5 (Dec 11, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2454">CLJ-2454</a> - fix IllegalAccessException from invoking matching reflective call</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_rc4_dec_7_2018"><a class="anchor" href="#_1_10_0_rc4_dec_7_2018"></a>1.10.0-RC4 (Dec 7, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2449">CLJ-2449</a> - make serialized-require private</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_rc3_dec_3_2018"><a class="anchor" href="#_1_10_0_rc3_dec_3_2018"></a>1.10.0-RC3 (Dec 3, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2447">CLJ-2447</a> - clojure.datafy docstring is missing</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2448">CLJ-2448</a> - change name of async-require to serialized-require</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_rc2_nov_26_2018"><a class="anchor" href="#_1_10_0_rc2_nov_26_2018"></a>1.10.0-RC2 (Nov 26, 2018)</h3>
+<div class="paragraph">
+<p>No changes other than changelog updates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta8_nov_21_2018"><a class="anchor" href="#_1_10_0_beta8_nov_21_2018"></a>1.10.0-beta8 (Nov 21, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2438">CLJ-2438</a> - demunge source location in execution error messages</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2437">CLJ-2437</a> - add async-require and use it from requiring-resolve</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2436">CLJ-2436</a> - fix reflection warning in reflect.java</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta7_nov_19_2018"><a class="anchor" href="#_1_10_0_beta7_nov_19_2018"></a>1.10.0-beta7 (Nov 19, 2018)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2435">CLJ-2435</a> - include root cause class name in compilation and macroexpansion errors</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta6_nov_16_2018"><a class="anchor" href="#_1_10_0_beta6_nov_16_2018"></a>1.10.0-beta6 (Nov 16, 2018)</h3>
+<div class="paragraph">
+<p>Changes in 1.10.0-beta6:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The metadata protocol extension added in 1.10.0-beta5 now requires opt-in when the protocol is defined, using :extend-via-metadata.</p>
+</li>
+<li>
+<p>The JavaReflector under clojure.reflect has been datafied</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2432">CLJ-2432</a> - Added clojure.core/requiring-resolve which is like <code>resolve</code> but will <code>require</code> the symbol&#8217;s namespace if needed.</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2427">CLJ-2427</a> - fix bug in CompilerException.toString() that could cause a secondary exception to be thrown while making the exception string, obscuring the original exception.</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2430">CLJ-2430</a> - more work on error phases, ex-triage, and allowing prepl to better use the new error reporting infrastructure</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta5_nov_6_2018"><a class="anchor" href="#_1_10_0_beta5_nov_6_2018"></a>1.10.0-beta5 (Nov 6, 2018)</h3>
+<div class="paragraph">
+<p>Changes in 1.10.0-beta5:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In addition to prior methods of extension, values can now extend protocols by adding metadata where keys are fully-qualified symbols naming protocol functions and values are function implementations. Protocol implementations are checked first for direct definitions (defrecord, deftype, reify), then metadata definitions, then external extensions (extend, extend-type, extend-protocol). datafy has been updated to use this mechanism.</p>
+</li>
+<li>
+<p><code>symbol</code> can now be passed vars or keywords to obtain the corresponding symbol</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2420">CLJ-2420</a> - error reporting enhancements - more refined phase reporting, new clojure.main/ex-triage split out of clojure.main/ex-str, execution errors now report the top <strong>user</strong> line in the stack trace omitting frames from core, enhancements to providing file and line via meta on a form</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2425">CLJ-2425</a> add java 11 javadoc url</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2424">CLJ-2424</a> fix test bug from <a href="https://clojure.atlassian.net/browse/CLJ-2417">CLJ-2417</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta4_oct_22_2018"><a class="anchor" href="#_1_10_0_beta4_oct_22_2018"></a>1.10.0-beta4 (Oct 22, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-beta4 includes the following changes since 1.10.0-beta3:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2417">CLJ-2417</a> sort and sort-by should retain meta</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta3_oct_12_2018"><a class="anchor" href="#_1_10_0_beta3_oct_12_2018"></a>1.10.0-beta3 (Oct 12, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-beta3 includes the following changes since 1.10.0-RC1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>datafy - add :name to datafied classes and namespaces, :class to meta of all if datafied</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1079">CLJ-1079</a> - Reader should retain rather than overwrite :line :column meta on lists and seqs. Also make clojure.main bind *file* based on :file meta.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_rc1_oct_11_2018"><a class="anchor" href="#_1_10_0_rc1_oct_11_2018"></a>1.10.0-RC1 (Oct 11, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-RC1 is the same code as 1.10.0-beta2 (just minor changelog updates).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta2_oct_9_2018"><a class="anchor" href="#_1_10_0_beta2_oct_9_2018"></a>1.10.0-beta2 (Oct 9, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-beta2 includes the following changes since 1.10.0-beta1:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2414">CLJ-2414</a> - Regression in reflectively finding default methods</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2415">CLJ-2415</a> - Error cause should always be on 2nd line of error message</p>
+</li>
+<li>
+<p>Added clojure.datafy:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>clojure.datafy is a facility for object to data transformation. The <code>datafy</code> and <code>nav</code> functions can be used to transform and (lazily) navigate through object graphs. The data transformation process can be influenced by consumers using protocols or metadata. datafy is alpha and subject to change.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_beta1_oct_5_2018"><a class="anchor" href="#_1_10_0_beta1_oct_5_2018"></a>1.10.0-beta1 (Oct 5, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-beta1 includes the following changes since 1.10.0-alpha9:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Revert change for <a href="https://clojure.atlassian.net/browse/CLJ-1550">CLJ-1550</a> - Classes generated by deftype and defrecord don&#8217;t play nice with .getPackage</p>
+</li>
+<li>
+<p>Revert change for <a href="https://clojure.atlassian.net/browse/CLJ-1435">CLJ-1435</a> - 'numerator and 'denominator fail to handle integral values (i.e. N/1)</p>
+</li>
+<li>
+<p>Add changelog since 1.9</p>
+</li>
+<li>
+<p>Mark prepl as alpha</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha9_oct_4_2018"><a class="anchor" href="#_1_10_0_alpha9_oct_4_2018"></a>1.10.0-alpha9 (Oct 4, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-alpha9 includes the following changes since 1.10.0-alpha8:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2374">CLJ-2374</a> - Add type hint to address reflection ambiguity in JDK 11</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1209">CLJ-1209</a> - Print ex-data in clojure.test error reports</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1120">CLJ-1120</a> - Add ex-cause and ex-message as in CLJS for portabile error handling</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2385">CLJ-2385</a> - Delay start of tap-loop thread (addresses graal native-image issue)</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2407">CLJ-2407</a> - Fix errors in unit tests</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2066">CLJ-2066</a> - Add reflection fallback for --illegal-access warnings in Java 9+</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2375">CLJ-2375</a> - Fix usage of deprecated JDK apis</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2358">CLJ-2358</a> - Fix invalid arity of read+string</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha8_sept_14_2018"><a class="anchor" href="#_1_10_0_alpha8_sept_14_2018"></a>1.10.0-alpha8 (Sept 14, 2018)</h3>
+<div class="paragraph">
+<p>1.10.0-alpha8 includes the following changes since 1.10.0-alpha7:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2297">CLJ-2297</a> - PersistentHashMap leaks memory when keys are removed with <code>without</code></p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1587">CLJ-1587</a> - PersistentArrayMap&#8217;s assoc doesn&#8217;t respect HASHTABLE_THRESHOLD</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2050">CLJ-2050</a> - Remove redundant key comparisons in HashCollisionNode</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2349">CLJ-2349</a> - report correct line number for uncaught ExceptionInfo in clojure.test</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1403">CLJ-1403</a> - ns-resolve might throw ClassNotFoundException but should return nil</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1654">CLJ-1654</a> - Reuse seq in some</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1764">CLJ-1764</a> - partition-by runs infinite loop when one element of infinite partition is accessed</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2044">CLJ-2044</a> - add arglist meta for functions in clojure.instant</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1797">CLJ-1797</a> - Mention cljc in error when require fails</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1832">CLJ-1832</a> - unchecked-* functions have different behavior on primitive longs vs boxed Longs</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1366">CLJ-1366</a> - The empty map literal is read as a different map each time</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1550">CLJ-1550</a> - Classes generated by deftype and defrecord don&#8217;t play nice with .getPackage</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2031">CLJ-2031</a> - clojure.walk/postwalk does not preserve MapEntry type objects</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1435">CLJ-1435</a> - 'numerator and 'denominator fail to handle integral values (i.e. N/1)</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2257">CLJ-2257</a> - docstring: fix typo in <code>proxy</code></p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2332">CLJ-2332</a> - docstring: fix repetition in <code>remove-tap</code></p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2122">CLJ-2122</a> - docstring: describe result of <code>flatten</code> as lazy</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha7_sept_5_2018"><a class="anchor" href="#_1_10_0_alpha7_sept_5_2018"></a>1.10.0-alpha7 (Sept 5, 2018)</h3>
+<div class="paragraph">
+<p>Clojure 1.10.0-alpha7 is now available.</p>
+</div>
+<div class="paragraph">
+<p>1.10.0-alpha7 includes the following changes since 1.10.0-alpha6:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update deps to latest spec.alpha (0.2.176) and core.specs.alpha (0.2.44)</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2373">CLJ-2373</a> - categorize and overhaul printing of exception messages at REPL</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1279">CLJ-1279</a> - report correct arity count for function arity errors inside macros</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2386">CLJ-2386</a> - omit ex-info construction stack frames</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2394">CLJ-2394</a> - warn in pst that stack trace for syntax error failed before execution</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2396">CLJ-2396</a> - omit :in clauses when printing spec function errors if using default explain printer</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha6_july_4_2018"><a class="anchor" href="#_1_10_0_alpha6_july_4_2018"></a>1.10.0-alpha6 (July 4, 2018)</h3>
+<div class="paragraph">
+<p>Clojure 1.10.0-alpha6 is now available.</p>
+</div>
+<div class="paragraph">
+<p>1.10.0-alpha6 includes the following changes since 1.10.0-alpha5:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2367">CLJ-2367</a> - Incorporate fix for ASM regression and add case tests - thanks Sean Corfield for the patch and Daniel Sutton and Ghadi Shayban for the help in tracking it down.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_10_0_alpha5_june_27_2018"><a class="anchor" href="#_1_10_0_alpha5_june_27_2018"></a>1.10.0-alpha5 (June 27, 2018)</h3>
+<div class="paragraph">
+<p>Clojure 1.10.0-alpha5 is now available.</p>
+</div>
+<div class="paragraph">
+<p>1.10.0-alpha5 includes the following changes since 1.10.0-alpha4:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2363">CLJ-2363</a> - make Java 8 the minimum requirement for Clojure (also bumps embedded ASM to latest) - thanks Ghadi Shayban!</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2284">CLJ-2284</a> - fix invalid bytecode generation for static interface method calls in Java 9+ - thanks Ghadi Shayban!</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2330">CLJ-2330</a> - fix brittle test that fails on Java 10 build due to serialization drift</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2362">CLJ-2362</a> - withMeta() should return identity when new meta is identical to prior</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1130">CLJ-1130</a> - when unable to match static method, improve error messages</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2289">CLJ-2089</a> - sorted colls with default comparator don&#8217;t check that first element is Comparable</p>
+</li>
+<li>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2163">CLJ-2163</a> - add test for var serialization</p>
+</li>
+<li>
+<p>Bump dependency version for spec.alpha to latest, 0.2.168 (see <a href="https://github.com/clojure/spec.alpha/blob/master/CHANGES.md">changes</a>)</p>
+</li>
+<li>
+<p>Bump dependency version for core.specs.alpha to latest, 0.2.36 (see <a href="https://github.com/clojure/core.specs.alpha/blob/master/CHANGES.md">changes</a>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+1.10.0-alpha5 drops support for Java 6 and 7 and makes Java 8 the minimum requirement. Compilation will produce Java 8 level bytecode (which will not run on earlier versions of Java). This is the first change in bytecode version since Clojure 1.6. We would greatly appreciate it if you tried this release with your library or project and provided feedback about errors, performance differences (good or bad), compatibility, etc.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When using the <code>clj</code> tool and deps.edn, we recommend adding an alias to your ~/.clojure/deps.edn:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">{:aliases
+ {:clj/next
+  {:override-deps
+   {org.clojure/clojure {:mvn/version "1.10.0-alpha5"}}}}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then run any of your projects with the latest Clojure dev release by activating the alias with <code>clj</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-shell" data-lang="shell">clj -A:clj/next</code></pre>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_1_10_0_alpha4_feb_9_2018"><a class="anchor" href="#_1_10_0_alpha4_feb_9_2018"></a>1.10.0-alpha4 (Feb 9, 2018)</h3>
 <div class="ulist">
@@ -112,7 +598,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2313">CLJ-2313</a> - Fix for string capture mode</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2313">CLJ-2313</a> - Fix for string capture mode</p>
 </li>
 </ul>
 </div>
@@ -163,7 +649,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2259">CLJ-2259</a> - Remove unnecessary bigdec? predicate added in 1.9</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2259">CLJ-2259</a> - Remove unnecessary bigdec? predicate added in 1.9</p>
 </li>
 <li>
 <p>Bumped spec.alpha dependency to 0.1.143</p>
@@ -176,7 +662,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2254">CLJ-2254</a> - add System property clojure.spec.skip-macros (default=false) that can be used to turn off spec checking in macros</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2254">CLJ-2254</a> - add System property clojure.spec.skip-macros (default=false) that can be used to turn off spec checking in macros</p>
 </li>
 </ul>
 </div>
@@ -189,13 +675,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-700">CLJ-700</a> - (fix) <code>contains?</code>, <code>get</code>, and <code>find</code> broken for transient collections</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-700">CLJ-700</a> - (fix) <code>contains?</code>, <code>get</code>, and <code>find</code> broken for transient collections</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2247">CLJ-2247</a> - (regression) restore and doc last match semantics of {min,max}-key</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2247">CLJ-2247</a> - (regression) restore and doc last match semantics of {min,max}-key</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2239">CLJ-2239</a> - (regression) fix Guava javadoc location</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2239">CLJ-2239</a> - (regression) fix Guava javadoc location</p>
 </li>
 <li>
 <p>Updated dep to spec.alpha 0.1.134 - see <a href="https://github.com/clojure/spec.alpha/blob/master/CHANGES.md">changes</a></p>
@@ -211,7 +697,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://dev.clojure.org/jira/browse/CLJ-2077">CLJ-2077</a> - Clojure can&#8217;t be loaded from the boot classpath under java 9</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2077">CLJ-2077</a> - Clojure can&#8217;t be loaded from the boot classpath under java 9</p>
 </li>
 </ul>
 </div>
@@ -224,97 +710,97 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1074">CLJ-1074</a> - (new) add new ## reader macro for symbolic values, and read/print support for double vals ##Inf, ##-Inf, ##NaN</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1074">CLJ-1074</a> - (new) add new ## reader macro for symbolic values, and read/print support for double vals ##Inf, ##-Inf, ##NaN</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1454">CLJ-1454</a> - (new) add swap-vals! and reset-vals! that return both old and new values</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1454">CLJ-1454</a> - (new) add swap-vals! and reset-vals! that return both old and new values</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2184">CLJ-2184</a> - (errors) propagate meta in doto forms to improve error reporting</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2184">CLJ-2184</a> - (errors) propagate meta in doto forms to improve error reporting</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2210">CLJ-2210</a> - (perf) cache class derivation in compiler to improve compiler performance</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2210">CLJ-2210</a> - (perf) cache class derivation in compiler to improve compiler performance</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2070">CLJ-2070</a> - (perf) clojure.core/delay - improve performance</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2070">CLJ-2070</a> - (perf) clojure.core/delay - improve performance</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1917">CLJ-1917</a> - (perf) reducing seq over string should call String/length outside of loop</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1917">CLJ-1917</a> - (perf) reducing seq over string should call String/length outside of loop</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1901">CLJ-1901</a> - (perf) amap - should call alength only once</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1901">CLJ-1901</a> - (perf) amap - should call alength only once</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-99">CLJ-99</a>   - (perf) min-key and max-key - evaluate k on each arg at most once</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-99">CLJ-99</a>   - (perf) min-key and max-key - evaluate k on each arg at most once</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2188">CLJ-2188</a> - (perf) slurp - mark return type as String</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2188">CLJ-2188</a> - (perf) slurp - mark return type as String</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2108">CLJ-2108</a> - (startup time) delay loading of spec and core specs (still more to do on this)</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2108">CLJ-2108</a> - (startup time) delay loading of spec and core specs (still more to do on this)</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2204">CLJ-2204</a> - (security) disable serialization of proxy classes to avoid potential issue when deserializing</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2204">CLJ-2204</a> - (security) disable serialization of proxy classes to avoid potential issue when deserializing</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2048">CLJ-2048</a> - (fix) specify type to avoid ClassCastException when stack trace is elided by JVM</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2048">CLJ-2048</a> - (fix) specify type to avoid ClassCastException when stack trace is elided by JVM</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1887">CLJ-1887</a> - (fix) IPersistentVector.length() - implement missing method</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1887">CLJ-1887</a> - (fix) IPersistentVector.length() - implement missing method</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1841">CLJ-1841</a> - (fix) bean - iterator was broken</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1841">CLJ-1841</a> - (fix) bean - iterator was broken</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1714">CLJ-1714</a> - (fix) using a class in a type hint shouldn&#8217;t load the class</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1714">CLJ-1714</a> - (fix) using a class in a type hint shouldn&#8217;t load the class</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1398">CLJ-1398</a> - (fix) clojure.java.javadoc/javadoc - update doc urls</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1398">CLJ-1398</a> - (fix) clojure.java.javadoc/javadoc - update doc urls</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1371">CLJ-1371</a> - (fix) Numbers.divide(Object, Object) - add checks for NaN</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1371">CLJ-1371</a> - (fix) Numbers.divide(Object, Object) - add checks for NaN</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1358">CLJ-1358</a> - (fix) doc - does not expand special cases properly (try, catch)</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1358">CLJ-1358</a> - (fix) doc - does not expand special cases properly (try, catch)</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1705">CLJ-1705</a> - (fix) vector-of - fix NullPointerException if given unrecognized type</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1705">CLJ-1705</a> - (fix) vector-of - fix NullPointerException if given unrecognized type</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2170">CLJ-2170</a> - (doc) fix improperly located docstrings</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2170">CLJ-2170</a> - (doc) fix improperly located docstrings</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2156">CLJ-2156</a> - (doc) clojure.java.io/copy - doc char[] support</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2156">CLJ-2156</a> - (doc) clojure.java.io/copy - doc char[] support</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2051">CLJ-2051</a> - (doc) clojure.instant/validated docstring - fix typo</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2051">CLJ-2051</a> - (doc) clojure.instant/validated docstring - fix typo</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2104">CLJ-2104</a> - (doc) clojure.pprint docstring - fix typo</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2104">CLJ-2104</a> - (doc) clojure.pprint docstring - fix typo</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2028">CLJ-2028</a> - (doc) filter, filterv, remove, take-while - fix docstrings</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2028">CLJ-2028</a> - (doc) filter, filterv, remove, take-while - fix docstrings</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1873">CLJ-1873</a> - (doc) require, <strong>data-readers</strong> - add .cljc files to docstrings</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1873">CLJ-1873</a> - (doc) require, <code>*data-readers*</code> - add .cljc files to docstrings</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1159">CLJ-1159</a> - (doc) clojure.java.io/delete-file - improve docstring</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1159">CLJ-1159</a> - (doc) clojure.java.io/delete-file - improve docstring</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2039">CLJ-2039</a> - (doc) deftype - fix typo in docstring</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2039">CLJ-2039</a> - (doc) deftype - fix typo in docstring</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1918">CLJ-1918</a> - (doc) await - improve docstring re shutdown-agents</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1918">CLJ-1918</a> - (doc) await - improve docstring re shutdown-agents</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1837">CLJ-1837</a> - (doc) index-of, last-index-of - clarify docstrings</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1837">CLJ-1837</a> - (doc) index-of, last-index-of - clarify docstrings</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1826">CLJ-1826</a> - (doc) drop-last - fix docstring</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1826">CLJ-1826</a> - (doc) drop-last - fix docstring</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1859">CLJ-1859</a> - (doc) zero?, pos?, neg? - fix docstrings</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1859">CLJ-1859</a> - (doc) zero?, pos?, neg? - fix docstrings</p>
 </li>
 </ul>
 </div>
@@ -334,7 +820,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Can now bind <code><strong>reader-resolver</strong></code> to an impl of LispReader$Resolver to control the reader&#8217;s use of namespace interactions when resolving autoresolved keywords and maps.</p>
+<p>Can now bind <code>*reader-resolver*</code> to an impl of LispReader$Resolver to control the reader&#8217;s use of namespace interactions when resolving autoresolved keywords and maps.</p>
 </li>
 <li>
 <p>Tighten autoresolved keywords and autoresolved namespace map syntax to support <strong>only</strong> aliases, as originally intended</p>
@@ -350,22 +836,22 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1793">CLJ-1793</a> - Clear 'this' before calls in tail position</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1793">CLJ-1793</a> - Clear 'this' before calls in tail position</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2091">CLJ-2091</a> clojure.lang.APersistentVector#hashCode is not thread-safe</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2091">CLJ-2091</a> clojure.lang.APersistentVector#hashCode is not thread-safe</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1860">CLJ-1860</a> Make -0.0 hash consistent with 0.0</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1860">CLJ-1860</a> Make -0.0 hash consistent with 0.0</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2141">CLJ-2141</a> Return only true/false from qualified-* predicates</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2141">CLJ-2141</a> Return only true/false from qualified-* predicates</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2142">CLJ-2142</a> Fix check for duplicate keys with namespace map syntax</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2142">CLJ-2142</a> Fix check for duplicate keys with namespace map syntax</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2128">CLJ-2128</a> spec error during macroexpand no longer throws compiler exception with location</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2128">CLJ-2128</a> spec error during macroexpand no longer throws compiler exception with location</p>
 </li>
 <li>
 <p>Updated to use spec.alpha 0.1.123</p>
@@ -476,13 +962,13 @@ org.clojure/core.specs.alpha
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2043">CLJ-2043</a> - s/form of conformer is broken</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2043">CLJ-2043</a> - s/form of conformer is broken</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2035">CLJ-2035</a> - s/form of collection specs are broken</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2035">CLJ-2035</a> - s/form of collection specs are broken</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2100">CLJ-2100</a> - s/form of s/nilable should include the original spec, not the resolved spec</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2100">CLJ-2100</a> - s/form of s/nilable should include the original spec, not the resolved spec</p>
 </li>
 </ul>
 </div>
@@ -492,13 +978,13 @@ org.clojure/core.specs.alpha
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2062">CLJ-2062</a> - added specs for <code>import</code> and <code>refer-clojure</code></p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2062">CLJ-2062</a> - added specs for <code>import</code> and <code>refer-clojure</code></p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2114">CLJ-2114</a> - ::defn-args spec incorrectly parses map body as a prepost rather than function body</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2114">CLJ-2114</a> - ::defn-args spec incorrectly parses map body as a prepost rather than function body</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2055">CLJ-2055</a> - binding-form spec parses symbol-only maps incorrectly</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2055">CLJ-2055</a> - binding-form spec parses symbol-only maps incorrectly</p>
 </li>
 </ul>
 </div>
@@ -508,7 +994,7 @@ org.clojure/core.specs.alpha
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2113">CLJ-2113</a> - Clojure maven build updated</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2113">CLJ-2113</a> - Clojure maven build updated</p>
 </li>
 </ul>
 </div>
@@ -527,22 +1013,22 @@ org.clojure/core.specs.alpha
 <p>NEW <code>halt-when</code> is a transducer that ends transduction when pred is satisfied. It takes an optional fn that will be invoked with the completed result so far and the input that triggered the predicate.</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2042">CLJ-2042</a> - clojure.spec/form of clojure.spec/? now resolves pred</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2042">CLJ-2042</a> - clojure.spec/form of clojure.spec/? now resolves pred</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2024">CLJ-2024</a> - clojure.spec.test/check now fully resolves aliased fspecs</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2024">CLJ-2024</a> - clojure.spec.test/check now fully resolves aliased fspecs</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2032">CLJ-2032</a> - fixed confusing error if fspec is missing :args spec</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2032">CLJ-2032</a> - fixed confusing error if fspec is missing :args spec</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2027">CLJ-2027</a> - fixed 1.9 regression with printing of <code>bean</code> instances</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2027">CLJ-2027</a> - fixed 1.9 regression with printing of <code>bean</code> instances</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1790">CLJ-1790</a> - fixed error extending protocols to Java arrays</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1790">CLJ-1790</a> - fixed error extending protocols to Java arrays</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1242">CLJ-1242</a> - = on sorted sets or maps with incompatible comparators now returns false rather than throws</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1242">CLJ-1242</a> - = on sorted sets or maps with incompatible comparators now returns false rather than throws</p>
 </li>
 </ul>
 </div>
@@ -580,36 +1066,36 @@ org.clojure/core.specs.alpha
 <p>spec performance has been improved for many use cases</p>
 </li>
 <li>
-<p>spec explain printer is now pluggable via the dynamic var clojure.spec/<strong>explain-out</strong>
-which should be a function that takes an explain-data and prints to <strong>out</strong></p>
+<p>spec explain printer is now pluggable via the dynamic var <code>clojure.spec/*explain-out*</code>
+which should be a function that takes an explain-data and prints to <code>*out*</code></p>
 </li>
 <li>
 <p>when a macro spec fails during macroexpand, throw ex-info with explain-data payload
 rather than IllegalArgumentException</p>
 </li>
 <li>
-<p>pprint prints maps with namespace literal syntax when <strong>print-namespace-maps</strong> is true</p>
+<p>pprint prints maps with namespace literal syntax when <code>*print-namespace-maps*</code> is true</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1988">CLJ-1988</a> - coll-of, every extended to conform sequences properly</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1988">CLJ-1988</a> - coll-of, every extended to conform sequences properly</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2004">CLJ-2004</a> - multi-spec form was missing retag</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2004">CLJ-2004</a> - multi-spec form was missing retag</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2006">CLJ-2006</a> - fix old function name in docstring</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2006">CLJ-2006</a> - fix old function name in docstring</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2008">CLJ-2008</a> - omit macros from checkable-syms</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2008">CLJ-2008</a> - omit macros from checkable-syms</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-2012">CLJ-2012</a> - fix ns spec on gen-class signatures to allow class names</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-2012">CLJ-2012</a> - fix ns spec on gen-class signatures to allow class names</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1224">CLJ-1224</a> - record instances now cache hasheq and hashCode like maps</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1224">CLJ-1224</a> - record instances now cache hasheq and hashCode like maps</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1673">CLJ-1673</a> - clojure.repl/dir-fn now works on namespace aliases</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1673">CLJ-1673</a> - clojure.repl/dir-fn now works on namespace aliases</p>
 </li>
 </ul>
 </div>
@@ -625,22 +1111,22 @@ rather than IllegalArgumentException</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1914">CLJ-1914</a> - Fixed race condition in concurrent range realization</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1914">CLJ-1914</a> - Fixed race condition in concurrent range realization</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1870">CLJ-1870</a> - Fixed reloading a defmulti removes metadata on the var</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1870">CLJ-1870</a> - Fixed reloading a defmulti removes metadata on the var</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1744">CLJ-1744</a> - Clear unused locals, which can prevent memory leaks in some cases</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1744">CLJ-1744</a> - Clear unused locals, which can prevent memory leaks in some cases</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1423">CLJ-1423</a> - Allow vars to be invoked with infinite arglists (also, faster)</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1423">CLJ-1423</a> - Allow vars to be invoked with infinite arglists (also, faster)</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1993">CLJ-1993</a> - Added <strong>print-namespace-maps</strong> dynamic var that controls whether to use namespace map syntax for maps with keys from the same namespace. The default is false, but standard REPL bindings set this to true.</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1993">CLJ-1993</a> - Added <code>*print-namespace-maps*</code> dynamic var that controls whether to use namespace map syntax for maps with keys from the same namespace. The default is false, but standard REPL bindings set this to true.</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1985">CLJ-1985</a> - Fixed with-gen of conformer losing unform fn</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1985">CLJ-1985</a> - Fixed with-gen of conformer losing unform fn</p>
 </li>
 <li>
 <p>Fixed clojure.spec.test/check to skip spec&#8217;ed macros</p>
@@ -674,7 +1160,7 @@ rather than IllegalArgumentException</p>
 <p>gen overrides (see c.s/gen, c.s./exercise, c.s.t/check, c.s.t/instrument) now expect no-arg functions that return gens, rather than gens</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1977">CLJ-1977</a> - fix regression from alpha9 in data conversion of Throwable when stack trace is empty</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1977">CLJ-1977</a> - fix regression from alpha9 in data conversion of Throwable when stack trace is empty</p>
 </li>
 </ul>
 </div>
@@ -687,7 +1173,7 @@ rather than IllegalArgumentException</p>
 <div class="ulist">
 <ul>
 <li>
-<p>NEW clojure.spec/assert - a facility for adding spec assertions to your code. See the docs for <strong>compile-asserts</strong> and assert for more details.</p>
+<p>NEW clojure.spec/assert - a facility for adding spec assertions to your code. See the docs for <code>*compile-asserts*</code> and assert for more details.</p>
 </li>
 <li>
 <p>clojure.spec/merge - now merges rather than flows in conform/unform</p>
@@ -999,7 +1485,7 @@ rather than IllegalArgumentException</p>
 <p>explain-data now contains :in key for the input path</p>
 </li>
 <li>
-<p><a href="https://dev.clojure.org/jira/browse/CLJ-1931">CLJ-1931</a> - with-gen throws AbstractMethodError</p>
+<p><a href="https://clojure.atlassian.net/browse/CLJ-1931">CLJ-1931</a> - with-gen throws AbstractMethodError</p>
 </li>
 </ul>
 </div>
