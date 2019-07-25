@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 19:05+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -57,9 +57,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:19
+#, fuzzy
+#| msgid ""
+#| "Also see the introductory http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] and this "
+#| "https://www.youtube.com/watch?v=6mTbuzafcII[video]."
 msgid ""
-"Also see the introductory http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post] and this https://"
-"www.youtube.com/watch?v=6mTbuzafcII[video]."
+"Also see the introductory http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog post], this https://www."
+"youtube.com/watch?v=6mTbuzafcII[video], and this section of the FAQ https://clojure.org/guides/"
+"faq#transducers_vs_seqs[about good use cases for transducers]."
 msgstr ""
 "導入として次のブログポストおよびビデオを参照: http://blog.cognitect.com/blog/2014/8/6/transducers-are-coming[blog "
 "post] https://www.youtube.com/watch?v=6mTbuzafcII[video]"
@@ -120,7 +125,8 @@ msgstr ""
 "たアリティはカリー化や部分適用ではない。_"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:179
+#: en/content/reference/transducers.adoc:39 en/content/reference/reader.adoc:180
+#: en/content/guides/test_check_beginner.adoc:204
 msgid "For example:"
 msgstr "例:"
 
@@ -406,14 +412,21 @@ msgstr "トランスデューサーの作成"
 
 #. type: Plain text
 #: en/content/reference/transducers.adoc:127
-msgid "Most functions that produce transducers have the following shape (custom code in \"...\"):"
+#, fuzzy
+#| msgid "Most functions that produce transducers have the following shape (custom code in \"...\"):"
+msgid "Transducers have the following shape (custom code in \"...\"):"
 msgstr "トランスデューサーを返すほとんどの関数は次のような形態をとる (custom code in \"...\"):"
 
 #. type: delimited block -
-#: en/content/reference/transducers.adoc:133
-#, no-wrap
+#: en/content/reference/transducers.adoc:134
+#, fuzzy, no-wrap
+#| msgid ""
+#| "(fn [xf]\n"
+#| "  (fn ([] ...)\n"
+#| "      ([result] ...)\n"
+#| "      ([result input] ...)))\n"
 msgid ""
-"(fn [xf]\n"
+"(fn [rf]\n"
 "  (fn ([] ...)\n"
 "      ([result] ...)\n"
 "      ([result input] ...)))\n"
@@ -424,40 +437,48 @@ msgstr ""
 "      ([result input] ...)))\n"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:135
+#: en/content/reference/transducers.adoc:137
+#, fuzzy
+#| msgid ""
+#| "Many of the core sequence functions (like map, filter, etc) take operation-specific arguments (a predicate, "
+#| "function, count, etc) and return a transducer of this shape closing over those arguments. In some cases, like "
+#| "*cat*, the core function _is_ a transducer function and does not take an *xf*."
 msgid ""
 "Many of the core sequence functions (like map, filter, etc) take operation-specific arguments (a predicate, function, "
 "count, etc) and return a transducer of this shape closing over those arguments. In some cases, like *cat*, the core "
-"function _is_ a transducer function and does not take an *xf*."
+"function _is_ a transducer function and does not take an *rf*."
 msgstr ""
 "コアのシーケンス関数の多く (map、 filter、etc) は処理特有の引数を受け取り、(述語、関数、個数、 etc) それらの引数を包含"
 "するトランスデューサーを返す。中には *cat* 等 _それ自体が_ トランスデューサーであり、 *xf* を受け取らない関数もある。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:137
+#: en/content/reference/transducers.adoc:139
 msgid "The inner function is defined with 3 arities used for different purposes:"
 msgstr "内部の関数は異なる用途のために3種類のアリティで定義されている:"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:139
-#, no-wrap
-msgid "*Init* (arity 0) - should call the init arity on the nested transform *xf*, which will eventually call out to the transducing process.\n"
+#: en/content/reference/transducers.adoc:141
+#, fuzzy, no-wrap
+#| msgid "*Init* (arity 0) - should call the init arity on the nested transform *xf*, which will eventually call out to the transducing process.\n"
+msgid "*Init* (arity 0) - should call the init arity on the nested transform *rf*, which will eventually call out to the transducing process.\n"
 msgstr "*Init* (アリティ 0) - ネストしている変換 *xf* をinit アリティ(引数0個)で呼び出し、最終的にはトランスデューサー処理を呼び出す。\n"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:140
-#, no-wrap
-msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *xf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *xf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
+#: en/content/reference/transducers.adoc:142
+#, fuzzy, no-wrap
+#| msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *xf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *xf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
+msgid "*Step* (arity 2) - this is a standard reduction function but it is expected to call the *rf* step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call *rf* or not. map will always call it exactly once. cat may call it many times depending on the inputs.\n"
 msgstr "*Step* (アリティ 2) - これは通常のreducing関数だが、トランスデューサーによって *xf* の stepアリティ(引数2個)を0回以上呼び出すことが期待される。例えば、filterは述語によって *xf* を呼び出すかどうかを決定する。mapは常に一度のみ呼び出す。catは入力によっては複数回呼び出す可能性がある。\n"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:141
-#, no-wrap
-msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *xf* completion arity exactly once.\n"
+#: en/content/reference/transducers.adoc:143
+#, fuzzy, no-wrap
+#| msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *xf* completion arity exactly once.\n"
+msgid "*Completion* (arity 1) - some processes will not end, but for those that do (like *transduce*), the completion arity is used to produce a final value and/or flush state. This arity must call the *rf* completion arity exactly once.\n"
 msgstr "*Completion* (アリティ 1) - 完了しない処理は存在するが、完了するものは (例えば *transduce* )、 完了引数が使用され、最終的な値を作成/状態をクリアする。この引数は *xf* の完了引数を一度のみ呼び出す必要がある。\n"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:143
+#: en/content/reference/transducers.adoc:145
 msgid ""
 "An example use of *completion* is *partition-all*, which must flush any remaining elements at the end of the input. "
 "The https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing[completing] function can be used "
@@ -468,18 +489,18 @@ msgstr ""
 "completionアリティを追加することによってreducing関数をトランスデューサー関数に変換することができる。"
 
 #. type: Title ===
-#: en/content/reference/transducers.adoc:144
+#: en/content/reference/transducers.adoc:146
 #, no-wrap
 msgid "Early termination"
 msgstr "早期終了"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:147
+#: en/content/reference/transducers.adoc:149
 msgid "Clojure has a mechanism for specifying early termination of a reduce:"
 msgstr "Clojureにはreduceの早期終了を指定するメカニズムがある:"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:149
+#: en/content/reference/transducers.adoc:151
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced[reduced] - takes a value and returns a "
 "_reduced_ value indicating reduction should stop"
@@ -488,7 +509,7 @@ msgstr ""
 "きことを示す、 _reduced(reduce済みの)_ 値を返す。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:150
+#: en/content/reference/transducers.adoc:152
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?[reduced?] - returns true if the value "
 "was created with _reduced_"
@@ -497,7 +518,7 @@ msgstr ""
 "た値に対して true を返す。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:151
+#: en/content/reference/transducers.adoc:153
 msgid ""
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref[deref] or @ can be used to retrieve the "
 "value inside a _reduced_"
@@ -506,7 +527,7 @@ msgstr ""
 "の値を取得することができる。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:153
+#: en/content/reference/transducers.adoc:155
 msgid ""
 "A process that uses transducers must check for and stop when the step function returns a reduced value (more on that "
 "in Creating Transducible Processes). Additionally, a transducer step function that uses a nested reduce must check "
@@ -517,13 +538,13 @@ msgstr ""
 "値かどうかをチェックして、見つけたらそれを引き渡す必要がある。(catの実装を例として参照)"
 
 #. type: Title ===
-#: en/content/reference/transducers.adoc:154
+#: en/content/reference/transducers.adoc:156
 #, no-wrap
 msgid "Transducers with reduction state"
 msgstr "reduce処理の状態を持つトランスデューサー"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:157
+#: en/content/reference/transducers.adoc:159
 msgid ""
 "Some transducers (such as *take*, *partition*, etc) require state during the reduction process. This state is created "
 "each time the transducible process applies the transducer. For example, consider the dedupe transducer that collapses "
@@ -535,7 +556,7 @@ msgstr ""
 "る。このトランスデューサーは現在の値を引き渡すかどうかを決めるにあたって、一つ前の値を記憶する必要がある:"
 
 #. type: delimited block -
-#: en/content/reference/transducers.adoc:171
+#: en/content/reference/transducers.adoc:173
 #, no-wrap
 msgid ""
 "(defn dedupe []\n"
@@ -565,7 +586,7 @@ msgstr ""
 "                (xf result input))))))))\n"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:173
+#: en/content/reference/transducers.adoc:175
 msgid ""
 "In dedupe, *prev* is a stateful container that stores the previous value during the reduction. The prev value is a "
 "volatile for performance, but it could also be an atom. The prev value will not be initialized until the transducing "
@@ -577,7 +598,7 @@ msgstr ""
 "の呼び出し)。よって、ステートフルなやり取りはトランスデューサー処理のコンテキストに内包される。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:175
+#: en/content/reference/transducers.adoc:177
 msgid ""
 "In the completion step, a transducer with reduction state should flush state prior to calling the nested "
 "transformer's completion function, unless it has previously seen a reduced value from the nested step in which case "
@@ -588,13 +609,13 @@ msgstr ""
 "きだ。"
 
 #. type: Title ==
-#: en/content/reference/transducers.adoc:176
+#: en/content/reference/transducers.adoc:178
 #, no-wrap
 msgid "Creating Transducible Processes"
 msgstr "transduce可能な処理の作成"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:179
+#: en/content/reference/transducers.adoc:181
 msgid ""
 "Transducers are designed to be used in many kinds of processes. A transducible process is defined as a succession of "
 "steps where each step ingests an input. The source of the inputs is specific to each process (from a collection, an "
@@ -605,12 +626,12 @@ msgstr ""
 "様に、各ステップの出力の処理方法も処理によって選択する必要がある。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:181
+#: en/content/reference/transducers.adoc:183
 msgid "If you have a new context for applying transducers, there are a few general rules to be aware of:"
 msgstr "トランスデューサーを新たなコンテキストに適用する場合、いくつかの一般的な注意点がある。:"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:184
+#: en/content/reference/transducers.adoc:186
 msgid ""
 "If a step function returns a _reduced_ value, the transducible process must not supply any more inputs to the step "
 "function. The reduced value must be unwrapped with deref before completion."
@@ -619,12 +640,12 @@ msgstr ""
 "い。reduce済みの値はderefを使用して完了前に展開する必要がある。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:185
+#: en/content/reference/transducers.adoc:187
 msgid "A completing process must call the completion operation on the final accumulated value exactly once."
 msgstr "completion操作は、最終的な集計値に対して完了処置を一度のみ呼び出す必要がある。"
 
 #. type: Plain text
-#: en/content/reference/transducers.adoc:185
+#: en/content/reference/transducers.adoc:187
 msgid ""
 "A transducing process must encapsulate references to the function returned by invoking a transducer - these may be "
 "stateful and unsafe for use across threads."

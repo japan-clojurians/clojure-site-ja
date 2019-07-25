@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 19:34+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/namespaces.adoc:1 en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
+#: en/content/reference/namespaces.adoc:1 en/content/guides/faq.adoc:203 en/content/guides/reader_conditionals.adoc:87
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
 msgstr "名前空間(namespace)"
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:700 en/content/guides/reader_conditionals.adoc:25
+#: en/content/guides/weird_characters.adoc:755 en/content/guides/reader_conditionals.adoc:25
 #, no-wrap
 msgid ""
 "#?(:clj  (Clojure expression)\n"
@@ -34,14 +34,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:708 en/content/guides/reader_conditionals.adoc:30
+#: en/content/guides/weird_characters.adoc:763 en/content/guides/reader_conditionals.adoc:30
 msgid ""
 "The syntax for a splicing reader conditional is `#?@`. It is used to splice lists into the containing form. So the "
 "Clojure reader would read this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:713 en/content/guides/reader_conditionals.adoc:36
+#: en/content/guides/weird_characters.adoc:768 en/content/guides/reader_conditionals.adoc:36
 #, no-wrap
 msgid ""
 "(defn build-list []\n"
@@ -50,12 +50,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:715 en/content/guides/reader_conditionals.adoc:39
+#: en/content/guides/weird_characters.adoc:770 en/content/guides/reader_conditionals.adoc:39
 msgid "as this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:719 en/content/guides/reader_conditionals.adoc:44
+#: en/content/guides/weird_characters.adoc:774 en/content/guides/reader_conditionals.adoc:44
 #, no-wrap
 msgid ""
 "(defn build-list []\n"
@@ -63,10 +63,17 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/comparators.adoc:71 en/content/guides/reader_conditionals.adoc:11
+#: en/content/guides/test_check_beginner.adoc:11 en/content/guides/equality.adoc:128
+#: en/content/guides/comparators.adoc:73 en/content/guides/reader_conditionals.adoc:11
 #, no-wrap
 msgid "Introduction"
 msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:285 en/content/guides/reader_conditionals.adoc:120
+#, no-wrap
+msgid "Exception handling"
+msgstr "例外処理"
 
 #. type: Title =
 #: en/content/guides/reader_conditionals.adoc:1
@@ -248,12 +255,6 @@ msgid ""
 "      (let [token (get-token conn)]\n"
 "        (net/send-start-query conn token (replace-vars query)))))\n"
 msgstr ""
-
-#. type: Title ===
-#: en/content/guides/reader_conditionals.adoc:120 en/content/guides/learn/flow.adoc:285
-#, no-wrap
-msgid "Exception handling"
-msgstr "例外処理"
 
 #. type: Plain text
 #: en/content/guides/reader_conditionals.adoc:123

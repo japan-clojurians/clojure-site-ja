@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 17:50+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,32 +17,44 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/dev/creating_tickets.adoc:46 en/content/reference/datatypes.adoc:115
+#: en/content/reference/special_forms.adoc:182
+msgid "Example:"
+msgstr "例:"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
+#. type: Title =
+#: en/content/reference/datatypes.adoc:1
+#, no-wrap
+msgid "Datatypes: deftype, defrecord and reify"
+msgstr "データ型: deftypeとdefrecordとreify"
+
 #. type: Title ==
-#: en/content/reference/protocols.adoc:16 en/content/reference/datatypes.adoc:17
+#: en/content/reference/datatypes.adoc:17 en/content/reference/protocols.adoc:16
 #, no-wrap
 msgid "Motivation"
 msgstr "動機"
 
 #. type: Plain text
-#: en/content/reference/protocols.adoc:19 en/content/reference/datatypes.adoc:20
+#: en/content/reference/datatypes.adoc:20 en/content/reference/protocols.adoc:19
 msgid ""
 "Clojure is written in terms of abstractions. There are abstractions for sequences, collections, callability, etc. In "
 "addition, Clojure supplies many implementations of these abstractions. The abstractions are specified by host "
@@ -58,21 +70,11 @@ msgstr ""
 "をホストプラットフォームの機構に対して妥協することなく提供する。"
 
 #. type: Title ==
-#: en/content/reference/protocols.adoc:36 en/content/reference/datatypes.adoc:21 en/content/about/dynamic.adoc:42
+#: en/content/reference/datatypes.adoc:21 en/content/reference/protocols.adoc:36
+#: en/content/news/2012/05/08/reducers.adoc:21 en/content/about/dynamic.adoc:42
 #, no-wrap
 msgid "Basics"
 msgstr "基本"
-
-#. type: Plain text
-#: en/content/reference/special_forms.adoc:182 en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:184
-msgid "Example:"
-msgstr "例:"
-
-#. type: Title =
-#: en/content/reference/datatypes.adoc:1
-#, no-wrap
-msgid "Datatypes: deftype, defrecord and reify"
-msgstr "データ型: deftypeとdefrecordとreify"
 
 #. type: Plain text
 #: en/content/reference/datatypes.adoc:24

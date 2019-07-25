@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,33 +16,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. type: Title ==
+#: en/content/reference/data_structures.adoc:235
+#: en/content/reference/reader.adoc:101
+#: en/content/guides/learn/hashed_colls.adoc:19
+#, no-wrap
+msgid "Sets"
+msgstr ""
+
 #. type: Title ====
-#: en/content/reference/reader.adoc:57
+#: en/content/reference/reader.adoc:58
 #: en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 #, no-wrap
 msgid "Maps"
 msgstr ""
 
-#. type: Title ==
-#: en/content/reference/reader.adoc:100
-#: en/content/reference/data_structures.adoc:235
-#: en/content/guides/learn/hashed_colls.adoc:19
-#, no-wrap
-msgid "Sets"
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:4
+#: en/content/guides/learn/sequential_colls.adoc:4
+#: en/content/guides/learn/flow.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/hashed_colls.adoc:4
+msgid "Alex Miller 2017-09-02"
 msgstr ""
 
 #. type: Title =
 #: en/content/guides/learn/hashed_colls.adoc:1
 #, no-wrap
 msgid "Learn Clojure - Hashed Collections"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:4
-#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
-#: en/content/guides/learn/sequential_colls.adoc:4
-#: en/content/guides/learn/functions.adoc:4
-msgid "Alex Miller 2017-09-02"
 msgstr ""
 
 #. type: Plain text
@@ -338,28 +338,29 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:166
+#: en/content/guides/learn/hashed_colls.adoc:167
 #, no-wrap
 msgid ""
 "user=> (bad-lookup-map :foo)\n"
-"NullPointerException\n"
+"Execution error (NullPointerException) at user/eval154 (REPL:1).\n"
+"null\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:168
+#: en/content/guides/learn/hashed_colls.adoc:169
 #, no-wrap
 msgid "Looking up with a default"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:171
+#: en/content/guides/learn/hashed_colls.adoc:172
 msgid ""
 "If you want to do a lookup and fall back to a default value when the key is "
 "not found, specify the default as an extra parameter:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:179
+#: en/content/guides/learn/hashed_colls.adoc:180
 #, no-wrap
 msgid ""
 "user=> (get scores \"Sam\" 0)\n"
@@ -370,27 +371,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:182
+#: en/content/guides/learn/hashed_colls.adoc:183
 msgid ""
 "Using a default is also helpful to distinguish between a missing key and an "
 "existing key with a `nil` value."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:183
+#: en/content/guides/learn/hashed_colls.adoc:184
 #, no-wrap
 msgid "Checking contains"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:186
+#: en/content/guides/learn/hashed_colls.adoc:187
 msgid ""
 "There are two other functions that are helpful in checking whether a map "
 "contains an entry."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:191
+#: en/content/guides/learn/hashed_colls.adoc:192
 #, no-wrap
 msgid ""
 "user=> (contains? scores \"Fred\")\n"
@@ -398,7 +399,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:194
+#: en/content/guides/learn/hashed_colls.adoc:195
 #, no-wrap
 msgid ""
 "user=> (find scores \"Fred\")\n"
@@ -406,25 +407,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:197
+#: en/content/guides/learn/hashed_colls.adoc:198
 msgid ""
 "The `contains?` function is a predicate for checking containment. The `find` "
 "function finds the key/value entry in a map, not just the value."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:198
+#: en/content/guides/learn/hashed_colls.adoc:199
 #, no-wrap
 msgid "Keys or values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:201
+#: en/content/guides/learn/hashed_colls.adoc:202
 msgid "You can also get just the keys or just the values in a map:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:206
+#: en/content/guides/learn/hashed_colls.adoc:207
 #, no-wrap
 msgid ""
 "user=> (keys scores)\n"
@@ -432,7 +433,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:209
+#: en/content/guides/learn/hashed_colls.adoc:210
 #, no-wrap
 msgid ""
 "user=> (vals scores)\n"
@@ -440,7 +441,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:212
+#: en/content/guides/learn/hashed_colls.adoc:213
 msgid ""
 "While maps are unordered, there is a guarantee that keys, vals, and other "
 "functions that walk in \"sequence\" order will always walk a particular map "
@@ -448,20 +449,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:213
+#: en/content/guides/learn/hashed_colls.adoc:214
 #, no-wrap
 msgid "Building a map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:216
+#: en/content/guides/learn/hashed_colls.adoc:217
 msgid ""
 "The `zipmap` function can be used to \"zip\" together two sequences (the "
 "keys and vals) into a map:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:221
+#: en/content/guides/learn/hashed_colls.adoc:222
 #, no-wrap
 msgid ""
 "user=> (def players #{\"Alice\" \"Bob\" \"Kelly\"})\n"
@@ -469,7 +470,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:224
+#: en/content/guides/learn/hashed_colls.adoc:225
 #, no-wrap
 msgid ""
 "user=> (zipmap players (repeat 0))\n"
@@ -477,14 +478,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:227
+#: en/content/guides/learn/hashed_colls.adoc:228
 msgid ""
 "There are a variety of other ways to build up a map using Clojure's sequence "
 "functions (which we have not yet discussed). Come back to these later!"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:232
+#: en/content/guides/learn/hashed_colls.adoc:233
 #, no-wrap
 msgid ""
 ";; with map and into\n"
@@ -492,7 +493,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:238
+#: en/content/guides/learn/hashed_colls.adoc:239
 #, no-wrap
 msgid ""
 ";; with reduce\n"
@@ -503,19 +504,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:240
+#: en/content/guides/learn/hashed_colls.adoc:241
 #, no-wrap
 msgid "Combining maps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:243
+#: en/content/guides/learn/hashed_colls.adoc:244
 msgid ""
 "The `merge` function can be used to combine multiple maps into a single map:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:248
+#: en/content/guides/learn/hashed_colls.adoc:249
 #, no-wrap
 msgid ""
 "user=> (def new-scores {\"Angela\" 300 \"Jeff\" 900})\n"
@@ -523,7 +524,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:251
+#: en/content/guides/learn/hashed_colls.adoc:252
 #, no-wrap
 msgid ""
 "user=> (merge scores new-scores)\n"
@@ -531,19 +532,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:254
+#: en/content/guides/learn/hashed_colls.adoc:255
 msgid "We merged two maps here but you can pass more as well."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:256
+#: en/content/guides/learn/hashed_colls.adoc:257
 msgid ""
 "If both maps contain the same key, the rightmost one wins. Alternately, you "
 "can use `merge-with` to supply a function to invoke when there is a conflict:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:261
+#: en/content/guides/learn/hashed_colls.adoc:262
 #, no-wrap
 msgid ""
 "user=> (def new-scores {\"Fred\" 550 \"Angela\" 900 \"Sam\" 1000})\n"
@@ -551,7 +552,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:264
+#: en/content/guides/learn/hashed_colls.adoc:265
 #, no-wrap
 msgid ""
 "user=> (merge-with + scores new-scores)\n"
@@ -559,27 +560,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:267
+#: en/content/guides/learn/hashed_colls.adoc:268
 msgid ""
 "In the case of a conflict, the function is called on both values to get the "
 "new value."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:268
+#: en/content/guides/learn/hashed_colls.adoc:269
 #, no-wrap
 msgid "Sorted maps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:271
+#: en/content/guides/learn/hashed_colls.adoc:272
 msgid ""
 "Similar to sorted sets, sorted maps maintain the keys in sorted order based "
 "on a comparator, using `compare` as the default comparator function."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:280
+#: en/content/guides/learn/hashed_colls.adoc:281
 #, no-wrap
 msgid ""
 "user=> (def sm (sorted-map\n"
@@ -591,7 +592,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:283
+#: en/content/guides/learn/hashed_colls.adoc:284
 #, no-wrap
 msgid ""
 "user=> (keys sm)\n"
@@ -599,7 +600,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:286
+#: en/content/guides/learn/hashed_colls.adoc:287
 #, no-wrap
 msgid ""
 "user=> (vals sm)\n"
@@ -607,20 +608,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/learn/hashed_colls.adoc:288
+#: en/content/guides/learn/hashed_colls.adoc:289
 #, no-wrap
 msgid "Representing application domain information"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:291
+#: en/content/guides/learn/hashed_colls.adoc:292
 msgid ""
 "When we need to represent many domain information with the same set of "
 "fields known in advance, you can use a map with keyword keys."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:299
+#: en/content/guides/learn/hashed_colls.adoc:300
 #, no-wrap
 msgid ""
 "(def person\n"
@@ -631,20 +632,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:301
+#: en/content/guides/learn/hashed_colls.adoc:302
 #, no-wrap
 msgid "Field accessors"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:304
+#: en/content/guides/learn/hashed_colls.adoc:305
 msgid ""
 "Since this is a map, the ways we've already discussed for looking up a value "
 "by key also work:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:309
+#: en/content/guides/learn/hashed_colls.adoc:310
 #, no-wrap
 msgid ""
 "user=> (get person :occupation)\n"
@@ -652,7 +653,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:312
+#: en/content/guides/learn/hashed_colls.adoc:313
 #, no-wrap
 msgid ""
 "user=> (person :occupation)\n"
@@ -660,7 +661,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:315
+#: en/content/guides/learn/hashed_colls.adoc:316
 msgid ""
 "But really, the most common way to get field values for this use is by "
 "invoking the keyword. Just like with maps and sets, keywords are also "
@@ -669,7 +670,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:320
+#: en/content/guides/learn/hashed_colls.adoc:321
 #, no-wrap
 msgid ""
 "user=> (:occupation person)\n"
@@ -677,12 +678,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:323
+#: en/content/guides/learn/hashed_colls.adoc:324
 msgid "Keyword invocation also takes an optional default value:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:328
+#: en/content/guides/learn/hashed_colls.adoc:329
 #, no-wrap
 msgid ""
 "user=> (:favorite-color person \"beige\")\n"
@@ -690,18 +691,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:330
+#: en/content/guides/learn/hashed_colls.adoc:331
 #, no-wrap
 msgid "Updating fields"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:333
+#: en/content/guides/learn/hashed_colls.adoc:334
 msgid "Since this is a map, we can just use `assoc` to add or modify fields:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:338
+#: en/content/guides/learn/hashed_colls.adoc:339
 #, no-wrap
 msgid ""
 "user=> (assoc person :occupation \"Baker\")\n"
@@ -709,18 +710,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:340
+#: en/content/guides/learn/hashed_colls.adoc:341
 #, no-wrap
 msgid "Removing a field"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:343
+#: en/content/guides/learn/hashed_colls.adoc:344
 msgid "Use dissoc to remove fields:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:348
+#: en/content/guides/learn/hashed_colls.adoc:349
 #, no-wrap
 msgid ""
 "user=> (dissoc person :age)\n"
@@ -728,18 +729,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:350
+#: en/content/guides/learn/hashed_colls.adoc:351
 #, no-wrap
 msgid "Nested entities"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:353
+#: en/content/guides/learn/hashed_colls.adoc:354
 msgid "It is common to see entities nested within other entities:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:361
+#: en/content/guides/learn/hashed_colls.adoc:362
 #, no-wrap
 msgid ""
 "(def company\n"
@@ -750,13 +751,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:364
+#: en/content/guides/learn/hashed_colls.adoc:365
 msgid ""
 "You can use `get-in` to access fields at any level inside nested entities:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:369
+#: en/content/guides/learn/hashed_colls.adoc:370
 #, no-wrap
 msgid ""
 "user=> (get-in company [:address :city])\n"
@@ -764,12 +765,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:372
+#: en/content/guides/learn/hashed_colls.adoc:373
 msgid "You can also use `assoc-in` or `update-in` to modify nested entities:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:381
+#: en/content/guides/learn/hashed_colls.adoc:382
 #, no-wrap
 msgid ""
 "user=> (assoc-in company [:address :street] \"303 Broadway\")\n"
@@ -781,13 +782,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/hashed_colls.adoc:383
+#: en/content/guides/learn/hashed_colls.adoc:384
 #, no-wrap
 msgid "Records"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:386
+#: en/content/guides/learn/hashed_colls.adoc:387
 msgid ""
 "An alternative to using maps is to create a \"record\". Records are designed "
 "specifically for this use case and generally have better performance. In "
@@ -796,14 +797,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:388
+#: en/content/guides/learn/hashed_colls.adoc:389
 msgid ""
 "Records are defined with the list of field names for record instances. These "
 "will be treated as keyword keys in each record instance."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:393
+#: en/content/guides/learn/hashed_colls.adoc:394
 #, no-wrap
 msgid ""
 ";; Define a record structure\n"
@@ -811,7 +812,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:396
+#: en/content/guides/learn/hashed_colls.adoc:397
 #, no-wrap
 msgid ""
 ";; Positional constructor - generated\n"
@@ -819,7 +820,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:403
+#: en/content/guides/learn/hashed_colls.adoc:404
 #, no-wrap
 msgid ""
 ";; Map constructor - generated\n"
@@ -831,14 +832,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:406
+#: en/content/guides/learn/hashed_colls.adoc:407
 msgid ""
 "Records are used almost exactly the same as maps, with the caveat that they "
 "cannot be invoked as a function like maps."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/hashed_colls.adoc:411
+#: en/content/guides/learn/hashed_colls.adoc:412
 #, no-wrap
 msgid ""
 "user=> (:occupation kelly)\n"

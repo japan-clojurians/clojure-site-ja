@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,21 @@ msgstr ""
 #: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:121
 #: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
+#: en/content/news/2012/05/08/reducers.adoc:172
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:198
 msgid "Rich"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/news.adoc:4
-#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:4
-msgid "Rich Hickey 2016-05-23"
 msgstr ""
 
 #. type: Title =
 #: en/content/news/2016/05/23/introducing-clojure-spec.adoc:1
 #, no-wrap
 msgid "Introducing clojure.spec"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:4
+#: en/content/news/news.adoc:4
+msgid "Rich Hickey 2016-05-23"
 msgstr ""
 
 #. type: Plain text

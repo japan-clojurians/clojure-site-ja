@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 20:09+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/introduction.adoc:4 en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4 en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
 msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
@@ -87,11 +87,11 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:63
+#: en/content/guides/repl/navigating_namespaces.adoc:65
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> *ns*\n"
 "#object[clojure.lang.Namespace 0x7d1cfb8b \"user\"]\n"
 "user=> (ns myapp.foo.bar) ;; creating and switching to the myapp.foo.bar namespace - `ns` will be explained later in this guide.\n"
@@ -107,20 +107,22 @@ msgid ""
 "myapp.foo.bar=> (in-ns 'user) ;; now switching back to the `user` namespace - `in-ns` will be explained later in this guide.\n"
 "#object[clojure.lang.Namespace 0x7d1cfb8b \"user\"]\n"
 "user=> (union #{1 2} #{2 3})  ;; won't work, because `union` has not been :refer'ed in the `user` namespace\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: union in this context, compiling:(NO_SOURCE_PATH:9:1)\n"
+"Syntax error compiling at (REPL:1:1).\n"
+"Unable to resolve symbol: union in this context\n"
 "user=> (cset/intersection #{1 2} #{2 3}) ;; won't work, because the `cset` alias has not been defined in the current namespace.\n"
-"CompilerException java.lang.RuntimeException: No such namespace: cset, compiling:(NO_SOURCE_PATH:10:1)\n"
+"Syntax error compiling at (REPL:1:1).\n"
+"No such namespace: cset\n"
 "user=>\n"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:68
+#: en/content/guides/repl/navigating_namespaces.adoc:70
 #, no-wrap
 msgid "**TIP:** You can find what aliases are defined in a given namespace by calling https://clojuredocs.org/clojure.core/ns-aliases[ns-aliases].\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:73
+#: en/content/guides/repl/navigating_namespaces.adoc:75
 #, no-wrap
 msgid ""
 "myapp.foo.bar=> (ns-aliases 'myapp.foo.bar)\n"
@@ -128,24 +130,24 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:77
+#: en/content/guides/repl/navigating_namespaces.adoc:79
 #, no-wrap
 msgid "**_In what namespace the Vars that you define (using for example `(def ...)` or `(defn ...)`) will exist._**\n"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:80
+#: en/content/guides/repl/navigating_namespaces.adoc:82
 msgid ""
 "For example, if the current namespace is `myapp.foo.bar` and you define a Var named `my-favorite-number`, you will be "
 "able to reference that Var as `myapp.foo.bar/my-favorite-number` from other namespaces:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:99
+#: en/content/guides/repl/navigating_namespaces.adoc:101
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (ns myapp.foo.bar) ;; creating and switching to the `myapp.foo.bar` namespace - NOTE `ns` will be explained later in this guide\n"
 "nil\n"
 "myapp.foo.bar=> (def my-favorite-number 42) ;; defining a Var named `my-favorite-number`\n"
@@ -154,7 +156,7 @@ msgid ""
 "42\n"
 "myapp.foo.bar=> (ns myapp.baz) ;; creating and switching to another namespace `myapp.baz`\n"
 "nil\n"
-"myapp.baz=> myapp.foo.bar/my-favorite-number ;; refering to `my-favorite-number`\n"
+"myapp.baz=> myapp.foo.bar/my-favorite-number ;; referring to `my-favorite-number`\n"
 "42\n"
 "myapp.baz=> (require '[myapp.foo.bar :as foobar]) ;; we can also use an alias to make it shorter\n"
 "nil\n"
@@ -163,44 +165,44 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:104
+#: en/content/guides/repl/navigating_namespaces.adoc:106
 msgid "You can find what the current namespace is by evaluating `\\*ns*`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:111
+#: en/content/guides/repl/navigating_namespaces.adoc:113
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> *ns*\n"
 "#object[clojure.lang.Namespace 0x7d1cfb8b \"user\"]\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:114
+#: en/content/guides/repl/navigating_namespaces.adoc:116
 msgid "As you can see, by default, when you start a REPL with `clj`, the current namespace is `user`."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/navigating_namespaces.adoc:116
+#: en/content/guides/repl/navigating_namespaces.adoc:118
 #, no-wrap
 msgid "Creating a namespace with `ns`"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:119
+#: en/content/guides/repl/navigating_namespaces.adoc:121
 msgid ""
 "You can create and switch to a new namespace by evaluating `(https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/ns[ns] MY-NAMESPACE-NAME)`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:130
+#: en/content/guides/repl/navigating_namespaces.adoc:132
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (ns myapp.foo-bar)\n"
 "nil\n"
 "myapp.foo-bar=> *ns*\n"
@@ -210,7 +212,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:134
+#: en/content/guides/repl/navigating_namespaces.adoc:136
 #, no-wrap
 msgid ""
 "**Note:** when you switch to a new namespace, the names and aliases that were defined\n"
@@ -218,11 +220,11 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:155
+#: en/content/guides/repl/navigating_namespaces.adoc:159
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (ns myapp.ns1) ;; creating a new namespace and defining a Var `x` and an alias `str/`:\n"
 "nil\n"
 "myapp.ns1=> (def x 42)\n"
@@ -236,19 +238,21 @@ msgid ""
 "myapp.ns1=> (ns myapp.ns2) ;; now switching to another namespace:\n"
 "nil\n"
 "myapp.ns2=> x ;; won't work, because x has not been defined in namespace `myapp.ns2`\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: x in this context, compiling:(NO_SOURCE_PATH:0:0)\n"
+"Syntax error compiling at (REPL:0:0).\n"
+"Unable to resolve symbol: x in this context\n"
 "myapp.ns2=> (str/upper-case \"hello\") ;; won't work, because alias `str` has not been defined in namespace `myapp.ns2`\n"
-"CompilerException java.lang.RuntimeException: No such namespace: str, compiling:(NO_SOURCE_PATH:9:1)\n"
+"Syntax error compiling at (REPL:1:1).\n"
+"No such namespace: str\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/navigating_namespaces.adoc:157
+#: en/content/guides/repl/navigating_namespaces.adoc:161
 #, no-wrap
 msgid "Switching to an existing namespace with `in-ns`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:162
+#: en/content/guides/repl/navigating_namespaces.adoc:166
 msgid ""
 "You can switch to an existing namespace by evaluating `(https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/in-ns[in-ns] 'MY-NAMESPACE-NAME)`.  Here's an example REPL session that creates a namespace `myapp."
@@ -256,11 +260,11 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:183
+#: en/content/guides/repl/navigating_namespaces.adoc:187
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (ns myapp.some-ns) ;;;; creating the namespace `myapp.some-ns`\n"
 "nil\n"
 "myapp.some-ns=> *ns* ;; where are we?\n"
@@ -280,7 +284,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:188
+#: en/content/guides/repl/navigating_namespaces.adoc:192
 #, no-wrap
 msgid ""
 "**_What happens if you `in-ns` to a namespace that has never been created?_**\n"
@@ -289,19 +293,20 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:197
+#: en/content/guides/repl/navigating_namespaces.adoc:202
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (in-ns 'myapp.never-created)\n"
 "#object[clojure.lang.Namespace 0x22356acd \"myapp.never-created\"]\n"
 "myapp.never-created=> (defn say-hello [x] (println \"Hello, \" x \"!\"))\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: defn in this context, compiling:(NO_SOURCE_PATH:2:1)\n"
+"Syntax error compiling at (REPL:1:1).\n"
+"Unable to resolve symbol: defn in this context\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:205
+#: en/content/guides/repl/navigating_namespaces.adoc:210
 #, no-wrap
 msgid ""
 "**Explanation:** in this situation, https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns]\n"
@@ -313,7 +318,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:215
+#: en/content/guides/repl/navigating_namespaces.adoc:220
 #, no-wrap
 msgid ""
 "myapp.never-created=> (clojure.core/refer-clojure)\n"
@@ -326,80 +331,80 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:219
+#: en/content/guides/repl/navigating_namespaces.adoc:224
 msgid ""
 "If you only use https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns] to switch to "
 "namespaces that have already been created, you won't have to deal with these subtleties."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/navigating_namespaces.adoc:221
+#: en/content/guides/repl/navigating_namespaces.adoc:226
 #, no-wrap
 msgid "Working with libs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:225
+#: en/content/guides/repl/navigating_namespaces.adoc:230
 msgid ""
 "Most of the namespaces you will navigate at the REPL will already exist in source files or dependencies of your "
 "project, i.e in <<xref/../../../reference/libs#,libs>> of your project."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:227
+#: en/content/guides/repl/navigating_namespaces.adoc:232
 msgid "There is an important usage precaution for switching to namespaces defined in libs:"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:232
+#: en/content/guides/repl/navigating_namespaces.adoc:237
 #, no-wrap
 msgid ""
-"**If a namespace is defined in a <<xref/../../../reference/libs#,lib>> of your project, \n"
+"**If a namespace is defined in a <<xref/../../../reference/libs#,lib>> of your project,\n"
 "always make sure you have _loaded_ the lib in the REPL before switching to it.**\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/repl/navigating_namespaces.adoc:235
+#: en/content/guides/repl/navigating_namespaces.adoc:240
 #, no-wrap
 msgid "How to make sure a lib is loaded"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:238
+#: en/content/guides/repl/navigating_namespaces.adoc:243
 msgid ""
 "To make sure that a lib with namespace `mylib.ns1` has been loaded in the REPL, you can do any one of the following:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:240
+#: en/content/guides/repl/navigating_namespaces.adoc:245
 msgid ""
 "`https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require]` it directly: `(require "
 "'[mylib.ns1])`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:241
+#: en/content/guides/repl/navigating_namespaces.adoc:246
 msgid "load a namespace which itself requires `mylib.ns1` (directly or indirectly)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:242
+#: en/content/guides/repl/navigating_namespaces.adoc:247
 msgid "evaluate manually all the code in the source file `mylib.ns1`"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/repl/navigating_namespaces.adoc:243
+#: en/content/guides/repl/navigating_namespaces.adoc:248
 #, no-wrap
 msgid "Example: a project for greeting people"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:246
+#: en/content/guides/repl/navigating_namespaces.adoc:251
 msgid "For example, assume a Clojure project with the following structure and content:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:254
+#: en/content/guides/repl/navigating_namespaces.adoc:259
 #, no-wrap
 msgid ""
 ".\n"
@@ -409,120 +414,37 @@ msgid ""
 "        └── welcome.clj\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:261
-msgid "  ;; ----------------------------------------------- ;; src/myproject/welcome.clj (ns myproject.welcome"
-msgstr ""
-
-#. type: Labeled list
-#: en/content/guides/repl/navigating_namespaces.adoc:261
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:267
 #, no-wrap
-msgid "(:require [myproject.person-names :as pnames])) "
+msgid ""
+";; -----------------------------------------------\n"
+";; src/myproject/welcome.clj\n"
+"(ns myproject.welcome\n"
+"  (:require [myproject.person-names :as pnames])) ;; NOTE: `myproject.welcome` requires `myproject.person-names`\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:262
-msgid "NOTE: `myproject.welcome` requires `myproject.person-names`"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:266
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:271
 #, no-wrap
 msgid ""
 "(defn greet\n"
 "  [first-name last-name]\n"
-"  (str \"Hello, \" (pnames/familiar-name first-name last-name)))  \n"
+"  (str \"Hello, \" (pnames/familiar-name first-name last-name)))\n"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:272
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:277
 #, no-wrap
 msgid ""
 ";; -----------------------------------------------\n"
 ";; src/myproject/person_names.clj\n"
-"(ns myproject.person-names \n"
-"  (:require [clojure.string :as str]))\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:278
-#, no-wrap
-msgid ""
-"(def nicknames \n"
-"  {\"Robert\"     \"Bob\"\n"
-"   \"Abigail\"    \"Abbie\"\n"
-"   \"William\"    \"Bill\"\n"
-"   \"Jacqueline\" \"Jackie\"})\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:287
-#, no-wrap
-msgid ""
-"(defn familiar-name\n"
-"  \"What to call someone you may be familiar with.\"\n"
-"  [first-name last-name]\n"
-"  (let [fname (str/capitalize first-name)\n"
-"        lname (str/capitalize last-name)]\n"
-"    (or \n"
-"      (get nicknames fname)\n"
-"      (str fname \" \" lname))))\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:290
-#, no-wrap
-msgid "Here are 3 ways to make sure `myproject.person-names` is loaded:\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:299
-#, no-wrap
-msgid ""
-"[source,clojure-repl]\n"
-"---- \n"
-"$ clj ## APPROACH 1: requiring myproject.person-names directly\n"
-"Clojure 1.9.0\n"
-"user=> (require '[myproject.person-names])\n"
-"nil\n"
-"user=> myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.\n"
-"{\"Robert\" \"Bob\", \"Abigail\" \"Abbie\", \"William\" \"Bill\", \"Jacqueline\" \"Jackie\"}\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:307
-msgid ""
-"  $ clj ## APPROACH 2: requiring myproject.welcome, which itself requires myproject.person-names Clojure 1.9.0 user=> "
-"(require '[myproject.welcome])  nil"
-msgstr ""
-
-#. type: Labeled list
-#: en/content/guides/repl/navigating_namespaces.adoc:307
-#, no-wrap
-msgid "user=> myproject.person-names/nicknames "
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/navigating_namespaces.adoc:309
-msgid ""
-"checking that the myproject.person-names was loaded.  {\"Robert\" \"Bob\", \"Abigail\" \"Abbie\", \"William\" \"Bill"
-"\", \"Jacqueline\" \"Jackie\"}"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:317
-#, no-wrap
-msgid ""
-"[source,clojure-repl]\n"
-"---- \n"
-"$ clj ## APPROACH 3: manually copying the code of myproject.person-names in the REPL.\n"
-"Clojure 1.9.0\n"
 "(ns myproject.person-names\n"
 "  (:require [clojure.string :as str]))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:323
+#: en/content/guides/repl/navigating_namespaces.adoc:283 en/content/guides/repl/navigating_namespaces.adoc:328
 #, no-wrap
 msgid ""
 "(def nicknames\n"
@@ -533,7 +455,60 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:337
+#: en/content/guides/repl/navigating_namespaces.adoc:292
+#, no-wrap
+msgid ""
+"(defn familiar-name\n"
+"  \"What to call someone you may be familiar with.\"\n"
+"  [first-name last-name]\n"
+"  (let [fname (str/capitalize first-name)\n"
+"        lname (str/capitalize last-name)]\n"
+"    (or\n"
+"      (get nicknames fname)\n"
+"      (str fname \" \" lname))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/navigating_namespaces.adoc:295
+msgid "Here are 3 ways to make sure `myproject.person-names` is loaded:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:304
+#, no-wrap
+msgid ""
+"$ clj ## APPROACH 1: requiring myproject.person-names directly\n"
+"Clojure 1.10.0\n"
+"user=> (require '[myproject.person-names])\n"
+"nil\n"
+"user=> myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.\n"
+"{\"Robert\" \"Bob\", \"Abigail\" \"Abbie\", \"William\" \"Bill\", \"Jacqueline\" \"Jackie\"}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:314
+#, no-wrap
+msgid ""
+"$ clj ## APPROACH 2: requiring myproject.welcome, which itself requires myproject.person-names\n"
+"Clojure 1.10.0\n"
+"user=> (require '[myproject.welcome])\n"
+"nil\n"
+"user=> myproject.person-names/nicknames ;; checking that the myproject.person-names was loaded.\n"
+"{\"Robert\" \"Bob\", \"Abigail\" \"Abbie\", \"William\" \"Bill\", \"Jacqueline\" \"Jackie\"}\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:322
+#, no-wrap
+msgid ""
+"$ clj ## APPROACH 3: manually copying the code of myproject.person-names in the REPL.\n"
+"Clojure 1.10.0\n"
+"(ns myproject.person-names\n"
+"  (:require [clojure.string :as str]))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/navigating_namespaces.adoc:342
 #, no-wrap
 msgid ""
 "(defn familiar-name\n"
@@ -552,17 +527,17 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:342
+#: en/content/guides/repl/navigating_namespaces.adoc:347
 #, no-wrap
 msgid "**TIP:** you can see (among other things) what libs get loaded by using the `:verbose` tag in `https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require[require]`:\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:357
+#: en/content/guides/repl/navigating_namespaces.adoc:362
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (require '[myproject.welcome] :verbose)\n"
 "(clojure.core/load \"/myproject/welcome\")\n"
 "(clojure.core/in-ns 'clojure.core.specs.alpha)\n"
@@ -576,30 +551,32 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/repl/navigating_namespaces.adoc:360
+#: en/content/guides/repl/navigating_namespaces.adoc:365
 #, no-wrap
 msgid "How things can go wrong"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/navigating_namespaces.adoc:364
+#: en/content/guides/repl/navigating_namespaces.adoc:369
 msgid ""
 "Continuing with the above example project, here is a REPL session showing how things can go wrong if you switch to a "
 "lib namespace without loading it first:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/navigating_namespaces.adoc:377
+#: en/content/guides/repl/navigating_namespaces.adoc:384
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (ns myproject.person-names)\n"
 "nil\n"
 "myproject.person-names=> nicknames ;; #'nicknames won't be defined, because the lib has not been loaded.\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)\n"
+"Syntax error compiling at (REPL:0:0).\n"
+"Unable to resolve symbol: nicknames in this context\n"
 "myproject.person-names=> (require '[myproject.person-names]) ;; won't fix the situation, because the namespaces has already been created\n"
 "nil\n"
 "myproject.person-names=> nicknames\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: nicknames in this context, compiling:(NO_SOURCE_PATH:0:0)\n"
+"Syntax error compiling at (REPL:0:0).\n"
+"Unable to resolve symbol: nicknames in this context\n"
 msgstr ""

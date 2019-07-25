@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2016-06-27 08:47+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:4 en/content/reference/sequences.adoc:4 en/content/reference/metadata.adoc:4
-#: en/content/reference/evaluation.adoc:4 en/content/reference/transients.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4 en/content/reference/compilation.adoc:4
-#: en/content/reference/other_functions.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/data_structures.adoc:4 en/content/reference/datatypes.adoc:4 en/content/reference/agents.adoc:4
-#: en/content/reference/protocols.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/lisps.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/repl_and_main.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/namespaces.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/multimethods.adoc:4
-#: en/content/search.adoc:4 en/content/about/clojureclr.adoc:4 en/content/about/functional_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/features.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/spec.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/404.adoc:4 en/content/privacy.adoc:4
-#: en/content/community/swag.adoc:4 en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4 en/content/community/libraries.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -125,14 +125,24 @@ msgid ""
 "com>>."
 msgstr ""
 
+#. type: Plain text
+#: en/content/privacy.adoc:31
+msgid ""
+"We work with analytics providers such as Google Analytics, which use cookies and similar technologies to collect and "
+"analyze information about traffic to our websites and report on activities, trends, and demographics. You can learn "
+"about Google's practices by going to https://www.google.com/policies/privacy/, and opt out of them by downloading the "
+"Google Analytics opt-out browser add-on, available at https://tools.google.com/dlpage/gaoptout. You can install third "
+"party services to block sharing cookies while browsing websites."
+msgstr ""
+
 #. type: Title ==
-#: en/content/privacy.adoc:30
+#: en/content/privacy.adoc:32
 #, no-wrap
 msgid "Using your non-personal data"
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:33
+#: en/content/privacy.adoc:35
 msgid ""
 "Non-personal data may be collected and shared with 3rd party services to provide relevant and targeted advertisements "
 "through retargeting. All data is anonymous and cannot be used to identify the visitor. Retargeting recognizes that "
@@ -141,13 +151,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/privacy.adoc:34
+#: en/content/privacy.adoc:36
 #, no-wrap
 msgid "Other disclosures"
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:37
+#: en/content/privacy.adoc:39
 msgid ""
 "In addition to the disclosures reasonably necessary for the purposes identified elsewhere in this privacy policy, we "
 "may disclose information about you to the extent that we are required to do so by law in connection with any legal "
@@ -156,13 +166,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/privacy.adoc:38
+#: en/content/privacy.adoc:40
 #, no-wrap
 msgid "Security of your personal data"
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:41
+#: en/content/privacy.adoc:43
 msgid ""
 "We will take reasonable precautions and follow industry standard security protocols to prevent the loss, misuse or "
 "alteration of your personal information. Of course, data transmission over the Internet is inherently insecure, and "
@@ -170,13 +180,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/privacy.adoc:42
+#: en/content/privacy.adoc:44
 #, no-wrap
 msgid "Policy updates"
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:45
+#: en/content/privacy.adoc:47
 msgid ""
 "We may update this privacy policy when appropriate by posting a new version on our website, and will update the "
 "\"Last Updated\" date to reflect the date the changes take effect. By continuing to use this site after we post any "
@@ -184,13 +194,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/privacy.adoc:46
+#: en/content/privacy.adoc:48
 #, no-wrap
 msgid "Contact"
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:48
+#: en/content/privacy.adoc:50
 msgid ""
 "If you have any questions about this privacy policy or our treatment of your personal data, or wish to opt-out of "
 "data collection by this site, please email us at <<mailto:privacy@cognitect.com#,privacy@cognitect.com>>, or send "
@@ -198,6 +208,6 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/privacy.adoc:49
+#: en/content/privacy.adoc:51
 msgid "_Last Updated: 7/07/2014_"
 msgstr ""

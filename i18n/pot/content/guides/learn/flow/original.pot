@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,18 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Title ===
-#: en/content/guides/reader_conditionals.adoc:120
-#: en/content/guides/learn/flow.adoc:285
-#, no-wrap
-msgid "Exception handling"
-msgstr ""
-
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:4
-#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
+#: en/content/guides/learn/syntax.adoc:4
 #: en/content/guides/learn/sequential_colls.adoc:4
-#: en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/flow.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/hashed_colls.adoc:4
 msgid "Alex Miller 2017-09-02"
 msgstr ""
 
@@ -162,9 +155,9 @@ msgid ""
 ":truthy\n"
 "user=> (if 0 :truthy :falsey) ; zero is true\n"
 ":truthy\n"
-"(if false :truthy :falsey)\n"
+"user=> (if false :truthy :falsey)\n"
 ":falsey\n"
-"(if nil :truthy :falsey)\n"
+"user=> (if nil :truthy :falsey)\n"
 ":falsey\n"
 msgstr ""
 
@@ -624,6 +617,13 @@ msgstr ""
 #: en/content/guides/learn/flow.adoc:283
 #, no-wrap
 msgid "Exceptions"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:285
+#: en/content/guides/reader_conditionals.adoc:120
+#, no-wrap
+msgid "Exception handling"
 msgstr ""
 
 #. type: Plain text

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr ""
 #. type: delimited block -
 #: en/content/guides/core_async_go.adoc:49
 #, no-wrap
-msgid "(load-urls urls)\n"
+msgid "(load-urls urls response-chan)\n"
 msgstr ""
 
 #. type: Plain text

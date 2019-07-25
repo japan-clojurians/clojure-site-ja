@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2017-06-01 09:26+0900\n"
+"POT-Creation-Date: 2019-07-25 20:51+0900\n"
 "PO-Revision-Date: 2017-06-01 09:26+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,5 +29,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/community_stories.adoc:11
-msgid "If you'd like to share your Clojure story, please contact __alex.miller@cognitect.com__."
+msgid ""
+"If you'd like to share your Clojure story, please https://docs.google.com/forms/d/"
+"e/1FAIpQLSf0Wx6sOVxPeeob45VqJXqRYKM9K_-Mzir-DYFbnXZ1lR_BGg/viewform[complete this form]."
 msgstr ""

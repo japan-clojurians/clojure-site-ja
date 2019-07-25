@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 20:53+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:110 en/content/guides/getting_started.adoc:71
+#, no-wrap
+msgid "java -jar clojure.jar\n"
+msgstr "java -jar clojure.jar\n"
 
 #. type: Title =
 #: en/content/guides/getting_started.adoc:1
@@ -106,57 +112,64 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/getting_started.adoc:46
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "curl -O https://download.clojure.org/install/linux-install-1.9.0.358.sh\n"
+#| "chmod +x linux-install-1.9.0.358.sh\n"
+#| "sudo ./linux-install-1.9.0.358.sh\n"
 msgid ""
-"curl -O https://download.clojure.org/install/linux-install-1.9.0.358.sh\n"
-"chmod +x linux-install-1.9.0.358.sh\n"
-"sudo ./linux-install-1.9.0.358.sh\n"
+"curl -O https://download.clojure.org/install/linux-install-1.10.1.466.sh\n"
+"chmod +x linux-install-1.10.1.466.sh\n"
+"sudo ./linux-install-1.10.1.466.sh\n"
 msgstr ""
 "curl -O https://download.clojure.org/install/linux-install-1.9.0.358.sh\n"
 "chmod +x linux-install-1.9.0.358.sh\n"
 "sudo ./linux-install-1.9.0.358.sh\n"
 
-#. type: Plain text
-#: en/content/guides/getting_started.adoc:49
-msgid "Platform installers (apt-get, etc) will be available in the future."
-msgstr "プラットフォーム別のインストーラ(apt-getなど)は将来的に提供される。"
-
 #. type: Title ===
-#: en/content/guides/getting_started.adoc:50
+#: en/content/guides/getting_started.adoc:48
 #, no-wrap
 msgid "Installation on Windows"
 msgstr "Windowsへのインストール"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:53
-msgid "Not yet available - see Leiningen or Boot instead."
-msgstr "現在は提供されていない - LeiningenもしくはBootを参照。"
+#: en/content/guides/getting_started.adoc:52
+msgid ""
+"An early release version of clj on Windows is available at https://github.com/clojure/tools.deps.alpha/wiki/clj-on-"
+"Windows[clj on Windows].  Please provide feedback at https://clojure.atlassian.net/projects/TDEPS."
+msgstr ""
 
 #. type: Title ==
-#: en/content/guides/getting_started.adoc:54
+#: en/content/guides/getting_started.adoc:53
 #, no-wrap
 msgid "Other ways to run Clojure"
 msgstr "その他のClojureの実行方法"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:57
+#: en/content/guides/getting_started.adoc:56
 #, no-wrap
 msgid "*Local build*\n"
 msgstr "*ローカルビルド*\n"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:59
-msgid "Download and build Clojure from source:"
+#: en/content/guides/getting_started.adoc:58
+#, fuzzy
+#| msgid "Download and build Clojure from source:"
+msgid "Download and build Clojure from source (requires Git, Java, and Maven):"
 msgstr "ソースをダウンロードし、Clojureをビルドする:"
 
 #. type: delimited block -
-#: en/content/guides/getting_started.adoc:66
-#, no-wrap
+#: en/content/guides/getting_started.adoc:64
+#, fuzzy, no-wrap
+#| msgid ""
+#| "git clone https://github.com/clojure/clojure.git\n"
+#| "cd clojure\n"
+#| "./antsetup.sh\n"
+#| "ant local\n"
 msgid ""
 "git clone https://github.com/clojure/clojure.git\n"
 "cd clojure\n"
-"./antsetup.sh\n"
-"ant local\n"
+"mvn -Plocal -Dmaven.test.skip=true package\n"
 msgstr ""
 "git clone https://github.com/clojure/clojure.git\n"
 "cd clojure\n"
@@ -164,37 +177,31 @@ msgstr ""
 "ant local\n"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:69
+#: en/content/guides/getting_started.adoc:67
 msgid "Then start the REPL with the local jar:"
 msgstr "そしてローカルjarでREPLを起動する:"
 
-#. type: delimited block -
-#: en/content/guides/getting_started.adoc:73 en/content/guides/repl/launching_a_basic_repl.adoc:110
-#, no-wrap
-msgid "java -jar clojure.jar\n"
-msgstr "java -jar clojure.jar\n"
-
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:76
+#: en/content/guides/getting_started.adoc:74
 #, no-wrap
 msgid "*Try Clojure online*\n"
 msgstr "*オンラインでClojureを試す*\n"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:78
+#: en/content/guides/getting_started.adoc:76
 msgid "https://repl.it/languages/clojure[repl.it] provides a browser-based Clojure repl for interactive exploration."
 msgstr ""
 "https://repl.it/languages/clojure[repl.it] はインタラクティブな探索のためのブラウザベースのClojure replを提供してい"
 "る。"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:80
+#: en/content/guides/getting_started.adoc:78
 #, no-wrap
 msgid "*Build tools*\n"
 msgstr "*ビルドツール*\n"
 
 #. type: Plain text
-#: en/content/guides/getting_started.adoc:81
+#: en/content/guides/getting_started.adoc:79
 msgid ""
 "Build tools provide a range of capabilities for building, running, and deploying Clojure libraries and applications. "
 "The two most popular Clojure build tools are https://leiningen.org/[Leiningen] and http://boot-clj.com/[Boot]."

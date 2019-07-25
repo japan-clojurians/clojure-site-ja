@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2018-04-02 07:15+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,54 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:11 en/content/stories/swing.adoc:11
-#, no-wrap
-msgid "**How long have you been working with Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:15 en/content/stories/swing.adoc:17
-#, no-wrap
-msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:19 en/content/stories/swing.adoc:25
-#, no-wrap
-msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:27 en/content/stories/swing.adoc:34
-#, no-wrap
-msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:31 en/content/stories/swing.adoc:90
-#, no-wrap
-msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:35 en/content/stories/swing.adoc:97
-#, no-wrap
-msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:39 en/content/stories/swing.adoc:117
-#, no-wrap
-msgid "**What is your stack?**\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:43 en/content/stories/swing.adoc:104
-#, no-wrap
-msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
-msgstr ""
 
 #. type: Title =
 #: en/content/stories/swing.adoc:1
@@ -82,10 +34,22 @@ msgid "image:/images/content/stories/swing-logo.png[\"Swing Education\",height=\
 msgstr ""
 
 #. type: Plain text
+#: en/content/stories/swing.adoc:11 en/content/stories/anychart.adoc:11 en/content/stories/cognician.adoc:11
+#, no-wrap
+msgid "**How long have you been working with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
 #: en/content/stories/swing.adoc:15
 msgid ""
 "http://www.swingeducation.com/[Swing Education] has been working with Clojure and Clojurescript since being founded "
 "in early 2015.  Personally I've been working with Clojure since late 2013."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:17 en/content/stories/anychart.adoc:15 en/content/stories/cognician.adoc:23
+#, no-wrap
+msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -97,12 +61,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/stories/swing.adoc:25 en/content/stories/anychart.adoc:19 en/content/stories/cloudrepo.adoc:11
+#: en/content/stories/stitch.adoc:11 en/content/stories/cognician.adoc:27
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
 #: en/content/stories/swing.adoc:32
 msgid ""
 "Our primary product is an online marketplace for schools to issue requests for subsitute teachers.  We help schools "
 "access more subs and try to automate via software tedious work associated with managing a pool of substitute teachers "
 "(recruiting, screening, payroll, etc.).  Our network provides subs with a wider range of work opportunities to gain "
 "experience and build their professional network."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:34 en/content/stories/anychart.adoc:27 en/content/stories/cognician.adoc:37
+#, no-wrap
+msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -238,6 +215,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/stories/swing.adoc:90 en/content/stories/anychart.adoc:31 en/content/stories/cognician.adoc:48
+#, no-wrap
+msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
+msgstr ""
+
+#. type: Plain text
 #: en/content/stories/swing.adoc:95
 msgid ""
 "The most valuable property to us is that there is only one programming language that is used everywhere and allows us "
@@ -246,10 +229,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/stories/swing.adoc:97 en/content/stories/anychart.adoc:35 en/content/stories/stitch.adoc:27
+#: en/content/stories/cognician.adoc:56
+#, no-wrap
+msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
 #: en/content/stories/swing.adoc:102
 msgid ""
 "Probably host inter-op.  The ability to leverage existing libaries in both ecosystems via interop if necessary allows "
 "Clojure/Script to piggyback off of these huge ecosystems while providing additional value on top."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:104 en/content/stories/anychart.adoc:43 en/content/stories/stitch.adoc:40
+#: en/content/stories/cognician.adoc:62
+#, no-wrap
+msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -266,6 +263,13 @@ msgstr ""
 msgid ""
 "Our code has been fairly easy to maintain because of the emphasis on simplicity and stability from both the core "
 "language and the wider Clojure open-source community."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:117 en/content/stories/anychart.adoc:39 en/content/stories/cloudrepo.adoc:29
+#: en/content/stories/stitch.adoc:34 en/content/stories/cognician.adoc:75
+#, no-wrap
+msgid "**What is your stack?**\n"
 msgstr ""
 
 #. type: Plain text

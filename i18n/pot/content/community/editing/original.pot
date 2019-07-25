@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. type: Title ==
+#: en/content/dev/workflow.adoc:192 en/content/community/editing.adoc:244
+#, no-wrap
+msgid "Other"
+msgstr ""
+
 #. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29
-#: en/content/reference/libs.adoc:63 en/content/reference/java_interop.adoc:78
-#: en/content/reference/java_interop.adoc:98
-#: en/content/reference/java_interop.adoc:111
-#: en/content/reference/java_interop.adoc:133
-#: en/content/reference/java_interop.adoc:140
-#: en/content/reference/java_interop.adoc:154
-#: en/content/reference/java_interop.adoc:195
+#: en/content/reference/libs.adoc:63 en/content/reference/java_interop.adoc:96
+#: en/content/reference/java_interop.adoc:116
+#: en/content/reference/java_interop.adoc:129
+#: en/content/reference/java_interop.adoc:151
+#: en/content/reference/java_interop.adoc:158
+#: en/content/reference/java_interop.adoc:172
+#: en/content/reference/java_interop.adoc:215
+#: en/content/reference/metadata.adoc:23
 #: en/content/reference/evaluation.adoc:62
 #: en/content/reference/evaluation.adoc:73 en/content/community/editing.adoc:71
 #: en/content/community/editing.adoc:85 en/content/community/editing.adoc:103
@@ -47,8 +53,9 @@ msgid "/images/content/reference/transducers/xf.png"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/reader.adoc:49 en/content/community/editing.adoc:172
+#: en/content/reference/reader.adoc:50
 #: en/content/guides/learn/sequential_colls.adoc:102
+#: en/content/community/editing.adoc:172
 #, no-wrap
 msgid "Lists"
 msgstr ""
@@ -490,12 +497,6 @@ msgid ""
 "| col1 | col2\n"
 "| a | b\n"
 "| b | c\n"
-msgstr ""
-
-#. type: Title ==
-#: en/content/community/editing.adoc:244
-#, no-wrap
-msgid "Other"
 msgstr ""
 
 #. type: Plain text

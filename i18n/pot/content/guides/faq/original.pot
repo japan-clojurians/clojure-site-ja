@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
+#: en/README.adoc:9 en/content/guides/faq.adoc:353
 #, no-wrap
-msgid "Deps and CLI"
+msgid "Contributing"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:182
-#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:184
-msgid "Example:"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/namespaces.adoc:1
-#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
+#: en/content/reference/namespaces.adoc:1 en/content/guides/faq.adoc:203
+#: en/content/guides/reader_conditionals.adoc:87
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:319
+#, no-wrap
+msgid "Deps and CLI"
 msgstr ""
 
 #. type: Title =
@@ -147,16 +147,17 @@ msgstr ""
 msgid ""
 "_ has no special meaning in Clojure as a symbol. However, it is a convention "
 "to use _ (or a leading _) to denote a binding that will not be used in the "
-"expression."
+"expression. A common case for this is skipping unneeded values in "
+"<<destructuring#_sequential_destructuring,sequential destructuring>>:"
 msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/faq.adoc:45
 #, no-wrap
 msgid ""
-"(defn get-x [point]\n"
-"  (let [[x _] point]   ;; y-value of point is unused, so mark it with _\n"
-"    x))\n"
+"(defn get-y [point]\n"
+"  (let [[_ y] point]   ;; x-value of point is unused, so mark it with _\n"
+"    y))\n"
 msgstr ""
 
 #. type: Plain text
@@ -284,11 +285,88 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/faq.adoc:79
 #, no-wrap
+msgid "**<<faq#arg_order,What are the rules of thumb for arg order in core functions?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:84
+msgid ""
+"Primary collection operands come first. That way one can write `->` and its "
+"ilk, and their position is independent of whether or not they have variable "
+"arity parameters. There is a tradition of this in OO languages and Common "
+"Lisp (`slot-value`, `aref`, `elt`)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:87
+msgid ""
+"One way to think about sequences is that they are read from the left, and "
+"fed from the right:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:91
+#, no-wrap
+msgid "<- [1 2 3 4] \n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:95
+msgid ""
+"Most of the sequence functions consume and produce sequences. So one way to "
+"visualize that is as a chain:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:99
+#, no-wrap
+msgid "map <- filter <- [1 2 3 4] \n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:103
+msgid ""
+"and one way to think about many of the seq functions is that they are "
+"parameterized in some way:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:107
+#, no-wrap
+msgid "(map f) <- (filter pred) <- [1 2 3 4] \n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:113
+msgid ""
+"So, sequence functions take their source(s) last, and any other parameters "
+"before them, and partial allows for direct parameterization as above. There "
+"is a tradition of this in functional languages and Lisps."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:118
+msgid ""
+"Note that this is not the same as taking the primary operand last.  Some "
+"sequence functions have more than one source (concat, interleave). When "
+"sequence functions are variadic, it is usually in their sources."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:120
+msgid ""
+"_Adapted from https://groups.google.com/d/msg/clojure/iyyNyWs53dc/"
+"Q_8BtjRthqgJ[comments by Rich Hickey]._"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:123
+#, no-wrap
 msgid "**<<faq#transducers_vs_seqs,What are good use cases for transducers?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:81
+#: en/content/guides/faq.adoc:125
 msgid ""
 "When performing a series of transformations, sequences will create an "
 "intermediate (cached) sequence between each transformation. Transducers "
@@ -297,12 +375,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:83
+#: en/content/guides/faq.adoc:127
 msgid "Performance benefits of transducers:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:85
+#: en/content/guides/faq.adoc:129
 msgid ""
 "Source collection iteration - when used on reducible inputs (collections and "
 "other things), avoid creating an unnecessary input collection sequence - "
@@ -310,7 +388,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:86
+#: en/content/guides/faq.adoc:130
 msgid ""
 "Intermediate sequences and cached values - as the transformation happens in "
 "a single pass, you remove all intermediate sequence and cached value "
@@ -321,12 +399,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:88
+#: en/content/guides/faq.adoc:132
 msgid "Design / usage benefits of transducers:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:90
+#: en/content/guides/faq.adoc:134
 msgid ""
 "Transformation composition - some use cases will have a cleaner design if "
 "they separate transformation composition from transformation application. "
@@ -334,7 +412,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:91
+#: en/content/guides/faq.adoc:135
 msgid ""
 "Eagerness - transducers are great for cases where eagerly processing a "
 "transformation (and potentially encountering any errors) is more important "
@@ -342,7 +420,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:92
+#: en/content/guides/faq.adoc:136
 msgid ""
 "Resource control - because you have more control over when the input "
 "collection is traversed, you also know when processing is complete. It's "
@@ -351,12 +429,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:94
+#: en/content/guides/faq.adoc:138
 msgid "Performance benefits of sequences:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:96
+#: en/content/guides/faq.adoc:140
 msgid ""
 "Laziness - if you will only need some of the outputs (for example a user is "
 "deciding how many to use), then lazy sequences can often be more efficient "
@@ -366,19 +444,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:97
+#: en/content/guides/faq.adoc:141
 msgid ""
 "Infinite streams - because transducers are typically eagerly consumed, they "
 "don't match well with infinite streams of values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:99
+#: en/content/guides/faq.adoc:143
 msgid "Design benefits of sequences:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:101
+#: en/content/guides/faq.adoc:145
 msgid ""
 "Consumer control - returning a seq from an API lets you combine input + "
 "transformation into something that gives the consumer control. Transducers "
@@ -387,19 +465,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:102
+#: en/content/guides/faq.adoc:146
 #, no-wrap
 msgid "Spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:106
+#: en/content/guides/faq.adoc:150
 #, no-wrap
 msgid "**<<faq#spec_alpha,Why is spec alpha?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:108
+#: en/content/guides/faq.adoc:152
 msgid ""
 "spec is in alpha to indicate that the API may still change. spec was broken "
 "out of Clojure core so that spec can be updated independently from the main "
@@ -407,25 +485,110 @@ msgid ""
 "that point the alpha will be removed."
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/faq.adoc:155
+#, no-wrap
+msgid "**<<faq#spec_location,Where should I put my specs?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:157
+msgid ""
+"There is no single right answer to this question. For data specs, it is "
+"often useful to put them in their own namespace, which may or may not match "
+"the qualifier used in the data specs. Matching the qualifier to the "
+"namespace allows the use of auto-resolved keywords both within the specs and "
+"in aliases in other namespaces, but also entwines them, making refactoring "
+"more complicated."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:159
+msgid ""
+"For function specs, most people either put them immediately before or after "
+"the function they apply to, or in a separate namespace that can optionally "
+"be required when needed (for testing or validation). In the latter case, "
+"Clojure core has followed the pattern of using foo.bar.specs to hold "
+"function specs for the functions in foo.bar."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:162
+#, no-wrap
+msgid "**<<faq#regex_nesting,How do nested regex ops work?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:164
+msgid ""
+"Regex ops (cat, alt, *, +, ?, etc) always describe the elements in a "
+"sequential collection. They are not, by themselves, specs. When used in a "
+"spec context they are coerced into specs. Nested regex ops combine to form a "
+"single regex spec over the same sequential collection."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:166
+msgid ""
+"To validate a nested collection, use `s/spec` to wrap the inner regex, "
+"forcing a spec boundary between regex ops."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:169
+#, no-wrap
+msgid "**<<faq#instrument_ret,Why doesn't `instrument` check return values?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:171
+msgid ""
+"Instrument is intended to verify that a function is being invoked according "
+"to its args spec. That is, is the function being called correctly? This "
+"functionality should be used during development."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:173
+msgid ""
+"Checking whether a function operates correctly is a test-time activity and "
+"this should be checked with the `check` function which will actually invoke "
+"the function with generated args and verify the ret and fn specs on each "
+"invocation."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:176
+#, no-wrap
+msgid "**<<faq#skip_macros,Is there a way to skip checking macro specs?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:178
+msgid ""
+"Yes, set the Java system property `-Dclojure.spec.skip-macros=true` and no "
+"macro specs will be checked during macroexpansion."
+msgstr ""
+
 #. type: Title ==
-#: en/content/guides/faq.adoc:109
+#: en/content/guides/faq.adoc:179
 #, no-wrap
 msgid "State and Concurrency"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:113
+#: en/content/guides/faq.adoc:183
 #, no-wrap
 msgid "**<<faq#concurrency_features,What are the trade-offs between reducers, core.async, futures, and pmap?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:115
+#: en/content/guides/faq.adoc:185
 msgid "Each of these really addresses a different use case."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:117
+#: en/content/guides/faq.adoc:187
 msgid ""
 "Reducers are best for fine-grained data parallelism when computing a "
 "transformation over existing in-memory data (in a map or vector). Generally "
@@ -434,7 +597,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:118
+#: en/content/guides/faq.adoc:188
 msgid ""
 "Futures are best for pushing work onto a background thread and picking it up "
 "later (or for doing I/O waits in parallel). It's better for big chunky tasks "
@@ -442,7 +605,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:119
+#: en/content/guides/faq.adoc:189
 msgid ""
 "core.async is primarily used to organize the subsystems or internal "
 "structure of your application. It has channels (queues) to convey values "
@@ -455,7 +618,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:120
+#: en/content/guides/faq.adoc:190
 msgid ""
 "Tools like pmap, java.util queues and executors, and libraries like "
 "claypoole are doing coarse-level \"task\" concurrency. There is some overlap "
@@ -464,13 +627,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:123
+#: en/content/guides/faq.adoc:193
 #, no-wrap
 msgid "**<<faq#agent_shutdown,Why does Clojure \"hang\" for 1 minute when my program ends?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:125
+#: en/content/guides/faq.adoc:195
 msgid ""
 "This is most commonly asked in the context of programs that use `future`, "
 "`pmap`, `agent-send`, or other functions that invoke those functions. When a "
@@ -480,7 +643,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:127
+#: en/content/guides/faq.adoc:197
 msgid ""
 "Clojure uses two internal thread pools to service futures and agent function "
 "executions. Both pools use non-daemon threads and the JVM will not exit "
@@ -492,13 +655,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:130
+#: en/content/guides/faq.adoc:200
 #, no-wrap
-msgid "**<<faq#write_skew,Why does the Clojure STM does not guarantee serializability but only snapshot isolation?>>**\n"
+msgid "**<<faq#write_skew,Why the Clojure STM does not guarantee serializability but only snapshot isolation?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:132
+#: en/content/guides/faq.adoc:202
 msgid ""
 "If reads were included by default, then STM would be slower (as more "
 "transactions would require serializability). However, in many cases, reads "
@@ -507,13 +670,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:137
+#: en/content/guides/faq.adoc:207
 #, no-wrap
 msgid "**<<faq#ns_file,Do namespaces map 1-to-1 with files?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:139
+#: en/content/guides/faq.adoc:209
 msgid ""
 "No (although that is typical). One namespace can be split across multiple "
 "files by using `load` to load secondary files and `in-ns` in those files to "
@@ -523,49 +686,49 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:142
+#: en/content/guides/faq.adoc:212
 #, no-wrap
 msgid "**<<faq#ns_as_fn,Do namespaces work like regular functions? Looking at the syntax, it seems ns could be returning a function that makes a namespace, and then if you just stick parens around the contents of the file, that would be a regular S expression too. Does that imply you can put more than one in a file?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:144
+#: en/content/guides/faq.adoc:214
 msgid "ns is a macro that does a number of things:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:146
+#: en/content/guides/faq.adoc:216
 msgid "creates a new internal Namespace object (if it does not yet exist)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:147
-msgid "makes that namespace the new current namespace (*ns*)"
+#: en/content/guides/faq.adoc:217
+msgid "makes that namespace the new current namespace (`pass:[*ns*]`)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:148
+#: en/content/guides/faq.adoc:218
 msgid ""
 "auto-refers all vars from clojure.core and imports all classes from java.lang"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:149
+#: en/content/guides/faq.adoc:219
 msgid "requires/refers other namespaces and vars as specified"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:150
+#: en/content/guides/faq.adoc:220
 msgid "(and other optional things)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:152
+#: en/content/guides/faq.adoc:222
 msgid "ns does not return a function or anything invokable as you suggest."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:154
+#: en/content/guides/faq.adoc:224
 msgid ""
 "While ns is typically placed at the top of a clj file, it is actually just a "
 "normal macro and can be invoked at the repl just the same. It could also be "
@@ -574,19 +737,19 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:155
+#: en/content/guides/faq.adoc:225
 #, no-wrap
 msgid "Compiler"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:159
+#: en/content/guides/faq.adoc:229
 #, no-wrap
 msgid "**<<faq#direct_linking_repl,How does direct linking affect the REPL experience?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:161
+#: en/content/guides/faq.adoc:231
 msgid ""
 "Anything that has been direct linked will not see redefinitions to vars. For "
 "example, if you redefine something in clojure.core, other parts of core that "
@@ -595,7 +758,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:163
+#: en/content/guides/faq.adoc:233
 msgid ""
 "For parts of your own app, you may wish to only enable direct linking when "
 "you build and deploy for production, rather than using it when you "
@@ -604,85 +767,206 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/faq.adoc:164
+#: en/content/guides/faq.adoc:234
 #, no-wrap
 msgid "Java and Interop"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:168
+#: en/content/guides/faq.adoc:238
 #, no-wrap
 msgid "**<<faq#inner,How do you refer to a nested or inner class?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:170
+#: en/content/guides/faq.adoc:240
 msgid ""
 "Use a $ to separate outer from inner class name. For example: `java.util.Map"
 "$Entry` is the Entry inner class inside Map."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:173
+#: en/content/guides/faq.adoc:243
 #, no-wrap
 msgid "**<<faq#primitive_type,How do you refer to the class representing a primitive?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:175
+#: en/content/guides/faq.adoc:245
 msgid ""
 "Primitive types can be found as the static TYPE field on the boxed class, "
 "for example: `Integer/TYPE`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:178
+#: en/content/guides/faq.adoc:248
 #, no-wrap
 msgid "**<<faq#varargs,How do you invoke a Java method with a vararg signature?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:180
+#: en/content/guides/faq.adoc:250
 msgid ""
 "Java treats a trailing varargs parameter as an array and it can be invoked "
-"from Clojure. Example:"
+"from Clojure by passing an explicit array."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:182
-msgid "`(.method object fixed-args... (into-array type variable-args...))`"
+#: en/content/guides/faq.adoc:252
+msgid "Examples:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/faq.adoc:189
+#: en/content/guides/faq.adoc:257
 #, no-wrap
 msgid ""
-";; asList takes an Object vararg parameter\n"
+";; Invoke static Arrays.asList(T... a)\n"
 "(java.util.Arrays/asList (object-array [0 1 2]))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/faq.adoc:192
+#: en/content/guides/faq.adoc:260
 #, no-wrap
 msgid ""
-";; format takes one fixed parameter and a varargs\n"
+";; Invoke static String.format(String format, Object... args)\n"
 "(String/format \"%s %s, %s\" (object-array [\"March\" 1 2016]))\n"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/guides/faq.adoc:264
+#, no-wrap
+msgid ""
+";; For a primitive vararg, use the appropriate primitive array constructor\n"
+";; Invoke put(int row, int col, double... data)\n"
+"(.put o 1 1 (double-array [2.0]))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:267
+#, no-wrap
+msgid ""
+";; Passing at least an empty array is required if there are no varargs\n"
+"(.put o 1 1 (double-array []))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:271
+#, no-wrap
+msgid "**<<faq#illegal_access,Why do I get an illegal access warning?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:273
+msgid ""
+"Java 9 added a module system, allowing code to be partitioned into modules "
+"where code outside a module cannot invoke code inside the module unless it "
+"has been exported by the module. One of the areas affected by this change in "
+"Java is reflective access. Clojure uses reflection when it encounters a Java "
+"interop call without sufficient type information about the target object or "
+"the function arguments. For example:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:278
+#, no-wrap
+msgid ""
+"(def fac (javax.xml.stream.XMLInputFactory/newInstance))\n"
+"(.createXMLStreamReader fac (java.io.StringReader. \"\"))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:281
+msgid ""
+"Here `fac` is an instance of `com.sun.xml.internal.stream."
+"XMLInputFactoryImpl`, which is an extension of `javax.xml.stream."
+"XMLInputFactory`. In the java.xml module, javax.xml.stream is an exported "
+"package, but the XMLInputFactoryImpl is an internal implementation of the "
+"public abstract class in that package. The invocation of "
+"`createXMLStreamReader` here will be reflective and the Reflector will "
+"attempt to invoke the method based on the implementation class, which is not "
+"accessible outside the module, yielding:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:289
+#, no-wrap
+msgid ""
+"WARNING: An illegal reflective access operation has occurred\n"
+"WARNING: Illegal reflective access by clojure.lang.Reflector (file:/.m2/repository/org/clojure/clojure/1.10.0/clojure-1.10.0.jar) to method com.sun.xml.internal.stream.XMLInputFactoryImpl.createXMLStreamReader(java.io.Reader)\n"
+"WARNING: Please consider reporting this to the maintainers of clojure.lang.Reflector\n"
+"WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations\n"
+"WARNING: All illegal access operations will be denied in a future release\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:292
+msgid ""
+"The first thing to note here is that this is a warning. Java 9 through Java "
+"12 will all permit the call to be made and the code will continue to work."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:294
+msgid "There are several potential workarounds:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:296
+msgid ""
+"Perhaps the best is to provide type hints to the exported types so the call "
+"is no longer reflective: +"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:299
+#, no-wrap
+msgid "(.createXMLStreamReader ^javax.xml.stream.XMLInputFactory fac (java.io.StringReader. \"\"))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:301
+msgid ""
+"As of Clojure 1.10, turn off illegal access with `--illegal-access=deny`. "
+"The Java reflection system will then provide the necessary feedback to "
+"Clojure to detect that calling through the inaccessible class is not an "
+"option. Clojure will find the public invocation path instead and no warning "
+"will be issued."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:302
+msgid ""
+"Use JVM module system flags (`--add-exports` etc ) to forcibly export the "
+"internal packages to avoid the warning. This is not recommended."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:304
+msgid ""
+"If it is difficult to tell from the warning where the reflection is "
+"occurring, it may help to add the flag:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/faq.adoc:308
+#, no-wrap
+msgid "--illegal-access=debug\n"
+msgstr ""
+
 #. type: Title ==
-#: en/content/guides/faq.adoc:194
+#: en/content/guides/faq.adoc:310
 #, no-wrap
 msgid "Design and Use"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:198
+#: en/content/guides/faq.adoc:314
 #, no-wrap
 msgid "**<<faq#encapsulation,How do you achieve encapsulation with Clojure?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:200
+#: en/content/guides/faq.adoc:316
 msgid ""
 "Because of its focus on immutable data, there is generally not a high value "
 "placed on data encapsulation. Because data is immutable, there is no need to "
@@ -692,7 +976,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:202
+#: en/content/guides/faq.adoc:318
 msgid ""
 "All Clojure vars are globally available so again there is not much in the "
 "way of encapsulation of functions within namespaces. However, the ability to "
@@ -703,26 +987,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:207
+#: en/content/guides/faq.adoc:323
 #, no-wrap
 msgid "**<<faq#clj_alpha,Are these scripts and tools.deps.alpha done?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:209
+#: en/content/guides/faq.adoc:325
 msgid ""
 "No. There are lots of known gaps and ideas still to implement. But it is "
 "useful now. :)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:212
+#: en/content/guides/faq.adoc:328
 #, no-wrap
 msgid "**<<faq#clj_replace,Is clj a replacement for lein and boot?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:214
+#: en/content/guides/faq.adoc:330
 msgid ""
 "No. The clojure scripts are focused on a) building classpaths and b) "
 "launching clojure programs. They do not (and will not) create artifacts, "
@@ -730,7 +1014,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:216
+#: en/content/guides/faq.adoc:332
 msgid ""
 "tools.deps.alpha aims to provide programmatic building blocks for dependency "
 "resolution and classpath construction. clj/clojure wraps these into a "
@@ -739,14 +1023,171 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:219
+#: en/content/guides/faq.adoc:335
 #, no-wrap
 msgid "**<<faq#clj_dynamic,Do these scripts allow you to dynamically add dependencies to a running repl?>>**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/faq.adoc:220
+#: en/content/guides/faq.adoc:337
 msgid ""
 "No. Other tools exist to do this now or could be added on top of the "
 "existing functionality but this was not part of the initial goal."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:340
+#, no-wrap
+msgid "**<<faq#clj_standalone,How can I create a single-file Clojure script, ideally self-invokable via a https://en.wikipedia.org/wiki/Shebang_(Unix)[shebang line]?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:342
+msgid ""
+"If you don't need any extra dependencies, just put `#!/usr/bin/env clojure` "
+"as the first line. Note that `clojure` won't automatically call a `-main` "
+"function, so be sure your file does more than just define functions. You can "
+"find command-line arguments in `pass:[*command-line-args*]`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:344
+msgid ""
+"If you do need extra dependencies, try the following, courtesy Dominic "
+"Monroe, substituting whatever deps you need in place of `funcool/tubax`:"
+msgstr ""
+
+#. type: delimited block .
+#: en/content/guides/faq.adoc:347
+#, no-wrap
+msgid "#!/bin/sh\n"
+msgstr ""
+
+#. type: delimited block .
+#: en/content/guides/faq.adoc:349
+#, no-wrap
+msgid "\"exec\" \"clojure\" \"-Sdeps\" '{:deps {funcool/tubax {:mvn/version \"0.2.0\"}}}' \"$0\" \"$@\"\n"
+msgstr ""
+
+#. type: delimited block .
+#: en/content/guides/faq.adoc:351
+#, no-wrap
+msgid ";; Clojure code goes here.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:357
+#, no-wrap
+msgid "**<<faq#ca,Why does Clojure require that contributors first sign a contributor agreement (CA)?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:359
+msgid "See http://clojure.org/contributing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:361
+msgid "It boils down to two reasons:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:363
+msgid ""
+"To protect Clojure from future legal challenges that might discourage "
+"businesses from adopting it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:364
+msgid ""
+"To enable Clojure to be relicensed under a different open-source license if "
+"that would be advantageous."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:366
+msgid ""
+"Signing the Contributor Agreement grants Rich Hickey joint ownership of your "
+"contributions. In exchange, Rich Hickey guarantees that Clojure will always "
+"be available under an open-source license approved by either the http://www."
+"fsf.org/[Free Software Foundation] or the http://opensource.org/[Open Source "
+"Initiative]."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:369
+#, no-wrap
+msgid "**<<faq#echosign_bug,Why does my CA email confirmation say \"Clojure CA (between <my-company> and Rich Hickey) is Signed and Filed!\">>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:371
+msgid ""
+"This is a quirk of Adobe EchoSign specific to users whose email account is "
+"already associated with an Adobe EchoSign account. In those cases, EchoSign "
+"will use the company name from your existing profile in the subject line "
+"rather than the individual name that was signed on the form. Don't worry! "
+"This has no effect - the agreement is as signed and attached in the email."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:374
+#, no-wrap
+msgid "**<<faq#prs,Other projects hosted on GitHub accept pull requests.  Why not Clojure?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:376
+msgid ""
+"Rich Hickey prefers to evaluate patches attached to JIRA tickets.  This is "
+"not to make it more difficult for contributors, or for legal reasons, but "
+"because of workflow preferences. See <<xref/../../dev/dev#,the development "
+"page>> for more details."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:378
+msgid ""
+"https://groups.google.com/forum/#!msg/clojure/jWMaop_eVaQ/3M4gddaXDZoJ[Link] "
+"to Oct 2012 Clojure Google group message from Rich Hickey on this topic."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/faq.adoc:379
+#, no-wrap
+msgid "Future ideas"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:383
+#, no-wrap
+msgid "**<<faq#native,Will there be a native version of Clojure in the future?>>**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:385
+msgid ""
+"Frequently people ask for a \"native\" version of Clojure, ie one that does "
+"not rely on the JVM. ClojureScript self-hosting is one current path but "
+"probably only useful for a subset of use cases. The [https://www.graalvm."
+"org/](GraalVM) project includes standalone execution using the SubstrateVM. "
+"Native images produced with Graal start extremely fast but may have fewer "
+"opportunities to optimize performance than the full JVM."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/faq.adoc:387
+msgid ""
+"However, neither of these is likely what people are envisioning when they "
+"ask for a \"native version of Clojure\", which is a version of the language "
+"that is not JVM-hosted and compiles directly to a native executable, "
+"probably via something like LLVM. Clojure leverages an enormous amount of "
+"performance, portability, and functionality from the JVM and relies heavily "
+"on things like a world-class garbage collector. Building a \"Clojure native"
+"\" would require a large amount of work to make a version of Clojure that "
+"was slower (probably much slower), less portable, and with significantly "
+"less functionality (as the Clojure library relies heavily on the JDK). The "
+"Clojure core team has no plans to work on this but it would be an amazing "
+"learning project for anyone and we encourage you to go for it!"
 msgstr ""

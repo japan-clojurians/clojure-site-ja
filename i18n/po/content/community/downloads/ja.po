@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -44,7 +44,7 @@ msgstr ""
 #. type: Title ==
 #: en/content/community/downloads.adoc:10
 #, no-wrap
-msgid "Stable Release: 1.9.0 (Dec 8, 2017)"
+msgid "Stable Release: 1.10.1 (June 6, 2019)"
 msgstr ""
 
 #. type: Plain text
@@ -54,7 +54,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/community/downloads.adoc:14
-msgid "https://repo1.maven.org/maven2/org/clojure/clojure/1.9.0/[Clojure 1.9.0]"
+msgid "https://repo1.maven.org/maven2/org/clojure/clojure/1.10.1/[Clojure 1.10.1]"
 msgstr ""
 
 #. type: Plain text
@@ -63,83 +63,157 @@ msgid "https://github.com/clojure/clojure/blob/master/changes.md[Changelog]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:16 en/content/community/downloads.adoc:23
-msgid "Requirements: Java 1.6+ (recommended: Java 1.8+)"
+#: en/content/community/downloads.adoc:16
+msgid "Requirements: Java 8 or higher (recommended: Java 8 or Java 11)"
 msgstr ""
 
 #. type: Title ==
 #: en/content/community/downloads.adoc:17
 #, no-wrap
-msgid "Development Release: 1.10.0-alpha4 (Feb 9, 2018)"
+msgid "Older Releases"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/downloads.adoc:20
-msgid "https://repo1.maven.org/maven2/org/clojure/clojure/1.10.0-alpha4/[Clojure 1.10.0-alpha4]"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/downloads.adoc:21
-msgid ""
-"https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22clojure%22%20AND%20v"
-"%3A1.10.0*[Clojure 1.10 pre-release builds]"
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/downloads.adoc:22
-msgid "<<devchangelog#,Dev changelog>>"
+msgid "See <<downloads_older#,Older Releases>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:24
+#: en/content/community/downloads.adoc:21
 #, no-wrap
 msgid "Clojure Source"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:27
+#: en/content/community/downloads.adoc:24
 msgid ""
 "Clojure source code is hosted at https://github.com/clojure/clojure[github.com/clojure/clojure]. Builds of the very "
 "latest version of Clojure's master branch are available at https://oss.sonatype.org/content/repositories/snapshots/"
-"org/clojure/clojure/1.9.0-master-SNAPSHOT/[oss.sonatype.org]."
+"org/clojure/clojure/1.11.0-master-SNAPSHOT/[oss.sonatype.org]."
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:28
+#: en/content/community/downloads.adoc:25
+#, fuzzy, no-wrap
+#| msgid "Why Clojure?"
+msgid "Get Clojure"
+msgstr "なぜClojureなのか?"
+
+#. type: Title ===
+#: en/content/community/downloads.adoc:27
 #, no-wrap
-msgid "Get Clojure via Leiningen"
+msgid "Via deps.edn"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/downloads.adoc:31
-msgid ""
-"Modify the dependencies and repositories sections of your https://leiningen.org/[Leiningen] project.clj file, "
-"specifying the version of Clojure that you want:"
+#: en/content/community/downloads.adoc:30
+msgid "Specify the version of Clojure that you want in your deps.edn:"
 msgstr ""
 
 #. type: delimited block -
 #: en/content/community/downloads.adoc:35
 #, no-wrap
 msgid ""
-"; under dependencies, select the release of clojure that you want\n"
-":dependencies [[org.clojure/clojure \"1.9.0\"]]\n"
+"{:deps\n"
+" {org.clojure/clojure {:mvn/version \"1.10.0\"}}}\n"
 msgstr ""
 
-#. type: Title ==
+#. type: Title ===
 #: en/content/community/downloads.adoc:37
 #, no-wrap
-msgid "Where did Clojure Contrib go?"
+msgid "Via Leiningen"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/downloads.adoc:40
 msgid ""
-"If you are migrating from a pre-1.3 version of Clojure, please see https://dev.clojure.org/display/community/Where+Did"
-"+Clojure.Contrib+Go[this page] for migration help regarding old contrib libraries."
+"Modify the dependencies and repositories sections of your https://leiningen.org/[Leiningen] project.clj file, "
+"specifying the version of Clojure that you want:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/downloads.adoc:44
+#, no-wrap
+msgid ""
+"; under dependencies, select the release of clojure that you want\n"
+":dependencies [[org.clojure/clojure \"1.10.0\"]]\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/downloads.adoc:41
+#: en/content/community/downloads.adoc:46
 #, no-wrap
-msgid "<<downloads_older#,Older Releases>>"
+msgid "Using Clojure and contrib SNAPSHOT releases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/downloads.adoc:49
+msgid ""
+"Most tools do not automatically include the sonatype snapshot repositories. To use SNAPSHOT releases, you must add "
+"this to your configuration:"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/downloads.adoc:50
+#, no-wrap
+msgid "In deps.edn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/downloads.adoc:53
+msgid "Add an additional repository in deps.edn:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/downloads.adoc:58
+#, no-wrap
+msgid ""
+"{:mvn/repos\n"
+" {\"sonatype-oss-public\" {:url \"https://oss.sonatype.org/content/groups/public/\"}}}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/downloads.adoc:60
+#, fuzzy, no-wrap
+#| msgid "Learning"
+msgid "In Leiningen"
+msgstr "学習"
+
+#. type: Plain text
+#: en/content/community/downloads.adoc:63
+msgid "Add a snapshot repository in Leiningen in project.clj:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/downloads.adoc:67
+#, no-wrap
+msgid ":repositories {\"sonatype-oss-public\" \"https://oss.sonatype.org/content/groups/public/\"}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/downloads.adoc:69
+#, no-wrap
+msgid "In Maven"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/downloads.adoc:72
+msgid "In pom.xml:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/downloads.adoc:87
+#, no-wrap
+msgid ""
+"<repositories>\n"
+"  <repository>\n"
+"    <id>sonatype-oss-public</id>\n"
+"    <url>https://oss.sonatype.org/content/groups/public/</url>\n"
+"    <releases>\n"
+"      <enabled>true</enabled>\n"
+"    </releases>\n"
+"    <snapshots>\n"
+"      <enabled>true</enabled>\n"
+"    </snapshots>\n"
+"  </repository>\n"
+"</repositories>\n"
 msgstr ""

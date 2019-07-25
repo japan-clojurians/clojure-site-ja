@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:17
 #: en/content/news/2017/12/08/clojure19.adoc:41
 #: en/content/news/2016/01/19/clojure18.adoc:17
 msgid "## Contributors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:27
+#: en/content/news/2017/12/08/clojure19.adoc:54
+#: en/content/news/2016/01/19/clojure18.adoc:35
+#, no-wrap
+msgid "Ghadi Shayban\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:29
+#: en/content/news/2017/12/08/clojure19.adoc:58
+#: en/content/news/2016/01/19/clojure18.adoc:41
+#, no-wrap
+msgid "Jozef Wagner\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:33
+#: en/content/news/2017/12/08/clojure19.adoc:63
+#: en/content/news/2016/01/19/clojure18.adoc:47
+#, no-wrap
+msgid "Nicola Mometto\n"
 msgstr ""
 
 #. type: Plain text
@@ -30,31 +55,10 @@ msgid "Andy Fingerhut\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:54
-#: en/content/news/2016/01/19/clojure18.adoc:35
-#, no-wrap
-msgid "Ghadi Shayban\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:58
-#: en/content/news/2016/01/19/clojure18.adoc:41
-#, no-wrap
-msgid "Jozef Wagner\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/news/2017/12/08/clojure19.adoc:61
 #: en/content/news/2016/01/19/clojure18.adoc:45
 #, no-wrap
 msgid "Michael Blume\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:63
-#: en/content/news/2016/01/19/clojure18.adoc:47
-#, no-wrap
-msgid "Nicola Mometto\n"
 msgstr ""
 
 #. type: Plain text
@@ -83,9 +87,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2016/01/19/clojure18.adoc:11
 msgid ""
-"More string functions in http://clojure.github.io/clojure/branch-master/"
-"clojure.string-api.html[clojure.string] (portable to ClojureScript): index-"
-"of, last-index-of, starts-with?, ends-with?, includes?"
+"More string functions in http://clojure.github.io/clojure/clojure.string-api."
+"html[clojure.string] (portable to ClojureScript): index-of, last-index-of, "
+"starts-with?, ends-with?, includes?"
 msgstr ""
 
 #. type: Plain text

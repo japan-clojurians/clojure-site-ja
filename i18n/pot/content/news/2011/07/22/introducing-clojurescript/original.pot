@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,25 +17,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:1
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:36
+#: en/content/reference/atoms.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:39
 #, no-wrap
-msgid "Metadata"
+msgid "Atoms"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/namespaces.adoc:1
-#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
+#: en/content/reference/namespaces.adoc:1 en/content/guides/faq.adoc:203
+#: en/content/guides/reader_conditionals.adoc:87
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/atoms.adoc:1
-#: en/content/news/2011/07/22/introducing-clojurescript.adoc:39
+#: en/content/reference/metadata.adoc:1
+#: en/content/news/2011/07/22/introducing-clojurescript.adoc:36
 #, no-wrap
-msgid "Atoms"
+msgid "Metadata"
 msgstr ""
 
 #. type: Plain text
@@ -225,11 +225,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:49
 msgid ""
-"We have a https://dev.clojure.org/jira/browse/CLJS[ClojureScript JIRA "
+"We have a https://clojure.atlassian.net/projects/CLJS[ClojureScript JIRA "
 "instance] set up to track bugs. As with Clojure itself, submitting patches "
-"requires signing the <<xref/../../../../../community/contributing#,Clojure "
-"Contributor Agreement>>. We can only accept patches through JIRA, not GitHub "
-"pull requests."
+"requires signing the <<xref/../../../../../dev/contributor_agreement#,"
+"Clojure Contributor Agreement>>. We can only accept patches through JIRA, "
+"not GitHub pull requests."
 msgstr ""
 
 #. type: Title ==

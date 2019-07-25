@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 16:35+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,17 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:17 en/content/guides/repl/basic_usage.adoc:17
-#, no-wrap
-msgid "Evaluating Clojure expressions"
-msgstr ""
-
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/introduction.adoc:4 en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4 en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
 msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
@@ -34,6 +28,12 @@ msgstr ""
 #: en/content/guides/repl/basic_usage.adoc:1
 #, no-wrap
 msgid "Programming at the REPL: Basic Usage"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:17 en/content/guides/deps_and_cli.adoc:17
+#, no-wrap
+msgid "Evaluating Clojure expressions"
 msgstr ""
 
 #. type: Plain text
@@ -520,7 +520,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> (doc clojure.set/union)\n"
 "nil                             ;; no doc found\n"
 "user=> (apropos \"union\")\n"

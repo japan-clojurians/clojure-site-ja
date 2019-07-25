@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:782
-#: en/content/guides/destructuring.adoc:522
+#: en/content/reference/macros.adoc:1 en/content/guides/spec.adoc:777
+#: en/content/guides/destructuring.adoc:539
 #, no-wrap
 msgid "Macros"
 msgstr ""
@@ -98,7 +98,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/destructuring.adoc:45
 msgid ""
-"Rather than explictly binding each variable, we describe the bindings based "
+"Rather than explicitly binding each variable, we describe the bindings based "
 "on their sequential order. That's a pretty weird statement, \"describe the "
 "bindings,\" so let's look at it again."
 msgstr ""
@@ -657,7 +657,7 @@ msgstr ""
 #: en/content/guides/destructuring.adoc:333
 #, no-wrap
 msgid ""
-"(def multiplayer-game-state \n"
+"(def multiplayer-game-state\n"
 "  {:joe {:class \"Ranger\"\n"
 "         :weapon \"Longbow\"\n"
 "         :score 100}\n"
@@ -792,32 +792,58 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:393
+#: en/content/guides/destructuring.adoc:394
 #, no-wrap
 msgid ""
 "(def human {:person/name \"Franklin\"\n"
 "            :person/age 25\n"
 "            :hobby/hobbies \"running\"})\n"
-"(let [{:keys [person/name person/age hobby/hobbies]} human]\n"
+"(let [{:keys [hobby/hobbies]\n"
+"       :person/keys [name age]} human]\n"
 "  (println name \"is\" age \"and likes\" hobbies))\n"
 ";= Franklin is 25 and likes running\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:396
+#: en/content/guides/destructuring.adoc:397
+msgid ""
+"Destructuring namespaced keywords using `:keys` alone can result in local "
+"bindings that clash. Because all map destructuring options can be combined, "
+"any local binding form can be defined individually."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/destructuring.adoc:408
+#, no-wrap
+msgid ""
+"(def human {:person/name \"Franklin\"\n"
+"            :person/age 25\n"
+"            :hobby/name \"running\"})\n"
+"(let [{:person/keys [age]\n"
+"       hobby-name :hobby/name\n"
+"       person-name :person/name} human]\n"
+"  (println person-name \"is\" age \"and likes\" hobby-name))\n"
+";= Franklin is 25 and likes running\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/destructuring.adoc:411
 msgid ""
 "You can even destructure using auto-resolved keywords, which will again be "
 "bound to only the name part of the key:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:400
+#: en/content/guides/destructuring.adoc:417
 #, no-wrap
-msgid "(require '[person :as p])\n"
+msgid ""
+";; this assumes you have a person.clj namespace in your project\n"
+";; if not do the following at your repl instead: (create-ns 'person) (alias 'p 'person)\n"
+"(require '[person :as p])\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:404
+#: en/content/guides/destructuring.adoc:421
 #, no-wrap
 msgid ""
 "(let [person {::p/name \"Franklin\", ::p/age 25}\n"
@@ -826,13 +852,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:406
+#: en/content/guides/destructuring.adoc:423
 #, no-wrap
 msgid ";= Franklin is 25\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:409
+#: en/content/guides/destructuring.adoc:426
 msgid ""
 "Creating and destructuring maps with auto-resolved keywords allow us to "
 "write code using a namespace alias (here `p`) that is defined by a `require` "
@@ -841,7 +867,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:411
+#: en/content/guides/destructuring.adoc:428
 msgid ""
 "All symbols bound in the context of destructuring can be further "
 "destructured - this allows destructuring to be used in a nested fashion for "
@@ -850,7 +876,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:413
+#: en/content/guides/destructuring.adoc:430
 msgid ""
 "This example destructures the `&` seq in place to decode the rest of the "
 "arguments as options (note that we are thus destructuring the two arguments "
@@ -858,7 +884,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:419
+#: en/content/guides/destructuring.adoc:436
 #, no-wrap
 msgid ""
 "(defn f-with-options\n"
@@ -867,7 +893,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:422
+#: en/content/guides/destructuring.adoc:439
 #, no-wrap
 msgid ""
 "(f-with-options 1 2 :opt1 true)\n"
@@ -875,34 +901,34 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/destructuring.adoc:424
+#: en/content/guides/destructuring.adoc:441
 #, no-wrap
 msgid "Where to destructure"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:427
+#: en/content/guides/destructuring.adoc:444
 msgid ""
 "You can utilize destructuring anywhere that there is an explicit or implicit "
 "let binding."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:429
+#: en/content/guides/destructuring.adoc:446
 msgid ""
 "One of the most common places to see destructuring is in pulling apart the "
 "arguments passed to a function."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:431
+#: en/content/guides/destructuring.adoc:448
 msgid ""
 "Here we have the standard let x equal this, let y equal that, etc... Again, "
 "this is perfectly valid code, it's just verbose."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:439
+#: en/content/guides/destructuring.adoc:456
 #, no-wrap
 msgid ""
 "(defn print-coordinates-1 [point]\n"
@@ -913,7 +939,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:442
+#: en/content/guides/destructuring.adoc:459
 msgid ""
 "Any time we see code that is using `first`, `second`, `nth`, or `get` to "
 "pull apart a data structure, it's likely that destructuring can clean that "
@@ -921,7 +947,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:448
+#: en/content/guides/destructuring.adoc:465
 #, no-wrap
 msgid ""
 "(defn print-coordinates-2 [point]\n"
@@ -930,14 +956,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:451
+#: en/content/guides/destructuring.adoc:468
 msgid ""
 "When defining a function in clojure, destructuring can be applied on the "
 "incoming parameters, just like in a let:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:456
+#: en/content/guides/destructuring.adoc:473
 #, no-wrap
 msgid ""
 "(defn print-coordinates-3 [[x y z]]\n"
@@ -945,7 +971,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:459
+#: en/content/guides/destructuring.adoc:476
 msgid ""
 "We have replaced several lines of code that pulled apart the incoming point "
 "data with a concise statement about the structure of that data that also "
@@ -953,14 +979,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:461
+#: en/content/guides/destructuring.adoc:478
 msgid ""
 "For a more realistic example, let's create a map containing some basic "
 "contact information for the infamous John Smith."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:469
+#: en/content/guides/destructuring.adoc:486
 #, no-wrap
 msgid ""
 "(def john-smith {:f-name \"John\"\n"
@@ -971,14 +997,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:472
+#: en/content/guides/destructuring.adoc:489
 msgid ""
 "Now that we have John's personal information we need to access the values "
 "within this map."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:478
+#: en/content/guides/destructuring.adoc:495
 #, no-wrap
 msgid ""
 "(defn print-contact-info [{:keys [f-name l-name phone company title]}]\n"
@@ -987,7 +1013,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:482
+#: en/content/guides/destructuring.adoc:499
 #, no-wrap
 msgid ""
 "(print-contact-info john-smith)\n"
@@ -996,19 +1022,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:485
+#: en/content/guides/destructuring.adoc:502
 msgid ""
 "This function will associatively destructure the input using the `:keys` "
 "shortcut and then print out the contact information that we provided."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:487
+#: en/content/guides/destructuring.adoc:504
 msgid "But what about when we want to send John a nice letter?"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:500
+#: en/content/guides/destructuring.adoc:517
 #, no-wrap
 msgid ""
 "(def john-smith {:f-name \"John\"\n"
@@ -1024,17 +1050,17 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:503
+#: en/content/guides/destructuring.adoc:520
 msgid ""
 "We have an address in there now, but we needed to nest a map into our "
 "original structure in order to accomplish this."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:514
+#: en/content/guides/destructuring.adoc:531
 #, no-wrap
 msgid ""
-"(defn print-contact-info \n"
+"(defn print-contact-info\n"
 "  [{:keys [f-name l-name phone company title]\n"
 "    {:keys [street city state zip]} :address\n"
 "    [fav-hobby second-hobby] :hobbies}]\n"
@@ -1045,7 +1071,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:520
+#: en/content/guides/destructuring.adoc:537
 #, no-wrap
 msgid ""
 "(print-contact-info john-smith)\n"
@@ -1056,7 +1082,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:525
+#: en/content/guides/destructuring.adoc:542
 msgid ""
 "Macro writers may find the need to write a macro that incorporates "
 "destructuring. The most common way to do so is to produce a call to "
@@ -1066,7 +1092,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:527
+#: en/content/guides/destructuring.adoc:544
 msgid ""
 "However, in rare cases you might want to instead resolve the destructuring "
 "yourself in a macro. In this case, use the (undocumented) `clojure.core/"
@@ -1076,7 +1102,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/destructuring.adoc:535
+#: en/content/guides/destructuring.adoc:552
 #, no-wrap
 msgid ""
 "(destructure '[[x & remaining :as all] numbers])\n"
@@ -1087,7 +1113,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/destructuring.adoc:537
+#: en/content/guides/destructuring.adoc:554
 msgid ""
 "The result was formatted here to give it a little more clarity. This example "
 "should also give you some insight into how destructuring works under the "

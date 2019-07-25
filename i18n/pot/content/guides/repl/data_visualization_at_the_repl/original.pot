@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
 #: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/introduction.adoc:4
 #: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4
-#: en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
 msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
@@ -417,37 +417,30 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:267
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:268
 #, no-wrap
 msgid ""
 "user=> (/ 1 0)\n"
-"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
+"Execution error (ArithmeticException) at user/eval163 (REPL:1).\n"
+"Divide by zero\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/data_visualization_at_the_repl.adoc:271
-#, no-wrap
 msgid ""
-"By default, the REPL prints a one-line summary of the Exception: its type, its message, and the source code location\n"
-" where the Exception was thrown:\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:276
-#, no-wrap
-msgid ""
-"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
-"^------type-------- ^--message----  ^location where the Exception was thrown\n"
+"By default, the REPL prints a two-line summary of the Exception. The first "
+"line reports the error phase (execution, compilation, macroexpansion, etc) "
+"and its location. The second line reports the cause."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:279
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:273
 msgid ""
 "This can be enough in many cases, but there is more information available."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:283
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:277
 #, no-wrap
 msgid ""
 "First, you can visualize the _stacktrace_ of the Exception - that is, the chain\n"
@@ -456,7 +449,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:301
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:295
 #, no-wrap
 msgid ""
 "user=> (pst *e)\n"
@@ -477,20 +470,20 @@ msgid ""
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:306
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:300
 #, no-wrap
 msgid "**TIP:** the last thrown Exception can be obtained by evaluating `*e`.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:309
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:303
 msgid ""
 "Finally, just evaluating the Exception at the REPL can provide a useful "
 "visualization:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:340
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:334
 #, no-wrap
 msgid ""
 "user=> *e\n"
@@ -524,7 +517,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:345
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:339
 #, no-wrap
 msgid ""
 "In this simplistic example, displaying all this information may be more than what is\n"
@@ -533,13 +526,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:347
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:341
 #, no-wrap
 msgid "**Exceptions convey data:** in Clojure programs, it's common to attach additional data\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:349
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:343
 #, no-wrap
 msgid ""
 "to an Exception (not just a human-readable error message): this is done by creating the Exception via\n"
@@ -547,24 +540,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:350
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:344
 #, no-wrap
 msgid "**Exceptions are chained:** an Exception can be annotated with an optional _cause_, which is another\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:351
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:345
 #, no-wrap
 msgid "(lower-level) Exception.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:353
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:347
 msgid "Here's an example program which demonstrates these sort of Exceptions."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:369
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:363
 #, no-wrap
 msgid ""
 "(defn divide-verbose\n"
@@ -583,7 +576,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:383
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:377
 #, no-wrap
 msgid ""
 "(defn average\n"
@@ -602,7 +595,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:388
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:382
 msgid ""
 "We don't know it yet, but our `average` function fails when applied to an "
 "empty collection of numbers.  However, visualizing the Exception makes it "
@@ -611,60 +604,61 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:432
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:427
 #, no-wrap
 msgid ""
 "user=> (average [])\n"
-"ArithmeticException Divide by zero  clojure.lang.Numbers.divide (Numbers.java:163)\n"
+"Execution error (ArithmeticException) at user/divide-verbose (REPL:6).\n"
+"Divide by zero\n"
 "user=> *e  ;; notice the `:data` key inside the chain of Exceptions represented in `:via`\n"
 "#error {\n"
 " :cause \"Divide by zero\"\n"
 " :via\n"
 " [{:type clojure.lang.ExceptionInfo\n"
 "   :message \"Failed to compute the average of numbers\"\n"
-"   :data {:numbers []}                                      ;; <-- HERE\n"
-"   :at [clojure.core$ex_info invokeStatic \"core.clj\" 4739]}\n"
+"   :data {:numbers []}\n"
+"   :at [user$average invokeStatic \"NO_SOURCE_FILE\" 10]}\n"
 "  {:type clojure.lang.ExceptionInfo\n"
 "   :message \"Failed to divide 0 by 0\"\n"
-"   :data {:numerator 0, :denominator 0}                     ;; <-- HERE\n"
-"   :at [clojure.core$ex_info invokeStatic \"core.clj\" 4739]}\n"
+"   :data {:numerator 0, :denominator 0}\n"
+"   :at [user$divide_verbose invokeStatic \"NO_SOURCE_FILE\" 9]}\n"
 "  {:type java.lang.ArithmeticException\n"
 "   :message \"Divide by zero\"\n"
-"   :at [clojure.lang.Numbers divide \"Numbers.java\" 163]}]\n"
+"   :at [clojure.lang.Numbers divide \"Numbers.java\" 188]}]\n"
 " :trace\n"
-" [[clojure.lang.Numbers divide \"Numbers.java\" 163]\n"
-"  [user$divide_verbose invokeStatic \"NO_SOURCE_FILE\" 11]\n"
-"  [user$divide_verbose invoke \"NO_SOURCE_FILE\" 6]\n"
-"  [user$average invokeStatic \"NO_SOURCE_FILE\" 25]\n"
-"  [user$average invoke \"NO_SOURCE_FILE\" 19]\n"
-"  [user$eval155 invokeStatic \"NO_SOURCE_FILE\" 32]\n"
-"  [user$eval155 invoke \"NO_SOURCE_FILE\" 32]\n"
-"  [clojure.lang.Compiler eval \"Compiler.java\" 7062]\n"
-"  [clojure.lang.Compiler eval \"Compiler.java\" 7025]\n"
-"  [clojure.core$eval invokeStatic \"core.clj\" 3206]\n"
-"  [clojure.core$eval invoke \"core.clj\" 3202]\n"
-"  [clojure.main$repl$read_eval_print__8572$fn__8575 invoke \"main.clj\" 243]\n"
-"  [clojure.main$repl$read_eval_print__8572 invoke \"main.clj\" 243]\n"
-"  [clojure.main$repl$fn__8581 invoke \"main.clj\" 261]\n"
-"  [clojure.main$repl invokeStatic \"main.clj\" 261]\n"
-"  [clojure.main$repl_opt invokeStatic \"main.clj\" 325]\n"
-"  [clojure.main$main invokeStatic \"main.clj\" 424]\n"
-"  [clojure.main$main doInvoke \"main.clj\" 387]\n"
+" [[clojure.lang.Numbers divide \"Numbers.java\" 188]\n"
+"  [user$divide_verbose invokeStatic \"NO_SOURCE_FILE\" 6]\n"
+"  [user$divide_verbose invoke \"NO_SOURCE_FILE\" 1]\n"
+"  [user$average invokeStatic \"NO_SOURCE_FILE\" 7]\n"
+"  [user$average invoke \"NO_SOURCE_FILE\" 1]\n"
+"  [user$eval173 invokeStatic \"NO_SOURCE_FILE\" 1]\n"
+"  [user$eval173 invoke \"NO_SOURCE_FILE\" 1]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7176]\n"
+"  [clojure.lang.Compiler eval \"Compiler.java\" 7131]\n"
+"  [clojure.core$eval invokeStatic \"core.clj\" 3214]\n"
+"  [clojure.core$eval invoke \"core.clj\" 3210]\n"
+"  [clojure.main$repl$read_eval_print__9068$fn__9071 invoke \"main.clj\" 414]\n"
+"  [clojure.main$repl$read_eval_print__9068 invoke \"main.clj\" 414]\n"
+"  [clojure.main$repl$fn__9077 invoke \"main.clj\" 435]\n"
+"  [clojure.main$repl invokeStatic \"main.clj\" 435]\n"
+"  [clojure.main$repl_opt invokeStatic \"main.clj\" 499]\n"
+"  [clojure.main$main invokeStatic \"main.clj\" 598]\n"
+"  [clojure.main$main doInvoke \"main.clj\" 561]\n"
 "  [clojure.lang.RestFn invoke \"RestFn.java\" 397]\n"
 "  [clojure.lang.AFn applyToHelper \"AFn.java\" 152]\n"
 "  [clojure.lang.RestFn applyTo \"RestFn.java\" 132]\n"
-"  [clojure.lang.Var applyTo \"Var.java\" 702]\n"
+"  [clojure.lang.Var applyTo \"Var.java\" 705]\n"
 "  [clojure.main main \"main.java\" 37]]}\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:434
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:429
 #, no-wrap
 msgid "Graphical and web-based visualizations"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:439
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:434
 #, no-wrap
 msgid ""
 "Finally, the REPL being a full-featured programming environment, it is not limited\n"
@@ -673,7 +667,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:443
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:438
 msgid ""
 "https://clojure.github.io/clojure/clojure.java.javadoc-api.html[clojure.java."
 "javadoc] lets you view the https://en.wikipedia.org/wiki/Javadoc[Javadoc] of "
@@ -682,7 +676,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:452
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:447
 #, no-wrap
 msgid ""
 "user=> (require '[clojure.java.javadoc :as jdoc])\n"
@@ -694,14 +688,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:456
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:451
 msgid ""
 "https://clojure.github.io/clojure/clojure.inspector-api.html[clojure."
 "inspector] lets you open GUI-based visualizations of data, for instance:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:463
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:458
 #, no-wrap
 msgid ""
 "user=> (require '[clojure.inspector :as insp])\n"
@@ -711,16 +705,211 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:466
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:461
 msgid ""
 "image:/images/content/guides/repl/clj-inspect-table.png[\"clojure.inspector "
 "table viz\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:468
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:464
 msgid ""
 "Finally, https://clojure.github.io/clojure/clojure.java.browse-api."
 "html#clojure.java.browse/browse-url[clojure.java.browse/browse-url] lets you "
 "open any URL in a Web browser, which can be handy for specific needs."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:465
+#, no-wrap
+msgid "Dealing with mysterious values (advanced)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:472
+msgid ""
+"Sometimes, the printed representation of a value in the REPL is not very "
+"informative; sometimes, it can even be misleading as to the nature of that "
+"value.footnote:[For instance, https://docs.datomic.com/on-prem/entities."
+"html[Datomic] and https://github.com/tonsky/datascript[DataScript] Entity "
+"objects are printed like Clojure maps, even though they are significantly "
+"different from ordinary maps.] This often happens with values which are "
+"obtained via Java interop."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:476
+msgid ""
+"As an example, we'll create an InputStream object using the https://"
+"clojuredocs.org/clojure.java.io[`clojure.java.io`] lib. If you don't know "
+"what an InputStream is, all the better - the point of this section is to "
+"teach you how to find your footing in uncharted territory:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:485
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.java.io :as io])\n"
+"nil\n"
+"user=> (def v (io/input-stream \"https://www.clojure.org\")) ;; NOTE won't work if you're not connected to the Internet\n"
+"#'user/v\n"
+"user=> v\n"
+"#object[java.io.BufferedInputStream 0x4ee37ca3 \"java.io.BufferedInputStream@4ee37ca3\"]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:488
+msgid "The above code sample defined an InputStream named `v`."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:491
+msgid ""
+"Now imagine you don't know where `v` comes from, and let's try to interact "
+"with it at the REPL so as to gain more understanding of it."
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:492
+#, no-wrap
+msgid "Viewing the type hierarchy using `type` and `ancestors`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:498
+msgid ""
+"The printed representation of `v` tells us one thing about it: its _runtime "
+"type_, in this case `java.io.BufferedInputStream`.  The _type_ of a value "
+"can help us know what operations we may call on it.  We can evaluate "
+"`(https://clojuredocs.org/clojure.core/type[type] v)` to obtain the "
+"_concrete type_ of `v`, and `(https://clojuredocs.org/clojure.core/"
+"ancestors[ancestors] (type v))` to obtain its entire _type hierarchy:_"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:505
+#, no-wrap
+msgid ""
+"user=> (type v) ;; what is the type of our obscure value?\n"
+"java.io.BufferedInputStream\n"
+"user=> (ancestors (type v))\n"
+"#{java.io.InputStream java.lang.AutoCloseable java.io.Closeable java.lang.Object java.io.FilterInputStream}\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:507
+#, no-wrap
+msgid "Using Javadoc"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:511
+msgid ""
+"As we saw in the previous section, we can use the https://clojure.github.io/"
+"clojure/clojure.java.javadoc-api.html[clojure.java.javadoc] lib to view "
+"online documentation about a Java type:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:518
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.java.javadoc :as jdoc])\n"
+"nil\n"
+"user=> (jdoc/javadoc java.io.InputStream) ;; should open a web page about java.io.InputStream\n"
+"true\n"
+msgstr ""
+
+#. type: Title ====
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:520
+#, no-wrap
+msgid "Inspecting Java types with `clojure.reflect`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:524
+msgid ""
+"Javadoc is helpful, but sometimes Javadoc won't even be available. In such "
+"cases, we can use the REPL itself to inspect types, via Java reflection."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:527
+msgid ""
+"We can use the `https://clojure.github.io/clojure/clojure.reflect-api."
+"html#clojure.reflect/reflect[clojure.reflect/reflect]` function to obtain "
+"information about a Java type as a plain Clojure data structure:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:534
+#, no-wrap
+msgid ""
+"user=> (require '[clojure.reflect :as reflect])\n"
+"nil\n"
+"user=> (reflect/reflect java.io.InputStream)\n"
+"{:bases #{java.lang.Object java.io.Closeable}, :flags #{:public :abstract}, :members #{#clojure.reflect.Method{:name close, :return-type void, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name mark, :return-type void, :declaring-class java.io.InputStream, :parameter-types [int], :exception-types [], :flags #{:public :synchronized}} #clojure.reflect.Method{:name available, :return-type int, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public :abstract}} #clojure.reflect.Method{:name markSupported, :return-type boolean, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [], :flags #{:public}} #clojure.reflect.Field{:name MAX_SKIP_BUFFER_SIZE, :type int, :declaring-class java.io.InputStream, :flags #{:private :static :final}} #clojure.reflect.Constructor{:name java.io.InputStream, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [], :flags #{:public}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [byte<>], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name skip, :return-type long, :declaring-class java.io.InputStream, :parameter-types [long], :exception-types [java.io.IOException], :flags #{:public}} #clojure.reflect.Method{:name reset, :return-type void, :declaring-class java.io.InputStream, :parameter-types [], :exception-types [java.io.IOException], :flags #{:public :synchronized}} #clojure.reflect.Method{:name read, :return-type int, :declaring-class java.io.InputStream, :parameter-types [byte<> int int], :exception-types [java.io.IOException], :flags #{:public}}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:539
+msgid ""
+"Now, that is a _very_ hairy data structure. Fortunately, we have learned how "
+"to deal with hairy data structures in the "
+"<<_pretty_printing_using_code_clojure_pprint_code,first section>> of this "
+"chapter: pretty-printing to the rescue! Let's use pretty-printing to display "
+"the methods exposed by `java.io.InputStream` in a table:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:543
+#, no-wrap
+msgid "user=> (->> (reflect/reflect java.io.InputStream) :members (sort-by :name) (pp/print-table [:name :flags :parameter-types :return-type]))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:558
+#, no-wrap
+msgid ""
+"|                :name |                     :flags | :parameter-types | :return-type |\n"
+"|----------------------+----------------------------+------------------+--------------|\n"
+"| MAX_SKIP_BUFFER_SIZE | #{:private :static :final} |                  |              |\n"
+"|            available |                 #{:public} |               [] |          int |\n"
+"|                close |                 #{:public} |               [] |         void |\n"
+"|  java.io.InputStream |                 #{:public} |               [] |              |\n"
+"|                 mark |   #{:public :synchronized} |            [int] |         void |\n"
+"|        markSupported |                 #{:public} |               [] |      boolean |\n"
+"|                 read |       #{:public :abstract} |               [] |          int |\n"
+"|                 read |                 #{:public} |         [byte<>] |          int |\n"
+"|                 read |                 #{:public} | [byte<> int int] |          int |\n"
+"|                reset |   #{:public :synchronized} |               [] |         void |\n"
+"|                 skip |                 #{:public} |           [long] |         long |\n"
+"nil\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:561
+msgid ""
+"For example, this tells us that we can call a `.read` method on `v` with no "
+"arguments, which will return an `int`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:570
+#, no-wrap
+msgid ""
+"user=> (.read v)\n"
+"60  \n"
+"user=> (.read v)\n"
+"33\n"
+"user=> (.read v)\n"
+"68\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:572
+msgid ""
+"Without any prior knowledge, we have managed to learn that `v` is an "
+"InputStream, and read bytes from it."
 msgstr ""

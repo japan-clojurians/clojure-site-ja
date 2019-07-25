@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -301,7 +301,7 @@ msgid ""
 "in that it threads a value through a number of expressions. However, it also short-circuits execution when an "
 "expression evaluates as `nil` at any point in the chain. One common problem with arrow macros in the context of "
 "<<xref/../../reference/java_interop#,Java interop>> is that Java methods do not expect to be passed `nil` (`null`). "
-"One way to avoid a `NullPointerException` in these cases is to add an explict guard:"
+"One way to avoid a `NullPointerException` in these cases is to add an explicit guard:"
 msgstr ""
 
 #. type: delimited block -

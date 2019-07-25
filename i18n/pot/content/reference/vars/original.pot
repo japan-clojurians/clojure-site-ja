@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title ==
-#: en/content/reference/libs.adoc:64 en/content/reference/refs.adoc:73
-#: en/content/reference/namespaces.adoc:24
-#: en/content/reference/other_functions.adoc:41
-#: en/content/reference/other_functions.adoc:65
-#: en/content/reference/vars.adoc:85
+#: en/content/reference/libs.adoc:64
 #: en/content/reference/data_structures.adoc:70
 #: en/content/reference/data_structures.adoc:90
 #: en/content/reference/data_structures.adoc:98
@@ -31,19 +27,23 @@ msgstr ""
 #: en/content/reference/data_structures.adoc:174
 #: en/content/reference/data_structures.adoc:188
 #: en/content/reference/data_structures.adoc:223
-#: en/content/reference/repl_and_main.adoc:185
 #: en/content/reference/agents.adoc:64
+#: en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65
+#: en/content/reference/repl_and_main.adoc:205
+#: en/content/reference/refs.adoc:73 en/content/reference/vars.adoc:97
+#: en/content/reference/namespaces.adoc:24
 #, no-wrap
 msgid "Related functions"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:146 en/content/reference/vars.adoc:65
+#: en/content/reference/java_interop.adoc:164 en/content/reference/vars.adoc:77
 msgid "Assignment special form."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/java_interop.adoc:152 en/content/reference/vars.adoc:69
+#: en/content/reference/java_interop.adoc:170 en/content/reference/vars.adoc:81
 msgid ""
 "Note - _you cannot assign to function params or local bindings. Only Java "
 "fields, Vars, Refs and Agents are mutable in Clojure_."
@@ -78,9 +78,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/vars.adoc:20
 msgid ""
-"The special form _**def**_ creates (and <<vars#Interning,interns>>) a Var. "
-"If the Var did not already exist and no initial value is supplied, the var "
-"is unbound:"
+"The special form `def` creates (and <<vars#interning,interns>>) a Var. If "
+"the Var did not already exist and no initial value is supplied, the var is "
+"unbound:"
 msgstr ""
 
 #. type: delimited block -
@@ -88,9 +88,9 @@ msgstr ""
 #, no-wrap
 msgid ""
 "user=> (def x)\n"
-".'user/x\n"
+"#'user/x\n"
 "user=> x\n"
-"java.lang.IllegalStateException: Var user/x is unbound.\n"
+"#object[clojure.lang.Var$Unbound 0x14008db3 \"Unbound: #'user/x\"]\n"
 msgstr ""
 
 #. type: Plain text
@@ -104,7 +104,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "user=> (def x 1)\n"
-".'user/x\n"
+"#'user/x\n"
 msgstr ""
 
 #. type: delimited block -
@@ -154,16 +154,16 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/vars.adoc:58
 msgid ""
-"Bindings created with _**binding**_ cannot be seen by any other thread. "
-"Likewise, bindings created with _**binding**_ can be assigned to, which "
-"provides a means for a nested context to communicate with code before it on "
-"the call stack. This capability is opt-in only by setting a metadata tag: "
-"_**dynamic**_ to true as in the code block above. There are scenarios that "
-"one might wish to redefine static Vars within a context and Clojure (since "
-"version 1.3) provides the functions https://clojure.github.io/clojure/"
-"clojure.core-api.html#clojure.core/with-redefs[with-redefs] and https://"
-"clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-"
-"fn[with-redefs-fn] for such purposes."
+"Bindings created with `binding` cannot be seen by any other thread. "
+"Likewise, bindings created with `binding` can be assigned to, which provides "
+"a means for a nested context to communicate with code before it on the call "
+"stack. This capability is opt-in only by setting a metadata tag: `^:dynamic` "
+"to true as in the code block above. There are scenarios that one might wish "
+"to redefine static Vars within a context and Clojure (since version 1.3) "
+"provides the functions https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/with-redefs[with-redefs] and https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/with-redefs-fn[with-redefs-fn] "
+"for such purposes."
 msgstr ""
 
 #. type: Plain text
@@ -180,11 +180,40 @@ msgstr ""
 #. type: Title ==
 #: en/content/reference/vars.adoc:62
 #, no-wrap
+msgid "Binding conveyance"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/vars.adoc:65
+msgid ""
+"Some Clojure concurrency functions (futures, <<agents#,agents>>) provide "
+"\"binding conveyance\", which allows the current set of dynamic bindings to "
+"be conveyed to another thread for the purpose of continuing work "
+"asynchronously with the same environment. This functionality is provided by "
+"https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"future[future], https://clojure.github.io/clojure/clojure.core-api."
+"html#clojure.core/send[send], https://clojure.github.io/clojure/clojure.core-"
+"api.html#clojure.core/send-off[send-off], and https://clojure.github.io/"
+"clojure/clojure.core-api.html#clojure.core/pmap[pmap]."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/vars.adoc:71
+#, no-wrap
+msgid ""
+"(def ^:dynamic *num* 1)\n"
+"(binding [*num* 2] (future (println *num*)))\n"
+";; prints \"2\", not \"1\"\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/vars.adoc:74
+#, no-wrap
 msgid "(*set!* var-symbol expr)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:67
+#: en/content/reference/vars.adoc:79
 msgid ""
 "When the first operand is a symbol, it must resolve to a global var. The "
 "value of the var's current thread binding is set to the value of expr. "
@@ -194,23 +223,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:71
+#: en/content/reference/vars.adoc:83
 msgid ""
 "Using <<java_interop#set,set>> for Java fields is documented in "
 "<<java_interop#set,Java Interop>>."
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/vars.adoc:73
+#: en/content/reference/vars.adoc:85
 #, no-wrap
 msgid "Interning"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:76
+#: en/content/reference/vars.adoc:88
 msgid ""
 "The Namespace system maintains global maps of symbols to Var objects _(see "
-"<<namespaces#,Namespaces>>)_. If a _**def**_ expression does not find an "
+"<<namespaces#,Namespaces>>)_. If a `def` expression does not find an "
 "interned entry in the current namespace for the symbol being def-ed, it "
 "creates one, otherwise it uses the existing Var. This find-or-create process "
 "is called interning. This means that, unless they have been unmap-ed, Var "
@@ -221,7 +250,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:78
+#: en/content/reference/vars.adoc:90
 msgid ""
 "The <<special_forms#var,var>> special form or the `pass:[#']` reader macro "
 "_(see <<reader#,Reader>>)_ can be used to get an interned Var object instead "
@@ -229,13 +258,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/vars.adoc:80
+#: en/content/reference/vars.adoc:92
 #, no-wrap
 msgid "Non-interned Vars"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:83
+#: en/content/reference/vars.adoc:95
 msgid ""
 "It is possible to create vars that are not interned by using https://clojure."
 "github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars[with-"
@@ -245,9 +274,9 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/vars.adoc:92
+#: en/content/reference/vars.adoc:104
 msgid ""
-"Variants of _**def**_: https://clojure.github.io/clojure/clojure.core-api."
+"Variants of `def`: https://clojure.github.io/clojure/clojure.core-api."
 "html#clojure.core/defn[defn] https://clojure.github.io/clojure/clojure.core-"
 "api.html#clojure.core/defn-[defn-] https://clojure.github.io/clojure/clojure."
 "core-api.html#clojure.core/definline[definline] https://clojure.github.io/"
@@ -262,7 +291,7 @@ msgid ""
 "core-api.html#clojure.core/intern[intern] https://clojure.github.io/clojure/"
 "clojure.core-api.html#clojure.core/binding[binding] https://clojure.github."
 "io/clojure/clojure.core-api.html#clojure.core/find-var[find-var] "
-"<<special_forms#var#,var>> Working with Var objects: https://clojure.github."
+"<<special_forms#var,var>> Working with Var objects: https://clojure.github."
 "io/clojure/clojure.core-api.html#clojure.core/with-local-vars[with-local-"
 "vars] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "var-get[var-get] https://clojure.github.io/clojure/clojure.core-api."

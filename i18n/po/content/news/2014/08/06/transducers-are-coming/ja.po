@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,7 +19,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:121
-#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30 en/content/news/2012/05/08/reducers.adoc:172
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:198
 msgid "Rich"
 msgstr ""
 
@@ -44,11 +45,11 @@ msgstr ""
 #. type: Plain text
 #: en/content/news/2014/08/06/transducers-are-coming.adoc:11
 msgid ""
-"Two years ago, in a http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[blog post describing how reducers "
-"work], I described the reducing function transformers on which they were based, and provided explicit examples like "
-"`mapping`, `filtering` and `mapcatting`. Because the reducers library intends to deliver an API with the same 'shape' "
-"as existing sequence function APIs, these transformers were never exposed a la carte, instead being encapsulated by "
-"the macrology of reducers."
+"Two years ago, in a https://clojure.org/news/2012/05/15/anatomy-of-reducer[blog post describing how reducers work], I "
+"described the reducing function transformers on which they were based, and provided explicit examples like `mapping`, "
+"`filtering` and `mapcatting`. Because the reducers library intends to deliver an API with the same 'shape' as "
+"existing sequence function APIs, these transformers were never exposed a la carte, instead being encapsulated by the "
+"macrology of reducers."
 msgstr ""
 
 #. type: Plain text

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
@@ -41,77 +41,63 @@ msgstr "Rich Hickey 2015-01-01"
 msgid "Clojure Libraries"
 msgstr ""
 
-#. type: Title ==
-#: en/content/community/libraries.adoc:10
-#, no-wrap
-msgid "Clojure Contrib"
+#. type: Plain text
+#: en/content/community/libraries.adoc:11
+msgid ""
+"There are many Clojure libraries available. Additionally, Clojure can use any Java library via Java interop. "
+"Together, this provides a vast ecosystem of libraries at your disposal."
 msgstr ""
 
-#. type: Plain text
-#: en/content/community/libraries.adoc:13
-msgid ""
-"Clojure Contrib is a collection of libraries managed with the same Contributor Agreement, license, and development "
-"workflow as Clojure itself. Code in Clojure Contrib can be considered for inclusion in newer versions of Clojure."
-msgstr ""
+#. type: Title ==
+#: en/content/community/libraries.adoc:12
+#, fuzzy, no-wrap
+#| msgid "Libraries"
+msgid "Library search"
+msgstr "ライブラリ"
 
 #. type: Plain text
 #: en/content/community/libraries.adoc:15
-msgid ""
-"Clojure Contrib library code is hosted on https://github.com/clojure[Github]. Design and issue tracking are via "
-"https://dev.clojure.org/display/doc/Clojure+Contrib[Confluence] and JIRA."
+msgid "https://www.clojure-toolbox.com/[Clojure Toolbox] - categorized Clojure libs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/libraries.adoc:16
+msgid "https://clojars.org/[Clojars] - community repo for Clojure libs"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/libraries.adoc:17
-msgid ""
-"Prior to Clojure 1.3, Contrib was packaged as a single monolithic JAR. If you are migrating from a pre-1.3 version of "
-"Clojure, please see https://dev.clojure.org/display/community/Where+Did+Clojure.Contrib+Go[this page] for migration "
-"help regarding old contrib libraries."
-msgstr ""
-
-#. type: Title ===
-#: en/content/community/libraries.adoc:18 en/content/guides/repl/launching_a_basic_repl.adoc:42
-#, no-wrap
-msgid "Leiningen"
+msgid "https://search.maven.org[Maven Central] - searchable repo of Java and Clojure libs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/libraries.adoc:21
-msgid ""
-"The vast majority of Clojure developers use https://github.com/technomancy/leiningen[Leiningen] to create and manage "
-"Clojure projects."
+#: en/content/community/libraries.adoc:18
+msgid "https://github.com/search?language=Clojure[GitHub] - search by language"
 msgstr ""
 
 #. type: Title ==
+#: en/content/community/libraries.adoc:19
+#, fuzzy, no-wrap
+#| msgid "Library duplication"
+msgid "Library collections"
+msgstr "ライブラリの重複"
+
+#. type: Plain text
 #: en/content/community/libraries.adoc:22
-#, no-wrap
-msgid "IDEs and Developer Tools"
+msgid "These are groups of open source libraries maintained with common infrastructure, people, or goals:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/libraries.adoc:24
+msgid "<<contrib_libs#,Clojure contrib libs>> - open source libs under the Clojure umbrella project"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/libraries.adoc:25
-msgid ""
-"Community volunteers maintain https://dev.clojure.org/display/doc/getting+started[Getting Started] documentation for "
-"a number of different developer tools."
-msgstr ""
-
-#. type: Title ==
-#: en/content/community/libraries.adoc:26
-#, no-wrap
-msgid "Finding Libraries"
+msgid "https://clj-commons.org/[clj-commons]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/libraries.adoc:29
-msgid "https://search.maven.org/[Maven Central] is a searchable repository of open source JVM libraries."
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/libraries.adoc:31
-msgid "https://clojars.org/[Clojars] is a community repository for open source Clojure libraries."
-msgstr ""
-
-#. type: Plain text
-#: en/content/community/libraries.adoc:32
-msgid "You can narrow Github search https://github.com/search?language=Clojure[by language] to find Clojure libraries."
+#: en/content/community/libraries.adoc:25
+msgid "http://clojurewerkz.org/[ClojureWerkz]"
 msgstr ""

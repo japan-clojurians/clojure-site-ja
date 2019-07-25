@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,12 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Title ===
-#: en/content/community/resources.adoc:96 en/content/community/training.adoc:52
-#, no-wrap
-msgid "Conferences"
-msgstr ""
 
 #. type: Title =
 #: en/content/community/training.adoc:1
@@ -48,7 +42,7 @@ msgid ""
 msgstr ""
 
 #. type: Table
-#: en/content/community/training.adoc:27
+#: en/content/community/training.adoc:29
 #, no-wrap
 msgid ""
 "| Company | Location | Courses | Link | contact\n"
@@ -62,45 +56,49 @@ msgid ""
 "helpdesk@starweaver.com\n"
 "| Peter Taoussanis | Europe | Enterprise Clojure | https://www.taoensso.com | ptaoussanis@taoensso.com\n"
 "| Adam Bard | North America | Clojure Training | http://clojuretraining.ca | learnclojure@adambard.com\n"
+"| Mark Engelberg | North America (west coast) | Customized Training | https://www.linkedin.com/in/mark-engelberg-0a09a88a/ | mark.engelberg@gmail.com\n"
+"| Klipse Technologies| Worldwide | Clojure Training | https://www.getprogrammingwithclojure.com/workshop | viebel@gmail.com\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/training.adoc:30
+#: en/content/community/training.adoc:32
 #, no-wrap
 msgid "For individuals"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:34
+#: en/content/community/training.adoc:36
 msgid ""
-"Looking for a curated ciriculum to jump start your learning? Several courses "
-"are offered."
+"Looking for a curated curriculum to jump start your learning? Several "
+"courses are offered."
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/training.adoc:35
+#: en/content/community/training.adoc:37
 #, no-wrap
 msgid "Online courses"
 msgstr ""
 
 #. type: Table
-#: en/content/community/training.adoc:43
+#: en/content/community/training.adoc:47
 #, no-wrap
 msgid ""
 "| Link | Short description\n"
 "| https://lambdaisland.com | A series of video tutorial about web development using ClojureScript and Clojure\n"
 "| https://purelyfunctional.tv | Our mission is to help people thrive with Functional Programming\n"
 "| https://www.udemy.com/learning-clojure | Will teach you how to write Clojure code and structure Clojure products\n"
+"| https://learnreframe.com | Learn ClojureScript and re-frame by building CHEFFY; AirBnB for chefs.\n"
+"| https://learnreagent.com | Learn ClojureScript and Reagent by building GIGGIN an app that showcase local gigs.\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/training.adoc:45
+#: en/content/community/training.adoc:49
 #, no-wrap
 msgid "ClojureBridge"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:51
+#: en/content/community/training.adoc:55
 msgid ""
 "http://www.clojurebridge.org[ClojureBridge] aims to increase diversity "
 "within the Clojure community by offering free, beginner-friendly Clojure "
@@ -109,43 +107,49 @@ msgid ""
 "day events hosted by one or more sponsors."
 msgstr ""
 
+#. type: Title ==
+#: en/content/community/training.adoc:56 en/content/community/resources.adoc:90
+#, no-wrap
+msgid "Conferences"
+msgstr ""
+
 #. type: Plain text
-#: en/content/community/training.adoc:55
+#: en/content/community/training.adoc:59
 msgid ""
 "For conferences and upcoming events, check the upcoming <<events,Events>> "
 "list."
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/training.adoc:56
+#: en/content/community/training.adoc:60
 #, no-wrap
 msgid "Resources for trainers"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:59
+#: en/content/community/training.adoc:63
 msgid "https://github.com/cognitect/clojure-lab"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:60
+#: en/content/community/training.adoc:64
 msgid "https://github.com/braveclojure/training"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:61
+#: en/content/community/training.adoc:65
 msgid "https://github.com/timothypratley/enterprise-clojure-training"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/training.adoc:62
+#: en/content/community/training.adoc:66
 #, no-wrap
 msgid "Maintenance"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/training.adoc:66
+#: en/content/community/training.adoc:70
 msgid ""
 "If you would like to be added or removed from this list, please contact "
-"__alex.miller@cognitect.com__ or submit a pull request."
+"__clojure@cognitect.com__ or submit a pull request."
 msgstr ""

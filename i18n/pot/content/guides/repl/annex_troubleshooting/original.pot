@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
+msgstr ""
+
 #. type: Title =
 #: en/content/guides/repl/annex_troubleshooting.adoc:1
 #, no-wrap
 msgid "Programming at the REPL: Troubleshooting"
-msgstr ""
-
-#. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4
-#: en/content/guides/repl/navigating_namespaces.adoc:4
-#: en/content/guides/repl/introduction.adoc:4
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4
-#: en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
-msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
 #. type: Plain text
@@ -49,38 +49,39 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/annex_troubleshooting.adoc:21
-#: en/content/guides/repl/annex_troubleshooting.adoc:38
-#: en/content/guides/repl/annex_troubleshooting.adoc:54
-#: en/content/guides/repl/annex_troubleshooting.adoc:74
+#: en/content/guides/repl/annex_troubleshooting.adoc:39
+#: en/content/guides/repl/annex_troubleshooting.adoc:56
+#: en/content/guides/repl/annex_troubleshooting.adoc:76
 #, no-wrap
 msgid "**Symptoms:**\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/annex_troubleshooting.adoc:25
+#: en/content/guides/repl/annex_troubleshooting.adoc:26
 #, no-wrap
 msgid ""
 "user=> my-nonexistent-name\n"
-"CompilerException java.lang.RuntimeException: Unable to resolve symbol: my-nonexistent-name in this context, compiling:(NO_SOURCE_PATH:0:0)\n"
+"Syntax error compiling at (REPL:0:0).\n"
+"Unable to resolve symbol: my-nonexistent-name in this context\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:28
-#: en/content/guides/repl/annex_troubleshooting.adoc:45
-#: en/content/guides/repl/annex_troubleshooting.adoc:64
+#: en/content/guides/repl/annex_troubleshooting.adoc:29
+#: en/content/guides/repl/annex_troubleshooting.adoc:47
+#: en/content/guides/repl/annex_troubleshooting.adoc:66
 #, no-wrap
 msgid "**Explanations:**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:30
+#: en/content/guides/repl/annex_troubleshooting.adoc:31
 msgid ""
 "Maybe you made a typo in the Var name, e.g you should have written `my-non-"
 "existent-name` instead of `my-nonexistent-name`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:32
+#: en/content/guides/repl/annex_troubleshooting.adoc:33
 msgid ""
 "Maybe you forgot to define `my-nonexistent-name` in the REPL (using e.g "
 "`def` or `defn`): this could happen if you wrote a `(def my-nonexistent-"
@@ -88,7 +89,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:34
+#: en/content/guides/repl/annex_troubleshooting.adoc:35
 msgid ""
 "Maybe you defined `my-non-existent-name`, but in another namespace.  You "
 "should either write `myapp.ns23/my-non-existent-name` or switch to namespace "
@@ -96,59 +97,60 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/annex_troubleshooting.adoc:35
+#: en/content/guides/repl/annex_troubleshooting.adoc:36
 #, no-wrap
 msgid "Using a missing namespace alias"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/annex_troubleshooting.adoc:42
+#: en/content/guides/repl/annex_troubleshooting.adoc:44
 #, no-wrap
 msgid ""
 "user=> ns3/foo-bar\n"
-"CompilerException java.lang.RuntimeException: No such namespace: ns3, compiling:(NO_SOURCE_PATH:0:0)\n"
+"Syntax error compiling at (REPL:0:0).\n"
+"No such namespace: ns3\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:47
+#: en/content/guides/repl/annex_troubleshooting.adoc:49
 msgid ""
 "Maybe you made a typo in the namespace alias, e.g you should have written "
 "`n3/foo-bar` instead of `ns3/foo-bar`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:49
+#: en/content/guides/repl/annex_troubleshooting.adoc:51
 msgid ""
 "Maybe you have never defined the `ns3` alias in the current namespace: you "
 "can fix that by evaluating `(require '[myapp.ns3 :as ns3])`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:50
+#: en/content/guides/repl/annex_troubleshooting.adoc:52
 msgid ""
 "Maybe you have defined the `ns3` alias, but in a different namespace that "
 "the one your REPL is in at the moment."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/annex_troubleshooting.adoc:51
+#: en/content/guides/repl/annex_troubleshooting.adoc:53
 #, no-wrap
 msgid "Referring to a namespace that has not been loaded"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/annex_troubleshooting.adoc:61
+#: en/content/guides/repl/annex_troubleshooting.adoc:63
 #, no-wrap
 msgid ""
 "$ clj\n"
-"Clojure 1.9.0\n"
+"Clojure 1.10.0\n"
 "user=> clojure.set/union\n"
-"CompilerException java.lang.ClassNotFoundException: clojure.set, compiling:(NO_SOURCE_PATH:0:0)\n"
-"user=>\n"
+"Syntax error (ClassNotFoundException) compiling at (REPL:0:0).\n"
+"clojure.set\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:70
+#: en/content/guides/repl/annex_troubleshooting.adoc:72
 msgid ""
 "You are using a namespace that has yet not been created in the REPL.  Note "
 "that the error message ('`ClassNotFoundException`') is particularly "
@@ -160,21 +162,22 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/annex_troubleshooting.adoc:71
+#: en/content/guides/repl/annex_troubleshooting.adoc:73
 #, no-wrap
 msgid "Trying to require a namespace that does not exist"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/annex_troubleshooting.adoc:78
+#: en/content/guides/repl/annex_troubleshooting.adoc:81
 #, no-wrap
 msgid ""
 "user=> (require '[a.b.c])\n"
-"FileNotFoundException Could not locate a/b/c__init.class or a/b/c.clj on classpath.  clojure.lang.RT.load (RT.java:463)\n"
+"Execution error (FileNotFoundException) at user/eval161 (REPL:1).\n"
+"Could not locate a/b/c__init.class, a/b/c.clj or a/b/c.cljc on classpath.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:83
+#: en/content/guides/repl/annex_troubleshooting.adoc:86
 #, no-wrap
 msgid ""
 "**Explanations:** Clojure did not find any existing namespace named `a.b.c`, then searched the classpath \n"
@@ -183,12 +186,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:85
+#: en/content/guides/repl/annex_troubleshooting.adoc:88
 msgid "maybe you just made a typo in the namespace name"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:88
+#: en/content/guides/repl/annex_troubleshooting.adoc:91
 msgid ""
 "maybe you forgot to add the lib to your classpath, which is usually done by "
 "adding it to the configuration of your project's dependencies (e.g in the "
@@ -197,7 +200,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:90
+#: en/content/guides/repl/annex_troubleshooting.adoc:93
 msgid ""
 "maybe you did add the library to the classpath, but that was after you "
 "started the REPL: in this case, you should re-start the REPL."

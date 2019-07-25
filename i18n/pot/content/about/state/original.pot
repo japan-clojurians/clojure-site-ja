@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
-#: en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/atoms.adoc:4
 #: en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
-#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
-#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4
-#: en/content/about/clojureclr.adoc:4
+#: en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/jvm_hosted.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/transients.adoc:75
-#: en/content/guides/comparators.adoc:12 en/content/about/state.adoc:74
+#: en/content/reference/transients.adoc:75 en/content/guides/equality.adoc:14
+#: en/content/guides/comparators.adoc:12
+#: en/content/news/2017/01/31/state-of-clojure-2016.adoc:83
+#: en/content/news/2012/05/08/reducers.adoc:164
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:194
+#: en/content/about/state.adoc:74
 #, no-wrap
 msgid "Summary"
 msgstr ""
@@ -400,7 +404,7 @@ msgstr ""
 msgid ""
 "In the local case, since Clojure does not have mutable local variables, "
 "instead of building up values in a mutating loop, you can instead do it "
-"functionally with <<xref/../../reference/special_forms#recur#,recur>> or "
+"functionally with <<xref/../../reference/special_forms#recur,recur>> or "
 "https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/"
 "reduce[reduce]."
 msgstr ""

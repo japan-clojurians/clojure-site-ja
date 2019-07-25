@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4
-#: en/content/guides/repl/navigating_namespaces.adoc:4
-#: en/content/guides/repl/introduction.adoc:4
-#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4
-#: en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
-msgid "Valentin Waeselynck 2018-02-10"
-msgstr ""
-
 #. type: Title =
 #: en/content/guides/repl/annex_community_resources.adoc:1
 #, no-wrap
 msgid "Programming at the REPL: Community resources about the REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/annex_community_resources.adoc:4
+#: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
+#: en/content/guides/repl/introduction.adoc:4
+#: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
+msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
 #. type: Plain text

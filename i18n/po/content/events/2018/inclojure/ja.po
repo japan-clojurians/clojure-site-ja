@@ -19,7 +19,6 @@ msgstr ""
 #. type: Title =
 #: en/content/events/2018/inclojure.adoc:1
 #, fuzzy, no-wrap
-#| msgid "Clojure CLR"
 msgid "IN/Clojure"
 msgstr "Clojure CLR"
 

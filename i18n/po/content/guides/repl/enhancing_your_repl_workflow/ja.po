@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 16:36+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4 en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/introduction.adoc:4 en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4 en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4 en/content/guides/repl/launching_a_basic_repl.adoc:4
 msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr ""
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:20
 msgid ""
 "At this point, you know enough to understand how the REPL works; we'll now focus on giving you a more streamlined "
-"development experience with the REPL. There is a variety of things you may want to improve:"
+"development experience with the REPL. There are a variety of things you may want to improve:"
 msgstr ""
 
 #. type: delimited block _
@@ -61,7 +61,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:39
 msgid ""
-"As mentioned above, one solution could be to use an <<editor-integrations,Editor integration>>; Note that some "
+"As mentioned above, one solution could be to use an <<editor-integrations,editor integration>>.  Note that some "
 "editors such as **https://sekao.net/nightcode/[Nightcode]** are designed specifically to provide a 'batteries-"
 "included' experience for Clojure."
 msgstr ""
@@ -164,23 +164,23 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:92
 #, no-wrap
-msgid "**https://github.com/metasoarous/oz[oz]** is a Clojure library for displaying numerical charts;\n"
+msgid "**https://github.com/metasoarous/oz[oz]** is a Clojure library for displaying numerical charts\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:94
 #, no-wrap
 msgid ""
-"**https://github.com/eggsyntax/datawalk[datawalk]** is a Clojure library for interactively exploring complex \n"
-"Clojure data structures.\n"
+"**https://github.com/eggsyntax/datawalk[datawalk]** is a Clojure library for interactively exploring complex\n"
+"Clojure data structures\n"
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:96
 #, no-wrap
 msgid ""
-"**https://github.com/walmartlabs/system-viz[system-viz]** is a Clojure library for visualizing the components of a running \n"
-"Clojure system.\n"
+"**https://github.com/walmartlabs/system-viz[system-viz]** is a Clojure library for visualizing the components of a running\n"
+"Clojure system\n"
 msgstr ""
 
 #. type: delimited block _
@@ -199,17 +199,17 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:107
 msgid ""
-"when using a REPL started from <<xref/../../../reference/repl_and_main#,clojure.main>> - as is the case when using "
-"the `clj` tool, you can customize the REPL by launching a 'sub-REPL': see https://clojure.github.io/clojure/clojure."
-"main-api.html#clojure.main/repl[clojure.main/repl]."
+"when using a REPL started from <<xref/../../../reference/repl_and_main#,clojure.main>> (as is the case when using the "
+"`clj` tool)  you can customize the REPL by launching a 'sub-REPL': see https://clojure.github.io/clojure/clojure.main-"
+"api.html#clojure.main/repl[clojure.main/repl]."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:110
 msgid ""
-"when using https://github.com/clojure/tools.nrepl[nREPL].footnote:[ At the time of writing (March 2018), https://"
-"github.com/clojure/tools.nrepl[nREPL] is the most popular toolchain for REPL-editor integration], this can be done by "
-"writing custom https://github.com/clojure/tools.nrepl#middleware[middleware]."
+"when using https://nrepl.org[nREPL].footnote:[ At the time of writing (March 2018), https://nrepl.org[nREPL] is the "
+"most popular toolchain for REPL-editor integration], this can be done by writing custom https://nrepl.org/nrepl/"
+"design/middleware.html[middleware]."
 msgstr ""
 
 #. type: delimited block _
@@ -221,9 +221,9 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:119
 msgid ""
-"The Clojure <<xref/../../../reference/repl_and_main#launching_a_socket_server,Socket Server>> feature can be used to "
-"that end. Tools like **https://github.com/clojure/tools.nrepl[tools.nrepl]** and **https://github.com/Unrepl/"
-"unrepl[unrepl]** can be used to provide a richer experience."
+"The Clojure <<xref/../../../reference/repl_and_main#launching_a_socket_server,socket server>> feature can be used to "
+"that end. Tools like **https://nrepl.org[nREPL]** and **https://github.com/Unrepl/unrepl[unrepl]** can be used to "
+"provide a richer experience."
 msgstr ""
 
 #. type: delimited block =
@@ -306,7 +306,7 @@ msgstr ""
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:162
 #, no-wrap
 msgid ""
-"**Send form before caret to REPL:** evaluate the expression before the cursor in the REPL, \n"
+"**Send form before caret to REPL:** evaluate the expression before the cursor in the REPL,\n"
 "in the namespace of the current file. Useful for experimenting in the context of the current namespace.\n"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "**Send top-level form to REPL:** evaluate the biggest expression in which the cursor is currently contained\n"
-"-typically a `(defn ...)` or `(def ...)` expression-in the namespace of the current file. \n"
+"-typically a `(defn ...)` or `(def ...)` expression-in the namespace of the current file.\n"
 "Useful for defining or re-defining Vars in a namespace.\n"
 msgstr ""
 
@@ -404,7 +404,7 @@ msgid ""
 "  [numbers]\n"
 "  (let [sum (first numbers)\n"
 "        n (count numbers)]\n"
-"    (/ \n"
+"    (/\n"
 "      (doto sum prn) ;; HERE\n"
 "      n)))\n"
 msgstr ""
@@ -445,9 +445,9 @@ msgstr ""
 #. type: delimited block =
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:230
 msgid ""
-"_Tracing_ libraries such as **https://github.com/clojure/tools.trace[tools.trace]** and **http://bpiel.github.io/"
-"sayid/[Sayid]** can help you instrument larger portions of your code, for example by automatically printing all the "
-"function calls in a given namespace, or all intermediary values in a given expression."
+"_Tracing_ libraries such as **https://github.com/clojure/tools.trace[tools.trace]** and **http://clojure-emacs.github."
+"io/sayid/[Sayid]** can help you instrument larger portions of your code, for example by automatically printing all "
+"the function calls in a given namespace, or all intermediary values in a given expression."
 msgstr ""
 
 #. type: Title ===
@@ -489,7 +489,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:255
 msgid ""
-"This 'inline-def' technique is described in more depth in https://blog.michielborkent.nl/blog/2017/05/25/inline-def-"
+"This 'inline-def' technique is described in more depth in https://blog.michielborkent.nl/2017/05/25/inline-def-"
 "debugging/[this blog post by Michiel Borkent]."
 msgstr ""
 
@@ -522,17 +522,17 @@ msgstr ""
 #, no-wrap
 msgid ""
 "(defn earth-gravitational-force\n"
-"  \"Computes (an approximation of) the gravitational force between Earth and an object \n"
+"  \"Computes (an approximation of) the gravitational force between Earth and an object\n"
 "  of mass `m`, at distance `r` of Earth's center.\"\n"
 "  [m r]\n"
-"  (/ \n"
-"    (* \n"
-"      G \n"
-"      m \n"
+"  (/\n"
+"    (*\n"
+"      G\n"
+"      m\n"
 "      (if (>= r earth-radius)\n"
 "        earth-mass\n"
-"        (* \n"
-"          earth-mass \n"
+"        (*\n"
+"          earth-mass\n"
 "          (Math/pow (/ r earth-radius) 3.0))))\n"
 "    (* r r)))\n"
 msgstr ""
@@ -556,27 +556,17 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:294
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:296
 #, no-wrap
 msgid ""
 ";;;; we can now directly evaluate any expression in the function body:\n"
-"    (* r r) ; => 2.5E13    \n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:296
-#, no-wrap
-msgid "          (>= r earth-radius) ; => false\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:298
-#, no-wrap
-msgid "          (Math/pow (/ r earth-radius) 3.0) ; => 0.48337835316173317\n"
+"(* r r) ; => 2.5E13\n"
+"(>= r earth-radius) ; => false\n"
+"(Math/pow (/ r earth-radius) 3.0) ; => 0.48337835316173317\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:304
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:302
 msgid ""
 "This technique is described in more depth in Stuart Halloway's article http://blog.cognitect.com/blog/2017/6/5/repl-"
 "debugging-no-stacktrace-required[REPL Debugging: No Stacktrace Required].  The **https://github.com/vvvvalvalval/"
@@ -585,25 +575,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:305
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:303
 #, no-wrap
 msgid "Community resources about REPL debugging"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:308
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:306
 msgid "https://www.clojure-toolbox.com/[The Clojure Toolbox] provides a list a Clojure libraries for debugging."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:310
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:308
 msgid ""
 "https://cambium.consulting/articles/2018/2/8/the-power-of-clojure-debugging[The Power of Clojure: debugging] is an "
 "article by Cambium Consulting which provides a list of techniques for debugging at the REPL."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:312
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:310
 msgid ""
 "_Clojure From the Ground Up_ by Aphyr contains a https://aphyr.com/posts/319-clojure-from-the-ground-up-"
 "debugging[chapter about debugging], presenting techniques for debugging Clojure in particular and a principled "
@@ -611,7 +601,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:315
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:313
 msgid ""
 "In his article http://blog.cognitect.com/blog/2017/6/5/repl-debugging-no-stacktrace-required[REPL Debugging: No "
 "Stacktrace Required], Stuart Halloway demonstrates how the quick feedback loop at the REPL can be used to narrow down "
@@ -619,28 +609,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:316
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:314
 msgid ""
 "Eli Bendersky has written some https://eli.thegreenplace.net/2017/notes-on-debugging-clojure-code/#id3[Notes on "
 "debugging Clojure code]."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:318
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:316
 msgid ""
 "https://www.youtube.com/watch?v=FihU5JxmnBg[Debugging with the Scientific Method] is a conference talk by Stuart "
 "Halloway promoting a scientific approach to debugging in general."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:320
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:318
 #, fuzzy, no-wrap
 #| msgid "Functional programming"
 msgid "Writing REPL-friendly programs"
 msgstr "関数型プログラミング"
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:328
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:326
 msgid ""
 "While interactive development at the REPL gives a lot of power to programmers, it also adds new challenges: programs "
 "must be designed so that they lend themselves well to REPL interaction, which is a new constraint to be vigilant of "
@@ -651,37 +641,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:331
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:329
 msgid ""
 "Covering this topic extensively would take us too far for the scope of this guide, so we will merely provide some "
 "tips and resources to guide your own research and problem-solving."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:335
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:333
 #, no-wrap
 msgid ""
-"**_REPL-friendly code can be re-defined._** Code is more easily redefined when it is called via a Var \n"
+"**_REPL-friendly code can be re-defined._** Code is more easily redefined when it is called via a Var\n"
 "(defined e.g via `(def ...)` or `(defn ...)`), because a Var can be redefined without touching the code that calls it.\n"
 "This is illustrated in the following example, which prints some numbers at a regular time interval:\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:340
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:338
 #, no-wrap
 msgid ""
-";; Each of these 4 code examples start a loop in another thread \n"
+";; Each of these 4 code examples start a loop in another thread\n"
 ";; which prints numbers at a regular time interval.\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:349
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:347
 #, no-wrap
 msgid ""
 ";;;; 1. NOT REPL-friendly\n"
 ";; We won't be able to change the way numbers are printed without restarting the REPL.\n"
-"(future \n"
-"  (run! \n"
+"(future\n"
+"  (run!\n"
 "    (fn [i]\n"
 "      (println i \"green bottles, standing on the wall. ♫\")\n"
 "      (Thread/sleep 1000))\n"
@@ -689,7 +679,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:357
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:355
 #, no-wrap
 msgid ""
 ";;;; 2. REPL-friendly\n"
@@ -702,17 +692,17 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:362
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:360
 #, no-wrap
 msgid ""
-"(future \n"
-"  (run! \n"
+"(future\n"
+"  (run!\n"
 "    (fn [i] (print-number-and-wait i))\n"
 "    (range)))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:370
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:368
 #, no-wrap
 msgid ""
 ";;;; 3. NOT REPL-friendly\n"
@@ -725,17 +715,17 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:375
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:373
 #, no-wrap
 msgid ""
-"(future \n"
-"  (run! \n"
+"(future\n"
+"  (run!\n"
 "    print-number-and-wait\n"
 "    (range)))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:383
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:381
 #, no-wrap
 msgid ""
 ";;;; 4. REPL-friendly\n"
@@ -748,37 +738,37 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:388
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:386
 #, no-wrap
 msgid ""
-"(future \n"
-"  (run! \n"
+"(future\n"
+"  (run!\n"
 "    #'print-number-and-wait ;; mind the #' - the expression evaluates to the #'print-number-and-wait Var, not its value.\n"
 "    (range)))\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:393
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:391
 #, no-wrap
 msgid ""
 "**_Beware of derived Vars._** If Var `b` is defined in terms of the value of Var `a`,\n"
-"then you will need to re-define `b` each time you re-define `a`; it may be better to define \n"
+"then you will need to re-define `b` each time you re-define `a`; it may be better to define\n"
 "`b` as a 0-arity function which uses `a`. Example:\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:401
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:399
 #, no-wrap
 msgid ""
 ";;; NOT REPL-friendly\n"
 ";; if you re-define `solar-system-planets`, you have to think of re-defining `n-planets` too.\n"
-"(def solar-system-planets \n"
+"(def solar-system-planets\n"
 "  \"The set of planets which orbit the Sun.\"\n"
 "  #{\"Mercury\" \"Venus\" \"Earth\" \"Mars\" \"Jupiter\" \"Saturn\" \"Uranus\" \"Neptune\"})\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:405
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:403
 #, no-wrap
 msgid ""
 "(def n-planets\n"
@@ -787,18 +777,18 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:412
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:410
 #, no-wrap
 msgid ""
 ";;;; REPL-friendly\n"
 ";; if you re-define `solar-system-planets`, the behaviour of `n-planets` will change accordingly.\n"
-"(def solar-system-planets \n"
+"(def solar-system-planets\n"
 "  \"The set of planets which orbit the Sun.\"\n"
 "  #{\"Mercury\" \"Venus\" \"Earth\" \"Mars\" \"Jupiter\" \"Saturn\" \"Uranus\" \"Neptune\"})\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:417
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:415
 #, no-wrap
 msgid ""
 "(defn n-planets\n"
@@ -808,16 +798,16 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:422
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:420
 #, no-wrap
 msgid ""
-"**_REPL-friendly code can be reloaded._** Make sure that reloading a namespace will not alter the \n"
-"behaviour of the running program. If a Var needs to be defined exactly once (which should be very rare), \n"
+"**_REPL-friendly code can be reloaded._** Make sure that reloading a namespace will not alter the\n"
+"behaviour of the running program. If a Var needs to be defined exactly once (which should be very rare),\n"
 "consider defining it with `https://clojuredocs.org/clojure.core/defonce[defonce]`.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:426
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:424
 msgid ""
 "When dealing with a codebase with many namespaces, reloading the appropriate namespaces in the correct order can "
 "become difficult: the **https://github.com/clojure/tools.namespace[tools.namespace]** library was made to assist the "
@@ -825,31 +815,31 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:432
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:430
 #, no-wrap
 msgid ""
 "**_Program state and source code should be kept in sync._** You usually want to make sure\n"
-"that your program state reflects your source code and vice-versa, but this is not automatic. \n"
+"that your program state reflects your source code and vice-versa, but this is not automatic.\n"
 "Reloading the code is often not enough: you also need to transform the program state accordingly.\n"
 "Stuart Sierra has expounded on this problem in his article http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded[My Clojure Workflow, Reloaded]\n"
 "and his talk https://www.youtube.com/watch?v=13cmHf_kt-Q[Components Just Enough Structure].\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:434
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:432
 msgid "This has motivated the creation of **_state management libraries:_**"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:437
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:435
 #, no-wrap
 msgid ""
-"**https://github.com/stuartsierra/component[Component]**, which promotes a representation of program state \n"
+"**https://github.com/stuartsierra/component[Component]**, which promotes a representation of program state\n"
 "as a managed map of Clojure records called a *system*.\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:439
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:437
 #, no-wrap
 msgid ""
 "**https://github.com/danielsz/system[System]** is a library on top of https://github.com/stuartsierra/component[Component]\n"
@@ -857,18 +847,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:442
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:440
 #, no-wrap
 msgid ""
-"**https://github.com/tolitius/mount[Mount]** takes a radically different approach as Component, choosing to \n"
+"**https://github.com/tolitius/mount[Mount]** takes a radically different approach as Component, choosing to\n"
 "use Vars and namespaces as the supporting infrastructure for state.footnote:[At the time of writing,\n"
 "there is controversy in the Clojure community regarding the relative merits of both approaches.]\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:443
+#: en/content/guides/repl/enhancing_your_repl_workflow.adoc:441
 #, no-wrap
 msgid ""
-"**https://github.com/weavejester/integrant[Integrant]** is a more recent library which shares Component's approach \n"
+"**https://github.com/weavejester/integrant[Integrant]** is a more recent library which shares Component's approach\n"
 "while addressing some of its perceived limitations.\n"
 msgstr ""

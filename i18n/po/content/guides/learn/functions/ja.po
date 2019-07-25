@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-12 02:33+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,13 +23,14 @@ msgid "Java Interop"
 msgstr "Javaとの相互運用"
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:4 en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
-#: en/content/guides/learn/sequential_colls.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/sequential_colls.adoc:4
+#: en/content/guides/learn/flow.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/hashed_colls.adoc:4
 msgid "Alex Miller 2017-09-02"
 msgstr "Alex Miller 2017-09-02"
 
 #. type: Title ==
-#: en/content/guides/learn/syntax.adoc:341 en/content/guides/learn/functions.adoc:299
+#: en/content/guides/learn/syntax.adoc:363 en/content/guides/learn/functions.adoc:299
 #, no-wrap
 msgid "Test your knowledge"
 msgstr "知識をテストしよう"
@@ -111,8 +112,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:45
-msgid "Each arity is a list `([args*] body*)`. One arity can invoke another."
-msgstr "個々のアリティは `([args*] body*)` というリストだ。あるアリティが別のアリティを呼び出すことができる。"
+msgid ""
+"Each arity is a list `([args*] body*)`. One arity can invoke another. The body can contain any number of expressions "
+"and the return value is the result of the last expression."
+msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:51
@@ -536,9 +539,13 @@ msgstr "`let`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:217
+#, fuzzy
+#| msgid ""
+#| "`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested "
+#| "inside the surrounding context. Names defined in a let take precedence over the names in the outer context."
 msgid ""
 "`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested inside "
-"the surrounding context. Names defined in a let take precedence over the names in the outer context."
+"the surrounding context. Names defined in a `let` take precedence over the names in the outer context."
 msgstr ""
 "`let` は「レキシカルスコープ」でシンボルを値に束縛する。レキシカルスコープは名前のための新たなコンテキストを作り、それ"
 "は周囲のコンテキストの内側にネストされる。letで定義された名前は外側のコンテキストにおける名前に優先する。"
@@ -604,9 +611,13 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:248
+#, fuzzy
+#| msgid ""
+#| "The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only "
+#| "has meanining within the `messenger` function."
 msgid ""
 "The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only has "
-"meanining within the `messenger` function."
+"meaning within the `messenger` function."
 msgstr ""
 "messenger関数は `msg` 引数をとる。ここで `defn` もまた `msg` のレキシカルスコープを作っている―― `messenger` 関数の範囲"
 "内でだけ意味がある。"
@@ -621,7 +632,7 @@ msgstr ""
 "すれば、コンパイラがエラーを報告するだろう。"
 
 #. type: Title ===
-#: en/content/guides/learn/functions.adoc:251
+#: en/content/guides/learn/functions.adoc:251 en/content/guides/equality.adoc:737
 #, no-wrap
 msgid "Closures"
 msgstr "クロージャ"
@@ -680,11 +691,18 @@ msgstr "以下はClojureからJavaを呼び出すための呼び出し規約(cal
 
 #. type: Table
 #: en/content/guides/learn/functions.adoc:282
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "| Task | Java | Clojure |\n"
+#| "|Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | \n"
+#| "|Instance method| `rnd.next()` | `(.nextInt rnd)` |\n"
+#| "|Instance field| `object.field` | `(.-field object)` |\n"
+#| "|Static method| `Math.sqrt(25)` | `(Math/sqrt 25)` |\n"
+#| "|Static field| `Math.PI` | `Math/PI` |\n"
 msgid ""
 "| Task | Java | Clojure |\n"
 "|Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | \n"
-"|Instance method| `rnd.next()` | `(.nextInt rnd)` |\n"
+"|Instance method| `rnd.nextInt()` | `(.nextInt rnd)` |\n"
 "|Instance field| `object.field` | `(.-field object)` |\n"
 "|Static method| `Math.sqrt(25)` | `(Math/sqrt 25)` |\n"
 "|Static field| `Math.PI` | `Math/PI` |\n"
@@ -739,8 +757,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:303
+#, fuzzy
+#| msgid ""
+#| "Define a function `greet` that takes not arguments and prints \"Hello\". Replace the ___ with the implementation: "
+#| "`(defn greet [] ___)`"
 msgid ""
-"Define a function `greet` that takes not arguments and prints \"Hello\". Replace the ___ with the implementation: "
+"Define a function `greet` that takes no arguments and prints \"Hello\". Replace the ___ with the implementation: "
 "`(defn greet [] ___)`"
 msgstr "引数をとらず「Hello」と出力する関数 `greet` を定義しよう。 ___ を実装で置き換えよう: `(defn greet [] ___)`"
 
@@ -847,9 +869,13 @@ msgstr "(source identity)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:344
+#, fuzzy
+#| msgid ""
+#| "Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the keyword "
+#| "`:thing`."
 msgid ""
-"Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the keyword `:"
-"thing`."
+"Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the number "
+"`100`."
 msgstr "任意個の引数をとり、すべて無視してキーワード `:thing` を返す関数 `always-thing` を定義しよう。"
 
 #. type: delimited block -
@@ -875,14 +901,21 @@ msgstr "(defn make-thingy [x] ___)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:360
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ";; Tests\n"
+#| "(let [n (rand-int Integer/MAX_VALUE)\n"
+#| "      f (make-thingy n)]\n"
+#| "  (assert (= n (f)))\n"
+#| "  (assert (= n (f :foo)))\n"
+#| "  (assert (= n (apply f :foo (range)))))\n"
 msgid ""
 ";; Tests\n"
 "(let [n (rand-int Integer/MAX_VALUE)\n"
 "      f (make-thingy n)]\n"
 "  (assert (= n (f)))\n"
-"  (assert (= n (f :foo)))\n"
-"  (assert (= n (apply f :foo (range)))))\n"
+"  (assert (= n (f 123)))\n"
+"  (assert (= n (apply f 123 (range)))))\n"
 msgstr ""
 ";; テスト\n"
 "(let [n (rand-int Integer/MAX_VALUE)\n"
@@ -991,24 +1024,24 @@ msgstr ""
 "sin`, `Math/PI`)を使って、次の数学的な事実を示そう:"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:402
+#: en/content/guides/learn/functions.adoc:403
 msgid "The cosine of pi is -1"
 msgstr "piのコサインは-1"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:403
+#: en/content/guides/learn/functions.adoc:404
 msgid "For some x, sin(x)^2 + cos(x)^2 = 1"
 msgstr "あるxについて sin(x)^2 + cos(x)^2 = 1"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:405
+#: en/content/guides/learn/functions.adoc:406
 msgid ""
 "Define a function that takes an HTTP URL as a string, fetches that URL from the web, and returns the content as a "
 "string."
 msgstr "HTTP URLを文字列としてとり、WebからそのURLで取得した内容を文字列として返す関数を定義しよう。"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:407
+#: en/content/guides/learn/functions.adoc:408
 msgid ""
 "Hint: Using the http://docs.oracle.com/javase/8/docs/api/java/net/URL.html[java.net.URL] class and its `openStream` "
 "method. Then use the Clojure `slurp` function to get the content as a string."
@@ -1017,7 +1050,7 @@ msgstr ""
 "して内容を文字列として得るためにClojureの `slurp` 関数を使う。"
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:411 en/content/guides/learn/functions.adoc:419
+#: en/content/guides/learn/functions.adoc:412 en/content/guides/learn/functions.adoc:420
 #, no-wrap
 msgid ""
 "(defn http-get [url]\n"
@@ -1027,13 +1060,14 @@ msgstr ""
 "  ___)\n"
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:413
-#, no-wrap
-msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+#: en/content/guides/learn/functions.adoc:414
+#, fuzzy, no-wrap
+#| msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+msgid "(assert (.contains (http-get \"https://www.w3.org\") \"html\"))\n"
 msgstr "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:415
+#: en/content/guides/learn/functions.adoc:416
 msgid ""
 "In fact, the Clojure `slurp` function interprets its argument as a URL first before trying it as a file name. Write a "
 "simplified http-get:"
@@ -1042,27 +1076,27 @@ msgstr ""
 "こう:"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:422
+#: en/content/guides/learn/functions.adoc:423
 msgid "Define a function `one-less-arg` that takes two arguments:"
 msgstr "2つの引数をとる関数 `one-less-arg` を定義しよう:"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:423
+#: en/content/guides/learn/functions.adoc:425
 msgid "`f`, a function"
 msgstr "`f`, 関数"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:424
+#: en/content/guides/learn/functions.adoc:426
 msgid "`x`, a value"
 msgstr "`x`, 値"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:426
+#: en/content/guides/learn/functions.adoc:428
 msgid "and returns another function which calls `f` on `x` plus any additional arguments. +"
 msgstr "そして `x` と追加の引数に対して `f` を呼び出すような別の関数を返す。 +"
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:430
+#: en/content/guides/learn/functions.adoc:432
 #, no-wrap
 msgid ""
 "(defn one-less-arg [f x]\n"
@@ -1072,12 +1106,12 @@ msgstr ""
 "  (fn [& args] ___))\n"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:432
+#: en/content/guides/learn/functions.adoc:434
 msgid "In Clojure, the `partial` function is a more general version of this."
 msgstr "Clojureでは、 `partial` 関数がこれをより一般化したものだ。"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:434
+#: en/content/guides/learn/functions.adoc:436
 msgid ""
 "Define a function `two-fns` which takes two functions as arguments, `f` and `g`. It returns another function which "
 "takes one argument, calls `g` on it, then calls `f` on the result, and returns that."
@@ -1086,12 +1120,12 @@ msgstr ""
 "の結果に `f` を呼び出した結果を返すような別の関数を返す。"
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:436
+#: en/content/guides/learn/functions.adoc:438
 msgid "That is, your function returns the composition of `f` and `g`."
 msgstr "つまり、その関数は `f` と `g` の合成を返す。"
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:440
+#: en/content/guides/learn/functions.adoc:442
 #, no-wrap
 msgid ""
 "(defn two-fns [f g]\n"

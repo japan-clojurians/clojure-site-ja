@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 21:22+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,39 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
-#. type: Title =
-#: en/content/reference/reducers.adoc:1
+#. type: Title ==
+#: en/content/reference/reducers.adoc:1 en/content/news/2012/05/15/anatomy-of-reducer.adoc:68
 #, no-wrap
 msgid "Reducers"
 msgstr "reducer"
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:17
+#, fuzzy
+#| msgid ""
+#| "Reducers provide an alternative approach to using <<sequences#,sequences>> to manipulate standard Clojure "
+#| "collections. Sequence functions are typically applied lazily, in order, create intermediate results, and in a "
+#| "single thread. However, many sequence functions (like map and filter) could conceptually be applied in parallel, "
+#| "yielding code that will get faster automatically as machines get more cores. For more details on the rationale for "
+#| "reducers, see the original http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-"
+#| "processing.html[blog] http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[posts]."
 msgid ""
 "Reducers provide an alternative approach to using <<sequences#,sequences>> to manipulate standard Clojure "
 "collections. Sequence functions are typically applied lazily, in order, create intermediate results, and in a single "
 "thread. However, many sequence functions (like map and filter) could conceptually be applied in parallel, yielding "
 "code that will get faster automatically as machines get more cores. For more details on the rationale for reducers, "
-"see the original http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html[blog] "
-"http://clojure.com/blog/2012/05/15/anatomy-of-reducer.html[posts]."
+"see the original https://clojure.org/news/2012/05/08/reducers[blog] https://clojure.org/news/2012/05/15/anatomy-of-"
+"reducer[posts]."
 msgstr ""
 "reducerは <<sequences#,シーケンス>> を使用した操作とは異なるアプローチで、標準的なClojureのコレクションに対する操作を"
 "提供する。シーケンス関数は一般的に単一のスレッドで、逐次的に中間の結果を作りながら遅延評価される。しかし、多くのシーケ"
@@ -159,11 +167,15 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:48
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "*(r/fold reducef coll)*\n"
+#| "*(r/fold combinef reducef coll)*\n"
+#| "*(r/fold n combinef reducef coll)**\n"
 msgid ""
 "*(r/fold reducef coll)*\n"
 "*(r/fold combinef reducef coll)*\n"
-"*(r/fold n combinef reducef coll)**\n"
+"*(r/fold n combinef reducef coll)*\n"
 msgstr ""
 "*(r/fold reducef coll)*\n"
 "*(r/fold combinef reducef coll)*\n"
@@ -185,8 +197,23 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/reducers.adoc:52
+#, fuzzy
+#| msgid ""
+#| "The following functions (analagous to the sequence versions) create reducers from a reducible or foldable "
+#| "collection: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] https://"
+#| "clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] https://clojure.github.io/"
+#| "clojure/clojure.core-api.html#clojure.core.reducers/filter[r/filter] https://clojure.github.io/clojure/clojure."
+#| "core-api.html#clojure.core.reducers/remove[r/remove] https://clojure.github.io/clojure/clojure.core-api."
+#| "html#clojure.core.reducers/flatten[r/flatten] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."
+#| "reducers/take-while[r/take-while] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/"
+#| "take[r/take] and https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/drop[r/drop]. None "
+#| "of these functions actually transforms the source collection. To produce an accumulated result, you must use r/"
+#| "reduce or r/fold. To produce an output collection, use https://clojure.github.io/clojure/clojure.core-api."
+#| "html#clojure.core/into[clojure.core/into] to choose the collection type or the provided https://clojure.github.io/"
+#| "clojure/clojure.core-api.html#clojure.core.reducers/foldcat[r/foldcat] to produce a collection that is reducible, "
+#| "foldable, seqable, and counted."
 msgid ""
-"The following functions (analagous to the sequence versions) create reducers from a reducible or foldable collection: "
+"The following functions (analogous to the sequence versions) create reducers from a reducible or foldable collection: "
 "https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map[r/map] https://clojure.github.io/"
 "clojure/clojure.core-api.html#clojure.core.reducers/mapcat[r/mapcat] https://clojure.github.io/clojure/clojure.core-"
 "api.html#clojure.core.reducers/filter[r/filter] https://clojure.github.io/clojure/clojure.core-api.html#clojure.core."

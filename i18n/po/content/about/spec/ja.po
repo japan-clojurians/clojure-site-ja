@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 18:59+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/dev/contributor_agreement.adoc:159 en/content/news/2015/06/30/clojure-17.adoc:50
+#: en/content/about/spec.adoc:381
+msgid "Rich Hickey"
+msgstr "Rich Hickey"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
 #. type: Title ====
-#: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:513 en/content/about/spec.adoc:234
+#: en/content/reference/reader.adoc:58 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
 #, no-wrap
-msgid "Sequences"
-msgstr "シーケンス(sequence)"
-
-#. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:418 en/content/about/spec.adoc:337
-#, no-wrap
-msgid "Glossary"
-msgstr "用語集"
+msgid "Maps"
+msgstr "マップ"
 
 #. type: Title ====
 #: en/content/reference/documentation.adoc:1 en/content/news/2017/12/08/clojure19.adoc:21 en/content/about/spec.adoc:310
@@ -53,14 +53,20 @@ msgstr "用語集"
 msgid "Documentation"
 msgstr "ドキュメンテーション"
 
-#. type: Title ====
-#: en/content/reference/reader.adoc:57 en/content/guides/learn/hashed_colls.adoc:82 en/content/about/spec.adoc:198
+#. type: Title ==
+#: en/content/reference/deps_and_cli.adoc:488 en/content/about/spec.adoc:337
 #, no-wrap
-msgid "Maps"
-msgstr "マップ"
+msgid "Glossary"
+msgstr "用語集"
+
+#. type: Title ====
+#: en/content/reference/sequences.adoc:1 en/content/guides/spec.adoc:511 en/content/about/spec.adoc:234
+#, no-wrap
+msgid "Sequences"
+msgstr "シーケンス(sequence)"
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1199 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
+#: en/content/guides/spec.adoc:1196 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
 #, no-wrap
 msgid "Instrumentation"
 msgstr "specの組み込み(instrumentation)"
@@ -90,11 +96,6 @@ msgstr "テストデータ生成"
 #: en/content/news/2017/12/08/clojure19.adoc:20 en/content/about/spec.adoc:102
 msgid "Generative test generation"
 msgstr "生成的テストの生成"
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
-msgid "Rich Hickey"
-msgstr "Rich Hickey"
 
 #. type: Title =
 #: en/content/about/spec.adoc:1

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2016-06-27 08:47+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,16 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:4 en/content/api/api.adoc:4 en/content/community/events.adoc:4
+msgid "Rich Hickey 2016-01-15"
+msgstr ""
+
 #. type: Title ==
 #: en/content/api/api.adoc:1 en/content/reference/documentation.adoc:38
 #, no-wrap
 msgid "API Documentation"
 msgstr "APIドキュメンテーション"
-
-#. type: Plain text
-#: en/content/api/api.adoc:4 en/content/community/events.adoc:4
-msgid "Rich Hickey 2016-01-15"
-msgstr ""
 
 #. type: Title ==
 #: en/content/api/api.adoc:10
@@ -67,251 +67,37 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:23
-msgid "https://clojure.github.io/algo.generic/[algo.generic] Generic versions of common functions"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:24
-msgid "https://clojure.github.io/algo.monads/[algo.monads] Monad macros and Definitions"
+msgid "Documentation for Clojure <<xref/../../community/contrib_libs#,contrib libraries>>:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/api/api.adoc:25
-msgid "https://clojure.github.io/core.async/[core.async] Facilities for asynchronous programming and communication"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:26
-msgid "https://clojure.github.io/core.cache/[core.cache] A caching library implementing various cache strategies"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:27
-msgid "https://clojure.github.io/core.contracts/[core.contracts] Contracts programming in Clojure"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:28
-msgid "https://clojure.github.io/core.incubator/[core.incubator] Functions proposed for core inclusion"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:29
-msgid "https://clojure.github.io/core.logic/[core.logic] A logic programming library based on miniKanren"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:30
-msgid "https://clojure.github.io/core.match/[core.match] Pattern match and predicate dispatch"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:31
-msgid "https://clojure.github.io/core.memoize/[core.memoize] A manipulable, pluggable, memoization framework"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:32
-msgid "https://clojure.github.io/core.rrb-vector/[core.rrb-vector] RRB-Tree-based vectors"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:33
-msgid "https://clojure.github.io/core.specs.alpha/[core.specs.alpha] Specs for clojure.core"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:34
-msgid "https://clojure.github.io/core.typed/[core.typed] Gradual typing"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:35
-msgid "https://clojure.github.io/core.unify/[core.unify] Unification library"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:36
-msgid "https://clojure.github.io/data.avl/[data.avl] AVL trees"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:37
-msgid "https://clojure.github.io/data.codec/[data.codec] Native codec implementations"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:38
-msgid "https://clojure.github.io/data.csv/[data.csv] Reading and writing CSV files"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:39
-msgid "https://clojure.github.io/data.finger-tree/[data.finger-tree] Finger trees"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:40
-msgid "https://clojure.github.io/data.fressian/[data.fressian] Extensible binary Data Notation"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:41
-msgid "https://clojure.github.io/data.generators/[data.generators] Random data generators"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:42
-msgid "https://clojure.github.io/data.json/[data.json] JSON encoding / decoding"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:43
-msgid "https://clojure.github.io/data.priority-map/[data.priority-map] Priority maps"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:44
-msgid "https://clojure.github.io/data.xml/[data.xml] Lazy XML parsing"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:45
-msgid "https://clojure.github.io/data.zip/[data.zip] Manipulating zippers"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:46
-msgid "https://clojure.github.io/java.classpath/[java.classpath] Classpath utilities"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:47
-msgid "https://clojure.github.io/java.data/[java.data] Work with Java Beans"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:48
-msgid "https://clojure.github.io/java.jdbc/[java.jdbc] JDBC-based SQL interface"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:49
-msgid "https://clojure.github.io/java.jmx/[java.jmx] JMX interface"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:50
-msgid ""
-"https://clojure.github.io/math.combinatorics/[math.combinatorics] Lazy sequences for common combinatorial functions"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:51
-msgid "https://clojure.github.io/math.numeric-tower/[math.numeric-tower] Math functions and numeric tower"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:52
-msgid "https://clojure.github.io/spec.alpha/[spec.alpha] Describing the structure of data and functions"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:53
-msgid "https://clojure.github.io/test.generative/[test.generative] Test data generation and execution harness"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:54
-msgid "https://clojure.github.io/tools.analyzer/[tools.analyzer] Analyzer framework for Clojure code"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:55
-msgid "https://clojure.github.io/tools.analyzer.jvm/[tools.analyzer.jvm] JVM-specific passes for tools.analyzer"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:56
-msgid "https://clojure.github.io/tools.cli/[tools.cli] Command-line argument processor"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:57
-msgid ""
-"https://clojure.github.io/tools.deps.alpha/[tools.deps.alpha] Tools for dependency management and classpath "
-"construction"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:58
-msgid ""
-"https://clojure.github.io/tools.gitlibs/[tools.gitlibs] Tools for retrieving, caching, and using git-based projects"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:59
-msgid "https://clojure.github.io/tools.emitter.jvm/[tools.emitter.jvm] JVM bytecode generator"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:60
-msgid "https://clojure.github.io/tools.logging/[tools.logging] Logging tools"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:61
-msgid "https://clojure.github.io/tools.macro/[tools.macro] Tools for macro writers"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:62
-msgid "https://clojure.github.io/tools.namespace/[tools.namespace] Tools for working with namespace declarations"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:63
-msgid "https://clojure.github.io/tools.nrepl/[tools.nrepl] Network REPL"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:64
-msgid "https://clojure.github.io/tools.reader/[tools.reader] Clojure reader"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:65
-msgid "https://clojure.github.io/tools.trace/[tools.trace] Execution tracing"
+msgid "https://clojure.github.io/[Contrib APIs]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/api/api.adoc:66
+#: en/content/api/api.adoc:26
 #, no-wrap
 msgid "Other resources"
 msgstr ""
 
 #. type: Plain text
-#: en/content/api/api.adoc:69 en/content/community/resources.adoc:40
-msgid "http://grimoire.arrdem.com/[Grimoire] - community combined cheatsheet + examples"
-msgstr ""
-
-#. type: Plain text
-#: en/content/api/api.adoc:70 en/content/community/resources.adoc:41
+#: en/content/api/api.adoc:29 en/content/community/resources.adoc:39
 msgid "https://clojuredocs.org[ClojureDocs] - community provided example repository"
 msgstr ""
 
 #. type: Plain text
-#: en/content/api/api.adoc:71 en/content/community/resources.adoc:42
-msgid "https://crossclj.info/[CrossClj] - library cross-reference"
+#: en/content/api/api.adoc:30
+msgid "https://cljdoc.org/[cljdoc] - library documentation"
 msgstr ""
 
 #. type: Title ==
-#: en/content/api/api.adoc:72
+#: en/content/api/api.adoc:31
 #, no-wrap
 msgid "Deprecated (pre Clojure 1.3)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/api/api.adoc:74
+#: en/content/api/api.adoc:33
 msgid "https://clojure.github.io/clojure-contrib/[Clojure Contrib API]"
 msgstr ""

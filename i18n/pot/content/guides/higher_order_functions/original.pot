@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,16 +168,35 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:88
-msgid ""
-"Lets go back to the example of the bands.  We wrote a function called `rock-"
-"band?` to determine whether or not our band was a rock band.  This is a one-"
-"off operation, we're not going to use it anywhere else in our code.  We can "
-"save ourselves some keystrokes by using an anonymous function."
+#: en/content/guides/higher_order_functions.adoc:85
+msgid "Let's have an example with a few music bands:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:95
+#: en/content/guides/higher_order_functions.adoc:97
+#, no-wrap
+msgid ""
+"(def bands [\n"
+"    {:name \"Brown Beaters\"   :genre :rock}\n"
+"    {:name \"Sunday Sunshine\" :genre :blues}\n"
+"    {:name \"Foolish Beaters\" :genre :rock}\n"
+"    {:name \"Monday Blues\"    :genre :blues}\n"
+"    {:name \"Friday Fewer\"    :genre :blues}\n"
+"    {:name \"Saturday Stars\"  :genre :jazz}\n"
+"    {:name \"Sunday Brunch\"   :genre :jazz}\n"
+"])\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/higher_order_functions.adoc:101
+msgid ""
+"We want to retrieve only rock bands. This is a one-off operation, we're not "
+"going to use it anywhere else in our code.  We can save ourselves some "
+"keystrokes by using an anonymous function."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/higher_order_functions.adoc:108
 #, no-wrap
 msgid ""
 "(def rock-bands\n"
@@ -187,32 +206,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:98
+#: en/content/guides/higher_order_functions.adoc:111
 msgid ""
 "Even more concisely, using the function literal, we can define `rock-bands` "
 "like so."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:102
+#: en/content/guides/higher_order_functions.adoc:115
 #, no-wrap
 msgid "(def rock-bands (filter #(= :rock (:genre %)) bands))\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:105
+#: en/content/guides/higher_order_functions.adoc:118
 msgid ""
 "The function literal supports multiple arguments via `%`, `%n`, and `%&`."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:109
+#: en/content/guides/higher_order_functions.adoc:122
 #, no-wrap
 msgid "#(println %1 %2 %3)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:114
+#: en/content/guides/higher_order_functions.adoc:127
 msgid ""
 "If you're writing an anonymous function, the literal syntax is nice because "
 "it's so compact.  However, beyond a few arguments, the syntax can become "
@@ -220,21 +239,21 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/higher_order_functions.adoc:115
+#: en/content/guides/higher_order_functions.adoc:128
 #, no-wrap
 msgid "Functions Returning Functions and Closures"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:120
+#: en/content/guides/higher_order_functions.adoc:133
 msgid ""
 "Our first function will be called `adder`.  It will take a number, `x`, as "
-"it's only argument and return a function.  The function returned by `adder` "
-"will also take a single number, `a`, as it's argument and return `x + a`."
+"its only argument and return a function.  The function returned by `adder` "
+"will also take a single number, `a`, as its argument and return `x + a`."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:125
+#: en/content/guides/higher_order_functions.adoc:138
 #, no-wrap
 msgid ""
 "(defn adder [x]\n"
@@ -242,13 +261,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:127
+#: en/content/guides/higher_order_functions.adoc:140
 #, no-wrap
 msgid "(def add-five (adder 5))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:130
+#: en/content/guides/higher_order_functions.adoc:143
 #, no-wrap
 msgid ""
 "(add-five 100)\n"
@@ -256,7 +275,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:135
+#: en/content/guides/higher_order_functions.adoc:148
 msgid ""
 "The returned function form `adder` is a closure.  This means, it can access "
 "all of the variables that were in scope when the function was created.  `add-"
@@ -265,20 +284,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/higher_order_functions.adoc:136
+#: en/content/guides/higher_order_functions.adoc:149
 #, no-wrap
 msgid "Filter"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:140
+#: en/content/guides/higher_order_functions.adoc:153
 msgid ""
 "Filtering is a common operation in computer programming.  Take this set of "
 "animals"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:150
+#: en/content/guides/higher_order_functions.adoc:163
 #, no-wrap
 msgid ""
 "(def pets [\n"
@@ -291,14 +310,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:154
+#: en/content/guides/higher_order_functions.adoc:167
 msgid ""
 "We want to filter out the non-dog animals because we're writing enterprise "
 "grade software.  First, let's look at a normal for loop."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:166
+#: en/content/guides/higher_order_functions.adoc:179
 #, no-wrap
 msgid ""
 "(defn loop-dogs [pets]\n"
@@ -313,14 +332,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:170
+#: en/content/guides/higher_order_functions.adoc:183
 msgid ""
 "This code works fine, but it's bulky and confusing.  We can simplify this "
 "using `filter`, a higher order function."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:175
+#: en/content/guides/higher_order_functions.adoc:188
 #, no-wrap
 msgid ""
 "(defn filter-dogs [pets]\n"
@@ -328,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/higher_order_functions.adoc:179
+#: en/content/guides/higher_order_functions.adoc:192
 msgid ""
 "The solution using `filter` is much clearer and allows us to show intent "
 "rather than just give commands.  We can break this into even smaller pieces "
@@ -336,13 +355,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:183
+#: en/content/guides/higher_order_functions.adoc:196
 #, no-wrap
 msgid "(defn dog? [pet] (= :dog (:type pet)))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/higher_order_functions.adoc:185
+#: en/content/guides/higher_order_functions.adoc:198
 #, no-wrap
 msgid "(defn filter-dogs [pets] (filter dog? pets))\n"
 msgstr ""

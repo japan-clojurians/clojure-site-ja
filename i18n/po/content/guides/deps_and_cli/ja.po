@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-12 01:31+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/guides/repl/basic_usage.adoc:17 en/content/guides/deps_and_cli.adoc:17
+#, no-wrap
+msgid "Evaluating Clojure expressions"
+msgstr ""
 
 #. type: Title =
 #: en/content/guides/deps_and_cli.adoc:1
@@ -41,12 +47,6 @@ msgstr "インタラクティブなREPL (Read-Eval-Print Loop)を実行する"
 #: en/content/guides/deps_and_cli.adoc:16
 msgid "Running Clojure programs"
 msgstr "Clojureプログラムを実行する"
-
-#. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:17 en/content/guides/repl/basic_usage.adoc:17
-#, no-wrap
-msgid "Evaluating Clojure expressions"
-msgstr ""
 
 #. type: Plain text
 #: en/content/guides/deps_and_cli.adoc:19
@@ -111,11 +111,22 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/deps_and_cli.adoc:42
-msgid "Once in the REPL you can type Clojure expressions and press enter to evaluate them."
+msgid ""
+"Once in the REPL you can type Clojure expressions and press enter to evaluate them.  Type Control-D to exit the REPL:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:49
+#, no-wrap
+msgid ""
+"user=> (+ 2 3)   # press the `enter` key after typing the expression to evaluate it\n"
+"5                # result of expression\n"
+"user=>           # type Ctrl-D here to exit the REPL (does not print)\n"
+"$ \n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:44
+#: en/content/guides/deps_and_cli.adoc:52
 msgid ""
 "There are many Clojure and Java libraries available that provide access to practically any functionality you might "
 "need. For example, consider the commonly used Clojure library https://github.com/clj-time/clj-time[clj-time] for "
@@ -123,7 +134,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:46
+#: en/content/guides/deps_and_cli.adoc:54
 msgid ""
 "To work with this library, you need to declare it as a dependency so the tool can ensure it has been downloaded and "
 "add it to the classpath. The readme in most projects shows the name and version, such as `[clj-time \"0.14.2\"]`. "
@@ -131,7 +142,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:51
+#: en/content/guides/deps_and_cli.adoc:59
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -139,12 +150,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:54
+#: en/content/guides/deps_and_cli.adoc:62
 msgid "Restart the REPL with the `clj` tool:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:65
+#: en/content/guides/deps_and_cli.adoc:73
 #, no-wrap
 msgid ""
 "$ clj\n"
@@ -158,7 +169,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:68
+#: en/content/guides/deps_and_cli.adoc:76
 msgid ""
 "You will see messages about a library being downloaded the first time you use a dependency. Once the file is "
 "downloaded, it will be reused in the future. You can use the same process to add other libraries to your `deps.edn` "
@@ -166,13 +177,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:69
+#: en/content/guides/deps_and_cli.adoc:77
 #, no-wrap
 msgid "Writing a program"
 msgstr "プログラムを書く"
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:72
+#: en/content/guides/deps_and_cli.adoc:80
 msgid ""
 "Soon you will want to build and save your own code that makes use of these libraries. Create a directory `hello-"
 "world` and change to that directory. Copy the `deps.edn` file into this directory. By default, the `clj` tool will "
@@ -181,7 +192,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:78
+#: en/content/guides/deps_and_cli.adoc:86
 #, no-wrap
 msgid ""
 "(ns hello\n"
@@ -190,7 +201,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:85 en/content/guides/deps_and_cli.adoc:134
+#: en/content/guides/deps_and_cli.adoc:93 en/content/guides/deps_and_cli.adoc:142
 #, no-wrap
 msgid ""
 "(defn time-str\n"
@@ -202,7 +213,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:88
+#: en/content/guides/deps_and_cli.adoc:96
 #, no-wrap
 msgid ""
 "(defn -main []\n"
@@ -210,14 +221,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:93
+#: en/content/guides/deps_and_cli.adoc:101
 msgid ""
 "This program has a static entry point named `-main` that is suitable for external invocation. The `clj` tool acts as "
 "a Clojure program launcher with the `-m` option, which specifies the namespace to run:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:98
+#: en/content/guides/deps_and_cli.adoc:106
 #, no-wrap
 msgid ""
 "$ clj -m hello\n"
@@ -225,13 +236,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:100
+#: en/content/guides/deps_and_cli.adoc:108
 #, no-wrap
 msgid "Using local libraries"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:103
+#: en/content/guides/deps_and_cli.adoc:111
 msgid ""
 "You might decide to move part of this application into a library. The `clj` tool uses local coordinates to support "
 "projects that exist only on your local disk. Let's extract the clj-time parts of this application out into a library "
@@ -239,7 +250,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:113
+#: en/content/guides/deps_and_cli.adoc:121
 #, no-wrap
 msgid ""
 "├── time-lib\n"
@@ -253,12 +264,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:116
+#: en/content/guides/deps_and_cli.adoc:124
 msgid "Under time-lib, use a copy of the deps.edn file you already have, and create a file `src/hello_time.clj`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:122
+#: en/content/guides/deps_and_cli.adoc:130
 #, no-wrap
 msgid ""
 "(ns hello-time\n"
@@ -267,7 +278,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:127
+#: en/content/guides/deps_and_cli.adoc:135
 #, no-wrap
 msgid ""
 "(defn now\n"
@@ -277,12 +288,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:137
+#: en/content/guides/deps_and_cli.adoc:145
 msgid "Update the application at `hello-world/src/hello.clj` to use your library instead:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:142
+#: en/content/guides/deps_and_cli.adoc:150
 #, no-wrap
 msgid ""
 "(ns hello\n"
@@ -290,7 +301,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:145
+#: en/content/guides/deps_and_cli.adoc:153
 #, no-wrap
 msgid ""
 "(defn -main []\n"
@@ -298,14 +309,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:148
+#: en/content/guides/deps_and_cli.adoc:156
 msgid ""
 "Modify `hello-world/deps.edn` to use a local coordinate that refers to the root directory of the time-lib library "
 "(make sure to update the path for your machine):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:153
+#: en/content/guides/deps_and_cli.adoc:161
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -313,12 +324,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:156
+#: en/content/guides/deps_and_cli.adoc:164
 msgid "You can then test everything from the hello-world directory by running the application:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:161
+#: en/content/guides/deps_and_cli.adoc:169
 #, no-wrap
 msgid ""
 "$ clj -m hello\n"
@@ -326,25 +337,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:163
+#: en/content/guides/deps_and_cli.adoc:171
 #, no-wrap
 msgid "Using git libraries"
 msgstr "gitのライブラリを利用する"
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:166
+#: en/content/guides/deps_and_cli.adoc:174
 msgid ""
 "It would be great to share that library with others. You can accomplish this by pushing the project to a public or "
 "private git repository and letting others use it with a git dependency coordinate."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:168
+#: en/content/guides/deps_and_cli.adoc:176
 msgid "First, create a git library for the time-lib:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:175
+#: en/content/guides/deps_and_cli.adoc:183
 #, no-wrap
 msgid ""
 "cd time-lib\n"
@@ -354,36 +365,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:178
+#: en/content/guides/deps_and_cli.adoc:186
 msgid ""
 "Then go to a public git repository host (like GitHub) and follow the instructions for creating and publishing this "
 "git repository."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:180
+#: en/content/guides/deps_and_cli.adoc:188
 msgid "Finally, modify your app to use the git dependency instead. You'll need to gather the following information:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:182
+#: en/content/guides/deps_and_cli.adoc:190
 msgid "repository url - in GitHub, use the HTTPS url, like `https://github.com/yourname/time-lib.git`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:183
+#: en/content/guides/deps_and_cli.adoc:191
 msgid ""
 "sha - indicate which version of the git library you want to use. You can run `git rev-parse HEAD` to get the sha of "
 "the current repo"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:185
+#: en/content/guides/deps_and_cli.adoc:193
 msgid "Update the `hello-world/deps.edn` to use a git coordinate instead:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:191
+#: en/content/guides/deps_and_cli.adoc:199
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -392,7 +403,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:194
+#: en/content/guides/deps_and_cli.adoc:202
 msgid ""
 "Note that we've altered the library name. When artifacts are deployed in a Maven repository, it's a best practice to "
 "use a groupId (the first part of the name) that is something you control (usually via DNS or trademark). In the case "
@@ -401,14 +412,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:196
+#: en/content/guides/deps_and_cli.adoc:204
 msgid ""
 "Now you can run the app again, making use of the (shared) git repository library. The first time you run it you'll "
 "see extra messages on the console when `clj` downloads and caches the repository and the commit working tree:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:203
+#: en/content/guides/deps_and_cli.adoc:211
 #, no-wrap
 msgid ""
 "$ clj -m hello\n"
@@ -418,18 +429,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:206
+#: en/content/guides/deps_and_cli.adoc:214
 msgid "Now your friends can use `time-lib` too!"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/deps_and_cli.adoc:207
+#: en/content/guides/deps_and_cli.adoc:215
 #, no-wrap
 msgid "Other examples"
 msgstr "その他の例"
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:210
+#: en/content/guides/deps_and_cli.adoc:218
 msgid ""
 "As your program gets more involved you might need to create variations on the standard classpath. The Clojure tools "
 "supports classpath modifications using aliases, which are parts of the deps file that are only used when the "
@@ -437,33 +448,38 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:212
+#: en/content/guides/deps_and_cli.adoc:220
 msgid "<<deps_and_cli#extra_paths,Include a test source directory>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:213
+#: en/content/guides/deps_and_cli.adoc:221
 msgid "<<deps_and_cli#extra_deps,Add an optional dependency>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:214
+#: en/content/guides/deps_and_cli.adoc:222
 msgid "<<deps_and_cli#override_deps,Override a dependency version>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:215
+#: en/content/guides/deps_and_cli.adoc:223
 msgid "<<deps_and_cli#local_jar,Use a local jar on disk>>"
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:224
+msgid "<<deps_and_cli#aot_compilation,Ahead-of-time (AOT) compilation>>"
+msgstr ""
+
 #. type: Title ===
-#: en/content/guides/deps_and_cli.adoc:217
+#: en/content/guides/deps_and_cli.adoc:226
 #, no-wrap
 msgid "Include a test source directory"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:220
+#: en/content/guides/deps_and_cli.adoc:229
 msgid ""
 "Typically, the project classpath includes only the project source, not its test source by default. You can add extra "
 "paths as modifications to the primary classpath in the make-classpath step of the classpath construction. To do so, "
@@ -471,7 +487,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:225
+#: en/content/guides/deps_and_cli.adoc:234 en/content/guides/deps_and_cli.adoc:277
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -479,7 +495,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:228
+#: en/content/guides/deps_and_cli.adoc:237
 #, no-wrap
 msgid ""
 " :aliases\n"
@@ -487,12 +503,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:231
+#: en/content/guides/deps_and_cli.adoc:240
 msgid "Apply that classpath modification and examine the modified classpath by invoking `clj -C:test -Spath`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:240
+#: en/content/guides/deps_and_cli.adoc:249
 #, no-wrap
 msgid ""
 "$ clj -C:test -Spath\n"
@@ -504,23 +520,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:243
+#: en/content/guides/deps_and_cli.adoc:252
 msgid "Note that the test dir is now included in the classpath."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/deps_and_cli.adoc:245
+#: en/content/guides/deps_and_cli.adoc:254
 #, no-wrap
 msgid "Add an optional dependency"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:248
+#: en/content/guides/deps_and_cli.adoc:257
 msgid "Aliases in the `deps.edn` file can also be used to add optional dependencies that affect the classpath:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:253
+#: en/content/guides/deps_and_cli.adoc:262
 #, no-wrap
 msgid ""
 "{:aliases\n"
@@ -528,40 +544,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:256
+#: en/content/guides/deps_and_cli.adoc:265
 msgid "Here the `:bench` alias is used to add an extra dependency, namely the criterium benchmarking library."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:258
+#: en/content/guides/deps_and_cli.adoc:267
 msgid ""
 "You can add this dependency to your classpath by adding the `:bench` alias to modify the dependency resolution: `clj -"
 "R:bench`."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/deps_and_cli.adoc:260
+#: en/content/guides/deps_and_cli.adoc:269
 #, no-wrap
 msgid "Override a dependency"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:263
+#: en/content/guides/deps_and_cli.adoc:272
 msgid ""
 "You can use multiple aliases in combination. For example this `deps.edn` file defines two aliases - `:old-async` to "
 "force the use of an older core.async version and `:bench` to add an extra dependency:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:268
-#, no-wrap
-msgid ""
-"{:deps \n"
-" {org.clojure/core.async {:mvn/version \"0.3.465\"}}\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:272
+#: en/content/guides/deps_and_cli.adoc:281
 #, no-wrap
 msgid ""
 " :aliases\n"
@@ -570,33 +578,164 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:275
+#: en/content/guides/deps_and_cli.adoc:284
 msgid "Activate both aliases as follows: `clj -R:bench:old-async`."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/deps_and_cli.adoc:277
+#: en/content/guides/deps_and_cli.adoc:286
 #, no-wrap
 msgid "Include a local jar on disk"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:280
+#: en/content/guides/deps_and_cli.adoc:289
 msgid ""
 "Occasionally you may need to refer directly to a jar on disk that is not present in a Maven repository, such as a "
 "database driver jar."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/deps_and_cli.adoc:282
+#: en/content/guides/deps_and_cli.adoc:291
 msgid ""
 "Specify local jar dependencies with a local coordinate that points directly to a jar file instead of a directory:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/deps_and_cli.adoc:287
+#: en/content/guides/deps_and_cli.adoc:296
 #, no-wrap
 msgid ""
 "{:deps\n"
 " {db/driver {:local/root \"/path/to/db/driver.jar\"}}}\n"
 msgstr ""
+
+#. type: Title ===
+#: en/content/guides/deps_and_cli.adoc:299
+#, fuzzy, no-wrap
+#| msgid "Ahead-of-time Compilation and Class Generation"
+msgid "Ahead-of-time (AOT) compilation"
+msgstr "事前コンパイルとクラス生成"
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:302
+#, fuzzy
+#| msgid ""
+#| "Watchers: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] https://"
+#| "clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch[remove-watch]"
+msgid ""
+"When using https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class[gen-class] or https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface[gen-interface], the Clojure source must be "
+"ahead-of-time compiled to generate the java class(es)."
+msgstr ""
+"ウォッチャー: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch[add-watch] https://"
+"clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch[remove-watch]"
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:304
+msgid ""
+"This can be done by calling `compile`. The default destination for compiled class files is `classes/`, which needs to "
+"be created and added to the classpath:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:308
+#, no-wrap
+msgid "$ mkdir classes\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:311
+msgid "Edit `deps.edn` to add `\"classes\"` to the paths:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:314
+#, no-wrap
+msgid "{:paths [\"src\" \"classes\"]}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:317
+msgid "Declare a class with gen-class in `src/my_class.clj`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:321
+#, no-wrap
+msgid "(ns my-class)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:325
+#, no-wrap
+msgid ""
+"(gen-class\n"
+"  :name my_class.MyClass\n"
+"  :methods [[hello [] String]])\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:328
+#, no-wrap
+msgid ""
+"(defn -hello [this]\n"
+"  \"Hello, World!\")\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:331
+msgid ""
+"Then you can reference the class with `:import` in another source file `src/hello.clj`. Notice that the namespace is "
+"also added in `:require` so compilation can automatically find all dependent namespaces and compile them."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:337
+#, no-wrap
+msgid ""
+"(ns hello\n"
+"  (:require [my-class])\n"
+"  (:import (my_class MyClass)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:341
+#, no-wrap
+msgid ""
+"(defn -main [& args]\n"
+"  (let [inst (MyClass.)]\n"
+"    (println (.hello inst))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:344
+msgid "You can compile in the REPL or run a script to do the compilation:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:348
+#, no-wrap
+msgid "$ clj -e \"(compile 'hello)\"\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:351
+#, fuzzy
+#| msgid "Enters the user namespace"
+msgid "And then run the hello namespace:"
+msgstr "user名前空間に切り替える"
+
+#. type: delimited block -
+#: en/content/guides/deps_and_cli.adoc:356
+#, no-wrap
+msgid ""
+"$ clj -m hello\n"
+"Hello, World!\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/deps_and_cli.adoc:358
+#, fuzzy
+#| msgid "<<compilation#,Compilation and Class Generation>>"
+msgid "See <<xref/../../reference/compilation#,Compilation and Class Generation>> for a complete reference."
+msgstr "<<compilation#,コンパイルとクラス生成>>"

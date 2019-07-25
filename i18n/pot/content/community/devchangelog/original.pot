@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-03-31 17:24+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,69 +38,902 @@ msgstr ""
 #. type: Title ==
 #: en/content/community/devchangelog.adoc:12
 #, no-wrap
-msgid "Release 1.10"
+msgid "Dev release naming guide"
 msgstr ""
 
-#. type: Title ===
-#: en/content/community/devchangelog.adoc:14
-#, no-wrap
-msgid "1.10.0-alpha4 (Feb 9, 2018)"
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:15
+msgid "Alpha - new feature work and enhancements in development"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:16
+msgid "Beta - bug fixing only, no new feature work is expected"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/devchangelog.adoc:17
-msgid "Fix 0-arity bug for read+string"
-msgstr ""
-
-#. type: Title ===
-#: en/content/community/devchangelog.adoc:18
-#, no-wrap
-msgid "1.10.0-alpha3 (Feb 8, 2018)"
+msgid ""
+"RC - a release candidate, which will be released as a final release unless "
+"critical issues are found"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:21
-msgid "prepl - programmatic REPL"
+#: en/content/community/devchangelog.adoc:19
+msgid ""
+"Note: All dev releases are subject to breaking changes for new work since "
+"the prior release."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/devchangelog.adoc:20
+#, no-wrap
+msgid "Release 1.10.1"
 msgstr ""
 
 #. type: Title ===
 #: en/content/community/devchangelog.adoc:22
 #, no-wrap
-msgid "1.10.0-alpha2 (Jan 19, 2018)"
+msgid "1.10.1-RC1 (May 21, 2019)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/devchangelog.adoc:25
-msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2313[CLJ-2313] - Fix for string "
-"capture mode"
+msgid "Updated changelog for 1.10.1"
 msgstr ""
 
 #. type: Title ===
 #: en/content/community/devchangelog.adoc:26
 #, no-wrap
-msgid "1.10.0-alpha1 (Jan 18, 2018)"
+msgid "1.10.1-beta3 (May 16, 2019)"
 msgstr ""
 
 #. type: Plain text
 #: en/content/community/devchangelog.adoc:29
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2504[CLJ-2504] Provide more options "
+"for error reporting in clojure.main"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:30
+#, no-wrap
+msgid "1.10.1-beta2 (Apr 11, 2019)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:33
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2497[CLJ-2497] Put error report "
+"location on its own line"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:34
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2499[CLJ-2499] Some compiler expr "
+"evals report as wrong phase"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:35
+#, no-wrap
+msgid "1.10.1-beta1 (Mar 21, 2019)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:38
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2484[CLJ-2484] Move user.clj "
+"initialization out of RT<clinit>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:39
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2463[CLJ-2463] clojure.main "
+"uncaught exception handling"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:40
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2491[CLJ-2491] Make fragile tests "
+"work under Java 12 and less fragile"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/devchangelog.adoc:41
+#, no-wrap
+msgid "Release 1.10"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:43
+#, no-wrap
+msgid "1.10.0-RC5 (Dec 11, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:46
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2454[CLJ-2454] - fix "
+"IllegalAccessException from invoking matching reflective call"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:47
+#, no-wrap
+msgid "1.10.0-RC4 (Dec 7, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:50
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2449[CLJ-2449] - make serialized-"
+"require private"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:51
+#, no-wrap
+msgid "1.10.0-RC3 (Dec 3, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:54
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2447[CLJ-2447] - clojure.datafy "
+"docstring is missing"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:55
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2448[CLJ-2448] - change name of "
+"async-require to serialized-require"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:56
+#, no-wrap
+msgid "1.10.0-RC2 (Nov 26, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:59
+msgid "No changes other than changelog updates."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:60
+#, no-wrap
+msgid "1.10.0-beta8 (Nov 21, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:63
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2438[CLJ-2438] - demunge source "
+"location in execution error messages"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:64
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2437[CLJ-2437] - add async-require "
+"and use it from requiring-resolve"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:65
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2436[CLJ-2436] - fix reflection "
+"warning in reflect.java"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:66
+#, no-wrap
+msgid "1.10.0-beta7 (Nov 19, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:69
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2435[CLJ-2435] - include root cause "
+"class name in compilation and macroexpansion errors"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:70
+#, no-wrap
+msgid "1.10.0-beta6 (Nov 16, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:73
+msgid "Changes in 1.10.0-beta6:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:75
+msgid ""
+"The metadata protocol extension added in 1.10.0-beta5 now requires opt-in "
+"when the protocol is defined, using :extend-via-metadata."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:76
+msgid "The JavaReflector under clojure.reflect has been datafied"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:77
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2432[CLJ-2432] - Added clojure.core/"
+"requiring-resolve which is like `resolve` but will `require` the symbol's "
+"namespace if needed."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:78
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2427[CLJ-2427] - fix bug in "
+"CompilerException.toString() that could cause a secondary exception to be "
+"thrown while making the exception string, obscuring the original exception."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:79
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2430[CLJ-2430] - more work on error "
+"phases, ex-triage, and allowing prepl to better use the new error reporting "
+"infrastructure"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:80
+#, no-wrap
+msgid "1.10.0-beta5 (Nov 6, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:83
+msgid "Changes in 1.10.0-beta5:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:85
+msgid ""
+"In addition to prior methods of extension, values can now extend protocols "
+"by adding metadata where keys are fully-qualified symbols naming protocol "
+"functions and values are function implementations. Protocol implementations "
+"are checked first for direct definitions (defrecord, deftype, reify), then "
+"metadata definitions, then external extensions (extend, extend-type, extend-"
+"protocol). datafy has been updated to use this mechanism."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:86
+msgid ""
+"`symbol` can now be passed vars or keywords to obtain the corresponding "
+"symbol"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:87
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2420[CLJ-2420] - error reporting "
+"enhancements - more refined phase reporting, new clojure.main/ex-triage "
+"split out of clojure.main/ex-str, execution errors now report the top *user* "
+"line in the stack trace omitting frames from core, enhancements to providing "
+"file and line via meta on a form"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:88
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2425[CLJ-2425] add java 11 javadoc "
+"url"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:89
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2424[CLJ-2424] fix test bug from "
+"https://clojure.atlassian.net/browse/CLJ-2417[CLJ-2417]"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:90
+#, no-wrap
+msgid "1.10.0-beta4 (Oct 22, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:93
+msgid "1.10.0-beta4 includes the following changes since 1.10.0-beta3:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:95
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2417[CLJ-2417] sort and sort-by "
+"should retain meta"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:96
+#, no-wrap
+msgid "1.10.0-beta3 (Oct 12, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:99
+msgid "1.10.0-beta3 includes the following changes since 1.10.0-RC1:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:101
+msgid ""
+"datafy - add :name to datafied classes and namespaces, :class to meta of all "
+"if datafied"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:102
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1079[CLJ-1079] - Reader should "
+"retain rather than overwrite :line :column meta on lists and seqs. Also make "
+"clojure.main bind pass:[*file*] based on :file meta."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:103
+#, no-wrap
+msgid "1.10.0-RC1 (Oct 11, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:106
+msgid ""
+"1.10.0-RC1 is the same code as 1.10.0-beta2 (just minor changelog updates)."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:107
+#, no-wrap
+msgid "1.10.0-beta2 (Oct 9, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:110
+msgid "1.10.0-beta2 includes the following changes since 1.10.0-beta1:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:112
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2414[CLJ-2414] - Regression in "
+"reflectively finding default methods"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:113
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2415[CLJ-2415] - Error cause should "
+"always be on 2nd line of error message"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:114
+msgid "Added clojure.datafy:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:115
+msgid ""
+"clojure.datafy is a facility for object to data transformation. The `datafy` "
+"and `nav` functions can be used to transform and (lazily) navigate through "
+"object graphs. The data transformation process can be influenced by "
+"consumers using protocols or metadata. datafy is alpha and subject to change."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:116
+#, no-wrap
+msgid "1.10.0-beta1 (Oct 5, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:119
+msgid "1.10.0-beta1 includes the following changes since 1.10.0-alpha9:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:121
+msgid ""
+"Revert change for https://clojure.atlassian.net/browse/CLJ-1550[CLJ-1550] - "
+"Classes generated by deftype and defrecord don't play nice with .getPackage"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:122
+msgid ""
+"Revert change for https://clojure.atlassian.net/browse/CLJ-1435[CLJ-1435] - "
+"'numerator and 'denominator fail to handle integral values (i.e. N/1)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:123
+msgid "Add changelog since 1.9"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:124
+msgid "Mark prepl as alpha"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:125
+#, no-wrap
+msgid "1.10.0-alpha9 (Oct 4, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:128
+msgid "1.10.0-alpha9 includes the following changes since 1.10.0-alpha8:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:130
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2374[CLJ-2374] - Add type hint to "
+"address reflection ambiguity in JDK 11"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:131
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1209[CLJ-1209] - Print ex-data in "
+"clojure.test error reports"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:132
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1120[CLJ-1120] - Add ex-cause and "
+"ex-message as in CLJS for portabile error handling"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:133
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2385[CLJ-2385] - Delay start of tap-"
+"loop thread (addresses graal native-image issue)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:134
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2407[CLJ-2407] - Fix errors in unit "
+"tests"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:135
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2066[CLJ-2066] - Add reflection "
+"fallback for --illegal-access warnings in Java 9+"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:136
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2375[CLJ-2375] - Fix usage of "
+"deprecated JDK apis"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:137
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2358[CLJ-2358] - Fix invalid arity "
+"of read+string"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:138
+#, no-wrap
+msgid "1.10.0-alpha8 (Sept 14, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:141
+msgid "1.10.0-alpha8 includes the following changes since 1.10.0-alpha7:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:143
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2297[CLJ-2297] - PersistentHashMap "
+"leaks memory when keys are removed with `without`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:144
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1587[CLJ-1587] - "
+"PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:145
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2050[CLJ-2050] - Remove redundant "
+"key comparisons in HashCollisionNode"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:146
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2349[CLJ-2349] - report correct "
+"line number for uncaught ExceptionInfo in clojure.test"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:147
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1403[CLJ-1403] - ns-resolve might "
+"throw ClassNotFoundException but should return nil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:148
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1654[CLJ-1654] - Reuse seq in some"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:149
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1764[CLJ-1764] - partition-by runs "
+"infinite loop when one element of infinite partition is accessed"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:150
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2044[CLJ-2044] - add arglist meta "
+"for functions in clojure.instant"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:151
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1797[CLJ-1797] - Mention cljc in "
+"error when require fails"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:152
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1832[CLJ-1832] - unchecked-* "
+"functions have different behavior on primitive longs vs boxed Longs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:153
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1366[CLJ-1366] - The empty map "
+"literal is read as a different map each time"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:154
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1550[CLJ-1550] - Classes generated "
+"by deftype and defrecord don't play nice with .getPackage"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:155
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2031[CLJ-2031] - clojure.walk/"
+"postwalk does not preserve MapEntry type objects"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:156
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1435[CLJ-1435] - 'numerator and "
+"'denominator fail to handle integral values (i.e. N/1)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:157
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2257[CLJ-2257] - docstring: fix "
+"typo in `proxy`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:158
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2332[CLJ-2332] - docstring: fix "
+"repetition in `remove-tap`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:159
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2122[CLJ-2122] - docstring: "
+"describe result of `flatten` as lazy"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:160
+#, no-wrap
+msgid "1.10.0-alpha7 (Sept 5, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:163
+msgid "Clojure 1.10.0-alpha7 is now available."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:165
+msgid "1.10.0-alpha7 includes the following changes since 1.10.0-alpha6:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:167
+msgid ""
+"Update deps to latest spec.alpha (0.2.176) and core.specs.alpha (0.2.44)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:168
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2373[CLJ-2373] - categorize and "
+"overhaul printing of exception messages at REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:169
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1279[CLJ-1279] - report correct "
+"arity count for function arity errors inside macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:170
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2386[CLJ-2386] - omit ex-info "
+"construction stack frames"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:171
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2394[CLJ-2394] - warn in pst that "
+"stack trace for syntax error failed before execution"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:172
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2396[CLJ-2396] - omit :in clauses "
+"when printing spec function errors if using default explain printer"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:173
+#, no-wrap
+msgid "1.10.0-alpha6 (July 4, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:176
+msgid "Clojure 1.10.0-alpha6 is now available."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:178
+msgid "1.10.0-alpha6 includes the following changes since 1.10.0-alpha5:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:180
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2367[CLJ-2367] - Incorporate fix "
+"for ASM regression and add case tests - thanks Sean Corfield for the patch "
+"and Daniel Sutton and Ghadi Shayban for the help in tracking it down."
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:181
+#, no-wrap
+msgid "1.10.0-alpha5 (June 27, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:184
+msgid "Clojure 1.10.0-alpha5 is now available."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:186
+msgid "1.10.0-alpha5 includes the following changes since 1.10.0-alpha4:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:188
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2363[CLJ-2363] - make Java 8 the "
+"minimum requirement for Clojure (also bumps embedded ASM to latest) - thanks "
+"Ghadi Shayban!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:189
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2284[CLJ-2284] - fix invalid "
+"bytecode generation for static interface method calls in Java 9+ - thanks "
+"Ghadi Shayban!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:190
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2330[CLJ-2330] - fix brittle test "
+"that fails on Java 10 build due to serialization drift"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:191
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2362[CLJ-2362] - withMeta() should "
+"return identity when new meta is identical to prior"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:192
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-1130[CLJ-1130] - when unable to "
+"match static method, improve error messages"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:193
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2289[CLJ-2089] - sorted colls with "
+"default comparator don't check that first element is Comparable"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:194
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2163[CLJ-2163] - add test for var "
+"serialization"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:195
+msgid ""
+"Bump dependency version for spec.alpha to latest, 0.2.168 (see https://"
+"github.com/clojure/spec.alpha/blob/master/CHANGES.md[changes])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:196
+msgid ""
+"Bump dependency version for core.specs.alpha to latest, 0.2.36 (see https://"
+"github.com/clojure/core.specs.alpha/blob/master/CHANGES.md[changes])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:198
+msgid ""
+"1.10.0-alpha5 drops support for Java 6 and 7 and makes Java 8 the minimum "
+"requirement. Compilation will produce Java 8 level bytecode (which will not "
+"run on earlier versions of Java). This is the first change in bytecode "
+"version since Clojure 1.6. We would greatly appreciate it if you tried this "
+"release with your library or project and provided feedback about errors, "
+"performance differences (good or bad), compatibility, etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:200
+msgid ""
+"When using the `clj` tool and deps.edn, we recommend adding an alias to your "
+"~/.clojure/deps.edn:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/devchangelog.adoc:207
+#, no-wrap
+msgid ""
+"{:aliases\n"
+" {:clj/next\n"
+"  {:override-deps\n"
+"   {org.clojure/clojure {:mvn/version \"1.10.0-alpha5\"}}}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:210
+msgid ""
+"You can then run any of your projects with the latest Clojure dev release by "
+"activating the alias with `clj`:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/community/devchangelog.adoc:214
+#, no-wrap
+msgid "clj -A:clj/next\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:216
+#, no-wrap
+msgid "1.10.0-alpha4 (Feb 9, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:219
+msgid "Fix 0-arity bug for read+string"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:220
+#, no-wrap
+msgid "1.10.0-alpha3 (Feb 8, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:223
+msgid "prepl - programmatic REPL"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:224
+#, no-wrap
+msgid "1.10.0-alpha2 (Jan 19, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:227
+msgid ""
+"https://clojure.atlassian.net/browse/CLJ-2313[CLJ-2313] - Fix for string "
+"capture mode"
+msgstr ""
+
+#. type: Title ===
+#: en/content/community/devchangelog.adoc:228
+#, no-wrap
+msgid "1.10.0-alpha1 (Jan 18, 2018)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/devchangelog.adoc:231
 msgid "Add string capture mode to LineNumberingPushbackReader"
 msgstr ""
 
 #. type: Title ==
-#: en/content/community/devchangelog.adoc:30
+#: en/content/community/devchangelog.adoc:232
 #, no-wrap
 msgid "Release 1.9"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:32
+#: en/content/community/devchangelog.adoc:234
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/Pz_Kzg-k2Ac/ACVoLkXYDwAJ[1.9.0-RC2] (Nov 27, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:35
+#: en/content/community/devchangelog.adoc:237
 msgid ""
 "There is a new Maven profile and Ant target in the build to build an "
 "executable Clojure jar with deps included (and test.check). This can be "
@@ -109,425 +942,425 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:36
+#: en/content/community/devchangelog.adoc:238
 msgid ""
 "The readme.txt has been updated to include information about how to create "
 "and run a local jar."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:37
+#: en/content/community/devchangelog.adoc:239
 msgid "Stopped publishing the clojure-VERSION.zip file as part of the release."
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:38
+#: en/content/community/devchangelog.adoc:240
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/tWcLAhnEzIs/OnwSSXFsBAAJ[1.9.0-RC1] (Nov 7, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:41
+#: en/content/community/devchangelog.adoc:243
 msgid "Same as 1.9.0-beta4"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:42
+#: en/content/community/devchangelog.adoc:244
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/X_A6B_LiGvQ/I-bDODILAgAJ[1.9.0-beta4] (Oct 31, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:45
+#: en/content/community/devchangelog.adoc:247
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2259[CLJ-2259] - Remove unnecessary "
+"https://clojure.atlassian.net/browse/CLJ-2259[CLJ-2259] - Remove unnecessary "
 "bigdec? predicate added in 1.9"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:46
+#: en/content/community/devchangelog.adoc:248
 msgid "Bumped spec.alpha dependency to 0.1.143"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:47
+#: en/content/community/devchangelog.adoc:249
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/jKsa9asMFm4/Uqf1m6ENAQAJ[1.9.0-beta3] (Oct 25, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:50
+#: en/content/community/devchangelog.adoc:252
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2254[CLJ-2254] - add System property "
-"clojure.spec.skip-macros (default=false) that can be used to turn off spec "
-"checking in macros"
+"https://clojure.atlassian.net/browse/CLJ-2254[CLJ-2254] - add System "
+"property clojure.spec.skip-macros (default=false) that can be used to turn "
+"off spec checking in macros"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:51
+#: en/content/community/devchangelog.adoc:253
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/hJqYgzEOJ8s/IH0pogtQAgAJ[1.9.0-beta2] (Oct 6, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:54
+#: en/content/community/devchangelog.adoc:256
 msgid "1.9.0-beta2 includes the following changes since 1.9.0-beta1:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:56
+#: en/content/community/devchangelog.adoc:258
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-700[CLJ-700] - (fix) `contains?`, "
+"https://clojure.atlassian.net/browse/CLJ-700[CLJ-700] - (fix) `contains?`, "
 "`get`, and `find` broken for transient collections"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:57
+#: en/content/community/devchangelog.adoc:259
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2247[CLJ-2247] - (regression) "
+"https://clojure.atlassian.net/browse/CLJ-2247[CLJ-2247] - (regression) "
 "restore and doc last match semantics of {min,max}-key"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:58
+#: en/content/community/devchangelog.adoc:260
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2239[CLJ-2239] - (regression) fix "
+"https://clojure.atlassian.net/browse/CLJ-2239[CLJ-2239] - (regression) fix "
 "Guava javadoc location"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:59
+#: en/content/community/devchangelog.adoc:261
 msgid ""
 "Updated dep to spec.alpha 0.1.134 - see https://github.com/clojure/spec."
 "alpha/blob/master/CHANGES.md[changes]"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:60
+#: en/content/community/devchangelog.adoc:262
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/UEtE1K9C7XE/5p5BJe2tAQAJ[1.9.0-beta1] (Sep 18, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:63
+#: en/content/community/devchangelog.adoc:265
 msgid "1.9.0-beta1 includes the following changes since 1.9.0-alpha20:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:65
+#: en/content/community/devchangelog.adoc:267
 msgid ""
-"http://dev.clojure.org/jira/browse/CLJ-2077[CLJ-2077] - Clojure can't be "
+"https://clojure.atlassian.net/browse/CLJ-2077[CLJ-2077] - Clojure can't be "
 "loaded from the boot classpath under java 9"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:66
+#: en/content/community/devchangelog.adoc:268
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/IB2CaORBMnM/a0f66eC1DAAJ[1.9.0-alpha20] (Sep 7, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:69
+#: en/content/community/devchangelog.adoc:271
 msgid "1.9.0-alpha20 includes the following changes since 1.9.0-alpha19:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:71
+#: en/content/community/devchangelog.adoc:273
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1074[CLJ-1074] - (new) add new pass:"
+"https://clojure.atlassian.net/browse/CLJ-1074[CLJ-1074] - (new) add new pass:"
 "[##] reader macro for symbolic values, and read/print support for double "
 "vals pass:[##Inf], pass:[##-Inf], pass:[##NaN]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:72
+#: en/content/community/devchangelog.adoc:274
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1454[CLJ-1454] - (new) add swap-"
+"https://clojure.atlassian.net/browse/CLJ-1454[CLJ-1454] - (new) add swap-"
 "vals! and reset-vals! that return both old and new values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:73
+#: en/content/community/devchangelog.adoc:275
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2184[CLJ-2184] - (errors) propagate "
+"https://clojure.atlassian.net/browse/CLJ-2184[CLJ-2184] - (errors) propagate "
 "meta in doto forms to improve error reporting"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:74
+#: en/content/community/devchangelog.adoc:276
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2210[CLJ-2210] - (perf) cache class "
+"https://clojure.atlassian.net/browse/CLJ-2210[CLJ-2210] - (perf) cache class "
 "derivation in compiler to improve compiler performance"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:75
+#: en/content/community/devchangelog.adoc:277
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2070[CLJ-2070] - (perf) clojure.core/"
-"delay - improve performance"
+"https://clojure.atlassian.net/browse/CLJ-2070[CLJ-2070] - (perf) clojure."
+"core/delay - improve performance"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:76
+#: en/content/community/devchangelog.adoc:278
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1917[CLJ-1917] - (perf) reducing seq "
-"over string should call String/length outside of loop"
+"https://clojure.atlassian.net/browse/CLJ-1917[CLJ-1917] - (perf) reducing "
+"seq over string should call String/length outside of loop"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:77
+#: en/content/community/devchangelog.adoc:279
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1901[CLJ-1901] - (perf) amap - "
+"https://clojure.atlassian.net/browse/CLJ-1901[CLJ-1901] - (perf) amap - "
 "should call alength only once"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:78
+#: en/content/community/devchangelog.adoc:280
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-99[CLJ-99]   - (perf) min-key and max-key - evaluate k on each arg at most once\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-99[CLJ-99]   - (perf) min-key and max-key - evaluate k on each arg at most once\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:79
+#: en/content/community/devchangelog.adoc:281
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2188[CLJ-2188] - (perf) slurp - mark return type as String\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2188[CLJ-2188] - (perf) slurp - mark return type as String\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:80
+#: en/content/community/devchangelog.adoc:282
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2108[CLJ-2108] - (startup time) delay loading of spec and core specs (still more to do on this)\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2108[CLJ-2108] - (startup time) delay loading of spec and core specs (still more to do on this)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:81
+#: en/content/community/devchangelog.adoc:283
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2204[CLJ-2204] - (security) disable serialization of proxy classes to avoid potential issue when deserializing\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2204[CLJ-2204] - (security) disable serialization of proxy classes to avoid potential issue when deserializing\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:82
+#: en/content/community/devchangelog.adoc:284
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2048[CLJ-2048] - (fix) specify type to avoid ClassCastException when stack trace is elided by JVM\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2048[CLJ-2048] - (fix) specify type to avoid ClassCastException when stack trace is elided by JVM\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:83
+#: en/content/community/devchangelog.adoc:285
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1887[CLJ-1887] - (fix) IPersistentVector.length() - implement missing method\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1887[CLJ-1887] - (fix) IPersistentVector.length() - implement missing method\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:84
+#: en/content/community/devchangelog.adoc:286
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1841[CLJ-1841] - (fix) bean - iterator was broken\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1841[CLJ-1841] - (fix) bean - iterator was broken\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:85
+#: en/content/community/devchangelog.adoc:287
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1714[CLJ-1714] - (fix) using a class in a type hint shouldn't load the class\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1714[CLJ-1714] - (fix) using a class in a type hint shouldn't load the class\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:86
+#: en/content/community/devchangelog.adoc:288
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1398[CLJ-1398] - (fix) clojure.java.javadoc/javadoc - update doc urls\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1398[CLJ-1398] - (fix) clojure.java.javadoc/javadoc - update doc urls\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:87
+#: en/content/community/devchangelog.adoc:289
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1371[CLJ-1371] - (fix) Numbers.divide(Object, Object) - add checks for NaN\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1371[CLJ-1371] - (fix) Numbers.divide(Object, Object) - add checks for NaN\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:88
+#: en/content/community/devchangelog.adoc:290
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1358[CLJ-1358] - (fix) doc - does not expand special cases properly (try, catch)\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1358[CLJ-1358] - (fix) doc - does not expand special cases properly (try, catch)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:89
+#: en/content/community/devchangelog.adoc:291
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1705[CLJ-1705] - (fix) vector-of - fix NullPointerException if given unrecognized type\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1705[CLJ-1705] - (fix) vector-of - fix NullPointerException if given unrecognized type\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:90
+#: en/content/community/devchangelog.adoc:292
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2170[CLJ-2170] - (doc) fix improperly located docstrings\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2170[CLJ-2170] - (doc) fix improperly located docstrings\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:91
+#: en/content/community/devchangelog.adoc:293
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2156[CLJ-2156] - (doc) clojure.java.io/copy - doc char[] support\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2156[CLJ-2156] - (doc) clojure.java.io/copy - doc char[] support\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:92
+#: en/content/community/devchangelog.adoc:294
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2051[CLJ-2051] - (doc) clojure.instant/validated docstring - fix typo\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2051[CLJ-2051] - (doc) clojure.instant/validated docstring - fix typo\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:93
+#: en/content/community/devchangelog.adoc:295
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2104[CLJ-2104] - (doc) clojure.pprint docstring - fix typo\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2104[CLJ-2104] - (doc) clojure.pprint docstring - fix typo\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:94
+#: en/content/community/devchangelog.adoc:296
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2028[CLJ-2028] - (doc) filter, filterv, remove, take-while - fix docstrings\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2028[CLJ-2028] - (doc) filter, filterv, remove, take-while - fix docstrings\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:95
+#: en/content/community/devchangelog.adoc:297
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1873[CLJ-1873] - (doc) require, *data-readers* - add .cljc files to docstrings\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1873[CLJ-1873] - (doc) require, `pass:[*data-readers*]` - add .cljc files to docstrings\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:96
+#: en/content/community/devchangelog.adoc:298
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1159[CLJ-1159] - (doc) clojure.java.io/delete-file - improve docstring\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1159[CLJ-1159] - (doc) clojure.java.io/delete-file - improve docstring\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:97
+#: en/content/community/devchangelog.adoc:299
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-2039[CLJ-2039] - (doc) deftype - fix typo in docstring\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-2039[CLJ-2039] - (doc) deftype - fix typo in docstring\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:98
+#: en/content/community/devchangelog.adoc:300
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1918[CLJ-1918] - (doc) await - improve docstring re shutdown-agents\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1918[CLJ-1918] - (doc) await - improve docstring re shutdown-agents\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:99
+#: en/content/community/devchangelog.adoc:301
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1837[CLJ-1837] - (doc) index-of, last-index-of - clarify docstrings\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1837[CLJ-1837] - (doc) index-of, last-index-of - clarify docstrings\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:100
+#: en/content/community/devchangelog.adoc:302
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1826[CLJ-1826] - (doc) drop-last - fix docstring\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1826[CLJ-1826] - (doc) drop-last - fix docstring\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:101
+#: en/content/community/devchangelog.adoc:303
 #, no-wrap
-msgid "https://dev.clojure.org/jira/browse/CLJ-1859[CLJ-1859] - (doc) zero?, pos?, neg? - fix docstrings\n"
+msgid "https://clojure.atlassian.net/browse/CLJ-1859[CLJ-1859] - (doc) zero?, pos?, neg? - fix docstrings\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:102
+#: en/content/community/devchangelog.adoc:304
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/oy2O_akFJ2U/w6-C0hPoAQAJ[1.9.0-alpha19] (Aug 24, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:105
+#: en/content/community/devchangelog.adoc:307
 msgid "Make the default import set public in RT"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:106
+#: en/content/community/devchangelog.adoc:308
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/rb22V98rPLM/MFBBcz-gAQAJ[1.9.0-alpha18] (Aug 23, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:109
+#: en/content/community/devchangelog.adoc:311
 msgid ""
-"Can now bind `*reader-resolver*` to an impl of LispReader$Resolver to "
+"Can now bind `pass:[*reader-resolver*]` to an impl of LispReader$Resolver to "
 "control the reader's use of namespace interactions when resolving "
 "autoresolved keywords and maps."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:110
+#: en/content/community/devchangelog.adoc:312
 msgid ""
 "Tighten autoresolved keywords and autoresolved namespace map syntax to "
 "support *only* aliases, as originally intended"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:111
+#: en/content/community/devchangelog.adoc:313
 msgid "Updated to use core.specs.alpha 0.1.24"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:112
+#: en/content/community/devchangelog.adoc:314
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/iceDBL5q4CY/GM6LryxpAQAJ[1.9.0-alpha17] (May 26, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:115
+#: en/content/community/devchangelog.adoc:317
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1793[CLJ-1793] - Clear 'this' before "
-"calls in tail position"
+"https://clojure.atlassian.net/browse/CLJ-1793[CLJ-1793] - Clear 'this' "
+"before calls in tail position"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:116
+#: en/content/community/devchangelog.adoc:318
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2091[CLJ-2091] clojure.lang."
+"https://clojure.atlassian.net/browse/CLJ-2091[CLJ-2091] clojure.lang."
 "APersistentVector#hashCode is not thread-safe"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:117
+#: en/content/community/devchangelog.adoc:319
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1860[CLJ-1860] Make -0.0 hash "
+"https://clojure.atlassian.net/browse/CLJ-1860[CLJ-1860] Make -0.0 hash "
 "consistent with 0.0"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:118
+#: en/content/community/devchangelog.adoc:320
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2141[CLJ-2141] Return only true/"
+"https://clojure.atlassian.net/browse/CLJ-2141[CLJ-2141] Return only true/"
 "false from qualified-* predicates"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:119
+#: en/content/community/devchangelog.adoc:321
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2142[CLJ-2142] Fix check for "
+"https://clojure.atlassian.net/browse/CLJ-2142[CLJ-2142] Fix check for "
 "duplicate keys with namespace map syntax"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:120
+#: en/content/community/devchangelog.adoc:322
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2128[CLJ-2128] spec error during "
+"https://clojure.atlassian.net/browse/CLJ-2128[CLJ-2128] spec error during "
 "macroexpand no longer throws compiler exception with location"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:121
+#: en/content/community/devchangelog.adoc:323
 msgid "Updated to use spec.alpha 0.1.123"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:122
+#: en/content/community/devchangelog.adoc:324
 #, no-wrap
 msgid "https://groups.google.com/forum/#!topic/clojure/nB4qnDNGS2A[1.9.0-alpha16] (Apr 27, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:125
+#: en/content/community/devchangelog.adoc:327
 msgid "1.9.0-alpha16 includes the following changes since 1.9.0-alpha15:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:127
+#: en/content/community/devchangelog.adoc:329
 msgid ""
 "The namespaces clojure.spec, clojure.spec.gen, clojure.spec.test have been "
 "moved to the external library spec.alpha which Clojure includes via "
@@ -535,33 +1368,33 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:128
+#: en/content/community/devchangelog.adoc:330
 msgid ""
 "These namespaces have been changed and now have an appended \".alpha\": "
 "clojure.spec.alpha, clojure.spec.gen.alpha, clojure.spec.test.alpha"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:129
+#: en/content/community/devchangelog.adoc:331
 msgid ""
 "All keyword constants in clojure.spec (like :clojure.spec/invalid) follow "
 "the same namespace change (now :clojure.spec.alpha/invalid)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:130
+#: en/content/community/devchangelog.adoc:332
 msgid "spec-related system properties related to assertions did NOT change"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:132
+#: en/content/community/devchangelog.adoc:334
 msgid ""
 "The specs for clojure.core itself in namespace clojure.core.specs have been "
 "moved to the external library core.specs.alpha which Clojure now depends on"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:133
+#: en/content/community/devchangelog.adoc:335
 msgid ""
 "The clojure.core.specs namespace has changed to clojure.core.specs.alpha. "
 "All qualified spec names in that namespace follow the same namespace change "
@@ -569,28 +1402,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:135
+#: en/content/community/devchangelog.adoc:337
 msgid ""
 "In most cases, you should be able to update your usage of Clojure 1.9.0-"
 "alphaX to Clojure 1.9.0-alpha16 by:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:137
+#: en/content/community/devchangelog.adoc:339
 msgid ""
 "Updating your Clojure dependency to [org.clojure/clojure \"1.9.0-alpha16\"] "
 "- this will automatically pull in the 2 additional downstream libraries"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:138
+#: en/content/community/devchangelog.adoc:340
 msgid ""
 "Changing your namespace declarations in namespaces that declare or use specs "
 "to:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/community/devchangelog.adoc:144
+#: en/content/community/devchangelog.adoc:346
 #, no-wrap
 msgid ""
 "(:require [clojure.spec.alpha :as s]\n"
@@ -599,13 +1432,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:146
+#: en/content/community/devchangelog.adoc:348
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/10dbF7w2IQo/ec37TzP5AQAJ[1.9/spec split] (Apr 26, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:149
+#: en/content/community/devchangelog.adoc:351
 msgid ""
 "We are moving spec out of the Clojure repo/artifact and into a library to "
 "make it easier to evolve spec independently from Clojure. While we consider "
@@ -618,14 +1451,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:151
+#: en/content/community/devchangelog.adoc:353
 msgid ""
 "We will be creating two new contrib libraries that will contain the "
 "following (renamed) namespaces:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/community/devchangelog.adoc:157
+#: en/content/community/devchangelog.adoc:359
 #, no-wrap
 msgid ""
 "org.clojure/spec.alpha\n"
@@ -635,7 +1468,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/community/devchangelog.adoc:160
+#: en/content/community/devchangelog.adoc:362
 #, no-wrap
 msgid ""
 "org.clojure/core.specs.alpha\n"
@@ -643,7 +1476,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:163
+#: en/content/community/devchangelog.adoc:365
 msgid ""
 "In most cases, we expect that users have aliased their reference to the spec "
 "namespaces and updating to the changed namespaces will only require a single "
@@ -651,13 +1484,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:165
+#: en/content/community/devchangelog.adoc:367
 #, no-wrap
 msgid "*How will ClojureScript's spec implementation change?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:167
+#: en/content/community/devchangelog.adoc:369
 msgid ""
 "ClojureScript will also change namespace names to match Clojure. Eventually, "
 "the ClojureScript implementation may move out of ClojureScript and into the "
@@ -665,26 +1498,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:169
+#: en/content/community/devchangelog.adoc:371
 #, no-wrap
 msgid "*Why do the libraries and namespaces end in alpha?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:171
+#: en/content/community/devchangelog.adoc:373
 msgid ""
 "The \"alpha\" indicates that the spec API and implementation is still "
 "subject to change."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:173
+#: en/content/community/devchangelog.adoc:375
 #, no-wrap
 msgid "*What will happen when the spec api is no longer considered alpha?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:175
+#: en/content/community/devchangelog.adoc:377
 msgid ""
 "At that point we expect to release a non-alpha version of the spec library "
 "(with non-alpha namespaces). Users may immediately begin to use that version "
@@ -693,13 +1526,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:177
+#: en/content/community/devchangelog.adoc:379
 #, no-wrap
 msgid "*Will the library support Clojure 1.8 or older versions?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:179
+#: en/content/community/devchangelog.adoc:381
 msgid ""
 "No. spec uses new functions in Clojure 1.9 and it has never been a goal to "
 "provide spec for older versions. Rather, we are trying to accelerate the "
@@ -709,95 +1542,95 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:180
+#: en/content/community/devchangelog.adoc:382
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/7ZqGTjJoQEQ/RkUYCCbeAwAJ[1.9.0-alpha15] (Mar 14, 2017)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:183
+#: en/content/community/devchangelog.adoc:385
 msgid "1.9.0-alpha15 includes the following changes since 1.9.0-alpha14:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:185
+#: en/content/community/devchangelog.adoc:387
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2043[CLJ-2043] - s/form of conformer "
-"is broken"
+"https://clojure.atlassian.net/browse/CLJ-2043[CLJ-2043] - s/form of "
+"conformer is broken"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:186
+#: en/content/community/devchangelog.adoc:388
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2035[CLJ-2035] - s/form of "
+"https://clojure.atlassian.net/browse/CLJ-2035[CLJ-2035] - s/form of "
 "collection specs are broken"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:187
+#: en/content/community/devchangelog.adoc:389
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2100[CLJ-2100] - s/form of s/nilable "
-"should include the original spec, not the resolved spec"
+"https://clojure.atlassian.net/browse/CLJ-2100[CLJ-2100] - s/form of s/"
+"nilable should include the original spec, not the resolved spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:189
+#: en/content/community/devchangelog.adoc:391
 msgid "Specs:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:191
+#: en/content/community/devchangelog.adoc:393
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2062[CLJ-2062] - added specs for "
+"https://clojure.atlassian.net/browse/CLJ-2062[CLJ-2062] - added specs for "
 "`import` and `refer-clojure`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:192
+#: en/content/community/devchangelog.adoc:394
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2114[CLJ-2114] - ::defn-args spec "
+"https://clojure.atlassian.net/browse/CLJ-2114[CLJ-2114] - ::defn-args spec "
 "incorrectly parses map body as a prepost rather than function body"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:193
+#: en/content/community/devchangelog.adoc:395
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2055[CLJ-2055] - binding-form spec "
+"https://clojure.atlassian.net/browse/CLJ-2055[CLJ-2055] - binding-form spec "
 "parses symbol-only maps incorrectly"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:195
+#: en/content/community/devchangelog.adoc:397
 msgid "Infrastructure:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:197
+#: en/content/community/devchangelog.adoc:399
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2113[CLJ-2113] - Clojure maven build "
-"updated"
+"https://clojure.atlassian.net/browse/CLJ-2113[CLJ-2113] - Clojure maven "
+"build updated"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:198
+#: en/content/community/devchangelog.adoc:400
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/w-1h7_xO2R0/Lp_ks-BSAQAJ[1.9.0-alpha14] (Oct 28, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:201
+#: en/content/community/devchangelog.adoc:403
 msgid "1.9.0-alpha14 includes the following changes since 1.9.0-alpha13:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:203
+#: en/content/community/devchangelog.adoc:405
 msgid ""
 "NEW `into` now has a 0-arity (returns []) and 1-arity (returns the coll you "
 "pass)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:204
+#: en/content/community/devchangelog.adoc:406
 msgid ""
 "NEW `halt-when` is a transducer that ends transduction when pred is "
 "satisfied. It takes an optional fn that will be invoked with the completed "
@@ -805,186 +1638,186 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:205
+#: en/content/community/devchangelog.adoc:407
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2042[CLJ-2042] - clojure.spec/form "
+"https://clojure.atlassian.net/browse/CLJ-2042[CLJ-2042] - clojure.spec/form "
 "of clojure.spec/? now resolves pred"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:206
+#: en/content/community/devchangelog.adoc:408
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2024[CLJ-2024] - clojure.spec.test/"
+"https://clojure.atlassian.net/browse/CLJ-2024[CLJ-2024] - clojure.spec.test/"
 "check now fully resolves aliased fspecs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:207
+#: en/content/community/devchangelog.adoc:409
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2032[CLJ-2032] - fixed confusing "
+"https://clojure.atlassian.net/browse/CLJ-2032[CLJ-2032] - fixed confusing "
 "error if fspec is missing :args spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:208
+#: en/content/community/devchangelog.adoc:410
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2027[CLJ-2027] - fixed 1.9 "
+"https://clojure.atlassian.net/browse/CLJ-2027[CLJ-2027] - fixed 1.9 "
 "regression with printing of `bean` instances"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:209
+#: en/content/community/devchangelog.adoc:411
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1790[CLJ-1790] - fixed error "
+"https://clojure.atlassian.net/browse/CLJ-1790[CLJ-1790] - fixed error "
 "extending protocols to Java arrays"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:210
+#: en/content/community/devchangelog.adoc:412
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1242[CLJ-1242] - = on sorted sets or "
-"maps with incompatible comparators now returns false rather than throws"
+"https://clojure.atlassian.net/browse/CLJ-1242[CLJ-1242] - = on sorted sets "
+"or maps with incompatible comparators now returns false rather than throws"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:211
+#: en/content/community/devchangelog.adoc:413
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/QWPUWG9BwbE/9a7ymJb9AQAJ[1.9.0-alpha13] (Sept 26, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:214
+#: en/content/community/devchangelog.adoc:416
 msgid "1.9.0-alpha13 includes the following changes since 1.9.0-alpha12:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:216
+#: en/content/community/devchangelog.adoc:418
 msgid ""
 "s/conform of nilable was always returning the passed value, not the "
 "conformed value"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:217
+#: en/content/community/devchangelog.adoc:419
 msgid ""
 "s/nilable now creates a generator that returns nil 10% of the time (instead "
 "of 50% of the time)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:218
+#: en/content/community/devchangelog.adoc:420
 msgid ""
 "s/nilable now delays realizing the predicate spec until first use (better "
 "for creating recursive specs)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:219
+#: en/content/community/devchangelog.adoc:421
 msgid ""
 "clojure.spec.gen now provides a dynload version of clojure.test.check."
 "generators/frequency"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:220
+#: en/content/community/devchangelog.adoc:422
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/lQ5beZB6QYE/ZLSPo023CgAJ[1.9.0-alpha12] (Sept 7, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:223
+#: en/content/community/devchangelog.adoc:425
 msgid "1.9.0-alpha12 includes the following changes since 1.9.0-alpha11:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:225
+#: en/content/community/devchangelog.adoc:427
 msgid "spec performance has been improved for many use cases"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:227
+#: en/content/community/devchangelog.adoc:429
 msgid ""
-"spec explain printer is now pluggable via the dynamic var clojure.spec/"
-"*explain-out* which should be a function that takes an explain-data and "
-"prints to *out*\t"
+"spec explain printer is now pluggable via the dynamic var `pass:[clojure."
+"spec/*explain-out*]` which should be a function that takes an explain-data "
+"and prints to `pass:[*out*]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:229
+#: en/content/community/devchangelog.adoc:431
 msgid ""
 "when a macro spec fails during macroexpand, throw ex-info with explain-data "
 "payload rather than IllegalArgumentException"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:230
+#: en/content/community/devchangelog.adoc:432
 msgid ""
-"pprint prints maps with namespace literal syntax when *print-namespace-maps* "
-"is true"
+"pprint prints maps with namespace literal syntax when `pass:[*print-"
+"namespace-maps*]` is true"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:231
+#: en/content/community/devchangelog.adoc:433
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1988[CLJ-1988] - coll-of, every "
+"https://clojure.atlassian.net/browse/CLJ-1988[CLJ-1988] - coll-of, every "
 "extended to conform sequences properly"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:232
+#: en/content/community/devchangelog.adoc:434
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2004[CLJ-2004] - multi-spec form was "
-"missing retag"
+"https://clojure.atlassian.net/browse/CLJ-2004[CLJ-2004] - multi-spec form "
+"was missing retag"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:233
+#: en/content/community/devchangelog.adoc:435
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2006[CLJ-2006] - fix old function "
+"https://clojure.atlassian.net/browse/CLJ-2006[CLJ-2006] - fix old function "
 "name in docstring"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:234
+#: en/content/community/devchangelog.adoc:436
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2008[CLJ-2008] - omit macros from "
+"https://clojure.atlassian.net/browse/CLJ-2008[CLJ-2008] - omit macros from "
 "checkable-syms"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:235
+#: en/content/community/devchangelog.adoc:437
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-2012[CLJ-2012] - fix ns spec on gen-"
+"https://clojure.atlassian.net/browse/CLJ-2012[CLJ-2012] - fix ns spec on gen-"
 "class signatures to allow class names"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:236
+#: en/content/community/devchangelog.adoc:438
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1224[CLJ-1224] - record instances "
+"https://clojure.atlassian.net/browse/CLJ-1224[CLJ-1224] - record instances "
 "now cache hasheq and hashCode like maps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:237
+#: en/content/community/devchangelog.adoc:439
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1673[CLJ-1673] - clojure.repl/dir-fn "
-"now works on namespace aliases"
+"https://clojure.atlassian.net/browse/CLJ-1673[CLJ-1673] - clojure.repl/dir-"
+"fn now works on namespace aliases"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:238
+#: en/content/community/devchangelog.adoc:440
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/_slHTn-Ej1Y/M_IVRODtCQAJ[1.9.0-alpha11] (Aug 19, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:241
+#: en/content/community/devchangelog.adoc:443
 msgid "1.9.0-alpha11 includes the following changes since 1.9.0-alpha10:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:243
+#: en/content/community/devchangelog.adoc:445
 msgid ""
 "Clojure now has specs for the following clojure.core macros: let, if-let, "
 "when-let, defn, defn-, fn, and ns. Because macro specs are checked during "
@@ -993,86 +1826,86 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:245
+#: en/content/community/devchangelog.adoc:447
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1914[CLJ-1914] - Fixed race "
+"https://clojure.atlassian.net/browse/CLJ-1914[CLJ-1914] - Fixed race "
 "condition in concurrent range realization"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:246
+#: en/content/community/devchangelog.adoc:448
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1870[CLJ-1870] - Fixed reloading a "
+"https://clojure.atlassian.net/browse/CLJ-1870[CLJ-1870] - Fixed reloading a "
 "defmulti removes metadata on the var"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:247
+#: en/content/community/devchangelog.adoc:449
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1744[CLJ-1744] - Clear unused "
+"https://clojure.atlassian.net/browse/CLJ-1744[CLJ-1744] - Clear unused "
 "locals, which can prevent memory leaks in some cases"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:248
+#: en/content/community/devchangelog.adoc:450
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1423[CLJ-1423] - Allow vars to be "
+"https://clojure.atlassian.net/browse/CLJ-1423[CLJ-1423] - Allow vars to be "
 "invoked with infinite arglists (also, faster)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:249
+#: en/content/community/devchangelog.adoc:451
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1993[CLJ-1993] - Added *print-"
-"namespace-maps* dynamic var that controls whether to use namespace map "
-"syntax for maps with keys from the same namespace. The default is false, but "
-"standard REPL bindings set this to true."
+"https://clojure.atlassian.net/browse/CLJ-1993[CLJ-1993] - Added `pass:"
+"[*print-namespace-maps*]` dynamic var that controls whether to use namespace "
+"map syntax for maps with keys from the same namespace. The default is false, "
+"but standard REPL bindings set this to true."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:250
+#: en/content/community/devchangelog.adoc:452
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1985[CLJ-1985] - Fixed with-gen of "
+"https://clojure.atlassian.net/browse/CLJ-1985[CLJ-1985] - Fixed with-gen of "
 "conformer losing unform fn"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:251
+#: en/content/community/devchangelog.adoc:453
 msgid "Fixed clojure.spec.test/check to skip spec'ed macros"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:252
+#: en/content/community/devchangelog.adoc:454
 msgid ""
 "Fixed regression from 1.9.0-alpha8 where type hints within destructuring "
 "were lost"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:253
+#: en/content/community/devchangelog.adoc:455
 msgid ""
 "Fixed clojure.spec/merge docstring to note merge doesn't flow conformed "
 "values"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:254
+#: en/content/community/devchangelog.adoc:456
 msgid "Fixed regex ops to use gen overrides if they are used"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:255
+#: en/content/community/devchangelog.adoc:457
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/MrwAx8DCjK8/rQSq8U5qCAAJ[1.9.0-alpha10] (Jul 11, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:258
+#: en/content/community/devchangelog.adoc:460
 msgid "1.9.0-alpha10 includes the following changes since 1.9.0-alpha9:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:260
+#: en/content/community/devchangelog.adoc:462
 msgid ""
 "NEW clojure.core/any? - a predicate that matches anything. any? has built-in "
 "gen support. The :clojure.spec/any spec has been removed. Additionally, gen "
@@ -1080,56 +1913,57 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:262
+#: en/content/community/devchangelog.adoc:464
 msgid "keys* will now gen"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:264
+#: en/content/community/devchangelog.adoc:466
 msgid ""
 "gen overrides (see c.s/gen, c.s./exercise, c.s.t/check, c.s.t/instrument) "
 "now expect no-arg functions that return gens, rather than gens"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:266
+#: en/content/community/devchangelog.adoc:468
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1977[CLJ-1977] - fix regression from "
-"alpha9 in data conversion of Throwable when stack trace is empty"
+"https://clojure.atlassian.net/browse/CLJ-1977[CLJ-1977] - fix regression "
+"from alpha9 in data conversion of Throwable when stack trace is empty"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:267
+#: en/content/community/devchangelog.adoc:469
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/M-zC83YJl10/-zN-b2ekBgAJ[1.9.0-alpha9] (Jul 5, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:270
+#: en/content/community/devchangelog.adoc:472
 msgid "1.9.0-alpha9 includes the following changes since 1.9.0-alpha8:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:272
+#: en/content/community/devchangelog.adoc:474
 msgid ""
 "NEW clojure.spec/assert - a facility for adding spec assertions to your "
-"code. See the docs for *compile-asserts* and assert for more details."
+"code. See the docs for `pass:[*compile-asserts*]` and assert for more "
+"details."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:274
+#: en/content/community/devchangelog.adoc:476
 msgid "clojure.spec/merge - now merges rather than flows in conform/unform"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:276
+#: en/content/community/devchangelog.adoc:478
 msgid ""
 "clojure.spec.test/instrument now reports the caller that caused an :args "
 "spec failure and ignores spec'ed macros"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:278
+#: en/content/community/devchangelog.adoc:480
 msgid ""
 "clojure.spec.test - `test`, `test-fn`, `testable-syms` renamed to `check`, "
 "`check-fn`, and `checkable-syms` to better reflect their purpose. "
@@ -1138,7 +1972,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:280
+#: en/content/community/devchangelog.adoc:482
 msgid ""
 "clojure.core/Throwable->map formerly returned StackTraceElements which were "
 "later handled by the printer. Now the StackTraceElements are converted to "
@@ -1146,18 +1980,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:281
+#: en/content/community/devchangelog.adoc:483
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/vF3RuDWuX8I/pvn4IUuUAwAJ[1.9.0-alpha8] (Jun 28, 16)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:284
+#: en/content/community/devchangelog.adoc:486
 msgid "1.9.0-alpha8 includes the following changes since 1.9.0-alpha7:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:286
+#: en/content/community/devchangelog.adoc:488
 msgid ""
 "The collection spec support has been greatly enhanced, with new controls for "
 "conforming, generation, counts, distinct elements and collection kinds. See "
@@ -1165,7 +1999,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:288
+#: en/content/community/devchangelog.adoc:490
 msgid ""
 "instrumenting and testing has been streamlined and made more composable, "
 "with powerful new features for spec and gen overrides, stubbing, and "
@@ -1174,7 +2008,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:290
+#: en/content/community/devchangelog.adoc:492
 msgid ""
 "Namespaced keyword reader format, printing and destructuring have been "
 "enhanced for lifting namespaces up for keys, supporting more succinct use of "
@@ -1182,111 +2016,111 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:292
+#: en/content/community/devchangelog.adoc:494
 msgid ""
 "Many utilities have been added, for keys spec merging, fn exercising, Java "
 "1.8 timestamps, bounded-count and more."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:294
+#: en/content/community/devchangelog.adoc:496
 msgid "Changelog:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:296
-#: en/content/community/devchangelog.adoc:346
+#: en/content/community/devchangelog.adoc:498
+#: en/content/community/devchangelog.adoc:548
 msgid "clojure.spec:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:298
+#: en/content/community/devchangelog.adoc:500
 msgid ""
 "[changed] map-of - now conforms all values and optionally all keys, has "
 "additional kind, count, gen options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:299
+#: en/content/community/devchangelog.adoc:501
 msgid ""
 "[changed] coll-of - now conforms all elements, has additional kind, count, "
 "gen options. No longer takes init-coll param."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:300
+#: en/content/community/devchangelog.adoc:502
 msgid ""
 "[added] every - validates a collection by sampling, with many additional "
 "options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:301
+#: en/content/community/devchangelog.adoc:503
 msgid ""
 "[added] every-kv - validates a map by sampling, with many additional options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:302
+#: en/content/community/devchangelog.adoc:504
 msgid "[added] merge"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:303
+#: en/content/community/devchangelog.adoc:505
 msgid "[changed] gen overrides can now be specified by either name or path"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:304
+#: en/content/community/devchangelog.adoc:506
 msgid ""
 "[changed] fspec generator - creates a function that generates return values "
 "according to the :ret spec and ignores :fn spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:305
+#: en/content/community/devchangelog.adoc:507
 msgid ""
 "[added] explain-out - produces an explain output string from an explain-data "
 "result"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:306
+#: en/content/community/devchangelog.adoc:508
 msgid ""
 "[changed] explain-data - output is now a vector of problems with a :path "
 "element, not a map keyed by path"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:307
+#: en/content/community/devchangelog.adoc:509
 msgid ""
 "[added] get-spec - for looking up a spec in the registry by keyword or symbol"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:308
+#: en/content/community/devchangelog.adoc:510
 msgid "[removed] fn-spec - see get-spec"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:309
+#: en/content/community/devchangelog.adoc:511
 msgid ""
 "[added] exercise-fn - given a spec'ed function, returns generated args and "
 "the return value"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:310
+#: en/content/community/devchangelog.adoc:512
 msgid "All instrument functions moved to clojure.spec.test"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:312
+#: en/content/community/devchangelog.adoc:514
 msgid "clojure.spec.test:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:314
+#: en/content/community/devchangelog.adoc:516
 msgid ""
 "[changed] instrument - previously took a var, now takes either a symbol, "
 "namespace symbol, or a collection of symbols or namespaces, plus many new "
@@ -1294,462 +2128,462 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:315
+#: en/content/community/devchangelog.adoc:517
 msgid "[removed] instrument-ns - see instrument"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:316
+#: en/content/community/devchangelog.adoc:518
 msgid "[removed] instrument-all - see instrument"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:317
+#: en/content/community/devchangelog.adoc:519
 msgid ""
 "[changed] unstrument - previously took a var, now takes a symbol, namespace "
 "symbol, or collection of symbol or namespaces"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:318
+#: en/content/community/devchangelog.adoc:520
 msgid "[removed] unstrument-ns - see unstrument"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:319
+#: en/content/community/devchangelog.adoc:521
 msgid "[removed] unstrument-all - see unstrument"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:320
+#: en/content/community/devchangelog.adoc:522
 msgid "[added] instrumentable-syms - syms that can be instrumented"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:321
+#: en/content/community/devchangelog.adoc:523
 msgid ""
 "[added] with-instrument-disabled - disable instrument's checking of calls "
 "within a scope"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:322
+#: en/content/community/devchangelog.adoc:524
 msgid ""
 "[changed] check-var renamed to test and has a different signature, check docs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:323
+#: en/content/community/devchangelog.adoc:525
 msgid "[changed] run-tests - see test"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:324
+#: en/content/community/devchangelog.adoc:526
 msgid "[changed] run-all-tests - see test"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:325
+#: en/content/community/devchangelog.adoc:527
 msgid "[changed] check-fn - renamed to test-fn"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:326
+#: en/content/community/devchangelog.adoc:528
 msgid "[added] abbrev-result - returns a briefer description of a test"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:327
+#: en/content/community/devchangelog.adoc:529
 msgid "[added] summarize-result - returns a summary of many tests"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:328
+#: en/content/community/devchangelog.adoc:530
 msgid "[added] testable-syms - syms that can be tested"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:329
+#: en/content/community/devchangelog.adoc:531
 msgid "[added] enumerate-namespace - provides symbols for vars in namespaces"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:331
-#: en/content/community/devchangelog.adoc:340
+#: en/content/community/devchangelog.adoc:533
+#: en/content/community/devchangelog.adoc:542
 msgid "clojure.core:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:333
+#: en/content/community/devchangelog.adoc:535
 msgid ""
 "[changed] - inst-ms now works with java.time.Instant instances when Clojure "
 "is used with Java 8"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:334
+#: en/content/community/devchangelog.adoc:536
 msgid ""
 "[added] bounded-count - if coll is counted? returns its count, else counts "
 "at most first n elements of coll using its seq"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:335
+#: en/content/community/devchangelog.adoc:537
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/3wmGJ5B4b6c/YgCJCtN8CQAJ[1.9.0-alpha7] (Jun 15, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:338
+#: en/content/community/devchangelog.adoc:540
 msgid ""
 "1.9.0-alpha7 includes the following changes since 1.9.0-alpha6 (all BREAKING "
 "vs alpha5/6):"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:341
+#: en/content/community/devchangelog.adoc:543
 msgid ""
 "long? => int? - now checks for all Java fixed precision integer types (byte,"
 "short,integer,long)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:342
+#: en/content/community/devchangelog.adoc:544
 msgid "pos-long? => pos-int?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:343
+#: en/content/community/devchangelog.adoc:545
 msgid "neg-long? => neg-int?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:344
+#: en/content/community/devchangelog.adoc:546
 msgid "nat-long? => nat-int?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:347
+#: en/content/community/devchangelog.adoc:549
 msgid "long-in-range? => int-in-range?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:348
+#: en/content/community/devchangelog.adoc:550
 msgid "long-in => int-in"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:350
+#: en/content/community/devchangelog.adoc:552
 msgid ""
 "If you are interested in checking specifically for long?, please use "
 "#(instance? Long %)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:352
+#: en/content/community/devchangelog.adoc:554
 msgid "Sorry for the switcheroo and welcome to alphatown!"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:353
+#: en/content/community/devchangelog.adoc:555
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/JIgmEFhAlq8/6UXO_rUpCQAJ[1.9.0-alpha6] (Jun 14, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:356
+#: en/content/community/devchangelog.adoc:558
 msgid "1.9.0-alpha6 includes the following changes since 1.9.0-alpha5:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:358
+#: en/content/community/devchangelog.adoc:560
 msgid "& regex op now fails fast when regex passes but preds do not"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:359
+#: en/content/community/devchangelog.adoc:561
 msgid ""
 "returns from alt/or are now map entries (supporting key/val) rather than 2-"
 "element vector"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:360
+#: en/content/community/devchangelog.adoc:562
 msgid ""
 "[BREAKING] fn-specs was renamed to fn-spec and returns either the registered "
 "fspec or nil"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:361
+#: en/content/community/devchangelog.adoc:563
 msgid "fspec now accepts ifn?, not fn?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:362
+#: en/content/community/devchangelog.adoc:564
 msgid "fspec impl supports keyword lookup of its :args, :ret, and :fn specs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:363
+#: en/content/community/devchangelog.adoc:565
 msgid ""
 "fix fspec describe which was missing keys and improve describe of :args/ret/"
 "fn specs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:364
+#: en/content/community/devchangelog.adoc:566
 msgid ""
 "instrument now checks *only* the :args spec of a var - use the clojure.spec."
 "test functions to test :ret and :fn specs"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:365
+#: en/content/community/devchangelog.adoc:567
 msgid ""
 "Added generator support for bytes? and uri? which were accidentally left out "
 "in alpha5"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:366
+#: en/content/community/devchangelog.adoc:568
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/D_s9Drua6D4/CTWk12cXDQAJ[1.9.0-alpha5] (Jun 7, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:369
+#: en/content/community/devchangelog.adoc:571
 msgid "1.9.0-alpha5 includes the following changes since 1.9.0-alpha4:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:371
+#: en/content/community/devchangelog.adoc:573
 msgid "Fixes:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:372
+#: en/content/community/devchangelog.adoc:574
 msgid "doc was printing \"Spec\" when none existed"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:373
+#: en/content/community/devchangelog.adoc:575
 msgid "fix ? explain"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:375
+#: en/content/community/devchangelog.adoc:577
 msgid ""
 "New predicates in core (all also now have built-in generator support in "
 "spec):"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:376
+#: en/content/community/devchangelog.adoc:578
 msgid "seqable?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:377
+#: en/content/community/devchangelog.adoc:579
 msgid "boolean?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:378
+#: en/content/community/devchangelog.adoc:580
 msgid "long?, pos-long?, neg-long?, nat-long?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:379
+#: en/content/community/devchangelog.adoc:581
 msgid "double?, bigdec?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:380
+#: en/content/community/devchangelog.adoc:582
 msgid "ident?, simple-ident?, qualified-ident?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:381
+#: en/content/community/devchangelog.adoc:583
 msgid "simple-symbol?, qualified-symbol?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:382
+#: en/content/community/devchangelog.adoc:584
 msgid "simple-keyword?, qualified-keyword?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:383
+#: en/content/community/devchangelog.adoc:585
 msgid "bytes? (for byte[])"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:384
+#: en/content/community/devchangelog.adoc:586
 msgid "indexed?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:385
+#: en/content/community/devchangelog.adoc:587
 msgid "inst? (and new inst-ms)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:386
+#: en/content/community/devchangelog.adoc:588
 msgid "uuid?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:387
+#: en/content/community/devchangelog.adoc:589
 msgid "uri?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:389
+#: en/content/community/devchangelog.adoc:591
 msgid "New in spec:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:390
+#: en/content/community/devchangelog.adoc:592
 msgid ""
 "unform - given a spec and a conformed value, returns the unconformed value"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:391
+#: en/content/community/devchangelog.adoc:593
 msgid "New preds: long-in-range?, inst-in-range?"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:392
+#: en/content/community/devchangelog.adoc:594
 msgid "New specs (with gen support): long-in, inst-in, double-in"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:393
+#: en/content/community/devchangelog.adoc:595
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/TR-qUFVJwj0/aZspfZ3XBAAJ[1.9.0-alpha4] (May 31, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:396
+#: en/content/community/devchangelog.adoc:598
 msgid "1.9.0-alpha4 includes the following changes since 1.9.0-alpha3:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:398
+#: en/content/community/devchangelog.adoc:600
 msgid "fix describe empty cat"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:399
+#: en/content/community/devchangelog.adoc:601
 msgid "improve update-in perf"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:400
+#: en/content/community/devchangelog.adoc:602
 msgid "optimize seq (&) destructuring"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:401
+#: en/content/community/devchangelog.adoc:603
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/WxT9kPIwlYI/r5PJpAP_CwAJ[1.9.0-alpha3] (May 26, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:404
+#: en/content/community/devchangelog.adoc:606
 msgid "1.9.0-alpha3 includes the following changes since 1.9.0-alpha2:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:406
+#: en/content/community/devchangelog.adoc:608
 msgid ""
 "Macro fdef specs should no longer spec the implicit &form or &env [BREAKING "
 "CHANGE]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:407
+#: en/content/community/devchangelog.adoc:609
 msgid "multi-spec includes dispatch values in path"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:408
+#: en/content/community/devchangelog.adoc:610
 msgid "multi-spec no longer requires special default method"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:409
+#: en/content/community/devchangelog.adoc:611
 msgid "fix for rep* bug"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:410
+#: en/content/community/devchangelog.adoc:612
 msgid "added explain-str (explain that returns a string)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:411
+#: en/content/community/devchangelog.adoc:613
 msgid "improved s/+ explain"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:412
+#: en/content/community/devchangelog.adoc:614
 msgid "explain output tweaked"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:413
+#: en/content/community/devchangelog.adoc:615
 msgid "fix test reporting"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:414
+#: en/content/community/devchangelog.adoc:616
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/ZBD5-Nhruc4/dntP8iQDAwAJ[1.9.0-alpha2] (May 25, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:417
+#: en/content/community/devchangelog.adoc:619
 msgid "1.9.0-alpha2 includes the following changes since 1.9.0-alpha1:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:419
+#: en/content/community/devchangelog.adoc:621
 msgid "Better describe for s/+"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:420
+#: en/content/community/devchangelog.adoc:622
 msgid "Capture *recursion-limit* on gen call"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:421
+#: en/content/community/devchangelog.adoc:623
 msgid "explain-data now contains :in key for the input path"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:422
+#: en/content/community/devchangelog.adoc:624
 msgid ""
-"https://dev.clojure.org/jira/browse/CLJ-1931[CLJ-1931] - with-gen throws "
+"https://clojure.atlassian.net/browse/CLJ-1931[CLJ-1931] - with-gen throws "
 "AbstractMethodError"
 msgstr ""
 
 #. type: Title ===
-#: en/content/community/devchangelog.adoc:423
+#: en/content/community/devchangelog.adoc:625
 #, no-wrap
 msgid "https://groups.google.com/d/msg/clojure/7jbL34IjNzw/dejSpHefAwAJ[1.9.0-alpha1] (May 24, 2016)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:426
+#: en/content/community/devchangelog.adoc:628
 msgid "1.9.0-alpha1 includes the first release of clojure.spec."
 msgstr ""
 
 #. type: Plain text
-#: en/content/community/devchangelog.adoc:427
+#: en/content/community/devchangelog.adoc:629
 msgid ""
 "A usage guide for spec is now available: https://clojure.org/guides/spec."
 msgstr ""

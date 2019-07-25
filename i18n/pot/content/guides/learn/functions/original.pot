@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,15 +24,15 @@ msgid "Java Interop"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:4
-#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
+#: en/content/guides/learn/syntax.adoc:4
 #: en/content/guides/learn/sequential_colls.adoc:4
-#: en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/flow.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/hashed_colls.adoc:4
 msgid "Alex Miller 2017-09-02"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/learn/syntax.adoc:341
+#: en/content/guides/learn/syntax.adoc:363
 #: en/content/guides/learn/functions.adoc:299
 #, no-wrap
 msgid "Test your knowledge"
@@ -111,7 +111,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:45
-msgid "Each arity is a list `([args*] body*)`. One arity can invoke another."
+msgid ""
+"Each arity is a list `([args*] body*)`. One arity can invoke another. The "
+"body can contain any number of expressions and the return value is the "
+"result of the last expression."
 msgstr ""
 
 #. type: delimited block -
@@ -493,7 +496,7 @@ msgstr ""
 msgid ""
 "`let` binds symbols to values in a \"lexical scope\". A lexical scope "
 "creates a new context for names, nested inside the surrounding context. "
-"Names defined in a let take precedence over the names in the outer context."
+"Names defined in a `let` take precedence over the names in the outer context."
 msgstr ""
 
 #. type: delimited block -
@@ -547,7 +550,7 @@ msgstr ""
 #: en/content/guides/learn/functions.adoc:248
 msgid ""
 "The messenger function takes a `msg` argument. Here the `defn` is also "
-"creating lexical scope for `msg` - it only has meanining within the "
+"creating lexical scope for `msg` - it only has meaning within the "
 "`messenger` function."
 msgstr ""
 
@@ -561,6 +564,7 @@ msgstr ""
 
 #. type: Title ===
 #: en/content/guides/learn/functions.adoc:251
+#: en/content/guides/equality.adoc:737
 #, no-wrap
 msgid "Closures"
 msgstr ""
@@ -616,7 +620,7 @@ msgstr ""
 msgid ""
 "| Task | Java | Clojure |\n"
 "|Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | \n"
-"|Instance method| `rnd.next()` | `(.nextInt rnd)` |\n"
+"|Instance method| `rnd.nextInt()` | `(.nextInt rnd)` |\n"
 "|Instance field| `object.field` | `(.-field object)` |\n"
 "|Static method| `Math.sqrt(25)` | `(Math/sqrt 25)` |\n"
 "|Static field| `Math.PI` | `Math/PI` |\n"
@@ -662,7 +666,7 @@ msgstr ""
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:303
 msgid ""
-"Define a function `greet` that takes not arguments and prints \"Hello\". "
+"Define a function `greet` that takes no arguments and prints \"Hello\". "
 "Replace the ___ with the implementation: `(defn greet [] ___)`"
 msgstr ""
 
@@ -764,7 +768,7 @@ msgstr ""
 #: en/content/guides/learn/functions.adoc:344
 msgid ""
 "Define a function `always-thing` which takes any number of arguments, "
-"ignores all of them, and returns the keyword `:thing`."
+"ignores all of them, and returns the number `100`."
 msgstr ""
 
 #. type: delimited block -
@@ -795,8 +799,8 @@ msgid ""
 "(let [n (rand-int Integer/MAX_VALUE)\n"
 "      f (make-thingy n)]\n"
 "  (assert (= n (f)))\n"
-"  (assert (= n (f :foo)))\n"
-"  (assert (= n (apply f :foo (range)))))\n"
+"  (assert (= n (f 123)))\n"
+"  (assert (= n (apply f 123 (range)))))\n"
 msgstr ""
 
 #. type: Plain text
@@ -885,24 +889,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:402
+#: en/content/guides/learn/functions.adoc:403
 msgid "The cosine of pi is -1"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:403
+#: en/content/guides/learn/functions.adoc:404
 msgid "For some x, sin(x)^2 + cos(x)^2 = 1"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:405
+#: en/content/guides/learn/functions.adoc:406
 msgid ""
 "Define a function that takes an HTTP URL as a string, fetches that URL from "
 "the web, and returns the content as a string."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:407
+#: en/content/guides/learn/functions.adoc:408
 msgid ""
 "Hint: Using the http://docs.oracle.com/javase/8/docs/api/java/net/URL."
 "html[java.net.URL] class and its `openStream` method. Then use the Clojure "
@@ -910,8 +914,8 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:411
-#: en/content/guides/learn/functions.adoc:419
+#: en/content/guides/learn/functions.adoc:412
+#: en/content/guides/learn/functions.adoc:420
 #, no-wrap
 msgid ""
 "(defn http-get [url]\n"
@@ -919,42 +923,42 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:413
+#: en/content/guides/learn/functions.adoc:414
 #, no-wrap
-msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+msgid "(assert (.contains (http-get \"https://www.w3.org\") \"html\"))\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:415
+#: en/content/guides/learn/functions.adoc:416
 msgid ""
 "In fact, the Clojure `slurp` function interprets its argument as a URL first "
 "before trying it as a file name. Write a simplified http-get:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:422
+#: en/content/guides/learn/functions.adoc:423
 msgid "Define a function `one-less-arg` that takes two arguments:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:423
+#: en/content/guides/learn/functions.adoc:425
 msgid "`f`, a function"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:424
+#: en/content/guides/learn/functions.adoc:426
 msgid "`x`, a value"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:426
+#: en/content/guides/learn/functions.adoc:428
 msgid ""
 "and returns another function which calls `f` on `x` plus any additional "
 "arguments. +"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:430
+#: en/content/guides/learn/functions.adoc:432
 #, no-wrap
 msgid ""
 "(defn one-less-arg [f x]\n"
@@ -962,12 +966,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:432
+#: en/content/guides/learn/functions.adoc:434
 msgid "In Clojure, the `partial` function is a more general version of this."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:434
+#: en/content/guides/learn/functions.adoc:436
 msgid ""
 "Define a function `two-fns` which takes two functions as arguments, `f` and "
 "`g`. It returns another function which takes one argument, calls `g` on it, "
@@ -975,12 +979,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/functions.adoc:436
+#: en/content/guides/learn/functions.adoc:438
 msgid "That is, your function returns the composition of `f` and `g`."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/functions.adoc:440
+#: en/content/guides/learn/functions.adoc:442
 #, no-wrap
 msgid ""
 "(defn two-fns [f g]\n"

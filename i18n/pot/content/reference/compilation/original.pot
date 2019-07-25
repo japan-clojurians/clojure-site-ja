@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
-#: en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/atoms.adoc:4
 #: en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
-#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
-#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4
-#: en/content/about/clojureclr.adoc:4
+#: en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/jvm_hosted.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
@@ -255,8 +255,8 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/compilation.adoc:56
 msgid ""
-"A loader classfile will produced in ``my/domain/lib__init.class``, under "
-"*compile-path*, which must be in the classpath"
+"A loader classfile will be produced in ``my/domain/lib__init.class``, under "
+"`pass:[*compile-path*]`, which must be in the classpath"
 msgstr ""
 
 #. type: Plain text
@@ -448,7 +448,8 @@ msgstr ""
 #: en/content/reference/compilation.adoc:102
 msgid ""
 "In the simplest case, an empty :gen-class is supplied, and the compiled "
-"class has only main, which is implemented by defining -main in the namespace:"
+"class has only main, which is implemented by defining -main in the "
+"namespace. The file should be saved in src/clojure/examples/hello.clj:"
 msgstr ""
 
 #. type: delimited block -
@@ -469,23 +470,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:113
-msgid "This gets compiled as follows:"
+#: en/content/reference/compilation.adoc:114
+msgid "To compile, first ensure the target output directory `classes` exists:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:116
+#: en/content/reference/compilation.adoc:118
+#, no-wrap
+msgid "mkdir classes\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/compilation.adoc:121
+msgid "Then compile to generate the classes as follows:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/compilation.adoc:125
 #, no-wrap
 msgid "(compile 'clojure.examples.hello)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:118
-msgid "And can be run like an ordinary Java app like so:"
+#: en/content/reference/compilation.adoc:127
+msgid ""
+"And can be run like an ordinary Java app like so (be sure to include the "
+"output classes directory):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:122
+#: en/content/reference/compilation.adoc:131
 #, no-wrap
 msgid ""
 "java -cp ./classes:clojure.jar clojure.examples.hello Fred\n"
@@ -493,7 +507,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:125
+#: en/content/reference/compilation.adoc:134
 msgid ""
 "Here's an example using both a more involved :gen-class, and stand-alone "
 "calls to gen-class and gen-interface. In this case we are creating classes "
@@ -509,7 +523,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:127
+#: en/content/reference/compilation.adoc:136
 msgid ""
 ":init functions (-init in this case) are unusual, in that they always return "
 "a vector, the first element of which is a vector of arguments for the "
@@ -520,7 +534,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:129
+#: en/content/reference/compilation.adoc:138
 msgid ""
 "hasNext and next are implementations of methods in the Iterator interface. "
 "While the methods take no args, the implementation functions for instance "
@@ -530,14 +544,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:131
+#: en/content/reference/compilation.adoc:140
 msgid ""
 "The gen-interface call will create an interface called clojure.examples."
 "IBar, with a single method bar."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:133
+#: en/content/reference/compilation.adoc:142
 msgid ""
 "The stand-alone gen-class call will generate another named class, clojure."
 "examples.impl, whose implementing namespace will default to the current "
@@ -548,7 +562,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:135
+#: en/content/reference/compilation.adoc:144
 msgid ""
 "Note in main how an instances of the classes can be created, and methods "
 "called, using ordinary Java interop. Using it would be similarly ordinary "
@@ -556,7 +570,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:144
+#: en/content/reference/compilation.adoc:153
 #, no-wrap
 msgid ""
 "(ns clojure.examples.instance\n"
@@ -568,7 +582,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:147
+#: en/content/reference/compilation.adoc:156
 #, no-wrap
 msgid ""
 "(defn -init [s]\n"
@@ -576,7 +590,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:151
+#: en/content/reference/compilation.adoc:160
 #, no-wrap
 msgid ""
 "(defn -hasNext [this]\n"
@@ -585,7 +599,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:157
+#: en/content/reference/compilation.adoc:166
 #, no-wrap
 msgid ""
 "(defn -next [this]\n"
@@ -596,7 +610,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:161
+#: en/content/reference/compilation.adoc:170
 #, no-wrap
 msgid ""
 "(gen-interface\n"
@@ -605,7 +619,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:167
+#: en/content/reference/compilation.adoc:176
 #, no-wrap
 msgid ""
 "(gen-class\n"
@@ -616,7 +630,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:170
+#: en/content/reference/compilation.adoc:179
 #, no-wrap
 msgid ""
 "(defn impl-foo [this]\n"
@@ -624,7 +638,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:176
+#: en/content/reference/compilation.adoc:185
 #, no-wrap
 msgid ""
 "(defn impl-bar [this]\n"
@@ -635,7 +649,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:184
+#: en/content/reference/compilation.adoc:193
 #, no-wrap
 msgid ""
 "(defn -main [s]\n"
@@ -648,12 +662,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/compilation.adoc:187
+#: en/content/reference/compilation.adoc:196
 msgid "Compile as above, and run like an ordinary Java app:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/compilation.adoc:196
+#: en/content/reference/compilation.adoc:205
 #, no-wrap
 msgid ""
 "java -cp ./classes:clojure.jar clojure.examples.instance asdf\n"

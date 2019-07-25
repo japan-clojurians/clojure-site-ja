@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 18:19+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,29 +17,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
+msgid "Rich Hickey 2015-01-01"
+msgstr "Rich Hickey 2015-01-01"
+
+#. type: Plain text
+#: en/content/reference/libs.adoc:63 en/content/reference/java_interop.adoc:96
+#: en/content/reference/java_interop.adoc:116 en/content/reference/java_interop.adoc:129
+#: en/content/reference/java_interop.adoc:151 en/content/reference/java_interop.adoc:158
+#: en/content/reference/java_interop.adoc:172 en/content/reference/java_interop.adoc:215
+#: en/content/reference/metadata.adoc:23 en/content/reference/evaluation.adoc:62 en/content/reference/evaluation.adoc:73
+#: en/content/community/editing.adoc:71 en/content/community/editing.adoc:85 en/content/community/editing.adoc:103
+#: en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
+msgid "''''"
+msgstr "''''"
+
+#. type: Plain text
 #: en/content/reference/metadata.adoc:1 en/content/news/2011/07/22/introducing-clojurescript.adoc:36
 #, no-wrap
 msgid "Metadata"
 msgstr "メタデータ"
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
-msgid "Rich Hickey 2015-01-01"
-msgstr "Rich Hickey 2015-01-01"
 
 #. type: Plain text
 #: en/content/reference/metadata.adoc:17
@@ -64,18 +75,7 @@ msgid ""
 "that both objects can share the same sequence."
 msgstr ""
 
-#. type: Plain text
-#: en/content/reference/metadata.adoc:23 en/content/reference/metadata.adoc:29 en/content/reference/libs.adoc:63
-#: en/content/reference/java_interop.adoc:78 en/content/reference/java_interop.adoc:98
-#: en/content/reference/java_interop.adoc:111 en/content/reference/java_interop.adoc:133
-#: en/content/reference/java_interop.adoc:140 en/content/reference/java_interop.adoc:154
-#: en/content/reference/java_interop.adoc:195 en/content/reference/evaluation.adoc:62
-#: en/content/reference/evaluation.adoc:73 en/content/community/editing.adoc:71 en/content/community/editing.adoc:85
-#: en/content/community/editing.adoc:103 en/content/community/editing.adoc:121 en/content/community/editing.adoc:131
-msgid "''''"
-msgstr "''''"
-
-#. type: Title ==
+#. type: Title ===
 #: en/content/reference/metadata.adoc:24
 #, no-wrap
 msgid "(_meta_ obj)"
@@ -86,70 +86,157 @@ msgstr ""
 msgid "Returns the metadata of obj, returns nil if there is no metadata."
 msgstr ""
 
-#. type: Title ==
-#: en/content/reference/metadata.adoc:30
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:31
+#, no-wrap
+msgid "(pprint (meta #'+)) ;; #'+ is the + var\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:39
+#, no-wrap
+msgid ""
+";; {:added \"1.2\",\n"
+";;  :name +,\n"
+";;  :file \"clojure/core.clj\",\n"
+";;  :column 1,\n"
+";;  :line 984,\n"
+";;  :arglists ([] [x] [x y] [x y & more]),\n"
+";;  ...\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/metadata.adoc:41
 #, no-wrap
 msgid "(_with-meta_ obj map)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:32
+#: en/content/reference/metadata.adoc:44
 msgid "Returns an object of the same type and value as obj, with map as its metadata."
 msgstr ""
 
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:50
+#, no-wrap
+msgid ""
+"(def m ^:hi [1 2 3])\n"
+"(meta (with-meta m {:bye true}))\n"
+";; {:bye true}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/metadata.adoc:52
+#, no-wrap
+msgid "_pass:[*print-meta*]_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:55
+msgid ""
+"If set to logical true, when printing an object, its metadata will also be printed in a form that can be read back by "
+"the reader."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:61
+#, no-wrap
+msgid ""
+"(def m ^:hi [1 2 3])\n"
+"(binding [*print-meta* true]\n"
+"  (prn m))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:63
+#, no-wrap
+msgid ";; ^{:hi true} [1 2 3]\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/metadata.adoc:65
+#, no-wrap
+msgid "(_vary-meta_ obj map)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:68
+msgid "Returns an object of the same type and value as obj, with `(apply f (meta obj) f & args)` as its metadata."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/metadata.adoc:74
+#, no-wrap
+msgid ""
+"(def m ^:hi [1 2 3])\n"
+"(meta (vary-meta m merge {:bye true}))\n"
+";; {:hi true, :bye true}\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/metadata.adoc:76
+#, no-wrap
+msgid "(_alter-meta!_ ref f & args) and (_reset-meta!_ ref map)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:79
+msgid "Modify or reset the metadata respectively for a namespace/var/ref/agent/atom."
+msgstr ""
+
 #. type: Title ==
-#: en/content/reference/metadata.adoc:33
+#: en/content/reference/metadata.adoc:80
 #, no-wrap
 msgid "Metadata Reader Macros"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:36
+#: en/content/reference/metadata.adoc:83
 msgid ""
 "In addition to with-meta, there are a number of reader macros (<<reader#macrochars,The Reader: Macro Characters>>) "
-"for applying metadata to the expression following it:"
+"for applying metadata to the expression following it at read-time:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:38
-msgid "`^{:doc \"How obj works!\"} obj` - Sets the metadata of obj to the provided map."
+#: en/content/reference/metadata.adoc:85
+msgid "`^{:doc \"How it works!\"}` - adds the metadata map to the metadata of the next value read"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:39
-msgid "Equivalent to `(with-meta obj {:doc \"How obj works!\"})`"
+#: en/content/reference/metadata.adoc:86
+msgid "`^:dynamic` - like `^{:dynamic true}`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:40
-msgid "`^:dynamic obj` - Sets the given keyword to true in the object's metadata."
+#: en/content/reference/metadata.adoc:87
+msgid "`^String` - like `^{:tag java.lang.String}`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:41
-msgid "Equivalent to `^{:dynamic true} obj`"
+#: en/content/reference/metadata.adoc:88
+msgid "`^\"java.lang.String\"` - like `^{:tag java.lang.String}`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:42
-msgid "`^String obj` - Sets the value of :tag key in the object's metadata."
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:43
-msgid "Equivalent to `^{:tag java.lang.String} obj`"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/metadata.adoc:44
+#: en/content/reference/metadata.adoc:90
 msgid ""
-"Used to hint an objects type to the Clojure compiler. See <<java_interop#typehints,Java Interop: Type Hints>> for "
-"more information and a complete list of special type hints."
+"The `:tag` key is used to hint an objects type to the Clojure compiler. See <<java_interop#typehints,Java Interop: "
+"Type Hints>> for more information and a complete list of special type hints."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:46
+#: en/content/reference/metadata.adoc:93
 msgid ""
 "It is possible to add multiple pieces of metadata by chaining the metadata reader macros together.  For example: `^:"
-"dynamic ^ints obj` would apply both the :dynamic flag and ints type-hint to obj."
+"dynamic ^ints obj` would apply both the :dynamic flag and ints type-hint to obj. Metadata chains from right to left "
+"(left takes precedence)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/metadata.adoc:94
+msgid ""
+"Note that metadata reader macros are applied at read-time, not at evaluation-time, and can only be used with values "
+"that support metadata, like symbols, vars, collections, sequences, namespaces, refs, atoms, agents, etc. Some "
+"important exceptions that *don't* support metadata are strings, numbers, booleans, Java objects, keywords (these are "
+"cached and can be shared within the runtime), and deftypes (unless they explicitly implement clojure.lang.IMeta)."
 msgstr ""

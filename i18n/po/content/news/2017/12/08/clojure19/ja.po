@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2018-04-02 07:15+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,10 +23,43 @@ msgid "Documentation"
 msgstr "ドキュメンテーション"
 
 #. type: Plain text
-#: en/content/guides/spec.adoc:1199 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
+#: en/content/guides/spec.adoc:1196 en/content/news/2017/12/08/clojure19.adoc:18 en/content/about/spec.adoc:100
 #, no-wrap
 msgid "Instrumentation"
 msgstr "specの組み込み(instrumentation)"
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:17 en/content/news/2017/12/08/clojure19.adoc:41
+#: en/content/news/2016/01/19/clojure18.adoc:17
+msgid "## Contributors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:27 en/content/news/2017/12/08/clojure19.adoc:54
+#: en/content/news/2016/01/19/clojure18.adoc:35
+#, no-wrap
+msgid "Ghadi Shayban\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:29 en/content/news/2017/12/08/clojure19.adoc:58
+#: en/content/news/2016/01/19/clojure18.adoc:41
+#, no-wrap
+msgid "Jozef Wagner\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:32 en/content/news/2017/12/08/clojure19.adoc:62
+#, no-wrap
+msgid "Michał Marczyk\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2018/12/17/clojure110.adoc:33 en/content/news/2017/12/08/clojure19.adoc:63
+#: en/content/news/2016/01/19/clojure18.adoc:47
+#, no-wrap
+msgid "Nicola Mometto\n"
+msgstr ""
 
 #. type: Title =
 #: en/content/news/2017/12/08/clojure19.adoc:1
@@ -152,11 +185,6 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:41 en/content/news/2016/01/19/clojure18.adoc:17
-msgid "## Contributors"
-msgstr ""
-
-#. type: Plain text
 #: en/content/news/2017/12/08/clojure19.adoc:43
 msgid "Thanks to all of the community members who contributed to Clojure 1.9 (first time contributors in bold):"
 msgstr ""
@@ -216,12 +244,6 @@ msgid "*Gerrit Jansen Van Vuuren*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:54 en/content/news/2016/01/19/clojure18.adoc:35
-#, no-wrap
-msgid "Ghadi Shayban\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/news/2017/12/08/clojure19.adoc:55
 #, no-wrap
 msgid "*Greg Leppert*\n"
@@ -240,12 +262,6 @@ msgid "*Johan Mena*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:58 en/content/news/2016/01/19/clojure18.adoc:41
-#, no-wrap
-msgid "Jozef Wagner\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/news/2017/12/08/clojure19.adoc:59
 #, no-wrap
 msgid "*Lee Yen-Chin*\n"
@@ -261,18 +277,6 @@ msgstr ""
 #: en/content/news/2017/12/08/clojure19.adoc:61 en/content/news/2016/01/19/clojure18.adoc:45
 #, no-wrap
 msgid "Michael Blume\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:62
-#, no-wrap
-msgid "Michał Marczyk\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2017/12/08/clojure19.adoc:63 en/content/news/2016/01/19/clojure18.adoc:47
-#, no-wrap
-msgid "Nicola Mometto\n"
 msgstr ""
 
 #. type: Plain text

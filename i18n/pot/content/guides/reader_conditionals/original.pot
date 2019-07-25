@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/namespaces.adoc:1
-#: en/content/guides/reader_conditionals.adoc:87 en/content/guides/faq.adoc:133
+#: en/content/reference/namespaces.adoc:1 en/content/guides/faq.adoc:203
+#: en/content/guides/reader_conditionals.adoc:87
 #: en/content/news/2011/07/22/introducing-clojurescript.adoc:28
 #, no-wrap
 msgid "Namespaces"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:700
+#: en/content/guides/weird_characters.adoc:755
 #: en/content/guides/reader_conditionals.adoc:25
 #, no-wrap
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:708
+#: en/content/guides/weird_characters.adoc:763
 #: en/content/guides/reader_conditionals.adoc:30
 msgid ""
 "The syntax for a splicing reader conditional is `#?@`. It is used to splice "
@@ -44,7 +44,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:713
+#: en/content/guides/weird_characters.adoc:768
 #: en/content/guides/reader_conditionals.adoc:36
 #, no-wrap
 msgid ""
@@ -54,13 +54,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:715
+#: en/content/guides/weird_characters.adoc:770
 #: en/content/guides/reader_conditionals.adoc:39
 msgid "as this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:719
+#: en/content/guides/weird_characters.adoc:774
 #: en/content/guides/reader_conditionals.adoc:44
 #, no-wrap
 msgid ""
@@ -69,10 +69,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/comparators.adoc:71
+#: en/content/guides/test_check_beginner.adoc:11
+#: en/content/guides/equality.adoc:128 en/content/guides/comparators.adoc:73
 #: en/content/guides/reader_conditionals.adoc:11
 #, no-wrap
 msgid "Introduction"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/learn/flow.adoc:285
+#: en/content/guides/reader_conditionals.adoc:120
+#, no-wrap
+msgid "Exception handling"
 msgstr ""
 
 #. type: Title =
@@ -270,13 +278,6 @@ msgid ""
 "#?(:clj (defn run [query conn]\n"
 "      (let [token (get-token conn)]\n"
 "        (net/send-start-query conn token (replace-vars query)))))\n"
-msgstr ""
-
-#. type: Title ===
-#: en/content/guides/reader_conditionals.adoc:120
-#: en/content/guides/learn/flow.adoc:285
-#, no-wrap
-msgid "Exception handling"
 msgstr ""
 
 #. type: Plain text

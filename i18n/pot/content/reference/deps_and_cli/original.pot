@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. type: Title =
+#: en/content/reference/transients.adoc:17
+#: en/content/reference/deps_and_cli.adoc:14
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
+#: en/content/about/rationale.adoc:1
+#, no-wrap
+msgid "Rationale"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/java_interop.adoc:295
+#: en/content/reference/deps_and_cli.adoc:220
+#, no-wrap
+msgid "Aliases"
+msgstr ""
+
 #. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:203
+#: en/content/reference/deps_and_cli.adoc:1 en/content/guides/faq.adoc:319
 #, no-wrap
 msgid "Deps and CLI"
 msgstr ""
@@ -25,15 +41,6 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:4
 msgid "Alex Miller 2017-11-30"
-msgstr ""
-
-#. type: Title =
-#: en/content/reference/deps_and_cli.adoc:14
-#: en/content/reference/transients.adoc:17
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
-#: en/content/about/rationale.adoc:1
-#, no-wrap
-msgid "Rationale"
 msgstr ""
 
 #. type: Plain text
@@ -562,7 +569,8 @@ msgstr ""
 msgid ""
 "Dependencies are declared in deps.edn with a top level key `:deps` - a map "
 "from library to coordinate. Libraries are symbols of the form <groupID>/"
-"<artifactId> or simply <id> if the group and artifact ID are the same."
+"<artifactId> or simply <id> if the group and artifact ID are the same. To "
+"indicate a classifier, use <groupId>/<artifactId>$<classifier>."
 msgstr ""
 
 #. type: Plain text
@@ -577,33 +585,36 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:183
-msgid "Other optional keys: `:classifier`, `:extension`, `:exclusions`"
+msgid "Other optional keys: `:extension`, `:exclusions`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:184
-msgid "Local project coordinate: `{:local/root \"/path/to/project\"}`"
+msgid ""
+"Note: `:classifier` is no longer supported - add to lib name as specified "
+"above"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:185
-msgid "Optional key `:deps/manifest`"
+msgid "Local project coordinate: `{:local/root \"/path/to/project\"}`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:186
-msgid "Specifies the project manifest type"
+msgid "Optional key `:deps/manifest`"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:187
-msgid ""
-"Default is to auto-detect the project type (such as `:deps`, `:lein`, `:pom`)"
+msgid "Specifies the project manifest type"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:188
-msgid "Currently only `:deps` is supported"
+msgid ""
+"Default is to auto-detect the project type (currently either `:deps` or `:"
+"pom`)"
 msgstr ""
 
 #. type: Plain text
@@ -614,41 +625,62 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:190
 msgid ""
+"If the jar has been packaged with a pom.xml file, the pom will be read and "
+"used to find transitive deps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:191
+msgid ""
 "Git coordinate: `{:git/url \"https://github.com/user/project.git\", :sha "
 "\"sha\", :tag \"tag\"}`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:191
-msgid "The `:git/url` can be one of the following:"
-msgstr ""
-
-#. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:192
-msgid "https - secure anonymous access to public repos"
+msgid "Required key `:git/url` can be one of the following:"
 msgstr ""
 
 #. type: Plain text
 #: en/content/reference/deps_and_cli.adoc:193
+msgid "https - secure anonymous access to public repos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:194
 msgid ""
 "ssh or user@host form urls (including GitHub) - ssh-based access (see Git "
 "configuration section)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:194
-msgid "The `:sha` attribute should indicate the full commit sha"
+#: en/content/reference/deps_and_cli.adoc:195
+msgid "Required key `:sha` should indicate the full commit sha"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:195
+#: en/content/reference/deps_and_cli.adoc:196
+msgid "Optional key `:tag` is used only to indicate the semantics of the sha"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:197
+msgid "Optional key `:deps/root`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:198
 msgid ""
-"The `:tag` attribute is optional but can be used to indicate the semantics "
-"of the sha"
+"Specifies the relative path within the root to search for the manifest file"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:199
+msgid "Optional key `:deps/manifest` - same as in `:local` deps"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:203
+#: en/content/reference/deps_and_cli.adoc:207
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -659,13 +691,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/deps_and_cli.adoc:205
+#: en/content/reference/deps_and_cli.adoc:209
 #, no-wrap
 msgid "Paths"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:208
+#: en/content/reference/deps_and_cli.adoc:212
 msgid ""
 "Paths are declared in a top level key `:paths` and is a vector of string "
 "paths (typically relative to the project root). These source paths will be "
@@ -673,7 +705,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:210
+#: en/content/reference/deps_and_cli.adoc:214
 msgid ""
 "While dependency sets are merged across all of the configuration files, only "
 "the last paths found in one of the config files is used, prior ones are "
@@ -681,152 +713,145 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:214
+#: en/content/reference/deps_and_cli.adoc:218
 #, no-wrap
 msgid "{:paths [\"src\"]}\n"
 msgstr ""
 
-#. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:216
-#: en/content/reference/java_interop.adoc:275
-#, no-wrap
-msgid "Aliases"
-msgstr ""
-
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:219
+#: en/content/reference/deps_and_cli.adoc:223
 msgid ""
 "Aliases are defined in the `:aliases` section of the config file. The "
 "Clojure tool supports several kinds of aliases:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:221
+#: en/content/reference/deps_and_cli.adoc:225
 msgid ""
 "-R - `resolve-deps` aliases are modifications applied during `resolve-deps`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:222
-#: en/content/reference/deps_and_cli.adoc:228
-#: en/content/reference/deps_and_cli.adoc:233
-#: en/content/reference/deps_and_cli.adoc:238
+#: en/content/reference/deps_and_cli.adoc:226
+#: en/content/reference/deps_and_cli.adoc:232
+#: en/content/reference/deps_and_cli.adoc:237
+#: en/content/reference/deps_and_cli.adoc:242
 msgid "Allowed keys in these aliases are:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:223
+#: en/content/reference/deps_and_cli.adoc:227
 msgid ""
 "`:extra-deps` - a deps map from lib to coordinate of deps to add to the deps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:224
+#: en/content/reference/deps_and_cli.adoc:228
 msgid ""
 "`:override-deps` - a deps map from lib to coordinate of override versions to "
 "use"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:225
+#: en/content/reference/deps_and_cli.adoc:229
 msgid ""
 "`:default-deps` - a deps map from lib to coordinate of versions to use if "
 "none is found"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:226
+#: en/content/reference/deps_and_cli.adoc:230
 msgid ""
 "If multiple -R alias maps are activated, all of these are merge-with merged"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:227
+#: en/content/reference/deps_and_cli.adoc:231
 msgid ""
 "-C - `make-classpath` aliases are modifications applied during `make-"
 "classpath`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:229
+#: en/content/reference/deps_and_cli.adoc:233
 msgid "`:extra-paths` - a collection of string paths to add to `:paths`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:230
+#: en/content/reference/deps_and_cli.adoc:234
 msgid ""
 "`:classpath-overrides` - a map of lib to string path to replace the location "
 "of the lib"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:231
+#: en/content/reference/deps_and_cli.adoc:235
 msgid ""
 "If multiple -C alias maps are activated, `:extra-paths` concatenate and `:"
 "classpath-overrides` merge-with merge"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:232
+#: en/content/reference/deps_and_cli.adoc:236
 msgid "-O - JVM option aliases"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:234
+#: en/content/reference/deps_and_cli.adoc:238
 msgid "`:jvm-opts` - a collection of string JVM options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:235
+#: en/content/reference/deps_and_cli.adoc:239
 msgid "If multiple -O alias maps are activated, `:jvm-opts` concatenate"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:236
+#: en/content/reference/deps_and_cli.adoc:240
 msgid ""
 "If -J JVM options are also specified on the command line, they are "
 "concatenated after the alias options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:237
+#: en/content/reference/deps_and_cli.adoc:241
 msgid "-M - clojure.main option aliases"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:239
+#: en/content/reference/deps_and_cli.adoc:243
 msgid "`:main-opts` - a collection of clojure.main options"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:240
+#: en/content/reference/deps_and_cli.adoc:244
 msgid "If multiple -M alias maps are activated, only the last one will be used"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:241
+#: en/content/reference/deps_and_cli.adoc:245
 msgid ""
 "If command line clojure.main arguments are supplied on the command line, "
 "they are concatenated after the last main alias map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:242
+#: en/content/reference/deps_and_cli.adoc:246
 msgid "-A - applies across all alias types"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:243
+#: en/content/reference/deps_and_cli.adoc:247
 msgid "These aliases support ALL alias keys above and all will be applied"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:245
+#: en/content/reference/deps_and_cli.adoc:249
 msgid "So given a deps.edn like:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:254
+#: en/content/reference/deps_and_cli.adoc:258
 #, no-wrap
 msgid ""
 "{:paths [\"src\"]\n"
@@ -838,7 +863,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:257
+#: en/content/reference/deps_and_cli.adoc:261
 msgid ""
 "You can activate all three aliases to create a classpath that switches to an "
 "older Clojure version, adds the benchmarking library, and includes the test "
@@ -846,32 +871,32 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:261
+#: en/content/reference/deps_and_cli.adoc:265
 #, no-wrap
 msgid "clj -R:1.7:bench -C:test -Spath\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:264
+#: en/content/reference/deps_and_cli.adoc:268
 msgid ""
 "You can use -A to include all types of aliases or define aliases that cross "
 "multiple alias types:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:268
+#: en/content/reference/deps_and_cli.adoc:272
 #, no-wrap
 msgid "clj -A:1.7:bench:test -Spath\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/deps_and_cli.adoc:270
+#: en/content/reference/deps_and_cli.adoc:274
 #, no-wrap
 msgid "Procurers"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:273
+#: en/content/reference/deps_and_cli.adoc:277
 msgid ""
 "Coordinates are interpreted by procurers, which know how to determine "
 "dependencies for a library and download artifacts. tools.deps.alpha is "
@@ -880,7 +905,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:275
+#: en/content/reference/deps_and_cli.adoc:279
 msgid ""
 "The procurer to use is determined by examining the attributes of the "
 "coordinate and using the first attribute qualifier that's found (ignoring "
@@ -890,7 +915,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:277
+#: en/content/reference/deps_and_cli.adoc:281
 msgid ""
 "Procurers may also have configuration attributes stored at the root of the "
 "configuration map under the same qualifier. The `mvn` procurer will look for "
@@ -898,7 +923,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:283
+#: en/content/reference/deps_and_cli.adoc:287
 #, no-wrap
 msgid ""
 "{:mvn/repos\n"
@@ -907,13 +932,68 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/content/reference/deps_and_cli.adoc:285
+#: en/content/reference/deps_and_cli.adoc:289
 #, no-wrap
-msgid "Maven private S3 repos"
+msgid "Maven authenticated repos"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:288
+#: en/content/reference/deps_and_cli.adoc:292
+msgid ""
+"For Maven deps in authenticated repositories, existing Maven infrastructure "
+"is used to convey credentials."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:294
+msgid "In your ~/.m2/settings.xml:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:306
+#, no-wrap
+msgid ""
+"<servers>\n"
+"  ...\n"
+"  <server>\n"
+"    <id>my-auth-repo</id>\n"
+"    <username>zango</username>\n"
+"    <password>123</password>\n"
+"  </server>\n"
+"  ...\n"
+"</servers>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:309
+msgid ""
+"Then in your deps.edn include a repo with a name matching the server id "
+"(here `my-auth-repo`):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:316
+#, no-wrap
+msgid ""
+"{:deps\n"
+" {authenticated/dep {:mvn/version \"1.2.3\"}}\n"
+" :mvn/repos\n"
+" {\"my-auth-repo\" {:url \"https://my.auth.com/repo\"}}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:319
+msgid "Then just refer to your dependencies as usual in the `:deps`."
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/deps_and_cli.adoc:320
+#, no-wrap
+msgid "Maven S3 repos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:323
 msgid ""
 "The tools also provide support for connecting to private S3 Maven "
 "repositories (thanks to the https://github.com/s3-wagon-private/s3-wagon-"
@@ -922,12 +1002,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:290
+#: en/content/reference/deps_and_cli.adoc:325
 msgid "Add a `:mvn/repos` that includes the s3 repository root:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:297
+#: en/content/reference/deps_and_cli.adoc:332
 #, no-wrap
 msgid ""
 "{:deps\n"
@@ -937,40 +1017,73 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:300
-msgid "Specify your AWS S3 credentials using one of these mechanisms:"
+#: en/content/reference/deps_and_cli.adoc:335
+msgid ""
+"AWS credentials can be set in the ~/.m2/settings.xml on a per-server basis. "
+"The repository name in deps.edn must match the server id in settings.xml:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:347
+#, no-wrap
+msgid ""
+"<servers>\n"
+"  ...\n"
+"  <server>\n"
+"    <id>my-private-repo</id>\n"
+"    <username>AWS_ACCESS_KEY_HERE</username>\n"
+"    <password>AWS_SECRET_ACCESS_KEY_HERE</password>\n"
+"  </server>\n"
+"  ...\n"
+"</servers>\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:302
+#: en/content/reference/deps_and_cli.adoc:350
+msgid ""
+"It is also possible to specify your AWS credentials using the AWS credential "
+"chain. This is NOT RECOMMENDED as the same AWS credentials will be used for "
+"all AWS repositories (unlike settings.xml, which lets you set these on a per-"
+"repository basis)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:352
+msgid ""
+"AWS S3 credentials can be set in the environment using one of these "
+"mechanisms:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:354
 msgid ""
 "Set the environment variables `AWS_ACCESS_KEY_ID` and "
 "`AWS_SECRET_ACCESS_KEY`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:303
+#: en/content/reference/deps_and_cli.adoc:355
 msgid ""
 "Create a default profile in the AWS credentials file `~/.aws/credentials` "
 "(older `~/.aws/config` also supported)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:304
+#: en/content/reference/deps_and_cli.adoc:356
 msgid ""
 "Create a named profile in the AWS credentials file and set the environment "
 "variable `AWS_PROFILE` with its name."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:305
+#: en/content/reference/deps_and_cli.adoc:357
 msgid ""
 "Amazon ECS container and instance profile credentials should also work, but "
 "have not been tested."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:307
+#: en/content/reference/deps_and_cli.adoc:359
 msgid ""
 "For more information, most of the advice in http://docs.aws.amazon.com/sdk-"
 "for-java/v1/developer-guide/credentials.html[this AWS document] describes "
@@ -980,13 +1093,47 @@ msgid ""
 msgstr ""
 
 #. type: Title ====
-#: en/content/reference/deps_and_cli.adoc:308
+#: en/content/reference/deps_and_cli.adoc:360
+#, no-wrap
+msgid "Maven proxies"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:363
+msgid ""
+"In environments where the internet is accessed via a proxy, existing Maven "
+"configuration in `~/.m2/settings.xml` is used to set up the proxy connection:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/deps_and_cli.adoc:374
+#, no-wrap
+msgid ""
+"<proxies>\n"
+"  <proxy>\n"
+"    <id>my-proxy</id>\n"
+"    <host>proxy.my.org</host>\n"
+"    <port>3128</port>\n"
+"    <nonProxyHosts>localhost|*.my.org</nonProxyHosts>\n"
+"  </proxy>\n"
+"</proxies>\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/deps_and_cli.adoc:377
+msgid ""
+"Refer to the Maven https://maven.apache.org/guides/mini/guide-proxies."
+"html[Guide to using proxies] for further details."
+msgstr ""
+
+#. type: Title ====
+#: en/content/reference/deps_and_cli.adoc:378
 #, no-wrap
 msgid "Git configuration"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:311
+#: en/content/reference/deps_and_cli.adoc:381
 msgid ""
 "The supported git url protocols are https and ssh. https repos will be "
 "accessed anonymously and require no additional authentication information. "
@@ -994,7 +1141,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:315
+#: en/content/reference/deps_and_cli.adoc:385
 msgid ""
 "ssh repos may be either public or private. Access to a git repo via ssh "
 "requires an ssh keypair. The private key of this keypair may or may not have "
@@ -1005,7 +1152,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:320
+#: en/content/reference/deps_and_cli.adoc:390
 #, no-wrap
 msgid ""
 "$ ssh-add -l\n"
@@ -1013,60 +1160,60 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:323
+#: en/content/reference/deps_and_cli.adoc:393
 msgid ""
 "which should return one or more registered identities, typically the one at "
 "`~/.ssh/id_rsa`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:325
+#: en/content/reference/deps_and_cli.adoc:395
 msgid ""
 "For more information on creating keys and using the ssh-agent to manage your "
 "ssh identities, GitHub provides excellent info:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:327
+#: en/content/reference/deps_and_cli.adoc:397
 msgid ""
 "https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-"
 "the-ssh-agent/"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:328
+#: en/content/reference/deps_and_cli.adoc:398
 msgid "https://help.github.com/articles/working-with-ssh-key-passphrases/"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:330
+#: en/content/reference/deps_and_cli.adoc:400
 msgid "_Note: user/password authentication is not supported for any protocol._"
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/deps_and_cli.adoc:331
+#: en/content/reference/deps_and_cli.adoc:401
 #, no-wrap
 msgid "Usage"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:334
+#: en/content/reference/deps_and_cli.adoc:404
 msgid "Usage:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:336
+#: en/content/reference/deps_and_cli.adoc:406
 msgid "`clojure [dep-opt*] [init-opt*] [main-opt] [arg*]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:337
+#: en/content/reference/deps_and_cli.adoc:407
 #, no-wrap
 msgid "`clj     [dep-opt*] [init-opt*] [main-opt] [arg*]`\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:339
+#: en/content/reference/deps_and_cli.adoc:409
 msgid ""
 "The clojure tool is a runner for Clojure. clj is a wrapper for interactive "
 "repl use. These tools ultimately construct and invoke a command-line of the "
@@ -1074,18 +1221,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:341
+#: en/content/reference/deps_and_cli.adoc:411
 msgid ""
 "`java [java-opt*] -cp classpath clojure.main [init-opt*] [main-opt] [arg*]`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:343
+#: en/content/reference/deps_and_cli.adoc:413
 msgid "The dep-opts are used to build the java-opts and classpath:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:361
+#: en/content/reference/deps_and_cli.adoc:431
 #, no-wrap
 msgid ""
 "-Jopt           Pass opt through in java_opts, ex: -J-Xmx512m\n"
@@ -1107,12 +1254,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:364
+#: en/content/reference/deps_and_cli.adoc:434
 msgid "init-opt:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:368
+#: en/content/reference/deps_and_cli.adoc:438
 #, no-wrap
 msgid ""
 "-i, --init path     Load a file or resource\n"
@@ -1120,12 +1267,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:371
+#: en/content/reference/deps_and_cli.adoc:441
 msgid "main-opt:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/deps_and_cli.adoc:378
+#: en/content/reference/deps_and_cli.adoc:448
 #, no-wrap
 msgid ""
 "-m, --main ns-name  Call the -main function from namespace w/args\n"
@@ -1136,117 +1283,117 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/deps_and_cli.adoc:380
+#: en/content/reference/deps_and_cli.adoc:450
 #, no-wrap
 msgid "Classpath construction"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:383
+#: en/content/reference/deps_and_cli.adoc:453
 msgid ""
 "The following process is used to construct the classpath for invoking "
 "clojure.main:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:385
+#: en/content/reference/deps_and_cli.adoc:455
 msgid "Compute the deps map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:386
+#: en/content/reference/deps_and_cli.adoc:456
 msgid "Read the deps.edn configuration file in the following locations:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:387
+#: en/content/reference/deps_and_cli.adoc:457
 msgid "Install directory (unless -Srepro)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:388
+#: en/content/reference/deps_and_cli.adoc:458
 msgid "Config directory (if it exists and unless -Srepro)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:389
+#: en/content/reference/deps_and_cli.adoc:459
 msgid "Current directory (if it exists)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:390
+#: en/content/reference/deps_and_cli.adoc:460
 msgid "-Sdeps data (if it exists)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:391
+#: en/content/reference/deps_and_cli.adoc:461
 msgid ""
 "Combine the deps.edn maps in that order with `merge-with merge` (except for :"
 "paths where last wins)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:392
+#: en/content/reference/deps_and_cli.adoc:462
 msgid "Compute the resolve-deps args"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:393
+#: en/content/reference/deps_and_cli.adoc:463
 msgid ""
 "If `-R` specifies one or more aliases, find each alias in the deps map `:"
 "aliases`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:394
+#: en/content/reference/deps_and_cli.adoc:464
 msgid ""
 "`merge-with` `merge` the alias maps - the result is the resolve-args map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:395
+#: en/content/reference/deps_and_cli.adoc:465
 msgid "Invoke `resolve-deps` with deps map and resolve-args map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:396
+#: en/content/reference/deps_and_cli.adoc:466
 msgid "Compute the classpath-overrides map"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:397
+#: en/content/reference/deps_and_cli.adoc:467
 msgid ""
 "If `-C` specifies one or more aliases, find each alias in the deps map `:"
 "aliases`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:398
+#: en/content/reference/deps_and_cli.adoc:468
 msgid "`merge` the classpath-override alias maps"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:399
+#: en/content/reference/deps_and_cli.adoc:469
 msgid ""
 "Invoke `make-classpath` with the libs map returned by `resolve-deps`, the "
 "paths, and the classpath-args map"
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/deps_and_cli.adoc:400
+#: en/content/reference/deps_and_cli.adoc:470
 #, no-wrap
 msgid "Classpath caching"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:403
+#: en/content/reference/deps_and_cli.adoc:473
 msgid ""
 "Classpath files are cached in the current directory under `.cpcache/`. File "
 "are of two forms:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:405
+#: en/content/reference/deps_and_cli.adoc:475
 msgid ""
 "`.cpcache/<hash>.libs` - a `::lib-map` in the https://github.com/clojure/"
 "tools.deps.alpha/blob/master/src/main/clojure/clojure/tools/deps/alpha/specs."
@@ -1254,60 +1401,60 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:406
+#: en/content/reference/deps_and_cli.adoc:476
 msgid ""
 "`.cpcache/<hash>.cp` - a classpath string, the output of `make-classpath`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:408
+#: en/content/reference/deps_and_cli.adoc:478
 msgid ""
 "where the `<hash>` is based on the config file paths, the resolve-aliases, "
 "and the classpath aliases."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:410
+#: en/content/reference/deps_and_cli.adoc:480
 msgid "The cached classpath file is used when:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:412
+#: en/content/reference/deps_and_cli.adoc:482
 msgid "It exists"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:413
+#: en/content/reference/deps_and_cli.adoc:483
 msgid "It is newer than all `deps.edn` files"
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:414
+#: en/content/reference/deps_and_cli.adoc:484
 #, no-wrap
 msgid "Installers"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:417
+#: en/content/reference/deps_and_cli.adoc:487
 msgid ""
 "For tools installation, see the instructions in the <<xref/../../guides/"
 "getting_started#,Getting Started>> guide."
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/deps_and_cli.adoc:418 en/content/about/spec.adoc:337
+#: en/content/reference/deps_and_cli.adoc:488 en/content/about/spec.adoc:337
 #, no-wrap
 msgid "Glossary"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:421
+#: en/content/reference/deps_and_cli.adoc:491
 #, no-wrap
 msgid "**Library**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:423
+#: en/content/reference/deps_and_cli.adoc:493
 msgid ""
 "An independently-developed chunk of code residing in a directory hierarchy "
 "under a root.  We will narrow to those libraries that can be globally named, "
@@ -1315,13 +1462,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:425
+#: en/content/reference/deps_and_cli.adoc:495
 #, no-wrap
 msgid "**Artifact**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:427
+#: en/content/reference/deps_and_cli.adoc:497
 msgid ""
 "A snapshot of a library, captured at a point in time, possibly subjected to "
 "some build process, labeled with a version, containing some manifest "
@@ -1329,26 +1476,26 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:429
+#: en/content/reference/deps_and_cli.adoc:499
 #, no-wrap
 msgid "**Coordinate**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:431
+#: en/content/reference/deps_and_cli.adoc:501
 msgid ""
 "A particular version of a library chosen for use, with information "
 "sufficient to obtain and use the library."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:433
+#: en/content/reference/deps_and_cli.adoc:503
 #, no-wrap
 msgid "**Dependency**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:435
+#: en/content/reference/deps_and_cli.adoc:505
 msgid ""
 "An expression, at the project/library level, that the declaring library "
 "needs the declared library in order to provide some of its functions. Must "
@@ -1357,34 +1504,34 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:437
+#: en/content/reference/deps_and_cli.adoc:507
 msgid "Dependency types:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:439
+#: en/content/reference/deps_and_cli.adoc:509
 msgid "maven artifacts"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:440
+#: en/content/reference/deps_and_cli.adoc:510
 msgid ""
 "unversioned libraries - a file location identifying a jar or directory root"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:441
+#: en/content/reference/deps_and_cli.adoc:511
 msgid "git coordinates"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:443
+#: en/content/reference/deps_and_cli.adoc:513
 #, no-wrap
 msgid "**Classpath (and roots/paths)**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:445
+#: en/content/reference/deps_and_cli.adoc:515
 msgid ""
 "An ordered list of local 'places' (filesystem directories and/or jars) that "
 "will form root paths for searches of requires/imports at runtime, supplied "
@@ -1394,25 +1541,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:447
+#: en/content/reference/deps_and_cli.adoc:517
 #, no-wrap
 msgid "**Expansion**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:449
+#: en/content/reference/deps_and_cli.adoc:519
 msgid ""
 "Given a set of root dependencies, a full walk of the transitive dependencies."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:451
+#: en/content/reference/deps_and_cli.adoc:521
 #, no-wrap
 msgid "**Resolution**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:453
+#: en/content/reference/deps_and_cli.adoc:523
 msgid ""
 "Given a collection of root dependencies and additional modifications, "
 "creates a fully-expanded dependency tree, then produces a mapping from each "
@@ -1423,13 +1570,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:455
+#: en/content/reference/deps_and_cli.adoc:525
 #, no-wrap
 msgid "**Classpath creation**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:457
+#: en/content/reference/deps_and_cli.adoc:527
 msgid ""
 "Creates a classpath from a resolved lib-map and optional extra local lib "
 "paths. Current plan for lib-map does not provide for control over resulting "
@@ -1437,13 +1584,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:459
+#: en/content/reference/deps_and_cli.adoc:529
 #, no-wrap
 msgid "**Version**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:461
+#: en/content/reference/deps_and_cli.adoc:531
 msgid ""
 "A human numbering system whose interpretation is determined by convention. "
 "Usually x.y.z. Must protect against 'semver' interpretation, which allows "
@@ -1453,13 +1600,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:463
+#: en/content/reference/deps_and_cli.adoc:533
 #, no-wrap
 msgid "**Version difference**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:465
+#: en/content/reference/deps_and_cli.adoc:535
 msgid ""
 "This occurs when the dependency expansion contains the same library with "
 "more than one \"version\" specified but where there is a relative ordering "
@@ -1469,13 +1616,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:467
+#: en/content/reference/deps_and_cli.adoc:537
 #, no-wrap
 msgid "**Version conflict**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:469
+#: en/content/reference/deps_and_cli.adoc:539
 msgid ""
 "A version conflict occurs when the dependency expansion contains the same "
 "library with more than one \"version\" such that the best choice cannot be "
@@ -1483,43 +1630,43 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:471
+#: en/content/reference/deps_and_cli.adoc:541
 msgid "semver version breakage (major version changed)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:472
+#: en/content/reference/deps_and_cli.adoc:542
 msgid ""
 "github shas that do not contain any common root or ancestry (two shas on "
 "different branches or unrelated repos, for example)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:473
+#: en/content/reference/deps_and_cli.adoc:543
 msgid ""
 "versions that cross different repos or repo types such that no relative "
 "relationship can be established"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:475
+#: en/content/reference/deps_and_cli.adoc:545
 #, no-wrap
 msgid "**Maven Repo**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:477
+#: en/content/reference/deps_and_cli.adoc:547
 msgid "A repository of library artifacts - e.g. Maven central or Clojars"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:479
+#: en/content/reference/deps_and_cli.adoc:549
 #, no-wrap
 msgid "**Requires and imports**\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/deps_and_cli.adoc:480
+#: en/content/reference/deps_and_cli.adoc:550
 msgid ""
 "Mentions in source code of library (sub)components that must be in the "
 "classpath in order to succeed. namespace and package/class names are "

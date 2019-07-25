@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-07-25 20:51+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Title =
+#: en/content/events/2018/clojureconj.adoc:1
 #: en/content/events/2017/clojureconj.adoc:1
 #: en/content/events/2016/clojureconj.adoc:1
+#: en/content/events/2019/clojureconj.adoc:1
 #, no-wrap
 msgid "Clojure/conj"
 msgstr ""
 
 #. type: Plain text
-#: en/content/events/2017/clojureconj.adoc:4
-msgid "Cognitect 2017-10-12"
-msgstr ""
-
-#. type: Plain text
+#: en/content/events/2018/clojureconj.adoc:12
 #: en/content/events/2017/clojureconj.adoc:12
 #: en/content/events/2016/clojureconj.adoc:12
+#: en/content/events/2019/clojureconj.adoc:12
 msgid ""
 "Clojure/conj is the original conference for Clojure and its community. "
 "Founded in 2010, the conference is the premier place for developers from all "
@@ -39,12 +38,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: en/content/events/2018/clojureconj.adoc:14
 #: en/content/events/2017/clojureconj.adoc:14
 #: en/content/events/2016/clojureconj.adoc:14
+#: en/content/events/2019/clojureconj.adoc:14
 msgid ""
 "Clojure/conj couples a session track with in-depth workshops and learning "
 "opportunities, and offers a unique opportunity to mingle with other "
 "developers, contributors, and professionals during a dense three-day event."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2017/clojureconj.adoc:4
+msgid "Cognitect 2017-10-12"
 msgstr ""
 
 #. type: Plain text

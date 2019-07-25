@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/dev/creating_tickets.adoc:46
+#: en/content/reference/datatypes.adoc:115
+#: en/content/reference/special_forms.adoc:182
+msgid "Example:"
+msgstr ""
 
 #. type: Title =
 #: en/content/reference/special_forms.adoc:1
@@ -281,8 +288,8 @@ msgstr ""
 #: en/content/reference/special_forms.adoc:105
 #: en/content/reference/special_forms.adoc:191
 msgid ""
-"See <<special_forms#binding-forms#,Binding Forms>> for more information "
-"about binding forms."
+"See <<special_forms#binding-forms,Binding Forms>> for more information about "
+"binding forms."
 msgstr ""
 
 #. type: Plain text
@@ -411,7 +418,7 @@ msgstr ""
 msgid ""
 "A fn (overload) defines a recursion point at the top of the function, with "
 "arity equal to the number of __param__s _including the rest param, if "
-"present_. See <<special_forms#recur#,`recur`>>."
+"present_. See <<special_forms#recur,`recur`>>."
 msgstr ""
 
 #. type: Plain text
@@ -490,14 +497,8 @@ msgid ""
 "_pre-expr_ and _post-expr_ are boolean expressions that may refer to the "
 "parameters of the function. In addition, `%` may be used in a _post-expr_ to "
 "refer to the function's return value. If any of the conditions evaluate to "
-"`false` and `pass:[*assert*]` is true, an assertion failure exception is "
-"thrown."
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/special_forms.adoc:182
-#: en/content/reference/datatypes.adoc:115 en/content/guides/faq.adoc:184
-msgid "Example:"
+"`false` and `pass:[*assert*]` is true, a `java.lang.AssertionError` "
+"exception is thrown."
 msgstr ""
 
 #. type: delimited block -
@@ -521,7 +522,7 @@ msgstr ""
 msgid ""
 "`loop` is exactly like `let`, except that it establishes a recursion point "
 "at the top of the loop, with arity equal to the number of bindings. See "
-"<<special_forms#recur#,`recur`>>."
+"<<special_forms#recur,`recur`>>."
 msgstr ""
 
 #. type: Title ==
@@ -536,7 +537,7 @@ msgid ""
 "Evaluates the expressions __expr__s in order, then, in parallel, rebinds the "
 "bindings of the recursion point to the values of the __expr__s. If the "
 "recursion point was a `fn` method, then it rebinds the params. If the "
-"recursion point was a <<special_forms#loop#,`loop`>>, then it rebinds the "
+"recursion point was a <<special_forms#loop,`loop`>>, then it rebinds the "
 "`loop` bindings. Execution then jumps back to the recursion point. The "
 "`recur` expression must match the arity of the recursion point exactly. In "
 "particular, if the recursion point was the top of a variadic fn method, "
@@ -663,14 +664,22 @@ msgid ""
 "sequential, while a map literal can bind to anything that is associative."
 msgstr ""
 
+#. type: Plain text
+#: en/content/reference/special_forms.adoc:250
+msgid ""
+"All binding symbols that don't match their respective part due to an absence "
+"of data (too few elements in a sequential structure, no key in an "
+"associative structure, etc) are bound to nil."
+msgstr ""
+
 #. type: Title ===
-#: en/content/reference/special_forms.adoc:249
+#: en/content/reference/special_forms.adoc:251
 #, no-wrap
 msgid "Vector binding destructuring"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:252
+#: en/content/reference/special_forms.adoc:254
 msgid ""
 "Vector __binding-expr__s allow you to bind names to parts of _sequential_ "
 "things (not just vectors), like vectors, lists, seqs, strings, arrays, and "
@@ -685,14 +694,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:254
+#: en/content/reference/special_forms.adoc:256
 msgid ""
 "Finally, also optional, `:as` followed by a symbol will cause that symbol to "
 "be bound to the entire __init-expr__:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:259
+#: en/content/reference/special_forms.adoc:261
 #, no-wrap
 msgid ""
 "(let [[a b c & d :as e] [1 2 3 4 5 6 7]]\n"
@@ -700,18 +709,18 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:261
+#: en/content/reference/special_forms.adoc:263
 #, no-wrap
 msgid "->[1 2 3 (4 5 6 7) [1 2 3 4 5 6 7]]\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:264
+#: en/content/reference/special_forms.adoc:266
 msgid "These forms can be nested:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:269
+#: en/content/reference/special_forms.adoc:271
 #, no-wrap
 msgid ""
 "(let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]\n"
@@ -719,18 +728,18 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:271
+#: en/content/reference/special_forms.adoc:273
 #, no-wrap
 msgid "->[1 2 3 4]\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:274
+#: en/content/reference/special_forms.adoc:276
 msgid "Strings work too:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:279
+#: en/content/reference/special_forms.adoc:281
 #, no-wrap
 msgid ""
 "(let [[a b & c :as str] \"asdjhhfdas\"]\n"
@@ -738,19 +747,19 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:281
+#: en/content/reference/special_forms.adoc:283
 #, no-wrap
 msgid "->[\\a \\s (\\d \\j \\h \\h \\f \\d \\a \\s) \"asdjhhfdas\"]\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/special_forms.adoc:283
+#: en/content/reference/special_forms.adoc:285
 #, no-wrap
 msgid "Map binding destructuring"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:286
+#: en/content/reference/special_forms.adoc:288
 msgid ""
 "Map __binding-form__s allow you to bind names to parts of associative "
 "things, like maps, vectors, strings, and arrays (the latter three have "
@@ -764,7 +773,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:291
+#: en/content/reference/special_forms.adoc:293
 #, no-wrap
 msgid ""
 "(let [{a :a, b :b, c :c, :as m :or {a 2 b 3}}  {:a 5 :c 6}]\n"
@@ -772,44 +781,44 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:293
+#: en/content/reference/special_forms.adoc:295
 #, no-wrap
 msgid "->[5 3 6 {:c 6, :a 5}]\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:296
+#: en/content/reference/special_forms.adoc:298
 msgid ""
 "It is often the case that you will want to bind same-named symbols to the "
 "map keys. The `:keys` directive allows you to avoid the redundancy:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:300
+#: en/content/reference/special_forms.adoc:302
 #, no-wrap
 msgid "(let [{fred :fred ethel :ethel lucy :lucy} m] ...\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:303
+#: en/content/reference/special_forms.adoc:305
 msgid "can be written:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:307
+#: en/content/reference/special_forms.adoc:309
 #, no-wrap
 msgid "(let [{:keys [fred ethel lucy]} m] ...\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:310
+#: en/content/reference/special_forms.adoc:312
 msgid ""
 "As of Clojure 1.6, you can also use prefixed map keys in the map "
 "destructuring form:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:316
+#: en/content/reference/special_forms.adoc:318
 #, no-wrap
 msgid ""
 "(let [m {:x/a 1, :y/b 2}\n"
@@ -818,13 +827,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:318
+#: en/content/reference/special_forms.adoc:320
 #, no-wrap
 msgid "-> 3\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:321
+#: en/content/reference/special_forms.adoc:323
 msgid ""
 "In the case of using prefixed keys, the bound symbol name will be the same "
 "as the right-hand side of the prefixed key. You can also use auto-resolved "
@@ -832,7 +841,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:327
+#: en/content/reference/special_forms.adoc:329
 #, no-wrap
 msgid ""
 "(let [m {::x 42}\n"
@@ -841,61 +850,61 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:329
+#: en/content/reference/special_forms.adoc:331
 #, no-wrap
 msgid "-> 42\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:332
+#: en/content/reference/special_forms.adoc:334
 msgid ""
 "There are similar `:strs` and `:syms` directives for matching string and "
 "symbol keys, the latter also allowing prefixed symbol keys since Clojure 1.6."
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:334
+#: en/content/reference/special_forms.adoc:336
 msgid ""
 "Clojure 1.9 adds support for directly destructuring many keys (or symbols) "
 "that share the same namespace using the following destructuring key forms:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:336
+#: en/content/reference/special_forms.adoc:338
 msgid ""
 "`:__ns__/keys` - _ns_ specifies the default namespace for the key to look up "
 "in the input"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:337
+#: en/content/reference/special_forms.adoc:339
 msgid "keys elements should not specify a namespace"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:338
+#: en/content/reference/special_forms.adoc:340
 msgid "keys elements also define new local symbols, as with `:keys`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:339
+#: en/content/reference/special_forms.adoc:341
 msgid ""
 "`:__ns__/syms` - _ns_ specifies the default namespace for the symbol to look "
 "up in the input"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:340
+#: en/content/reference/special_forms.adoc:342
 msgid "syms elements should not specify a namespace"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:341
+#: en/content/reference/special_forms.adoc:343
 msgid "syms elements also define new local symbols, as with `:syms`"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:347
+#: en/content/reference/special_forms.adoc:349
 #, no-wrap
 msgid ""
 "(let [m #:domain{:a 1, :b 2}\n"
@@ -904,26 +913,26 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:349
+#: en/content/reference/special_forms.adoc:351
 #, no-wrap
 msgid "-> [1 2]\n"
 msgstr ""
 
 #. type: Title ===
-#: en/content/reference/special_forms.adoc:352
+#: en/content/reference/special_forms.adoc:354
 #, no-wrap
 msgid "Nested destructuring"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/special_forms.adoc:355
+#: en/content/reference/special_forms.adoc:357
 msgid ""
 "Since binding forms can be nested within one another arbitrarily, you can "
 "pull apart just about anything:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:361
+#: en/content/reference/special_forms.adoc:363
 #, no-wrap
 msgid ""
 "(let [m {:j 15 :k 16 :ivec [22 23 24 25]}\n"
@@ -932,7 +941,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/reference/special_forms.adoc:363
+#: en/content/reference/special_forms.adoc:365
 #, no-wrap
 msgid "-> [12 15 16 22 23 (24 25) [22 23 24 25]]\n"
 msgstr ""

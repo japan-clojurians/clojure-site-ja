@@ -19,7 +19,6 @@ msgstr ""
 #. type: Title =
 #: en/content/events/2018/clojutre.adoc:1
 #, fuzzy, no-wrap
-#| msgid "Clojure CLR"
 msgid "ClojuTRE"
 msgstr "Clojure CLR"
 

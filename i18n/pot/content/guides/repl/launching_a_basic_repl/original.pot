@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,29 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: Title ===
-#: en/content/community/libraries.adoc:18
-#: en/content/guides/repl/launching_a_basic_repl.adoc:42
-#, no-wrap
-msgid "Leiningen"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/getting_started.adoc:73
-#: en/content/guides/repl/launching_a_basic_repl.adoc:110
-#, no-wrap
-msgid "java -jar clojure.jar\n"
-msgstr ""
-
 #. type: Plain text
-#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/annex_community_resources.adoc:4
 #: en/content/guides/repl/navigating_namespaces.adoc:4
+#: en/content/guides/repl/annex_troubleshooting.adoc:4
+#: en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/introduction.adoc:4
 #: en/content/guides/repl/data_visualization_at_the_repl.adoc:4
-#: en/content/guides/repl/annex_community_resources.adoc:4
-#: en/content/guides/repl/launching_a_basic_repl.adoc:4
-#: en/content/guides/repl/basic_usage.adoc:4
 #: en/content/guides/repl/enhancing_your_repl_workflow.adoc:4
+#: en/content/guides/repl/launching_a_basic_repl.adoc:4
 msgid "Valentin Waeselynck 2018-02-10"
 msgstr ""
 
@@ -109,6 +95,12 @@ msgstr ""
 #: en/content/guides/repl/launching_a_basic_repl.adoc:40
 #, no-wrap
 msgid "Using a project management tool"
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/repl/launching_a_basic_repl.adoc:42
+#, no-wrap
+msgid "Leiningen"
 msgstr ""
 
 #. type: Plain text
@@ -207,4 +199,11 @@ msgstr ""
 msgid ""
 "If you have <<xref/../../getting_started#_other_ways_to_run_clojure,downloaded and built Clojure>>,\n"
 " you can use Java to launch a Clojure REPL:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/repl/launching_a_basic_repl.adoc:110
+#: en/content/guides/getting_started.adoc:71
+#, no-wrap
+msgid "java -jar clojure.jar\n"
 msgstr ""

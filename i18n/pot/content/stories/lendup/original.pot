@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:15+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/stories/rts.adoc:55 en/content/stories/collbox.adoc:32
-#: en/content/stories/zimpler.adoc:38 en/content/stories/uhn.adoc:71
-#: en/content/stories/lendup.adoc:33 en/content/stories/kidblog.adoc:25
-#: en/content/stories/signal.adoc:38 en/content/stories/ona.adoc:39
-#: en/content/stories/empear.adoc:43
+#: en/content/stories/rts.adoc:55 en/content/stories/empear.adoc:43
+#: en/content/stories/collbox.adoc:32 en/content/stories/signal.adoc:38
+#: en/content/stories/kidblog.adoc:25 en/content/stories/ona.adoc:39
+#: en/content/stories/lendup.adoc:33 en/content/stories/zimpler.adoc:38
 #, no-wrap
 msgid "*What is your stack?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/collbox.adoc:22 en/content/stories/lendup.adoc:17
-#: en/content/stories/kidblog.adoc:17 en/content/stories/signal.adoc:18
-#, no-wrap
-msgid "*How big is your team?*\n"
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/zimpler.adoc:34 en/content/stories/lendup.adoc:29
-#: en/content/stories/signal.adoc:34 en/content/stories/empear.adoc:37
+#: en/content/stories/empear.adoc:37 en/content/stories/signal.adoc:34
+#: en/content/stories/lendup.adoc:29 en/content/stories/zimpler.adoc:34
 #, no-wrap
 msgid "*What is your favorite feature of Clojure or ClojureScript?*\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/zimpler.adoc:42 en/content/stories/uhn.adoc:43
-#: en/content/stories/lendup.adoc:37 en/content/stories/signal.adoc:42
-#: en/content/stories/ona.adoc:45 en/content/stories/cstap.adoc:50
-#: en/content/stories/empear.adoc:47
+#: en/content/stories/empear.adoc:47 en/content/stories/cstap.adoc:50
+#: en/content/stories/signal.adoc:42 en/content/stories/ona.adoc:45
+#: en/content/stories/lendup.adoc:37 en/content/stories/zimpler.adoc:42
 #, no-wrap
 msgid "*Why is using Clojure or ClojureScript valuable to your business?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/collbox.adoc:22 en/content/stories/signal.adoc:18
+#: en/content/stories/kidblog.adoc:17 en/content/stories/lendup.adoc:17
+#, no-wrap
+msgid "*How big is your team?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/kidblog.adoc:13 en/content/stories/lendup.adoc:13
+#, no-wrap
+msgid "*How long have you been working with Clojure?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/kidblog.adoc:21 en/content/stories/lendup.adoc:21
+#, no-wrap
+msgid "*What product or service are you building with Clojure?*\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/kidblog.adoc:29 en/content/stories/lendup.adoc:25
+#, no-wrap
+msgid "*What Clojure library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Title =
@@ -71,12 +87,6 @@ msgid "image:/images/content/stories/lendup.jpg[\"LendUp\",height=\"85\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/lendup.adoc:13 en/content/stories/kidblog.adoc:13
-#, no-wrap
-msgid "*How long have you been working with Clojure?*\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/lendup.adoc:15
 msgid "We have been using Clojure in production since 2016."
 msgstr ""
@@ -89,12 +99,6 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/lendup.adoc:21 en/content/stories/kidblog.adoc:21
-#, no-wrap
-msgid "*What product or service are you building with Clojure?*\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/lendup.adoc:23
 msgid ""
 "The LendUp data engineering team started using Clojure in production to "
@@ -104,12 +108,6 @@ msgid ""
 "more widely across other parts of our system as well. We now have Clojure "
 "services and tooling powering our data pipelines and core real-time "
 "decisioning & servicing infrastructure."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/lendup.adoc:25 en/content/stories/kidblog.adoc:29
-#, no-wrap
-msgid "*What Clojure library have you enjoyed working with the most?*\n"
 msgstr ""
 
 #. type: Plain text

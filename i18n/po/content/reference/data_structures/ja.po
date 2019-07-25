@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:51+0900\n"
 "PO-Revision-Date: 2019-06-15 18:00+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,49 +17,36 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4 en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4 en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4 en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
-#: en/content/reference/refs.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4 en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/atoms.adoc:4
-#: en/content/reference/repl_and_main.adoc:4 en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4 en/content/404.adoc:4
-#: en/content/privacy.adoc:4 en/content/search.adoc:4 en/content/about/spec.adoc:4
-#: en/content/about/concurrent_programming.adoc:4 en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/features.adoc:4
-#: en/content/about/rationale.adoc:4 en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4 en/content/reference/multimethods.adoc:4
+#: en/content/reference/agents.adoc:4 en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4 en/content/reference/atoms.adoc:4
+#: en/content/reference/other_functions.adoc:4 en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4 en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4 en/content/reference/documentation.adoc:4
+#: en/content/reference/refs.adoc:4 en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4 en/content/reference/metadata.adoc:4
+#: en/content/reference/evaluation.adoc:4 en/content/reference/compilation.adoc:4 en/content/community/downloads.adoc:4
+#: en/content/community/license.adoc:4 en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4 en/content/about/spec.adoc:4
+#: en/content/about/clojureclr.adoc:4 en/content/about/dynamic.adoc:4 en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4 en/content/about/jvm_hosted.adoc:4
+#: en/content/about/clojurescript.adoc:4 en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr "Rich Hickey 2015-01-01"
 
 #. type: Title ==
-#: en/content/reference/libs.adoc:64 en/content/reference/refs.adoc:73 en/content/reference/namespaces.adoc:24
-#: en/content/reference/other_functions.adoc:41 en/content/reference/other_functions.adoc:65
-#: en/content/reference/vars.adoc:85 en/content/reference/data_structures.adoc:70
+#: en/content/reference/libs.adoc:64 en/content/reference/data_structures.adoc:70
 #: en/content/reference/data_structures.adoc:90 en/content/reference/data_structures.adoc:98
 #: en/content/reference/data_structures.adoc:107 en/content/reference/data_structures.adoc:116
 #: en/content/reference/data_structures.adoc:162 en/content/reference/data_structures.adoc:174
 #: en/content/reference/data_structures.adoc:188 en/content/reference/data_structures.adoc:223
-#: en/content/reference/repl_and_main.adoc:185 en/content/reference/agents.adoc:64
+#: en/content/reference/agents.adoc:64 en/content/reference/other_functions.adoc:41
+#: en/content/reference/other_functions.adoc:65 en/content/reference/repl_and_main.adoc:205
+#: en/content/reference/refs.adoc:73 en/content/reference/vars.adoc:97 en/content/reference/namespaces.adoc:24
 #, no-wrap
 msgid "Related functions"
 msgstr "関連する関数"
-
-#. type: Title ==
-#: en/content/reference/reader.adoc:24 en/content/reference/data_structures.adoc:111
-#, no-wrap
-msgid "Symbols"
-msgstr "シンボル"
-
-#. type: Title ==
-#: en/content/reference/reader.adoc:100 en/content/reference/data_structures.adoc:235
-#: en/content/guides/learn/hashed_colls.adoc:19
-#, no-wrap
-msgid "Sets"
-msgstr "セット"
 
 #. type: Title =
 #: en/content/reference/data_structures.adoc:1
@@ -124,7 +111,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:30
-msgid "Implement the non-optional (read-only) portion of java.util.Collection"
+msgid "Implement the non-optional (read-only) portion of java.util.Collection or java.util.Map"
 msgstr ""
 
 #. type: Title ==
@@ -143,7 +130,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/data_structures.adoc:37
+#: en/content/reference/data_structures.adoc:37 en/content/guides/equality.adoc:317
 #, no-wrap
 msgid "Numbers"
 msgstr ""
@@ -313,7 +300,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:84
-msgid "Clojure strings are Java Strings. See also <<other_functions#printing#,Printing>>."
+msgid "Clojure strings are Java Strings. See also <<other_functions#printing,Printing>>."
 msgstr ""
 
 #. type: delimited block -
@@ -383,6 +370,12 @@ msgid ""
 "clojure/clojure.core-api.html#clojure.core/keyword?[keyword?]"
 msgstr ""
 
+#. type: Title ===
+#: en/content/reference/data_structures.adoc:111 en/content/reference/reader.adoc:24
+#, no-wrap
+msgid "Symbols"
+msgstr "シンボル"
+
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:113
 msgid ""
@@ -409,7 +402,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/data_structures.adoc:120 en/content/guides/spec.adoc:435
+#: en/content/reference/data_structures.adoc:120 en/content/guides/spec.adoc:433
 #, no-wrap
 msgid "Collections"
 msgstr ""
@@ -530,11 +523,20 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:161
+#, fuzzy
+#| msgid ""
+#| "The current namespace, _pass:[*ns*]_ can and should be set only with a call to https://clojure.github.io/clojure/"
+#| "clojure.core-api.html#clojure.core/in-ns[in-ns] or the https://clojure.github.io/clojure/clojure.core-api."
+#| "html#clojure.core/ns[ns macro], both of which create the namespace if it doesn't exist."
 msgid ""
-"Lists are collections. They implement the ISeq interface directly (except for the empty list, which is not a valid "
-"seq). https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count[count] is O(1). https://clojure."
-"github.io/clojure/clojure.core-api.html#clojure.core/conj[conj] puts the item at the front of the list."
+"Lists are collections. They implement the ISeq interface directly. (Note that the empty list implements ISeq as well, "
+"however the `seq` function will always return `nil` for an empty sequence.) https://clojure.github.io/clojure/clojure."
+"core-api.html#clojure.core/count[count] is O(1). https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
+"conj[conj] puts the item at the front of the list."
 msgstr ""
+"現在の名前空間、 _pass:[*ns*]_ は https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns[in-ns] 、"
+"もしくは https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns[ns マクロ] で設定することが出来、また"
+"これらの方法でのみ作られるべきである。どちらも指定された名前空間が存在しない場合、新たにその名前空間を作成する。"
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:168
@@ -702,6 +704,13 @@ msgid ""
 "array map will only maintain sort order when un-'modified'. Subsequent assoc-ing will eventually cause it to 'become' "
 "a hash-map."
 msgstr ""
+
+#. type: Title ==
+#: en/content/reference/data_structures.adoc:235 en/content/reference/reader.adoc:101
+#: en/content/guides/learn/hashed_colls.adoc:19
+#, no-wrap
+msgid "Sets"
+msgstr "セット"
 
 #. type: Plain text
 #: en/content/reference/data_structures.adoc:237

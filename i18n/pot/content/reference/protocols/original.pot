@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,51 +17,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
-#: en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/atoms.adoc:4
 #: en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
-#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
-#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4
-#: en/content/about/clojureclr.adoc:4
+#: en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/jvm_hosted.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
-#. type: Title =
-#: en/content/reference/protocols.adoc:1
-#, no-wrap
-msgid "Protocols"
-msgstr ""
-
 #. type: Title ==
-#: en/content/reference/protocols.adoc:16
 #: en/content/reference/datatypes.adoc:17
+#: en/content/reference/protocols.adoc:16
 #, no-wrap
 msgid "Motivation"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/protocols.adoc:19
 #: en/content/reference/datatypes.adoc:20
+#: en/content/reference/protocols.adoc:19
 msgid ""
 "Clojure is written in terms of abstractions. There are abstractions for "
 "sequences, collections, callability, etc. In addition, Clojure supplies many "
@@ -72,6 +66,20 @@ msgid ""
 "protocols>> and <<datatypes#,datatypes>> features add powerful and flexible "
 "mechanisms for abstraction and data structure definition with no compromises "
 "vs the facilities of the host platform."
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/datatypes.adoc:21
+#: en/content/reference/protocols.adoc:36
+#: en/content/news/2012/05/08/reducers.adoc:21 en/content/about/dynamic.adoc:42
+#, no-wrap
+msgid "Basics"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/protocols.adoc:1
+#, no-wrap
+msgid "Protocols"
 msgstr ""
 
 #. type: Plain text
@@ -144,13 +152,6 @@ msgstr ""
 #. type: Plain text
 #: en/content/reference/protocols.adoc:35
 msgid "Protocols were introduced in Clojure 1.2."
-msgstr ""
-
-#. type: Title ==
-#: en/content/reference/protocols.adoc:36
-#: en/content/reference/datatypes.adoc:21 en/content/about/dynamic.adoc:42
-#, no-wrap
-msgid "Basics"
 msgstr ""
 
 #. type: Plain text
@@ -430,4 +431,60 @@ msgid ""
 "  Foo\n"
 "   {:baz (fn ([x] ...) ([x y zs] ...))\n"
 "    :bar (fn [x y] ...)})\n"
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/protocols.adoc:138
+#, no-wrap
+msgid "Extend only things you control"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:141
+msgid ""
+"You should extend a protocol to a type only if you control the type, the "
+"protocol, or both. This is particularly important for the protocols included "
+"with Clojure itself. For more information see the https://groups.google.com/"
+"d/msg/clojure/vyX5-F3NiVg/Ti1apkxDFl0J[mailing list discussion]."
+msgstr ""
+
+#. type: Title ===
+#: en/content/reference/protocols.adoc:142
+#, no-wrap
+msgid "Extend via metadata"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:145
+msgid ""
+"As of Clojure 1.10, protocols can optionally elect to be extended via per-"
+"value metadata:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/protocols.adoc:151
+#, no-wrap
+msgid ""
+"(defprotocol Component\n"
+"  :extend-via-metadata true\n"
+"  (start [component]))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/reference/protocols.adoc:154
+msgid ""
+"When :extend-via-metadata is true, values can extend protocols by adding "
+"metadata where keys are fully-qualified protocol function symbols and values "
+"are function implementations. Protocol implementations are checked first for "
+"direct definitions (defrecord, deftype, reify), then metadata definitions, "
+"then external extensions (extend, extend-type, extend-protocol)."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/protocols.adoc:160
+#, no-wrap
+msgid ""
+"(def component (with-meta {:name \"db\"} {`start (constantly \"started\")}))\n"
+"(start component)\n"
+";;=> \"started\"\n"
 msgstr ""

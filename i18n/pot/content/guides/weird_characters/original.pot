@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/reader.adoc:81
-#: en/content/guides/weird_characters.adoc:474
+#: en/content/reference/reader.adoc:82
+#: en/content/guides/weird_characters.adoc:478
 msgid "For example, the following map literal with namespace syntax:"
 msgstr ""
 
+#. type: delimited block -
+#: en/content/reference/reader.adoc:89
+#: en/content/guides/weird_characters.adoc:484
+#, no-wrap
+msgid ""
+"#:person{:first \"Han\"\n"
+"         :last \"Solo\"\n"
+"         :ship #:ship{:name \"Millennium Falcon\"\n"
+"                      :model \"YT-1300f light freighter\"}}\n"
+msgstr ""
+
 #. type: Plain text
-#: en/content/reference/reader.adoc:91
-#: en/content/guides/weird_characters.adoc:482
+#: en/content/reference/reader.adoc:92
+#: en/content/guides/weird_characters.adoc:486
 msgid "is read as:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/reference/reader.adoc:99
+#: en/content/guides/weird_characters.adoc:492
+#, no-wrap
+msgid ""
+"{:person/first \"Han\"\n"
+" :person/last \"Solo\"\n"
+" :person/ship {:ship/name \"Millennium Falcon\"\n"
+"               :ship/model \"YT-1300f light freighter\"}}\n"
 msgstr ""
 
 #. type: Title =
@@ -209,15 +231,12 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:91
-#, no-wrap
-msgid "user=> #{1 2 3 4 1}\n"
-msgstr ""
-
-#. type: delimited block -
 #: en/content/guides/weird_characters.adoc:93
 #, no-wrap
-msgid "IllegalArgumentException Duplicate key: 1  clojure.lang.PersistentHashSet.createWithCheck (PersistentHashSet.java:68)\n"
+msgid ""
+"user=> #{1 2 3 4 1}\n"
+"Syntax error reading source at (REPL:83:13).\n"
+"Duplicate key: 1\n"
 msgstr ""
 
 #. type: Plain text
@@ -293,7 +312,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/weird_characters.adoc:129
-#: en/content/guides/weird_characters.adoc:226
+#: en/content/guides/weird_characters.adoc:241
 msgid "https://github.com/edn-format/edn#tagged-elements[edn Tagged Elements]"
 msgstr ""
 
@@ -432,13 +451,38 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:201
+#: en/content/guides/weird_characters.adoc:200
+#, no-wrap
+msgid "`pass:[##]` - Symbolic values"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:204
+msgid ""
+"Clojure can read and print the symbolic values `pass:[##Inf]`, `pass:[##-"
+"Inf]`, and `pass:[##NaN]`.  These are also available in edn."
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:213
+#, no-wrap
+msgid ""
+"user=> (/ 1.0 0.0)\n"
+"##Inf\n"
+"user=> (/ -1.0 0.0)\n"
+"##-Inf\n"
+"user=> (Math/sqrt -1.0)\n"
+"##NaN\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/weird_characters.adoc:216
 #, no-wrap
 msgid "`#inst`, `#uuid`, and `#js` etc. - tagged literals"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:206
+#: en/content/guides/weird_characters.adoc:221
 msgid ""
 "Tagged literals are defined in edn and supported by the Clojure and "
 "ClojureScript readers natively. The `#inst` and `#uuid` tags are defined by "
@@ -446,14 +490,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:208
+#: en/content/guides/weird_characters.adoc:223
 msgid ""
 "We can use Clojure's `read-string` to read a tagged literal (or use it "
 "directly):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:214
+#: en/content/guides/weird_characters.adoc:229
 #, no-wrap
 msgid ""
 "user=> (type #inst \"2014-05-19T19:12:37.925-00:00\")\n"
@@ -463,7 +507,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:222
+#: en/content/guides/weird_characters.adoc:237
 msgid ""
 "A tagged literal tells the reader how to parse the literal value. Other "
 "common uses include `#uuid` for expressing UUIDs and in the ClojureScript "
@@ -475,30 +519,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:224
+#: en/content/guides/weird_characters.adoc:239
 msgid "Note that while `#inst` and `#uuid` are available in edn, `#js` is not."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:227
+#: en/content/guides/weird_characters.adoc:242
 #, no-wrap
 msgid "`%`, `%n`, `%&` - Anonymous function arguments"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:230
+#: en/content/guides/weird_characters.adoc:245
 msgid "`%` is an argument in an anonymous function `#(...)` as in `#(* % %)`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:233
+#: en/content/guides/weird_characters.adoc:248
 msgid ""
 "When an anonymous function is expanded, it becomes an `fn` form and `%` args "
 "are replaced with gensym'ed names (here we use arg1, etc for readability):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:238
+#: en/content/guides/weird_characters.adoc:253
 #, no-wrap
 msgid ""
 "user=> (macroexpand `#(println %))\n"
@@ -506,7 +550,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:242
+#: en/content/guides/weird_characters.adoc:257
 msgid ""
 "Numbers can be placed directly after the `%` to indicate the argument "
 "positions (1-based).  Anonymous function arity is determined based on the "
@@ -514,7 +558,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:247
+#: en/content/guides/weird_characters.adoc:262
 #, no-wrap
 msgid ""
 "user=> (macroexpand `#(println %1 %2))\n"
@@ -522,7 +566,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:250
+#: en/content/guides/weird_characters.adoc:265
 #, no-wrap
 msgid ""
 "user=> (macroexpand `#(println %4))\n"
@@ -530,19 +574,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:254
+#: en/content/guides/weird_characters.adoc:269
 msgid ""
 "You don't have to use the arguments, but you do need to declare them in the "
 "order you'd expect an external caller to pass them in."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:256
+#: en/content/guides/weird_characters.adoc:271
 msgid "`%` and `%1` can be used interchangeably:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:260
+#: en/content/guides/weird_characters.adoc:275
 #, no-wrap
 msgid ""
 "user=> (macroexpand `#(println % %1)) ; use both % and %1\n"
@@ -550,7 +594,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:264
+#: en/content/guides/weird_characters.adoc:279
 msgid ""
 "There is also `%&` which is the symbol used in a variadic anonymous function "
 "to represent the \"rest\" of the arguments (after the highest named "
@@ -558,7 +602,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:269
+#: en/content/guides/weird_characters.adoc:284
 #, no-wrap
 msgid ""
 "user=> (macroexpand '#(println %&))\n"
@@ -566,25 +610,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:272
+#: en/content/guides/weird_characters.adoc:287
 msgid "Anonymous functions and `%` are not part of edn."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:273
+#: en/content/guides/weird_characters.adoc:288
 #, no-wrap
 msgid "`@` - Deref"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:277
+#: en/content/guides/weird_characters.adoc:292
 msgid ""
 "`@` expands into a call to the `deref` function, so these two forms are the "
 "same:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:286
+#: en/content/guides/weird_characters.adoc:301
 #, no-wrap
 msgid ""
 "user=> (def x (atom 1))\n"
@@ -597,7 +641,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:291
+#: en/content/guides/weird_characters.adoc:306
 msgid ""
 "`@` is used to get the current value of a reference. The above example uses "
 "`@` to get the current value of an <<xref/../../reference/atom#,atom>>, but "
@@ -606,18 +650,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:293
+#: en/content/guides/weird_characters.adoc:308
 msgid "Note that `@` is not available in edn."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:294
+#: en/content/guides/weird_characters.adoc:309
 #, no-wrap
 msgid "`^` (and `#^`) - Metadata"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:300
+#: en/content/guides/weird_characters.adoc:315
 msgid ""
 "`^` is the metadata marker. Metadata is a map of values (with shorthand "
 "option)  that can be attached to various forms in Clojure. This provides "
@@ -626,7 +670,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:304
+#: en/content/guides/weird_characters.adoc:319
 #, no-wrap
 msgid ""
 "user=> (def ^{:debug true} five 5) ; meta map with single boolean value\n"
@@ -634,14 +678,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:308
+#: en/content/guides/weird_characters.adoc:323
 msgid ""
 "We can access the metadata by the `meta` function which should be executed "
 "against the declaration itself (rather than the returned value):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:314
+#: en/content/guides/weird_characters.adoc:329
 #, no-wrap
 msgid ""
 "user=> (def ^{:debug true} five 5)\n"
@@ -651,7 +695,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:317
+#: en/content/guides/weird_characters.adoc:332
 msgid ""
 "As we have a single value here, we can use a shorthand notation for "
 "declaring the metadata `^:name` which is useful for flags, as the value will "
@@ -659,7 +703,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:323
+#: en/content/guides/weird_characters.adoc:338
 #, no-wrap
 msgid ""
 "user=> (def ^:debug five 5)\n"
@@ -669,7 +713,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:327
+#: en/content/guides/weird_characters.adoc:342
 msgid ""
 "Another use of `^` is for type hints. These are used to tell the compiler "
 "what type the value will be and allow it to perform type specific "
@@ -677,7 +721,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:333
+#: en/content/guides/weird_characters.adoc:348
 #, no-wrap
 msgid ""
 "user=> (def ^Integer five 5)\n"
@@ -687,17 +731,17 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:335
+#: en/content/guides/weird_characters.adoc:350
 msgid "We can see in that example the `:tag` property is set."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:337
+#: en/content/guides/weird_characters.adoc:352
 msgid "You can also stack the shorthand notations:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:343
+#: en/content/guides/weird_characters.adoc:358
 #, no-wrap
 msgid ""
 "user=> (def ^Integer ^:debug ^:private five 5)\n"
@@ -707,7 +751,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:346
+#: en/content/guides/weird_characters.adoc:361
 msgid ""
 "Originally, meta was declared with `pass:[#^]`, which is now deprecated (but "
 "still works). Later, this was simplified to just `^` and that is what you "
@@ -716,73 +760,86 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:348
+#: en/content/guides/weird_characters.adoc:363
 msgid "Note that metadata is available in edn, but type hints are not."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:350
+#: en/content/guides/weird_characters.adoc:365
 msgid "<<xref/../../reference/metadata#,Clojure Official Documentation>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:351
+#: en/content/guides/weird_characters.adoc:366
 msgid ""
 "http://en.wikibooks.org/wiki/Learning_Clojure/Meta_Data[Learning Clojure: "
 "Meta Data]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:352
+#: en/content/guides/weird_characters.adoc:367
 #, no-wrap
 msgid "`'` - Quote"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:356
+#: en/content/guides/weird_characters.adoc:371
 msgid ""
 "Quoting is used to indicate that the next form should be read but not "
 "evaluated.  The reader expands `'` into a call to the `quote` special form."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:360
+#: en/content/guides/weird_characters.adoc:375
 #, no-wrap
 msgid "user=> (1 3 4) ; fails as it tries to invoke 1 as a function\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:367
+#: en/content/guides/weird_characters.adoc:378
 #, no-wrap
 msgid ""
-"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval925 (NO_SOURCE_FILE:1)\n"
+"Execution error (ClassCastException) at myproject.person-names/eval230 (REPL:1).\n"
+"class java.lang.Long cannot be cast to class clojure.lang.IFn\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:381
+#, no-wrap
+msgid ""
 "user=> '(1 3 4) ; quote\n"
 "(1 3 4)\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:385
+#, no-wrap
+msgid ""
 "user=> (quote (1 2 3)) ; using the longer quote method\n"
 "(1 2 3)\n"
 "user=>\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:370
+#: en/content/guides/weird_characters.adoc:388
 msgid "<<xref/../../reference/special_forms#quote,Clojure Special Forms>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:371
+#: en/content/guides/weird_characters.adoc:389
 #, no-wrap
 msgid "`;` - Comment"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:375
+#: en/content/guides/weird_characters.adoc:393
 msgid ""
 "`;` starts a line comment and ignores all input from its starting point to "
 "the end of the line."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:381
+#: en/content/guides/weird_characters.adoc:399
 #, no-wrap
 msgid ""
 "user=> (def x \"x\") ; this is a comment\n"
@@ -792,32 +849,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:385
+#: en/content/guides/weird_characters.adoc:403
 msgid ""
 "It is common in Clojure to use multiple semicolons for readability or "
 "emphasis, but these are all the same to Clojure"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:389
+#: en/content/guides/weird_characters.adoc:407
 #, no-wrap
 msgid ";; This is probably more important than\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:391
+#: en/content/guides/weird_characters.adoc:409
 #, no-wrap
 msgid "; this\n"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:393
+#: en/content/guides/weird_characters.adoc:411
 #, no-wrap
 msgid "`:` - Keyword"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:397
+#: en/content/guides/weird_characters.adoc:415
 msgid ""
 "`:` is the indicator for a keyword. Keywords are often used as keys in maps "
 "and they provide faster comparisons and lower memory overhead than strings "
@@ -825,7 +882,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:402
+#: en/content/guides/weird_characters.adoc:420
 #, no-wrap
 msgid ""
 "user=> (type :test)\n"
@@ -833,14 +890,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:404
+#: en/content/guides/weird_characters.adoc:422
 msgid ""
 "Alternatively you can use the `keyword` function to create a keyword from a "
 "string"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:408
+#: en/content/guides/weird_characters.adoc:426
 #, no-wrap
 msgid ""
 "user=> (keyword \"test\")\n"
@@ -848,14 +905,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:410
+#: en/content/guides/weird_characters.adoc:428
 msgid ""
 "Keywords can also be invoked as functions to look themselves up as a key in "
 "a map:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:422
+#: en/content/guides/weird_characters.adoc:440
 #, no-wrap
 msgid ""
 "user=> (def my-map {:one 1 :two 2})\n"
@@ -871,19 +928,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:425
+#: en/content/guides/weird_characters.adoc:443
 msgid ""
 "<<xref/../../reference/data_structures#Keywords,Data Structures - Keywords>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:427
+#: en/content/guides/weird_characters.adoc:445
 #, no-wrap
 msgid "`::` - Auto-resolved keyword"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:432
+#: en/content/guides/weird_characters.adoc:450
 msgid ""
 "`::` is used to auto-resolve a keyword in the current namespace. If no "
 "qualifier is specified, it will auto-resolve to the current namespace. If a "
@@ -891,7 +948,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:440
+#: en/content/guides/weird_characters.adoc:458
 #, no-wrap
 msgid ""
 "user=> :my-keyword\n"
@@ -903,7 +960,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:444
+#: en/content/guides/weird_characters.adoc:462
 msgid ""
 "This is useful when creating macros. If you want to ensure that a macro that "
 "calls another function in the macro namespace correctly expands to call the "
@@ -911,44 +968,59 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:446
+#: en/content/guides/weird_characters.adoc:464
 msgid "Note that `::` is not available in edn."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:448
-#: en/content/guides/weird_characters.adoc:499
+#: en/content/guides/weird_characters.adoc:466
+#: en/content/guides/weird_characters.adoc:545
 msgid "<<xref/../../reference/reader#,Reader>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:449
+#: en/content/guides/weird_characters.adoc:467
 #, no-wrap
 msgid "`pass:[#:]` and `#::` - Namespace Map Syntax"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:454
+#: en/content/guides/weird_characters.adoc:472
 msgid ""
 "Namespace map syntax was added in Clojure 1.9 and is used to specify a "
-"default namespace context for keys in a map, where those keywords (or "
-"symbols) share a common namespace."
+"default namespace context when keys or symbols in a map where they share a "
+"common namespace."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:457
+#: en/content/guides/weird_characters.adoc:476
+msgid ""
+"The `pass:[#:ns]` syntax specifies a fully-qualified namespace map prefix n "
+"alias in the namespace map prefix with, where _ns_ is the name of a "
+"namespace and the prefix precedes the opening brace `{` of the map."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:495
+msgid ""
+"Note that these maps represent the identical object - these are just "
+"alternate syntaxes."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:498
 msgid ""
 "`#::` can be used to auto-resolve the namespace of keyword or symbol keys in "
 "a map using the current namespace."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:459
+#: en/content/guides/weird_characters.adoc:500
 msgid "These two examples are equivalent:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:466
+#: en/content/guides/weird_characters.adoc:507
 #, no-wrap
 msgid ""
 "user=> (keys {:user/a 1, :user/b 2})\n"
@@ -958,47 +1030,61 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:472
+#: en/content/guides/weird_characters.adoc:512
 msgid ""
 "Similar to <<xref/../weird_characters#autoresolved_keys,autoresolved "
-"keywords>>, you can also specify an alias in the namespace map prefix with "
-"`#:ns` prefix, where _ns_ is the name of a namespace and the prefix precedes "
-"the opening brace `{` of the map."
+"keywords>>, you can also use `#::alias` to auto-resolve with a namespace "
+"alias defined in the `ns` form:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:480
+#: en/content/guides/weird_characters.adoc:519
 #, no-wrap
 msgid ""
-"#:person{:first \"Han\"\n"
-"         :last \"Solo\"\n"
-"         :ship #:ship{:name \"Millennium Falcon\"\n"
-"                      :model \"YT-1300f light freighter\"}}\n"
+"(ns rebel.core\n"
+"  (:require \n"
+"    [rebel.person :as p]\n"
+"    [rebel.ship   :as s] ))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:488
+#: en/content/guides/weird_characters.adoc:524
 #, no-wrap
 msgid ""
-"{:person/first \"Han\"\n"
-" :person/last \"Solo\"\n"
-" :person/ship {:ship/name \"Millennium Falcon\"\n"
-"               :ship/model \"YT-1300f light freighter\"}}\n"
+"#::p{:first \"Han\"\n"
+"     :last \"Solo\"\n"
+"     :ship #::s{:name \"Millennium Falcon\"\n"
+"                :model \"YT-1300f light freighter\"}}\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:491
+#: en/content/guides/weird_characters.adoc:527
+msgid "is read the same as:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/weird_characters.adoc:534
+#, no-wrap
+msgid ""
+"{:rebel.person/first \"Han\"\n"
+" :rebel.person/last \"Solo\"\n"
+" :rebel.person/ship {:rebel.ship/name \"Millennium Falcon\"\n"
+"                     :rebel.ship/model \"YT-1300f light freighter\"}}\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:537
 msgid "<<xref/../../reference/reader#map_namespace_syntax,Reader>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:492
+#: en/content/guides/weird_characters.adoc:538
 #, no-wrap
 msgid "`/` - Namespace separator"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:497
+#: en/content/guides/weird_characters.adoc:543
 msgid ""
 "`/` can be the division function `clojure.core//`, but can also act as a "
 "separator in a symbol name to separate a symbol's name and namespace "
@@ -1007,18 +1093,18 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:500
+#: en/content/guides/weird_characters.adoc:546
 #, no-wrap
 msgid "`\\` - Character literal"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:503
+#: en/content/guides/weird_characters.adoc:549
 msgid "`\\` indicates a literal character as in:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:508
+#: en/content/guides/weird_characters.adoc:554
 #, no-wrap
 msgid ""
 "user=> (str \\h \\i)\n"
@@ -1026,7 +1112,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:511
+#: en/content/guides/weird_characters.adoc:557
 msgid ""
 "There are also a small number of special characters to name special ASCII "
 "characters: `\\newline`, `\\space`, `\\tab`, `\\formfeed`, `\\backspace`, "
@@ -1034,33 +1120,33 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:513
+#: en/content/guides/weird_characters.adoc:559
 msgid ""
 "The `\\` can also be followed by a Unicode literal of the form `\\uNNNN`. "
 "For example, `\\u03A9` is the literal for Ω."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:517
+#: en/content/guides/weird_characters.adoc:563
 #, no-wrap
 msgid "`$` - Inner class reference"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:521
+#: en/content/guides/weird_characters.adoc:567
 msgid ""
 "Used to reference inner classes and interfaces in Java. Separates the "
 "container class name and the inner class name."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:524
+#: en/content/guides/weird_characters.adoc:570
 #, no-wrap
 msgid "(import (basex.core BaseXClient$EventNotifier)\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:529
+#: en/content/guides/weird_characters.adoc:575
 #, no-wrap
 msgid ""
 "(defn- build-notifier [notifier-action]\n"
@@ -1070,81 +1156,82 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:533
+#: en/content/guides/weird_characters.adoc:579
 msgid ""
 "`EventNotifier` is an inner interface of the `BaseXClient` class which is an "
 "imported Java class"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:535
+#: en/content/guides/weird_characters.adoc:581
 msgid ""
 "http://blog.jayfields.com/2011/01/clojure-using-java-inner-classes."
 "html[Clojure: Using Java Inner Classes]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:536
+#: en/content/guides/weird_characters.adoc:582
 msgid "<<xref/../../reference/java_interop#,Official Documentation>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:537
+#: en/content/guides/weird_characters.adoc:583
 #, no-wrap
 msgid "`pass:[->]`, `pass:[->>]`, `pass:[some->]`, `pass:[cond->]`, `pass:[as->]` etc. - Threading macros"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:540
+#: en/content/guides/weird_characters.adoc:586
 msgid ""
 "These are threading macros. Please refer to <<xref/../threading_macros#,"
 "Official Clojure Documentation>>"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:542
+#: en/content/guides/weird_characters.adoc:588
 msgid ""
 "http://blog.fogus.me/2009/09/04/understanding-the-clojure-macro/"
 "[Understanding the Clojure +->+ macro]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:544
+#: en/content/guides/weird_characters.adoc:590
 #, no-wrap
 msgid "````` - Syntax quote"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:548
+#: en/content/guides/weird_characters.adoc:594
 msgid ""
 "````` is the syntax quote. Syntax quote is similar to quoting (to delay "
 "evaluation) but has some additional effects."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:550
+#: en/content/guides/weird_characters.adoc:596
 msgid "Basic syntax quote may look similar to normal quoting:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:557
+#: en/content/guides/weird_characters.adoc:604
 #, no-wrap
 msgid ""
 "user=> (1 2 3)\n"
-"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn  user/eval832 (NO_SOURCE_FILE:1)\n"
+"Execution error (ClassCastException) at myproject.person-names/eval232 (REPL:1).\n"
+"class java.lang.Long cannot be cast to class clojure.lang.IFn\n"
 "user=> `(1 2 3)\n"
 "(1 2 3)\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:561
+#: en/content/guides/weird_characters.adoc:608
 msgid ""
 "However, symbols used within a syntax quote are fully resolved with respect "
 "to the current namespace:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:568
+#: en/content/guides/weird_characters.adoc:615
 #, no-wrap
 msgid ""
 "user=> (def five 5)\n"
@@ -1154,14 +1241,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:571
+#: en/content/guides/weird_characters.adoc:618
 msgid ""
 "Syntax quote is most used as a \"template\" mechanism within macros. We can "
 "write one now:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:582
+#: en/content/guides/weird_characters.adoc:629
 #, no-wrap
 msgid ""
 "user=> (defmacro debug [body]\n"
@@ -1175,7 +1262,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:589
+#: en/content/guides/weird_characters.adoc:636
 msgid ""
 "Macros are functions invoked by the compiler with code as data. They are "
 "expected to return code (as data) that can be further compiled and "
@@ -1186,7 +1273,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:591
+#: en/content/guides/weird_characters.adoc:638
 msgid ""
 "See <<xref/../weird_characters#unquote_splicing,`~@`>> and <<xref/../"
 "weird_characters#unquote,`~`>> for additional syntax allowed only within "
@@ -1194,44 +1281,42 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:593
-#: en/content/guides/weird_characters.adoc:618
-#: en/content/guides/weird_characters.adoc:643
+#: en/content/guides/weird_characters.adoc:640
+#: en/content/guides/weird_characters.adoc:665
+#: en/content/guides/weird_characters.adoc:690
 msgid ""
 "http://www.braveclojure.com/writing-macros/[Clojure for the Brave and True - "
 "Writing Macros]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:594
-#: en/content/guides/weird_characters.adoc:619
-#: en/content/guides/weird_characters.adoc:644
+#: en/content/guides/weird_characters.adoc:641
+#: en/content/guides/weird_characters.adoc:666
+#: en/content/guides/weird_characters.adoc:691
 msgid ""
 "http://aphyr.com/posts/305-clojure-from-the-ground-up-macros[Clojure from "
 "the ground up: macros]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:595
-#: en/content/guides/weird_characters.adoc:620
-#: en/content/guides/weird_characters.adoc:645
-msgid "<<xref/../../macros#,Clojure Official Documentation>>"
+#: en/content/guides/weird_characters.adoc:642
+msgid "<<xref/../../reference/macros#,Clojure Official Documentation>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:597
+#: en/content/guides/weird_characters.adoc:644
 #, no-wrap
 msgid "`~` - Unquote"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:600
+#: en/content/guides/weird_characters.adoc:647
 msgid ""
 "See <<xref/../weird_characters#syntax_quote,```>> for additional information."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:603
+#: en/content/guides/weird_characters.adoc:650
 msgid ""
 "`~` is unquote. That is within a syntax quoted <<xref/../"
 "weird_characters#syntax_quote,```>> form `~` will _unquote_ the associated "
@@ -1239,7 +1324,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:613
+#: en/content/guides/weird_characters.adoc:660
 #, no-wrap
 msgid ""
 "user=> (def five 5) ; create a named var with the value 5\n"
@@ -1253,27 +1338,33 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:616
+#: en/content/guides/weird_characters.adoc:663
 msgid ""
 "Syntax quoting and unquote are essential tools for writing macros, which are "
 "functions invoked during compilation that take code and return code."
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:667
+#: en/content/guides/weird_characters.adoc:692
+msgid "<<xref/../../macros#,Clojure Official Documentation>>"
+msgstr ""
+
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:622
+#: en/content/guides/weird_characters.adoc:669
 #, no-wrap
 msgid "`~@` - Unquote splicing"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:625
+#: en/content/guides/weird_characters.adoc:672
 msgid ""
 "See <<xref/../weird_characters#syntax_quote,```>> and <<xref/../"
 "weird_characters#unquote,`~`>> for additional information."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:630
+#: en/content/guides/weird_characters.adoc:677
 msgid ""
 "`~@` is unquote-splicing. Where unquote <<xref/../weird_characters#unquote,"
 "(`~`)>> evaluates a form and places the result into the quoted result, `~@` "
@@ -1282,7 +1373,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:638
+#: en/content/guides/weird_characters.adoc:685
 #, no-wrap
 msgid ""
 "user=> (def three-and-four (list 3 4))\n"
@@ -1294,18 +1385,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:641
+#: en/content/guides/weird_characters.adoc:688
 msgid "Again, this is a powerful tool for writing macros."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:647
+#: en/content/guides/weird_characters.adoc:694
 #, no-wrap
 msgid "`<symbol>#` - Gensym"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:652
+#: en/content/guides/weird_characters.adoc:699
 msgid ""
 "A `#` _at the end_ of a symbol is used to automatically generate a new "
 "symbol.  This is useful inside macros to keep macro specifics from leaking "
@@ -1313,31 +1404,39 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:659
+#: en/content/guides/weird_characters.adoc:714
 #, no-wrap
 msgid ""
 "user=> (defmacro m [] `(let [x 1] x))\n"
 "#'user/m\n"
 "user=> (m)\n"
-"CompilerException java.lang.RuntimeException: Can't let qualified name: user/x, compiling:(NO_SOURCE_PATH:1)\n"
+"Syntax error macroexpanding clojure.core/let at (REPL:1:1).\n"
+"myproject.person-names/x - failed: simple-symbol? at: [:bindings :form :local-symbol]\n"
+"  spec: :clojure.core.specs.alpha/local-name\n"
+"myproject.person-names/x - failed: vector? at: [:bindings :form :seq-destructure]\n"
+"  spec: :clojure.core.specs.alpha/seq-binding-form\n"
+"myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]\n"
+"  spec: :clojure.core.specs.alpha/map-bindings\n"
+"myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]\n"
+"  spec: :clojure.core.specs.alpha/map-special-binding\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:663
+#: en/content/guides/weird_characters.adoc:718
 msgid ""
 "This is because symbols inside a syntax quote are fully resolved, including "
 "the local binding `x` here."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:666
+#: en/content/guides/weird_characters.adoc:721
 msgid ""
 "Instead you can append `#` to the end of the variable name and let Clojure "
 "generate a unique (unqualified) symbol:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:674
+#: en/content/guides/weird_characters.adoc:729
 #, no-wrap
 msgid ""
 "user=> (defmacro m [] `(let [x# 1] x#))\n"
@@ -1348,19 +1447,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:677
+#: en/content/guides/weird_characters.adoc:732
 msgid ""
 "Importantly, every time a particular `x#` is used within a single syntax "
 "quote, the _same_ generated name will be used."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:679
+#: en/content/guides/weird_characters.adoc:734
 msgid "If we expand this macro, we can see the `gensym` 'd name:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:684
+#: en/content/guides/weird_characters.adoc:739
 #, no-wrap
 msgid ""
 "user=> (macroexpand '(m))\n"
@@ -1368,20 +1467,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:687
+#: en/content/guides/weird_characters.adoc:742
 msgid ""
-"http://clojuredocs.org/clojure_core/clojure.core/gensym[ClojureDocs - "
-"gensyms]"
+"http://clojuredocs.org/clojure_core/clojure.core/gensym[ClojureDocs - gensym]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:688
+#: en/content/guides/weird_characters.adoc:743
 #, no-wrap
 msgid "`#?` - Reader conditional"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:693
+#: en/content/guides/weird_characters.adoc:748
 msgid ""
 "Reader conditionals are designed to allow different dialects of Clojure to "
 "share common code. The reader conditional behaves similarly to a traditional "
@@ -1389,7 +1487,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:700
+#: en/content/guides/weird_characters.adoc:755
 #: en/content/guides/reader_conditionals.adoc:25
 #, no-wrap
 msgid ""
@@ -1400,19 +1498,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:703
-#: en/content/guides/weird_characters.adoc:721
-msgid "<<xref/../reader_conditionals#,Reader conditonals>>"
+#: en/content/guides/weird_characters.adoc:758
+msgid "<<xref/../reader_conditionals#,Reader conditionals>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:704
+#: en/content/guides/weird_characters.adoc:759
 #, no-wrap
 msgid "`#?@` - Splicing Reader conditional"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:708
+#: en/content/guides/weird_characters.adoc:763
 #: en/content/guides/reader_conditionals.adoc:30
 msgid ""
 "The syntax for a splicing reader conditional is `#?@`. It is used to splice "
@@ -1420,7 +1517,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:713
+#: en/content/guides/weird_characters.adoc:768
 #: en/content/guides/reader_conditionals.adoc:36
 #, no-wrap
 msgid ""
@@ -1430,13 +1527,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:715
+#: en/content/guides/weird_characters.adoc:770
 #: en/content/guides/reader_conditionals.adoc:39
 msgid "as this:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:719
+#: en/content/guides/weird_characters.adoc:774
 #: en/content/guides/reader_conditionals.adoc:44
 #, no-wrap
 msgid ""
@@ -1444,14 +1541,19 @@ msgid ""
 "  (list 5 6 7 8))\n"
 msgstr ""
 
+#. type: Plain text
+#: en/content/guides/weird_characters.adoc:776
+msgid "<<xref/../reader_conditionals#,Reader conditonals>>"
+msgstr ""
+
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:722
+#: en/content/guides/weird_characters.adoc:777
 #, no-wrap
 msgid "`\\*var-name*` - \"Earmuffs\""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:730
+#: en/content/guides/weird_characters.adoc:785
 msgid ""
 "Earmuffs (a pair of asterisk bookending var names) is a naming convention in "
 "many LISPs used to denote _special vars_. Most commonly in Clojure this is "
@@ -1462,14 +1564,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:733
+#: en/content/guides/weird_characters.adoc:788
 msgid ""
 "Core Clojure examples include `\\*out*` and `\\*in*` which represent the "
 "standard in and out streams for Clojure."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:735
+#: en/content/guides/weird_characters.adoc:790
 msgid ""
 "http://stackoverflow.com/questions/1986961/how-is-the-var-name-naming-"
 "convention-used-in-clojure[How is the var-name naming-convention used in "
@@ -1477,27 +1579,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:736
+#: en/content/guides/weird_characters.adoc:791
 msgid ""
 "http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/"
 "\\*out*[Clojure API Docs]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:737
+#: en/content/guides/weird_characters.adoc:792
 #, no-wrap
 msgid "`>!!`, `<!!`, `>!`, and `<!` - core.async channel macros"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:740
+#: en/content/guides/weird_characters.adoc:795
 msgid ""
 "These symbols are channel operations in https://github.com/clojure/core."
 "async[`core.async`]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:742
+#: en/content/guides/weird_characters.adoc:797
 msgid ""
 "a Clojure/ClojureScript library for channel based asynchronous programming "
 "(specifically http://en.wikipedia.org/wiki/"
@@ -1506,7 +1608,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:746
+#: en/content/guides/weird_characters.adoc:801
 msgid ""
 "If you imagine, for the sake of argument, a channel is a bit like a queue "
 "that things can put stuff on and take stuff off, then these symbols support "
@@ -1514,24 +1616,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:748
+#: en/content/guides/weird_characters.adoc:803
 msgid "`>!!` and `<!!` are _blocking put_ and _take_ respectively"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:749
+#: en/content/guides/weird_characters.adoc:804
 msgid "`>!` and `<!` are, simply _put_ and _take_"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:752
+#: en/content/guides/weird_characters.adoc:807
 msgid ""
 "THe difference being the blocking version operate outside `go` blocks and "
 "block the thread they operate on."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:758
+#: en/content/guides/weird_characters.adoc:813
 #, no-wrap
 msgid ""
 "user=> (def my-channel (chan 10)) ; create a channel\n"
@@ -1541,14 +1643,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:761
+#: en/content/guides/weird_characters.adoc:816
 msgid ""
 "The non-blocking versions need to be executed within a `go` block, otherwise "
 "they'll throw an exception."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:768
+#: en/content/guides/weird_characters.adoc:823
 #, no-wrap
 msgid ""
 "user=> (def c (chan))\n"
@@ -1559,7 +1661,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:774
+#: en/content/guides/weird_characters.adoc:829
 msgid ""
 "While the difference between these is well outside the scope of this guide, "
 "fundamentally the `go` blocks operate and manage their own resources pausing "
@@ -1569,30 +1671,30 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:776
+#: en/content/guides/weird_characters.adoc:831
 msgid ""
 "https://github.com/clojure/core.async/blob/master/examples/walkthrough."
 "clj[core.async Code Walkthrough]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:777
+#: en/content/guides/weird_characters.adoc:832
 msgid "https://github.com/clojure/core.async/wiki[core.async Wiki]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:778
+#: en/content/guides/weird_characters.adoc:833
 msgid "<<xref/../core_async_go#,Go Block Best Practices>>"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:779
+#: en/content/guides/weird_characters.adoc:834
 #, no-wrap
 msgid "`<symbol>?` - Predicate Suffix"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:785
+#: en/content/guides/weird_characters.adoc:840
 msgid ""
 "Putting `?` at the end of a symbol is a naming convention common across many "
 "languages that support special characters in their symbol names. It is used "
@@ -1601,7 +1703,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:789
+#: en/content/guides/weird_characters.adoc:844
 #, no-wrap
 msgid ""
 "(def my-buffer (buffers/create-buffer [1 2 3]))\n"
@@ -1609,29 +1711,29 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:791
+#: en/content/guides/weird_characters.adoc:846
 msgid "At a glance, how would you know if the function `empty` in this case,"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:793
+#: en/content/guides/weird_characters.adoc:848
 msgid "Returned `true` if the passed in buffer was empty, or,"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:794
+#: en/content/guides/weird_characters.adoc:849
 msgid "Cleared the buffer"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:797
+#: en/content/guides/weird_characters.adoc:852
 msgid ""
 "While the author could have renamed `empty` to `is-empty`, the richness of "
 "symbol naming in Clojure allows us to express intent more symbolically."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:802
+#: en/content/guides/weird_characters.adoc:857
 #, no-wrap
 msgid ""
 "(def my-buffer (buffers/create-buffer [1 2 3]))\n"
@@ -1640,39 +1742,39 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:804
+#: en/content/guides/weird_characters.adoc:859
 msgid "This is simply a recommended convention, not a requirement."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:806
-#: en/content/guides/weird_characters.adoc:833
+#: en/content/guides/weird_characters.adoc:861
+#: en/content/guides/weird_characters.adoc:888
 msgid ""
 "https://github.com/bbatsov/clojure-style-guide#naming[Clojure Style Guide]"
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:807
+#: en/content/guides/weird_characters.adoc:862
 #, no-wrap
 msgid "`<symbol>!` - Unsafe Operations"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:810
+#: en/content/guides/weird_characters.adoc:865
 msgid ""
 "https://github.com/bbatsov/clojure-style-guide#changing-state-fns-with-"
 "exclamation-mark[The Clojure style guide has this to say]:"
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/weird_characters.adoc:814
+#: en/content/guides/weird_characters.adoc:869
 msgid ""
 "The names of functions/macros that are not safe in STM transactions should "
 "end with an exclamation mark (e.g `reset!`)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:818
+#: en/content/guides/weird_characters.adoc:873
 msgid ""
 "You'll most commonly see this appended to function names whose purpose is to "
 "mutate state, e.g. connecting to a data store, updating an atom or closing a "
@@ -1680,7 +1782,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:826
+#: en/content/guides/weird_characters.adoc:881
 #, no-wrap
 msgid ""
 "user=> (def my-stateful-thing (atom 0))\n"
@@ -1692,23 +1794,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:829
+#: en/content/guides/weird_characters.adoc:884
 msgid "This is simply a recommended convention and not a requirement."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:831
+#: en/content/guides/weird_characters.adoc:886
 msgid "Note that the exclamation mark is often pronounced as bang."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:834
+#: en/content/guides/weird_characters.adoc:889
 #, no-wrap
 msgid "`_` - Unused argument"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:838
+#: en/content/guides/weird_characters.adoc:893
 msgid ""
 "When you see the underscore character used as function arguments or in a "
 "`let` binding, `pass:[_]` is a common naming convention to indicate you "
@@ -1716,7 +1818,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:842
+#: en/content/guides/weird_characters.adoc:897
 msgid ""
 "This is an example using the `add-watch` function that can be used to add "
 "callback style behaviour when atoms change value. Imagine, given an atom, we "
@@ -1724,13 +1826,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:846
+#: en/content/guides/weird_characters.adoc:901
 #, no-wrap
 msgid "(def value (atom 0))\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:849
+#: en/content/guides/weird_characters.adoc:904
 #, no-wrap
 msgid ""
 "(add-watch value nil (fn [_ _ _ new-value]\n"
@@ -1738,7 +1840,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:854
+#: en/content/guides/weird_characters.adoc:909
 #, no-wrap
 msgid ""
 "(reset! value 6)\n"
@@ -1748,20 +1850,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:858
+#: en/content/guides/weird_characters.adoc:913
 msgid ""
 "`add-watch` takes four arguments, but in our case we only really care about "
 "the last argument - the new value of the atom so we use `_` for the others."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:859
+#: en/content/guides/weird_characters.adoc:914
 #, no-wrap
 msgid "`,` - Whitespace character"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:864
+#: en/content/guides/weird_characters.adoc:919
 msgid ""
 "In Clojure, `,` is treated as whitespace, exactly the same as spaces, tabs, "
 "or newlines.  Commas are thus never required in literal collections, but are "
@@ -1769,7 +1871,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:869
+#: en/content/guides/weird_characters.adoc:924
 #, no-wrap
 msgid ""
 "user=>(def m {:a 1, :b 2, :c 3}\n"
@@ -1777,50 +1879,31 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/weird_characters.adoc:871
+#: en/content/guides/weird_characters.adoc:926
 #, no-wrap
 msgid "`#=` Reader eval"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:874
+#: en/content/guides/weird_characters.adoc:929
 msgid "`#=` allows the reader to evaluate an arbitrary form during read time:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:881
+#: en/content/guides/weird_characters.adoc:934
 #, no-wrap
 msgid ""
 "user=> (read-string \"#=(+ 3 4)\")\n"
 ";;=> 7\n"
-"#=123\n"
-";;=> 123\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/weird_characters.adoc:884
-#, no-wrap
-msgid ""
-"#=\"foo\"\n"
-";;=> foo\n"
-msgstr ""
-
-#. type: delimited block -
-#: en/content/guides/weird_characters.adoc:888
-#, no-wrap
-msgid ""
-"(def foo 1)\n"
-"#='foo\n"
-";;=> 1\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:891
+#: en/content/guides/weird_characters.adoc:937
 msgid "Note that the read-time evaluation can also cause side-effects:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/weird_characters.adoc:896
+#: en/content/guides/weird_characters.adoc:942
 #, no-wrap
 msgid ""
 "user=> (read-string \"#=(println :foo)\")\n"
@@ -1829,7 +1912,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:899
+#: en/content/guides/weird_characters.adoc:945
 msgid ""
 "Consequently, `read-string` is not safe to call with unverified user input.  "
 "For a safe alternative, see https://clojure.github.io/clojure/clojure.edn-"
@@ -1837,14 +1920,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/weird_characters.adoc:902
+#: en/content/guides/weird_characters.adoc:948
 msgid ""
 "Note that `#=` is not an officially supported feature of the reader, so you "
 "shouldn't rely on its presence in future versions of Clojure."
 msgstr ""
 
 #. type: delimited block =
-#: en/content/guides/weird_characters.adoc:908
+#: en/content/guides/weird_characters.adoc:954
 msgid ""
 "Many thanks to everyone who has contributed ideas and [the copious amounts "
 "of] spelling corrections (crikey I'm bad at speelingz - so thanks Michael R. "

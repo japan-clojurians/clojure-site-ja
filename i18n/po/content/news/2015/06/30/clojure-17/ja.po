@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-02-07 07:23+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2019-06-15 19:02+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,25 +17,146 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: Title ==
-#: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10
+#: en/content/dev/contributor_agreement.adoc:21 en/content/dev/contributors.adoc:1
+#: en/content/news/2015/06/30/clojure-17.adoc:34
 #, no-wrap
-msgid "Transducers"
-msgstr "トランスデューサー(transducer)"
-
-#. type: Plain text
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:104 en/content/news/2015/06/30/clojure-17.adoc:39
-msgid "Timothy Baldridge"
+msgid "Contributors"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:105 en/content/news/2015/06/30/clojure-17.adoc:58
+#: en/content/dev/contributor_agreement.adoc:30 en/content/news/2015/06/30/clojure-17.adoc:44
+msgid "Aaron Cohen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:36 en/content/news/2015/06/30/clojure-17.adoc:54
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:106
+msgid "Alex Miller"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:45 en/content/news/2015/06/30/clojure-17.adoc:43
+msgid "Ambrose Bonnaire-Sergeant"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:48 en/content/news/2015/06/30/clojure-17.adoc:46
+msgid "Andy Fingerhut"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:57 en/content/news/2015/06/30/clojure-17.adoc:40
+msgid "Bozhidar Batsov"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:58 en/content/news/2015/06/30/clojure-17.adoc:41
+msgid "Brandon Bloom"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:77 en/content/news/2015/06/30/clojure-17.adoc:48
+msgid "Daniel Solano Gómez"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:86 en/content/news/2015/06/30/clojure-17.adoc:63
+msgid "Devin Walters"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:100 en/content/news/2015/06/30/clojure-17.adoc:58
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:105
 msgid "Ghadi Shayban"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:106 en/content/news/2015/06/30/clojure-17.adoc:54
-msgid "Alex Miller"
+#: en/content/dev/contributor_agreement.adoc:105 en/content/news/2015/06/30/clojure-17.adoc:53
+msgid "Howard Lewis Ship"
 msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:108 en/content/news/2015/06/30/clojure-17.adoc:51
+msgid "Immo Heikkinen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:111 en/content/news/2015/06/30/clojure-17.adoc:64
+msgid "Jason Wolfe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:119 en/content/news/2015/06/30/clojure-17.adoc:62
+msgid "Jozef Wagner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:131 en/content/news/2015/06/30/clojure-17.adoc:61
+msgid "Luke VanderHart"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:139 en/content/news/2015/06/30/clojure-17.adoc:42
+msgid "Michael Blume"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:146 en/content/news/2015/06/30/clojure-17.adoc:56
+msgid "Nicola Mometto"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:151 en/content/news/2015/06/30/clojure-17.adoc:59
+msgid "Paul Stadig"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:152 en/content/news/2015/06/30/clojure-17.adoc:45
+msgid "Pepijn de Vos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:159 en/content/news/2015/06/30/clojure-17.adoc:50
+#: en/content/about/spec.adoc:381
+msgid "Rich Hickey"
+msgstr "Rich Hickey"
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:172 en/content/news/2015/06/30/clojure-17.adoc:55
+msgid "Steve Miner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:173 en/content/news/2015/06/30/clojure-17.adoc:65
+msgid "Steven Yi"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:174 en/content/news/2015/06/30/clojure-17.adoc:49
+msgid "Stuart Halloway"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:179 en/content/news/2015/06/30/clojure-17.adoc:39
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:104
+msgid "Timothy Baldridge"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:183 en/content/news/2015/06/30/clojure-17.adoc:57
+msgid "Tomasz Nurkiewicz"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:188 en/content/news/2015/06/30/clojure-17.adoc:60
+msgid "Zach Tellman"
+msgstr ""
+
+#. type: Title ==
+#: en/content/reference/transducers.adoc:1 en/content/news/2015/06/30/clojure-17.adoc:10
+#, no-wrap
+msgid "Transducers"
+msgstr "トランスデューサー(transducer)"
 
 #. type: Title =
 #: en/content/news/2015/06/30/clojure-17.adoc:1
@@ -147,50 +268,9 @@ msgid ""
 "surrounding code."
 msgstr ""
 
-#. type: Title ==
-#: en/content/news/2015/06/30/clojure-17.adoc:34
-#, no-wrap
-msgid "Contributors"
-msgstr ""
-
 #. type: Plain text
 #: en/content/news/2015/06/30/clojure-17.adoc:37
 msgid "Thanks to all of those who contributed patches to Clojure 1.7:"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:40
-msgid "Bozhidar Batsov"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:41
-msgid "Brandon Bloom"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:42
-msgid "Michael Blume"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:43
-msgid "Ambrose Bonnaire-Sergeant"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:44
-msgid "Aaron Cohen"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:45
-msgid "Pepijn de Vos"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:46
-msgid "Andy Fingerhut"
 msgstr ""
 
 #. type: Plain text
@@ -199,83 +279,8 @@ msgid "Gary Fredricks"
 msgstr ""
 
 #. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:48
-msgid "Daniel Solano Gómez"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:49
-msgid "Stuart Halloway"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:50 en/content/about/spec.adoc:381
-msgid "Rich Hickey"
-msgstr "Rich Hickey"
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:51
-msgid "Immo Heikkinen"
-msgstr ""
-
-#. type: Plain text
 #: en/content/news/2015/06/30/clojure-17.adoc:52
 msgid "Andrei Kleschinsky"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:53
-msgid "Howard Lewis Ship"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:55
-msgid "Steve Miner"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:56
-msgid "Nicola Mometto"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:57
-msgid "Tomasz Nurkiewicz"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:59
-msgid "Paul Stadig"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:60
-msgid "Zach Tellman"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:61
-msgid "Luke VanderHart"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:62
-msgid "Jozef Wagner"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:63
-msgid "Devin Walters"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:64
-msgid "Jason Wolfe"
-msgstr ""
-
-#. type: Plain text
-#: en/content/news/2015/06/30/clojure-17.adoc:65
-msgid "Steven Yi"
 msgstr ""
 
 #. type: Plain text

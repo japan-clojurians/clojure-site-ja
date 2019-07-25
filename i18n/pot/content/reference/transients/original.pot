@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,48 +17,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: en/content/reference/metadata.adoc:4 en/content/reference/protocols.adoc:4
-#: en/content/reference/sequences.adoc:4
-#: en/content/reference/multimethods.adoc:4 en/content/reference/libs.adoc:4
-#: en/content/reference/transients.adoc:4
-#: en/content/reference/compilation.adoc:4
-#: en/content/reference/other_libraries.adoc:4
-#: en/content/reference/documentation.adoc:4 en/content/reference/macros.adoc:4
-#: en/content/reference/transducers.adoc:4 en/content/reference/refs.adoc:4
-#: en/content/reference/lazy.adoc:4 en/content/reference/namespaces.adoc:4
-#: en/content/reference/lisps.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/libs.adoc:4 en/content/reference/data_structures.adoc:4
+#: en/content/reference/multimethods.adoc:4 en/content/reference/agents.adoc:4
+#: en/content/reference/lazy.adoc:4 en/content/reference/transients.adoc:4
+#: en/content/reference/macros.adoc:4 en/content/reference/transducers.adoc:4
+#: en/content/reference/atoms.adoc:4
 #: en/content/reference/other_functions.adoc:4
-#: en/content/reference/reducers.adoc:4
-#: en/content/reference/data_structures.adoc:4
-#: en/content/reference/atoms.adoc:4 en/content/reference/repl_and_main.adoc:4
-#: en/content/reference/agents.adoc:4 en/content/reference/datatypes.adoc:4
-#: en/content/community/libraries.adoc:4 en/content/community/license.adoc:4
-#: en/content/community/downloads_older.adoc:4
-#: en/content/community/downloads.adoc:4 en/content/community/swag.adoc:4
-#: en/content/404.adoc:4 en/content/privacy.adoc:4 en/content/search.adoc:4
-#: en/content/about/spec.adoc:4 en/content/about/concurrent_programming.adoc:4
-#: en/content/about/lisp.adoc:4 en/content/about/jvm_hosted.adoc:4
-#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/dynamic.adoc:4
-#: en/content/about/features.adoc:4 en/content/about/rationale.adoc:4
-#: en/content/about/state.adoc:4 en/content/about/clojurescript.adoc:4
-#: en/content/about/functional_programming.adoc:4
-#: en/content/about/clojureclr.adoc:4
+#: en/content/reference/datatypes.adoc:4
+#: en/content/reference/repl_and_main.adoc:4
+#: en/content/reference/protocols.adoc:4
+#: en/content/reference/other_libraries.adoc:4
+#: en/content/reference/documentation.adoc:4 en/content/reference/refs.adoc:4
+#: en/content/reference/lisps.adoc:4 en/content/reference/namespaces.adoc:4
+#: en/content/reference/sequences.adoc:4 en/content/reference/reducers.adoc:4
+#: en/content/reference/metadata.adoc:4 en/content/reference/evaluation.adoc:4
+#: en/content/reference/compilation.adoc:4
+#: en/content/community/downloads.adoc:4 en/content/community/license.adoc:4
+#: en/content/community/downloads_older.adoc:4 en/content/community/swag.adoc:4
+#: en/content/community/libraries.adoc:4 en/content/404.adoc:4
+#: en/content/about/spec.adoc:4 en/content/about/clojureclr.adoc:4
+#: en/content/about/dynamic.adoc:4
+#: en/content/about/concurrent_programming.adoc:4
+#: en/content/about/functional_programming.adoc:4 en/content/about/state.adoc:4
+#: en/content/about/jvm_hosted.adoc:4 en/content/about/clojurescript.adoc:4
+#: en/content/about/runtime_polymorphism.adoc:4 en/content/about/lisp.adoc:4
+#: en/content/about/rationale.adoc:4 en/content/about/features.adoc:4
+#: en/content/privacy.adoc:4 en/content/search.adoc:4
 msgid "Rich Hickey 2015-01-01"
 msgstr ""
 
-#. type: Title =
-#: en/content/reference/deps_and_cli.adoc:14
-#: en/content/reference/transients.adoc:17
-#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
-#: en/content/about/rationale.adoc:1
+#. type: Title ==
+#: en/content/reference/agents.adoc:39 en/content/reference/transients.adoc:42
+#: en/content/reference/refs.adoc:35
 #, no-wrap
-msgid "Rationale"
+msgid "Example"
 msgstr ""
 
 #. type: Title =
 #: en/content/reference/transients.adoc:1
 #, no-wrap
 msgid "Transient Data Structures"
+msgstr ""
+
+#. type: Title =
+#: en/content/reference/transients.adoc:17
+#: en/content/reference/deps_and_cli.adoc:14
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:10
+#: en/content/about/rationale.adoc:1
+#, no-wrap
+msgid "Rationale"
 msgstr ""
 
 #. type: Plain text
@@ -176,13 +183,6 @@ msgid ""
 "any aliases you might have created."
 msgstr ""
 
-#. type: Title ==
-#: en/content/reference/transients.adoc:42 en/content/reference/refs.adoc:35
-#: en/content/reference/agents.adoc:39
-#, no-wrap
-msgid "Example"
-msgstr ""
-
 #. type: Plain text
 #: en/content/reference/transients.adoc:45
 msgid ""
@@ -270,8 +270,12 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/reference/transients.adoc:75
-#: en/content/guides/comparators.adoc:12 en/content/about/state.adoc:74
+#: en/content/reference/transients.adoc:75 en/content/guides/equality.adoc:14
+#: en/content/guides/comparators.adoc:12
+#: en/content/news/2017/01/31/state-of-clojure-2016.adoc:83
+#: en/content/news/2012/05/08/reducers.adoc:164
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:194
+#: en/content/about/state.adoc:74
 #, no-wrap
 msgid "Summary"
 msgstr ""
@@ -291,57 +295,52 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/reference/transients.adoc:82
-msgid "Thread isolation - enforced"
-msgstr ""
-
-#. type: Plain text
-#: en/content/reference/transients.adoc:83
 msgid "O(1) creation from persistent data structures"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:84
+#: en/content/reference/transients.adoc:83
 msgid "Shares structure with persistent source"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:85
+#: en/content/reference/transients.adoc:84
 msgid ""
 "O(1) creation of persistent data structure when editing session finished"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:86
+#: en/content/reference/transients.adoc:85
 msgid "Same code structure as functional version"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:87
+#: en/content/reference/transients.adoc:86
 msgid "Capture return value, use for next call"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:88
+#: en/content/reference/transients.adoc:87
 msgid "Don't bash in place"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:89
+#: en/content/reference/transients.adoc:88
 msgid "Not persistent, so you can't hang onto interim values or alias"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:90
+#: en/content/reference/transients.adoc:89
 msgid "Can't use after returning a persistent version"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:91
+#: en/content/reference/transients.adoc:90
 msgid "Fast"
 msgstr ""
 
 #. type: Plain text
-#: en/content/reference/transients.adoc:92
+#: en/content/reference/transients.adoc:91
 msgid ""
 "Transient persistent vectors, hash-maps, and hash-sets were added in Clojure "
 "1.1."

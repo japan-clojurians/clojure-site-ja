@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-06-12 00:05+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,26 +22,18 @@ msgstr ""
 msgid "Literals"
 msgstr ""
 
-#. type: Title ==
-#: en/content/reference/evaluation.adoc:1
-#: en/content/guides/learn/syntax.adoc:59
-#, no-wrap
-msgid "Evaluation"
-msgstr ""
-
 #. type: Title ===
 #: en/content/reference/other_functions.adoc:37
-#: en/content/guides/learn/syntax.adoc:310
+#: en/content/guides/learn/syntax.adoc:332
 #, no-wrap
 msgid "Printing"
 msgstr ""
 
-#. type: Plain text
-#: en/content/guides/learn/hashed_colls.adoc:4
-#: en/content/guides/learn/syntax.adoc:4 en/content/guides/learn/flow.adoc:4
-#: en/content/guides/learn/sequential_colls.adoc:4
-#: en/content/guides/learn/functions.adoc:4
-msgid "Alex Miller 2017-09-02"
+#. type: Title ==
+#: en/content/reference/evaluation.adoc:1
+#: en/content/guides/learn/syntax.adoc:80
+#, no-wrap
+msgid "Evaluation"
 msgstr ""
 
 #. type: Title =
@@ -51,67 +43,151 @@ msgid "Learn Clojure - Syntax"
 msgstr ""
 
 #. type: Plain text
+#: en/content/guides/learn/syntax.adoc:4
+#: en/content/guides/learn/sequential_colls.adoc:4
+#: en/content/guides/learn/flow.adoc:4 en/content/guides/learn/functions.adoc:4
+#: en/content/guides/learn/hashed_colls.adoc:4
+msgid "Alex Miller 2017-09-02"
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/syntax.adoc:18
 msgid ""
 "Below are some examples of literal representations of common primitives in "
-"Clojure."
+"Clojure.  All of these literals are valid Clojure expressions."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:20
 msgid ""
 "The `;` creates a comment to the end of the line. Sometimes multiple "
-"semicolons are used to indicate header lines."
+"semicolons are used to indicate header comment sections, but this is just a "
+"convention."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/syntax.adoc:21
+#, no-wrap
+msgid "Numeric types"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:29
+#: en/content/guides/learn/syntax.adoc:28
 #, no-wrap
 msgid ""
-";; Numeric types\n"
-"42              ; Long - 64-bit integer (from -2^63 to 2^63-1)\n"
-"6.022e23        ; Double - double-precision 64-bit floating point\n"
-"42N             ; BigInt - arbitrary precision integer\n"
-"1.0M            ; BigDecimal - arbitrary precision fixed-point decimal\n"
-"22/7            ; Ratio\n"
+"42        ; integer\n"
+"-1.5      ; floating point\n"
+"22/7      ; ratio\n"
 msgstr ""
 
-#. type: delimited block -
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:31
+msgid ""
+"Integers are read as fixed precision 64-bit integers when they are in range "
+"and arbitrary precision otherwise. A trailing `N` can be used to force "
+"arbitrary precision. Clojure also supports the Java syntax for octal (prefix "
+"`0`), hexadecimal (prefix `0x`) and arbitrary radix (prefix with base then "
+"`r`) integers. Ratios are provided as their own type combining a numerator "
+"and denominator."
+msgstr ""
+
+#. type: Plain text
 #: en/content/guides/learn/syntax.adoc:33
-#, no-wrap
 msgid ""
-";; Character types\n"
-"\"hello\"         ; String\n"
-"\\e              ; Character\n"
+"Floating point values are read as double-precision 64-bit floats, or "
+"arbitrary precision with an `M` suffix. Exponential notation is also "
+"supported. The special symbolic values `pass:[##Inf]`, `pass:[##-Inf]`, and "
+"`pass:[##NaN]` represent positive infinity, negative infinity, and \"not a "
+"number\" values respectively."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/syntax.adoc:34
+#, no-wrap
+msgid "Character types"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:43
+#: en/content/guides/learn/syntax.adoc:41
 #, no-wrap
 msgid ""
-";; Other types\n"
-"nil             ; null value\n"
-"true            ; Boolean (also, false)\n"
-"#\"[0-9]+\"       ; Regular expression\n"
-":alpha          ; Keyword\n"
-":release/alpha  ; Keyword with namespace\n"
-"map             ; Symbol\n"
-"+               ; Symbol - most punctuation allowed\n"
-"clojure.core/+  ; Namespaced symbol\n"
+"\"hello\"         ; string\n"
+"\\e              ; character\n"
+"#\"[0-9]+\"       ; regular expression\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:44
+msgid ""
+"Strings are contained in double quotes and may span multiple lines. "
+"Individual characters are represented with a leading backslash. There are a "
+"few special named characters: `\\newline` `\\spec` `\\tab`, etc. Unicode "
+"characters can be represented with `\\uNNNN` or in octal with `\\oNNN`."
 msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:46
-msgid "All of the literals above are valid Clojure expressions."
+msgid ""
+"Literal regular expressions are strings with a leading `#`. These are "
+"compiled to java.util.regex.Pattern objects."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/syntax.adoc:47
+#, no-wrap
+msgid "Symbols and idents"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/learn/syntax.adoc:58
+#, no-wrap
+msgid ""
+"map             ; symbol\n"
+"+               ; symbol - most punctuation allowed\n"
+"clojure.core/+  ; namespaced symbol\n"
+"nil             ; null value\n"
+"true false      ; booleans\n"
+":alpha          ; keyword\n"
+":release/alpha  ; keyword with namespace\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:48
+#: en/content/guides/learn/syntax.adoc:61
+msgid ""
+"Symbols are composed of letters, numbers, and other punctutation and are "
+"used to refer to something else, like a function, value, namespace, etc. "
+"Symbols may optionally have a namespace, separated with a forward slash from "
+"the name."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:63
+msgid ""
+"There are three special symbols that are read as different types - `nil` is "
+"the null value, and `true` and `false` are the boolean values."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:65
+msgid ""
+"Symbols that start with a leading colon are called keywords. Keywords always "
+"evaluate to themselves and are frequently used as enumerated values or "
+"attribute names in Clojure."
+msgstr ""
+
+#. type: Title ===
+#: en/content/guides/learn/syntax.adoc:66
+#, no-wrap
+msgid "Literal collections"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/learn/syntax.adoc:69
 msgid "Clojure also includes literal syntax for four collection types:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:55
+#: en/content/guides/learn/syntax.adoc:76
 #, no-wrap
 msgid ""
 "'(1 2 3)     ; list \n"
@@ -121,32 +197,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:58
+#: en/content/guides/learn/syntax.adoc:79
 msgid ""
 "We'll talk about these in much greater detail later - for now it's enough to "
 "know that these four data structures can be used to create composite data."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:62
+#: en/content/guides/learn/syntax.adoc:83
 msgid "Next we will consider how Clojure reads and evaluates expressions."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:63
+#: en/content/guides/learn/syntax.adoc:84
 #, no-wrap
 msgid "Traditional Evaluation (Java)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:66
+#: en/content/guides/learn/syntax.adoc:87
 msgid ""
 "image:/images/content/guides/learn/syntax/traditional-evaluation.png[\"Java "
 "evaluation\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:68
+#: en/content/guides/learn/syntax.adoc:89
 msgid ""
 "In Java, source code (.java files) are read as characters by the compiler "
 "(javac), which produces bytecode (.class files) which can be loaded by the "
@@ -154,20 +230,20 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:69
+#: en/content/guides/learn/syntax.adoc:90
 #, no-wrap
 msgid "Clojure Evaluation"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:72
+#: en/content/guides/learn/syntax.adoc:93
 msgid ""
 "image:/images/content/guides/learn/syntax/clojure-evaluation.png[\"Clojure "
 "evaluation\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:74
+#: en/content/guides/learn/syntax.adoc:95
 msgid ""
 "In Clojure, source code is read as characters by the <<xref/../../../"
 "reference/reader#,Reader>>. The Reader may read the source either from .clj "
@@ -176,12 +252,12 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:76
+#: en/content/guides/learn/syntax.adoc:97
 msgid "There are two important points here:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:78
+#: en/content/guides/learn/syntax.adoc:99
 msgid ""
 "The unit of source code is a *Clojure expression*, not a Clojure source "
 "file. Source files are read as a series of expressions, just as if you typed "
@@ -189,7 +265,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:79
+#: en/content/guides/learn/syntax.adoc:100
 msgid ""
 "Separating the Reader and the Compiler is a key separation that makes room "
 "for macros. Macros are special functions that take code (as data), and emit "
@@ -198,25 +274,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:80
+#: en/content/guides/learn/syntax.adoc:101
 #, no-wrap
 msgid "Structure vs Semantics"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:83
+#: en/content/guides/learn/syntax.adoc:104
 msgid "Consider a Clojure expression:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:85
+#: en/content/guides/learn/syntax.adoc:106
 msgid ""
 "image:/images/content/guides/learn/syntax/structure-and-semantics."
 "png[\"Structure and semantics\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:87
+#: en/content/guides/learn/syntax.adoc:108
 msgid ""
 "This diagram illustrates the difference between syntax in green (the Clojure "
 "data structure produced by the Reader) and semantics in blue (how that data "
@@ -224,7 +300,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:89
+#: en/content/guides/learn/syntax.adoc:110
 msgid ""
 "Most literal Clojure forms evaluate to themselves, *except* symbols and "
 "lists. Symbols are used to refer to something else and when evaluated, "
@@ -233,7 +309,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:91
+#: en/content/guides/learn/syntax.adoc:112
 msgid ""
 "In the diagram, (+ 3 4) is read as a list containing the symbol (+) and two "
 "numbers (3 and 4). The first element (where + is found) can be called "
@@ -244,28 +320,28 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:93
+#: en/content/guides/learn/syntax.adoc:114
 msgid "Considering the evaluation of the expression above:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:95
+#: en/content/guides/learn/syntax.adoc:116
 msgid "3 and 4 evaluate to themselves (longs)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:96
+#: en/content/guides/learn/syntax.adoc:117
 msgid "+ evaluates to a function that implements `+`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:97
+#: en/content/guides/learn/syntax.adoc:118
 msgid ""
 "evaluating the list will invoke the `+` function with 3 and 4 as arguments"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:99
+#: en/content/guides/learn/syntax.adoc:120
 msgid ""
 "Many languages have both statements and expressions, where statements have "
 "some stateful effect but do not return a value. In Clojure, everything is an "
@@ -274,19 +350,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:101
+#: en/content/guides/learn/syntax.adoc:122
 msgid ""
 "Now let's consider how we can interactively evaluate expressions in Clojure."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:102
+#: en/content/guides/learn/syntax.adoc:123
 #, no-wrap
 msgid "Delaying evaluation with quoting"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:105
+#: en/content/guides/learn/syntax.adoc:126
 msgid ""
 "Sometimes it's useful to suspend evaluation, in particular for symbols and "
 "lists. Sometimes a symbol should just be a symbol without looking up what it "
@@ -294,7 +370,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:110
+#: en/content/guides/learn/syntax.adoc:131
 #, no-wrap
 msgid ""
 "user=> 'x\n"
@@ -302,14 +378,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:113
+#: en/content/guides/learn/syntax.adoc:134
 msgid ""
 "And sometimes a list should just be a list of data values (not code to "
 "evaluate):"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:118
+#: en/content/guides/learn/syntax.adoc:139
 #, no-wrap
 msgid ""
 "user=> '(1 2 3)\n"
@@ -317,63 +393,64 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:121
+#: en/content/guides/learn/syntax.adoc:142
 msgid ""
 "One confusing error you might see is the result of accidentally trying to "
 "evaluate a list of data as if it were code:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:126
+#: en/content/guides/learn/syntax.adoc:148
 #, no-wrap
 msgid ""
 "user=> (1 2 3)\n"
-"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn\n"
+"Execution error (ClassCastException) at user/eval156 (REPL:1).\n"
+"class java.lang.Long cannot be cast to class clojure.lang.IFn\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:129
+#: en/content/guides/learn/syntax.adoc:151
 msgid ""
 "For now, don't worry too much about quote but you will see it occasionally "
 "in these materials to avoid evaluation of symbols or lists."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/learn/syntax.adoc:130
+#: en/content/guides/learn/syntax.adoc:152
 #, no-wrap
 msgid "REPL"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:133
+#: en/content/guides/learn/syntax.adoc:155
 msgid ""
 "Most of the time when you are using Clojure, you will do so in an editor or "
 "a REPL (Read-Eval-Print-Loop). The REPL has the following parts:"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:135
+#: en/content/guides/learn/syntax.adoc:157
 msgid "Read an expression (a string of characters) to produce Clojure data."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:136
+#: en/content/guides/learn/syntax.adoc:158
 msgid ""
 "Evaluate the data returned from #1 to yield a result (also Clojure data)."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:137
+#: en/content/guides/learn/syntax.adoc:159
 msgid "Print the result by converting it from data back to characters."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:138
+#: en/content/guides/learn/syntax.adoc:160
 msgid "Loop back to the beginning."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:140
+#: en/content/guides/learn/syntax.adoc:162
 msgid ""
 "One important aspect of #2 is that Clojure always compiles the expression "
 "before executing it; Clojure is **always** compiled to JVM bytecode. There "
@@ -381,7 +458,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:145
+#: en/content/guides/learn/syntax.adoc:167
 #, no-wrap
 msgid ""
 "user=> (+ 3 4)\n"
@@ -389,20 +466,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:148
+#: en/content/guides/learn/syntax.adoc:170
 msgid ""
 "The box above demonstrates evaluating an expression (+ 3 4) and receiving a "
 "result."
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:149
+#: en/content/guides/learn/syntax.adoc:171
 #, no-wrap
 msgid "Exploring at the REPL"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:152
+#: en/content/guides/learn/syntax.adoc:174
 msgid ""
 "Most REPL environments support a few tricks to help with interactive use. "
 "For example, some special symbols remember the results of evaluating the "
@@ -410,22 +487,22 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:154
+#: en/content/guides/learn/syntax.adoc:176
 msgid "`*1` (the last result)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:155
+#: en/content/guides/learn/syntax.adoc:177
 msgid "`*2` (the result two expressions ago)"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:156
+#: en/content/guides/learn/syntax.adoc:178
 msgid "`*3` (the result three expressions ago)"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:165
+#: en/content/guides/learn/syntax.adoc:187
 #, no-wrap
 msgid ""
 "user=> (+ 3 4)\n"
@@ -437,49 +514,49 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:168
+#: en/content/guides/learn/syntax.adoc:190
 msgid ""
 "In addition, there is a namespace `clojure.repl` that is included in the "
 "standard Clojure library that provides a number of helpful functions. To "
-"load that library and make it's functions available in our current context, "
+"load that library and make its functions available in our current context, "
 "call:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:172
+#: en/content/guides/learn/syntax.adoc:194
 #, no-wrap
 msgid "(require '[clojure.repl :refer :all])\n"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:175
+#: en/content/guides/learn/syntax.adoc:197
 msgid ""
 "For now, you can treat that as a magic incantation. Poof! We'll unpack it "
 "when we get to namespaces."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:177
+#: en/content/guides/learn/syntax.adoc:199
 msgid ""
 "We now have access to some additional functions that are useful at the REPL: "
 "`doc`, `find-doc`, `apropos`, `source`, and `dir`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:179
+#: en/content/guides/learn/syntax.adoc:201
 msgid ""
 "The `doc` function displays the documentation for any function. Let's call "
 "it on `+`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:183
+#: en/content/guides/learn/syntax.adoc:205
 #, no-wrap
 msgid "user=> (doc +)\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:188
+#: en/content/guides/learn/syntax.adoc:210
 #, no-wrap
 msgid ""
 "clojure.core/+\n"
@@ -489,32 +566,32 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:191
+#: en/content/guides/learn/syntax.adoc:213
 msgid ""
 "The `doc` function prints the documentation for `+`, including the valid "
 "signatures."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:193
+#: en/content/guides/learn/syntax.adoc:215
 msgid ""
 "The doc function prints the documentation, then returns nil as the result - "
 "you will see both in the evaluation output."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:195
+#: en/content/guides/learn/syntax.adoc:217
 msgid "We can invoke `doc` on itself too:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:199
+#: en/content/guides/learn/syntax.adoc:221
 #, no-wrap
 msgid "user=> (doc doc)\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:204
+#: en/content/guides/learn/syntax.adoc:226
 #, no-wrap
 msgid ""
 "clojure.repl/doc\n"
@@ -524,14 +601,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:207
+#: en/content/guides/learn/syntax.adoc:229
 msgid ""
 "Not sure what something is called? You can use the `apropos` command to find "
 "functions that match a particular string or regular expression."
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:212
+#: en/content/guides/learn/syntax.adoc:234
 #, no-wrap
 msgid ""
 "user=> (apropos \"+\")\n"
@@ -539,20 +616,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:215
+#: en/content/guides/learn/syntax.adoc:237
 msgid ""
 "You can also widen your search to include the docstrings themselves with "
 "`find-doc`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:219
+#: en/content/guides/learn/syntax.adoc:241
 #, no-wrap
 msgid "user=> (find-doc \"trim\")\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:227
+#: en/content/guides/learn/syntax.adoc:249
 #, no-wrap
 msgid ""
 "clojure.core/subvec\n"
@@ -565,7 +642,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:231
+#: en/content/guides/learn/syntax.adoc:253
 #, no-wrap
 msgid ""
 "clojure.string/trim\n"
@@ -574,7 +651,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:236
+#: en/content/guides/learn/syntax.adoc:258
 #, no-wrap
 msgid ""
 "clojure.string/trim-newline\n"
@@ -584,7 +661,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:240
+#: en/content/guides/learn/syntax.adoc:262
 #, no-wrap
 msgid ""
 "clojure.string/triml\n"
@@ -593,7 +670,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:244
+#: en/content/guides/learn/syntax.adoc:266
 #, no-wrap
 msgid ""
 "clojure.string/trimr\n"
@@ -602,7 +679,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:247
+#: en/content/guides/learn/syntax.adoc:269
 msgid ""
 "If you'd like to see a full listing of the functions in a particular "
 "namespace, you can use the `dir` function. Here we can use it on the "
@@ -610,13 +687,13 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:251
+#: en/content/guides/learn/syntax.adoc:273
 #, no-wrap
 msgid "user=> (dir clojure.repl)\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:265
+#: en/content/guides/learn/syntax.adoc:287
 #, no-wrap
 msgid ""
 "apropos\n"
@@ -635,20 +712,20 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:268
+#: en/content/guides/learn/syntax.adoc:290
 msgid ""
 "And finally, we can see not only the documentation but the underlying source "
 "for any function accessible by the runtime:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:272
+#: en/content/guides/learn/syntax.adoc:294
 #, no-wrap
 msgid "user=> (source dir)\n"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:278
+#: en/content/guides/learn/syntax.adoc:300
 #, no-wrap
 msgid ""
 "(defmacro dir\n"
@@ -659,7 +736,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:281
+#: en/content/guides/learn/syntax.adoc:303
 msgid ""
 "As you go through this workshop, please feel free to examine the docstring "
 "and source for the functions you are using. Exploring the implementation of "
@@ -668,40 +745,40 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:283
+#: en/content/guides/learn/syntax.adoc:305
 msgid ""
-"It is also an excellent idea to keep a copy of the [Clojure Cheatsheet]"
-"(https://clojure.org/api/cheatsheet) open while you are learning Clojure. "
-"The cheatsheet categorizes the functions available in the standard library "
-"and is an invaluable reference."
+"It is also an excellent idea to keep a copy of the <<xref/../../../api/"
+"cheatsheet#,Clojure Cheatsheet>> open while you are learning Clojure. The "
+"cheatsheet categorizes the functions available in the standard library and "
+"is an invaluable reference."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:285
+#: en/content/guides/learn/syntax.adoc:307
 msgid "Now let's consider some Clojure basics to get you going...."
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/learn/syntax.adoc:286
+#: en/content/guides/learn/syntax.adoc:308
 #, no-wrap
 msgid "Clojure basics"
 msgstr ""
 
 #. type: Title ===
-#: en/content/guides/learn/syntax.adoc:288
+#: en/content/guides/learn/syntax.adoc:310
 #, no-wrap
 msgid "`def`"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:291
+#: en/content/guides/learn/syntax.adoc:313
 msgid ""
 "When you are evaluating things at a REPL, it can be useful to save a piece "
 "of data for later. We can do this with `def`:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:296
+#: en/content/guides/learn/syntax.adoc:318
 #, no-wrap
 msgid ""
 "user=> (def x 7)\n"
@@ -709,7 +786,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:299
+#: en/content/guides/learn/syntax.adoc:321
 msgid ""
 "`def` is a special form that associates a symbol (x) in the current "
 "namespace with a value (7). This linkage is called a `var`. In most actual "
@@ -719,7 +796,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:301
+#: en/content/guides/learn/syntax.adoc:323
 msgid ""
 "Note the return value above is `pass:[#'user/x]` - that's the literal "
 "representation for a var: `#'` followed by the namespaced symbol. `user` is "
@@ -727,14 +804,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:303
+#: en/content/guides/learn/syntax.adoc:325
 msgid ""
 "Recall that symbols are evaluated by looking up what they refer to, so we "
 "can get the value back by just using the symbol:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:308
+#: en/content/guides/learn/syntax.adoc:330
 #, no-wrap
 msgid ""
 "user=> (+ x x)\n"
@@ -742,14 +819,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:313
+#: en/content/guides/learn/syntax.adoc:335
 msgid ""
 "One of the most common things you do when learning a language is to print "
 "out values. Clojure provides several functions for printing values:"
 msgstr ""
 
 #. type: Table
-#: en/content/guides/learn/syntax.adoc:319
+#: en/content/guides/learn/syntax.adoc:341
 #, no-wrap
 msgid ""
 "| | Human-Readable | Machine-Readable |\n"
@@ -758,7 +835,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:322
+#: en/content/guides/learn/syntax.adoc:344
 msgid ""
 "The human-readable forms will translate special print characters (like "
 "newlines and tabs) to their expected form and print strings without quotes. "
@@ -768,7 +845,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:327
+#: en/content/guides/learn/syntax.adoc:349
 #, no-wrap
 msgid ""
 "user=> (println \"What is this:\" (+ 1 2))\n"
@@ -776,21 +853,21 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:330
+#: en/content/guides/learn/syntax.adoc:352
 msgid ""
 "The println function has side-effects (printing) and returns nil as a result."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:332
+#: en/content/guides/learn/syntax.adoc:354
 msgid ""
-"Note that \"What is this:\" above did not print the surrouding quotes and is "
-"not a string that the Reader could read again in the same way. For that "
+"Note that \"What is this:\" above did not print the surrounding quotes and "
+"is not a string that the Reader could read again in the same way. For that "
 "purpose, use the machine-readable version prn:"
 msgstr ""
 
 #. type: delimited block -
-#: en/content/guides/learn/syntax.adoc:337
+#: en/content/guides/learn/syntax.adoc:359
 #, no-wrap
 msgid ""
 "user=> (prn \"one\\n\\ttwo\")\n"
@@ -798,7 +875,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:340
+#: en/content/guides/learn/syntax.adoc:362
 msgid ""
 "Note that the printed result is a valid form that the Reader could read "
 "again. Both human- and readable- printing functions are useful in different "
@@ -806,26 +883,26 @@ msgid ""
 msgstr ""
 
 #. type: Title ==
-#: en/content/guides/learn/syntax.adoc:341
+#: en/content/guides/learn/syntax.adoc:363
 #: en/content/guides/learn/functions.adoc:299
 #, no-wrap
 msgid "Test your knowledge"
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:344
+#: en/content/guides/learn/syntax.adoc:366
 msgid "Using the REPL, compute the sum of 7654 and 1234."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:345
+#: en/content/guides/learn/syntax.adoc:367
 msgid ""
 "Rewrite the following algebraic expression as a Clojure expression: `( 7 + 3 "
 "* 4 + 5 ) / 10`."
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:346
+#: en/content/guides/learn/syntax.adoc:368
 msgid ""
 "Using REPL documentation functions, find the documentation for the `rem` and "
 "`mod` functions. Compare the results of the provided expressions based on "
@@ -833,7 +910,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/guides/learn/syntax.adoc:347
+#: en/content/guides/learn/syntax.adoc:369
 msgid ""
 "Using `find-doc`, find the function that prints the stack trace of the most "
 "recent REPL exception."

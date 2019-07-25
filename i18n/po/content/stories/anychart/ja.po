@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2018-04-02 07:18+0900\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
 "PO-Revision-Date: 2018-04-02 07:18+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:11 en/content/stories/anychart.adoc:11 en/content/stories/cognician.adoc:11
+#, no-wrap
+msgid "**How long have you been working with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:17 en/content/stories/anychart.adoc:15 en/content/stories/cognician.adoc:23
+#, no-wrap
+msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:25 en/content/stories/anychart.adoc:19 en/content/stories/cloudrepo.adoc:11
+#: en/content/stories/stitch.adoc:11 en/content/stories/cognician.adoc:27
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:34 en/content/stories/anychart.adoc:27 en/content/stories/cognician.adoc:37
+#, no-wrap
+msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:90 en/content/stories/anychart.adoc:31 en/content/stories/cognician.adoc:48
+#, no-wrap
+msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:97 en/content/stories/anychart.adoc:35 en/content/stories/stitch.adoc:27
+#: en/content/stories/cognician.adoc:56
+#, no-wrap
+msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:104 en/content/stories/anychart.adoc:43 en/content/stories/stitch.adoc:40
+#: en/content/stories/cognician.adoc:62
+#, no-wrap
+msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:117 en/content/stories/anychart.adoc:39 en/content/stories/cloudrepo.adoc:29
+#: en/content/stories/stitch.adoc:34 en/content/stories/cognician.adoc:75
+#, no-wrap
+msgid "**What is your stack?**\n"
+msgstr ""
 
 #. type: Title =
 #: en/content/stories/anychart.adoc:1
@@ -33,12 +85,6 @@ msgid "image:/images/content/stories/anychart.png[\"AnyChart\",height=\"125\"]"
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/anychart.adoc:11 en/content/stories/swing.adoc:11
-#, no-wrap
-msgid "**How long have you been working with Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/anychart.adoc:13
 msgid ""
 "https://www.anychart.com/[AnyChart] started in 2003 as a provider of Flash-based solutions for interactive data "
@@ -49,22 +95,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/anychart.adoc:15 en/content/stories/swing.adoc:17
-#, no-wrap
-msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/anychart.adoc:17
 msgid ""
 "Currently, two of our developers code in Clojure on a regular basis. Now that our team is growing, the number of "
 "Clojure programmers is expected to increase."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:19 en/content/stories/swing.adoc:25
-#, no-wrap
-msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -102,23 +136,11 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/anychart.adoc:27 en/content/stories/swing.adoc:34
-#, no-wrap
-msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/anychart.adoc:29
 msgid ""
 "We employ https://reagent-project.github.io/[Reagent] and https://github.com/Day8/re-frame[re-frame], and think that "
 "they are amazing ClojureScript libraries which make complex things easy and enjoyable. In addition to that, we use "
 "Component, Hiccup, Selmer, Enlive and Yesql on the server side."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:31 en/content/stories/swing.adoc:90
-#, no-wrap
-msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -130,22 +152,10 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/content/stories/anychart.adoc:35 en/content/stories/swing.adoc:97
-#, no-wrap
-msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
-msgstr ""
-
-#. type: Plain text
 #: en/content/stories/anychart.adoc:37
 msgid ""
 "Our favorite feature of Clojure is that it is thought-out to the smallest detail as a functional language. So we take "
 "great pleasure in using it."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:39 en/content/stories/swing.adoc:117
-#, no-wrap
-msgid "**What is your stack?**\n"
 msgstr ""
 
 #. type: Plain text
@@ -154,12 +164,6 @@ msgid ""
 "We use a lot of different technologies. Our main product, the AnyChart library for interactive data visualization, is "
 "written in JavaScript. Most of our projects are built on Clojure on the backend and ClojureScript or JavaScript on "
 "the frontend. We also have services written in Python, PHP, and NodeJS."
-msgstr ""
-
-#. type: Plain text
-#: en/content/stories/anychart.adoc:43 en/content/stories/swing.adoc:104
-#, no-wrap
-msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
 msgstr ""
 
 #. type: Plain text
