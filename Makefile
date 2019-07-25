@@ -7,7 +7,7 @@ PO4A_CONF        = po4a.cfg
 
 MSGMERGE_POT     = "--width=120"
 
-RE_CREATE_CFG_CMD = ./bin/re_create_cfg.clj
+RE_CREATE_CFG_CMD = ./bin/re_create_cfg.sh
 JBAKE_CMD         = jbake
 
 REDPEN_CMD        = redpen
