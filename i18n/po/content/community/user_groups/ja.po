@@ -1,0 +1,633 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/community/user_groups.adoc:1
+#, fuzzy, no-wrap
+#| msgid "Clojure CLR"
+msgid "Clojure user groups"
+msgstr "Clojure CLR"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:4
+msgid "Erik Assum 2018-04-06"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:12
+msgid ""
+"Do you wish there was a Clojure User Group in your area? Check out our page of <<start_group#,tips for starting your "
+"own>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:15
+msgid ""
+"If you'd like to have your group listed here, please submit a PR against the https://github.com/clojure/clojure-"
+"site[clojure-site] github repo."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/user_groups.adoc:20
+#, no-wrap
+msgid "Americas"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:23
+msgid ""
+"Argentina https://www.meetup.com/ClojureBA/[Clojure User Group Buenos Aires] (Twitter: https://twitter.com/"
+"ClojureBA[@ClojureBA])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:25
+msgid "Brazil https://www.meetup.com/clj-sp/[Grupo de Usuários Clojure de São Paulo e Rio de Janeiro]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:27
+msgid "Canada"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:29
+msgid "https://groups.google.com/forum/#!forum/montreal-clojure-user-group[Montreal Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:30
+msgid "https://clojureto.github.io[Clojure Toronto]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:31
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://www.meetup.com/Vancouver-Clojure[Vancouver Clojure]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:33
+msgid "United states"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:34
+msgid "Northeast"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:35
+msgid "https://www.meetup.com/Boston-Clojure-Group/[Boston Clojure Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:38
+msgid ""
+"Functional Programming Connoisseurs (Western Massachusetts & surroundings) Welcoming all FP-ers (Erlang/Scheme/Scala/"
+"Haskell/etc etc etc), but Clojure fans generally form a plurality."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:39
+msgid ""
+"https://www.meetup.com/Clojure-NYC/[NYC Clojure Users Group] (Twitter: https://twitter.com/ClojureNYC[@ClojureNYC])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:40
+msgid "ClojureScript NYC (Twitter: https://twitter.com/ClojureNYC[@ClojureNYC])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:42
+msgid "https://www.meetup.com/Clojadelphia/[Clojadelphia - The Philadelphia User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:43
+msgid "Pittsburgh Clojure Users Group is part of http://www.codeandsupply.co/[Pittsburgh Code & Supply]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:44
+msgid "Midwest"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:45
+msgid "https://www.meetup.com/Chicago-Clojure/[Chicago]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:46
+msgid "https://cincyfp.wordpress.com/[Cincy Functional Programmers Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:47
+msgid "Detroit Clojure Group"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:48
+msgid "https://www.meetup.com/clojure-mke/[Clojure MKE - Milwaukee, WI]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:49
+msgid "https://www.meetup.com/Madison-Clojure-Meetup/[Madison Clojure Meetup] - Madison, WI"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:50
+msgid "http://clojure.mn/[Minnesota Clojure Users Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:51
+msgid "https://www.meetup.com/stl-clojure[St. Louis Clojure Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:52
+msgid "http://www.columbusclojure.com[Columbus Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:53
+msgid "South"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:54
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://www.meetup.com/Baltimore-Clojure/[Baltimore Clojure Meetup]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:56
+msgid "https://www.meetup.com/Cap-Clug/[National Capital Area Clojure Users Group] - Reston, VA"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:57
+msgid "ClojureDC - Washington, DC"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:58
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://meetup.com/TriClojure/[TriClojure Meetup]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:59
+msgid "https://www.meetup.com/Atl-Clj/[Atlanta Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:60
+msgid "https://groups.google.com/group/clj-houston[Clojure Houston User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:62
+msgid ""
+"Dallas/Fort Worth Clojure Interest Group (https://groups.google.com/forum/#topic/clojure/Cym7oiViFoQ[ See mailing "
+"list thread for more info])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:63
+msgid "https://www.meetup.com/Austin-Clojure-Meetup/[Austin Clojure Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:64
+msgid "Greenville Clojure Users Group (and https://groups.google.com/forum/#!forum/greenville-clojure[mailing list])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:66
+msgid "https://www.meetup.com/Clojure-Co-Lab/[Clojure Co-Lab] - Columbia, South Carolina"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:67
+msgid "West"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:68
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "http://seajure.github.com[Seajure - Seattle Clojure Group]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:69
+msgid "https://www.meetup.com/clojerks/[Clojure user group in Portland]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:72
+msgid ""
+"https://www.meetup.com/The-Bay-Area-Clojure-User-Group/[Bay Area Clojure User Group] - San Francisco (monthly meetup "
+"plus monthly dojo); San Mateo (monthly meetup)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:73
+msgid "https://www.meetup.com/Denver-Clojure-Meetup/[Denver Clojure Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:74
+msgid ""
+"https://www.meetup.com/Los-Angeles-Clojure-Users-Group/[Los Angeles Clojure Users Group] and https://groups.google."
+"com/forum/#!forum/clj-la[mailing list]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:75
+msgid "Santa Barbara Clojure Users Group"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:76
+msgid "https://groups.google.com/forum/#!forum/clj-phx[Phoenix Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:77
+msgid "https://www.meetup.com/San-Diego-Clojure-Users-Group/[San Diego Clojure Users Group]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/user_groups.adoc:79
+#, no-wrap
+msgid "Europe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:81
+msgid "Austria"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:82
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://www.meetup.com/clojure-vienna/[Vienna Clojure User Group]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:83
+msgid "Belgium"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:84
+msgid "http://www.beclojure.org[BeClojure] (Twitter: https://twitter.com/beclojure[@beclojure])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:85
+msgid "Bulgaria"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:86
+msgid "https://www.meetup.com/Lambda-Dojo-Sofia/[Lambda Dojo Sofia]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:87
+msgid "Czech Republic"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:88
+msgid "https://plus.google.com/communities/110902954360410928675[Lambda Meetup Ostrava]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:89
+msgid "https://www.meetup.com/Lambda-Meetup-Group/[Prague Lambda Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:90
+msgid "Denmark"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:91
+msgid "https://www.meetup.com/aarhusclj/[Aarhus Clojure Meetup] (Twitter: https://twitter.com/aarhusclj[@aarhusclj])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:92
+msgid "https://www.meetup.com/Copenhagen-Clojure-Meetup/[Copenhagen Clojure Meetup] - meetings every 6 weeks"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:93
+msgid "Finland"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:94
+msgid "https://groups.google.com/forum/#%21forum/clojure-finland[Clojure Finland]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:95
+msgid "France"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:96
+msgid "https://groups.google.com/group/clojure-fr/[French community mailing list]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:97
+msgid "https://www.meetup.com/fr-FR/Paris-Clojure-User-Group/[Paris Clojure Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:98
+msgid "http://clojure-lyon.eventbrite.fr/[Clojure Lyon EventBrite (France)]- local meetups registration"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:100
+msgid ""
+"https://www.meetup.com/riviera-scala-clojure[Riviera Clojure] (Join with Riviera Scala, (Twitter: https://twitter.com/"
+"riviera_func[@riviera_func])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:101
+msgid "Germany"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:102
+msgid ""
+"https://www.meetup.com/Clojure-Berlin/[Berlin Clojure User Group] and https://groups.google.com/forum/#!forum/clojure-"
+"user-group-berlin[mailing list]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:103
+msgid "http://www.cugb.de[Bonn Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:104
+msgid "https://www.meetup.com/de-DE/Clojure-Usergroup-Franken/[Clojure Usergroup Franken]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:105
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://www.meetup.com/clojure-cologne/[Cologne Clojure User Group]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:106
+msgid "https://www.meetup.com/de-DE/Dusseldorf-Clojure-Meetup/[Düsseldorf Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:107
+msgid "https://www.meetup.com/ClojureUserGroupHH/[Hamburg Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:108
+msgid "Hungary"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:109
+msgid "https://www.meetup.com/Budapest-Clojure-User-Group/[Budapest Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:110
+msgid "Ireland"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:111
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://www.meetup.com/Clojure-Ireland/[Clojure Ireland]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:112
+msgid "Italia"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:113
+msgid "https://groups.google.com/group/clojure-italy[Italian Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:114
+msgid "Netherlands"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:115
+msgid "http://amsclj.nl/[The Dutch Clojure Meetup] (Twitter: https://twitter.com/amsclj[@amsclj])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:116
+msgid "Norway"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:117
+msgid "https://www.meetup.com/Oslo-Clojure-Meetup/[Oslo Clojure Meetup]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:118
+msgid "Russia"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:119
+msgid "https://plus.google.com/u/0/communities/114227952963737516047[Clojure Russia]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:120
+msgid "Slovakia"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:121
+msgid "https://groups.google.com/group/bratislava-clojure/[Bratislava Clojure]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:122
+msgid "Sweden"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:123
+msgid "https://www.meetup.com/got-lambda[Got.λ - Göteborg Functional Programming Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:124
+msgid ""
+"https://groups.google.com/group/stockholm-clojure-user-group[Stockholm Clojure User Group] (Twitter: https://twitter."
+"com/sclojug[@sclojug])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:125
+msgid "Switzerland"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:126
+msgid "https://www.meetup.com/zh-clj-Zurich-Clojure-User-Group/[Zürich Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:127
+msgid "UK"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:128
+#, fuzzy
+#| msgid "Locals and Closures"
+msgid "London Clojurians"
+msgstr "ローカル変数とクロージャ"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:129
+msgid "Manchester Clojure Dojo"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:130
+msgid ""
+"https://www.meetup.com/Cambridge-NonDysFunctional-Programmers/[Cambridge NonDysFunctional Programmers] and https://"
+"groups.google.com/forum/#!forum/camclj[Cambridge Clojure User Group] mailing list"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:131
+msgid "https://www.meetup.com/Bristol-Clojurians/[Bristol Clojurians]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:132
+msgid "https://groups.google.com/forum/#!forum/edinburgh-clojurians[Edinburgh Clojurians]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:133
+msgid "https://groups.google.com/forum/#!forum/glasgow-clojurians[Glasgow Clojurians]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/user_groups.adoc:135
+#, no-wrap
+msgid "Asia"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:137
+msgid "https://groups.google.com/group/bangalore-clj[Bangalore Clojure Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:138
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://groups.google.com/group/cn-clojure[Chinese Clojure Group]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:139
+msgid "http://clojure-china.org/[Clojure China] and http://weibo.com/clojurechina"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:140
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://www.meetup.com/Clojure-Israel/[Clojure Israel]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:141
+msgid "https://groups.google.com/forum/#!forum/clojuresg[Singapore Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:142
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "http://clojure.kr[Clojure Korea]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:143
+msgid "http://clojure.tw[Clojure Taiwan]"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/user_groups.adoc:145
+#, no-wrap
+msgid "Australia / New Zealand"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:147
+msgid "http://www.meetup.com/clj-syd/[Sydney Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:148
+msgid "http://www.meetup.com/clj-melb/[Melbourne Clojure User Group]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/user_groups.adoc:148
+msgid "http://www.meetup.com/Auckland-Clojure/[Auckland Clojure User Group]"
+msgstr ""

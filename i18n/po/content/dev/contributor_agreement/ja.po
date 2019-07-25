@@ -1,0 +1,904 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/dev/contributor_agreement.adoc:1
+#, no-wrap
+msgid "Contributor Agreement"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:4 en/content/api/api.adoc:4 en/content/community/events.adoc:4
+msgid "Rich Hickey 2016-01-15"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:11
+msgid ""
+"Following the lead of other open source projects, the Clojure project requires contributors to jointly assign their "
+"copyright on contributed code. The https://secure.na1.echosign.com/public/hostedForm?"
+"formid=95YMDL576B336E[Contributor Agreement] (CA) gives Rich Hickey and the contributor joint copyright interests in "
+"the code: the contributor retains copyrights while also granting those rights to Rich Hickey as the open source "
+"project sponsor."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:13
+msgid ""
+"The CA is derived from the Oracle Contributor Agreement (OCA), used for OpenJDK, Netbeans and OpenSolaris projects "
+"and others. There is a good http://www.oracle.com/technetwork/oca-faq-405384.pdf[OCA FAQ] answering many questions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:15
+msgid ""
+"The CA does not change the rights or responsibilities of the Clojure community under the http://opensource.org/"
+"licenses/eclipse-1.0.php[Eclipse Public License (EPL)]. By executing the CA, contributors protect the Clojure code "
+"base, enable alternative licensing models, and protect the flexibility to adapt the project to the changing demands "
+"of the community. In order for the CA to be effective, the Clojure project must obtain an assignment for all "
+"contributions. Please review the CA for a complete understanding of its terms and conditions. By contributing source "
+"code or other material to Clojure, you represent that you have a CA with Rich Hickey for such contributions. In order "
+"to track contributors, you understand that your full name and username may be posted on a web page listing authorized "
+"contributors that is accessible via a public URL."
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/contributor_agreement.adoc:16
+#, no-wrap
+msgid "Instructions for submitting the agreement"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:19
+msgid ""
+"Fill out and submit the https://secure.na1.echosign.com/public/hostedForm?formid=95YMDL576B336E[Contributor "
+"Agreement] (an online e-form)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/contributor_agreement.adoc:21 en/content/dev/contributors.adoc:1
+#: en/content/news/2015/06/30/clojure-17.adoc:34
+#, no-wrap
+msgid "Contributors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:24
+msgid "See the full <<contributors#,list of contributors>> that have signed the Clojure Contributor Agreement."
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/contributor_agreement.adoc:26
+#, no-wrap
+msgid "Contributed patches to Clojure:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:29
+msgid "Aaron Bedra"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:30 en/content/news/2015/06/30/clojure-17.adoc:44
+msgid "Aaron Cohen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:31
+msgid "Achim Passen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:32
+#, fuzzy
+#| msgid "Adding elements"
+msgid "Adam Clements"
+msgstr "要素を追加する"
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:33
+msgid "Alan Dipert"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:34
+msgid "Alan Malloy"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:35 en/content/dev/contributor_agreement.adoc:42
+msgid "Alexander Yakushev"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:36 en/content/news/2015/06/30/clojure-17.adoc:54
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:106
+msgid "Alex Miller"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:37
+msgid "Alex Osborne"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:38
+msgid "Alex Ott"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:39 en/content/news/2013/06/28/clojure-clore-async-channels.adoc:107
+msgid "Alex Redington"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:40
+msgid "Alexander Kiel"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:41
+msgid "Alexander Taggart"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:43
+msgid "Alf Kristian Stoyle"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:44
+msgid "Allen Rohner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:45 en/content/news/2015/06/30/clojure-17.adoc:43
+msgid "Ambrose Bonnaire-Sergeant"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:46
+msgid "Andrei Kleschinski"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:47
+msgid "Andrew Rosa"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:48 en/content/news/2015/06/30/clojure-17.adoc:46
+msgid "Andy Fingerhut"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:49
+msgid "Andy Sheldon"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:50
+msgid "Anthony Grimes"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:51
+msgid "Aspasia Beneti"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:52
+msgid "Baishampayan Ghose"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:53
+#, fuzzy
+#| msgid "The Reader"
+msgid "Ben Bader"
+msgstr "リーダー(reader)"
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:54
+msgid "Ben Smith-Mannschott"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:55
+msgid "Benjamin Teuber"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:56
+msgid "Blake West"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:57 en/content/news/2015/06/30/clojure-17.adoc:40
+msgid "Bozhidar Batsov"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:58 en/content/news/2015/06/30/clojure-17.adoc:41
+msgid "Brandon Bloom"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:59
+msgid "Brenton Ashworth"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:60
+msgid "Brian Hurt"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:61
+msgid "Brian Taylor"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:62
+msgid "Bruce Adams"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:63
+msgid "Cameron Desautels"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:64
+msgid "Cezary Kosko"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:65
+msgid "Chad Taylor"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:66
+msgid "Chas Emerick"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:67
+msgid "Chris Gray"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:68
+msgid "Chris Houser"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:69
+msgid "Chris Perkins"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:70
+msgid "Christoffer Sawicki"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:71
+msgid "Christophe Grand"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:72
+msgid "Christopher Redinger"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:73
+msgid "Clinton R. Nixon"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:74
+msgid "Colin Jones"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:75
+msgid "Cosmin Stejerean"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:76
+#, fuzzy
+#| msgid "Dynamic Compilation"
+msgid "Daniel Compton"
+msgstr "動的なコンパイル"
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:77 en/content/news/2015/06/30/clojure-17.adoc:48
+msgid "Daniel Solano Gómez"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:78
+msgid "David Bürgin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:79
+msgid "David Liebke"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:80
+msgid "David McNeil"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:81
+msgid "David Miller"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:82
+msgid "David Powell"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:83
+msgid "David Rupp"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:84
+msgid "David Santiago"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:85
+msgid "Devender Gollapally"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:86 en/content/news/2015/06/30/clojure-17.adoc:63
+msgid "Devin Walters"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:87
+msgid "Dimitry Gashinsky"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:88
+msgid "Drew Raines"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:89
+msgid "Ed Bowler"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:90
+msgid "Eli Lindsey"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:91
+msgid "Eric Schoonover"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:92
+msgid "Erik Assum"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:93
+msgid "Eugene Kostenko"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:94
+msgid "Federico Brubacher"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:95
+msgid "Frantisek Sodomka"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:96
+msgid "Gabriel Horner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:97
+msgid "Gary Fredericks"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:98
+msgid "George Jahad"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:99
+msgid "Gerrit Jansen Van Vuuren"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:100 en/content/news/2015/06/30/clojure-17.adoc:58
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:105
+msgid "Ghadi Shayban"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:101
+msgid "Gijs Stuurman"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:102
+msgid "Gordon Syme"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:103
+msgid "Greg Leppert"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:104
+msgid "Herwig Hochleitner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:105 en/content/news/2015/06/30/clojure-17.adoc:53
+msgid "Howard Lewis Ship"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:106
+msgid "Hubert Iwaniuk"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:107
+msgid "Hugo Duncan"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:108 en/content/news/2015/06/30/clojure-17.adoc:51
+msgid "Immo Heikkinen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:109
+msgid "James Reeves"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:110
+msgid "Jarkko Oranen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:111 en/content/news/2015/06/30/clojure-17.adoc:64
+msgid "Jason Wolfe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:112
+msgid "Jason Whitlark"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:113
+msgid "Jean Niklas L'orange"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:114
+msgid "Jeremy Heiler"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:115
+msgid "Joe Gallo"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:116
+msgid "Johan Mena"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:117
+msgid "John Szakmeister"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:118
+msgid "Jonas Enlund"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:119 en/content/news/2015/06/30/clojure-17.adoc:62
+msgid "Jozef Wagner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:120
+msgid "Juha Arpiainen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:121
+msgid "Justin Balthrop"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:122
+msgid "Justin Kramer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:123
+msgid "Karsten Schmidt"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:124
+msgid "Kevin Downey"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:125
+msgid "Konrad Hinsen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:126
+msgid "Kurt Harriger"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:127
+msgid "Kwang Yul Seo"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:128
+msgid "Laurent Petit"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:129
+msgid "Lauri Pesonen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:130
+msgid "Lee Yen-Chin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:131 en/content/news/2015/06/30/clojure-17.adoc:61
+msgid "Luke VanderHart"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:132
+msgid "Mark Simpson"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:133
+msgid "Matt Revelle"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:134
+msgid "Matthew Boston"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:135
+msgid "Matthew Gilliard"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:136
+msgid "Max Penet"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:137
+msgid "Meikel Brandmeyer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:138
+msgid "Micah Martin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:139 en/content/news/2015/06/30/clojure-17.adoc:42
+msgid "Michael Blume"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:140
+msgid "Michael Fogus"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:141
+msgid "Michał Marczyk"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:142
+msgid "Michel Alexandre Salim"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:143
+msgid "Mike Anderson"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:144
+msgid "Mike Hinchey"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:145
+msgid "Nahuel Greco"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:146 en/content/news/2015/06/30/clojure-17.adoc:56
+msgid "Nicola Mometto"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:147
+msgid "Nicolas Buduroi"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:148
+msgid "Nikita Prokopov"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:149
+msgid "Nola Stowe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:150
+msgid "Paul M Bauer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:151 en/content/news/2015/06/30/clojure-17.adoc:59
+msgid "Paul Stadig"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:152 en/content/news/2015/06/30/clojure-17.adoc:45
+msgid "Pepijn de Vos"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:153
+msgid "Phil Hagelberg"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:154
+msgid "Philip Aston"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:155
+msgid "Philip Potter"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:156
+msgid "Ragnar Dahlén"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:157
+msgid "Ralf Schmitt"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:158
+msgid "Rasmus Svensson"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:159 en/content/news/2015/06/30/clojure-17.adoc:50
+#: en/content/about/spec.adoc:381
+msgid "Rich Hickey"
+msgstr "Rich Hickey"
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:160
+msgid "Richard Newman"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:161
+msgid "Robert Lachlan"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:162
+msgid "Ruslan Al-Fakikh"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:163
+msgid "Russ Olsen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:164
+msgid "Scott Lowe"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:165
+msgid "Sean Corfield"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:166
+msgid "Sean Devlin"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:167
+msgid "Sebastien Martel"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:168
+msgid "Shogo Ohta"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:169
+msgid "Stefan Kamphausen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:170
+msgid "Steffen Dienst"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:171
+msgid "Stephen C. Gilardi"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:172 en/content/news/2015/06/30/clojure-17.adoc:55
+msgid "Steve Miner"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:173 en/content/news/2015/06/30/clojure-17.adoc:65
+msgid "Steven Yi"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:174 en/content/news/2015/06/30/clojure-17.adoc:49
+msgid "Stuart Halloway"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:175
+msgid "Stuart Sierra"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:176
+msgid "Tassilo Horn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:177
+msgid "Tim Dysinger"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:178
+msgid "Tim McCormack"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:179 en/content/news/2015/06/30/clojure-17.adoc:39
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:104
+msgid "Timothy Baldridge"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:180
+msgid "Timothy Pratley"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:181
+msgid "Toby Crawley"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:182
+msgid "Tom Faulhaber"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:183 en/content/news/2015/06/30/clojure-17.adoc:57
+msgid "Tomasz Nurkiewicz"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:184
+msgid "Tsutomu Yano"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:185
+msgid "Vipul Amler"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:186
+msgid "Yanxiang Lou"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:187
+msgid "Yegor Timoshenko"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:188 en/content/news/2015/06/30/clojure-17.adoc:60
+msgid "Zach Tellman"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:189
+msgid "Zhuang XiaoDan"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/contributor_agreement.adoc:190
+msgid "_**Many thanks for your contributions to Clojure!**_"
+msgstr ""

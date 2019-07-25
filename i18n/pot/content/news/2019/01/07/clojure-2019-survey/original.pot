@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:1
+#, no-wrap
+msgid "State of Clojure 2019 Survey"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:4
+msgid "Alex Miller 2019-01-07"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:9
+msgid "It's time for the annual State of Clojure Community Survey!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:11
+msgid ""
+"If you are a user of Clojure or ClojureScript, we are greatly interested in "
+"your responses to the following survey:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:13
+msgid "https://www.surveymonkey.com/r/clojure2019[State of Clojure 2019]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:15
+msgid "The survey contains four pages:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:17
+msgid "General questions applicable to any user of Clojure or ClojureScript"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:18
+msgid "Questions specific to JVM Clojure (skip if not applicable)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:19
+msgid "Questions specific to ClojureScript (skip if not applicable)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:20
+msgid "Final comments"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2019/01/07/clojure-2019-survey.adoc:21
+msgid ""
+"The survey will close January 22nd, after which all of the data will be "
+"released with some analysis. We greatly appreciate your input!"
+msgstr ""

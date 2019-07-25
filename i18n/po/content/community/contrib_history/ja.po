@@ -1,0 +1,884 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/dev/screening_tickets.adoc:4 en/content/community/contrib_history.adoc:4
+#, fuzzy
+msgid "Alex Miller 2019-04-24"
+msgstr "Alex Miller 2016-01-14"
+
+#. type: Title =
+#: en/content/community/contrib_history.adoc:1
+#, no-wrap
+msgid "Contrib History"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:11
+msgid ""
+"This page is a historical document about the splitting of the old \"monolithic\" contrib in the Clojure 1.2 timeframe "
+"when many of the initial contrib libraries were created. This info is no longer maintained and may be out of date. "
+"See <<contrib_libs#,Contrib Libs>> for up to date info."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:13
+msgid ""
+"If a clojure.contrib namespace is listed here but has no migration details, that means no one has volunteered to "
+"maintain that namespace. Part of the rationale for modular contrib is that there should be an active maintainer going "
+"forward so that the library can be kept compatible with new versions of Clojure. All the new modular contrib "
+"libraries are compatible with Clojure 1.2.0 thru 1.4.0 (and are also being automatically tested with Clojure 1.5 as "
+"it is being developed - as well as being tested with a number of different JDKs!)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:15
+msgid ""
+"If a clojure.contrib namespace is not listed here, it is most likely an old namespace that was either migrated "
+"somewhere else or deprecated as part of Clojure 1.2 (e.g., clojure.contrib.duck-streams mostly migrated to clojure."
+"java.io, clojure.contrib.pprint migrated to clojure.pprint, clojure.contrib.shell and clojure.contrib.shell-out "
+"migrated to clojure.java.shell, clojure.contrib.string migrated to clojure.string, clojure.contrib.http.agent was "
+"deprecated - https://github.com/dakrone/clj-http[clj-http]."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_history.adoc:16
+#, fuzzy, no-wrap
+#| msgid "The clojure.main namespace"
+msgid "Clojure.Contrib Namespaces"
+msgstr "clojure.main名前空間"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:19
+msgid "This section aims to document how to migrate from \"old\" contrib to \"new\" contrib."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:21
+msgid "clojure.contrib.accumulators"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:22
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.agent-utils"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:23
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.base64"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:24
+msgid "Replaced by https://github.com/clojure/data.codec/[clojure.data.codec] - lead Alex Taggart."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:25
+msgid "clojure.contrib.classpath"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:26
+msgid "Migrated to https://github.com/clojure/java.classpath/[clojure.java.classpath] - lead Stuart Sierra."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:27
+msgid "clojure.contrib.combinatorics"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:28
+msgid "Migrated to https://github.com/clojure/math.combinatorics/[clojure.math.combinatorics] - lead Mark Engelberg."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:29
+msgid "clojure.contrib.command-line"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:30
+msgid ""
+"Replaced by https://github.com/clojure/tools.cli/[clojure.tools.cli] (based on the clargon library) - lead Gareth "
+"Jones."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:31
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.complete"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:32
+msgid "clojure.contrib.complex-numbers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:33
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.cond"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:34
+msgid "clojure.contrib.condition"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:35 en/content/community/contrib_history.adoc:46
+msgid "Replaced by https://github.com/scgilardi/slingshot[Slingshot] - Lead Steve Gilardi"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:36
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.core"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:37 en/content/community/contrib_history.adoc:42
+msgid "Partly migrated to https://github.com/clojure/core.incubator/[clojure.core.incubator] - lead Rich Hickey."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:38
+msgid "clojure.contrib.dataflow"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:39
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.datalog"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:40
+msgid "Michael Fogus has a project https://github.com/fogus/bacwn[bacwn] on Github based on this library."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:41
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.def"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:43
+msgid "Notes:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:44
+msgid ""
+"`defvar`: as of Clojure 1.3, you can specify a docstring in a `def` form: `(def my-var \"This is my docstring\" some-"
+"value)`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:45
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.error-kit"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:47
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.except"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:48
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.fcase"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:49
+msgid "fcase replaced by Clojure 1.3 `clojure.core/condp`.  Other macros easily implemented using `condp` if desired."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:50
+#, fuzzy
+#| msgid "The clojure.main namespace"
+msgid "clojure.contrib.find-namespaces"
+msgstr "clojure.main名前空間"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:51
+msgid "Migrated to https://github.com/clojure/tools.namespace/[clojure.tools.namespace] - lead Stuart Sierra."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:52
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.fnmap"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:53
+msgid "clojure.contrib.gen-html-docs"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:54
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.generic"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:55
+msgid "Migrated to https://github.com/clojure/algo.generic/[clojure.algo.generic] - lead Konrad Hinsen."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:56
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.graph"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:57
+msgid "Migrated to https://github.com/clojure/algo.generic/[clojure.algo.graph] - lead Timothy Baldridge."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:58
+msgid "clojure.contrib.greatest-least"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:59
+msgid "clojure.contrib.import-static"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:60
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.jar"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:61
+msgid "clojure.contrib.java-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:62
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.jmx"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:63
+msgid "Migrated to https://github.com/clojure/java.jmx/[clojure.java.jmx] - lead Stuart Halloway."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:64
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.json"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:65
+msgid "Migrated to https://github.com/clojure/data.json/[clojure.data.json] - lead Stuart Sierra."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:66
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.lazy-seqs"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:67
+msgid "clojure.contrib.lazy-xml"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:68
+msgid "Migrated to https://github.com/clojure/data.xml[clojure.data.xml] - lead Alan Malloy."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:69
+msgid "clojure.contrib.load-all"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:70
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.logging"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:71
+msgid "Migrated to https://github.com/clojure/tools.logging[clojure.tools.logging] - lead Alex Taggart."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:72
+msgid "clojure.contrib.macro-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:73 en/content/community/contrib_history.adoc:75
+msgid "Migrated to https://github.com/clojure/tools.macro[clojure.tools.macro] - lead Konrad Hinsen."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:74
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.macros"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:76
+msgid "clojure.contrib.map-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:77
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.math"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:78
+msgid "Migrated to https://github.com/clojure/math.numeric-tower[clojure.math.numeric-tower] - lead Mark Engelberg."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:79
+msgid "clojure.contrib.miglayout"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:80
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.mmap"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:81
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.mock"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:82
+msgid "clojure.contrib.monadic-io-streams"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:83
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.monads"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:84
+msgid "Migrated to https://github.com/clojure/algo.monads/[clojure.algo.monads] - lead Konrad Hinsen."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:85
+msgid "clojure.contrib.ns-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:86
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.parent"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:87
+msgid "clojure.contrib.priority-map"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:88
+msgid "Migrated to https://github.com/clojure/data.priority-map/[clojure.data.priority-map] - lead Mark Engelberg."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:89
+msgid "clojure.contrib.probabilities"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:90
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.profile"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:91
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.prxml"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:92
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.reflect"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:93
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.repl-ln"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:94
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.repl-utils"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:95
+msgid ""
+"Migrated to `clojure.repl` and `clojure.java.javadoc`. `show` functionality similar to `clojure.reflect/reflect`.  "
+"Any equivalents for these? `expression-info`, `run`, `run*`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:96
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.seq"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:97
+msgid "clojure.contrib.server-socket"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:98
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.set"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:99
+msgid ""
+"Migrated to `clojure.set`, except `proper-subset?` and `proper-superset?`, which are easily implemented using `subset?"
+"` and `superset?`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:100
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.singleton"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:101
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.sql"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:102
+msgid "Migrated to https://github.com/clojure/java.jdbc/[clojure.java.jdbc] - lead Sean Corfield."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:103
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.standalone"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:104
+msgid "clojure.contrib.stream-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:105
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.strint"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:106
+msgid "Migrated to https://github.com/clojure/core.incubator/[clojure.core.incubator] - lead Rich Hickey."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:107
+msgid "clojure.contrib.swing-utils"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:108
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.trace"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:109
+msgid "Migrating to https://github.com/clojure/tools.trace/[clojure.tools.trace] - lead Luc Prefontaine"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:110
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.types"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:111
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.with-ns"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:112
+#, fuzzy
+#| msgid "clojure.core:"
+msgid "clojure.contrib.zip-filter"
+msgstr "clojure.core:"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:113
+msgid "Migrated to https://github.com/clojure/data.zip/[clojure.data.zip] - lead Aaron Bedra."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_history.adoc:114
+#, fuzzy, no-wrap
+#| msgid "Namespaces"
+msgid "New Contrib Namespaces"
+msgstr "名前空間(namespace)"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:117
+msgid ""
+"This section lists new contrib namespaces that do not correspond to old contrib namespaces and is provided for "
+"completeness / documentation purposes."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:119
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.async/[clojure.core.async]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:120
+msgid "A Clojure library designed to provide facilities for async programming and communication. - lead Rich Hickey."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:122
+#, fuzzy
+#| msgid ""
+#| "https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - prints the docstring for a var "
+#| "given its name"
+msgid "https://github.com/clojure/core.cache/[clojure.core.cache] Extensible caching - lead Michael Fogus."
+msgstr ""
+"https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc[doc] - 指定された名前のvarのdocstringをプリン"
+"トする"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:123
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.contracts/[clojure.core.contracts]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:124
+msgid "Contract programming - lead Michael Fogus."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:125
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/core.rrb-vector/[clojure.core.rrb-vector]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:126
+msgid ""
+"An implementation of the confluently persistent vector data structure introduced in Bagwell, Rompf, \"RRB-Trees: "
+"Efficient Immutable Vectors\", EPFL-REPORT-169879, September, 2011. - lead Michał Marczyk"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:127
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/core.logic/[clojure.core.logic]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:128
+msgid "Logic programming - lead David Nolen."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:129
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.match/[clojure.core.match]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:130
+msgid "Structural pattern matching - lead David Nolen."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:131
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.memoize/[clojure.core.memoize]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:132
+msgid "Pluggable memoization, builds on core.cache - lead Michael Fogus."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:133
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.typed/[clojure.core.typed]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:134
+msgid "Optional type checking for Clojure - lead Ambrose Bonnaire-Sergeant"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:135
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/core.unify/[clojure.core.unify]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:136
+msgid "Unification (like Prolog) - lead Michael Fogus."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:137
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/data.csv/[clojure.data.csv]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:138
+msgid "Comma-Separated-Value file processing; formerly cljcsv - lead Jonas Enlund."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:139
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/data.finger-tree/[clojure.data.finger-tree]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:140
+msgid "Finger tree persistent data structures - lead Chris Houser."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:141
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/data.fressian/[clojure.data.fressian]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:142
+msgid "Read and write fressian data. See https://github.com/Datomic/fressian/wiki"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:143
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/data.generators/[clojure.data.generators]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:144
+msgid "Data generators (extracted from clojure.test.generative) - lead Stuart Halloway."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:145
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/java.data/[clojure.java.data]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:146
+msgid "Java Beans and properties support - lead Cosmin Stejerean."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:147
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/test.benchmark/[clojure.test.benchmark]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:148
+msgid "Benchmark (and regression) suite for Clojure - lead Stuart Halloway."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:149
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/test.generative/[clojure.test.generative]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:150
+msgid "Testing library based on data generation (see clojure.data.generators) - lead Stuart Halloway."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:151
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/tools.nrepl/[clojure.tools.nrepl]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:152
+msgid "REPL client and server - lead Chas Emerick."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:153
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/tools.reader/[clojure.tools.reader]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:154
+msgid "Clojure reader in Clojure - lead Nicola Mometto."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:155
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/tools.analyzer/[clojure.tools.analyzer]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:156
+msgid "An analyzer for Clojure code, host agnostic - lead Nicola Mometto"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:157
+#, fuzzy
+#| msgid "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+msgid "https://github.com/clojure/tools.analyzer.jvm/[clojure.tools.analyzer.jvm]"
+msgstr "https://github.com/clojure/clojure-clr[ClojureCLR Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:158
+msgid "An analyzer for Clojure on the JVM code, written on top of tools.analyzer - lead Nicola Mometto"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:159
+msgid "https://github.com/clojure/tools.analyzer.js/[clojure.tools.analyzer.js] - DEAD"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:160
+msgid "An analyzer for Clojurescript code, written on top of tools.analyzer - lead Nicola Mometto"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:161
+#, fuzzy
+#| msgid "https://github.com/clojure/clojurescript[ClojureScript Home]"
+msgid "https://github.com/clojure/tools.emitter.jvm/[clojure.tools.emitter.jvm]"
+msgstr "https://github.com/clojure/clojurescript[ClojureScript Home]"
+
+#. type: Plain text
+#: en/content/community/contrib_history.adoc:162
+msgid "A JVM bytecode generator, using tools.analyzer.jvm as frontend - lead Nicola Mometto"
+msgstr ""

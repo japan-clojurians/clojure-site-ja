@@ -1,0 +1,928 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title ==
+#: en/content/community/contrib_howto.adoc:1
+#: en/content/community/contrib_libs.adoc:107
+#, no-wrap
+msgid "Contrib How-To"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:4
+msgid "Alex Miller 2019-04-23"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_howto.adoc:10
+#, no-wrap
+msgid "Readmes"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:13
+msgid "Contrib library readmes should contain:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:15
+msgid ""
+"Instructions for including the library as a dependency in Maven / Leiningen"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:16
+msgid "Links to the library's pages on Jenkins and JIRA"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:17
+msgid "Links to the available releases on Maven Central and oss.sonatype.org"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:18
+msgid "Link to generated API documentation, if available"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:19
+msgid ""
+"General usage instructions (should mention which namespace to use/require)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:20
+msgid ""
+"Developer Information: links to GitHub project, Bug Tracker, Continuous "
+"Integration, Compatibility Test Matrix"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:21
+msgid "Change log of all releases (may also be in separate file)"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_howto.adoc:22
+#, no-wrap
+msgid "Committer Guidelines"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:25
+msgid "Things you should do if you are a Clojure Contrib committer:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:27
+msgid "maintain your library and respond to questions/issues that arise"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:28
+msgid ""
+"do your work on the master branch, or (if you are working on a significant "
+"chunk you want to keep temporarily separate) on a feature-specific branch "
+"that you create yourself"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:29
+msgid "use the Maven Release option on build.clojure.org to make releases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:30
+msgid ""
+"coordinate with other committers before making changes to their libraries"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:31
+msgid ""
+"accept contributions from others only if they have <<xref/../../dev/"
+"contributors#,signed the CA>>"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:33
+msgid "Things to avoid:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:35
+msgid "please do not push to the release branches (names like 1.2.x)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:36
+msgid "do not take non-contributor patches"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:37
+msgid "please do not take pull requests from contributors. Patches only."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:38
+msgid ""
+"do not change the version number in pom.xml - use the Maven Release process "
+"mentioned above"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:40
+msgid "Here's the process outline for what it takes to become a committer:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:42
+msgid "Get your <<xref/../../dev/contributor_agreement#,CA>> on file"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:43
+msgid ""
+"Join the http://groups.google.com/group/clojure-dev[clojure-dev] mailing list"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:44
+msgid "Create a https://clojure.atlassian.net/projects/CLJ[JIRA account]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:45
+msgid ""
+"Let Clojure core team know your github username and JIRA username so they "
+"can set up the correct permissions"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:46
+msgid ""
+"Clojure core team need to create your account on build.clojure.org as well - "
+"see below"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:48
+msgid "Moving an existing project into contrib:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:50
+msgid "All past contributors must:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:51
+msgid "Submit a Clojure Contributor Agreement"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:52
+msgid ""
+"Send an email to the clojure-dev mailing list granting permission, such as: "
+"\"I, (NAME), give my permission to release my contributions to (PROJECT) "
+"under the Clojure Contributor Agreement.\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:54
+msgid "Setting up a new contrib project:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:56
+msgid ""
+"Email clojure-dev mailing list to get new project approved and admin "
+"privileges in GitHub, Jira, and Jenkins."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:57
+msgid ""
+"Ask for a new GitHub repo under the clojure https://github.com/"
+"clojure[organization]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:58
+msgid "Specify project name (must be approved by Clojure core)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:59
+msgid "Specify description"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:60
+msgid "Collaborators - add Team: Contrib Commit which includes:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:61
+msgid "clojure-build - for Jenkins to tag releases, build autodocs, etc"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:62
+msgid "Disable Issues tab (we use JIRA instead)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:63
+msgid "Project structure (see existing projects for example)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:64
+msgid "/README.md - readme, see above"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:65
+msgid "/CHANGES.md - changelog"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:66
+msgid "/CONTRIBUTING.md - example"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:67
+msgid "/epl.html - EPL license information"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:68
+msgid ""
+"/pom.xml - according to the https://github.com/clojure/build.poms[build."
+"poms] instructions - used for build/deploy"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:69
+msgid "/src/main/clojure - Clojure sources"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:70
+msgid "/src/test/clojure - Clojure tests"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:71
+msgid "/src/main/cljs - ClojureScript sources"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:72
+msgid "/src/test/cljs - ClojureScript tests"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:73
+msgid "/src/main/java - Java sources, if needed"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:74
+msgid "Create a new JIRA project (requires JIRA admin privileges):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:75
+msgid "Specify name (same as GitHub project name)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:76
+msgid ""
+"Specify key (approved by Clojure core, derived from project name) - should "
+"usually be first char of first part with up to 5 chars of second part - "
+"TBENCH, DJSON, etc."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:77
+msgid "Specify project lead's JIRA account"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:78
+msgid "Edit project to add url and description (same as GitHub project)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:79
+msgid ""
+"Set notification scheme - usually \"Default scheme plus notify project lead\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:80
+msgid "Setting up builds (requires Jenkins admin privileges, except step 2):"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:81
+msgid "Create Jenkins user account for authors"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:82
+msgid ""
+"Edit ci_data.clj in the https://github.com/clojure/build.ci[build.ci] repo "
+"add the new project / update authors (so they can run builds / cut releases)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:83
+msgid ""
+"Request on clojure-dev mailing list to run build.ci Jenkins job - this will "
+"recreate all Jenkins job definition files!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:84
+msgid "Force Jenkins to reload its configuration files"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:85
+msgid "Autodoc"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:86
+msgid "WIP"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:87
+msgid "Performing releases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:88
+msgid ""
+"Snapshot releases are automatically created every time the job builds "
+"(triggered by any source change)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:89
+msgid "To use snapshots, see Maven Settings and Repositories"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:90
+msgid "Perform a release according to How to Make Releases section below"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_howto.adoc:91
+#, no-wrap
+msgid "How to Make Releases"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:94
+msgid "Prep"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:96
+#: en/content/community/contrib_howto.adoc:101
+msgid "Your project must have a pom.xml file with a -SNAPSHOT version"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:97
+msgid ""
+"The pom.xml file must specify a parent, the latest released version of pom."
+"contrib in https://github.com/clojure/build.poms[build.poms]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:99
+msgid "How to make a -SNAPSHOT release"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:102
+msgid "Push to \"master\" branch on GitHub"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:103
+msgid "Jenkins polls GitHub and builds automatically"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:104
+msgid "Or you can click \"Build Now\" on the project page"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:105
+msgid ""
+"Jenkins builds and uploads a uniquely-numbered JAR file to the https://oss."
+"sonatype.org/[Sonatype OSS Snapshot Repository]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:107
+msgid "How to make a numbered release"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:109
+msgid ""
+"The \"master\" branch in GitHub must have a pom.xml file with a -SNAPSHOT "
+"version, not a bare version number"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:110
+msgid "Log in to https://build.clojure.org[Jenkins]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:111
+msgid "Navigate to your project's job"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:112
+msgid "Click \"Perform Maven Release\" link on the left"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:113
+msgid "On the \"Perform Maven Release\" page:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:114
+msgid "Select \"Specify one version for all modules\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:115
+msgid ""
+"In the \"Release Version\" field, enter the version number for this release "
+"of your project"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:116
+msgid ""
+"This will normally be the current development version with the \"-SNAPSHOT\" "
+"suffix removed"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:117
+msgid ""
+"In the \"Development version\" field, enter the version number for the "
+"subsequent development version of your project"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:118
+msgid "This will end with \"-SNAPSHOT\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:119
+msgid "Click \"Schedule Maven Release Build\""
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:120
+msgid "After the build completes successfully:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:121
+msgid "`git pull` on your development machine to get the new release tags"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:122
+msgid ""
+"The release JAR file will be uploaded to the Sonatype OSS staging repository"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:123
+msgid ""
+"The release will automatically be copied to the Maven Central repository "
+"within 24 hours (usually within 15 minutes)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:124
+msgid ""
+"Don't forget to update the project README if it recommends a version to "
+"users."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:126
+msgid "Contrib Release Numbering Policy"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:128
+msgid "major.minor.patch"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:129
+msgid ""
+"Follow guidelines for accretion and fixation, not breakage, if at all "
+"possible"
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/contrib_howto.adoc:130
+#, no-wrap
+msgid "Coding Guidelines"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:133
+msgid "Disclaimer:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:135
+msgid ""
+"Rules are made to be broken. Know the standards, but do not treat them as "
+"absolutes."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:137
+msgid "The Standards:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:139
+msgid ""
+"Get the name and signature right. Rich strongly respects Java's commitment "
+"to not break existing code. In practice, that means we can tweak the "
+"implementation forever, but once we publish a name and signature we need to "
+"stick with it. (In practice I think this means that we want many people to "
+"review the name and sig, even if they don't review the implementation "
+"details.)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:140
+msgid ""
+"Use type hints for functions that are likely to be on critical code; "
+"otherwise keep code simple and hint-free."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:141
+msgid ""
+"Only use type hints that matter. If you are not certain a type hint helps, "
+"don't add it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:142
+msgid ""
+"Use good names, and don't be afraid to collide with names in other "
+"namespaces. That's what the flexible namespace support is there for."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:143
+msgid ""
+"OTOH, using the same name with a different signature or semantics begs the "
+"question as to whether one of them is less than ideal."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:144
+msgid ""
+"Be explicit and minimalist about dependencies on other packages. (Prefer :"
+"require :refer to :use)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:145
+msgid ""
+"Don't use a macro when a function can do the job. If a macro is important "
+"for ease-of-use, expose the function version as well."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:146
+msgid ""
+"If you are sure you have all the information at compile time, use a macro "
+"where it would improve performance sensitive code."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:147
+msgid "Provide a library-level docstring."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:148
+msgid "Provide automated tests."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:149
+msgid "Use '?' suffix for predicates, and return booleans."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:150
+msgid ""
+"Use '_' for destructuring targets and formal arguments names whose value "
+"will be ignored by the code at hand."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:151
+msgid "Include a docstring."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:152
+msgid ""
+"When in doubt, expose the performant version. Clojure goes to great lengths "
+"to enable performance when you need it, and lib should too. (That's why we "
+"don't have multimethod + in core, for instance.) Users can always create "
+"more polymorphic APIs on their own, hijacking symbols if they want to."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:153
+msgid ""
+"If you take a good name that collides with core, make sure your semantics "
+"are parallel (possibly minus laziness). Good example of this is string "
+"functions that shadow core seq functions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:154
+msgid "Use assert and pre- and post- conditions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:155
+msgid "Be lazy where possible."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:156
+msgid "Follow clojure.core's example for idiomatic names like pred and coll."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:157
+msgid "in fns"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:158
+msgid "f, g, h - function input"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:159
+msgid "n - integer input usually a size"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:160
+msgid "index - integer index"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:161
+msgid "x, y - numbers"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:162
+msgid "s - string input"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:163
+msgid "coll - a collection"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:164
+msgid "pred - a predicate closure"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:165
+msgid "& more - variadic input"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:166
+msgid "in macros"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:167
+msgid "expr - an expression"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:168
+msgid "body - a macro body"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:169
+msgid "binding - a macro binding vector"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:170
+msgid ""
+"Do NOT follow idioms from clojure.core's preamble code. That code runs in a "
+"limited environment because Clojure is not bootstrapped yet."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:171
+msgid ""
+"Decompose the pieces. If your name isn't Rich, don't write a form as long "
+"as, say, the definition of doseq."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:172
+msgid ""
+"Use keyword-first syntax to access properties on objects: `(:property object-"
+"like-map)`"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:173
+msgid ""
+"Use collection-first syntax to extract values from a collection (or use get "
+"if the collection might be nil): `(collection-like-map key)` or `(get "
+"collection-like-map key)`. Note that not all collections are keyed by "
+"keyword."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:174
+msgid ""
+"Idiomatic code uses destructuring a lot. However, you should only "
+"destructure in the arg list if you want to communicate the substructure as "
+"part of the caller contract. Otherwise, destructure in a first-line let."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:175
+msgid ""
+"Prefer updating over setting. Many reasons: the unified update model "
+"provides a simple standard way to do this. Helps you discover commutative "
+"operations. Reduces the surface area of assumptions you are making about the "
+"object you are updating."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:176
+msgid ""
+"Don't support operations on the wrong collection type. If your algorithm is "
+"only performant with random access, then require an arg that has random "
+"access."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:177
+msgid ""
+"Use pass:[*earmuffs*] only for things intended for rebinding. Don't use a "
+"special notation for constants; everything is assumed a constant unless "
+"specified otherwise."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:178
+msgid "Use the bang! only for things not safe in an STM transaction."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:179
+msgid "Prefer sequence-library composition over explicit loop/recur."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:180
+msgid ""
+"Rebindable vars should be paired with scoping macros, e.g. in and with-in-"
+"str."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:181
+msgid ""
+"Lazy seqs should be exposed as functions that hold only the minimum state "
+"needed, a.k.a. \"let go of your head.\" Let the caller decide how much local "
+"memory they want to use."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:182
+msgid ""
+"Use Klass/staticField, (Klass/staticMethod), (Klass.) and (.method obj) "
+"interop styles with the only exception being in code-generating-code where "
+"the older (. obj method) style may be easier to produce."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:183
+msgid ""
+"If you present an interface that implicitly passes a parameter via dynamic "
+"binding (e.g. db in sql), also provide an identical interface but with the "
+"parameter passed explicitly."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:184
+msgid ""
+"When providing a default case for cond, use the keyword :else as a condition "
+"instead of true"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:185
+msgid "To access a private var (e.g. for testing), use the @#'some.ns/var form"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:186
+msgid "Protocols:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:187
+msgid ""
+"One should only extend a protocol to a type if they own either the type or "
+"the protocol."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:188
+msgid ""
+"If one breaks the previous rule, they should be prepared to withdraw, should "
+"the implementor of either provide a definition"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:189
+msgid ""
+"If a protocol comes with Clojure itself, avoid extending it to types you "
+"don't own, especially e.g. java.lang.String and other core Java interfaces. "
+"Rest assured if a protocol should extend to it, it will, else lobby for it."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/contrib_howto.adoc:189
+msgid ""
+"The motive is, as stated by Rich Hickey, to prevent \"people extend "
+"protocols to types for which they don't make sense, e.g. for which the "
+"protocol authors considered but rejected an implementation due to a semantic "
+"mismatch.\". \"No extension will be there (by design), and people without "
+"sufficient understanding/skills might fill the void with broken ideas.\""
+msgstr ""

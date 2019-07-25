@@ -1,0 +1,560 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title ==
+#: en/content/reference/transients.adoc:75 en/content/guides/equality.adoc:14 en/content/guides/comparators.adoc:12
+#: en/content/news/2017/01/31/state-of-clojure-2016.adoc:83 en/content/news/2012/05/08/reducers.adoc:164
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:194 en/content/about/state.adoc:74
+#, no-wrap
+msgid "Summary"
+msgstr "まとめ"
+
+#. type: Title ==
+#: en/content/reference/reducers.adoc:1 en/content/news/2012/05/15/anatomy-of-reducer.adoc:68
+#, no-wrap
+msgid "Reducers"
+msgstr "reducer"
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:760 en/content/guides/spec.adoc:784 en/content/guides/spec.adoc:806
+#: en/content/guides/spec.adoc:878 en/content/guides/spec.adoc:923 en/content/guides/spec.adoc:971
+#: en/content/guides/spec.adoc:1011 en/content/guides/spec.adoc:1071 en/content/guides/spec.adoc:1151
+#: en/content/guides/spec.adoc:1192 en/content/guides/spec.adoc:1201 en/content/guides/spec.adoc:1225
+#: en/content/guides/spec.adoc:1297 en/content/news/2012/05/15/anatomy-of-reducer.adoc:73
+msgid "[source,clojure]"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/guides/spec.adoc:767 en/content/guides/spec.adoc:793 en/content/guides/spec.adoc:826
+#: en/content/guides/spec.adoc:838 en/content/guides/spec.adoc:853 en/content/guides/spec.adoc:887
+#: en/content/guides/spec.adoc:912 en/content/guides/spec.adoc:949 en/content/guides/spec.adoc:959
+#: en/content/guides/spec.adoc:991 en/content/guides/spec.adoc:1024 en/content/guides/spec.adoc:1032
+#: en/content/guides/spec.adoc:1044 en/content/guides/spec.adoc:1080 en/content/guides/spec.adoc:1089
+#: en/content/guides/spec.adoc:1111 en/content/guides/spec.adoc:1122 en/content/guides/spec.adoc:1133
+#: en/content/guides/spec.adoc:1160 en/content/guides/spec.adoc:1175 en/content/guides/spec.adoc:1208
+#: en/content/guides/spec.adoc:1248 en/content/guides/spec.adoc:1258 en/content/guides/spec.adoc:1282
+#: en/content/guides/spec.adoc:1312 en/content/guides/spec.adoc:1332
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:85
+#, no-wrap
+msgid "[source,clojure]\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2013/06/28/clojure-clore-async-channels.adoc:119
+#: en/content/news/2014/08/06/transducers-are-coming.adoc:121
+#: en/content/news/2016/05/23/introducing-clojure-spec.adoc:30 en/content/news/2012/05/08/reducers.adoc:172
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:198
+msgid "Rich"
+msgstr ""
+
+#. type: Title =
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:1
+#, no-wrap
+msgid "Anatomy of a Reducer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:4
+#, fuzzy
+#| msgid "Rich Hickey 2016-02-15"
+msgid "Rich Hickey 2012-05-15"
+msgstr "Rich Hickey 2016-02-15"
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:9
+msgid ""
+"Last time, <<xref/../../08/reducers#,I blogged>> about Clojure's new https://github.com/clojure/clojure/blob/master/"
+"src/clj/clojure/core/reducers.clj[reducers library]. This time I'd like to look at the details of what constitutes a "
+"reducer, as well as some background about the library."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:10
+#, fuzzy, no-wrap
+#| msgid "Creating Functions"
+msgid "What's a Reducing Function?"
+msgstr "関数を作る"
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:13
+msgid ""
+"The reducers library is built around transforming reducing functions. A reducing function is simply a binary "
+"function, akin to the one you might pass to _reduce_. While the two arguments might be treated symmetrically by the "
+"function, there is an implied semantic that distinguishes the arguments: the first argument is a result or "
+"accumulator that is being built up by the reduction, while the second is some new input value from the source being "
+"reduced. While _reduce_ works from the 'left', that is neither a property nor promise of the reducing function, but "
+"one of _reduce_ itself. So we'll say simply that a reducing fn has the shape:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:17
+msgid "  (f result input) -> new-result"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:20
+#, no-wrap
+msgid "In addition, a reducing fn may be called with no args, and should then return an identity value for its operation.\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:21
+#, fuzzy, no-wrap
+#| msgid "Creating Functions"
+msgid "Transforming Reducing Functions"
+msgstr "関数を作る"
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:24
+msgid "A function that transforms a reducing fn simply takes one, and returns another one:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:28
+msgid "[source,clojure] ---- (xf reducing-fn) -> reducing-fn"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:31
+msgid ""
+"Many of the core collection operations can be expressed in terms of such a transformation. Imagine if we were to "
+"define the cores of _map_, _filter_ and _mapcat_ in this way:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:38
+#, fuzzy, no-wrap
+#| msgid ""
+#| "(fn [xf]\n"
+#| "  (fn ([] ...)\n"
+#| "      ([result] ...)\n"
+#| "      ([result input] ...)))\n"
+msgid ""
+"(defn mapping [f]\n"
+"  (fn [f1]\n"
+"    (fn [result input]\n"
+"      (f1 result (f input)))))\n"
+msgstr ""
+"(fn [xf]\n"
+"  (fn ([] ...)\n"
+"      ([result] ...)\n"
+"      ([result input] ...)))\n"
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:45
+#, no-wrap
+msgid ""
+"(defn filtering [pred]\n"
+"  (fn [f1]\n"
+"    (fn [result input]\n"
+"      (if (pred input)\n"
+"        (f1 result input)\n"
+"        result))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:50
+#, fuzzy, no-wrap
+#| msgid ""
+#| "(fn [xf]\n"
+#| "  (fn ([] ...)\n"
+#| "      ([result] ...)\n"
+#| "      ([result input] ...)))\n"
+msgid ""
+"(defn mapcatting [f]\n"
+"  (fn [f1]\n"
+"    (fn [result input]\n"
+"      (reduce f1 result (f input)))))\n"
+msgstr ""
+"(fn [xf]\n"
+"  (fn ([] ...)\n"
+"      ([result] ...)\n"
+"      ([result input] ...)))\n"
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:53
+msgid "There are a few things to note:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:55
+msgid "The functions consist only of the core logic of their operations"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:56
+msgid "That logic does not include any notion of collection, nor order"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:57
+msgid "filtering and kin can 'skip' inputs by simply returning the incoming result"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:58
+msgid "mapcatting and kin can produce more than one result per input by simply operating on result more than once"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:60
+msgid ""
+"Using these directly is somewhat odd, because we are operating on the reducing operation rather than the collection:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:66
+msgid "  (reduce + 0 (map inc [1 2 3 4]))  ;;becomes (reduce ((mapping inc) +) 0 [1 2 3 4])"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:71
+msgid ""
+"We expect map/filter etc to take and return logical collections. The premise of the reducers library is that the "
+"minimum definition of collection is something that is reducible. reduce ends up using a protocol (CollReduce) to ask "
+"the collection to _reduce_ itself, so we can make reducible things by extending that protocol. Thus, given a "
+"collection and a reducing function transformer like those above, we can make a reducible with a function like this:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:80
+#, no-wrap
+msgid ""
+"(defn reducer\n"
+"  ([coll xf]\n"
+"   (reify\n"
+"    clojure.core.protocols/CollReduce\n"
+"    (coll-reduce [_ f1 init]\n"
+"      (clojure.core.protocols/coll-reduce coll (xf f1) init)))))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:83
+#, no-wrap
+msgid "Now:\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:89
+msgid "(reduce + 0 (map inc [1 2 3 4]))  ;;becomes (reduce + 0 (reducer [1 2 3 4] (mapping inc)))"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:92
+#, no-wrap
+msgid "That's better. It feels as if we have transformed the collection itself. Note:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:95
+#, no-wrap
+msgid ""
+"* reducer ultimately asks the source collection to reduce _itself_\n"
+"* reducer will work with any reducing function transformer\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:97
+#, no-wrap
+msgid "Another objective of the library is to support reducer-based code with the same shape as our current seq-based code. Getting there is easy:\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:102
+#, no-wrap
+msgid ""
+"[source,clojure]\n"
+"----  \n"
+"(defn rmap [f coll]\n"
+"  (reducer coll (mapping f)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:105
+#, no-wrap
+msgid ""
+"(defn rfilter [pred coll]\n"
+"  (reducer coll (filtering pred)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:108
+#, no-wrap
+msgid ""
+"(defn rmapcat [f coll]\n"
+"  (reducer coll (mapcatting f)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:111
+#, no-wrap
+msgid ""
+"(reduce + 0 (rmap inc [1 2 3 4]))\n"
+";=> 14\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:114
+#, no-wrap
+msgid ""
+"(reduce + 0 (rfilter even? [1 2 3 4]))\n"
+";=> 6\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:117
+#, no-wrap
+msgid ""
+"(reduce + 0 (rmapcat range [1 2 3 4 5]))\n"
+";=> 20\n"
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:119
+#, no-wrap
+msgid "From Reducible to (Parallel) Foldable"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:122
+msgid ""
+"While it is an interesting exercise to find another fundamental way to define the core collection operations, the end "
+"result is not much different, just faster, certainly something http://citeseer.ist.psu.edu/viewdoc/summary?"
+"doi=10.1.1.104.7401[a state-of-the-art compilation and type system] (had we one) might do for us given sequence code. "
+"To stop here would be to completely miss the point of the library. These operations have different, fundamentally "
+"simpler semantics than their sequence-based counterparts."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:124
+msgid ""
+"How does one define parallel mapping/filtering/mapcatting etc? __We already did!__ As long as the transformation "
+"itself doesn't care about order (e.g. as _take_ does), then a reducer is as foldable as its source. As with _reduce_, "
+"_fold_ bottoms out on a protocol (CollFold), and our reducer can extend that:"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:131
+#, no-wrap
+msgid ""
+"(defn folder\n"
+"  ([coll xf]\n"
+"     (reify\n"
+"      ;;extend CollReduce as before\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:135
+#, no-wrap
+msgid ""
+"      CollFold\n"
+"      (coll-fold [_ n combinef reducef]\n"
+"        (coll-fold coll n combinef (xf reducef))))))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:138
+msgid "Note that:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:140
+msgid "_folder_ has the same requirements as _reducer_ - collection + reducing function transformer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:141
+msgid "when _fold_ is applied to something that can't fold, it devolves to _reduce_"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:143
+msgid "Thus the real definitions of reducers/map et al use _folder_ (while take uses _reducer_):"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:148
+#, no-wrap
+msgid ""
+"(defn rmap [f coll]\n"
+"  (folder coll (mapping f)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:151
+#, no-wrap
+msgid ""
+"(defn rfilter [pred coll]\n"
+"  (folder coll (filtering pred)))\n"
+msgstr ""
+
+#. type: delimited block -
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:154
+#, no-wrap
+msgid ""
+"(defn rmapcat [f coll]\n"
+"  (folder coll (mapcatting f)))\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:157
+msgid ""
+"Thus a wide variety of collection transformations can instead be expressed as reducing function transformations, and "
+"applied in both sequential and parallel contexts, across a wide variety of data structures."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:159
+msgid "The library deals with several other details, such as:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:161
+msgid "the transformers all need a nullary arity that just delegates to the transformed reducing function"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:162
+msgid ""
+"the transformers support a ternary arity where 2 inputs are supplied per step, as occurs with reduce-kv and map "
+"sources"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:163
+msgid "all of the reducers are curried"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:165
+msgid ""
+"These additions are all mechanical, and are handled by macros. It is my hope that the above will help illuminate the "
+"core logic underlying the library."
+msgstr ""
+
+#. type: Title ==
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:166
+#, no-wrap
+msgid "Background"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:169
+msgid ""
+"Much prior work highlights the value of fold as a primary mechanism for collection manipulation, superior to "
+"iteration, although most of that work was done in the context of recursively defined functions on lists or sequences "
+"- i.e. fold implies foldl/foldr, and the results remain inherently sequential."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:171
+msgid "The two primary motivators for this library were the Haskell Iteratee library and Guy Steele's ICFP '09 talk."
+msgstr ""
+
+#. type: Title ===
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:172
+#, no-wrap
+msgid "Haskell Iteratees"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:175
+msgid ""
+"The http://www.haskell.org/haskellwiki/Enumerator_and_iteratee[Haskell Enumerator/Iteratee library] and its "
+"antecedents are an inspiring effort to disentangle the source of data and the operations that might apply to it, and "
+"one of the first I think to reify the role of the 'iteratee'. An enumerator makes successive calls to the iteratee to "
+"supply it items, decoupling the iteratee from the data source. But the iteratee is still driving in some sense, as it "
+"is in charge of signaling Done, and, it returns on each step the next iteratee to use, effectively dictating a single "
+"thread of control. One benefit is that even operations like _take_ can be defined functionally, as they can encode "
+"their internal state in the 'next' iteratee returned. OTOH, and unlike reducers, the design wraps the result being "
+"built up in a new iteratee each step, with potential allocation overhead."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:177
+msgid ""
+"Being an automaton in a state, an iteratee is like a reified left fold, and thus inherently serial. So, while they "
+"form quite a nice substrate for the design of, e.g. parsers, iteratees are unsuitable for defining things like map/"
+"filter etc if one intends to be able to parallelize them."
+msgstr ""
+
+#. type: Title ===
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:178
+#, no-wrap
+msgid "Guy Steele's ICFP '09 talk"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:181
+msgid ""
+"http://vimeo.com/6624203[Organizing Functional Code for Parallel Execution or, foldl and foldr Considered Slightly "
+"Harmful]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:183
+msgid ""
+"This talk boils down to - stop programming with streams, lists, generators etc if you intend to exploit parallelism, "
+"as does the reducers library."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:185
+msgid ""
+"Where reducers diverges from that talk is in the structure of the fork/join parallel computation. Rather than map"
+"+reduce, reducers uses reduce+combine. This reflects 2 considerations:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:187
+msgid ""
+"It is accepted fork/join practice that at some point you stop splitting in half and handle the leaves 'sequentially'"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:188
+msgid "if the best way to do that at the top is _reduce_, why not at the bottom as well?"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:189
+msgid "_map_ forces a result per input"
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:191
+msgid ""
+"You can see the awkwardness of the latter in the map/reduce-oriented definition of parallel _filter_ in the talk, "
+"which must 'listify' items or return empty lists, creating a bunch of concatenation busy-work for the reducing step. "
+"Many other collection algorithms suffer similarly in their map/reduce-oriented implementations, having greater "
+"internal complexity and wrapping the results in collection representations, with corresponding creation of more "
+"garbage and reduction busy-work etc vs the reducing function transformer versions of same."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:193
+msgid ""
+"It is interesting that the accumulator style is not completely absent from the reducers design, in fact it is "
+"important to the characteristics just described. What has been abandoned are the __single initial value__ and "
+"__serial execution__ promises of foldl/r."
+msgstr ""
+
+#. type: Plain text
+#: en/content/news/2012/05/15/anatomy-of-reducer.adoc:197
+msgid "I hope this makes reducers easier to understand, use and define."
+msgstr ""

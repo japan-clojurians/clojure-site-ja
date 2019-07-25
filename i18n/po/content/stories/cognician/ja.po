@@ -1,0 +1,302 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:11 en/content/stories/anychart.adoc:11 en/content/stories/cognician.adoc:11
+#, no-wrap
+msgid "**How long have you been working with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:17 en/content/stories/anychart.adoc:15 en/content/stories/cognician.adoc:23
+#, no-wrap
+msgid "**How big is the team you have using Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:25 en/content/stories/anychart.adoc:19 en/content/stories/cloudrepo.adoc:11
+#: en/content/stories/stitch.adoc:11 en/content/stories/cognician.adoc:27
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:34 en/content/stories/anychart.adoc:27 en/content/stories/cognician.adoc:37
+#, no-wrap
+msgid "**What Clojure or ClojureScript library have you enjoyed working with the most?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:90 en/content/stories/anychart.adoc:31 en/content/stories/cognician.adoc:48
+#, no-wrap
+msgid "**What about working with Clojure or ClojureScript gives you the most value?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:97 en/content/stories/anychart.adoc:35 en/content/stories/stitch.adoc:27
+#: en/content/stories/cognician.adoc:56
+#, no-wrap
+msgid "**What is your favorite feature of Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:104 en/content/stories/anychart.adoc:43 en/content/stories/stitch.adoc:40
+#: en/content/stories/cognician.adoc:62
+#, no-wrap
+msgid "**Why is using Clojure or ClojureScript valuable to your business?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:117 en/content/stories/anychart.adoc:39 en/content/stories/cloudrepo.adoc:29
+#: en/content/stories/stitch.adoc:34 en/content/stories/cognician.adoc:75
+#, no-wrap
+msgid "**What is your stack?**\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/cognician.adoc:1
+#, no-wrap
+msgid "Cognician"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:4
+#, fuzzy
+#| msgid "Alex Miller 2015-11-25"
+msgid "Alex Miller 2018-12-20"
+msgstr "Alex Miller 2015-11-25"
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:9
+#, fuzzy
+#| msgid "image:/images/content/about/celsius.png[\"celsius\",height=\"80\"]"
+msgid "image:/images/content/stories/cognician.jpg[\"Cognician\",height=\"125\"]"
+msgstr "image:/clojure-site-ja/images/content/about/celsius.png[\"celsius\",height=\"80\"]"
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:13
+msgid "Since early 2012."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:15
+msgid ""
+"At that point, https://www.cognician.com/[Cognician] had spent a couple of years proving that we had something worth "
+"building a business around, and then we actually had to build that business."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:17
+msgid ""
+"Our previous stack was a Flash/AIR app (remember those?) with a PHP/SQL backend. I had built enough of those sorts of "
+"apps to know that I wasn’t smart enough or skilled enough to build large OO projects that scaled well. I knew I "
+"needed a fresh perspective."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:19
+msgid ""
+"Thanks to http://www.clojurebook.com[clojurebook.com] and several great talks by Rich and the fantastic folks in the "
+"Clojure IRC channel and Google Groups, I had enough support to switch paradigms and learn to program all over again."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:21
+msgid ""
+"It’s nearly seven years later, and I’m utterly convinced we wouldn’t still be in business if we had chosen something "
+"more traditional."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:25
+msgid "10 people regularly commit Clojure/ClojureScript to git, but almost all 40 of us know EDN. :-)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:29
+msgid ""
+"Cognician aims to provide delightful, life-changing learning experiences to people in the world of work all over the "
+"world."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:31
+msgid ""
+"The platform and the learning experiences it enables are built on the idea that people are capable of great things "
+"when their behavior is inspired by powerful ideas and deeply felt emotions."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:33
+msgid ""
+"At its heart, Cognician is a digital coaching SaaS platform. You could think of it as ‘the Socratic method, at scale.’"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:35
+msgid ""
+"We’ve built a catalog of learning experiences, the components that make up these experiences, and a platform that "
+"allows us to configure these experiences to suit our clients’ learning needs."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:39
+msgid ""
+"https://www.datomic.com/[Datomic] has been tremendous fun to learn, to use, and to teach. It’s such a fitting design "
+"for the problems it solves for, and it’s a great pleasure to work with."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:41
+msgid "Thanks to Datomic’s architecture, we have been able to avoid two major headaches:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:43
+msgid ""
+"Concurrency – our web server instances only share browser cookies, and Datomic. Our backend services only share the "
+"Datomic database with the web servers. Programming with databases as values has made doing all of this a pleasure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:44
+msgid ""
+"View caching – we haven’t had to worry about this at all since every view on our system is rendered live from source "
+"data!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:46
+msgid "There are so many other libraries that we use daily and have learned from!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:50
+msgid ""
+"The data orientation of Clojure forces you to deal with naming things properly, which in turn forces you to deal with "
+"understanding your domain well. Its composable nature allows you to decide when to use the tools that support the "
+"definition of data vs. the implementation of behavior, rather than forcing you to use ‘The One True Way.’"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:52
+msgid ""
+"Being able to think in a single language everywhere – i.e., browser, server, network, and database – has tremendous "
+"value. It feels a little like getting to choose your own physics. Something interesting happens after you’ve worked "
+"like this for some time – you stop seeing the language and you see the domain directly. It’s a little like being able "
+"to understand The Matrix. :-)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:54
+msgid ""
+"On the people side, Clojure has attracted some of the most amazing creators and problem solvers we have had – and "
+"continue to have – the honor to work with!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:58
+msgid ""
+"Programming with a REPL is life-changing. It’s so suited to the business of using software to solve real-world "
+"problems today."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:60
+msgid ""
+"After that, Clojure has two ways of mitigating the downsides of its dynamic nature. There’s https://clojure.org/"
+"guides/destructuring[destructuring], which helps you to be explicit about how you’ll use the data at hand, and then "
+"there’s https://clojure.org/about/spec[spec], which has many different points of leverage to enjoy (all opt-in!) for "
+"a relatively minor up-front investment."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:64
+msgid "It’s about our velocity when we use it. Using Clojure had allowed us to:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:66
+msgid ""
+"Deal with a rapid rate of change – there have been many linchpin moments in our history where we had to be able to "
+"‘turn on a dime’ and totally change our approach. Having less code to begin with helps, but also not having to fight "
+"assumptions in the language, the database, or some framework we’re using has helped us to ‘wipe the slate clean’ and "
+"begin again."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:68
+msgid ""
+"Get to a working system quickly – thanks to its dynamic, immutable, and Lispy nature, you don’t have to write a lot "
+"of Clojure to get something working. Once the needs are clear, building the system is quick to do."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:70
+msgid "Here are two fun factoids:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:72
+msgid ""
+"We have about 100k lines of code of production Clojure/ClojureScript. Given all the things this code is doing, that’s "
+"very little."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:73
+msgid ""
+"Around 400 of the 1600 or so Datomic idents in our database are marked deprecated, which helps to illustrate how much "
+"we’ve built and since discarded."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:77
+msgid "We develop regularly with Clojure, ClojureScript, Datomic, and Sass."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:79
+msgid "We have a derived data SQL store for BI tooling to interact with."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:81
+msgid "We host on AWS, using their ‘paved road’: Route 53, EC2, ALB, S3, CloudFront. Nothing surprising!"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:83
+msgid "We use Buildkite for CI, Datadog for monitoring, and Sentry for error logging."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:85
+msgid ""
+"Probably the most interesting thing about our stack is our CI system – we have invested a lot of energy into making "
+"it easy to do the right thing. We have duplicate environments based on common configuration code, we can create test "
+"servers for git branches, and we can restore production data to a sandbox to test with – all available at the click "
+"of a button."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cognician.adoc:86
+msgid ""
+"We can get new code live in under 15 minutes, sometimes in only 5 minutes. For situations that require a quicker "
+"turnaround, we have a remote REPL. :-)"
+msgstr ""

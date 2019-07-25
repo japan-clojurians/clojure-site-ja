@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/dev/dev.adoc:1
+#, no-wrap
+msgid "Development"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:4
+msgid "Alex Miller 2019-06-03"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:11
+msgid ""
+"Clojure was created by Rich Hickey and is developed by a core team of "
+"developers at https://cognitect.com[Cognitect], which supports this work. "
+"The Clojure development team values a measured and thoughtful approach to "
+"language evolution with a strong emphasis on maintaining backward "
+"compatibility."
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/dev.adoc:12
+#, no-wrap
+msgid "Becoming a Contributor"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:15
+msgid ""
+"First, please consider the <<xref/../../community/contributing#,many ways to "
+"contribute>> as a Clojure user. If you simply need to file a bug, https://"
+"clojure.atlassian.net/servicedesk/customer/portal/1[you can do so] without "
+"becoming a contributor."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:17
+msgid ""
+"The Clojure core team values those that engage with the current stream of "
+"ongoing work, doing the hard work of triage, <<developing_patches#,patch "
+"development>>, <<screening_tickets#,screening>>, etc. The <<workflow#,"
+"workflow>> page highlights places to tap into those queues of work as jira "
+"reports. The core team tends to focus on tickets primarily in the late "
+"alpha / early beta period for a release cycle. During other parts of the "
+"release cycle, activity may seem dormant, but that is the perfect time to "
+"improve tickets so they are ready to evaluate. Tickets that are well-written "
+"with good patches can move quickly through the cycle at the appropriate time."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:19
+msgid "If you are interesting in becoming involved as an active contributor:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:21
+msgid "Sign the <<contributor_agreement#,Clojure Contributor Agreement>>."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:22
+msgid ""
+"File a https://clojure.atlassian.net/servicedesk/customer/"
+"portal/1[contributor support request] to get a contributor account - please "
+"include the email address you wish to use with your account."
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/dev.adoc:23
+#, no-wrap
+msgid "Participating as a Contributor"
+msgstr ""
+
+#. type: Title ===
+#: en/content/dev/dev.adoc:25
+#, no-wrap
+msgid "Issues"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:28
+msgid ""
+"Contributors can file tickets directly in the issue tracker. You might want "
+"to check what you are seeing with others on a Clojure discussion forum "
+"before filing. Please review the <<creating_tickets#,guide to creating "
+"useful tickets>>."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:30
+msgid ""
+"Clojure accepts contributions as patches on issues. Please review "
+"<<developing_patches#,these guidelines>> on developing patches. Tickets may "
+"be assessed over a long period of time, following the <<workflow#,workflow>>."
+msgstr ""
+
+#. type: Title ===
+#: en/content/dev/dev.adoc:31
+#, no-wrap
+msgid "Enhancements and Features"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:34
+msgid ""
+"Clojure's direction is determined by Rich Hickey and the core team. This "
+"process is open to input and visible in issues and commits, but not "
+"explicitly driven by the community. The core team pays attention to the "
+"needs of the community by monitoring and participating in many Clojure "
+"discussion forums, and by reviewing issues and votes in the issue tracker. "
+"We are currently evaluating better systems for collecting and prioritizing "
+"enhancement requests."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:36
+msgid ""
+"If you have an idea for an enhancement or new feature for Clojure, it may be "
+"helpful to search the issue tracker for prior issues and/or raise this idea "
+"for discussion in one of the Clojure forums. In particular, the mailing "
+"lists or pass:[#clojure-dev] room on Clojurian slack are good places to "
+"discuss."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:38
+msgid ""
+"Please follow the guidelines in <<creating_tickets#,Creating Tickets>> and "
+"<<developing_patches#,Developing Patches>> - enhancement/feature tickets "
+"should start with a compelling problem to solve and compare alternatives and "
+"their tradeoffs, rather than leap straight to a solution and a patch. "
+"Clojure is a small language and endeavors to remain so. In many cases, "
+"proposed features can instead be provided in functions or libraries outside "
+"the core."
+msgstr ""
+
+#. type: Title ==
+#: en/content/dev/dev.adoc:39
+#, no-wrap
+msgid "Roadmap"
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:42
+msgid ""
+"Clojure is an open-ended project with no fixed release schedule. Major "
+"releases typically occur about once per year. While there are usually a few "
+"focused areas of work in a major release, it is common for those to change "
+"during the development of the release in response to either feedback or "
+"changing external needs. Because of this, a roadmap is typically not "
+"declared at the beginning of a release. Ongoing development is visible "
+"during alpha releases, often phased over multiple dev releases. The "
+"<<xref/../../community/devchangelog#,Dev Changelog>> chronicles these "
+"changes during the release cycle."
+msgstr ""
+
+#. type: Plain text
+#: en/content/dev/dev.adoc:43
+msgid ""
+"Additionally, the core team may be doing work in dependent projects or "
+"tools, rather than the language itself, such as spec, core.specs, tools."
+"deps, clj, etc. This is still considered part of the broader \"release\" "
+"train."
+msgstr ""

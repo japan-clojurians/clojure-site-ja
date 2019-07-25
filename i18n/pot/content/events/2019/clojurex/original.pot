@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/events/2018/clojurex.adoc:1
+#: en/content/events/2017/clojurex.adoc:1
+#: en/content/events/2019/clojurex.adoc:1
+#, no-wrap
+msgid "ClojureX"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:14
+#: en/content/events/2019/clojurex.adoc:14
+msgid ""
+"Its a two-day fun-packed conference that attracts speakers from around the "
+"world along with local developers in the community sharing their experiences."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2018/clojurex.adoc:22
+#: en/content/events/2017/clojurex.adoc:22
+#: en/content/events/2019/clojurex.adoc:20
+#: en/content/events/2019/clojurebridge-london-may-2019.adoc:55
+msgid "Thank you + London Clojurians + https://twitter.com/ldnclj"
+msgstr ""
+
+#. type: Positional ($1) AttributeList argument for macro 'image'
+#: en/content/events/2018/clojurex.adoc:23
+#: en/content/events/2017/clojurex.adoc:23
+#: en/content/events/2019/clojurex.adoc:21
+#: en/content/events/2019/clojurebridge-london-may-2019.adoc:56
+#, no-wrap
+msgid "London Clojurians logo"
+msgstr ""
+
+#. type: Target for macro image
+#: en/content/events/2018/clojurex.adoc:23
+#: en/content/events/2019/clojurex.adoc:21
+#: en/content/events/2019/clojurebridge-london-may-2019.adoc:56
+#, no-wrap
+msgid "https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2019/clojurex.adoc:4
+msgid "London Clojurians 2019-12-02"
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2019/clojurex.adoc:12
+msgid ""
+"If you're looking for the best place to learn about Clojure, Functional "
+"Programming and network with like-minded people, then Clojure eXchange 2019 "
+"is the conference you simply can't miss. Meet with the world's leading "
+"experts on Clojure and learn the latest concepts and applications of Clojure "
+"to help your teams in their projects."
+msgstr ""
+
+#. type: Plain text
+#: en/content/events/2019/clojurex.adoc:16
+msgid ""
+"We hope you will https://skillsmatter.com/conferences/11936-clojure-"
+"exchange-2019[join us] and meet hundreds of people from the London "
+"Clojurians community and many other like-minded people from around the world."
+msgstr ""

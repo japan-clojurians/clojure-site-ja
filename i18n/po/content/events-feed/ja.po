@@ -1,0 +1,31 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: 2019-07-25 20:54+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/events-feed.adoc:1
+#, fuzzy, no-wrap
+#| msgid "Clojure Evaluation"
+msgid "Clojure Events"
+msgstr "Clojureの評価"
+
+#. type: Plain text
+#: en/content/events-feed.adoc:4
+#, fuzzy
+#| msgid "Alex Miller 2016-01-14"
+msgid "Alex Miller 2019-04-12"
+msgstr "Alex Miller 2016-01-14"

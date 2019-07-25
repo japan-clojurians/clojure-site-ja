@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Title =
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:1
+#, no-wrap
+msgid "Programming at the REPL: Guidelines for REPL-Aided Development"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:4
+msgid "Valentin Waeselynck 2018-04-14"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:21
+msgid ""
+"Clojure REPLs are used for a broad spectrum of purposes, from learning the "
+"language to data exploration to live music performance. This chapter will "
+"provide some guiding principles for applying Clojure REPLs to the more "
+"common use case of pragmatic software development."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:23
+#, no-wrap
+msgid "The REPL is a User Interface to your program"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:26
+msgid "Programs commonly offer User Interfaces through a variety of media:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:28
+msgid "Graphical: web pages, mobile and desktop apps"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:29
+msgid "Network-based: Web Services / HTTP APIs / ..."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:30
+msgid ""
+"Storage-based: the program keeps a database up to date, which can then be "
+"queried"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:31
+msgid "Command-Line Interfaces (CLI): from interaction via a terminal"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:37
+msgid ""
+"You should think of the REPL as another medium for user-to-program "
+"interaction; compared to those listed above, it requires advanced knowledge "
+"(programming in Clojure!), but it is also extremely expressive and cheap to "
+"develop, since it requires almost no anticipation of what parts of the code "
+"users will want to leverage. For instance, the REPL is a very suitable UI "
+"for _ad hoc_ data exports."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:40
+msgid ""
+"In Clojure projects, it is common practice to define functions and "
+"namespaces solely intended for REPL interaction: consider it an alternative "
+"to CLI, dashboards, etc."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:42
+#, no-wrap
+msgid "Don't get carried away by the REPL"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:48
+msgid ""
+"The REPL can give you a lot of velocity, but do not mistake motion for "
+"progress.  You should **_always come to the REPL with a plan_**, otherwise "
+"the REPL will bring you more distraction than focus. If you find it "
+"difficult to keep the plan in your head while using the REPL, **_consider "
+"writing it down_**."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:53
+msgid ""
+"The REPL will only guide you through very incremental changes, which is "
+"prone to getting you stuck in 'local maxima'. When more strategic thinking "
+"is required, force yourself to take a step back. In particular, **_rapid "
+"feedback is no substitute for software design and methodic problem-solving."
+"_**"
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:55
+#, no-wrap
+msgid "Don't forget to save your work, and make it accessible"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:60
+msgid ""
+"The REPL is a very ephemeral and exclusive medium. If there is anything to "
+"take away from a REPL session, it should probably reside in other places "
+"than your flawed human memory (for instance in code, tests, commented-out "
+"code, documentation, data files, etc.)."
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:63
+msgid ""
+"If what you learned in the REPL is a prerequisite to your project, you "
+"should do some extra work to make it accessible to other contributors "
+"(including yourself in a few months)."
+msgstr ""
+
+#. type: Title ==
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:65
+#, no-wrap
+msgid "The REPL is not the only tool for interactive development"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:68
+msgid ""
+"There are other tools which provide a tight feedback loop while programming:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:70
+msgid ""
+"auto-reloading test suites (example: https://github.com/marick/Midje[Midje])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:71
+msgid "static code analysis tools (linters, static type checkers)"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:72
+msgid ""
+"hot-code reloading (example: https://github.com/bhauman/lein-"
+"figwheel[Figwheel])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:73
+msgid ""
+"'visual' test suites (example: https://github.com/bhauman/devcards[Devcards])"
+msgstr ""
+
+#. type: Plain text
+#: en/content/guides/repl/guidelines_for_repl_aided_development.adoc:78
+msgid ""
+"There is no reason to see these approaches as 'competing' with REPL-aided "
+"development, and oftentimes the REPL can assist you in using them. Each of "
+"these approaches has its strengths and weaknesses: for instance, the REPL "
+"makes the execution of programs very tangible, but is a poor tool for "
+"detecting breakage."
+msgstr ""

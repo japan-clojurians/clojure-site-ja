@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:25 en/content/stories/anychart.adoc:19
+#: en/content/stories/cloudrepo.adoc:11 en/content/stories/stitch.adoc:11
+#: en/content/stories/cognician.adoc:27
+#, no-wrap
+msgid "**What product or service are you building with Clojure or ClojureScript?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/swing.adoc:117 en/content/stories/anychart.adoc:39
+#: en/content/stories/cloudrepo.adoc:29 en/content/stories/stitch.adoc:34
+#: en/content/stories/cognician.adoc:75
+#, no-wrap
+msgid "**What is your stack?**\n"
+msgstr ""
+
+#. type: Title =
+#: en/content/stories/cloudrepo.adoc:1
+#, no-wrap
+msgid "CloudRepo"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:4
+msgid "Alex Miller 2018-04-27"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:9
+msgid ""
+"image:/images/content/stories/cloudrepo.png[\"CloudRepo\",height=\"100\"]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:13
+#, no-wrap
+msgid "https://www.cloudrepo.io/[CloudRepo] is a fully managed, cloud repository manager.   We store software artifacts for software development teams that use tools like Leiningen, Boot, and Maven for dependency management.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:15 en/content/stories/stitch.adoc:23
+#, no-wrap
+msgid "**What Clojure library have you enjoyed working with the most?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:17
+#, no-wrap
+msgid "There are a bunch of libraries that have really been solid and helped our development process.   We use Faraday for very simple AWS Dynamo DB access.  clj-http for all of our http client needs (testing, etc) and cheshire works like a charm for JSON Parsing.  \n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:19
+msgid ""
+"However, the most eye opening and educational library we have used is Ring - "
+"it was a paradigm shift to see how http requests could be modeled as simple "
+"data and then passed through the system.  Once we realized that requests "
+"could be modeled as data, we were able to just let the requests flow through "
+"our system making transformations as needed.  That was a key learning for us "
+"and really helped us to understand more about designing systems based on "
+"data flow, which I detail further in https://medium.com/@chris.shellenbarger/"
+"key-lesson-building-cloudrepo-with-clojure-99bc1c1c405e[this post]"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:21
+msgid ""
+"Most recently, using spec has been really great.  The idea of generational "
+"tests has been game changing for us.  It also has provided us with, what we "
+"think is, an improvement over static typed system for defining functional "
+"contracts and validating programs.  We can now validate based on the 'shape' "
+"of the data or even specific values - this goes miles beyond the limits of "
+"what traditional type systems provide."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:23
+#, no-wrap
+msgid "**What is your favorite feature of Clojure?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:25
+msgid ""
+"We absolutely love the power that comes with passing around maps and letting "
+"them flow through the system.  When we can implement an endpoint by simply "
+"using the pass:[->] function and a chain of functions we are always "
+"pleasantly surprised at how elegant programming can really be with Clojure."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:27
+msgid ""
+"Modeling our system state as maps has also been enlightening.  It allows us "
+"to understand our system better by looking at maps of data rather than a "
+"large object hierarchy. Combined with immutability, this makes Clojure a joy "
+"to work with."
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:31
+#, no-wrap
+msgid "We're built 100% in AWS.   We leverage Amazon S3 for storage of artifacts and DynamoDB for metadata.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:33
+#, no-wrap
+msgid "In order to achieve high availability for our customers, we run CloudRepo in Docker containers distributed across multiple hosts running in Amazon Elastic Container Services.   Our backend services are written 100% in Clojure.  It's great that we can leverage the reliability of the JVM along with the power of a language like Clojure.\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:35
+#, no-wrap
+msgid "**Why is Clojure valuable to your business?**\n"
+msgstr ""
+
+#. type: Plain text
+#: en/content/stories/cloudrepo.adoc:36
+#, no-wrap
+msgid "Clojure is valuable to our business because we can do so much more with less.   We have a very small team and we are usually able to add features within a couple of hours.   We achieve this power because we flow data through the system and adding new features tends to be just about figuring out where best to plug into that flow.  Once that's decided, we can hook in and not worry about impacting state in other areas of the code thanks to immutability.\n"
+msgstr ""
