@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-07-25 20:54+0900\n"
-"PO-Revision-Date: 2019-02-19 22:44+0900\n"
+"PO-Revision-Date: 2019-07-27 15:36+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -366,17 +366,15 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/learn/hashed_colls.adoc:167
-#, fuzzy, no-wrap
-#| msgid ""
-#| "user=> (bad-lookup-map :foo)\n"
-#| "NullPointerException\n"
+#, no-wrap
 msgid ""
 "user=> (bad-lookup-map :foo)\n"
 "Execution error (NullPointerException) at user/eval154 (REPL:1).\n"
 "null\n"
 msgstr ""
 "user=> (bad-lookup-map :foo)\n"
-"NullPointerException\n"
+"Execution error (NullPointerException) at user/eval154 (REPL:1).\n"
+"null\n"
 
 #. type: Title ===
 #: en/content/guides/learn/hashed_colls.adoc:169

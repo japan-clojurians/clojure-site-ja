@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-07-25 20:54+0900\n"
-"PO-Revision-Date: 2019-06-15 20:54+0900\n"
+"PO-Revision-Date: 2019-07-27 15:58+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -49,28 +49,25 @@ msgstr "Alex Miller 2017-09-02"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:18
-#, fuzzy
-#| msgid "Below are some examples of literal representations of common primitives in Clojure."
 msgid ""
 "Below are some examples of literal representations of common primitives in Clojure.  All of these literals are valid "
 "Clojure expressions."
-msgstr "以下はClojureで一般的なプリミティブのリテラル表現の例だ。"
+msgstr "以下はClojureで一般的なプリミティブのリテラル表現の例だ。これらのリテラルはすべて有効なClojureの式だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:20
-#, fuzzy
-#| msgid ""
-#| "The `;` creates a comment to the end of the line. Sometimes multiple semicolons are used to indicate header lines."
 msgid ""
 "The `;` creates a comment to the end of the line. Sometimes multiple semicolons are used to indicate header comment "
 "sections, but this is just a convention."
-msgstr "`;` は行末までのコメントになる。時にはヘッダー行を示すために複数のセミコロンが使われることもある。"
+msgstr ""
+"`;` は行末までのコメントになる。時にはヘッダーコメントのセクションを示すために複数のセミコロンが使われることもあるが、"
+"それは慣習にすぎない。"
 
 #. type: Title ===
 #: en/content/guides/learn/syntax.adoc:21
 #, no-wrap
 msgid "Numeric types"
-msgstr ""
+msgstr "数値型"
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:28
@@ -80,6 +77,9 @@ msgid ""
 "-1.5      ; floating point\n"
 "22/7      ; ratio\n"
 msgstr ""
+"42        ; integer (整数)\n"
+"-1.5      ; floating point (浮動小数点数)\n"
+"22/7      ; ratio (分数)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:31
@@ -89,6 +89,10 @@ msgid ""
 "hexadecimal (prefix `0x`) and arbitrary radix (prefix with base then `r`) integers. Ratios are provided as their own "
 "type combining a numerator and denominator."
 msgstr ""
+"整数は固定精度64ビット整数として、その範囲にない場合には任意精度整数として読み取られる。末尾に `N` を付けることで強制"
+"的に任意精度にすることができる。Clojureはまた8進数(プレフィックスは `0`)、16進数(プレフィックスは `0x`)のJavaシンタッ"
+"クスと任意の基数(プレフィックスは基数に `r` を付けたもの)による整数をサポートしている。分数は分子と分母を組み合わせた"
+"独自の型として提供されている。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:33
@@ -97,29 +101,27 @@ msgid ""
 "Exponential notation is also supported. The special symbolic values `pass:[##Inf]`, `pass:[##-Inf]`, and `pass:"
 "[##NaN]` represent positive infinity, negative infinity, and \"not a number\" values respectively."
 msgstr ""
+"浮動小数点数の値は倍精度64ビット浮動小数点数として、もしくは `M` サフィックスで任意精度浮動小数点数として読み取られ"
+"る。指数表記もサポートされている。特別なシンボルの値 `pass:[##Inf]` 、 `pass:[##-Inf]` 、 `pass:[##NaN]` はそれぞれ正"
+"の無限大、負の無限大、「非数」(not a number)の値を表す。"
 
 #. type: Title ===
 #: en/content/guides/learn/syntax.adoc:34
-#, fuzzy, no-wrap
-#| msgid "Character (\\)"
+#, no-wrap
 msgid "Character types"
-msgstr "文字 (\\)"
+msgstr "文字型"
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:41
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; Character types\n"
-#| "\"hello\"         ; String\n"
-#| "\\e              ; Character\n"
+#, no-wrap
 msgid ""
 "\"hello\"         ; string\n"
 "\\e              ; character\n"
 "#\"[0-9]+\"       ; regular expression\n"
 msgstr ""
-";; 文字型\n"
-"\"hello\"         ; String (文字列)\n"
-"\\e              ; Character (文字)\n"
+"\"hello\"         ; string (文字列)\n"
+"\\e              ; character (文字)\n"
+"#\"[0-9]+\"       ; regular expression (正規表現)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:44
@@ -128,18 +130,21 @@ msgid ""
 "leading backslash. There are a few special named characters: `\\newline` `\\spec` `\\tab`, etc. Unicode characters "
 "can be represented with `\\uNNNN` or in octal with `\\oNNN`."
 msgstr ""
+"文字列はダブルクォートで囲まれ、複数行にわたることができる。個々の文字はバックスラッシュ始まりで表現する。少数の特別な"
+"名前の付いた文字がある: `\\newline` `\\spec` `\\tab` など。ユニコード文字は `\\uNNNN` もしくは8進数で `\\oNNN` によっ"
+"て表現することができる。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:46
 msgid ""
 "Literal regular expressions are strings with a leading `#`. These are compiled to java.util.regex.Pattern objects."
-msgstr ""
+msgstr "リテラルの正規表現は `#` 始まりの文字列だ。java.util.regex.Patternオブジェクトにコンパイルされる。"
 
 #. type: Title ===
 #: en/content/guides/learn/syntax.adoc:47
 #, no-wrap
 msgid "Symbols and idents"
-msgstr ""
+msgstr "シンボルと識別子(ident)"
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:58
@@ -153,6 +158,13 @@ msgid ""
 ":alpha          ; keyword\n"
 ":release/alpha  ; keyword with namespace\n"
 msgstr ""
+"map             ; symbol (シンボル)\n"
+"+               ; symbol - ほとんどの記号類が使える\n"
+"clojure.core/+  ; namespaced symbol (名前空間付きシンボル)\n"
+"nil             ; null値\n"
+"true false      ; boolean (ブーリアン)\n"
+":alpha          ; keyword (キーワード)\n"
+":release/alpha  ; keyword with namespace (名前空間付きキーワード)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:61
@@ -161,13 +173,15 @@ msgid ""
 "function, value, namespace, etc. Symbols may optionally have a namespace, separated with a forward slash from the "
 "name."
 msgstr ""
+"シンボルは文字、数字、その他の記号類で構成され、関数や値、名前空間など他のものを指し示すために使われる。シンボルはオプ"
+"ションで名前空間を持つことができ、名前の部分とスラッシュで区切られる。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:63
 msgid ""
 "There are three special symbols that are read as different types - `nil` is the null value, and `true` and `false` "
 "are the boolean values."
-msgstr ""
+msgstr "異なる型として読み取られる特別なシンボルが3つある―― `nil` はnull値、 `true` と `false` はブーリアンの値だ。"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:65
@@ -175,12 +189,14 @@ msgid ""
 "Symbols that start with a leading colon are called keywords. Keywords always evaluate to themselves and are "
 "frequently used as enumerated values or attribute names in Clojure."
 msgstr ""
+"コロンで始まるシンボルはキーワードと呼ばれる。キーワードは常にそれ自身に評価され、Clojureでは列挙値や属性名としてよく"
+"使われる。"
 
 #. type: Title ===
 #: en/content/guides/learn/syntax.adoc:66
 #, no-wrap
 msgid "Literal collections"
-msgstr ""
+msgstr "リテラルコレクション"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:69
@@ -341,7 +357,7 @@ msgstr "3と4はそれ自身(long)に評価される"
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:117
 msgid "+ evaluates to a function that implements `+`"
-msgstr "+は `+` を実装している関数に評価される"
+msgstr "\\+は `+` を実装している関数に評価される"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:118
@@ -411,17 +427,15 @@ msgstr "遭遇するかもしれない分かりづらいエラーのひとつは
 
 #. type: delimited block -
 #: en/content/guides/learn/syntax.adoc:148
-#, fuzzy, no-wrap
-#| msgid ""
-#| "user=> (1 2 3)\n"
-#| "ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn\n"
+#, no-wrap
 msgid ""
 "user=> (1 2 3)\n"
 "Execution error (ClassCastException) at user/eval156 (REPL:1).\n"
 "class java.lang.Long cannot be cast to class clojure.lang.IFn\n"
 msgstr ""
 "user=> (1 2 3)\n"
-"ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn\n"
+"Execution error (ClassCastException) at user/eval156 (REPL:1).\n"
+"class java.lang.Long cannot be cast to class clojure.lang.IFn\n"
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:151
@@ -540,10 +554,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:190
-#, fuzzy
-#| msgid ""
-#| "In addition, there is a namespace `clojure.repl` that is included in the standard Clojure library that provides a "
-#| "number of helpful functions. To load that library and make it's functions available in our current context, call:"
 msgid ""
 "In addition, there is a namespace `clojure.repl` that is included in the standard Clojure library that provides a "
 "number of helpful functions. To load that library and make its functions available in our current context, call:"
@@ -820,17 +830,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:305
-#, fuzzy
-#| msgid ""
-#| "It is also an excellent idea to keep a copy of the [Clojure Cheatsheet](https://clojure.org/api/cheatsheet) open "
-#| "while you are learning Clojure. The cheatsheet categorizes the functions available in the standard library and is "
-#| "an invaluable reference."
 msgid ""
 "It is also an excellent idea to keep a copy of the <<xref/../../../api/cheatsheet#,Clojure Cheatsheet>> open while "
 "you are learning Clojure. The cheatsheet categorizes the functions available in the standard library and is an "
 "invaluable reference."
 msgstr ""
-"Clojureを学ぶ際に[Clojure Cheatsheet](https://clojure.org/api/cheatsheet)を開いておくのもまた素晴らしいアイディアだ。"
+"Clojureを学ぶ際に <<xref/../../../api/cheatsheet#,Clojureチートシート>> を開いておくのもまた素晴らしいアイディアだ。"
 "チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。"
 
 #. type: Plain text
@@ -955,10 +960,6 @@ msgstr "println関数には副作用(印字)があり、結果としてnilを返
 
 #. type: Plain text
 #: en/content/guides/learn/syntax.adoc:354
-#, fuzzy
-#| msgid ""
-#| "Note that \"What is this:\" above did not print the surrouding quotes and is not a string that the Reader could "
-#| "read again in the same way. For that purpose, use the machine-readable version prn:"
 msgid ""
 "Note that \"What is this:\" above did not print the surrounding quotes and is not a string that the Reader could read "
 "again in the same way. For that purpose, use the machine-readable version prn:"
