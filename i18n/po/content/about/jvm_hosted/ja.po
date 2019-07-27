@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2017-07-25 08:37+0900\n"
-"PO-Revision-Date: 2018-04-15 22:18+0900\n"
+"PO-Revision-Date: 2019-07-27 16:33+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -59,13 +59,13 @@ msgstr ""
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:19
 msgid "Tapping into a Java class is as easy as:"
-msgstr ""
+msgstr "Javaクラスを利用するのはこのように簡単だ:"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:22
 #, no-wrap
 msgid "(import '[java.time LocalDate])\n"
-msgstr ""
+msgstr "(import '[java.time LocalDate])\n"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:25
@@ -74,6 +74,8 @@ msgid ""
 "(defn add-week ^LocalDate [^LocalDate date] \n"
 "  (.plusDays date 7))\n"
 msgstr ""
+"(defn add-week ^LocalDate [^LocalDate date] \n"
+"  (.plusDays date 7))\n"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:28
@@ -82,6 +84,8 @@ msgid ""
 "(defn day->str [^LocalDate date] \n"
 "  (format \"%s %s, %s\" (.getMonth date) (.getDayOfMonth date) (.getYear date)))\n"
 msgstr ""
+"(defn day->str [^LocalDate date] \n"
+"  (format \"%s %s, %s\" (.getMonth date) (.getDayOfMonth date) (.getYear date)))\n"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:31
@@ -90,6 +94,8 @@ msgid ""
 ";; infinite sequence of weekly dates, starting from today\n"
 "(def future-weeks (iterate add-week (LocalDate/now)))\n"
 msgstr ""
+";; 今日から始まる週ごとの日付の無限シーケンス\n"
+"(def future-weeks (iterate add-week (LocalDate/now)))\n"
 
 #. type: delimited block -
 #: en/content/about/jvm_hosted.adoc:34
@@ -98,6 +104,8 @@ msgid ""
 "(map day->str (take 4 future-weeks))\n"
 ";; (\"JULY 24, 2017\" \"JULY 31, 2017\" \"AUGUST 7, 2017\" \"AUGUST 14, 2017\")\n"
 msgstr ""
+"(map day->str (take 4 future-weeks))\n"
+";; (\"JULY 24, 2017\" \"JULY 31, 2017\" \"AUGUST 7, 2017\" \"AUGUST 14, 2017\")\n"
 
 #. type: Plain text
 #: en/content/about/jvm_hosted.adoc:37
