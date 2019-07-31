@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-07-25 20:54+0900\n"
-"PO-Revision-Date: 2019-06-12 02:33+0900\n"
+"PO-Revision-Date: 2019-07-27 15:34+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -116,6 +116,8 @@ msgid ""
 "Each arity is a list `([args*] body*)`. One arity can invoke another. The body can contain any number of expressions "
 "and the return value is the result of the last expression."
 msgstr ""
+"個々のアリティは `([args*] body*)` というリストだ。あるアリティは別のアリティを呼び出すことができる。本体部(body)は任"
+"意個の式を含むことができ、戻り値は最後の式の結果だ。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:51
@@ -539,16 +541,12 @@ msgstr "`let`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:217
-#, fuzzy
-#| msgid ""
-#| "`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested "
-#| "inside the surrounding context. Names defined in a let take precedence over the names in the outer context."
 msgid ""
 "`let` binds symbols to values in a \"lexical scope\". A lexical scope creates a new context for names, nested inside "
 "the surrounding context. Names defined in a `let` take precedence over the names in the outer context."
 msgstr ""
 "`let` は「レキシカルスコープ」でシンボルを値に束縛する。レキシカルスコープは名前のための新たなコンテキストを作り、それ"
-"は周囲のコンテキストの内側にネストされる。letで定義された名前は外側のコンテキストにおける名前に優先する。"
+"は周囲のコンテキストの内側にネストされる。 `let` で定義された名前は外側のコンテキストにおける名前に優先する。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:223
@@ -611,10 +609,6 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:248
-#, fuzzy
-#| msgid ""
-#| "The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only "
-#| "has meanining within the `messenger` function."
 msgid ""
 "The messenger function takes a `msg` argument. Here the `defn` is also creating lexical scope for `msg` - it only has "
 "meaning within the `messenger` function."
@@ -691,14 +685,7 @@ msgstr "以下はClojureからJavaを呼び出すための呼び出し規約(cal
 
 #. type: Table
 #: en/content/guides/learn/functions.adoc:282
-#, fuzzy, no-wrap
-#| msgid ""
-#| "| Task | Java | Clojure |\n"
-#| "|Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | \n"
-#| "|Instance method| `rnd.next()` | `(.nextInt rnd)` |\n"
-#| "|Instance field| `object.field` | `(.-field object)` |\n"
-#| "|Static method| `Math.sqrt(25)` | `(Math/sqrt 25)` |\n"
-#| "|Static field| `Math.PI` | `Math/PI` |\n"
+#, no-wrap
 msgid ""
 "| Task | Java | Clojure |\n"
 "|Instantiation| `new Widget(\"foo\")` | `(Widget. \"foo\")` | \n"
@@ -709,7 +696,7 @@ msgid ""
 msgstr ""
 "| タスク | Java | Clojure |\n"
 "|インスタンス化| `new Widget(\"foo\")` | `(Widget. \"foo\")` |\n"
-"|インスタンスメソッド| `rnd.next()` | `(.nextInt rnd)` |\n"
+"|インスタンスメソッド| `rnd.nextInt()` | `(.nextInt rnd)` |\n"
 "|インスタンスフィールド| `object.field` | `(.-field object)` |\n"
 "|staticメソッド| `Math.sqrt(25)` | `(Math/sqrt 25)` |\n"
 "|staticフィールド| `Math.PI` | `Math/PI` |\n"
@@ -757,14 +744,10 @@ msgstr ""
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:303
-#, fuzzy
-#| msgid ""
-#| "Define a function `greet` that takes not arguments and prints \"Hello\". Replace the ___ with the implementation: "
-#| "`(defn greet [] ___)`"
 msgid ""
 "Define a function `greet` that takes no arguments and prints \"Hello\". Replace the ___ with the implementation: "
 "`(defn greet [] ___)`"
-msgstr "引数をとらず「Hello」と出力する関数 `greet` を定義しよう。 ___ を実装で置き換えよう: `(defn greet [] ___)`"
+msgstr "引数をとらず「Hello」と出力する関数 `greet` を定義しよう。 \\___ を実装で置き換えよう: `(defn greet [] ___)`"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:305
@@ -869,14 +852,10 @@ msgstr "(source identity)\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:344
-#, fuzzy
-#| msgid ""
-#| "Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the keyword "
-#| "`:thing`."
 msgid ""
 "Define a function `always-thing` which takes any number of arguments, ignores all of them, and returns the number "
 "`100`."
-msgstr "任意個の引数をとり、すべて無視してキーワード `:thing` を返す関数 `always-thing` を定義しよう。"
+msgstr "任意個の引数をとり、すべて無視して数 `100` を返す関数 `always-thing` を定義しよう。"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:347
@@ -901,14 +880,7 @@ msgstr "(defn make-thingy [x] ___)\n"
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:360
-#, fuzzy, no-wrap
-#| msgid ""
-#| ";; Tests\n"
-#| "(let [n (rand-int Integer/MAX_VALUE)\n"
-#| "      f (make-thingy n)]\n"
-#| "  (assert (= n (f)))\n"
-#| "  (assert (= n (f :foo)))\n"
-#| "  (assert (= n (apply f :foo (range)))))\n"
+#, no-wrap
 msgid ""
 ";; Tests\n"
 "(let [n (rand-int Integer/MAX_VALUE)\n"
@@ -921,8 +893,8 @@ msgstr ""
 "(let [n (rand-int Integer/MAX_VALUE)\n"
 "      f (make-thingy n)]\n"
 "  (assert (= n (f)))\n"
-"  (assert (= n (f :foo)))\n"
-"  (assert (= n (apply f :foo (range)))))\n"
+"  (assert (= n (f 123)))\n"
+"  (assert (= n (apply f 123 (range)))))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:362
@@ -1061,10 +1033,9 @@ msgstr ""
 
 #. type: delimited block -
 #: en/content/guides/learn/functions.adoc:414
-#, fuzzy, no-wrap
-#| msgid "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+#, no-wrap
 msgid "(assert (.contains (http-get \"https://www.w3.org\") \"html\"))\n"
-msgstr "(assert (.contains (http-get \"http://www.w3.org\") \"html\"))\n"
+msgstr "(assert (.contains (http-get \"https://www.w3.org\") \"html\"))\n"
 
 #. type: Plain text
 #: en/content/guides/learn/functions.adoc:416
