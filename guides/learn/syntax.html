@@ -84,10 +84,10 @@
 <ul class="sectlevel1">
 <li><a href="#_リテラル">リテラル</a>
 <ul class="sectlevel2">
-<li><a href="#_numeric_types">Numeric types</a></li>
-<li><a href="#_character_types">Character types</a></li>
-<li><a href="#_symbols_and_idents">Symbols and idents</a></li>
-<li><a href="#_literal_collections">Literal collections</a></li>
+<li><a href="#_数値型">数値型</a></li>
+<li><a href="#_文字型">文字型</a></li>
+<li><a href="#_シンボルと識別子ident">シンボルと識別子(ident)</a></li>
+<li><a href="#_リテラルコレクション">リテラルコレクション</a></li>
 </ul>
 </li>
 <li><a href="#_評価">評価</a>
@@ -118,90 +118,75 @@
 <h2 id="_リテラル"><a class="anchor" href="#_リテラル"></a>リテラル</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Below are some examples of literal representations of common primitives in
-Clojure.  All of these literals are valid Clojure expressions.</p>
+<p>以下はClojureで一般的なプリミティブのリテラル表現の例だ。これらのリテラルはすべて有効なClojureの式だ。</p>
 </div>
 <div class="paragraph">
-<p>The <code>;</code> creates a comment to the end of the line. Sometimes multiple
-semicolons are used to indicate header comment sections, but this is just a
-convention.</p>
+<p><code>;</code> は行末までのコメントになる。時にはヘッダーコメントのセクションを示すために複数のセミコロンが使われることもあるが、それは慣習にすぎない。</p>
 </div>
 <div class="sect2">
-<h3 id="_numeric_types"><a class="anchor" href="#_numeric_types"></a>Numeric types</h3>
+<h3 id="_数値型"><a class="anchor" href="#_数値型"></a>数値型</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">42        ; integer
--1.5      ; floating point
-22/7      ; ratio</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">42        ; integer (整数)
+-1.5      ; floating point (浮動小数点数)
+22/7      ; ratio (分数)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Integers are read as fixed precision 64-bit integers when they are in range
-and arbitrary precision otherwise. A trailing <code>N</code> can be used to force
-arbitrary precision. Clojure also supports the Java syntax for octal (prefix
-<code>0</code>), hexadecimal (prefix <code>0x</code>) and arbitrary radix (prefix with base then
-<code>r</code>) integers. Ratios are provided as their own type combining a numerator
-and denominator.</p>
+<p>整数は固定精度64ビット整数として、その範囲にない場合には任意精度整数として読み取られる。末尾に <code>N</code>
+を付けることで強制的に任意精度にすることができる。Clojureはまた8進数(プレフィックスは <code>0</code>)、16進数(プレフィックスは
+<code>0x</code>)のJavaシンタックスと任意の基数(プレフィックスは基数に <code>r</code>
+を付けたもの)による整数をサポートしている。分数は分子と分母を組み合わせた独自の型として提供されている。</p>
 </div>
 <div class="paragraph">
-<p>Floating point values are read as double-precision 64-bit floats, or
-arbitrary precision with an <code>M</code> suffix. Exponential notation is also
-supported. The special symbolic values <code>##Inf</code>, <code>##-Inf</code>, and
-<code>##NaN</code> represent positive infinity, negative infinity, and "not a
-number" values respectively.</p>
+<p>浮動小数点数の値は倍精度64ビット浮動小数点数として、もしくは <code>M</code>
+サフィックスで任意精度浮動小数点数として読み取られる。指数表記もサポートされている。特別なシンボルの値 <code>##Inf</code> 、
+<code>##-Inf</code> 、 <code>##NaN</code> はそれぞれ正の無限大、負の無限大、「非数」(not a number)の値を表す。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_character_types"><a class="anchor" href="#_character_types"></a>Character types</h3>
+<h3 id="_文字型"><a class="anchor" href="#_文字型"></a>文字型</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">"hello"         ; string
-\e              ; character
-#"[0-9]+"       ; regular expression</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">"hello"         ; string (文字列)
+\e              ; character (文字)
+#"[0-9]+"       ; regular expression (正規表現)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Strings are contained in double quotes and may span multiple
-lines. Individual characters are represented with a leading backslash. There
-are a few special named characters: <code>\newline</code> <code>\spec</code> <code>\tab</code>, etc. Unicode
-characters can be represented with <code>\uNNNN</code> or in octal with <code>\oNNN</code>.</p>
+<p>文字列はダブルクォートで囲まれ、複数行にわたることができる。個々の文字はバックスラッシュ始まりで表現する。少数の特別な名前の付いた文字がある:
+<code>\newline</code> <code>\spec</code> <code>\tab</code> など。ユニコード文字は <code>\uNNNN</code> もしくは8進数で <code>\oNNN</code>
+によって表現することができる。</p>
 </div>
 <div class="paragraph">
-<p>Literal regular expressions are strings with a leading <code>#</code>. These are
-compiled to java.util.regex.Pattern objects.</p>
+<p>リテラルの正規表現は <code>#</code> 始まりの文字列だ。java.util.regex.Patternオブジェクトにコンパイルされる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_symbols_and_idents"><a class="anchor" href="#_symbols_and_idents"></a>Symbols and idents</h3>
+<h3 id="_シンボルと識別子ident"><a class="anchor" href="#_シンボルと識別子ident"></a>シンボルと識別子(ident)</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">map             ; symbol
-+               ; symbol - most punctuation allowed
-clojure.core/+  ; namespaced symbol
-nil             ; null value
-true false      ; booleans
-:alpha          ; keyword
-:release/alpha  ; keyword with namespace</code></pre>
+<pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">map             ; symbol (シンボル)
++               ; symbol - ほとんどの記号類が使える
+clojure.core/+  ; namespaced symbol (名前空間付きシンボル)
+nil             ; null値
+true false      ; boolean (ブーリアン)
+:alpha          ; keyword (キーワード)
+:release/alpha  ; keyword with namespace (名前空間付きキーワード)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Symbols are composed of letters, numbers, and other punctutation and are
-used to refer to something else, like a function, value, namespace,
-etc. Symbols may optionally have a namespace, separated with a forward slash
-from the name.</p>
+<p>シンボルは文字、数字、その他の記号類で構成され、関数や値、名前空間など他のものを指し示すために使われる。シンボルはオプションで名前空間を持つことができ、名前の部分とスラッシュで区切られる。</p>
 </div>
 <div class="paragraph">
-<p>There are three special symbols that are read as different types - <code>nil</code> is
-the null value, and <code>true</code> and <code>false</code> are the boolean values.</p>
+<p>異なる型として読み取られる特別なシンボルが3つある―― <code>nil</code> はnull値、 <code>true</code> と <code>false</code> はブーリアンの値だ。</p>
 </div>
 <div class="paragraph">
-<p>Symbols that start with a leading colon are called keywords. Keywords always
-evaluate to themselves and are frequently used as enumerated values or
-attribute names in Clojure.</p>
+<p>コロンで始まるシンボルはキーワードと呼ばれる。キーワードは常にそれ自身に評価され、Clojureでは列挙値や属性名としてよく使われる。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_literal_collections"><a class="anchor" href="#_literal_collections"></a>Literal collections</h3>
+<h3 id="_リテラルコレクション"><a class="anchor" href="#_リテラルコレクション"></a>リテラルコレクション</h3>
 <div class="paragraph">
 <p>Clojureにはまた、4つのコレクション型についてリテラルシンタックスがある:</p>
 </div>
@@ -286,7 +271,7 @@ position)」、つまり呼び出すものがある場所と呼ばれること�
 <p>3と4はそれ自身(long)に評価される</p>
 </li>
 <li>
-<p>は `` を実装している関数に評価される</p>
+<p>+は <code>+</code> を実装している関数に評価される</p>
 </li>
 <li>
 <p>リストを評価すると3と4を引数として <code>+</code> 関数が呼び出される</p>
@@ -400,10 +385,8 @@ user=&gt; (+ *1 *2)
 </div>
 </div>
 <div class="paragraph">
-<p>In addition, there is a namespace <code>clojure.repl</code> that is included in the
-standard Clojure library that provides a number of helpful functions. To
-load that library and make its functions available in our current context,
-call:</p>
+<p>加えて、 <code>clojure.repl</code>
+というClojure標準ライブラリに含まれた名前空間があり、便利な関数をいくつか提供している。このライブラリをロードして現在のコンテキストで関数を利用可能にするには、以下を呼び出そう:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -531,10 +514,8 @@ thread-stopper</code></pre>
 <p>このワークショップを進めるにあたって、使っている関数のdocstringやソースコードを気軽に調べてみてほしい。Clojureライブラリ自体の実装を探索することは、言語とその使われ方についてさらに学ぶための素晴らしい方法だ。</p>
 </div>
 <div class="paragraph">
-<p>It is also an excellent idea to keep a copy of the
-<a href="xref/../../../api/cheatsheet">Clojure Cheatsheet</a> open while you are
-learning Clojure. The cheatsheet categorizes the functions available in the
-standard library and is an invaluable reference.</p>
+<p>Clojureを学ぶ際に <a href="xref/../../../api/cheatsheet">Clojureチートシート</a>
+を開いておくのもまた素晴らしいアイディアだ。チートシートには標準ライブラリで利用可能な関数が分類してあり、非常に価値のある参考資料だ。</p>
 </div>
 <div class="paragraph">
 <p>それではClojureの基本について考えてみよう。</p>
@@ -624,9 +605,8 @@ What is this: 3</code></pre>
 <p>println関数には副作用(印字)があり、結果としてnilを返す。</p>
 </div>
 <div class="paragraph">
-<p>Note that "What is this:" above did not print the surrounding quotes and is
-not a string that the Reader could read again in the same way. For that
-purpose, use the machine-readable version prn:</p>
+<p>上の"What is
+this:"は囲っているクォートが印字されず、リーダーが同じように再び読み取ることができる文字列ではないことに注意しよう。その目的では、機械が読める(machine-readable)バージョンのprnを使おう:</p>
 </div>
 <div class="listingblock">
 <div class="content">

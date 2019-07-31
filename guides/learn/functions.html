@@ -149,9 +149,8 @@
 の中に定義されなければならない―― <code>defn</code> を複数回使うと以前の関数を置き換えてしまう。</p>
 </div>
 <div class="paragraph">
-<p>Each arity is a list <code>([args*] body*)</code>. One arity can invoke another. The
-body can contain any number of expressions and the return value is the
-result of the last expression.</p>
+<p>個々のアリティは <code>([args*] body*)</code>
+というリストだ。あるアリティは別のアリティを呼び出すことができる。本体部(body)は任意個の式を含むことができ、戻り値は最後の式の結果だ。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -372,9 +371,9 @@ vector</code></pre>
 <div class="sect2">
 <h3 id="_let"><a class="anchor" href="#_let"></a><code>let</code></h3>
 <div class="paragraph">
-<p><code>let</code> binds symbols to values in a "lexical scope". A lexical scope creates
-a new context for names, nested inside the surrounding context. Names
-defined in a <code>let</code> take precedence over the names in the outer context.</p>
+<p><code>let</code>
+は「レキシカルスコープ」でシンボルを値に束縛する。レキシカルスコープは名前のための新たなコンテキストを作り、それは周囲のコンテキストの内側にネストされる。
+<code>let</code> で定義された名前は外側のコンテキストにおける名前に優先する。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -410,9 +409,8 @@ defined in a <code>let</code> take precedence over the names in the outer contex
 </div>
 </div>
 <div class="paragraph">
-<p>The messenger function takes a <code>msg</code> argument. Here the <code>defn</code> is also
-creating lexical scope for <code>msg</code> - it only has meaning within the
-<code>messenger</code> function.</p>
+<p>messenger関数は <code>msg</code> 引数をとる。ここで <code>defn</code> もまた <code>msg</code> のレキシカルスコープを作っている―― <code>messenger</code>
+関数の範囲内でだけ意味がある。</p>
 </div>
 <div class="paragraph">
 <p>この関数のスコープの範囲内に <code>let</code> は <code>a</code>, <code>b</code>, <code>c</code> を定義する新たなスコープを作っている。let式のあとで <code>a</code>
@@ -458,7 +456,7 @@ creating lexical scope for <code>msg</code> - it only has meaning within the
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">タスク</th>
 <th class="tableblock halign-left valign-top">Java</th>
 <th class="tableblock halign-left valign-top">Clojure</th>
 <th class="tableblock halign-left valign-top"></th>
@@ -466,31 +464,31 @@ creating lexical scope for <code>msg</code> - it only has meaning within the
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instantiation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンス化</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>new Widget("foo")</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Widget. "foo")</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instance method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンスメソッド</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rnd.nextInt()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(.nextInt rnd)</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instance field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インスタンスフィールド</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>object.field</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(.-field object)</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Static method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">staticメソッド</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math.sqrt(25)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>(Math/sqrt 25)</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Static field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">staticフィールド</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math.PI</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Math/PI</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -529,8 +527,7 @@ creating lexical scope for <code>msg</code> - it only has meaning within the
 <h2 id="_知識をテストしよう"><a class="anchor" href="#_知識をテストしよう"></a>知識をテストしよう</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>1) Define a function <code>greet</code> that takes no arguments and prints
-   "Hello". Replace the <em>_ with the implementation: <code>(defn greet [] </em>_)</code></p>
+<p>1) 引数をとらず「Hello」と出力する関数 <code>greet</code> を定義しよう。 <em>_</em> を実装で置き換えよう: <code>(defn greet [] <em>_</em>)</code></p>
 </div>
 <div class="paragraph">
 <p>2) <code>greet</code> を最初は <code>fn</code> 特殊形式、次は <code>#()</code> リーダーマクロとともに <code>def</code> を使って再定義しよう。</p>
@@ -590,8 +587,7 @@ creating lexical scope for <code>msg</code> - it only has meaning within the
 </div>
 </div>
 <div class="paragraph">
-<p>5) Define a function <code>always-thing</code> which takes any number of arguments,
-   ignores all of them, and returns the number <code>100</code>.</p>
+<p>5) 任意個の引数をとり、すべて無視して数 <code>100</code> を返す関数 <code>always-thing</code> を定義しよう。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -605,7 +601,7 @@ creating lexical scope for <code>msg</code> - it only has meaning within the
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure" data-lang="clojure">(defn make-thingy [x] ___)
 
-;; Tests
+;; テスト
 (let [n (rand-int Integer/MAX_VALUE)
       f (make-thingy n)]
   (assert (= n (f)))

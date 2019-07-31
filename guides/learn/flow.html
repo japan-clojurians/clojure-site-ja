@@ -191,11 +191,11 @@ nil</code></pre>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-clojure-repl" data-lang="clojure-repl">user=&gt; (if true :truthy :falsey)
 :truthy
-user=&gt; (if (Object.) :truthy :falsey) ; objects are true
+user=&gt; (if (Object.) :truthy :falsey) ; オブジェクトは真
 :truthy
-user=&gt; (if [] :truthy :falsey) ; empty collections are true
+user=&gt; (if [] :truthy :falsey) ; 空のコレクションは真
 :truthy
-user=&gt; (if 0 :truthy :falsey) ; zero is true
+user=&gt; (if 0 :truthy :falsey) ; 0は真
 :truthy
 user=&gt; (if false :truthy :falsey)
 :falsey
