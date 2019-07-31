@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
-"POT-Creation-Date: 2019-07-25 20:54+0900\n"
+"POT-Creation-Date: 2019-08-01 07:43+0900\n"
 "PO-Revision-Date: 2019-07-25 20:54+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -48,8 +48,8 @@ msgstr ""
 #: en/content/dev/dev.adoc:15
 msgid ""
 "First, please consider the <<xref/../../community/contributing#,many ways to contribute>> as a Clojure user. If you "
-"simply need to file a bug, https://clojure.atlassian.net/servicedesk/customer/portal/1[you can do so] without "
-"becoming a contributor."
+"wish to discuss a problem or enhancement, <<xref/../../community/ask#,you can do so on the forum>> without becoming a "
+"contributor."
 msgstr ""
 
 #. type: Plain text

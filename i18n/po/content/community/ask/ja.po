@@ -1,0 +1,106 @@
+# Japanese translations for clojure-site-ja package
+# Copyright (C) 2019 Japan Clojurians
+# This file is distributed under the same license as the clojure-site-ja package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clojure-site-ja 0.0.1\n"
+"POT-Creation-Date: 2019-08-01 07:43+0900\n"
+"PO-Revision-Date: 2019-08-01 07:43+0900\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. type: Title =
+#: en/content/community/ask.adoc:1 en/content/news/2019/07/25/clojure-forum.adoc:1
+#, fuzzy, no-wrap
+#| msgid "Clojure basics"
+msgid "Clojure Forum"
+msgstr "Clojureの基本"
+
+#. type: Plain text
+#: en/content/community/ask.adoc:4
+#, fuzzy
+msgid "Alex Miller 2019-07-24"
+msgstr "Alex Miller 2016-01-14"
+
+#. type: Plain text
+#: en/content/community/ask.adoc:11
+msgid ""
+"The https://ask.clojure.org[Clojure Q&A] site is maintained by the Clojure team as an official place to ask questions "
+"about Clojure, ClojureScript, ClojureCLR, Clojure contrib libraries, and any other Clojure topic."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/ask.adoc:12
+#, no-wrap
+msgid "Access"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:15
+msgid ""
+"Anyone may view the content on the site, but you must have an account to ask questions or provide answers. "
+"Authentication is currently done using your GitHub account. Other authentication providers may be added in the "
+"future. When you have logged in, please click your user name in the upper right corner and review your profile. If "
+"you wish to receive email notifications, please add an email address."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/ask.adoc:16
+#, no-wrap
+msgid "Categories and tags"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:19
+msgid ""
+"Questions have both *categories* and *tags*. Categories (on the right sidebar) are a fixed set of language or project "
+"topics for those projects. At least a top level category must be selected when asking a question."
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:21
+msgid "Tags are an open and extensible set of attributes that can be applied to questions. There are some special tags:"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:23
+msgid "problem - describe a problem in the language or library"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:24
+msgid "request - describe a request for enhancement in the language or library"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:25
+msgid ""
+"jira - used when a problem or request has a matching jira for development - the link will be included in an answer"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:27
+msgid ""
+"When problems or requests are logged, developers can assess and, if needed, create a corresponding jira for "
+"development."
+msgstr ""
+
+#. type: Title ==
+#: en/content/community/ask.adoc:28
+#, no-wrap
+msgid "Voting"
+msgstr ""
+
+#. type: Plain text
+#: en/content/community/ask.adoc:30
+msgid ""
+"Users may vote on both questions and answers. Votes will be used to inform decisions about future releases of "
+"Clojure, ClojureScript, libraries, etc."
+msgstr ""
