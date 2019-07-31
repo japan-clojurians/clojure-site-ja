@@ -236,10 +236,10 @@ distribution)をサポートしている。すべてのコードをこのよう�
 、例えばマップを利用することができる。可能な限り値を利用しよう。そして、オブジェクトが本当にアイデンティティをモデリングしている場合(そう考え始めるのはあなたが考える以上にずっとまれなことだが)には、変化する状態を持つアイデンティティをモデリングするために、例えばマップを状態としたRefやAgentを利用することができる。値の詳細をカプセル化したり抽象化したりしたいのであれば、些細なものでなければ良いアイディアだが、値を参照したり操作したりする一連の関数を書こう。ポリモーフィズムがほしいのであれば、Clojureのマルチメソッドを利用しよう。</p>
 </div>
 <div class="paragraph">
-<p>In the local case, since Clojure does not have mutable local variables,
-instead of building up values in a mutating loop, you can instead do it
-functionally with <a href="xref/../../reference/special_forms#recur">recur</a> or
-<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce">reduce</a>.</p>
+<p>ローカルな場合には、Clojureにはミュータブルなローカル変数がないので、変更を伴うループで値を組み立てる代わりに、
+<a href="xref/../../reference/special_forms#recur">recur</a> や
+<a href="https://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce">reduce</a>
+で関数的に値を組み立てることができる。</p>
 </div>
 </div>
 </div></p>

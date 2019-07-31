@@ -85,7 +85,7 @@
 を利用したJavaインターフェースとクラスの動的な実装をサポートしている:</p>
 </div>
 <div class="paragraph">
-<p>Tapping into a Java class is as easy as:</p>
+<p>Javaクラスを利用するのはこのように簡単だ:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -97,7 +97,7 @@
 (defn day-&gt;str [^LocalDate date]
   (format "%s %s, %s" (.getMonth date) (.getDayOfMonth date) (.getYear date)))
 
-;; infinite sequence of weekly dates, starting from today
+;; 今日から始まる週ごとの日付の無限シーケンス
 (def future-weeks (iterate add-week (LocalDate/now)))
 
 (map day-&gt;str (take 4 future-weeks))
