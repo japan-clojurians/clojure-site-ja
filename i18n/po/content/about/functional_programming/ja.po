@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-07-25 20:54+0900\n"
-"PO-Revision-Date: 2017-04-05 02:06+0900\n"
+"PO-Revision-Date: 2019-07-27 16:29+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -64,16 +64,12 @@ msgstr "ファーストクラスの関数"
 
 #. type: Plain text
 #: en/content/about/functional_programming.adoc:21
-#, fuzzy
-#| msgid ""
-#| "<<xref/../../reference/special_forms#fn#,fn>> creates a function object. It yields a value like any other - you "
-#| "can store it in a var, pass it to functions etc."
 msgid ""
 "<<xref/../../reference/special_forms#fn,fn>> creates a function object. It yields a value like any other - you can "
 "store it in a var, pass it to functions etc."
 msgstr ""
-"<<xref/../../reference/special_forms#fn#,fn>> は関数オブジェクトを作る。他のものと同様に値を作り出す――varに格納したり"
-"関数に渡したりなどできる。"
+"<<xref/../../reference/special_forms#fn,fn>> は関数オブジェクトを作る。他のものと同様に値を作り出す――varに格納したり関"
+"数に渡したりなどできる。"
 
 #. type: delimited block -
 #: en/content/about/functional_programming.adoc:27

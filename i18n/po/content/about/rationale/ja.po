@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clojure-site-ja 0.0.1\n"
 "POT-Creation-Date: 2019-07-25 20:54+0900\n"
-"PO-Revision-Date: 2019-06-15 20:35+0900\n"
+"PO-Revision-Date: 2019-07-27 16:27+0900\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -399,8 +399,6 @@ msgstr "C言語との連携では最近では不十分になってきている"
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:93
-#, fuzzy
-#| msgid "Java/JVM _is_language + platform"
 msgid "Java/JVM _is_ language + platform"
 msgstr "Java/JVMは言語 + プラットフォーム"
 
@@ -557,13 +555,9 @@ msgstr "ClojureのソフトウェアトランザクショナルメモリとAgent
 
 #. type: Plain text
 #: en/content/about/rationale.adoc:128
-#, fuzzy
-#| msgid ""
-#| "In short, I think Clojure occupies a unique niche as a functional Lisp for the JVM with strong concurrency "
-#| "support. Check out some of the <<features#,features>>."
 msgid ""
 "In short, I think Clojure occupies a unique niche as a functional Lisp for the JVM with strong concurrency support. "
 "Check out some of the <<features#,features>> or <<xref/../../guides/getting_started#,get started with Clojure>>."
 msgstr ""
 "要するに、ClojureはJVM向けで強力な並行処理サポートを備えた関数型のLispとして独自のニッチを占めていると私は考えてい"
-"る。 <<features#,特徴>> を確認しよう。"
+"る。 <<features#,特徴>>  や <<xref/../../guides/getting_started#,Clojureを始める>> を確認しよう。"
